@@ -21,4 +21,4 @@ Selected 10 targets after checking 12 of 12 eligible catalog targets. Product UR
 
 This is a comparison pilot; these targets are not proven to be unstudied. Before any novelty claim, check CTOIs, TCEs, aliases, and literature. Incomplete catalog coverage remains a limitation. TIC temperatures/radii/contamination are catalog estimates and require verification for survivors.
 
-Reproduce with `python src/select_field_sample.py`. Existing exact-query cache entries avoid repeated archive traffic. Apply the same catalog snapshots or record updated hashes. A larger/different field must be logged as a strategy change.
+Reproduce with `python src/select_field_sample.py --limit 12 --max-observation-queries 20 --ra 100 --dec -60 --radius 3 --min-sectors 4 --max-contamination 0.05`. Existing exact-query cache entries avoid repeated archive traffic. Apply the same catalog snapshots or record updated hashes. A larger/different field must be logged as a strategy change.

@@ -6,6 +6,7 @@ the final two sectors test that frozen waveform, and a separate per-sector
 amplitude refit supplies an exploratory residual search.  Results are local.
 """
 import argparse
+import csv
 from datetime import datetime, timezone
 import json
 from pathlib import Path
@@ -20,8 +21,12 @@ OUT = ROOT / 'candidates' / 'field_variability'
 DURATIONS = np.array([.01, .02, .035, .05])
 
 
-def prepare(record, width=5, column='PDCSAP_FLUX'):
+def prepare(record, width=5, column='PDCSAP_FLUX', injection=None):
     t, f, e, _ = read_curve(record['local_path'], column)
+    if injection is not None:
+        ip,it0,iduration,idepth=injection
+        inside=np.abs(phase(t,ip,it0))<iduration/2
+        f=f*(1-idepth*inside)
     edges = np.r_[0, np.flatnonzero(np.diff(t) > .2) + 1, len(t)]
     fn, en = np.empty_like(f), np.empty_like(e)
     for a, b in zip(edges[:-1], edges[1:]):
@@ -216,14 +221,113 @@ def run(tic, records, column='PDCSAP_FLUX', width=5):
     return summary
 
 
+def probe_commensurability(records, period=.689773):
+    """Falsify a historical high-ranked 2/3-waveform-period residual alias.
+
+    Training sector96 and 2d detrending choose phase/duration. All alternative
+    preprocessing and sectors evaluate that same frozen ephemeris.
+    """
+    from validate import local_depth, noise_beta
+    tic=150359500
+    variants=[('PDCSAP_FLUX',2),('PDCSAP_FLUX',5),('SAP_FLUX',5)]
+    summary=dict(tic=tic,period_days=period,
+                 motivation='Historical 2d-detrending residual peak near 2/3 of the dominant 1.033d waveform; selected before positive flare clipping correction.',
+                 train_sector=96,tests=[],created_utc=datetime.now(timezone.utc).isoformat())
+    ephemeris=None
+    fig,axes=plt.subplots(3,4,figsize=(16,10),layout='constrained')
+    for vi,(column,width) in enumerate(variants):
+        source=json.loads((OUT/f'tic{tic}_{column}_w{width}.json').read_text())
+        freq,h,origin=(source[k] for k in ['frequency_per_day','selected_harmonics','origin_btjd'])
+        chunks=[]
+        for row in records:
+            t,f,e=prepare(row,width,column)
+            _,model,_,_=fit(t,f,e,freq,h,origin)
+            residual=f-model+1
+            sigma=1.4826*np.median(np.abs(residual-np.median(residual)))
+            e*=max(1,sigma/np.median(e));keep=residual<1+7*sigma
+            chunks.append((t[keep],residual[keep],e[keep]))
+        if ephemeris is None:
+            k=next(i for i,r in enumerate(records) if r['sector']==96)
+            t,f,e=chunks[k]
+            z=BoxLeastSquares(t,f,e).power([period],DURATIONS,method='slow',objective='snr',oversample=20)
+            ephemeris=dict(period_days=period,epoch_btjd=float(z.transit_time[0]),duration_days=float(z.duration[0]))
+            summary['frozen_ephemeris']=ephemeris
+        for row,chunk,ax in zip(records,chunks,axes[vi]):
+            t,f,e=chunk
+            direct=fixed_box(t,f,e,ephemeris)
+            local=local_depth(t,f,e,period,ephemeris['epoch_btjd'],ephemeris['duration_days'])
+            beta=noise_beta(t,f,e,60)
+            summary['tests'].append(dict(column=column,width_days=width,sector=row['sector'],
+                global_box=direct,local_linear_baseline=local,red_noise=beta))
+            ph,y,err=folded(t,f,period,ephemeris['epoch_btjd'],100)
+            ax.errorbar(ph,(y-1)*1e6,yerr=err*1e6,fmt='.',ms=3)
+            ax.set(xlabel='Frozen phase P=.689773d',ylabel='Residual (ppm)',
+                   title=f'{column} w{width} s{row["sector"]}: boxS/N={direct["diagonal_snr"]:.1f}')
+    (OUT/'tic150359500_commensurability_probe.json').write_text(json.dumps(summary,indent=2,allow_nan=False))
+    fig.savefig(OUT/'tic150359500_commensurability_probe.png',dpi=135);plt.close(fig)
+    print('COMMENSURABILITY',[(x['column'],x['width_days'],x['sector'],round(x['global_box']['diagonal_snr'],1),round(x['local_linear_baseline'].get('event_scatter_snr',0),1)) for x in summary['tests']],flush=True)
+
+    # A small, fixed-phase nonblind preservation control; not a completeness
+    # curve and not a calibrated injection-recovery blind-search experiment.
+    controls=[]
+    for width in [2,5]:
+        source=json.loads((OUT/f'tic{tic}_PDCSAP_FLUX_w{width}.json').read_text())
+        freq,h,origin=(source[k] for k in ['frequency_per_day','selected_harmonics','origin_btjd'])
+        for row in records:
+            depths=[]
+            for injected in [0,.001]:
+                spec=(period,ephemeris['epoch_btjd'],ephemeris['duration_days'],injected) if injected else None
+                t,f,e=prepare(row,width,'PDCSAP_FLUX',spec)
+                _,model,_,_=fit(t,f,e,freq,h,origin)
+                residual=f-model+1
+                sigma=1.4826*np.median(np.abs(residual-np.median(residual)))
+                keep=residual<1+7*sigma
+                e*=max(1,sigma/np.median(e))
+                depths.append(fixed_box(t[keep],residual[keep],e[keep],ephemeris)['depth_ppm'])
+            controls.append(dict(width_days=width,sector=row['sector'],injected_depth_ppm=1000,
+                                 original_depth_ppm=depths[0],injected_measurement_ppm=depths[1],
+                                 recovered_difference_ppm=depths[1]-depths[0]))
+    summary['nonblind_preservation_controls']=controls
+    (OUT/'tic150359500_commensurability_probe.json').write_text(json.dumps(summary,indent=2,allow_nan=False))
+
+
+def summary_tables():
+    sectors,checks=[],[]
+    for path in sorted(OUT.glob('tic*_FLUX_w*.json')):
+        source=json.loads(path.read_text())
+        for s in source['sectors']:
+            sectors.append(dict(tic=source['tic'],column=source['column'],width_days=source['width_days'],
+                sector=s['sector'],train_period_days=source['period_days'],harmonics=source['selected_harmonics'],
+                n_points=s['n_points'],sinusoid_ptp_ppm=s['sinusoid_peak_to_peak_ppm'],
+                sinusoid_explained_fraction=s['fixed_period_sinusoid_explained_fraction'],
+                best_box_explained_fraction=s['best_box_explained_fraction'],
+                residual_scatter_ppm=s['residual_robust_scatter_ppm'],
+                strongest_short_fast_selected_period=s['residual_peaks'][0]['period_days'],
+                strongest_short_exact_snr=s['residual_peaks'][0]['diagonal_snr']))
+        for item in source['train_peak_test_checks']:
+            peak=item['peak']; measurements={f"s{s['sector']}_snr":s['measurement']['diagonal_snr'] for s in item['sectors']}
+            checks.append(dict(tic=source['tic'],column=source['column'],width_days=source['width_days'],
+                period_days=peak['period_days'],epoch_btjd=peak['epoch_btjd'],duration_days=peak['duration_days'],
+                **measurements,status=('follow-up required' if min(measurements.get('s97_snr',0),measurements.get('s98_snr',0))>=5
+                    else 'no >=5 diagonal S/N recurrence in both held-out sectors; threshold not calibrated')))
+    for name,rows in [('waveform_summary.csv',sectors),('frozen_ephemeris_checks.csv',checks)]:
+        if rows:
+            with (OUT/name).open('w',newline='') as stream:
+                writer=csv.DictWriter(stream,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tic',type=int,nargs='+',default=[348839788,150359500]);p.add_argument('--column',default='PDCSAP_FLUX');p.add_argument('--width',type=float,default=5)
+    p=argparse.ArgumentParser();p.add_argument('--tic',type=int,nargs='+',default=[348839788,150359500]);p.add_argument('--column',default='PDCSAP_FLUX');p.add_argument('--width',type=float,default=5);p.add_argument('--probe-only',action='store_true')
     a=p.parse_args();rows=json.loads((ROOT/'data'/'observations.json').read_text())
     OUT.mkdir(parents=True,exist_ok=True)
+    if a.probe_only:
+        selected=sorted([r for r in rows if r['tic']==150359500 and r['sector'] in [95,96,97,98]],key=lambda r:r['sector'])
+        probe_commensurability(selected);summary_tables();return
     for tic in a.tic:
         selected=sorted([r for r in rows if r['tic']==tic and r['sector'] in [95,96,97,98]],key=lambda r:r['sector'])
         if len(selected)!=4:raise ValueError(f'Need sectors95-98 for TIC{tic}')
         run(tic,selected,a.column,a.width)
+    summary_tables()
 
 
 if __name__=='__main__':main()

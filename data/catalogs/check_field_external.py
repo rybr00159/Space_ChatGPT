@@ -7,7 +7,6 @@ import csv,json,hashlib,re,shutil,xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from check_field_catalogs import sep_arcsec
 ROOT=Path(__file__).resolve().parent
-STARS=json.loads((ROOT.parent/'field_sample.json').read_text())['selected']
 
 def fetch(name,url):
  p=ROOT/name
@@ -29,6 +28,7 @@ def fetch(name,url):
  return b
 
 if __name__=='__main__':
+ STARS=json.loads((ROOT.parent/'field_sample.json').read_text())['selected']
  conds=[f"1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{r['ra']},{r['dec']},0.008333333333))" for r in STARS]
  q='select main_id,ra,dec,otype from basic where '+' OR '.join(conds)
  url='https://simbad.cds.unistra.fr/simbad/sim-tap/sync?'+urlencode({'request':'doQuery','lang':'adql','format':'csv','query':q})
@@ -40,7 +40,7 @@ if __name__=='__main__':
    if d<=30:matched.append({'tic':s['tic'],'main_id':r['main_id'],'otype':r['otype'],'separation_arcsec':d,'ra':r['ra'],'dec':r['dec']})
  with (ROOT/'field_simbad_matches.csv').open('w') as f:
   w=csv.DictWriter(f,fieldnames=['tic','main_id','otype','separation_arcsec','ra','dec']);w.writeheader();w.writerows(matched)
- print('SIMBAD locally filtered',len(matched),'rows',matched)
+ print('SIMBAD locally filtered rows:',len(matched))
  def eb(star):
   tid=str(star['tic']);url='https://tessebs.villanova.edu/search_results?'+urlencode({'tic':tid})
   b=fetch('field_tesseb_'+tid+'.html',url);s=b.decode(errors='replace')
@@ -59,7 +59,7 @@ if __name__=='__main__':
     if signals:inclusion=any(row['in_catalog'] for row in signals)
   return {'tic':tid,'result_link_found':found,'eb_catalog_inclusion':inclusion,'signal_rows':signals,'count_text':count.group(0) if count else '', 'url':url,'note':'Search returns light-curve-only entries as well as EBs; only explicit In catalog=True counts as a catalog EB. Exact TIC query; absence does not exclude unlisted EBs or contamination.'}
  with ThreadPoolExecutor(max_workers=2) as pool:result=list(pool.map(eb,STARS))
- (ROOT/'field_tesseb_checks.json').write_text(json.dumps(result,indent=2)+'\n');print('TEB',result)
+ (ROOT/'field_tesseb_checks.json').write_text(json.dumps(result,indent=2)+'\n');print('TEB explicit inclusion checks:',[(r['tic'],r['eb_catalog_inclusion']) for r in result])
  query=' OR '.join('all:"'+str(s['tic'])+'"' for s in STARS)
  url='https://export.arxiv.org/api/query?'+urlencode({'search_query':query,'max_results':100})
  b=fetch('field_tic_arxiv.xml',url)
@@ -73,7 +73,7 @@ if __name__=='__main__':
  url='https://gea.esac.esa.int/tap-server/tap/sync?'+urlencode({'request':'doQuery','lang':'ADQL','format':'csv','query':q})
  try:
   b=fetch('field_gaia_dr3_flags.csv',url)
-  print('GAIA DR3 flags',b.decode())
+  print('GAIA DR3 flag rows:',len(list(csv.DictReader(b.decode().splitlines()))))
  except Exception as exc:
   print('GAIA check not complete',str(exc))
  names=','.join("'"+r['main_id'].replace("'","''")+"'" for r in matched)
@@ -85,4 +85,4 @@ if __name__=='__main__':
  q='select source_id,best_class_name,best_class_score from gaiadr3.vari_classifier_result where source_id in ('+ids+')'
  url='https://gea.esac.esa.int/tap-server/tap/sync?'+urlencode({'request':'doQuery','lang':'ADQL','format':'csv','query':q})
  b=fetch('field_gaia_variable_classifier.csv',url)
- print('GAIA variable classifications',b.decode())
+ print('GAIA variable classifications:',len(list(csv.DictReader(b.decode().splitlines()))))

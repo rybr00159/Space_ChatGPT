@@ -21,7 +21,7 @@ def read_curve(path, column='PDCSAP_FLUX'):
     with fits.open(path) as hdul:
         d=hdul[1].data; h=dict(hdul[0].header)
         timing=hdul[1].header
-        if timing.get('TIMESYS') != 'TDB' or abs(timing.get('BJDREFI',2457000)+timing.get('BJDREFF',0)-2457000)>1e-8:
+        if timing.get('TIMESYS') != 'TDB' or 'BJDREFI' not in timing or abs(timing.get('BJDREFI',0)+timing.get('BJDREFF',0)-2457000)>1e-8:
             raise ValueError('Unexpected time system/reference; do not assume BTJD')
         t=np.array(d['TIME'],dtype=float); f=np.array(d[column],dtype=float); e=np.array(d[column+'_ERR'],dtype=float); q=np.array(d['QUALITY'])
     keep=np.isfinite(t)&np.isfinite(f)&np.isfinite(e)&(e>0)&(q==0)&(f>0)

@@ -23,3 +23,9 @@ Limitations:
 TIC 278727563, sector 94: maximum across both widths is 5.23; 5/24 paired null maxima are at least this large (plus-one fraction 0.240). This includes the two tested widths only and remains subject to the limitations above.
 
 TIC 307210830, sector 2: maximum across both widths is 5.76; 18/24 paired null maxima are at least this large (plus-one fraction 0.760). This includes the two tested widths only and remains subject to the limitations above.
+
+## Pinned search implementation
+
+The original null calculations used `src/search.py` from Git commit `7ecc52c`. Its exact bytes are preserved as `src/search_null_v1.py`, SHA-256 `0d1216f3dd84114e0be8d44c5030324bd108a907be47573aeca76f296253614a`. Later production changes added time-system and odd/even diagnostic guards; the saved calibration is tied to its original implementation.
+
+Resume or regenerate these inputs with `python src/null_calibration.py --frozen-search`. This explicitly selects the preserved version and verifies its source hash; completed permutations are retained without repetition. The default invocation still selects production `src/search.py` and rejects this checkpoint if its hash differs. Cached raw and null-input data remain intact, and cached inputs can be reconstructed using the pinned code and retained raw products.

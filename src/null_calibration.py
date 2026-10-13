@@ -8,12 +8,40 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import datetime, timezone
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
+import sys
 
 import numpy as np
 
 from search import CACHE, DURATIONS, ROOT, flatten, known_for, mask_known, read_curve, scan
+
+FROZEN_SEARCH_SHA256 = "0d1216f3dd84114e0be8d44c5030324bd108a907be47573aeca76f296253614a"
+_ACTIVE_SEARCH_PATH = None
+
+
+def activate_search(path, expected_hash):
+    """Use explicitly selected, integrity-checked implementation in every worker.
+
+    Worker activation also supports multiprocessing spawn, where parent globals
+    are not inherited. All input files and stored null measurements are unchanged.
+    """
+    global _ACTIVE_SEARCH_PATH, CACHE, DURATIONS, ROOT, flatten, known_for, mask_known, read_curve, scan
+    path = Path(path)
+    actual = hashlib.sha256(path.read_bytes()).hexdigest()
+    if actual != expected_hash:
+        raise ValueError("Selected search implementation does not match required source hash.")
+    if _ACTIVE_SEARCH_PATH == str(path):
+        return
+    spec = importlib.util.spec_from_file_location("_null_calibration_selected_search", path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    CACHE, DURATIONS, ROOT = module.CACHE, module.DURATIONS, module.ROOT
+    flatten, known_for, mask_known = module.flatten, module.known_for, module.mask_known
+    read_curve, scan = module.read_curve, module.scan
+    _ACTIVE_SEARCH_PATH = str(path)
 
 
 def prepare(record, width, edge_cut=.25):
@@ -58,7 +86,8 @@ def block_indices(t, block_days):
 
 
 def replicate(task):
-    path, tic, sector, width, rep, seed, block_days = task
+    path, tic, sector, width, rep, seed, block_days, search_path, source_hash = task
+    activate_search(search_path, source_hash)
     with np.load(path) as arrays:
         t, f, e = arrays["t"], arrays["f"], arrays["e"]
     blocks = block_indices(t, block_days)
@@ -122,6 +151,10 @@ def write_report(result):
     for pair in paired_widths(result):
         lines.append(f"TIC {pair['tic']}, sector {pair['sector']}: maximum across both widths is {pair['observed_maximum_snr']:.2f}; {pair['n_null_at_least_observed']}/{pair['n']} paired null maxima are at least this large (plus-one fraction {pair['permutation_tail_fraction_plus_one']:.3f}). This includes the two tested widths only and remains subject to the limitations above.")
         lines.append("")
+    if result.get("search_provenance", {}).get("frozen_search"):
+        lines += ["## Pinned search implementation", "",
+                  "The original null calculations used `src/search.py` from Git commit `7ecc52c`. Its exact bytes are preserved as `src/search_null_v1.py`, SHA-256 `" + FROZEN_SEARCH_SHA256 + "`. Later production changes added time-system and odd/even diagnostic guards; the saved calibration is tied to its original implementation.", "",
+                  "Resume or regenerate these inputs with `python src/null_calibration.py --frozen-search`. This explicitly selects the preserved version and verifies its source hash; completed permutations are retained without repetition. The default invocation still selects production `src/search.py` and rejects this checkpoint if its hash differs. Cached raw and null-input data remain intact, and cached inputs can be reconstructed using the pinned code and retained raw products.", ""]
     path = ROOT / "reports" / "null_calibration.md"
     path.write_text("\n".join(lines))
     validation = ROOT / "reports" / "validation.md"
@@ -170,21 +203,31 @@ def main():
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--seed", type=int, default=260113)
     parser.add_argument("--block-days", type=float, default=.5)
+    parser.add_argument("--frozen-search", action="store_true",
+                        help="Use exact search.py from commit 7ecc52c, preserved as search_null_v1.py.")
     args = parser.parse_args()
+    search_path = ROOT / "src" / ("search_null_v1.py" if args.frozen_search else "search.py")
+    selected_hash = hashlib.sha256(search_path.read_bytes()).hexdigest()
+    if args.frozen_search and selected_hash != FROZEN_SEARCH_SHA256:
+        raise ValueError("Pinned search source no longer matches its original commit/hash.")
+    activate_search(search_path, selected_hash)
     out = ROOT / "results" / "null_calibration.json"
     result = json.loads(out.read_text()) if out.exists() else {
         "created_utc": datetime.now(timezone.utc).isoformat(), "seed": args.seed,
         "block_days": args.block_days, "desired_replicates_per_width": args.replicates,
         "period_min_days": .7, "period_max_days": "min(13, retained baseline/2)",
         "durations_days": DURATIONS.tolist(), "frequency_factor": .7, "oversample": 10,
-        "search_source_sha256": hashlib.sha256((ROOT / "src" / "search.py").read_bytes()).hexdigest(),
+        "search_source_sha256": selected_hash,
         "noise_assumption": "Exchangeable pre-flattened half-day residual blocks; illustrative only",
         "targets": []}
     if result["seed"] != args.seed or result["block_days"] != args.block_days:
         raise ValueError("Checkpoint seed/block size differs; use matching options.")
-    current_source_hash = hashlib.sha256((ROOT / "src" / "search.py").read_bytes()).hexdigest()
-    if result["search_source_sha256"] != current_source_hash:
+    if result["search_source_sha256"] != selected_hash:
         raise ValueError("Search implementation changed; archive the existing checkpoint before a new calibration.")
+    result["search_provenance"] = {"frozen_search": args.frozen_search,
+                                   "selected_module": str(search_path.relative_to(ROOT)),
+                                   "source_sha256": selected_hash,
+                                   "origin_git_commit": "7ecc52c" if args.frozen_search else None}
     records = json.loads((ROOT / "data" / "observations.json").read_text())
     for target in args.targets:
         tic, sector = map(int, target.split(":"))
@@ -216,7 +259,7 @@ def main():
         for rep in range(args.replicates):
             if rep not in completed:
                 jobs.append((entry["input_cache"], entry["tic"], entry["sector"], entry["width_days"],
-                             rep, args.seed, args.block_days))
+                             rep, args.seed, args.block_days, str(search_path), selected_hash))
     with ProcessPoolExecutor(max_workers=max(1, min(2, args.workers))) as pool:
         futures = [pool.submit(replicate, job) for job in jobs]
         for future in as_completed(futures):

@@ -78,7 +78,7 @@ def catalog_exclusions():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--limit', type=int, default=6)
+    parser.add_argument('--limit', type=int, default=12)
     parser.add_argument('--max-observation-queries', type=int, default=20)
     parser.add_argument('--ra', type=float, default=100)
     parser.add_argument('--dec', type=float, default=-60)
@@ -167,7 +167,7 @@ def main():
         lines.append(f"| {row['tic']} | {row['Tmag']:.3f} | {row['Teff']:.0f} | {row['rad']:.3f} | {row['contratio']:.4f} | {row['sector_count']} |")
     lines += ['', f"Selected {len(selected)} targets after checking {len(checked)} of {len(ranked)} eligible catalog targets. Product URIs, sectors, exact request, catalog hashes, exclusion reasons, and observation-query statuses are saved in `data/field_sample.json`. Complete raw JSON responses remain in `{CACHE}`. FITS downloads are a separate pipeline step.", '',
               'This is a comparison pilot; these targets are not proven to be unstudied. Before any novelty claim, check CTOIs, TCEs, aliases, and literature. Incomplete catalog coverage remains a limitation. TIC temperatures/radii/contamination are catalog estimates and require verification for survivors.', '',
-              'Reproduce with `python src/select_field_sample.py`. Existing exact-query cache entries avoid repeated archive traffic. Apply the same catalog snapshots or record updated hashes. A larger/different field must be logged as a strategy change.']
+              f'Reproduce with `python src/select_field_sample.py --limit {args.limit} --max-observation-queries {args.max_observation_queries} --ra {args.ra} --dec {args.dec} --radius {args.radius} --min-sectors {args.min_sectors} --max-contamination {args.max_contamination}`. Existing exact-query cache entries avoid repeated archive traffic. Apply the same catalog snapshots or record updated hashes. A larger/different field must be logged as a strategy change.']
     (ROOT / 'reports' / 'field_selection.md').write_text('\n'.join(lines) + '\n')
 
 if __name__ == '__main__':

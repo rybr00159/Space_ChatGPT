@@ -38,12 +38,25 @@ class ScientificUtilities(unittest.TestCase):
                        fits.Column(name="PDCSAP_FLUX", format="E", array=[30., 10., 20., 40., 50.]),
                        fits.Column(name="PDCSAP_FLUX_ERR", format="E", array=[3., 1., 2., 4., 5.]),
                        fits.Column(name="QUALITY", format="J", array=[0, 0, 1, 0, 0])]
-            fits.HDUList([fits.PrimaryHDU(), fits.BinTableHDU.from_columns(columns)]).writeto(path)
+            table = fits.BinTableHDU.from_columns(columns)
+            table.header['TIMESYS'] = 'TDB'
+            table.header['BJDREFI'] = 2457000
+            table.header['BJDREFF'] = 0.
+            fits.HDUList([fits.PrimaryHDU(), table]).writeto(path)
             t, f, e, _ = read_curve(path)
             np.testing.assert_equal(t, [1., 3., 4.])
             np.testing.assert_equal(f, [10., 30., 40.])
             np.testing.assert_equal(e, [1., 3., 4.])
             self.assertTrue(f.dtype.isnative)
+            with fits.open(path, mode='update') as hdul:
+                hdul[1].header['BJDREFI'] = 2454833
+            with self.assertRaisesRegex(ValueError, 'Unexpected time system/reference'):
+                read_curve(path)
+            with fits.open(path, mode='update') as hdul:
+                hdul[1].header['BJDREFI'] = 2457000
+                hdul[1].header['TIMESYS'] = 'UTC'
+            with self.assertRaisesRegex(ValueError, 'Unexpected time system/reference'):
+                read_curve(path)
 
     def test_bjd_epoch_and_nonchronological_masks(self):
         t = np.array([12., 11., 10., 10.03, 9.9])
