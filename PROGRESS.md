@@ -1,3 +1,17 @@
+# Active broad-survey checkpoint
+
+2026-10-13: The user requested a much larger actual astronomical investigation after the 19-star pilot. A fixed 160,000-target QLP sector-1 sample from 469,735 inventory stars is now being searched. Count only SQLite status=screened as completed period searches; catalog selection and insufficient light curves are separate.
+
+Live process: `src/broad_survey.py --download-workers 32 --analysis-workers 4 --queue 192 --report-every 2000`; check processes before resuming to avoid duplicate writers. Database: `/workspace/tess-research-data/broad/qlp_s0001/survey.sqlite`. Raw products are retained under its `raw/` directory. Survey outputs in `results/broad/` are atomic periodic exports; SQLite is the current authority. Source hash is locked. Resume using the exact command above with the existing Python venv and cache; completed stars are skipped. Do not delete raw products or overwrite incompatible checkpoints.
+
+Fast broad method: actual quality-filtered QLP KSPSAP flux, gap/cadence handling, median detrending, logarithmic BLS 0.3–13 days, resolved durations, two peaks, event-coverage/duty guards, isolated events. Thirty-minute cadence limits shortest transits. 36/36 ideal synthetic injection recoveries, 3/3 known controls and 11 utility tests passed; this is not survey completeness/global significance.
+
+Parallel work: broader prior catalogs and shortlist ranking, independent raw-flux/aperture/alternative-detrending vetting, recent sector-107 official TCE triage, real-noise/injection assessment. Sector-107 prior threshold signals are separately reported, not counted as our light-curve searches. No credible new candidate is yet established. Research spending remains zero.
+
+Next: keep the 160k survey running, resolve strongest leads with additional sectors and pixel/centroid evidence, document precise novel-vs-known status and statistical limitations. Export tables and commit meaningful milestones to main. The previous pilot checkpoint follows as historical context.
+
+---
+
 # Progress checkpoint
 
 Updated 2026-10-13: **first research phase complete; no credible new exoplanet candidate.** This is a negative result in a limited pilot, not an exclusion of additional planets.

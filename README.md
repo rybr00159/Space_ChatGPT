@@ -1,10 +1,26 @@
 # Autonomous TESS exoplanet research
 
-**Current result: no credible new exoplanet candidate in the completed 2026-10-13 pilot.** We searched real observations and investigated stronger signals; apparent detections failed raw-flux, local-baseline, recurrence, variability, or noise checks. This result does not exclude additional planets in the targets.
+**Current work: a 160,000-target broad QLP light-curve survey is running, with detailed candidate vetting in parallel.**
+
+The earlier 19-star pilot found no credible new candidate. We searched real observations and investigated stronger signals; apparent detections failed raw-flux, local-baseline, recurrence, variability, or noise checks. This result does not exclude additional planets in the targets.
 
 Read [the research report](RESEARCH_REPORT.md), [research log](RESEARCH_LOG.md), and [resumption checkpoint](PROGRESS.md). The original `Reddit Post.zip` is retained unchanged; its publicly reported signals are excluded from novelty claims.
 
-## What was investigated
+## Broad survey now running
+
+Official sector-1 QLP inventory: 469,735 targets. A fixed seeded random sample of 160,000 was selected before flux inspection. Actual period searches, insufficient-data cases, archive failures and inventory counts are reported separately in `results/broad/summary.json`. Every downloaded raw FITS is retained under `/workspace/tess-research-data/broad/qlp_s0001/raw`; SQLite checkpoints completed stars. The compact 30-minute observations permit this sample to fit the available disk but attenuate short transits. Newer timing-flagged QLP sectors are excluded.
+
+`src/broad_survey.py` pipelines pooled HTTP downloads and four CPU workers. The validated logarithmic BLS grid searches 0.3–13 days, with cadence-resolved duration trials and local single-event screening. Fine grids, alternative detrending, raw/aperture comparisons and additional sectors are reserved for leads. Novelty checks add published DIAmante, Olmschenk/Yu and genuine TESS EB catalogs to NASA/TOI/CTOI. Official sector-107 TCE triage runs separately; archive-reported signals are not our original detections.
+
+Continue the exact survey from the existing SQLite/cache using:
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python src/broad_survey.py --download-workers 32 --analysis-workers 4 --queue 192 --report-every 2000
+```
+
+Do not launch a second writer while that command is active. The source hash is enforced to prevent mixing analysis versions. See `reports/fast_screen_validation.md` and `reports/broad_strategy.md`. No discovery claim is supported by broad screening alone.
+
+## Completed initial pilot
 
 | Quantity | Completed |
 |---|---:|
