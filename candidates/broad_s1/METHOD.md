@@ -1,0 +1,11 @@
+# Independent broad-lead vetting method
+
+Run `python src/broad_vet.py --tic TIC_ID` for retained sector-1 leads. Use `--period PERIOD` to select a saved harmonic for one TIC. Use `--multisector --tic TIC_ID` after `src/followup_qlp.py` has saved a follow-up manifest. Reproduce the numerical control with `python src/broad_vet.py --validate`.
+
+Raw FITS source hashes and available archive checksum fields are checked before use. Local period refinement stays within three broad-search grid cells, preserving the original peak. Quality-zero flux is examined with 0.5/1/2-day gap-aware medians and independent local quadratic out-of-transit fits. SAP, processed, small-aperture, and large-aperture flux are compared. Local depths include residual-noise and event-scatter error floors. Primary and half-phase secondary events, odd/even differences, broad variability, and QLP centroids provide warnings.
+
+The fitted trapezoid integrates each sector's actual median exposure. A fixed-period shape fit is conditional and approximate, with no limb darkening. Local box-mean depths differ from fitted full-depth values because ingress and exposure smear the transit. Independent event timing fits include scatter inflation and leave-one-sector-out stability checks.
+
+Numerical control: maximum analytic-vs-numeric exposure-average error 1.96e-06; injected depth 0.006000, fitted 0.006072 ±0.000063; injected duration 0.105000 d, fitted 0.104931 ±0.001155 d. All checks passed: True. The numerical injection used a quadratic baseline, seven recurrences, 10-minute integrated samples, and white noise, and is not a completeness estimate.
+
+Aperture/centroid warnings are source-contamination diagnostics, not automatic proof of a false positive. An unexplained lead still requires pixel localization, stellar/transit physical models, comprehensive catalog and literature checks, and empirical survey-wide correlated-noise/trials calibration. No folder here establishes planetary discovery or confirmation.

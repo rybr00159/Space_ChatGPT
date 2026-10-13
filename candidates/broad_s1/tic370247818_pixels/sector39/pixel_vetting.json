@@ -1,0 +1,1437 @@
+{
+  "checked_utc": "2026-10-13T21:48:20.745456+00:00",
+  "ephemeris": {
+    "period_days": 3.522194945921,
+    "epoch_btjd": 1326.9162961298,
+    "duration_days": 0.0939041044544696,
+    "ingress_fraction": 0.33111363574530256,
+    "cadence_days": 0.006944444444444444
+  },
+  "input": {
+    "tic": 370247818,
+    "sector": 39,
+    "camera": 3,
+    "ccd": 4,
+    "path": "/workspace/tess-research-data/broad/pixels/tess-s0039-3-4_55.455693_-79.113281_15x15_astrocut.fits",
+    "archive_uri": "https://mast.stsci.edu/tesscut/api/v0.1/astrocut?ra=55.455693&dec=-79.113281&x=15&y=15&units=px&sector=39",
+    "sha256": "9c7a5373f5b6d8cdfa0895fb4e02f8b3ecf1d9624741030ef57c90d45bbf63ca",
+    "bytes": 17752320,
+    "retrieved_utc": "2026-10-13T21:41:14.140399+00:00",
+    "science_array_sha256_time_quality_flux_fluxerr_ffifiles": "8254e1e89b599241abb6857fca4a4137dbe91ac2b777eb223fb4fa06b91afefc",
+    "ffi_product_identifiers": "candidates/broad_s1/tic370247818_pixels/sector39/ffi_product_ids.txt",
+    "processing_version": "0.11.1",
+    "data_release": 56,
+    "time_system": "TDB",
+    "bjd_reference": 2457000.0,
+    "ffi_type": "SPOC",
+    "fits_checksum_verification": [
+      {
+        "hdu": 0,
+        "checksum": 1,
+        "datasum": 1
+      },
+      {
+        "hdu": 1,
+        "checksum": 1,
+        "datasum": 1
+      },
+      {
+        "hdu": 2,
+        "checksum": 1,
+        "datasum": 1
+      }
+    ],
+    "retrieval_note": "TESSCut public FFI cutout; API regenerates FITS CHECKSUM timestamps so future retrieval may differ byte-for-byte; verify science arrays and recorded FFI identifiers.",
+    "science_hash_recipe": "SHA256 of each ASCII column name followed by C-order little-endian bytes: TIME float64; QUALITY int32; FLUX float32; FLUX_ERR float32; then C-order FFI_FILE strings S38 without a column-name prefix."
+  },
+  "cadences": {
+    "total": 3879,
+    "quality_zero_and_finite": 3865,
+    "quality_distribution": {
+      "0": 3865,
+      "32": 6,
+      "128": 6,
+      "164": 2
+    }
+  },
+  "target_xy": [
+    7.373709054083289,
+    7.6781802118453975
+  ],
+  "bright_neighbor_xy": [
+    6.927486042201956,
+    12.131157432271337
+  ],
+  "third_star_xy": [
+    6.895857846004964,
+    2.13267082235899
+  ],
+  "background_pixels": 57,
+  "pointing_range_pixels": {
+    "dx": [
+      -0.01508613292569718,
+      -0.0002070139196530885,
+      0.025288065749306598
+    ],
+    "dy": [
+      -0.028187585146939982,
+      -0.004879201688900588,
+      0.12186389208479964
+    ]
+  },
+  "method": "Per-event joint integrated-trapezoid + quadratic time + measured sky + reference-gradient pointing; simultaneous nuisance and transit regression. All QUALITY != 0 removed.",
+  "difference_modes": {
+    "quadratic": {
+      "n_events": 8,
+      "events": [
+        {
+          "cycle": 294,
+          "center_btjd": 2362.441610230574,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 40.76724396872898
+        },
+        {
+          "cycle": 295,
+          "center_btjd": 2365.963805176495,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 40.76749688090644
+        },
+        {
+          "cycle": 296,
+          "center_btjd": 2369.486000122416,
+          "n_in": 13,
+          "n_out": 71,
+          "n": 86,
+          "design_condition": 41.779418889858476
+        },
+        {
+          "cycle": 297,
+          "center_btjd": 2373.008195068337,
+          "n_in": 14,
+          "n_out": 72,
+          "n": 86,
+          "design_condition": 41.78121072276586
+        },
+        {
+          "cycle": 298,
+          "center_btjd": 2376.530390014258,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 86,
+          "design_condition": 41.781116673445105
+        },
+        {
+          "cycle": 299,
+          "center_btjd": 2380.052584960179,
+          "n_in": 13,
+          "n_out": 71,
+          "n": 86,
+          "design_condition": 41.77972373574639
+        },
+        {
+          "cycle": 300,
+          "center_btjd": 2383.5747799061,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 40.76828700387095
+        },
+        {
+          "cycle": 301,
+          "center_btjd": 2387.096974852021,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 40.76840418687233
+        }
+      ],
+      "target_roi_gaussian_fit": {
+        "amplitude_e_s": 4.44398481997933,
+        "x": 7.613600224029172,
+        "y": 7.4521835025087695,
+        "sigma_x": 0.7275878144317917,
+        "sigma_y": 0.6400195306200543,
+        "background": 0.22757283513900936,
+        "chi2_diagonal": 35.535660200754805,
+        "dof": 21,
+        "success": true,
+        "offset_target_pixels": 0.32957895267900367,
+        "offset_neighbor_pixels": 4.729011493526126,
+        "sky_ra_dec": [
+          55.452045119220664,
+          -79.111629154252
+        ]
+      },
+      "neighbor_roi_gaussian_fit": {
+        "amplitude_e_s": 4.161675014912638,
+        "x": 7.465263062862288,
+        "y": 12.391450304508298,
+        "sigma_x": 0.40000000107532285,
+        "sigma_y": 0.4000000000000001,
+        "background": 0.15279177181995762,
+        "chi2_diagonal": 9.675823511312425,
+        "dof": 13,
+        "success": true
+      }
+    },
+    "background": {
+      "n_events": 8,
+      "events": [
+        {
+          "cycle": 294,
+          "center_btjd": 2362.441610230574,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 41.16521835688315
+        },
+        {
+          "cycle": 295,
+          "center_btjd": 2365.963805176495,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 41.07032681712479
+        },
+        {
+          "cycle": 296,
+          "center_btjd": 2369.486000122416,
+          "n_in": 13,
+          "n_out": 71,
+          "n": 86,
+          "design_condition": 56.71848993886754
+        },
+        {
+          "cycle": 297,
+          "center_btjd": 2373.008195068337,
+          "n_in": 14,
+          "n_out": 72,
+          "n": 86,
+          "design_condition": 53.971079679710016
+        },
+        {
+          "cycle": 298,
+          "center_btjd": 2376.530390014258,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 86,
+          "design_condition": 42.33625804376315
+        },
+        {
+          "cycle": 299,
+          "center_btjd": 2380.052584960179,
+          "n_in": 13,
+          "n_out": 71,
+          "n": 86,
+          "design_condition": 42.166986915138196
+        },
+        {
+          "cycle": 300,
+          "center_btjd": 2383.5747799061,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 47.77058440569862
+        },
+        {
+          "cycle": 301,
+          "center_btjd": 2387.096974852021,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 41.06873270745787
+        }
+      ],
+      "target_roi_gaussian_fit": {
+        "amplitude_e_s": 4.557127904209905,
+        "x": 7.612552234731411,
+        "y": 7.440362918884388,
+        "sigma_x": 0.7343415873776904,
+        "sigma_y": 0.6261058868843988,
+        "background": 0.11916992628625349,
+        "chi2_diagonal": 35.82696993127025,
+        "dof": 21,
+        "success": true,
+        "offset_target_pixels": 0.33705063384217865,
+        "offset_neighbor_pixels": 4.740555753808609,
+        "sky_ra_dec": [
+          55.452221784682365,
+          -79.11157385638279
+        ]
+      },
+      "neighbor_roi_gaussian_fit": {
+        "amplitude_e_s": 1.9362376063149374,
+        "x": 7.752523455187591,
+        "y": 12.362387149238945,
+        "sigma_x": 0.6847144332405585,
+        "sigma_y": 0.4000000000000001,
+        "background": 0.07619643239758112,
+        "chi2_diagonal": 9.536581409648369,
+        "dof": 13,
+        "success": true
+      }
+    },
+    "pointing": {
+      "n_events": 8,
+      "events": [
+        {
+          "cycle": 294,
+          "center_btjd": 2362.441610230574,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 58.053115465246044
+        },
+        {
+          "cycle": 295,
+          "center_btjd": 2365.963805176495,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 53.531754692222655
+        },
+        {
+          "cycle": 296,
+          "center_btjd": 2369.486000122416,
+          "n_in": 13,
+          "n_out": 71,
+          "n": 86,
+          "design_condition": 63.97220629248198
+        },
+        {
+          "cycle": 297,
+          "center_btjd": 2373.008195068337,
+          "n_in": 14,
+          "n_out": 72,
+          "n": 86,
+          "design_condition": 67.35536054127446
+        },
+        {
+          "cycle": 298,
+          "center_btjd": 2376.530390014258,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 86,
+          "design_condition": 49.95123312188778
+        },
+        {
+          "cycle": 299,
+          "center_btjd": 2380.052584960179,
+          "n_in": 13,
+          "n_out": 71,
+          "n": 86,
+          "design_condition": 47.829282921991215
+        },
+        {
+          "cycle": 300,
+          "center_btjd": 2383.5747799061,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 55.892054833454516
+        },
+        {
+          "cycle": 301,
+          "center_btjd": 2387.096974852021,
+          "n_in": 13,
+          "n_out": 72,
+          "n": 87,
+          "design_condition": 46.842217419334624
+        }
+      ],
+      "target_roi_gaussian_fit": {
+        "amplitude_e_s": 4.5727041594853715,
+        "x": 7.594578055944247,
+        "y": 7.432211350258741,
+        "sigma_x": 0.7315470185864791,
+        "sigma_y": 0.629079451493705,
+        "background": 0.1245487404484982,
+        "chi2_diagonal": 36.11335785648077,
+        "dof": 21,
+        "success": true,
+        "offset_target_pixels": 0.3305809989295993,
+        "offset_neighbor_pixels": 4.746062161040484,
+        "sky_ra_dec": [
+          55.45280681274649,
+          -79.11157180438059
+        ]
+      },
+      "neighbor_roi_gaussian_fit": {
+        "amplitude_e_s": 0.5239838403184294,
+        "x": 5.9271234532335395,
+        "y": 13.436670935988758,
+        "sigma_x": 0.8575572962027705,
+        "sigma_y": 0.40000000000000047,
+        "background": 0.29426686889877685,
+        "chi2_diagonal": 8.005388137314203,
+        "dof": 13,
+        "success": true
+      }
+    }
+  },
+  "localization_bootstrap": {
+    "n": 500,
+    "median_xy": [
+      7.590985838009875,
+      7.43150797104684
+    ],
+    "interval_16_84_xy": [
+      [
+        7.558477280984394,
+        7.403089989395211
+      ],
+      [
+        7.628566752426345,
+        7.462790423923965
+      ]
+    ],
+    "covariance_xy": [
+      [
+        0.0012024908943620014,
+        0.00011347067295828057
+      ],
+      [
+        0.00011347067295828057,
+        0.0008309779534988985
+      ]
+    ],
+    "offset_target_percentile_16_50_84": [
+      0.3031211281956122,
+      0.3288274664600933,
+      0.36068676112987563
+    ],
+    "fraction_closer_to_target_than_bright_neighbor": 1.0,
+    "limitation": "Event plus 3-cadence synchronized residual block bootstrap. Does not cover Gaussian/PRF systematics or unresolved blending."
+  },
+  "apertures": {
+    "target_r1.0": {
+      "center": [
+        7.373709054083289,
+        7.6781802118453975
+      ],
+      "radius_pixels": 1.0,
+      "n_pixels": 4,
+      "median_flux_bg_sub_e_s": 1244.9763793945312,
+      "depth": 0.008661534615592383,
+      "error_max_diagonal_event_scatter": 0.0003443085167113169,
+      "snr": 25.15631822971892,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": 0.00855449677173814,
+          "error": 0.0006899953374916687,
+          "snr_diagonal": 12.397905184165728,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.008985207374478277,
+          "error": 0.000776811810593946,
+          "snr_diagonal": 11.566774927904659,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.009218848004129532,
+          "error": 0.000773702797886983,
+          "snr_diagonal": 11.915231571226858,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": 0.00835861529350157,
+          "error": 0.0008981594147010251,
+          "snr_diagonal": 9.306382760886546,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": 0.0071279412480698134,
+          "error": 0.0007059905521309911,
+          "snr_diagonal": 10.096369174565496,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": 0.008758005842460337,
+          "error": 0.0009124373935787619,
+          "snr_diagonal": 9.598473170975256,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": 0.008582233720024757,
+          "error": 0.0007185487437015892,
+          "snr_diagonal": 11.94384346956555,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": 0.010625753091617618,
+          "error": 0.000934844784439975,
+          "snr_diagonal": 11.366328687369258,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "target_r1.5": {
+      "center": [
+        7.373709054083289,
+        7.6781802118453975
+      ],
+      "radius_pixels": 1.5,
+      "n_pixels": 7,
+      "median_flux_bg_sub_e_s": 1466.0884170532227,
+      "depth": 0.007934160651854174,
+      "error_max_diagonal_event_scatter": 0.0003154301754223955,
+      "snr": 25.15346111458571,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": 0.00763425897734038,
+          "error": 0.0008078601088918454,
+          "snr_diagonal": 9.449976417095796,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.008571711370147339,
+          "error": 0.0009392505227770277,
+          "snr_diagonal": 9.126118285038432,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.008413476013493515,
+          "error": 0.000875391249225707,
+          "snr_diagonal": 9.611103630445616,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": 0.008131710644430301,
+          "error": 0.0010067218041179674,
+          "snr_diagonal": 8.077415837391984,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": 0.0064724150666353175,
+          "error": 0.0008467921343653409,
+          "snr_diagonal": 7.643452039722008,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": 0.008157585467917672,
+          "error": 0.0009412604288964945,
+          "snr_diagonal": 8.66666144403986,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": 0.0077580725991690525,
+          "error": 0.0008229374748873383,
+          "snr_diagonal": 9.427292881796577,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": 0.008814792598996979,
+          "error": 0.0009563797340223367,
+          "snr_diagonal": 9.216833319882022,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "target_r2.0": {
+      "center": [
+        7.373709054083289,
+        7.6781802118453975
+      ],
+      "radius_pixels": 2.0,
+      "n_pixels": 13,
+      "median_flux_bg_sub_e_s": 1844.445571899414,
+      "depth": 0.007733541749932913,
+      "error_max_diagonal_event_scatter": 0.0003956941298548176,
+      "snr": 19.54424179294849,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": 0.007266079841602435,
+          "error": 0.000984258519137056,
+          "snr_diagonal": 7.382287986669332,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.008847405892589366,
+          "error": 0.0012912463672462337,
+          "snr_diagonal": 6.851834101541534,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.008520149174002789,
+          "error": 0.0010177051666873747,
+          "snr_diagonal": 8.371922883850372,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": 0.007497877201531722,
+          "error": 0.0012394545656033492,
+          "snr_diagonal": 6.049336062497668,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": 0.005771924407873774,
+          "error": 0.0010683072667272294,
+          "snr_diagonal": 5.402869181594285,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": 0.00834803828021502,
+          "error": 0.0012624341453851254,
+          "snr_diagonal": 6.612652478334479,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": 0.0079688234071984,
+          "error": 0.0010363228609226044,
+          "snr_diagonal": 7.68951811031556,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": 0.008192013972766032,
+          "error": 0.0011922375014190517,
+          "snr_diagonal": 6.871125898166723,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "bright_neighbor_r1.0": {
+      "center": [
+        6.927486042201956,
+        12.131157432271337
+      ],
+      "radius_pixels": 1.0,
+      "n_pixels": 3,
+      "median_flux_bg_sub_e_s": 14264.73949432373,
+      "depth": 9.246903467533753e-06,
+      "error_max_diagonal_event_scatter": 0.00020481759055860344,
+      "snr": 0.045147018097002674,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": -0.00013419651620139028,
+          "error": 0.00017297733028362502,
+          "snr_diagonal": -0.7758040662400838,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.00031542709150866877,
+          "error": 0.00020523227041762407,
+          "snr_diagonal": 1.5369273597510318,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.00028758488253255443,
+          "error": 0.00016958232190153187,
+          "snr_diagonal": 1.6958423455219633,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": -3.816854071492237e-05,
+          "error": 0.00021178652267816298,
+          "snr_diagonal": -0.18022176403039775,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": -0.0003220865356701186,
+          "error": 0.0001983251751238865,
+          "snr_diagonal": -1.6240325287443858,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": -4.5779383509136906e-05,
+          "error": 0.0005365728295701044,
+          "snr_diagonal": -0.08531811710595706,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": -0.00023107137725619786,
+          "error": 0.00021344075354078987,
+          "snr_diagonal": -1.082601955919532,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": 0.0014849280296840295,
+          "error": 0.0007268149744260722,
+          "snr_diagonal": 2.043061964782164,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "bright_neighbor_r1.5": {
+      "center": [
+        6.927486042201956,
+        12.131157432271337
+      ],
+      "radius_pixels": 1.5,
+      "n_pixels": 8,
+      "median_flux_bg_sub_e_s": 28786.31494140625,
+      "depth": -9.180302498614843e-06,
+      "error_max_diagonal_event_scatter": 0.00010514239005130959,
+      "snr": -0.08731304751713222,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": -3.322451336185139e-05,
+          "error": 0.00016165665132568288,
+          "snr_diagonal": -0.20552518618559876,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.00022118654299640994,
+          "error": 0.00019063664744504852,
+          "snr_diagonal": 1.1602519555436868,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.0002369355990092803,
+          "error": 0.00015125639571651715,
+          "snr_diagonal": 1.5664501186008826,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": -9.766167399538617e-05,
+          "error": 0.00015801062785225195,
+          "snr_diagonal": -0.6180702863019116,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": -0.00020902026276914398,
+          "error": 0.0001616879581110763,
+          "snr_diagonal": -1.2927385886433878,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": -1.7182311949692775e-05,
+          "error": 0.0003552351099056955,
+          "snr_diagonal": -0.04836884494399828,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": -0.00024132145696276197,
+          "error": 0.00016477618801364108,
+          "snr_diagonal": -1.4645408409544227,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": 0.0006594231678480611,
+          "error": 0.00042946155436590384,
+          "snr_diagonal": 1.5354649587241715,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "bright_neighbor_r2.0": {
+      "center": [
+        6.927486042201956,
+        12.131157432271337
+      ],
+      "radius_pixels": 2.0,
+      "n_pixels": 11,
+      "median_flux_bg_sub_e_s": 31938.45703125,
+      "depth": -2.0081510366085107e-05,
+      "error_max_diagonal_event_scatter": 7.591235638814934e-05,
+      "snr": -0.2645354632835509,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": -8.111198918636653e-05,
+          "error": 0.00015383580537444807,
+          "snr_diagonal": -0.5272633961185679,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.0002585968647148551,
+          "error": 0.00018222614377750486,
+          "snr_diagonal": 1.419098595592286,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.00025960834122340515,
+          "error": 0.00014797876253630157,
+          "snr_diagonal": 1.7543621582841595,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": -0.00013902705034385399,
+          "error": 0.0001348459774809657,
+          "snr_diagonal": -1.0310062854005302,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": -0.00020249155982110523,
+          "error": 0.00016122715768689412,
+          "snr_diagonal": -1.2559395248680578,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": 2.3165210976117123e-05,
+          "error": 0.0002540794445695414,
+          "snr_diagonal": 0.0911731014500735,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": -0.00022853476787054738,
+          "error": 0.000156183586716169,
+          "snr_diagonal": -1.4632444591368075,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": 0.0002681427960060656,
+          "error": 0.00031810253931785384,
+          "snr_diagonal": 0.8429445316000211,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "third_star_r1.0": {
+      "center": [
+        6.895857846004964,
+        2.13267082235899
+      ],
+      "radius_pixels": 1.0,
+      "n_pixels": 3,
+      "median_flux_bg_sub_e_s": 205.56690216064453,
+      "depth": -0.0006209440077607215,
+      "error_max_diagonal_event_scatter": 0.0013133459946308788,
+      "snr": -0.4727954478859475,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": 0.0014495787673205474,
+          "error": 0.002253962850019499,
+          "snr_diagonal": 0.6431245161418729,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": -0.0023609166377736024,
+          "error": 0.0033700263979467102,
+          "snr_diagonal": -0.7005632475793251,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.0014967894876021237,
+          "error": 0.0024846768663819344,
+          "snr_diagonal": 0.6024081070073614,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": -0.004844192935770986,
+          "error": 0.0030523725570700665,
+          "snr_diagonal": -1.5870254515788416,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": -0.006674318183680361,
+          "error": 0.0031405509368836637,
+          "snr_diagonal": -2.1252061558037387,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": -0.0005202102898707039,
+          "error": 0.0036008184299468108,
+          "snr_diagonal": -0.1444700142457303,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": -0.0007641796451671734,
+          "error": 0.0029786366210214988,
+          "snr_diagonal": -0.2565534982595844,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": 0.004942290983984243,
+          "error": 0.0034114503492293333,
+          "snr_diagonal": 1.4487360149036717,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "third_star_r1.5": {
+      "center": [
+        6.895857846004964,
+        2.13267082235899
+      ],
+      "radius_pixels": 1.5,
+      "n_pixels": 8,
+      "median_flux_bg_sub_e_s": 418.6435546875,
+      "depth": -1.4467813010801213e-05,
+      "error_max_diagonal_event_scatter": 0.0011018158726499255,
+      "snr": -0.01313088091207595,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": 0.0020149764942882786,
+          "error": 0.0026135239001707686,
+          "snr_diagonal": 0.7709807031635024,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.00341512265507804,
+          "error": 0.0035457089557536076,
+          "snr_diagonal": 0.9631706092335454,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.0023850719655278407,
+          "error": 0.00272525837318976,
+          "snr_diagonal": 0.8751727869149705,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": -0.0035254841566640938,
+          "error": 0.003366130550089049,
+          "snr_diagonal": -1.047340293017105,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": -0.004317382164163552,
+          "error": 0.002946403764975155,
+          "snr_diagonal": -1.4653056772074677,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": -0.0032496550617169273,
+          "error": 0.003710494802942275,
+          "snr_diagonal": -0.8758010007560393,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": -0.00026443010413124135,
+          "error": 0.00305315936015781,
+          "snr_diagonal": -0.08660868069381535,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": 0.002170483153991043,
+          "error": 0.003540323338351785,
+          "snr_diagonal": 0.6130748371140367,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "third_star_r2.0": {
+      "center": [
+        6.895857846004964,
+        2.13267082235899
+      ],
+      "radius_pixels": 2.0,
+      "n_pixels": 11,
+      "median_flux_bg_sub_e_s": 452.90234375,
+      "depth": 4.865983562278598e-05,
+      "error_max_diagonal_event_scatter": 0.0013367874219222715,
+      "snr": 0.03640057859971048,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": 0.001677531482710659,
+          "error": 0.0031867540281725073,
+          "snr_diagonal": 0.5264075820977828,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.00462566915479834,
+          "error": 0.004281659040059383,
+          "snr_diagonal": 1.0803450511870243,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.0028775225574719787,
+          "error": 0.003331387706666107,
+          "snr_diagonal": 0.8637609341338613,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": -0.002748554543443138,
+          "error": 0.004224280197881465,
+          "snr_diagonal": -0.6506563046697461,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": -0.005315734100202141,
+          "error": 0.0034027694182066723,
+          "snr_diagonal": -1.5621787570324523,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": -0.004013281318230089,
+          "error": 0.0043378082555466015,
+          "snr_diagonal": -0.9251864263706097,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": 0.00018725248850892662,
+          "error": 0.003761412013833337,
+          "snr_diagonal": 0.04978249865217332,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": 0.003256257905130955,
+          "error": 0.004461197815033211,
+          "snr_diagonal": 0.7299066394586032,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "intermediate_r1.0": {
+      "center": [
+        7.150597548142622,
+        9.904668822058367
+      ],
+      "radius_pixels": 1.0,
+      "n_pixels": 3,
+      "median_flux_bg_sub_e_s": 1078.9763412475586,
+      "depth": 0.0007252009478564552,
+      "error_max_diagonal_event_scatter": 0.0011703804172829154,
+      "snr": 0.6196284021395693,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": 0.001116539226176494,
+          "error": 0.0008426536715599896,
+          "snr_diagonal": 1.325027426878073,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.002200129462802236,
+          "error": 0.001043508478318504,
+          "snr_diagonal": 2.1083963460915007,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.0022724677429160067,
+          "error": 0.0008829163813221529,
+          "snr_diagonal": 2.573819889390911,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": 0.0015159699031646046,
+          "error": 0.0009541196330860303,
+          "snr_diagonal": 1.5888677379599774,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": -0.0007894806746506777,
+          "error": 0.0008013173448781397,
+          "snr_diagonal": -0.9852284861882504,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": 0.001166399706546306,
+          "error": 0.0020133893105821563,
+          "snr_diagonal": 0.5793214955576825,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": -0.0004938955675533041,
+          "error": 0.0009277438742702061,
+          "snr_diagonal": -0.5323619818474346,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": -0.007811257624912971,
+          "error": 0.0027950978835089924,
+          "snr_diagonal": -2.794627576729672,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "intermediate_r1.5": {
+      "center": [
+        7.150597548142622,
+        9.904668822058367
+      ],
+      "radius_pixels": 1.5,
+      "n_pixels": 8,
+      "median_flux_bg_sub_e_s": 8753.585159301758,
+      "depth": 0.0001738912788039819,
+      "error_max_diagonal_event_scatter": 0.0004263409137710974,
+      "snr": 0.4078690859525253,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": -1.2341689989980864e-05,
+          "error": 0.0002776411210497187,
+          "snr_diagonal": -0.0444519527342305,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.0008448661902986654,
+          "error": 0.00029927396967385984,
+          "snr_diagonal": 2.823052707254748,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.0004679134019514031,
+          "error": 0.00023956028151754904,
+          "snr_diagonal": 1.9532177829617636,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": 0.0002651577632202251,
+          "error": 0.00026752678288349867,
+          "snr_diagonal": 0.9911447383408142,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": -1.0984556984894311e-05,
+          "error": 0.00024284982124552783,
+          "snr_diagonal": -0.0452318924039422,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": 0.0005720553498738123,
+          "error": 0.0007036907337355057,
+          "snr_diagonal": 0.8129357435717339,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": -0.000329708653519889,
+          "error": 0.0002966855315130288,
+          "snr_diagonal": -1.1113068164748372,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": -0.0029860319459895646,
+          "error": 0.0009609331720218229,
+          "snr_diagonal": -3.1074293540172966,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    },
+    "intermediate_r2.0": {
+      "center": [
+        7.150597548142622,
+        9.904668822058367
+      ],
+      "radius_pixels": 2.0,
+      "n_pixels": 11,
+      "median_flux_bg_sub_e_s": 10835.083763122559,
+      "depth": 0.00030875375657814116,
+      "error_max_diagonal_event_scatter": 0.0003477477038501756,
+      "snr": 0.8878671322907291,
+      "events": [
+        {
+          "cycle": 294,
+          "depth": 0.00041002964971448286,
+          "error": 0.00025489423091100595,
+          "snr_diagonal": 1.6086266379941767,
+          "n_in": 13
+        },
+        {
+          "cycle": 295,
+          "depth": 0.000934657559232166,
+          "error": 0.00030818612380123403,
+          "snr_diagonal": 3.03276976816444,
+          "n_in": 13
+        },
+        {
+          "cycle": 296,
+          "depth": 0.0006399371876655291,
+          "error": 0.0002332749007845182,
+          "snr_diagonal": 2.743274932336827,
+          "n_in": 13
+        },
+        {
+          "cycle": 297,
+          "depth": 7.670096652967473e-05,
+          "error": 0.00024038123528893708,
+          "snr_diagonal": 0.31908050741764654,
+          "n_in": 14
+        },
+        {
+          "cycle": 298,
+          "depth": 0.00011318637619450733,
+          "error": 0.0002264267638790354,
+          "snr_diagonal": 0.49988073077339573,
+          "n_in": 13
+        },
+        {
+          "cycle": 299,
+          "depth": 0.0006970387859146498,
+          "error": 0.0005697959026719079,
+          "snr_diagonal": 1.2233130892062754,
+          "n_in": 13
+        },
+        {
+          "cycle": 300,
+          "depth": 5.3038093002166775e-05,
+          "error": 0.00026909810805635787,
+          "snr_diagonal": 0.19709574840659555,
+          "n_in": 13
+        },
+        {
+          "cycle": 301,
+          "depth": -0.0022085045061248643,
+          "error": 0.0007865469309421878,
+          "snr_diagonal": -2.8078483549345794,
+          "n_in": 13
+        }
+      ],
+      "limitation": "Uncorrected aperture dilution; empirical pointing regression; no physical transit or PRF model."
+    }
+  },
+  "independent_aperture_period_checks": {
+    "target": {
+      "all_quality_zero": {
+        "period_days": 3.5229999999999997,
+        "epoch_btjd": 2362.437505857902,
+        "duration_days": 0.05600000000000001,
+        "depth": 0.006342997633443734,
+        "depth_err_diagonal": 0.00032597553688263025,
+        "snr_diagonal": 19.45850812641678,
+        "noise_floor": 0.0025861230309601147,
+        "search_range_days": [
+          2.8,
+          4.3
+        ],
+        "n_periods": 4001,
+        "n_kept": 3865,
+        "limitation": "Regional consistency search, not independent significance test; median detrending uncorrected pointing and event-correlated noise."
+      },
+      "comparison_star_image_outlier_mask": {
+        "period_days": 3.5229999999999997,
+        "epoch_btjd": 2362.437505857902,
+        "duration_days": 0.05600000000000001,
+        "depth": 0.006342997633443734,
+        "depth_err_diagonal": 0.00032597553688263025,
+        "snr_diagonal": 19.45850812641678,
+        "noise_floor": 0.0025861230309601147,
+        "search_range_days": [
+          2.8,
+          4.3
+        ],
+        "n_periods": 4001,
+        "n_kept": 3865,
+        "limitation": "Regional consistency search, not independent significance test; median detrending uncorrected pointing and event-correlated noise."
+      }
+    },
+    "bright_neighbor": {
+      "all_quality_zero": {
+        "period_days": 3.298,
+        "epoch_btjd": 2363.888255857902,
+        "duration_days": 0.09450000000000001,
+        "depth": 0.0003039205531520286,
+        "depth_err_diagonal": 3.775391798434556e-05,
+        "snr_diagonal": 8.050040085324323,
+        "noise_floor": 0.00038682964944659957,
+        "search_range_days": [
+          2.8,
+          4.3
+        ],
+        "n_periods": 4001,
+        "n_kept": 3865,
+        "limitation": "Regional consistency search, not independent significance test; median detrending uncorrected pointing and event-correlated noise."
+      },
+      "comparison_star_image_outlier_mask": {
+        "period_days": 3.298,
+        "epoch_btjd": 2363.888255857902,
+        "duration_days": 0.09450000000000001,
+        "depth": 0.0003039205531520286,
+        "depth_err_diagonal": 3.775391798434556e-05,
+        "snr_diagonal": 8.050040085324323,
+        "noise_floor": 0.00038682964944659957,
+        "search_range_days": [
+          2.8,
+          4.3
+        ],
+        "n_periods": 4001,
+        "n_kept": 3865,
+        "limitation": "Regional consistency search, not independent significance test; median detrending uncorrected pointing and event-correlated noise."
+      }
+    },
+    "third_star": {
+      "all_quality_zero": {
+        "period_days": 3.97825,
+        "epoch_btjd": 2362.812005857902,
+        "duration_days": 0.035,
+        "depth": 0.006639286117193153,
+        "depth_err_diagonal": 0.0014448727950846273,
+        "snr_diagonal": 4.595066181451831,
+        "noise_floor": 0.008628768120622814,
+        "search_range_days": [
+          2.8,
+          4.3
+        ],
+        "n_periods": 4001,
+        "n_kept": 3865,
+        "limitation": "Regional consistency search, not independent significance test; median detrending uncorrected pointing and event-correlated noise."
+      },
+      "comparison_star_image_outlier_mask": {
+        "period_days": 3.97825,
+        "epoch_btjd": 2362.812005857902,
+        "duration_days": 0.035,
+        "depth": 0.006639286117193153,
+        "depth_err_diagonal": 0.0014448727950846273,
+        "snr_diagonal": 4.595066181451831,
+        "noise_floor": 0.008628768120622814,
+        "search_range_days": [
+          2.8,
+          4.3
+        ],
+        "n_periods": 4001,
+        "n_kept": 3865,
+        "limitation": "Regional consistency search, not independent significance test; median detrending uncorrected pointing and event-correlated noise."
+      }
+    },
+    "comparison_star_mask": {
+      "sigma_threshold": 6,
+      "mad_sigma": 0.0004516696745315399,
+      "n_removed": 0,
+      "n_candidate_in_transit_removed": 0,
+      "removed_times_btjd": [],
+      "limitation": "Useful only for testing target signal, not for searching the chosen bright comparison source; all original data retained."
+    }
+  },
+  "reference_vs_difference_roi_sensitivity": [
+    {
+      "radius_pixels": 2.0,
+      "n_pixels": 13,
+      "reference_x": 7.516952444433371,
+      "reference_y": 7.374944049470146,
+      "difference_x": 7.544699014975144,
+      "difference_y": 7.473967707000158,
+      "reference_sigma_x": 0.7129547093017211,
+      "reference_sigma_y": 0.7119715201335817,
+      "difference_minus_reference_offset_pixels": 0.10283752684429279,
+      "reference_width_bound_hit": false,
+      "difference_width_bound_hit": true
+    },
+    {
+      "radius_pixels": 2.2,
+      "n_pixels": 15,
+      "reference_x": 7.502321812151681,
+      "reference_y": 7.439416949868214,
+      "difference_x": 7.551782081758803,
+      "difference_y": 7.4301151640241505,
+      "reference_sigma_x": 0.4000004682904037,
+      "reference_sigma_y": 0.47971298680960667,
+      "difference_minus_reference_offset_pixels": 0.05032734335823768,
+      "reference_width_bound_hit": true,
+      "difference_width_bound_hit": false
+    },
+    {
+      "radius_pixels": 2.5,
+      "n_pixels": 20,
+      "reference_x": 7.086876801027489,
+      "reference_y": 6.209823694104317,
+      "difference_x": 7.576076166347802,
+      "difference_y": 7.435672557430624,
+      "reference_sigma_x": 2.79999999999956,
+      "reference_sigma_y": 1.3712542378444594,
+      "difference_minus_reference_offset_pixels": 1.3198566038582353,
+      "reference_width_bound_hit": true,
+      "difference_width_bound_hit": false
+    },
+    {
+      "radius_pixels": 3.0,
+      "n_pixels": 29,
+      "reference_x": 7.50279597727716,
+      "reference_y": 7.251795235096115,
+      "difference_x": 7.594578055944247,
+      "difference_y": 7.432211350258741,
+      "reference_sigma_x": 0.40000000074569714,
+      "reference_sigma_y": 0.6546147805081007,
+      "difference_minus_reference_offset_pixels": 0.20242016839935997,
+      "reference_width_bound_hit": true,
+      "difference_width_bound_hit": false
+    }
+  ],
+  "localization_caution": "Absolute Gaussian vs WCS positions depend on PSF asymmetry and ROI/background; reference-source comparison is essential. Target-neighborhood source attribution cannot rule out unresolved companions.",
+  "limitations": [
+    "Gaussian is not calibrated TESS PRF; WCS/catalog epochs not proper-motion propagated.",
+    "Gaia cone may miss close unresolved companions; source localization does not validate planet.",
+    "Short per-event windows and regressors permit correlated residual uncertainty; no survey-wide false-alarm statistic.",
+    "Diluted aperture depths are not stellar transit depths."
+  ]
+}
