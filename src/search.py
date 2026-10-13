@@ -20,6 +20,9 @@ def phase(t,p,t0): return (t-t0+.5*p)%p-.5*p
 def read_curve(path, column='PDCSAP_FLUX'):
     with fits.open(path) as hdul:
         d=hdul[1].data; h=dict(hdul[0].header)
+        timing=hdul[1].header
+        if timing.get('TIMESYS') != 'TDB' or abs(timing.get('BJDREFI',2457000)+timing.get('BJDREFF',0)-2457000)>1e-8:
+            raise ValueError('Unexpected time system/reference; do not assume BTJD')
         t=np.array(d['TIME'],dtype=float); f=np.array(d[column],dtype=float); e=np.array(d[column+'_ERR'],dtype=float); q=np.array(d['QUALITY'])
     keep=np.isfinite(t)&np.isfinite(f)&np.isfinite(e)&(e>0)&(q==0)&(f>0)
     t,f,e=t[keep],f[keep],e[keep]
@@ -88,7 +91,7 @@ def scan(t,f,e,minimum=.7,maximum=13.0,n_peaks=3):
         chosen.append({'period':p,'t0_btjd':t0,'duration_days':duration,'depth':float(r.depth[j]),
                        'depth_err':float(r.depth_err[j]),'snr':float(r.depth_snr[j]),
                        'n_events':len(centers),'events':centers,
-                       'odd_even_sigma':float(abs(odd[0]-even[0])/np.hypot(odd[1],even[1])) if np.hypot(odd[1],even[1])>0 else None,
+                       'odd_even_sigma':float(abs(odd[0]-even[0])/np.hypot(odd[1],even[1])) if np.hypot(odd[1],even[1])>0 and len({v['cycle']%2 for v in centers})==2 else None,
                        'sde_robust':float((score[j]-np.median(score))/(1.4826*np.median(np.abs(score-np.median(score))))),
                        'period_grid_count':len(score)})
         # Suppress very close aliases only, preserving harmonics for explicit review.

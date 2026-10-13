@@ -1,0 +1,2315 @@
+{
+  "tic": 79748331,
+  "sector": 94,
+  "source_fits": "/workspace/tess-research-data/lightcurves/tess2025180145000-s0094-0000000079748331-0291-s_lc.fits",
+  "source_sha256": "d74b4cfb486d90e607ddeff4d8eb5117652a16a60a442142bb8bf5e27abd795b",
+  "metadata": {
+    "TIMESYS": "TDB",
+    "BJDREFI": 2457000,
+    "BJDREFF": 0.0,
+    "CROWDSAP": 0.96115011,
+    "FLFRCSAP": 0.88049412,
+    "TSTART": 3856.351409215667,
+    "TSTOP": 3881.595805564438,
+    "TICID": 79748331,
+    "SECTOR": 94,
+    "TEFF": 4656.0,
+    "RADIUS": 0.73718899,
+    "TESSMAG": 10.00590038,
+    "PROCVER": "spoc-5.0.122-20250630"
+  },
+  "known_planets": [
+    {
+      "tic": 79748331,
+      "name": "TOI-1064 b",
+      "period": 6.443868,
+      "epoch_bjd": 2459036.8534,
+      "duration_hours": 1.98,
+      "source": "NASA pscomppars confirmed transit; <a refstr=WILSON_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022MNRAS.511.1043W/abstract target=ref>Wilson et al. 2022</a>"
+    },
+    {
+      "tic": 79748331,
+      "name": "TOI-1064 c",
+      "period": 12.226574,
+      "epoch_bjd": 2459043.51289,
+      "duration_hours": 2.37,
+      "source": "NASA pscomppars confirmed transit; <a refstr=WILSON_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022MNRAS.511.1043W/abstract target=ref>Wilson et al. 2022</a>"
+    }
+  ],
+  "usable_segments_btjd": [
+    [
+      3857.0285064995373,
+      3862.3244165015863
+    ],
+    [
+      3862.5410847495314,
+      3867.836922750888
+    ],
+    [
+      3870.018864653129,
+      3875.8174445320715
+    ],
+    [
+      3876.034108359815,
+      3881.0867895192237
+    ]
+  ],
+  "edge_buffer_days": 0.5,
+  "leads": [
+    {
+      "original_width": 1.0,
+      "screen": {
+        "period": 12.030505139978661,
+        "t0_btjd": 3869.014785974499,
+        "duration_days": 0.09,
+        "depth": 0.0033738121422260676,
+        "depth_err": 0.00016105086925756408,
+        "snr": 20.948735997384937,
+        "n_events": 1,
+        "events": [
+          {
+            "cycle": 1,
+            "time": 3881.0452911144775,
+            "n": 13,
+            "depth": 0.00364230221143913
+          }
+        ],
+        "odd_even_sigma": 0.0,
+        "sde_robust": 7.899084177663729,
+        "period_grid_count": 24716
+      },
+      "tests": [
+        {
+          "width": 1.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.003373812142226096,
+            "depth_err_diagonal": 0.00016105086925755934,
+            "snr_diagonal": 20.94873599738573
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3869.014785974499,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 1.0040786786303215,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.1028739745933622,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.7423699746025676,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0452911144775,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.0037347349174728928,
+              "depth_err_diagonal": 0.0001801861466869723,
+              "snr_local_diagonal": 20.727092432699873,
+              "nearest_usable_segment_edge_days": 0.04149840474610755,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2456431145720481,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5463011145812544,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 1.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0011851379292466824,
+            "depth_err_diagonal": 0.00017527729081519302,
+            "snr_diagonal": 6.761503008945153
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3869.014785974499,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 1.0040786786303215,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.1028739745933622,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.7423699746025676,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0452911144775,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.00083455554722911,
+              "depth_err_diagonal": 0.00019609664668312877,
+              "snr_local_diagonal": 4.255837931678977,
+              "nearest_usable_segment_edge_days": 0.04149840474610755,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2456431145720481,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5463011145812544,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0033313048444466586,
+            "depth_err_diagonal": 0.00017438705536925087,
+            "snr_diagonal": 19.10293649601963
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3869.014785974499,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 1.0040786786303215,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.1028739745933622,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.7423699746025676,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0452911144775,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.003706981453353797,
+              "depth_err_diagonal": 0.00019510579201075185,
+              "snr_local_diagonal": 18.99985343925368,
+              "nearest_usable_segment_edge_days": 0.04149840474610755,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2456431145720481,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5463011145812544,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0018191760167755033,
+            "depth_err_diagonal": 0.00019875940950872114,
+            "snr_diagonal": 9.152653558752306
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3869.014785974499,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 1.0040786786303215,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.1028739745933622,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.7423699746025676,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0452911144775,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.0010074797791762569,
+              "depth_err_diagonal": 0.00022237535597199526,
+              "snr_local_diagonal": 4.530537004753051,
+              "nearest_usable_segment_edge_days": 0.04149840474610755,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2456431145720481,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5463011145812544,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "original_width": 1.0,
+      "screen": {
+        "period": 11.844333938130456,
+        "t0_btjd": 3857.355285974499,
+        "duration_days": 0.09,
+        "depth": 0.0017755682362745446,
+        "depth_err": 0.00010693448875161179,
+        "snr": 16.6042617026846,
+        "n_events": 2,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 3857.355285974499,
+            "n": 13,
+            "depth": 0.0003266319856858324
+          },
+          {
+            "cycle": 2,
+            "time": 3881.04395385076,
+            "n": 13,
+            "depth": 0.00364230221143913
+          }
+        ],
+        "odd_even_sigma": 0.0,
+        "sde_robust": 5.6455620729189295,
+        "period_grid_count": 24716
+      },
+      "tests": [
+        {
+          "width": 1.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0017755682362746716,
+            "depth_err_diagonal": 0.00010693448875161168,
+            "snr_diagonal": 16.604261702685804
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3857.355285974499,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 73,
+              "depth_local": 0.0006014776993163995,
+              "depth_err_diagonal": 0.00015446777284607437,
+              "snr_local_diagonal": 3.8938717651853905,
+              "nearest_usable_segment_edge_days": 0.32677947496176785,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -3.1127580254063902,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.309443974602814,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.1996199126297,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.8192447404994709,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.287707912724213,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.927203912733418,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.04395385076,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.0037347349174728928,
+              "depth_err_diagonal": 0.0001801861466869723,
+              "snr_local_diagonal": 20.727092432699873,
+              "nearest_usable_segment_edge_days": 0.04283566846379472,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.244305850854361,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5449638508635672,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 1.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.000575275505925954,
+            "depth_err_diagonal": 0.00011551930091990126,
+            "snr_diagonal": 4.979908130891809
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3857.355285974499,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 73,
+              "depth_local": -0.00014735893634554298,
+              "depth_err_diagonal": 0.00016590401076646978,
+              "snr_local_diagonal": -0.8882180464760959,
+              "nearest_usable_segment_edge_days": 0.32677947496176785,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -3.1127580254063902,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.309443974602814,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.1996199126297,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.8192447404994709,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.287707912724213,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.927203912733418,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.04395385076,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.00083455554722911,
+              "depth_err_diagonal": 0.00019609664668312877,
+              "snr_local_diagonal": 4.255837931678977,
+              "nearest_usable_segment_edge_days": 0.04283566846379472,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.244305850854361,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5449638508635672,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0017343798385669462,
+            "depth_err_diagonal": 0.00011578924167883422,
+            "snr_diagonal": 14.978764982135498
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3857.355285974499,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 73,
+              "depth_local": 0.00048492600489036253,
+              "depth_err_diagonal": 0.00016725542065268017,
+              "snr_local_diagonal": 2.8993141328277297,
+              "nearest_usable_segment_edge_days": 0.32677947496176785,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -3.1127580254063902,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.309443974602814,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.1996199126297,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.8192447404994709,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.287707912724213,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.927203912733418,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.04395385076,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.003706981453353797,
+              "depth_err_diagonal": 0.00019510579201075185,
+              "snr_local_diagonal": 18.99985343925368,
+              "nearest_usable_segment_edge_days": 0.04283566846379472,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.244305850854361,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5449638508635672,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0011984996099393408,
+            "depth_err_diagonal": 0.00013099774832345287,
+            "snr_diagonal": 9.149009240831129
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3857.355285974499,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 73,
+              "depth_local": -3.767845377811163e-05,
+              "depth_err_diagonal": 0.0001881377513089732,
+              "snr_local_diagonal": -0.20027056513625163,
+              "nearest_usable_segment_edge_days": 0.32677947496176785,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -3.1127580254063902,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.309443974602814,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.1996199126297,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.8192447404994709,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.287707912724213,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.927203912733418,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.04395385076,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.0010074797791762569,
+              "depth_err_diagonal": 0.00022237535597199526,
+              "snr_local_diagonal": 4.530537004753051,
+              "nearest_usable_segment_edge_days": 0.04283566846379472,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.244305850854361,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5449638508635672,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "original_width": 1.0,
+      "screen": {
+        "period": 11.678667937228457,
+        "t0_btjd": 3857.683785974499,
+        "duration_days": 0.09,
+        "depth": 0.0017188605153139434,
+        "depth_err": 0.00010404002630872592,
+        "snr": 16.52114648850085,
+        "n_events": 2,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 3857.683785974499,
+            "n": 13,
+            "depth": 0.0001709422121558557
+          },
+          {
+            "cycle": 2,
+            "time": 3881.041121848956,
+            "n": 14,
+            "depth": 0.0034809633008010543
+          }
+        ],
+        "odd_even_sigma": 0.0,
+        "sde_robust": 5.602449383166763,
+        "period_grid_count": 24716
+      },
+      "tests": [
+        {
+          "width": 1.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0017188605153137804,
+            "depth_err_diagonal": 0.00010404002630872587,
+            "snr_diagonal": 16.52114648849929
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.0005272593627669853,
+            "depth_err_diagonal": 0.00014079669007588624,
+            "snr_diagonal": 3.7448278257308774
+          },
+          "events": [
+            {
+              "center_btjd": 3857.683785974499,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 77,
+              "depth_local": 0.00030299313686832363,
+              "depth_err_diagonal": 0.00015187192547483523,
+              "snr_local_diagonal": 1.9950569265583504,
+              "nearest_usable_segment_edge_days": 0.6552794749618442,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -2.784258025406314,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.637943974602891,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.3624539117277,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.656410741401487,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.4505419118221967,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.090037911831402,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.041121848956,
+              "n_inside_before_mask": 14,
+              "n_inside_after_mask": 14,
+              "n_baseline": 39,
+              "depth_local": 0.0035155115796566827,
+              "depth_err_diagonal": 0.00017375167052136338,
+              "snr_local_diagonal": 20.23296564060625,
+              "nearest_usable_segment_edge_days": 0.04566767026744856,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2414738490507071,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5421318490599134,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 1.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0005918738941950163,
+            "depth_err_diagonal": 0.00011233108959284166,
+            "snr_diagonal": 5.269012312978879
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.00020502430626057055,
+            "depth_err_diagonal": 0.00015102346718095662,
+            "snr_diagonal": 1.3575658809031979
+          },
+          "events": [
+            {
+              "center_btjd": 3857.683785974499,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 77,
+              "depth_local": 0.00022339426963235987,
+              "depth_err_diagonal": 0.00016289936999551726,
+              "snr_local_diagonal": 1.3713636193835945,
+              "nearest_usable_segment_edge_days": 0.6552794749618442,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -2.784258025406314,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.637943974602891,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.3624539117277,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.656410741401487,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.4505419118221967,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.090037911831402,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.041121848956,
+              "n_inside_before_mask": 14,
+              "n_inside_after_mask": 14,
+              "n_baseline": 39,
+              "depth_local": 0.0007513472495537243,
+              "depth_err_diagonal": 0.00018909302106490396,
+              "snr_local_diagonal": 3.973426651720971,
+              "nearest_usable_segment_edge_days": 0.04566767026744856,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2414738490507071,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5421318490599134,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0019844030508060495,
+            "depth_err_diagonal": 0.0001126210178513039,
+            "snr_diagonal": 17.620183946713233
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.001069141971613452,
+            "depth_err_diagonal": 0.00015237019806053578,
+            "snr_diagonal": 7.016739396694151
+          },
+          "events": [
+            {
+              "center_btjd": 3857.683785974499,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 77,
+              "depth_local": 0.0005323669794649044,
+              "depth_err_diagonal": 0.0001643608126169479,
+              "snr_local_diagonal": 3.2390140386176816,
+              "nearest_usable_segment_edge_days": 0.6552794749618442,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -2.784258025406314,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.637943974602891,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.3624539117277,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.656410741401487,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.4505419118221967,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.090037911831402,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.041121848956,
+              "n_inside_before_mask": 14,
+              "n_inside_after_mask": 14,
+              "n_baseline": 39,
+              "depth_local": 0.0034865770787959605,
+              "depth_err_diagonal": 0.0001881386251484028,
+              "snr_local_diagonal": 18.53195789033627,
+              "nearest_usable_segment_edge_days": 0.04566767026744856,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2414738490507071,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5421318490599134,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0009069967435714199,
+            "depth_err_diagonal": 0.00012742108914940724,
+            "snr_diagonal": 7.11810540646002
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.00031394664113770787,
+            "depth_err_diagonal": 0.00017135531469968394,
+            "snr_diagonal": 1.8321383359945878
+          },
+          "events": [
+            {
+              "center_btjd": 3857.683785974499,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 77,
+              "depth_local": 9.688162231102915e-05,
+              "depth_err_diagonal": 0.00018482652756964037,
+              "snr_local_diagonal": 0.5241759588570171,
+              "nearest_usable_segment_edge_days": 0.6552794749618442,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -2.784258025406314,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.637943974602891,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.3624539117277,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.656410741401487,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.4505419118221967,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.090037911831402,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.041121848956,
+              "n_inside_before_mask": 14,
+              "n_inside_after_mask": 14,
+              "n_baseline": 39,
+              "depth_local": 0.0009232049007183996,
+              "depth_err_diagonal": 0.0002144339423510502,
+              "snr_local_diagonal": 4.305311419434798,
+              "nearest_usable_segment_edge_days": 0.04566767026744856,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2414738490507071,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5421318490599134,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "original_width": 2.0,
+      "screen": {
+        "period": 12.030505130193754,
+        "t0_btjd": 3869.0147859738945,
+        "duration_days": 0.09,
+        "depth": 0.00333130484444643,
+        "depth_err": 0.00017438705536924995,
+        "snr": 19.102936496018422,
+        "n_events": 1,
+        "events": [
+          {
+            "cycle": 1,
+            "time": 3881.0452911040884,
+            "n": 13,
+            "depth": 0.003647620514964256
+          }
+        ],
+        "odd_even_sigma": 0.0,
+        "sde_robust": 7.473428487151367,
+        "period_grid_count": 24716
+      },
+      "tests": [
+        {
+          "width": 1.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.003373812142226096,
+            "depth_err_diagonal": 0.00016105086925755934,
+            "snr_diagonal": 20.94873599738573
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3869.0147859738945,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 1.0040786792346807,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.102873973989003,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.7423699739982084,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0452911040884,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.0037347349174728928,
+              "depth_err_diagonal": 0.0001801861466869723,
+              "snr_local_diagonal": 20.727092432699873,
+              "nearest_usable_segment_edge_days": 0.04149841513526553,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2456431041828901,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5463011041920964,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 1.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0011851379292466824,
+            "depth_err_diagonal": 0.00017527729081519302,
+            "snr_diagonal": 6.761503008945153
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3869.0147859738945,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 1.0040786792346807,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.102873973989003,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.7423699739982084,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0452911040884,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.00083455554722911,
+              "depth_err_diagonal": 0.00019609664668312877,
+              "snr_local_diagonal": 4.255837931678977,
+              "nearest_usable_segment_edge_days": 0.04149841513526553,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2456431041828901,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5463011041920964,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0033313048444466586,
+            "depth_err_diagonal": 0.00017438705536925087,
+            "snr_diagonal": 19.10293649601963
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3869.0147859738945,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 1.0040786792346807,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.102873973989003,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.7423699739982084,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0452911040884,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.003706981453353797,
+              "depth_err_diagonal": 0.00019510579201075185,
+              "snr_local_diagonal": 18.99985343925368,
+              "nearest_usable_segment_edge_days": 0.04149841513526553,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2456431041828901,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5463011041920964,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0018191760167755033,
+            "depth_err_diagonal": 0.00019875940950872114,
+            "snr_diagonal": 9.152653558752306
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "status": "fewer than two remaining in-transit bins",
+            "n_inside": 0,
+            "depth": null,
+            "depth_err_diagonal": null,
+            "snr_diagonal": null
+          },
+          "events": [
+            {
+              "center_btjd": 3869.0147859738945,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 0,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 1.0040786792346807,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.102873973989003,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.7423699739982084,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0452911040884,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.0010074797791762569,
+              "depth_err_diagonal": 0.00022237535597199526,
+              "snr_local_diagonal": 4.530537004753051,
+              "nearest_usable_segment_edge_days": 0.04149841513526553,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2456431041828901,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5463011041920964,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "original_width": 2.0,
+      "screen": {
+        "period": 11.700985336067475,
+        "t0_btjd": 3857.661285973895,
+        "duration_days": 0.18,
+        "depth": 0.0015651835601751018,
+        "depth_err": 8.771073324343514e-05,
+        "snr": 17.84483497397111,
+        "n_events": 2,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 3857.661285973895,
+            "n": 26,
+            "depth": 0.00043307879177101327
+          },
+          {
+            "cycle": 2,
+            "time": 3881.06325664603,
+            "n": 17,
+            "depth": 0.003209293104447286
+          }
+        ],
+        "odd_even_sigma": 0.0,
+        "sde_robust": 6.787792936281935,
+        "period_grid_count": 24716
+      },
+      "tests": [
+        {
+          "width": 1.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0012639173533736114,
+            "depth_err_diagonal": 8.103031417502112e-05,
+            "snr_diagonal": 15.59808037574207
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.0004933844149070943,
+            "depth_err_diagonal": 9.983523436725563e-05,
+            "snr_diagonal": 4.941986844966195
+          },
+          "events": [
+            {
+              "center_btjd": 3857.661285973895,
+              "n_inside_before_mask": 26,
+              "n_inside_after_mask": 26,
+              "n_baseline": 143,
+              "depth_local": 0.000558188760983902,
+              "depth_err_diagonal": 0.00010812112336749104,
+              "snr_local_diagonal": 5.162624504803596,
+              "nearest_usable_segment_edge_days": 0.6327794743574486,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -2.8067580260107095,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.615443973998495,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.362271309962,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 10,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.6565933431670601,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.4503593100566237,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.089855310065829,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.06325664603,
+              "n_inside_before_mask": 17,
+              "n_inside_after_mask": 17,
+              "n_baseline": 78,
+              "depth_local": 0.0029329066972125784,
+              "depth_err_diagonal": 0.0001488017409373522,
+              "snr_local_diagonal": 19.71016386459737,
+              "nearest_usable_segment_edge_days": 0.023532873193744308,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2636086461244114,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5642666461336177,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 1.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0004066779236381324,
+            "depth_err_diagonal": 8.735188024785819e-05,
+            "snr_diagonal": 4.6556287338543445
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.00012361871733457264,
+            "depth_err_diagonal": 0.00010710083632943278,
+            "snr_diagonal": 1.1542273764728812
+          },
+          "events": [
+            {
+              "center_btjd": 3857.661285973895,
+              "n_inside_before_mask": 26,
+              "n_inside_after_mask": 26,
+              "n_baseline": 143,
+              "depth_local": -1.6703515392513246e-05,
+              "depth_err_diagonal": 0.00011597973661170194,
+              "snr_local_diagonal": -0.1440209805652199,
+              "nearest_usable_segment_edge_days": 0.6327794743574486,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -2.8067580260107095,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.615443973998495,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.362271309962,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 10,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.6565933431670601,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.4503593100566237,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.089855310065829,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.06325664603,
+              "n_inside_before_mask": 17,
+              "n_inside_after_mask": 17,
+              "n_baseline": 78,
+              "depth_local": 0.001229884301422679,
+              "depth_err_diagonal": 0.000161934914817316,
+              "snr_local_diagonal": 7.594929745757122,
+              "nearest_usable_segment_edge_days": 0.023532873193744308,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2636086461244114,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5642666461336177,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0015651835601750985,
+            "depth_err_diagonal": 8.771073324343508e-05,
+            "snr_diagonal": 17.844834973971082
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.0009933341222307934,
+            "depth_err_diagonal": 0.0001080467883106038,
+            "snr_diagonal": 9.193555289910519
+          },
+          "events": [
+            {
+              "center_btjd": 3857.661285973895,
+              "n_inside_before_mask": 26,
+              "n_inside_after_mask": 26,
+              "n_baseline": 143,
+              "depth_local": 0.0010064107063876282,
+              "depth_err_diagonal": 0.00011702178960299244,
+              "snr_local_diagonal": 8.600199243251812,
+              "nearest_usable_segment_edge_days": 0.6327794743574486,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -2.8067580260107095,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.615443973998495,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.362271309962,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 10,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.6565933431670601,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.4503593100566237,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.089855310065829,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.06325664603,
+              "n_inside_before_mask": 17,
+              "n_inside_after_mask": 17,
+              "n_baseline": 78,
+              "depth_local": 0.003011068030340458,
+              "depth_err_diagonal": 0.00016112598582517494,
+              "snr_local_diagonal": 18.687662420930227,
+              "nearest_usable_segment_edge_days": 0.023532873193744308,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2636086461244114,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5642666461336177,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.000670163295239945,
+            "depth_err_diagonal": 9.909162077601183e-05,
+            "snr_diagonal": 6.763067250204657
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.00025493821161792773,
+            "depth_err_diagonal": 0.00012151699536757159,
+            "snr_diagonal": 2.0979634235258695
+          },
+          "events": [
+            {
+              "center_btjd": 3857.661285973895,
+              "n_inside_before_mask": 26,
+              "n_inside_after_mask": 26,
+              "n_baseline": 143,
+              "depth_local": -0.00023894622400821852,
+              "depth_err_diagonal": 0.00013158625356019305,
+              "snr_local_diagonal": -1.8158904714079007,
+              "nearest_usable_segment_edge_days": 0.6327794743574486,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -2.8067580260107095,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.615443973998495,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3869.362271309962,
+              "n_inside_before_mask": 0,
+              "n_inside_after_mask": 0,
+              "n_baseline": 10,
+              "depth_local": null,
+              "depth_err_diagonal": null,
+              "snr_local_diagonal": null,
+              "nearest_usable_segment_edge_days": 0.6565933431670601,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 2.4503593100566237,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.089855310065829,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.06325664603,
+              "n_inside_before_mask": 17,
+              "n_inside_after_mask": 17,
+              "n_baseline": 78,
+              "depth_local": 0.001737044811785271,
+              "depth_err_diagonal": 0.00018364434332473358,
+              "snr_local_diagonal": 9.45874389778344,
+              "nearest_usable_segment_edge_days": 0.023532873193744308,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2636086461244114,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.5642666461336177,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "original_width": 2.0,
+      "screen": {
+        "period": 10.98055700226686,
+        "t0_btjd": 3859.083285973895,
+        "duration_days": 0.09,
+        "depth": 0.0015028962962062669,
+        "depth_err": 9.439447946663888e-05,
+        "snr": 15.921442701926482,
+        "n_events": 3,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 3859.083285973895,
+            "n": 12,
+            "depth": 0.0003495625827959481
+          },
+          {
+            "cycle": 1,
+            "time": 3870.0638429761616,
+            "n": 14,
+            "depth": 0.0007003653878809857
+          },
+          {
+            "cycle": 2,
+            "time": 3881.0443999784284,
+            "n": 13,
+            "depth": 0.003647620514964256
+          }
+        ],
+        "odd_even_sigma": 1.8394280817939281,
+        "sde_robust": 5.739589673769918,
+        "period_grid_count": 24716
+      },
+      "tests": [
+        {
+          "width": 1.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0013001270087135142,
+            "depth_err_diagonal": 8.719668680089356e-05,
+            "snr_diagonal": 14.910279924766487
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.00027409293644742316,
+            "depth_err_diagonal": 0.00014652579469800803,
+            "snr_diagonal": 1.8706121813727954
+          },
+          "events": [
+            {
+              "center_btjd": 3859.083285973895,
+              "n_inside_before_mask": 12,
+              "n_inside_after_mask": 12,
+              "n_baseline": 78,
+              "depth_local": 0.0003016512379200309,
+              "depth_err_diagonal": 0.0001569967897451473,
+              "snr_local_diagonal": 1.921384751941113,
+              "nearest_usable_segment_edge_days": 2.054779474357474,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -1.384758026010684,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 6.037443973998521,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3870.0638429761616,
+              "n_inside_before_mask": 14,
+              "n_inside_after_mask": 14,
+              "n_baseline": 39,
+              "depth_local": 0.0004404851889729944,
+              "depth_err_diagonal": 0.00016671723271326544,
+              "snr_local_diagonal": 2.642109527637005,
+              "nearest_usable_segment_edge_days": 0.04497832303241012,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 3.151930976256094,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.791426976265299,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0443999784284,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.0037347349174728928,
+              "depth_err_diagonal": 0.0001801861466869723,
+              "snr_local_diagonal": 20.727092432699873,
+              "nearest_usable_segment_edge_days": 0.04238954079528412,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2447519785228716,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.545409978532078,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 1.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0006106136351129443,
+            "depth_err_diagonal": 9.405689151260756e-05,
+            "snr_diagonal": 6.491960613338965
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.0002191376537755696,
+            "depth_err_diagonal": 0.0001567197605292586,
+            "snr_diagonal": 1.398277109635182
+          },
+          "events": [
+            {
+              "center_btjd": 3859.083285973895,
+              "n_inside_before_mask": 12,
+              "n_inside_after_mask": 12,
+              "n_baseline": 78,
+              "depth_local": 0.0003442231276095109,
+              "depth_err_diagonal": 0.00016791306788294382,
+              "snr_local_diagonal": 2.05000797108583,
+              "nearest_usable_segment_edge_days": 2.054779474357474,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -1.384758026010684,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 6.037443973998521,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3870.0638429761616,
+              "n_inside_before_mask": 14,
+              "n_inside_after_mask": 14,
+              "n_baseline": 39,
+              "depth_local": 0.00031189139738940774,
+              "depth_err_diagonal": 0.00018005298099226525,
+              "snr_local_diagonal": 1.7322201258239986,
+              "nearest_usable_segment_edge_days": 0.04497832303241012,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 3.151930976256094,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.791426976265299,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0443999784284,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.00083455554722911,
+              "depth_err_diagonal": 0.00019609664668312877,
+              "snr_local_diagonal": 4.255837931678977,
+              "nearest_usable_segment_edge_days": 0.04238954079528412,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2447519785228716,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.545409978532078,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "PDCSAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0015028962962062575,
+            "depth_err_diagonal": 9.439447946663885e-05,
+            "snr_diagonal": 15.921442701926388
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.0002467424468920454,
+            "depth_err_diagonal": 0.00015865959591174832,
+            "snr_diagonal": 1.5551687590915815
+          },
+          "events": [
+            {
+              "center_btjd": 3859.083285973895,
+              "n_inside_before_mask": 12,
+              "n_inside_after_mask": 12,
+              "n_baseline": 78,
+              "depth_local": 0.0002961440816556804,
+              "depth_err_diagonal": 0.00016999759253079585,
+              "snr_local_diagonal": 1.742048679907232,
+              "nearest_usable_segment_edge_days": 2.054779474357474,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -1.384758026010684,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 6.037443973998521,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3870.0638429761616,
+              "n_inside_before_mask": 14,
+              "n_inside_after_mask": 14,
+              "n_baseline": 39,
+              "depth_local": 0.000570721768312521,
+              "depth_err_diagonal": 0.00018040522210516035,
+              "snr_local_diagonal": 3.163554589233789,
+              "nearest_usable_segment_edge_days": 0.04497832303241012,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 3.151930976256094,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.791426976265299,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0443999784284,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.003706981453353797,
+              "depth_err_diagonal": 0.00019510579201075185,
+              "snr_local_diagonal": 18.99985343925368,
+              "nearest_usable_segment_edge_days": 0.04238954079528412,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2447519785228716,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.545409978532078,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": 2.0,
+          "column": "SAP_FLUX",
+          "fixed_ephemeris_untrimmed": {
+            "depth": 0.0010531537008883207,
+            "depth_err_diagonal": 0.0001066789803097738,
+            "snr_diagonal": 9.872176297806552
+          },
+          "fixed_ephemeris_edge_trimmed": {
+            "depth": 0.00011893952235098038,
+            "depth_err_diagonal": 0.00017785527815049253,
+            "snr_diagonal": 0.6687432815479308
+          },
+          "events": [
+            {
+              "center_btjd": 3859.083285973895,
+              "n_inside_before_mask": 12,
+              "n_inside_after_mask": 12,
+              "n_baseline": 78,
+              "depth_local": 0.0003222021362524474,
+              "depth_err_diagonal": 0.00019055767379276125,
+              "snr_local_diagonal": 1.690837896157646,
+              "nearest_usable_segment_edge_days": 2.054779474357474,
+              "inside_edge_buffer": false,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": -1.384758026010684,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 6.037443973998521,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3870.0638429761616,
+              "n_inside_before_mask": 14,
+              "n_inside_after_mask": 14,
+              "n_baseline": 39,
+              "depth_local": 0.00046176778437734267,
+              "depth_err_diagonal": 0.00020413257172765756,
+              "snr_local_diagonal": 2.262097520592685,
+              "nearest_usable_segment_edge_days": 0.04497832303241012,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 3.151930976256094,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 4.791426976265299,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            },
+            {
+              "center_btjd": 3881.0443999784284,
+              "n_inside_before_mask": 13,
+              "n_inside_after_mask": 13,
+              "n_baseline": 39,
+              "depth_local": 0.0010074797791762569,
+              "depth_err_diagonal": 0.00022237535597199526,
+              "snr_local_diagonal": 4.530537004753051,
+              "nearest_usable_segment_edge_days": 0.04238954079528412,
+              "inside_edge_buffer": true,
+              "known_phase_offsets": [
+                {
+                  "planet": "TOI-1064 b",
+                  "phase_offset_days": 1.2447519785228716,
+                  "mask_halfwidth_days": 0.070125
+                },
+                {
+                  "planet": "TOI-1064 c",
+                  "phase_offset_days": 3.545409978532078,
+                  "mask_halfwidth_days": 0.0839375
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trimmed_scans": [
+    {
+      "width": 1.0,
+      "n_before_trim": 2960,
+      "n_after_trim": 2383,
+      "peaks": [
+        {
+          "period": 8.348808690766088,
+          "t0_btjd": 3857.668545159724,
+          "duration_days": 0.22949999999999998,
+          "depth": 0.0003686370916238544,
+          "depth_err": 5.214176261670152e-05,
+          "snr": 7.069900845771874,
+          "n_events": 3,
+          "events": [
+            {
+              "cycle": 0,
+              "time": 3857.668545159724,
+              "n": 33,
+              "depth": 0.0003124677793679975
+            },
+            {
+              "cycle": 1,
+              "time": 3866.01735385049,
+              "n": 33,
+              "depth": -1.9979598089525652e-05
+            },
+            {
+              "cycle": 2,
+              "time": 3874.3661625412565,
+              "n": 33,
+              "depth": 0.0009078523947367856
+            }
+          ],
+          "odd_even_sigma": 4.7415568945635105,
+          "sde_robust": 3.9205144664689735,
+          "period_grid_count": 22633
+        },
+        {
+          "period": 9.125757523255075,
+          "t0_btjd": 3865.253295159724,
+          "duration_days": 0.18,
+          "depth": 0.0006644870290075499,
+          "depth_err": 9.401520721634314e-05,
+          "snr": 7.067867515076207,
+          "n_events": 2,
+          "events": [
+            {
+              "cycle": 0,
+              "time": 3865.253295159724,
+              "n": 4,
+              "depth": 0.00036053705533989344
+            },
+            {
+              "cycle": 1,
+              "time": 3874.3790526829794,
+              "n": 26,
+              "depth": 0.0009829528023455048
+            }
+          ],
+          "odd_even_sigma": 1.0229338785890632,
+          "sde_robust": 3.9183575958260937,
+          "period_grid_count": 22633
+        },
+        {
+          "period": 11.448622495066143,
+          "t0_btjd": 3862.920045159724,
+          "duration_days": 0.22949999999999998,
+          "depth": 0.0006449294713721656,
+          "depth_err": 9.127022960450443e-05,
+          "snr": 7.066153708244167,
+          "n_events": 1,
+          "events": [
+            {
+              "cycle": 1,
+              "time": 3874.36866765479,
+              "n": 32,
+              "depth": 0.0009209534663920937
+            }
+          ],
+          "odd_even_sigma": 0.0,
+          "sde_robust": 3.9165396624955884,
+          "period_grid_count": 22633
+        }
+      ]
+    },
+    {
+      "width": 2.0,
+      "n_before_trim": 2960,
+      "n_after_trim": 2383,
+      "peaks": [
+        {
+          "period": 11.518991497190902,
+          "t0_btjd": 3857.6685451744975,
+          "duration_days": 0.22949999999999998,
+          "depth": 0.0009428279056777734,
+          "depth_err": 9.605696397460014e-05,
+          "snr": 9.815299866515463,
+          "n_events": 1,
+          "events": [
+            {
+              "cycle": 0,
+              "time": 3857.6685451744975,
+              "n": 33,
+              "depth": 0.0004787915887508598
+            }
+          ],
+          "odd_even_sigma": 0.0,
+          "sde_robust": 4.761369090190575,
+          "period_grid_count": 22633
+        },
+        {
+          "period": 9.896835590628719,
+          "t0_btjd": 3857.673045174497,
+          "duration_days": 0.22949999999999998,
+          "depth": 0.0008092392820566726,
+          "depth_err": 8.528635323677792e-05,
+          "snr": 9.48849670954984,
+          "n_events": 2,
+          "events": [
+            {
+              "cycle": 0,
+              "time": 3857.673045174497,
+              "n": 33,
+              "depth": 0.00048734641803704903
+            },
+            {
+              "cycle": 2,
+              "time": 3877.4667163557547,
+              "n": 9,
+              "depth": 0.0003526581650027394
+            }
+          ],
+          "odd_even_sigma": 0.0,
+          "sde_robust": 4.506475724272511,
+          "period_grid_count": 22633
+        },
+        {
+          "period": 11.029382327388806,
+          "t0_btjd": 3857.6685451744975,
+          "duration_days": 0.22949999999999998,
+          "depth": 0.0007404943633348098,
+          "depth_err": 7.822914077096076e-05,
+          "snr": 9.465710041515461,
+          "n_events": 2,
+          "events": [
+            {
+              "cycle": 0,
+              "time": 3857.6685451744975,
+              "n": 33,
+              "depth": 0.0004787915887508598
+            },
+            {
+              "cycle": 2,
+              "time": 3879.727309829275,
+              "n": 17,
+              "depth": 0.0004378596069735119
+            }
+          ],
+          "odd_even_sigma": 0.0,
+          "sde_robust": 4.488703036372953,
+          "period_grid_count": 22633
+        }
+      ]
+    }
+  ],
+  "known_ephemeris_checks": [
+    {
+      "name": "TOI-1064 b",
+      "catalog_fixed": {
+        "depth": 0.0007547382583685813,
+        "depth_err_diagonal": 7.361581903609777e-05,
+        "snr_diagonal": 10.252392328861992
+      },
+      "free_phase_depth": 0.0008639109143164198,
+      "free_phase_snr": 11.735733830263012,
+      "free_phase_t0_btjd": 3860.480670159724,
+      "free_phase_offset_from_catalog_days": 0.012626159818512228,
+      "warning": "Free phase can select another signal or correlated noise; inspect consistency across sectors."
+    },
+    {
+      "name": "TOI-1064 c",
+      "catalog_fixed": {
+        "depth": 0.001008074828590444,
+        "depth_err_diagonal": 9.598222341287048e-05,
+        "snr_diagonal": 10.502724283164175
+      },
+      "free_phase_depth": 0.001013831652204433,
+      "free_phase_snr": 10.562794616788851,
+      "free_phase_t0_btjd": 3865.2683576597237,
+      "free_phase_offset_from_catalog_days": -0.00405834017256268,
+      "warning": "Free phase can select another signal or correlated noise; inspect consistency across sectors."
+    }
+  ],
+  "plot": "candidates/known_host_rejected/tic79748331_s0094_boundary_diagnostics.png"
+}
