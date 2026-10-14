@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import math
 import sqlite3
@@ -28,8 +29,40 @@ def valid(value, minimum, maximum):
     return number if number is not None and minimum <= number <= maximum else None
 
 
-def physical_checks(metadata, peak):
-    radius = valid(metadata.get('RADIUS'), .05, 30.)
+def load_stellar_table(path):
+    """Validate a derived current-TIC snapshot and its preserved raw responses."""
+    manifest = path.with_suffix(path.suffix + '.manifest.json')
+    if not manifest.exists():
+        raise ValueError('Current stellar table requires a retrieval/provenance manifest')
+    metadata = json.loads(manifest.read_text())
+    if hashlib.sha256(path.read_bytes()).hexdigest() != metadata.get('sha256'):
+        raise ValueError('Current stellar table checksum mismatch; preserve and investigate')
+    table, checked = {}, set()
+    for row in csv.DictReader(path.open()):
+        tic = int(row['tic'])
+        if tic in table:
+            raise ValueError(f'Duplicate TIC in current stellar table: {tic}')
+        response_path = Path(row['source_response'])
+        if not response_path.is_absolute():
+            response_path = ROOT / response_path
+        if response_path not in checked:
+            if hashlib.sha256(response_path.read_bytes()).hexdigest() != row['source_sha256']:
+                raise ValueError(f'Current TIC raw response checksum mismatch: {response_path}')
+            checked.add(response_path)
+        table[tic] = row
+    return table, metadata
+
+
+def physical_checks(metadata, peak, current_star=None):
+    old = metadata
+    current_requested = current_star is not None
+    if current_requested:
+        # Missing current properties must not fall back to obsolete QLP values.
+        metadata = {**metadata, 'RADIUS': current_star.get('stellar_radius_rsun'),
+                    'MASS': current_star.get('stellar_mass_msun'),
+                    'TEFF': current_star.get('current_teff_kelvin'),
+                    'TESSMAG': current_star.get('current_tmag')}
+    radius = valid(metadata.get('RADIUS'), .05, 1000. if current_requested else 30.)
     mass = valid(metadata.get('MASS', metadata.get('STELLAR_MASS')), .03, 30.)
     tmag = valid(metadata.get('TESSMAG'), 0., 25.)
     teff = valid(metadata.get('TEFF'), 1500., 50000.)
@@ -45,8 +78,14 @@ def physical_checks(metadata, peak):
         warnings.append('tmag_missing_or_invalid')
     planet_radius = RSUN_REARTH * radius * math.sqrt(depth) if radius and 0 < depth < 1 else None
     maximum_duration = None
+    semimajor_over_radius = None
+    inside_photosphere = False
     if mass and radius and period and period > 0:
         semimajor_au = (mass * (period / 365.25) ** 2) ** (1 / 3)
+        semimajor_over_radius = semimajor_au / (RSUN_AU * radius)
+        inside_photosphere = semimajor_over_radius <= 1
+        if inside_photosphere:
+            warnings.append('semimajor_axis_inside_catalog_photosphere')
         radius_sum = RSUN_AU * radius * (1 + math.sqrt(max(depth, 0)))
         argument = radius_sum / semimajor_au
         if 0 < argument < 1:
@@ -59,19 +98,38 @@ def physical_checks(metadata, peak):
         warnings.append('radius_proxy_larger_than_22_rearth')
     if depth > .02:
         warnings.append('depth_above_two_percent')
+    evolved = bool(current_requested and (str(current_star.get('tic_lumclass', '')).upper() == 'GIANT'
+                                          or (radius is not None and radius > 3)))
+    if evolved:
+        warnings.append('current_catalog_evolved_or_giant_stellar_context')
     # Deep transits can be planetary around small stars; retain physically
     # plausible cases. Unmeasured radius does not supply an M-dwarf exemption.
     deep_small_star = bool(radius and radius <= .8 and planet_radius and planet_radius <= 22 and depth <= .30)
     stellar_size = bool(planet_radius and planet_radius > 22)
     excessive_depth = bool(depth > .02 and not deep_small_star)
     return {'radius_rsun': radius, 'mass_msun': mass, 'teff_kelvin': teff, 'tmag': tmag,
+            'radius_error_rsun': numeric(current_star.get('stellar_radius_error_rsun')) if current_requested else None,
+            'mass_error_msun': numeric(current_star.get('stellar_mass_error_msun')) if current_requested else None,
+            'teff_error_kelvin': numeric(current_star.get('current_teff_error_kelvin')) if current_requested else None,
             'radius_proxy_rearth': planet_radius, 'circular_central_duration_hours': maximum_duration * 24 if maximum_duration else None,
+            'semimajor_axis_over_stellar_radius': semimajor_over_radius,
+            'semimajor_axis_inside_catalog_photosphere': inside_photosphere,
             'depth_for_proxy': depth, 'deep_small_star_retained': deep_small_star,
-            'physical_eb_warning': stellar_size or excessive_depth,
-            'physical_warnings': ';'.join(warnings)}
+            'physical_eb_warning': stellar_size or excessive_depth or inside_photosphere,
+            'evolved_star_warning': evolved, 'physical_warnings': ';'.join(warnings),
+            'stellar_properties_source': 'current_public_TIC' if current_requested else 'old_QLP_header_unvalidated',
+            'current_stellar_query_found': str(current_star.get('query_found', '')).lower() == 'true' if current_requested else None,
+            'current_tic_lumclass': current_star.get('tic_lumclass') if current_requested else None,
+            'current_tic_record_version': current_star.get('current_tic_record_version') if current_requested else None,
+            'current_tic_contamination_ratio': numeric(current_star.get('tic_contamination_ratio')) if current_requested else None,
+            'stellar_catalog_flags': current_star.get('stellar_validity_flags') if current_requested else None,
+            'stellar_source_response': current_star.get('source_response') if current_requested else None,
+            'stellar_source_sha256': current_star.get('source_sha256') if current_requested else None,
+            'qlp_header_radius_rsun': old.get('RADIUS'), 'qlp_header_teff_kelvin': old.get('TEFF'),
+            'qlp_header_tmag': old.get('TESSMAG')}
 
 
-def classify(record, scan, peak, index, min_snr=8.):
+def classify(record, scan, peak, index, min_snr=8., current_star=None):
     local = numeric(peak.get('local_snr')) or 0.
     events = int(peak.get('n_events') or 0)
     positive = int(peak.get('n_positive_events') or 0)
@@ -93,7 +151,7 @@ def classify(record, scan, peak, index, min_snr=8.):
     if reasons:
         return None, reasons
     match = index.match_signal(record['tic'], peak['period'], record.get('ra'), record.get('dec'))
-    physical = physical_checks(record.get('metadata', {}), peak)
+    physical = physical_checks(record.get('metadata', {}), peak, current_star)
     flags = record.get('catalog_flags', {})
     # Recheck host flags against the complete index: earlier worker processes
     # may have started before optional support tables were prepared.
@@ -110,6 +168,8 @@ def classify(record, scan, peak, index, min_snr=8.):
         category = 'nearby_known_period_warning'
     elif physical['physical_eb_warning']:
         category = 'stellar_size_or_depth_warning'
+    elif physical['evolved_star_warning']:
+        category = 'evolved_star_warning'
     elif odd_warning:
         category = 'odd_even_warning'
     elif wide_duty_warning:
@@ -126,6 +186,8 @@ def classify(record, scan, peak, index, min_snr=8.):
         score *= .35
     if physical['physical_eb_warning']:
         score *= .25
+    if physical['evolved_star_warning']:
+        score *= .35
     if match['possible_nearby_period_contamination']:
         score *= .45
     if physical['radius_proxy_rearth'] and physical['radius_proxy_rearth'] > 16:
@@ -161,8 +223,11 @@ def classify(record, scan, peak, index, min_snr=8.):
     return row, []
 
 
-def run(db_path, output, report, max_per_category=200, min_snr=8.):
-    index = CatalogIndex()
+def run(db_path, output, report, max_per_category=200, min_snr=8., stellar_table=None, catalog_radius_arcsec=120.):
+    method_hashes = {'prioritizer_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                     'catalog_crossmatch_sha256': hashlib.sha256((ROOT / 'src/broad_crossmatch.py').read_bytes()).hexdigest()}
+    index = CatalogIndex(position_radius_arcsec=catalog_radius_arcsec)
+    stellar, stellar_metadata = load_stellar_table(stellar_table) if stellar_table else ({}, {})
     uri = db_path.resolve().as_uri() + '?mode=ro'
     db = sqlite3.connect(uri, uri=True)
     db.execute('PRAGMA query_only=ON')
@@ -177,13 +242,15 @@ def run(db_path, output, report, max_per_category=200, min_snr=8.):
         for scan_index, scan in enumerate(record.get('scans', [])):
             for peak_index, peak in enumerate(scan.get('peaks', [])):
                 considered += 1
-                row, failures = classify(record, scan, peak, index, min_snr)
+                current = stellar.get(int(tic), {'query_found': False, 'stellar_validity_flags': 'not_in_current_stellar_selection'}) if stellar_table else None
+                row, failures = classify(record, scan, peak, index, min_snr, current)
                 if row is None:
                     rejections.update(failures)
                     continue
                 row['evidence_id'] = f'stars:{tic}/scans/{scan_index}/peaks/{peak_index}'
                 row['source_sqlite'] = str(db_path)
                 row['source_status'] = status
+                row['prioritizer_method_sha256'] = method_hashes['prioritizer_sha256']
                 categories[row['category']] += 1
                 shortlisted.append(row)
     db.rollback()
@@ -200,8 +267,9 @@ def run(db_path, output, report, max_per_category=200, min_snr=8.):
         deduplicated.append(row)
     category_order = {'unrecognized_lead': 0, 'nearby_known_period_warning': 1, 'odd_even_warning': 2,
                       'wide_duty_warning': 3, 'stellar_size_or_depth_warning': 4,
-                      'known_period_control': 5, 'known_eb_control': 6}
+                      'evolved_star_warning': 5, 'known_period_control': 6, 'known_eb_control': 7}
     deduplicated.sort(key=lambda r: (category_order[r['category']], -r['priority_score_unvalidated']))
+    deduplicated_counts = Counter(r['category'] for r in deduplicated)
     saved = []
     count_saved = Counter()
     for row in deduplicated:
@@ -219,6 +287,9 @@ def run(db_path, output, report, max_per_category=200, min_snr=8.):
     else:
         output.write_text('tic,category,period_days\n')
     stamp = datetime.now(timezone.utc).isoformat()
+    stellar_context = (f"Current stellar table: `{stellar_table}`; validated SHA-256 `{stellar_metadata.get('sha256')}`. "
+                       f"Exact current-TIC selection contains {len(stellar):,} targets. Missing current values do not fall back to old QLP headers."
+                       if stellar_table else "Current stellar table was not provided: all QLP stellar header parameters remain unvalidated and must not be used as discovery evidence.")
     counts_lines = '\n'.join(f'- {k}: {v:,}' for k, v in categories.items())
     rows = [r for r in saved if r['category'] == 'unrecognized_lead'][:10]
     table = '| TIC | Period d | Depth ppm | Local S/N | Events | Rp proxy Earth radii | Flags |\n|---|---:|---:|---:|---:|---:|---|\n'
@@ -238,6 +309,9 @@ Snapshot: {stamp}. The SQLite source was opened in read-only/query-only mode
 with a consistent read transaction; the running survey was not changed.
 This report and `results/broad/shortlist.csv` can be regenerated as the survey
 grows. These are screening leads, not credible candidates or discoveries.
+
+{stellar_context}
+Prioritizer method SHA-256: `{method_hashes['prioritizer_sha256']}`.
 
 Source: `{db_path}`. Actual checkpoint statuses: `{status_counts}`.
 Examined {considered:,} stored peaks. Before 1% within-star alias deduplication:
@@ -265,6 +339,10 @@ harmonic matches are recovered controls. EBs are a separate control group;
 period-matched nearby sources are contamination warnings. Known hosts at
 different periods remain eligible for follow-up. Coarse 1% period matching is
 a screening approximation, not ephemeris confirmation.
+The current nearby-object radius is {catalog_radius_arcsec} arcsec (host
+association still requires exact TIC or <=2 arcsec). This captures known
+nearby periods beyond the former 30-arcsec threshold without assigning the
+signal to a neighboring source or discarding the target.
 
 Rplanet proxy = Rstar * sqrt(max(BLS depth, local depth)), without a dilution
 correction or transit fit. Negative sentinel radius/temperature/magnitude
@@ -273,6 +351,17 @@ values are invalid, never physical values. Proxy radii >22 Earth radii or depth
 with proxy radius<=22 Earth radii and depth<=30%, which are retained. These
 limits prioritize follow-up and do not establish a physical planet boundary.
 They can miss diluted EBs or planets around badly characterized stars.
+Current TIC giant classification or radius>3 solar radii receives an evolved
+star warning rather than the isolated-small-star interpretation. Planetary
+signals can exist in evolved systems; these warnings preserve the evidence
+but require a physically appropriate model and stellar variability testing.
+Old QLP radius/temperature/magnitude columns remain in the table for comparison.
+When current mass and radius imply semimajor axis <= stellar radius, the
+catalog-host orbital model receives an explicit
+`semimajor_axis_inside_catalog_photosphere` warning and physical demotion.
+Catalog mass/radius uncertainties are retained; the proxy does not identify
+the source of a blend or establish a universal exclusion independent of
+stellar-parameter errors. Missing current mass never invents this test.
 
 If a measured stellar mass is available, compare duration with the circular
 central-transit maximum and flag durations >1.5 times that prediction. QLP
@@ -293,11 +382,21 @@ test variability and instrumental/common-mode timing, compare all sectors and
 independent SPOC/TGLC data, then perform pixel/nearby-star and literature
 checks. A strong folded BLS peak alone is insufficient.
 
-Reproduce: `python src/broad_prioritize.py --db {db_path}`.
+Reproduce: `python src/broad_prioritize.py --db {db_path} --catalog-radius-arcsec {catalog_radius_arcsec}{' --stellar-table ' + str(stellar_table) if stellar_table else ''}`.
 Rejection reason counts (nonexclusive): `{dict(rejections)}`.
 """
     report.parent.mkdir(parents=True, exist_ok=True)
     report.write_text(text)
+    output_manifest = {'created_utc': stamp, 'source_sqlite': str(db_path), 'source_statuses': status_counts,
+                       'considered_peaks': considered, 'categories_before_deduplication': dict(categories),
+                       'categories_after_deduplication': dict(deduplicated_counts), 'saved_categories': dict(count_saved),
+                       'method_hashes': method_hashes, 'current_stellar_table': str(stellar_table) if stellar_table else None,
+                       'current_stellar_table_sha256': stellar_metadata.get('sha256'),
+                       'catalog_radius_arcsec': catalog_radius_arcsec, 'minimum_local_snr_diagonal': min_snr,
+                       'max_saved_per_category': max_per_category, 'sha256': hashlib.sha256(output.read_bytes()).hexdigest(),
+                       'bytes': output.stat().st_size, 'discovery_claim': False,
+                       'score_interpretation': 'Unvalidated screening rank; no false-alarm probability or planetary/novelty validation.'}
+    output.with_suffix(output.suffix + '.manifest.json').write_text(json.dumps(output_manifest, indent=2) + '\n')
     print(json.dumps({'snapshot_utc': stamp, 'statuses': status_counts, 'considered_peaks': considered,
                       'categories': dict(categories), 'saved': dict(count_saved),
                       'top_unrecognized': [{k: r[k] for k in ['tic', 'period_days', 'depth_ppm', 'local_snr_diagonal',
@@ -312,5 +411,7 @@ if __name__ == '__main__':
     parser.add_argument('--report', type=Path, default=ROOT / 'reports/broad_prioritization.md')
     parser.add_argument('--max-per-category', type=int, default=200)
     parser.add_argument('--min-snr', type=float, default=8.)
+    parser.add_argument('--stellar-table', type=Path, help='Validated current table produced by refresh_shortlist_stars.py')
+    parser.add_argument('--catalog-radius-arcsec', type=float, default=120.)
     args = parser.parse_args()
-    run(args.db, args.output, args.report, args.max_per_category, args.min_snr)
+    run(args.db, args.output, args.report, args.max_per_category, args.min_snr, args.stellar_table, args.catalog_radius_arcsec)

@@ -1,24 +1,24 @@
 # Autonomous TESS exoplanet research
 
-**Current work: a 160,000-target broad QLP light-curve survey is running, with detailed candidate vetting in parallel.**
+**Completed broad screening: 159,505 stars actually period-searched; 495 additional light curves were insufficient. Detailed follow-up continues. No credible new exoplanet candidate has yet been established.**
 
 The earlier 19-star pilot found no credible new candidate. We searched real observations and investigated stronger signals; apparent detections failed raw-flux, local-baseline, recurrence, variability, or noise checks. This result does not exclude additional planets in the targets.
 
-Read [the research report](RESEARCH_REPORT.md), [research log](RESEARCH_LOG.md), and [resumption checkpoint](PROGRESS.md). The original `Reddit Post.zip` is retained unchanged; its publicly reported signals are excluded from novelty claims.
+Read [the broad research report](BROAD_RESEARCH_REPORT.md), [historical pilot report](RESEARCH_REPORT.md), [research log](RESEARCH_LOG.md), and [resumption checkpoint](PROGRESS.md). The original `Reddit Post.zip` is retained unchanged; its publicly reported signals are excluded from novelty claims.
 
-## Broad survey now running
+## Broad survey and detailed follow-up
 
-Official sector-1 QLP inventory: 469,735 targets. A fixed seeded random sample of 160,000 was selected before flux inspection. Actual period searches, insufficient-data cases, archive failures and inventory counts are reported separately in `results/broad/summary.json`. Every downloaded raw FITS is retained under `/workspace/tess-research-data/broad/qlp_s0001/raw`; SQLite checkpoints completed stars. The compact 30-minute observations permit this sample to fit the available disk but attenuate short transits. Newer timing-flagged QLP sectors are excluded.
+Official sector-1 QLP inventory: 469,735 targets. A fixed seeded random sample of 160,000 was selected before flux inspection. All 160,000 selected targets completed: **159,505 actual period searches, 495 insufficient-data cases, zero processing errors**. Inventory, selected targets, screened stars, peaks and detailed follow-up are distinct counts, audited in `results/broad/audit.json`. Download [the compressed target table](results/broad/targets.csv.gz), [signal table](results/broad/signals.csv.gz), and [observation manifest](results/broad/observations.jsonl.gz). Every downloaded raw FITS is retained under `/workspace/tess-research-data/broad/qlp_s0001/raw`; SQLite checkpoints completed stars. The compact 30-minute observations permit this sample to fit the available disk but attenuate short transits. Newer timing-flagged QLP sectors are excluded.
 
 `src/broad_survey.py` pipelines pooled HTTP downloads and four CPU workers. The validated logarithmic BLS grid searches 0.3–13 days, with cadence-resolved duration trials and local single-event screening. Fine grids, alternative detrending, raw/aperture comparisons and additional sectors are reserved for leads. Novelty checks add published DIAmante, Olmschenk/Yu and genuine TESS EB catalogs to NASA/TOI/CTOI. Official sector-107 TCE triage runs separately; archive-reported signals are not our original detections.
 
-Continue the exact survey from the existing SQLite/cache using:
+The exact survey can resume missing targets from SQLite/cache using the command below; it has no pending targets at this checkpoint:
 
 ```bash
 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python src/broad_survey.py --download-workers 32 --analysis-workers 4 --queue 192 --report-every 2000
 ```
 
-Do not launch a second writer while that command is active. The source hash is enforced to prevent mixing analysis versions. See `reports/fast_screen_validation.md` and `reports/broad_strategy.md`. No discovery claim is supported by broad screening alone.
+Do not launch a second writer while that command is active. The source hash is enforced to prevent mixing analysis versions. See `reports/fast_screen_validation.md` and `reports/broad_strategy.md`. No discovery claim is supported by broad screening alone. The original 187-target detailed batch was refreshed with raw-flux orbital-variation tests; current TIC properties reveal several old QLP dwarf estimates are giants. The final full-sample shortlist uses current stellar properties and wider nearby-source checks before detailed vetting. Multi-sector and pixel checks favor eclipsing binaries for TICs 370247818 and 141980042. The recent-sector track independently examined 17 SPOC curves on five stars and recovered previously reported candidate TOI-2417.11; this is not a new discovery. See [candidate evidence](candidates/README.md), [injection/noise limits](reports/broad_noise.md), and [raw-data restoration](reports/broad_preservation.md).
 
 ## Completed initial pilot
 
@@ -78,8 +78,8 @@ Validation and dedicated vetting scripts are in `src/`. `python src/null_calibra
 
 ## Storage and scientific limits
 
-Raw FITS and reusable intermediates are retained outside Git at `/workspace/tess-research-data`, about 154 MB at the checkpoint. Compact candidate curves, plots, code, manifests and catalog snapshots are tracked. Nothing scientifically important was deleted. `/workspace` is overlay, not a separately verified durable volume. Environment publication can snapshot prepared files; new-task restoration was not verified, and processes are not persistent. Manifest-based retrieval protects reproducibility if the cache is lost.
+Raw FITS, pixels, SQLite and reusable intermediates are retained outside Git at `/workspace/tess-research-data`. The broad sample alone retains 160,000 FITS files totaling approximately 12.9 GB; exact bytes are in the audit. The pilot cache was about 154 MB before expansion. Compact candidate curves, plots, code, manifests and catalog snapshots are tracked. Nothing scientifically important was deleted. `/workspace` is overlay, not a separately verified durable volume. Environment publication can snapshot prepared files; new-task restoration was not verified, and processes are not persistent. Manifest-based retrieval protects reproducibility if the cache is lost.
 
-The pilot incompletely samples shorter durations, periods beyond 25 days, single transits, mask/TTV uncertainties, stellar variability and population completeness. No surviving signal justifies a physical planetary fit or discovery claim; pixels/centroid localization and a full multi-target false-positive analysis remain unrun. Known recoveries and favorable injections do not establish survey completeness. Catalog/literature absence does not establish novelty.
+The pilot incompletely samples shorter durations, periods beyond 25 days, single transits, mask/TTV uncertainties, stellar variability and population completeness. The pilot had no survivor justifying a physical planetary fit. Broad-phase pixel localization and physical eclipse fits were executed for strong leads, but do not establish planetary origin. A global survey false-positive analysis remains unresolved. Known recoveries and favorable injections do not establish survey completeness. Catalog/literature absence does not establish novelty.
 
 No OpenRouter calls were made during research; current research spending is $0 against the $10 authorized cap. An earlier environment connectivity call predates this project and its charge was not recorded. Never log or commit API keys.

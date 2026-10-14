@@ -190,6 +190,21 @@ def vet(tic, rows, lead, index):
         result["sector_results"].append(sector_result)
     result["catalog_check"] = index.match_signal(tic, p, ra, dec)
     result["catalog_check"]["scope"] = "dated cached catalogs plus coordinate neighbors; literature/aliases not exhaustive"
+    cpv_path = OUT / "cpv2024_table1.csv"
+    if cpv_path.exists():
+        import hashlib
+        provenance = json.loads((OUT / "cpv2024_table1.csv.manifest.json").read_text())
+        if hashlib.sha256(cpv_path.read_bytes()).hexdigest() != provenance["sha256"]:
+            raise ValueError("CPV prior table changed; preserve and investigate")
+        cpv_table = pd.read_csv(cpv_path, sep="|")
+        match = cpv_table[cpv_table.ticid == tic]
+        result["prior_literature"] = {"paper": "Bouma et al., Transient Corotating Clumps Around Adolescent Low-Mass Stars From Four Years of TESS",
+            "arxiv": "https://arxiv.org/abs/2309.06471", "table_provenance": provenance,
+            "exact_tic_and_gaia_match": not match.empty,
+            "rows": match.to_dict("records"),
+            "classification": "known complex periodic variable" if not match.empty else "not in this specific CPV table; no novelty inference"}
+        if not match.empty:
+            result["scientific_claim"] = "known complex periodic variable; public TCE waveform is not a new planetary detection"
     result["limitations"] = ["Native diagonal errors and event-scatter scores are not calibrated significance or a search FAP.",
         "Archival predictions use a selected public linear ephemeris; long-baseline period uncertainty was not inferred from untrustworthy CSV errors.",
         "Periodic harmonic removal can absorb real transit structure and is a sensitivity diagnostic, not proof of a false positive.",
@@ -214,7 +229,7 @@ def write_report(results):
                 lines.append(f"|{r['tic']}|{sector['sector']}|{m['column']}|{fmt(depth * 1e6 if depth is not None else None)}|{fmt(a.get('formal_snr'))}|{fmt(a.get('event_scatter_snr'))}|{a['n_events']}|{fmt(qdepth * 1e6 if qdepth is not None else None)}|{fmt(m.get('lomb_scargle', {}).get('maximum_period_days'), 6)}|")
     lines += ["", "TIC 159923666: a large approximately 2.734-day waveform explains most variance; the public approximately 8.07-day interpretation groups different waveform phases. Individual sector-107 depths vary strongly, and the predicted earlier-sector primary events are often brightenings. Stable planetary transits are unsupported.", "",
         "TIC 100777592: a strong approximately 0.431-day waveform and highly inconsistent selected-event depths undermine the approximately 5.85-day periodic interpretation. CROWDSAP is approximately 0.397; PDC depths are scaled relative to raw SAP as expected for strong crowding correction. This does not identify the actual variable source. Pixel localization would be needed to attribute the variability; no planet is promoted.", "",
-        "TIC 178155030: the approximately 0.487-day modulation repeats in sectors 105–107, with a large asymmetric full-phase waveform and an additional narrow minimum. The selected local box depths are therefore not isolated transit depths. Rapid stellar modulation, corotating structures or an eclipsing/close companion are alternatives; a transit-like localized feature on an active star is not sufficient for a new planetary interpretation. Harmonic-subtracted residual measurements are retained, and literature/young-star/complex-periodic-variable checks remain incomplete unless a separate saved source establishes them. No astrophysical subtype or planet confirmation is claimed.", "",
+        "TIC 178155030: the approximately 0.487-day modulation repeats in sectors 105–107, with a large asymmetric full-phase waveform and an additional narrow minimum. The dip remains real after one/two-harmonic removal, at approximately 12,163–12,679 ppm for two harmonics; stellar modulation alone is therefore insufficient to dismiss the localized feature. **The decisive prior check identifies it as a previously published complex periodic variable:** the Bouma et al. author table matches both TIC 178155030 and Gaia DR3 5050451154310013056, lists period 11.67 hours, Tucana–Horologium association, age 45 Myr, radius 0.49 solar, and four earlier observed sectors. The paper is [Transient Corotating Clumps Around Adolescent Low-Mass Stars From Four Years of TESS](https://arxiv.org/abs/2309.06471), initially posted 2023-09-12. This recognized waveform and its narrow dips must not be promoted as a newly recognized planetary signal. The public author table, manuscript, source metadata and byte hashes are preserved locally; the table URL is pinned to a Git commit in its manifest. This does not exclude an unrelated additional planet around the star.", "",
         "The coordinate/catalog check remains narrower than a literature novelty investigation. The source TCE table was already public, so none of these signals can be called an original new detection here. Physical planet fitting, injection completeness and centroid/pixel diagnostics cannot repair a waveform interpretation that fails initial screening; any later revival needs independent reduction and targeted physical/literature tests.", "",
         "Reproduce using `python src/triage_tce107.py` then `python src/vet_tce107.py`. The script does not download, overwrite or remove source FITS. All measurements, event-level values, hashes linked through the follow-up manifest and diagnostic plots are retained. These three outcomes do not exclude planets around their hosts or validate a population-level false-positive rate.", ""]
     (OUT / "ASSESSMENT.md").write_text("\n".join(lines))

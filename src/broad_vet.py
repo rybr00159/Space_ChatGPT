@@ -8,6 +8,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 import argparse
 import csv
+import gzip
 import hashlib
 import json
 import os
@@ -29,14 +30,15 @@ import matplotlib.pyplot as plt
 ROOT = Path(__file__).resolve().parents[1]
 DATABASE = Path(os.environ.get('TESS_DATA_DIR', '/workspace/tess-research-data')) / 'broad/qlp_s0001/survey.sqlite'
 OUT = ROOT / 'candidates/broad_s1'
-METHOD_VERSION = 'raw-aperture-all-orbital-phase-v2'
+METHOD_VERSION = 'raw-aperture-all-orbital-phase-raw-variability-v3'
 
 
 def method_identity():
     return dict(version=METHOD_VERSION, source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                 frozen_screen_sha256=hashlib.sha256((ROOT / 'src/fast_screen.py').read_bytes()).hexdigest(),
                 mandatory_tests=['raw_local_quadratic', 'three_median_windows', 'four_apertures',
-                                 'odd_even', 'half_phase_secondary', 'all_phase_secondary', 'qlp_centroids'])
+                                 'odd_even', 'half_phase_secondary', 'all_phase_secondary', 'qlp_centroids',
+                                 'robust_raw_orbital_and_half_period_variability'])
 
 
 def atomic_json(path, payload):
@@ -186,18 +188,65 @@ def fit_shape(data, period, epoch, duration, exposure):
                 warning='Fixed period; diagonal/covariance errors approximate; no limb darkening or source validation.')
 
 
-def variability_diagnostics(t, f, e, period, epoch, duration):
+def variability_diagnostics(t, f, e, period, epoch, duration, additional_epoch=None, additional_duration=None):
+    """Robust weighted orbital harmonics outside generous eclipse windows.
+
+    Reports five coefficients for c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2theta)
+    +c2*cos(2theta), theta=2*pi*(BTJD-epoch)/period. Covariance errors have an
+    observed residual floor and reduced-chi-square inflation. These remain
+    conditional diagonal estimates, not global false-alarm probabilities.
+    """
     good = np.isfinite(t) & np.isfinite(f) & np.isfinite(e) & (e > 0) & (f > 0)
     t, f, e = t[good], f[good], e[good]
     f, e = f / np.median(f), e / np.median(f)
     oot = (abs(phase(t, period, epoch)) > duration) & (abs(phase(t, period, epoch + period / 2)) > duration)
+    if additional_epoch is not None:
+        oot &= abs(phase(t, period, additional_epoch)) > (additional_duration or duration)
     x = (t - epoch) / period * 2 * np.pi
     design = np.column_stack([np.ones(len(t)), np.sin(x), np.cos(x), np.sin(2 * x), np.cos(2 * x)])
-    beta = np.linalg.lstsq(design[oot] / e[oot, None], f[oot] / e[oot], rcond=None)[0]
+    if oot.sum() < 20:
+        return dict(status='insufficient_out_of_eclipse_data', n_fit=int(oot.sum()), raw_mad=mad(f), residual_mad=None,
+                    orbital_semiamplitude=None, half_period_semiamplitude=None,
+                    orbital_semiamplitude_err=None, half_period_semiamplitude_err=None,
+                    orbital_snr=None, half_period_snr=None)
+    use = oot.copy()
+    ee = e.copy()
+    for _ in range(3):
+        a, b = design[use] / ee[use, None], f[use] / ee[use]
+        beta = np.linalg.lstsq(a, b, rcond=None)[0]
+        residual = f - design @ beta
+        scatter = mad(residual[use])
+        ee = np.maximum(e, max(scatter, float(np.median(e[use]))))
+        next_use = oot & (abs(residual - np.median(residual[use])) < 5 * ee)
+        if next_use.sum() < 20:
+            break
+        use = next_use
+    # Refit with the final robust selection and final conservative error floor.
+    a, b = design[use] / ee[use, None], f[use] / ee[use]
+    beta = np.linalg.lstsq(a, b, rcond=None)[0]
     residual = f - design @ beta
-    return dict(raw_mad=mad(f), residual_mad=mad(residual[oot]),
-                orbital_semiamplitude=float(np.hypot(beta[1], beta[2])),
-                half_period_semiamplitude=float(np.hypot(beta[3], beta[4])))
+    chi2 = float(np.sum((residual[use] / ee[use]) ** 2))
+    covariance = np.linalg.pinv(a.T @ a) * max(1., chi2 / max(1, use.sum() - 5))
+    amplitudes, errors = [], []
+    for indices in ((1, 2), (3, 4)):
+        amplitude = float(np.hypot(*beta[list(indices)]))
+        # Largest covariance-axis error is conservative under an unknown phase.
+        error = float(np.sqrt(max(0., np.linalg.eigvalsh(covariance[np.ix_(indices, indices)]).max())))
+        amplitudes.append(amplitude)
+        errors.append(error)
+    return dict(status='measured', raw_mad=mad(f), residual_mad=mad(residual[use]),
+                n_out_of_eclipse=int(oot.sum()), n_fit=int(use.sum()), n_robust_rejected=int(oot.sum() - use.sum()),
+                orbital_semiamplitude=amplitudes[0], half_period_semiamplitude=amplitudes[1],
+                orbital_semiamplitude_err=errors[0], half_period_semiamplitude_err=errors[1],
+                orbital_snr=amplitudes[0] / errors[0] if errors[0] else None,
+                half_period_snr=amplitudes[1] / errors[1] if errors[1] else None,
+                coefficient_order=['intercept', 'sin_orbital', 'cos_orbital', 'sin_half_period', 'cos_half_period'],
+                coefficients=[float(v) for v in beta], coefficient_covariance=covariance.tolist(),
+                residual_chi2=chi2, residual_dof=int(use.sum() - 5),
+                eclipse_windows=dict(primary_half_width_days=duration, half_phase_half_width_days=duration,
+                                     additional_epoch_btjd=additional_epoch, additional_half_width_days=additional_duration),
+                model='c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2*theta)+c2*cos(2*theta);theta=2*pi*(BTJD-epoch)/P',
+                limitations='Conditional diagonal errors; robust scatter/clipping does not calibrate correlated noise or the search trials.')
 
 
 def refine_ephemeris(t, f, e, peak):
@@ -368,6 +417,9 @@ def vet(record, peak, label='unmasked_broad'):
     for column in columns:
         stats, _ = local_quadratic(t, arrays[column][good], e, p, additional_epoch, additional_duration)
         tests[column]['additional_phase_secondary'] = stats
+        tests[column]['variability'] = variability_diagnostics(t, arrays[column][good], e, p, epoch, primary_width,
+                                                               additional_epoch=additional_epoch,
+                                                               additional_duration=additional_duration)
     additional_report = dict(phase=additional_phase, epoch_btjd=additional_epoch, duration_days=additional_duration,
                              diagonal_snr=float(additional.depth_snr[0]),
                              note='Additional orbital phase selected after masking primary; score requires trials-aware confirmation.')
@@ -395,8 +447,19 @@ def vet(record, peak, label='unmasked_broad'):
     if any(v['sigma'] is not None and v['sigma'] > 5 and abs(v['offset_pixels']) > .001 for v in centroids.values()):
         flags.append('qlp_centroid_shift_warning')
     variability = tests['KSPSAP_FLUX']['variability']
-    if primary.get('depth') and max(variability['orbital_semiamplitude'], variability['half_period_semiamplitude']) > primary['depth'] * .5:
+    if primary.get('depth') and max(variability['orbital_semiamplitude'] or 0., variability['half_period_semiamplitude'] or 0.) > primary['depth'] * .5:
         flags.append('large_orbital_phase_variability')
+    raw_variability = tests['SAP_FLUX']['variability']
+    raw_variability_guard = dict(orbital_amplitude_to_primary_depth=None, half_period_amplitude_to_primary_depth=None,
+                                amplitude_fraction_threshold=.5, conditional_snr_threshold=5.,
+                                interpretation='A warning for stellar variability/ellipsoidal light; no automatic confirmation or false-positive proof.')
+    if primary.get('depth') and primary['depth'] > 0:
+        raw_variability_guard['orbital_amplitude_to_primary_depth'] = (raw_variability['orbital_semiamplitude'] or 0.) / primary['depth']
+        raw_variability_guard['half_period_amplitude_to_primary_depth'] = (raw_variability['half_period_semiamplitude'] or 0.) / primary['depth']
+        for kind, snr_key, ratio_key in (('orbital', 'orbital_snr', 'orbital_amplitude_to_primary_depth'),
+                                       ('half_period', 'half_period_snr', 'half_period_amplitude_to_primary_depth')):
+            if raw_variability_guard[ratio_key] > .5 and (raw_variability.get(snr_key) or 0.) > 5:
+                flags.append(f'large_significant_raw_{kind}_variability')
     if primary.get('depth'):
         sml, lag = tests['KSPSAP_FLUX_SML']['local_quadratic'], tests['KSPSAP_FLUX_LAG']['local_quadratic']
         if sml.get('depth') and lag.get('depth'):
@@ -409,6 +472,7 @@ def vet(record, peak, label='unmasked_broad'):
                   source={k: record[k] for k in ('url', 'path', 'sha256', 'raw_bytes')}, fits_checksums=integrity,
                   cadence_days=cadence, column_tests=tests, integrated_trapezoid=shape, centroid_tests=centroids,
                   additional_phase_search=additional_report,
+                  raw_variability_guard=raw_variability_guard,
                   warnings=flags, assessment='unexplained_lead_requires_independent_source_and_novelty_validation' if not flags else 'fails_or_incomplete_initial_vetting',
                   limitations=['No source localization/pixel dilution model.', 'No survey-wide empirical false-alarm calibration.',
                                'Fixed-period trapezoid is not a limb-darkened transit model.', 'Catalog absence does not establish novelty.',
@@ -466,10 +530,19 @@ def load_records(tics=None):
     return records
 
 
-def vet_multisector(tic):
+def vet_multisector(tic, selected_period=None, evidence_id=None):
     """Independent sector epochs, then long-baseline local-period BLS and depths."""
     base = load_records([tic])[0]
-    peak = base['scans'][0]['peaks'][0]
+    if evidence_id:
+        index = evidence_id.split('/')
+        if int(index[0].split(':')[1]) != tic:
+            raise ValueError('Evidence identifier target differs from selected TIC')
+        scan_index, peak_index = int(index[2]), int(index[4])
+        peak = base['scans'][scan_index]['peaks'][peak_index]
+    elif selected_period is not None:
+        peak = min((v for scan in base['scans'] for v in scan['peaks']), key=lambda v: abs(v['period'] - selected_period))
+    else:
+        peak = base['scans'][0]['peaks'][0]
     manifest = ROOT / f'data/broad_followup_queries/tic{tic}_qlp.json'
     rows = [dict(sector=1, path=base['path'], sha256=base['sha256'], url=base['url'], metadata=base['metadata'])]
     rows += [r for r in json.loads(manifest.read_text()) if r['status'] == 'retained']
@@ -539,6 +612,9 @@ def vet_multisector(tic):
         for col in ('KSPSAP_FLUX', 'SAP_FLUX', 'KSPSAP_FLUX_SML', 'KSPSAP_FLUX_LAG'):
             stats, _ = local_quadratic(st, d[col][good], se, p, other_epoch, float(other.duration[0]))
             report['column_tests'][col]['additional_phase_secondary'] = stats
+            report['column_tests'][col]['variability'] = variability_diagnostics(
+                st, d[col][good], se, p, epoch, primary_width,
+                additional_epoch=other_epoch, additional_duration=float(other.duration[0]))
     pooled_other_phase = {col: pool_sector_depths(full, col, event='additional_phase_secondary') for col in
                           ('KSPSAP_FLUX', 'SAP_FLUX', 'KSPSAP_FLUX_SML', 'KSPSAP_FLUX_LAG')}
     secondary_counterevidence = (pooled_other_phase['SAP_FLUX'] is not None and
@@ -562,6 +638,7 @@ def vet_multisector(tic):
         pooled = None
     result = dict(tic=tic, checked_utc=datetime.now(timezone.utc).isoformat(), sources=sources,
                   vetting_method=method_identity(),
+                  selected_original_peak=peak, selected_period_argument=selected_period, selected_evidence_id=evidence_id,
                   independent_sector_searches=independent,
                   joint_ephemeris=dict(period=p, epoch_btjd=epoch, duration_days=duration,
                                        snr_diagonal=float(power.depth_snr[j]), period_grid_step=float(periods[1] - periods[0]),
@@ -677,11 +754,30 @@ def validate_method():
                   injected_duration_within_3sigma=abs(shape['duration_days'] - duration) < 3 * shape['duration_err'],
                   injected_epoch_within_3sigma=abs(shape['epoch_btjd'] - epoch) < 3 * shape['epoch_err'],
                   seven_independent_events=stats['n_events'] == 7)
+    # Verify that robust *raw* fitting recovers ellipsoidal light even with
+    # transit/eclipses, positive outliers, and incomplete phase coverage.
+    tv = np.arange(0, 27., 30 / 1440)
+    pv, ev, dv = 1.626, 1.173, .11
+    angle = 2 * np.pi * (tv - ev) / pv
+    fv = 1 + .001 * np.sin(angle) + .0025 * np.cos(2 * angle)
+    fv -= .005 * (abs(phase(tv, pv, ev)) < dv / 2)
+    fv += rng.normal(0, .0008, len(tv))
+    fv[::137] += .03
+    vv = variability_diagnostics(tv, fv, np.full(len(tv), .0008), pv, ev, dv)
+    checks['raw_ellipsoidal_amplitude_recovered'] = abs(vv['half_period_semiamplitude'] - .0025) < 3 * vv['half_period_semiamplitude_err']
+    checks['raw_orbital_amplitude_recovered'] = abs(vv['orbital_semiamplitude'] - .001) < 3 * vv['orbital_semiamplitude_err']
+    checks['positive_outliers_robustly_rejected'] = vv['n_robust_rejected'] > 0
+    checks['injected_ellipsoidal_exceeds_guard_threshold'] = vv['half_period_snr'] > 5 and vv['half_period_semiamplitude'] > .5 * .004
+    transit_only = variability_diagnostics(t, f, e, period, epoch, duration)
+    checks['transit_only_does_not_raise_raw_guard'] = not any(
+        (transit_only[f'{name}_snr'] or 0) > 5 and transit_only[f'{name}_semiamplitude'] > .5 * depth
+        for name in ('orbital', 'half_period'))
     payload = dict(checked_utc=datetime.now(timezone.utc).isoformat(), seed=502,
                    injected=dict(period=period, epoch_btjd=epoch, duration_days=duration,
                                  ingress_days=ingress, depth=depth, noise_sigma=.0004,
                                  exposure_minutes=10, baseline='quadratic'),
                    recovered=shape, n_events=stats['n_events'], checks=checks,
+                   raw_ellipsoidal_control=vv, transit_only_raw_harmonics=transit_only,
                    maximum_numeric_exposure_error=integration_error,
                    limitations='A synthetic conditional-model check, not real-data completeness or false-positive calibration.')
     OUT.mkdir(parents=True, exist_ok=True)
@@ -697,6 +793,13 @@ def validate_method():
              'out-of-transit fits. SAP, processed, small-aperture, and large-aperture flux are compared. '
              'Local depths include residual-noise and event-scatter error floors. Primary and half-phase secondary '
              'events, odd/even differences, broad variability, and QLP centroids provide warnings.', '',
+             'Version 3 also fits raw SAP orbital and half-period harmonics outside generous primary, half-phase, '
+             'and selected additional-secondary windows. It uses three iterations of 5-sigma clipping, '
+             'an observed residual MAD error floor, and reduced-chi-square covariance inflation. All five '
+             'sin/cos/intercept coefficients and their covariance are saved. A raw harmonic with conditional '
+             'S/N >5 and amplitude >50% of the measured primary depth raises a variability warning, even '
+             'if KSPSAP preprocessing removed the modulation. This warns about stellar/ellipsoidal light '
+             'and is not an automatic binary confirmation; spot modulation or instrumental trends remain possible.', '',
              'The fitted trapezoid integrates each sector\'s actual median exposure. A fixed-period shape fit is '
              'conditional and approximate, with no limb darkening. Local box-mean depths differ from fitted '
              'full-depth values because ingress and exposure smear the transit. Independent event timing fits '
@@ -731,7 +834,8 @@ def _ranked_summary(result, priority=None, evidence_id=None):
     if any(v in flags for v in ('aperture_dependent_depth', 'qlp_centroid_shift_warning')):
         score *= .5
     if any(v in flags for v in ('odd_even_depth_difference', 'v_shaped_or_unresolved_ingress',
-                                'fitted_duty_cycle_exceeds_point15', 'large_orbital_phase_variability')):
+                                'fitted_duty_cycle_exceeds_point15', 'large_orbital_phase_variability',
+                                'large_significant_raw_orbital_variability', 'large_significant_raw_half_period_variability')):
         score *= .25
     directory = OUT / f'tic{result["tic"]}_p{result["input_peak"]["period"]:.6f}'
     return dict(tic=result['tic'], source_evidence_id=evidence_id, priority_source=priority,
@@ -743,6 +847,10 @@ def _ranked_summary(result, priority=None, evidence_id=None):
                 other_phase=result['additional_phase_search']['phase'], other_phase_secondary_snr=additional['snr'],
                 odd_even_sigma=primary['odd_even_sigma'], ingress_fraction=shape['ingress_fraction'] if shape else None,
                 centroid_max_sigma=max((v['sigma'] or 0. for v in result['centroid_tests'].values()), default=0.),
+                raw_orbital_semiamplitude_ppm=(result['column_tests']['SAP_FLUX']['variability']['orbital_semiamplitude'] or 0.) * 1e6,
+                raw_half_period_semiamplitude_ppm=(result['column_tests']['SAP_FLUX']['variability']['half_period_semiamplitude'] or 0.) * 1e6,
+                raw_orbital_snr=result['column_tests']['SAP_FLUX']['variability'].get('orbital_snr'),
+                raw_half_period_snr=result['column_tests']['SAP_FLUX']['variability'].get('half_period_snr'),
                 assessment=result['assessment'], warnings=';'.join(flags),
                 evidence_file=str((directory / 'vetting.json').relative_to(ROOT)),
                 method_sha256=result['vetting_method']['source_sha256'])
@@ -762,9 +870,40 @@ def export_vetting_summary(results, checkpoint):
         temp.replace(destination)
 
 
+def preserve_previous_batch():
+    """Retain exact prior selection/checkpoint/ranking and compact dossier state."""
+    checkpoint_path = OUT / 'batch_checkpoint.json'
+    if not checkpoint_path.exists():
+        return
+    raw = checkpoint_path.read_bytes()
+    previous = json.loads(raw)
+    version = previous.get('method', {}).get('version', 'unversioned')
+    digest = hashlib.sha256(raw).hexdigest()
+    destination = OUT / 'batch_history' / f'{version}_{digest[:12]}'
+    destination.mkdir(parents=True, exist_ok=True)
+    for name in ('batch_checkpoint.json', 'batch_queue.csv', 'ranked_vetted_leads.csv'):
+        source = OUT / name
+        if source.exists() and not (destination / name).exists():
+            (destination / name).write_bytes(source.read_bytes())
+    dossiers = destination / 'vetting_reports.jsonl.gz'
+    if not dossiers.exists():
+        with dossiers.open('wb') as stream, gzip.GzipFile(fileobj=stream, mode='wb', mtime=0) as compressed:
+            for result in previous.get('results', []):
+                source = ROOT / result['evidence_file']
+                if source.exists():
+                    compressed.write(json.dumps(json.loads(source.read_text()), separators=(',', ':')).encode() + b'\n')
+    atomic_json(destination / 'snapshot_manifest.json', dict(previous_checkpoint_sha256=digest,
+                                                            previous_method=previous.get('method'),
+                                                            completed=previous.get('completed'),
+                                                            queue_sha256=previous.get('queue_sha256'),
+                                                            raw_data_deleted=False))
+
+
 def run_queue(queue_path, top):
     """Freeze a review queue, honor its exact harmonic, and checkpoint every star."""
     raw = Path(queue_path).read_bytes()
+    # Read source first: it may itself be the batch_queue.csv to be archived.
+    preserve_previous_batch()
     rows = list(csv.DictReader(raw.decode().splitlines()))
     eligible = [r for r in rows if r['category'] == 'unrecognized_lead' and float(r['period_days']) >= .5]
     eligible.sort(key=lambda r: -float(r['priority_score_unvalidated']))
@@ -832,6 +971,7 @@ def main():
     parser.add_argument('--top', type=int, default=12)
     parser.add_argument('--period', type=float, help='Select nearest saved broad peak, for one --tic target only.')
     parser.add_argument('--multisector', action='store_true', help='Analyze cached follow-up manifest for one target.')
+    parser.add_argument('--evidence-id', help='Exact saved evidence identifier for one --multisector target.')
     parser.add_argument('--validate', action='store_true', help='Run independent numeric/synthetic method controls.')
     parser.add_argument('--queue', type=Path, default=ROOT / 'results/broad/shortlist.csv', help='Use exact ranked evidence rows for --top.')
     args = parser.parse_args()
@@ -843,7 +983,7 @@ def main():
     if args.multisector:
         if not args.tic or len(args.tic) != 1:
             parser.error('--multisector requires exactly one --tic')
-        vet_multisector(args.tic[0])
+        vet_multisector(args.tic[0], selected_period=args.period, evidence_id=args.evidence_id)
         return
     if not args.tic and args.queue.exists():
         run_queue(args.queue, args.top)

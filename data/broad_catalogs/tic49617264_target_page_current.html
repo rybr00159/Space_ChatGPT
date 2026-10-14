@@ -1,0 +1,2938 @@
+<html lang="en-US">
+<head>
+<title>ExoFOP TIC 49617264</title>
+<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" href="fontawesome-5.13.0/css/all.css" >
+<link rel="stylesheet" type="text/css" href="style.css?id=5567889"> <!-- to prevent cache -->
+
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css" />
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
+
+<link rel="icon" href="images/favicon.png">
+<!--
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+-->
+
+<!-- ag-Grid enterprise version -->
+<!-- if point at v27.0.1 full width rows don't work -->
+<!--
+<script src="https://unpkg.com/ag-grid-enterprise/dist/ag-grid-enterprise.min.noStyle.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-enterprise/dist/styles/ag-grid.css">
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-enterprise/dist/styles/ag-theme-balham.css">
+-->
+
+<!-- ag-Grid enterprise local files (v28) -->
+<script src="aggrid/ag-grid-enterprise.min.noStyle_v28.js"></script>
+<link rel="stylesheet" href="aggrid/ag-grid_v28.css">
+<link rel="stylesheet" href="aggrid/ag-theme-balham_v28.css">
+
+<script>
+agGrid.LicenseManager.setLicenseKey("Using_this_{AG_Grid}_Enterprise_key_{AG-098066}_in_excess_of_the_licence_granted_is_not_permitted___Please_report_misuse_to_legal@ag-grid.com___For_help_with_changing_this_key_please_contact_info@ag-grid.com___{California_Institute_of_Technology}_is_granted_a_{Multiple_Applications}_Developer_License_for_{2}_Front-End_JavaScript_developers___All_Front-End_JavaScript_developers_need_to_be_licensed_in_addition_to_the_ones_working_with_{AG_Grid}_Enterprise___This_key_has_been_granted_a_Deployment_License_Add-on_for_{2}_Production_Environments___This_key_works_with_{AG_Grid}_Enterprise_versions_released_before_{21_April_2027}____[v3]_[01]_MTgwODI2MjAwMDAwMA==edb652cf6925a39df030cfeffce13e3f");
+</script>
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="bootstrap3/js/bootstrap.js"></script>
+<script src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
+<script src="customTooltip.js"></script>
+<script src="customCellRender.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+//
+// smooth scrolling to anchors
+//
+$('a[href*="#"]')
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+
+
+   $('.tooltipster').tooltipster({
+     theme: 'tooltipster-punk',
+     trigger: 'custom',
+     delay: 0,
+	 side: 'bottom',
+	 distance: 3
+    });
+
+	// trigger tooltip on focus as well as hover (added for accessibility)
+	//
+	$('.tooltipster').on('mouseenter focus', function () {
+		$(this).tooltipster('open');
+	});
+
+	$('.tooltipster').on('mouseleave blur', function () {
+		$(this).tooltipster('close');
+	});
+
+   $('.tooltipster2').tooltipster({
+     contentAsHTML: 'true',
+     theme: 'tooltipster-punk',
+     maxWidth: 300,
+     trigger: 'hover',
+     delay: 0,
+	 side: 'top'
+    });
+
+
+  // thumbnail popover previews (moved to onGridReady in target.php)
+  //$('.myPop').popover({'html': 'true', 'trigger': 'hover'});
+
+});
+
+function goToNewPage() {
+  var url = document.getElementById('list').value;
+  if (url != 'none') window.location = url;   
+}
+
+// scroll to top
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		
+        document.getElementById("scrollBtn").style.display = "block";
+		// hide button after 5 seconds
+		//var scrBut = document.getElementById("scrollBtn");
+		//setTimeout(function(){hide(scrBut);}, 5000);
+		//function hide(element){
+		//	element.style.display="none";
+		//}
+
+    	} else {
+        document.getElementById("scrollBtn").style.display = "none";
+    	}
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTo({top:0, behavior: 'smooth'}); // For Chrome, Safari and Opera 
+    document.documentElement.scrollTo({top:0, behavior: 'smooth'}); // For IE and Firefox
+}
+    
+</script>
+    
+</head>
+
+<body topmargin=0 leftmargin=0 marginwidth=0 marginheight=0>
+
+<a name="top"></a>
+
+<table width=100% cellspacing=0 cellpadding=0 border=0>
+<tr>
+<td bgcolor=#000000 height=50>
+<a href="/tess"><img src="images/exofop-logo.png" class="logo" alt="exofop" width="65" height="40"></a>
+<!--<a class="top2" href="/tess"><span class="label label-primary mybadge2">TESS</span></a>-->
+</td><td bgcolor=#000000 align=right>
+
+<div class="headright">
+</div>
+
+
+<a class="top2" href="news.php">News</a>
+
+<a class="top2" href="help.php">Help</a>
+
+<a class="top2" href="login.php?ref=%2Ftess%2Ftarget.php%3Fid%3D49617264">Login</a></td>
+</tr>
+
+</table>
+
+<div class="overview_header0">
+
+	<div class="overview_tid">TIC 49617264	
+	
+		
+	</div>
+
+	<a target="_blank" href="edit_obsnotes.php?id=49617264" aria-label="Go to Observing Notes">
+	<span class="overview_obsnotes obsnotes">
+	<span class="tooltipster" title="Go to Observing Notes" tabindex="0">
+	<i class="fa fa-comments"></i>
+    <div class="count" role="status">0</div>
+	</span>
+	</span>
+	</a>
+
+	<a target="_blank" href="view_changelog.php?id=49617264&showbulk=on" aria-label="Go to Change Log">
+	<span class="overview_obsnotes">
+	<span class="tooltipster" title="Go to Change Log" tabindex="0">
+	<i class="fa fa-user-edit"></i>
+    <div class="count" role="status">1</div>
+	</span>
+	</span>
+	</a>
+
+
+
+</div>
+
+
+<div class="overview_header">
+
+
+<span class="wide9">
+<span class="fa-stack" style="vertical-align: top;">
+  <i class="fas fa-circle fa-stack-2x purple-dot"></i>
+  <i class="fas fa-info fa-stack-1x fa-inverse"></i>
+</span>
+<span class="purple-text">Basic Information</span>
+
+
+<ul>
+<li>Star Name(s): TIC 49617264, 2MASS J02313435-4000211, APASS 19726468, Gaia DR2 4952839776170905472, Gaia DR3 4952839776170905472, UCAC4 250-002442, WISE J023134.38-400021.0</li>
+
+<li>Confirmed Planet(s):
+N/A</li>
+
+
+<li>
+TESS mag: 12.9915 &plusmn; 0.006 | 
+K mag: 11.793 &plusmn; 0.024</li>
+
+
+<li>TIC Contamination Ratio: 0.316295</li>
+
+
+</ul>
+
+</span>
+
+
+
+
+<span class="wide9">
+<span class="fa-stack" style="vertical-align: top;">
+  <i class="fas fa-circle fa-stack-2x purple-dot"></i>
+  <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
+</span>
+<span class="purple-text">Coordinates</span>
+
+
+<ul>
+<li>RA/Dec (ICRS, epoch 2015.5):
+02:31:34.39&nbsp-40:00:21 (37.893277&deg-40.005833&deg;)</li>
+
+<li>Galactic Long/Lat:
+251.1995
+-65.6172</li>
+
+<li>Ecliptic Long/Lat:
+16.22639
+-50.98265
+</li>
+
+<li>Proper Motion (mas/yr):
+
+	<table border=0 class="inline-table">
+	<tr>
+	<td>RA: </td>
+	<td>16.4265</td>
+	<td>&nbsp;Dec: </td>
+	<td>9.20045</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td><div class="error">&plusmn; 0.022474</div></td>
+	<td>&nbsp;</td>
+	<td><div class="error">&plusmn; 0.02805</div></td>
+	</tr>
+	</table>
+
+</li>
+
+</ul>
+
+</span>
+
+<span class="wide9">
+
+<span class="fa-stack" style="vertical-align: top;">
+  <i class="fas fa-circle fa-stack-2x purple-dot"></i>
+  <i class="fas fa-download fa-stack-1x fa-inverse"></i>
+</span>
+<span class="purple-text">Downloads</span>
+
+
+<ul>
+<li>Download 6 nearby TIC targets within 1 arcmin:
+<a class="over" target="nearby1" href="download_nearbytarget.php?id=49617264&output=csv">csv</a> &middot;
+<a class="over" target="nearby2" href="download_nearbytarget.php?id=49617264&output=pipe">pipe</a> &middot;
+<a class="over" target="nearby3" href="download_nearbytarget.php?id=49617264&output=text">text</a> &middot;
+<a class="over" target="nearby4" href="nearbytarget.php?id=49617264">view</a>
+
+
+
+<li>Download Gaia DR3 targets within 1 arcmin:
+<a class="over" target="gaia" href="https://gea.esac.esa.int/tap-server/tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=json&QUERY=SELECT+source_id,phot_g_mean_mag,ra,dec,parallax,parallax_error,pmra,pmra_error,pmdec,pmdec_error,ruwe,non_single_star+FROM+gaiadr3.gaia_source+WHERE+CONTAINS(POINT('ICRS',gaiadr3.gaia_source.ra,gaiadr3.gaia_source.dec),CIRCLE('ICRS',37.893276794002801,-40.0058326874464,0.0167))=1">JSON</a>
+</li>
+
+
+
+
+<li>Download this page: 
+<a class="over" target="downjson" href="target.php?id=49617264&json">JSON</a> 
+<!--&middot;
+<a class="over" target="down_stellar" href="download_stellar.php?id=49617264">Stellar parameters</a>
+&middot;
+<a class="over" target="down_planet" href="download_planet.php?id=49617264">Planet parameters</a>
+-->
+
+<li>Download 35 Files: 
+<a class="over" target="dfiles1" href="download_files.php?id=49617264">tar</a> &middot;
+<a class="over" target="dfiles2" href="download_files_zip.php?id=49617264">zip</a> &middot;
+
+File List: 
+<a class="over" target="dfiles1" href="download_filelist.php?id=49617264&output=csv">csv</a> &middot;
+<a class="over" target="dfiles2" href="download_filelist.php?id=49617264">pipe</a> 
+
+</ul>
+</span>
+
+
+<span class="wide9">
+
+<span class="fa-stack" style="vertical-align: top;">
+  <i class="fas fa-circle fa-stack-2x purple-dot"></i>
+  <i class="fas fa-link fa-stack-1x fa-inverse"></i>
+</span>
+<span class="purple-text">External Links</span>
+
+<ul>
+
+<li>
+<label for="exoarch">NASA Exoplanet Archive:</label>
+<select id="exoarch" name="exoarch" onChange="window.open(this.value, '_blank');">
+<option value="" selected="true" disabled="disabled">select</option><option value="https://exoplanetarchive.ipac.caltech.edu/overview/TIC49617264">Overview: TIC 49617264</option><option value="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/Inventory/nph-Inventory?locstr=02:31:34.39-40:00:21&radius=5">Inventory search</option></select>
+
+	
+<li>
+<a class="over" target="irsafinding" 
+href="https://irsa.ipac.caltech.edu/applications/finderchart/servlet/api?mode=getResult&locstr=37.893276794002801+-40.0058326874464&subsetsize=5&survey=DSS%2CSDSS%2C2MASS%2CWISE">IRSA Finding Chart</a>
+&middot;
+<a class="over" target="swarthmorefinding"
+href="https://astro.swarthmore.edu/transits/aladin.html?name=TIC+49617264">Swarthmore Finding Chart</a>
+&middot;
+<a class="over" target="simbad" 
+href="https://simbad.u-strasbg.fr/simbad/sim-coo?Coord=37.893276794002801+-40.0058326874464&Radius=2&Radius.unit=arcmin">
+SIMBAD</a>
+&middot;
+
+<a class="over" target="mast" href="
+https://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html?searchQuery=%7B%22service%22%3A%22CAOMDB%22%2C%22inputText%22%3A%22TIC%2049617264%22%2C%22paramsService%22%3A%22Mast.Caom.Cone%22%2C%22title%22%3A%22MAST%3A%20TIC%2049617264%22%2C%22columns%22%3A%22*%22%2C%22caomVersion%22%3Anull%7D">
+MAST</a>
+&middot;
+
+
+<a class="over" target="koa" href="https://koa.ipac.caltech.edu/cgi-bin/bgServices/nph-bgExec?bgApp=/KOA/nph-KOA&instrument_de=deimos&instrument_es=esi&instrument_hi=hires&instrument_lr=lris&instrument_lw=lws&instrument_mf=mosfire&instrument_n1=nirc&instrument_n2=nirc2&instrument_ns=nirspec&instrument_os=osiris&filetype=science&calibassoc=assoc&locstr=251.1995+-65.6172+ga&regSize=30&resolver=ned&radunits=arcsec&spt_obj=spatial&single_multiple=single">KOA</a>
+</li>
+
+<li>Search the <a class="over" target="tebc" 
+href="https://tessebs.villanova.edu/49617264">TESS EB Catalog</a> &middot; <a class="over" target="wtv" href="https://heasarc.gsfc.nasa.gov/wsgi-scripts/TESS/TESS-point_Web_Tool/TESS-point_Web_Tool/wtv_v2.0.py/TICID_result/ticid=49617264">TESS Web Visibility Tool</a>
+
+
+</ul>
+</span>
+
+
+</div>  
+
+
+<!-- end header -->
+
+<!-- start navbar -->
+
+<div class="navbar0 sticky0">
+
+    <a href="#tois">TOIs <span class="super">0</span></a>
+    <a href="#ctois">CTOIs <span class="super">0</span></a>
+    <a href="#planets">Planet Params <span class="super">0</span></a>
+    <a href="#stellar">Stellar Params <span class="super">1</span></a>
+    <a href="#stellarcomp">Stellar Companions <span class="super">0</span></a>
+    <a href="#magnitudes">Magnitudes <span class="super">11</span></a>
+    <a href="#imaging">Imaging <span class="super">0</span></a>
+    <a href="#spect">Spectroscopy <span class="super">0</span></a>
+    <a href="#tseries">Time Series <span class="super">3</span></a>
+    <a href="#files">Files <span class="super">35</span></a>
+	<a href="edit_obsnotes.php?id=49617264" target="_blank">Observing Notes <span class="super">0</span></a>
+	
+</div>
+
+<!-- end navbar -->
+
+<!-- start ag-grids -->
+
+
+<a name="tois" class="sticky_anchor"></a>
+
+<div class="grid_header">TOIs <span class="grid_badge">0</span>
+
+<button class="myButt5" onClick="window.open('Supplementary_ExoFOP_Calculations.pdf','_blank');
+return false;"><i class="fa fa-question" aria-hidden="true"></i> Supplementary ExoFOP Calculations</button>
+
+</div>
+
+<div id="myGrid1" class="ag-theme-balham grid-width"></div>
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs = [
+	{
+		headerName: "TOI", 
+		field: "toi",
+		filter: "agTextColumnFilter", 
+		width: 150,
+		pinned: 'left', 
+		lockPosition: true
+	},
+	{
+		headerName: "TIC", 
+		field: "ctoi",
+		filter: "agNumberColumnFilter", 
+    	width: 150,
+		pinned: 'left', 
+		lockPosition: true
+	},
+        {
+                headerName: "Discovery Data Source",
+                field: "discovery",
+                filter: "agTextColumnFilter",
+                width: 150,
+                pinned: 'left',
+                lockPosition: true,
+                headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+                        '&nbsp;<span class="tooltipster2" title="Discovery Data Source: TESS, NGTS, KPF, etc.">' +
+                        '<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+                        '<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+                        '<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+                        '<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+                        '<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>'
+                }
+        },
+	{
+		headerName: "Master priority", 
+		field: "pri_m",
+		filter: "agNumberColumnFilter",
+		width: 170,
+
+		//headerTooltip: '1=high, 5=low',
+		//tooltipShowDelay: 0,
+		//cellRenderer: 'MastPriCellRender'  //applies to cells, not header
+		
+		headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="All priorities (except SG3): 1=high, 5=low">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>' 
+		}
+	},
+	{
+		headerName: "SG1A priority", 
+		field: "pri_1a",
+		filter: "agNumberColumnFilter",
+                hide: true,
+		width: 150,		
+	},
+	{
+		headerName: "SG1B priority", 
+		field: "pri_1b",
+		filter: "agNumberColumnFilter",		
+		width: 150,
+	},
+	{
+		headerName: "SG2 priority", 
+		field: "pri_2",
+		filter: "agNumberColumnFilter",
+		width: 150,		
+	},
+	{
+		headerName: "SG3 priority", 
+		field: "pri_3",
+		filter: "agNumberColumnFilter",	
+		width: 150,			
+		headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="1=No Obs, 2=AO only, 3=Spkle only, 4=AO & Spkle or CP, 5=KP or FP or FA">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>' 
+		}
+	},
+	{
+		headerName: "SG4 priority", 
+		field: "pri_4",
+		filter: "agNumberColumnFilter",	
+		width: 150,	
+	},
+	{
+		headerName: "SG5 priority", 
+		field: "pri_5",
+		filter: "agNumberColumnFilter",
+		width: 150,			
+	},
+	
+	
+	{
+		headerName: "ESM", 
+		field: "esm",
+		filter: "agNumberColumnFilter",
+		width: 120,				
+		headerComponentParams: {
+            template:
+			'<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="Emission Spectroscopy Metric">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>'
+		}
+	},
+	{
+		headerName: "TSM", 
+		field: "tsm",
+		filter: "agNumberColumnFilter",
+		width: 120,				
+		headerComponentParams: {
+            template:
+			'<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="Transmission Spectroscopy Metric">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>'
+		}
+	},
+	{
+		headerName: "Predicted Mass (M_Earth)", 
+		field: "predicted_mass",
+		filter: "agNumberColumnFilter",
+		width: 160,				
+		headerComponentParams: {
+            template:
+			'<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="Chen & Kipping (2017) Predicted Mass">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>'
+		}
+	},
+
+	{
+		headerName: "Predicted RV Semi-amplitude (m/s)", 
+		field: "predicted_rv",
+		filter: "agNumberColumnFilter",
+		width: 160,				
+		headerComponentParams: {
+            template:
+			'<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="Predicted Radial Velocity Semi-amplitude">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>'
+		}
+	},
+	{
+		headerName: "TESS Disposition", 
+		field: "disp_tess",
+		filter: "agTextColumnFilter",	
+		headerComponentParams: {
+            template:
+			'<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="CP = confirmed planet<br />\nEB = eclipsing binary<br />\nIS = instrument noise<br />\nKP = known planet<br />\nO = other<br />\nPC = planet candidate<br />\nV = stellar variability">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>'
+		}
+	},
+	{
+		headerName: "TFOPWG Disposition", 
+		field: "disp_tfop",
+		filter: "agTextColumnFilter",
+		headerComponentParams: {
+            template:
+			'<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="APC = ambiguous planetary candidate<br />\nCP = confirmed planet<br />\nFA = false alarm<br />\nFP = false positive<br />\nKP = known planet<br />\nPC = planetary candidate">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>'
+		}		
+	},
+
+	{
+		
+			headerName: "View TFOPWG Disposition", 
+		
+		field: "editdisp",
+		filter: false, 
+		sortable: false, 
+		suppressMenu: true,
+		cellRenderer: 'DispCellRender'
+	},
+
+	{
+		headerName: "Pipeline Signal ID", 
+		field: "signal",
+		filter: "agNumberColumnFilter"
+	},
+	{
+		headerName: "Source", 
+		field: "source",
+		filter: "agTextColumnFilter"
+	},
+	{
+		headerName: "Sectors", 
+		field: "sector",
+		filter: "agTextColumnFilter",
+		tooltipField: 'sector',
+		tooltipComponentParams: {column: 'sector'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Notes", 
+		field: "notes",
+		filter: "agTextColumnFilter",
+		tooltipField: 'notes',
+		tooltipComponentParams: {column: 'notes'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Date TOI Alerted (by TESS Project)", 
+		field: "toidate1",
+		filter: "agTextColumnFilter", 	
+	},
+	{
+		headerName: "Date TOI Updated (by TESS Project)", 
+		field: "toidate2",
+		filter: "agTextColumnFilter", 	
+	},
+	{
+		headerName: "Date Modified (at ExoFOP)", 
+		field: "date",
+		filter: "agTextColumnFilter", 	
+	},
+];
+// end column definitions 
+
+// Row data
+var rowData = [];
+
+// Grid options
+var gridOptions = {
+	
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+	// alwaysShowHorizontalScroll: true,          /* not working */
+
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+        menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows2">No TOIs</span>',
+
+	columnDefs: columnDefs,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData,
+    rowHeight: 33,    // so that scrollbar doesn't cover last row
+	headerHeight: 36,
+
+	components: {'PriCellRender': PriCellRenderer, 'DispCellRender': DispCellRenderer},
+
+	//components: {agColumnHeader: CustomHeader},
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	suppressColumnVirtualisation: true,  // to get html in column headers to render 
+										 // (specifically the ones not scrolled into view)
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true
+};
+
+
+// Cell renderer - Priorities
+function PriCellRenderer() {}
+PriCellRenderer.prototype.init = function(params) {
+    this.eGui = document.createElement('span');
+	var text = "<a class=\"over2\" href=\"#\"  onClick=\"window.open('edit_toipriorities.php?toi=" +
+			params.value.slice(4) + "','editpriorities','width=800,height=900,status=yes," +
+			"resizable=yes,scrollbars=yes');return false;\">Edit</a>";
+    this.eGui.innerHTML = text;
+};
+PriCellRenderer.prototype.getGui = function() {
+    return this.eGui;
+};
+
+// Cell renderer - View/Edit dispositions
+function DispCellRenderer() {}
+DispCellRenderer.prototype.init = function(params) {
+    this.eGui = document.createElement('span');
+	var text = "<a class=\"over2\" href=\"#\" onClick=\"window.open('view_tfopdisp.php?toi=" +
+			params.value.slice(4) + "','viewdisp','width=800,height=900,status=yes," +
+			"resizable=yes,scrollbars=yes');return false;\">";
+			
+			 text += "View"; 			
+			text += "</a>";
+			
+    this.eGui.innerHTML = text;
+};
+DispCellRenderer.prototype.getGui = function() {
+    return this.eGui;
+};
+
+
+
+
+//
+// Draw the grid
+//
+var eGridDiv = document.querySelector('#myGrid1');
+new agGrid.Grid(eGridDiv, gridOptions);
+
+</script>
+
+
+<!-- End TOIs grid -->
+
+
+<!-- Start CTOIs grid -->
+
+
+<a name="ctois" class="sticky_anchor"></a>
+
+<div class="grid_header">Community Planet Candidates <span class="grid_badge">0</span>
+
+
+<button class="myButt5 "onClick="window.open('candidate_help.php','newctoihelp',
+'width=800,height=800,status=yes,resizable=yes,scrollbars=yes');
+return false;"><i class="fa fa-question" aria-hidden="true"></i> Submitting Published  Planet Candidate Guidelines</button>
+
+</div>
+
+
+
+<div id="myGrid2" class="ag-theme-balham grid-width"></div>
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs2 = [
+	{
+		headerName: "Candidate TIC ID", 
+		field: "ctoi",
+		filter: "agTextColumnFilter", 
+		width: 230,
+		pinned: 'left', 
+		lockPosition: true
+	},
+        {
+                headerName: "Discovery Data Source",
+                field: "discovery",
+                filter: "agTextColumnFilter",
+                width: 150,
+                pinned: 'left',
+                lockPosition: true,
+                headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+                        '&nbsp;<span class="tooltipster2" title="Discovery Data Source: TESS, NGTS, KPF, etc.">' +
+                        '<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+                        '<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+                        '<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+                        '<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+                        '<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>'
+                }
+        },
+	{
+		headerName: "Candidate Name", 
+		field: "candname",
+		filter: "agTextColumnFilter", 
+		width: 150,
+		pinned: 'left', 
+		lockPosition: true
+	},
+	{
+		headerName: "Master priority", 
+		field: "cpri_m",
+		filter: "agNumberColumnFilter",
+		width: 170,
+		
+		headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="All priorities: 1=high, 5=low">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>' 
+		}
+	},
+	{
+		headerName: "SG1A priority", 
+		field: "cpri_1a",
+		filter: "agNumberColumnFilter",
+                hide: true,
+		width: 150,				
+	},
+	{
+		headerName: "SG1B priority", 
+		field: "cpri_1b",
+		filter: "agNumberColumnFilter",
+		width: 150,				
+	},
+	{
+		headerName: "SG2 priority", 
+		field: "cpri_2",
+		filter: "agNumberColumnFilter",
+		width: 150,				
+	},
+	{
+		headerName: "SG3 priority", 
+		field: "cpri_3",
+		filter: "agNumberColumnFilter",
+		width: 150,				
+	},
+	{
+		headerName: "SG4 priority", 
+		field: "cpri_4",
+		filter: "agNumberColumnFilter",
+		width: 150,				
+	},
+	{
+		headerName: "SG5 priority", 
+		field: "cpri_5",
+		filter: "agNumberColumnFilter",
+		width: 150,				
+	},
+
+
+	{
+		headerName: "Initial Community Disposition", 
+		field: "cdisp",
+		filter: "agTextColumnFilter",			
+		headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="CP = confirmed planet<br />\nFP = false positive<br />\nPC = planetary candidate">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>' 
+		}
+		
+	},
+	{
+		headerName: "TFOPWG Disposition", 
+		field: "tdisp",
+		filter: "agTextColumnFilter",			
+		headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="APC = ambiguous planetary candidate<br />\nCP = confirmed planet<br />\nFA = false alarm<br />\nFP = false positive<br />\nKP = known planet<br />\nPC = planetary candidate">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>' 
+		}		
+	},
+
+	{
+		
+			headerName: "View TFOPWG Disposition", 
+		
+		field: "editctoidisp",
+		filter: false, 
+		sortable: false, 
+		suppressMenu: true,
+		cellRenderer: 'CtoiDispCellRender'
+	},
+	{
+		headerName: "Paper", 
+		field: "paper",
+		filter: "agTextColumnFilter",		   
+		tooltipField: 'paper',
+		tooltipComponentParams: {column: 'paper'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Initial Notes", 
+		field: "cnotes",
+		filter: "agTextColumnFilter",		   
+		tooltipField: 'cnotes',
+		tooltipComponentParams: {column: 'cnotes'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Date Modified", 
+		field: "cdate",
+		filter: "agTextColumnFilter",	
+	},
+	{
+		headerName: "Date Created", 
+		field: "ctoi_created",
+		filter: "agTextColumnFilter",	
+	},
+	{
+		headerName: "User", 
+		field: "cuser",
+		width: 140,	
+		filter: "agTextColumnFilter",
+		cellRenderer: UserCellRenderer,
+		cellRendererParams: {user_id: "cobid", user_name: "cuser"}		
+	},
+	{
+		headerName: "Group", 
+		field: "cgroup",
+		width: 140,
+		filter: "agTextColumnFilter",		
+	},
+	{
+		headerName: "Tag", 
+		field: "ctag",
+		width: 120,
+		filter: "agNumberColumnFilter",
+		//cellRenderer: 'CtoiTagCellRender'		
+		cellRenderer: TagCellRenderer
+	}
+
+];
+// end column definitions 
+
+// Row data
+var rowData2 = [];
+
+// Grid options
+var gridOptions2 = {
+	
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+	
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+        menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows2">No Candidates</span>',
+
+	columnDefs: columnDefs2,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData2,
+    rowHeight: 33,
+    headerHeight: 36,
+
+	components: {'CtoiPriCellRender': CtoiPriCellRenderer, 'CtoiDispCellRender': CtoiDispCellRenderer},
+
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	suppressColumnVirtualisation: true, 
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true
+};
+
+
+
+// Cell renderer - Priorities
+function CtoiPriCellRenderer() {}
+CtoiPriCellRenderer.prototype.init = function(params) {
+    this.eGui = document.createElement('span');
+    var disc = params.data.discovery;
+    if (disc == 'TESS') {
+	var text = "<a class=\"over2\" href=\"#\" onClick=\"window.open('edit_ctoipriorities.php?ctoi=" +
+			params.value.slice(4) + "','editctoipriorities','width=800,height=900,status=yes," +
+			"resizable=yes,scrollbars=yes');return false;\">Edit</a>";
+    }
+    else {
+        var text = "";
+    }
+    this.eGui.innerHTML = text;
+};
+CtoiPriCellRenderer.prototype.getGui = function() {
+    return this.eGui;
+};
+
+// Cell renderer - View/Edit dispositions
+function CtoiDispCellRenderer() {}
+CtoiDispCellRenderer.prototype.init = function(params) {
+    this.eGui = document.createElement('span');
+    var text = "";
+    if (params.value != '') {
+                           text = "<a href=\"#\" onClick=\"window.open('view_tfopdisp.php?toi=" + params.value +
+               "','settfopdisp','width=800,height=900,status=yes,resizable=yes,scrollbars=yes');return false;\">View</a>";
+        
+    }
+    this.eGui.innerHTML = text;
+};
+CtoiDispCellRenderer.prototype.getGui = function() {
+    return this.eGui;
+};
+
+//
+// Draw the grid
+//
+var eGridDiv2 = document.querySelector('#myGrid2');
+new agGrid.Grid(eGridDiv2, gridOptions2);
+
+</script>
+
+
+<!-- End CTOIs grid -->
+
+<!-- Start Planet Params grid -->
+
+
+<a name="planets" class="sticky_anchor"></a>
+
+<div class="grid_header">Planet Parameters <span class="grid_badge">0</span>
+
+<button class="myButt5" onClick="window.open('add_new.php?id=49617264&param=newplanetparams','newplanetparams',
+'width=850,height=1200,status=yes,resizable=yes,scrollbars=yes');
+return false;"><i class="fa fa-plus" aria-hidden="true"></i> Add new</button>
+
+<!--
+<button onclick="redrawAllRows()">Redraw Rows</button>
+<button onclick="onBtnExport()">Download CSV</button>
+-->
+
+</div>
+
+<div id="myGrid3" class="ag-theme-balham grid-width"></div>
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs3 = [
+	{
+		headerName: "provenance", 
+		field: "prov",
+		hide: true,
+	},
+	{
+		headerName: "provenance title", 
+		field: "prov_title",
+		hide: true,
+	},
+	{
+		headerName: "provenance number", 
+		field: "prov_num",
+		hide: true,
+	},
+	{
+		headerName: "Name", 
+		field: "name",
+		filter: "agTextColumnFilter", 
+                width: 230,
+		pinned: 'left', 
+		lockPosition: true
+	},
+        {
+                headerName: "Discovery Data Source",
+                field: "discovery",
+                filter: "agTextColumnFilter",
+                width: 150,
+                pinned: 'left',
+                lockPosition: true,
+                headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+                        '&nbsp;<span class="tooltipster2" title="Discovery Data Source: TESS, NGTS, KPF, etc.">' +
+                        '<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+                        '<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+                        '<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+                        '<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+                        '<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>'
+                }
+
+        },
+	{
+		headerName: "Candidate Name", 
+		field: "candname",
+		filter: "agTextColumnFilter", 
+		width: 150,
+		pinned: 'left', 
+		lockPosition: true
+	},
+	{
+		headerName: "TOI", 
+		field: "toi",
+		filter: "agTextColumnFilter",
+		width: 150, 
+		pinned: 'left', 
+		lockPosition: true
+	},
+	{
+		headerName: "Disposition", 
+		field: "disp",
+		filter: "agTextColumnFilter",			
+		width: 150,
+
+		headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="CP = confirmed planet<br />\nFP = false positive<br />\nKP = known planet<br />\nPC = planetary candidate">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>' 
+		}		
+	},
+	{
+		headerName: "Epoch (BJD)",
+		field:"epoch",
+		filter: "agNumberColumnFilter",  
+		width: 160,
+		
+		//tooltipField: 'epoch',
+		//tooltipComponentParams: {column: 'epoch', column_e: 'epoch_e'},
+		//tooltipComponent: CustomTooltip,
+	
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'epoch', column_e: 'epoch_e'},
+		
+		/* works but make it a function?
+		cellRenderer: function(params) {
+			var myVal = params.value;
+			var myErr = params.data.epoch_e;
+			var myCell = '';
+			
+			if (myVal !== null) myCell += myVal;
+			if (myErr !== null) myCell += " <span class=\"error3\">&plusmn; " + myErr + "</span>";
+			return myCell;
+		}*/
+	},
+	{
+		headerName: "Period (days)",
+		field:"per",
+		filter: "agNumberColumnFilter",  
+		width: 160,
+		
+		//tooltipField: 'per',
+		//tooltipComponentParams: {column: 'per', column_e: 'per_e'},
+		//tooltipComponent: CustomTooltip,
+
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'per', column_e: 'per_e'},
+	},
+	{
+		headerName: "Depth (mmag)",
+		field:"dep_m",
+		filter: "agNumberColumnFilter",  
+		width: 160,
+		
+		//tooltipField: 'dep_m',
+		//tooltipComponentParams: {column: 'dep_m', column_e: 'dep_m_e'},
+		//tooltipComponent: CustomTooltip,
+
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'dep_m', column_e: 'dep_m_e'},
+	},
+	{
+		headerName: "Depth (ppm)",
+		field:"dep_p",
+		filter: "agNumberColumnFilter",  
+		width: 160,
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'dep_p', column_e: 'dep_p_e'},
+	},
+	{
+		headerName: "Duration (hrs)",
+		field:"dur",
+		filter: "agNumberColumnFilter",  
+		width: 160,
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'dur', column_e: 'dur_e'},
+
+	},
+	{
+		headerName: "Inclination (deg)",
+		field:"inc",
+		filter: "agNumberColumnFilter",  
+		width: 160,
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'inc', column_e: 'inc_e'},
+
+	},
+	{
+		headerName: "Impact Parameter",
+		field:"imp",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'imp', column_e: 'imp_e'},
+	},
+	{
+		headerName: "Rad_p/Rad_s",
+		field:"rr",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'rr', column_e: 'rr_e'},
+	},
+	{
+		headerName: "a/Rad_s",
+		field:"ar",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'ar', column_e: 'ar_e'},		
+	},
+	{
+		headerName: "Radius (R_Earth)",
+		field:"rad",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'rad', column_e: 'rad_e'},		
+	},
+	{
+		headerName: "Mass (M_Earth)",
+		field:"mass",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'mass', column_e: 'mass_e'},		
+	},
+	{
+		headerName: "Insolation (Earth Flux)",
+		field:"ins",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'ins', column_e: 'ins_e'},		
+	},
+	{
+		headerName: "Equilibrium Temp (K)",
+		field:"eqt",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'eqt', column_e: 'eqt_e'},		
+	},
+	{
+		headerName: "Fitted Stellar Density (g/cm3)",
+		field:"dens",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'dens', column_e: 'dens_e'},		
+	},
+	{
+		headerName: "Semi-major Axis (AU)",
+		field:"sma",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'sma', column_e: 'sma_e'},		
+	},
+	{
+		headerName: "Eccentricity",
+		field:"ecc",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'ecc', column_e: 'ecc_e'},		
+	},
+	{
+		headerName: "Arg of Periastron",
+		field:"arg",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'arg', column_e: 'arg_e'},		
+	},
+	{
+		headerName: "Time of Periastron (BJD)",
+		field:"time",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'time', column_e: 'time_e'},		
+	},
+	{
+		headerName: "Velocity Semi-amplitude (m/s)",
+		field: "vsa",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'vsa', column_e: 'vsa_e'},		
+	},
+	{
+		headerName: "SNR",
+		field: "snr",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'snr', column_e: 'snr_e'},		
+	},
+	{
+		headerName: "Notes",
+		field: "pnotes",
+		filter: "agTextColumnFilter",		   
+		tooltipField: 'pnotes',
+		tooltipComponentParams: {column: 'pnotes'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Date",
+		field: "pdate",
+		filter: "agTextColumnFilter",
+	},
+	{
+		headerName: "User",
+		field:"puser",
+		width: 140,
+		filter: "agTextColumnFilter",
+		//cellRenderer: 'PlanetUserCellRender',
+		cellRenderer: UserCellRenderer,
+		cellRendererParams: {user_id: "pobid", user_name: "puser"}
+	},
+	{
+		headerName: "Edit", 
+		field: "planet_id",
+		width: 120,
+		filter: false, 
+		sortable: false, 
+		//suppressMenu: true,
+
+		headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="Planet parameters are editable by the owner except for the initial registered candidate parameters.">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+            '</div>' +
+            '</div>' 
+		},				
+		cellRenderer: EditCellRenderer,
+		cellRendererParams: {edit_type: "planetparams", edit_id: "planet_id", edit_user: "puser", 
+			my_user: "", my_status: ""},		
+	},
+	{
+		headerName: "Group",
+		field:"pgroup",
+		width: 120,
+		filter: "agTextColumnFilter",
+	},
+	{
+		headerName: "Tag",
+		field:"ptag",
+		width: 120,
+		filter: "agNumberColumnFilter",
+		//cellRenderer: 'PlanetTagCellRender'		
+		cellRenderer: TagCellRenderer
+	}
+];
+// end column definitions 
+
+
+// Row data
+var rowData3 = [];
+
+// Grid options
+var gridOptions3 = {
+	
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+        menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}    
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows2">No Planet Parameters</span>',
+
+	columnDefs: columnDefs3,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData3,
+    rowHeight: 38,
+    headerHeight: 38,
+
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	isFullWidthRow: function (params) {
+    	return isFullWidth2(params.rowNode.data);
+  	},
+	fullWidthCellRenderer: FullWidthCellRenderer2,
+	/*embedFullWidthRows: true,  -- doesn't work with pinned columns */
+
+	suppressColumnVirtualisation: true, 
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true,
+
+/*	works but only if domLayout: autoHeight is turned off
+	
+		getRowClass: function (params) {
+		//console.log(params.node.rowIndex); // works
+		//console.log(params.api.rowModel.rowsToDisplay.length); // works
+		if (params.node.rowIndex === params.api.rowModel.rowsToDisplay.length - 1) {   // last row?
+            return 'last-row';
+        }
+        },
+*/       
+
+};
+
+//function redrawAllRows() {
+//
+// don't think we need this, should happen automatically
+//
+//alert('hi');  
+//gridOptions3.api.redrawRows();
+//console.log(data);
+//gridOptions3.api.refreshCells();
+//gridOptions.api.setRowData(gridOptions3.rowData3)
+//var eGridDiv3 = document.querySelector('#myGrid3');
+//new agGrid.Grid(eGridDiv3, gridOptions3);
+//}
+
+
+// Full width rows function
+function isFullWidth2(data) {
+// return true when prov = confirmed, etc.
+return ['confirmed','toi','ctoi','planets','kic_planets','epic_planets'].indexOf(data.prov) >= 0;
+}
+
+// Cell renderer - full width rows
+function FullWidthCellRenderer2() {}
+FullWidthCellRenderer2.prototype.init = function(params) {  
+    this.eGui = document.createElement('div');
+	this.eGui.classList.add('full_width_header');
+	var text = params.data.prov_title + "<span class=\"grid_badge2\">" + params.data.prov_num + "</span>";
+    this.eGui.innerHTML = text;
+};
+FullWidthCellRenderer2.prototype.getGui = function() {
+    return this.eGui;
+};
+
+//
+// Draw the grid
+//
+var eGridDiv3 = document.querySelector('#myGrid3');
+new agGrid.Grid(eGridDiv3, gridOptions3);
+
+</script>
+
+
+
+<!-- end Planet Params grid -->
+
+
+<!-- Start Stellar Params grid -->
+
+
+<a name="stellar" class="sticky_anchor"></a>
+
+<div class="grid_header">Stellar Parameters <span class="grid_badge">1</span>
+
+<button class="myButt5" onClick="window.open('add_new.php?id=49617264&param=stellar','newstellarparam',
+'width=800,height=1200,status=yes,resizable=yes,scrollbars=yes');
+return false;"><i class="fa fa-plus" aria-hidden="true"></i> Add new</button>
+
+</div>
+
+<div id="myGrid4" class="ag-theme-balham grid-width"></div>
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs4 = [
+	{
+		headerName: "provenance", 
+		field: "prov",
+		hide: true,
+	},
+	{
+		headerName: "provenance title", 
+		field: "prov_title",
+		hide: true,
+	},
+	{
+		headerName: "provenance number", 
+		field: "prov_num",
+		hide: true,
+	},
+	{
+		headerName: "Telescope", 
+		field: "tel",
+		filter: "agTextColumnFilter", 
+		width: 150
+	},
+	{
+		headerName: "Instrument", 
+		field: "inst",
+		filter: "agTextColumnFilter",
+		width: 150 
+	},
+
+	{
+		headerName: "Spectral Type", 
+		field: "spectype",
+		filter: "agTextColumnFilter",
+		width: 150 
+	},
+
+	{
+		headerName: "Teff (K)", 
+		field: "teff",
+		filter: "agNumberColumnFilter",  
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'teff', column_e: 'teff_e'},		
+	},
+	{
+		headerName: "log(g)", 
+		field: "logg",
+		filter: "agNumberColumnFilter",  
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'logg', column_e: 'logg_e'},		
+	},
+	{
+		headerName: "Radius (R_Sun)", 
+		field: "srad",
+		filter: "agNumberColumnFilter",  
+		width: 160, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'srad', column_e: 'srad_e'},		
+	},
+	{
+		headerName: "logR'HK", 
+		field: "logr",
+		filter: "agNumberColumnFilter",  
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'logr', column_e: 'logr_e'},		
+	},
+	{
+		headerName: "S-index", 
+		field: "sindex",
+		filter: "agNumberColumnFilter",  
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'sindex', column_e: 'sindex_e'},		
+	},
+	{
+		headerName: "H-alpha", 
+		field: "halpha",
+		filter: "agNumberColumnFilter",  
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'halpha', column_e: 'halpha_e'},
+	},
+	{
+		headerName: "Vsini (km/s)", 
+		field: "vsini",
+		filter: "agNumberColumnFilter",  
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'vsini', column_e: 'vsini_e'},
+	},
+	{
+		headerName: "Rot Period (days)", 
+		field: "rotper",
+		filter: "agNumberColumnFilter",  		
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'rotper', column_e: 'rotper_e'},		
+	},
+	{
+		headerName: "Metallicity", 
+		field: "met",
+		filter: "agNumberColumnFilter",  		
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'met', column_e: 'met_e'},
+	},
+	{
+		headerName: "Mass (M_Sun)", 
+		field: "mass",
+		filter: "agNumberColumnFilter",  		
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'mass', column_e: 'mass_e'},
+	},
+	{
+		headerName: "Density (g/cm3)", 
+		field: "dens",
+		filter: "agNumberColumnFilter",  
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'dens', column_e: 'dens_e'},
+	},
+	{
+		headerName: "Luminosity (L_Sun)", 
+		field: "lum",
+		filter: "agNumberColumnFilter",  		
+		width: 130, 
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'lum', column_e: 'lum_e'},
+	},
+	{
+		headerName: "Observation Time (BJD)", 
+		field: "otime",
+		filter: "agNumberColumnFilter",  
+	},
+	{
+		headerName: "RV (m/s)", 
+		field:"rv",
+		filter: "agNumberColumnFilter",  		
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'rv', column_e: 'rv_e'},
+	},
+	{
+		headerName: "Distance (pc)", 
+		field: "dist",
+		filter: "agNumberColumnFilter",  		
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'dist', column_e: 'dist_e'},
+	},
+	{
+		headerName: "Age (Gyr)", 
+		field: "age",
+		filter: "agNumberColumnFilter",  		
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'age', column_e: 'age_e'},
+	},
+	{
+		headerName: "SNR", 
+		field: "snr",
+		filter: "agNumberColumnFilter",  		
+	},
+	{
+		headerName: "Fit Quality", 
+		field: "fitq",
+		filter: "agTextColumnFilter",
+		headerComponentParams: {
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '<span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '<div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '<span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+			'&nbsp;<span class="tooltipster2" title="E=Excellent, G=Good, F=Fair, P=Poor ">' +
+			'<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></span>' +
+			'<span ref="eSortOrder" class="ag-header-icon ag-header-label-icon ag-sort-order" aria-hidden="true"></span>' +
+			'<span ref="eSortAsc" class="ag-header-icon ag-header-label-icon ag-sort-ascending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortDesc" class="ag-header-icon ag-header-label-icon ag-sort-descending-icon" aria-hidden="true"></span>' +
+			'<span ref="eSortNone" class="ag-header-icon ag-header-label-icon ag-sort-none-icon" aria-hidden="true"></span>' +
+            '<span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '</div>' +
+            '</div>' 
+		}
+	},
+	{
+		headerName: "Notes",
+		field: "snotes",
+		filter: "agTextColumnFilter",		   
+		tooltipField: 'snotes',
+		tooltipComponentParams: {column: 'snotes'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Date",
+		field: "sdate",
+		filter: "agTextColumnFilter",	
+	},
+	{
+		headerName: "User",
+		field: "suser",
+		width: 140,
+		filter: "agTextColumnFilter",
+		cellRenderer: UserCellRenderer,
+		cellRendererParams: {user_id: "sobid", user_name: "suser"}
+	},
+
+{
+		headerName: "Edit", 
+		field: "stellar_id",
+		width: 120,
+		filter: false, 
+		sortable: false, 
+		suppressMenu: true,
+		
+		cellRenderer: EditCellRenderer,
+		cellRendererParams: {edit_type: "stellar", edit_id: "stellar_id", edit_user: "suser", 
+			my_user: "", my_status: ""},		
+	},
+
+	{
+		headerName: "Group",
+		field: "sgroup",
+		width: 120,
+		filter: "agTextColumnFilter"
+	},
+	{
+		headerName: "Tag",
+		field: "stag",
+		width: 120,
+		filter: "agNumberColumnFilter",
+		cellRenderer: TagCellRenderer
+	}
+
+];
+// end column definitions 
+
+
+// Row data
+var rowData4 = [{"prov":"tic","prov_title":"TESS Input Catalog Stellar Parameters","prov_num":1},{"tel":"","inst":"","teff":5201,"teff_e":127.96,"logg":4.35005,"logg_e":0.0860987,"srad":1.03812,"srad_e":0.0606231,"logr":"","logr_e":"","sindex":"","sindex_e":"","halpha":"","halpha_e":"","vsini":"","vsini_e":"","rotper":"","rotper_e":"","met":null,"met_e":null,"mass":0.88,"mass_e":0.114027,"dens":1.109059,"dens_e":0.267319,"lum":0.7104606,"lum_e":0.025754,"otime":"","otime_e":"","rv":"","rv_e":"","dist":472.188,"dist_e":3.345,"age":"","age_e":"","snr":"","snr_e":"","fitq":"","snotes":"TIC v8.2","sdate":"2019-04-15","suser":"TESS project","sgroup":"","stag":""}];
+
+// Grid options
+var gridOptions4 = {
+	
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+	
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+        menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}    
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows2">No Stellar Parameters</span>',
+
+	columnDefs: columnDefs4,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData4,
+    rowHeight: 38,
+	headerHeight: 38,
+
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	isFullWidthRow: function (params) {
+    	return isFullWidth(params.rowNode.data);
+  	},
+	fullWidthCellRenderer: FullWidthCellRenderer,
+
+	suppressColumnVirtualisation: true, 
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true,
+};
+
+// Full width rows function
+function isFullWidth(data) {
+// return true when prov = confirmed, etc.
+return ['tic','toi','stellar','kicstellar','epicstellar'].indexOf(data.prov) >= 0;
+}
+
+//
+// Cell renderer
+//
+function FullWidthCellRenderer() {}
+FullWidthCellRenderer.prototype.init = function(params) {  
+    this.eGui = document.createElement('div');
+	this.eGui.classList.add('full_width_header');
+	var text = params.data.prov_title + "<span class=\"grid_badge2\">" + params.data.prov_num + "</span>";
+    this.eGui.innerHTML = text;
+};
+FullWidthCellRenderer.prototype.getGui = function() {
+    return this.eGui;
+};
+
+
+//
+// Draw the grid
+//
+var eGridDiv4 = document.querySelector('#myGrid4');
+new agGrid.Grid(eGridDiv4, gridOptions4);
+
+</script>
+
+
+<!-- end Stellar Params grid -->
+
+<!-- start Stellar Companions grid -->
+
+
+<a name="stellarcomp" class="sticky_anchor"></a>
+
+<div class="grid_header">Stellar Companions <span class="grid_badge">0</span>
+
+<button class="myButt5" onClick="window.open('add_new.php?id=49617264&param=stellarcomp','newstellarcomp',
+'width=800,height=1200,status=yes,resizable=yes,scrollbars=yes');
+return false;"><i class="fa fa-plus" aria-hidden="true"></i> Add new</button>
+</div>
+
+<div id="myGrid5" class="ag-theme-balham grid-width"></div>
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs5 = [
+
+	{
+		headerName: "Separation (arcsec)", 
+		field: "sep",
+		filter: "agNumberColumnFilter",  
+		width: 160,
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'sep', column_e: 'sep_e'},
+	},
+	{
+		headerName: "Position Angle (E of N (deg))", 
+		field: "pa",
+		filter: "agNumberColumnFilter",  
+		width: 220,
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'pa', column_e: 'pa_e'},
+	},
+	{
+		headerName: "Filter", 
+		field: "filt",
+		filter: "agTextColumnFilter",
+	},
+	{
+		headerName: "Delta Magnitude", 
+		field: "dmag",
+		filter: "agNumberColumnFilter",  
+		width: 160,
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'dmag', column_e: 'dmag_e'},
+	},
+	{
+		headerName: "Observation Date (UT)", 
+		field: "odate",
+		filter: "agTextColumnFilter"
+	},
+	{
+		headerName: "Notes", 
+		field: "scnotes",
+		filter: "agTextColumnFilter",		   
+		tooltipField: 'scnotes',
+		tooltipComponentParams: {column: 'scnotes'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Date", 
+		field: "scdate",
+		filter: "agTextColumnFilter",
+	},
+	{
+		headerName: "User", 
+		field: "scuser",
+		width: 140,
+		filter: "agTextColumnFilter",
+		cellRenderer: UserCellRenderer,
+		cellRendererParams: {user_id: "scobid", user_name: "scuser"}
+	},
+	{
+		headerName: "Edit", 
+		field: "scid",
+		width: 120,
+		filter: false, 
+		sortable: false, 
+		suppressMenu: true,
+		
+		cellRenderer: EditCellRenderer,
+		cellRendererParams: {edit_type: "scomp", edit_id: "scid", edit_user: "scuser", 
+			my_user: "", my_status: ""},		
+	},
+	{
+		headerName: "Group", 
+		field: "scgroup",
+		width: 120,
+		filter: "agTextColumnFilter"
+	},
+	{
+		headerName: "Tag", 
+		field: "sctag",
+		width: 120,
+		filter: "agNumberColumnFilter",		
+		cellRenderer: TagCellRenderer
+}
+
+
+];
+// end column definitions 
+
+
+// Row data
+var rowData5 = [];
+
+// Grid options
+var gridOptions5 = {
+	
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+		menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}    
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows2">No Stellar Companions</span>',
+
+	columnDefs: columnDefs5,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData5,
+    rowHeight: 38,
+	headerHeight: 38,
+
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	suppressColumnVirtualisation: true, 
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true,
+
+};
+
+
+//
+// Draw the grid
+//
+var eGridDiv5 = document.querySelector('#myGrid5');
+new agGrid.Grid(eGridDiv5, gridOptions5);
+
+</script>
+
+
+<!-- end Stellar Companions grid -->
+
+
+<!-- start Magnitudes grid -->
+
+<a name="magnitudes" class="sticky_anchor"></a>
+
+<div class="grid_header">Magnitudes <span class="grid_badge">11</span>
+
+<button class="myButt5" onClick="window.open('add_new.php?id=49617264&param=mag','newmag',
+'width=800,height=1100,status=yes,resizable=yes,scrollbars=yes');
+return false;"><i class="fa fa-plus" aria-hidden="true"></i> Add new</button>
+</div>
+
+<div id="myGrid6" class="ag-theme-balham grid-width"></div>
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs6 = [
+	{
+		headerName: "Band", 
+		field: "band",
+		filter: "agTextColumnFilter", 
+        width: 150
+	},
+	{
+		headerName: "Value", 
+		field: "value",
+		filter: "agNumberColumnFilter",  
+		cellRenderer: ErrorCellRenderer,
+		cellRendererParams: {column: 'value', column_e: 'value_e'},		
+        width: 150
+	},
+	{
+		headerName: "Notes", 
+		field: "mnotes",
+		filter: "agTextColumnFilter",		   
+		tooltipField: 'mnotes',
+		tooltipComponentParams: {column: 'mnotes'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Date", 
+		field: "mdate",
+		filter: "agTextColumnFilter",
+	},
+	{
+		headerName: "User", 
+		field: "muser",
+		filter: "agTextColumnFilter",
+		cellRenderer: UserCellRenderer,
+		cellRendererParams: {user_id: "mobid", user_name: "muser"},
+        width: 120         
+	},
+	{
+		headerName: "Edit", 
+		field: "mag_id",
+		filter: false, 
+		sortable: false, 
+		suppressMenu: true,
+		
+		cellRenderer: EditCellRenderer,
+		cellRendererParams: {edit_type: "mag", edit_id: "mag_id", edit_user: "muser", 
+			my_user: "", my_status: "",
+			mtabname: "mtabname"},
+        width: 120
+	},
+	{
+		headerName: "Group", 
+		field: "mgroup",
+		filter: "agTextColumn Filter",
+        width: 120
+	},
+	{
+		headerName: "Tag", 
+		field: "mtag",
+		filter: "agNumberColumnFilter",
+		cellRenderer: TagCellRenderer
+}
+
+];
+// end column definitions 
+
+
+// Row data
+var rowData6 = [{"band":"TESS","value":12.9915,"value_e":0.006,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"tmag"},{"band":"B","value":14.6,"value_e":0.019,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"bmag"},{"band":"V","value":13.666,"value_e":0.069,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"vmag"},{"band":"Gaia","value":13.5302,"value_e":0.000224,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"gaiamag"},{"band":"J","value":12.262,"value_e":0.022,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"jmag"},{"band":"H","value":11.895,"value_e":0.024,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"hmag"},{"band":"K","value":11.793,"value_e":0.024,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"kmag"},{"band":"WISE 3.4 micron","value":11.759,"value_e":0.023,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"w1mag"},{"band":"WISE 4.6 micron","value":11.813,"value_e":0.021,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"w2mag"},{"band":"WISE 12 micron","value":12.467,"value_e":0.394,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"w3mag"},{"band":"WISE 22 micron","value":8.858,"value_e":0.411,"mnotes":"TIC v8.2","mdate":"2019-04-15","muser":"TESS project","mgroup":"","mtag":"","mtabname":"w4mag"}];
+
+// Grid options
+var gridOptions6 = {
+
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+		menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}    
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows2">No Magnitudes</span>',
+
+	columnDefs: columnDefs6,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData6,
+    rowHeight: 38,
+	headerHeight: 38,
+
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	suppressColumnVirtualisation: true, 
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true,
+};
+
+
+//
+// Draw the grid
+//
+var eGridDiv6 = document.querySelector('#myGrid6');
+new agGrid.Grid(eGridDiv6, gridOptions6);
+
+</script>
+
+
+<!-- end Magnitudes grid -->
+
+
+
+
+<!-- start Imaging grid -->
+
+<a name="imaging" class="sticky_anchor"></a>
+
+<div class="grid_header">Imaging Observations <span class="grid_badge">0</span>
+
+<button class="myButt5" onClick="window.open('add_new.php?id=49617264&param=img','newimg',
+'width=800,height=1200,status=yes,resizable=yes,scrollbars=yes');
+return false;"><i class="fa fa-plus" aria-hidden="true"></i> Add new</button>
+</div>
+
+<div id="myGrid7" class="ag-theme-balham grid-width"></div>
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs7 = [
+	{
+		headerName: "Name", 
+		field: "iplname",
+		pinned: 'left', 
+		lockPosition: true,
+		filter: "agNumberColumnFilter", 
+		width: 160
+	},
+	{
+		headerName: "TOI", 
+		field: "itoi",
+		pinned: 'left', 
+		lockPosition: true,
+		filter: "agTextColumnFilter", 
+		width: 120
+	},
+	{
+		headerName: "User", 
+		field: "imuser",
+		width: 140,
+		filter: "agTextColumnFilter",		
+		cellRenderer: UserCellRenderer,
+		cellRendererParams: {user_id: "imobid", user_name: "imuser"}   
+	},
+	{
+		headerName: "Telescope", 
+		field: "itel",
+		filter: "agTextColumnFilter",  
+		width: 150
+	},
+	{
+		headerName: "Instrument", 
+		field: "iinst",
+		filter: "agTextColumnFilter",  
+		width: 150
+	},
+	{
+		headerName: "Filter", 
+		field: "ifilt",
+		filter: "agTextColumnFilter",  
+		width: 150
+	},
+	{
+		headerName: "Image Type", 
+		field: "itype",
+		filter: "agTextColumnFilter",  
+		width: 120
+	},
+	{
+		headerName: "Pixel scale (arcsec)", 
+		field: "ipix",
+		filter: "agNumberColumnFilter",  
+		width: 120
+	},
+	{
+		headerName: "Estimated PSF (arcsec)", 
+		field: "ipsf",
+		filter: "agNumberColumnFilter",  
+		width: 120
+	},
+	{
+		headerName: "Estimated Contrast", 
+		field: "icont",
+		filter: "agTextColumnFilter",  
+		cellRenderer: ContrastCellRenderer,
+		width: 120
+	},
+	{
+		headerName: "Observation date (UT)", 
+		field: "idate",
+		filter: "agTextColumnFilter",  
+		width: 120
+	},
+	{
+		headerName: "Notes", 
+		field: "inotes",
+		filter: "agTextColumnFilter",		   
+		tooltipField: 'inotes',
+		tooltipComponentParams: {column: 'inotes'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Edit", 
+		field: "imid",
+		width: 120,
+		filter: false, 
+		sortable: false, 
+		suppressMenu: true,
+		cellRenderer: EditCellRenderer,
+		cellRendererParams: {edit_type: "img", edit_id: "imid", edit_user: "imuser", tid: "",
+			my_user: "", my_status: ""},		
+	},
+	{
+		headerName: "Group", 
+		field: "igroup",
+		filter: "agTextColumnFilter",		 
+		width: 120  
+	},
+	{
+		headerName: "Tag", 
+		field: "itag",
+		filter: "agNumberColumnFilter",
+		width: 120,
+		cellRenderer: TagCellRenderer
+	}
+
+];
+// end column definitions 
+
+// Row data
+var rowData7 = [];
+
+// Grid options
+var gridOptions7 = {
+	
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+		menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows2">No Imaging Observations</span>',
+
+	columnDefs: columnDefs7,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData7,
+    rowHeight: 33,
+    headerHeight: 38,
+
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	suppressColumnVirtualisation: true, 
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true,
+};
+
+//
+// Cell renderer - Estimated contrast
+//
+function ContrastCellRenderer() {}
+ContrastCellRenderer.prototype.init = function(params) {
+    this.eGui = document.createElement('span');
+	var blah = params.value;
+	var text = blah.replace('delta','&#916;');
+    this.eGui.innerHTML = text;
+};
+ContrastCellRenderer.prototype.getGui = function() {
+    return this.eGui;
+};
+
+
+//
+// Draw the grid
+//
+var eGridDiv7 = document.querySelector('#myGrid7');
+new agGrid.Grid(eGridDiv7, gridOptions7);
+
+</script>
+
+
+<!-- end Imaging grid -->
+
+
+<!-- start Spectroscopy grid -->
+
+<a name="spect" class="sticky_anchor"></a>
+
+<div class="grid_header">Spectroscopy Observations <span class="grid_badge">0</span>
+
+<button class="myButt5" onClick="window.open('add_new.php?id=49617264&param=spect','newspect',
+'width=800,height=1200,status=yes,resizable=yes,scrollbars=yes');
+return false;"><i class="fa fa-plus" aria-hidden="true"></i> Add new</button>
+</div>
+
+<div id="myGrid8" class="ag-theme-balham grid-width"></div>
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs8 = [
+	{
+		headerName: "Name", 
+		field: "splname",
+		pinned: 'left', 
+		lockPosition: true,
+		filter: "agNumberColumnFilter", 
+		width: 160
+	},
+	{
+		headerName: "TOI", 
+		field: "stoi",
+		pinned: 'left', 
+		lockPosition: true,
+		filter: "agTextColumnFilter", 
+		width: 120
+	},
+	{
+		headerName: "User", 
+		field: "specuser",
+		width: 140,
+		filter: "agTextColumnFilter",		
+		cellRenderer: UserCellRenderer,
+		cellRendererParams: {user_id: "specobid", user_name: "specuser"}   
+	},
+	{
+		headerName: "Telescope", 
+		field: "stel",
+		filter: "agTextColumnFilter", 
+		width: 150  
+    },
+	{
+		headerName: "Instrument", 
+		field: "sinst",
+		filter: "agTextColumnFilter", 
+		width: 150
+    },
+	{
+		headerName: "Spectral resolution (R)", 
+		field: "ssres",
+		filter: "agNumberColumnFilter", 
+		width: 130
+	},
+	{
+		headerName: "Wavelength coverage", 
+		field: "swave",
+		filter: "agTextColumnFilter", 
+		width: 150
+    },
+	{
+		headerName: "SNR/resolution element", 
+		field: "ssnr1",
+		filter: "agNumberColumnFilter", 
+		width: 130
+    },
+	{
+		headerName: "SNR wavelength", 
+		field: "ssnr2",
+		filter: "agNumberColumnFilter", 
+		width: 120
+    },
+	{
+		headerName: "Appropriate to PRVs", 
+		field: "sapp",
+		filter: "agTextColumnFilter", 
+		width: 120
+    },
+	{
+		headerName: "Observation date (UT)", 
+		field: "sdate",
+		filter: "agTextColumnFilter", 
+		width: 120
+    },
+	{
+		headerName: "Notes", 
+		field: "snotes",
+		filter: "agTextColumnFilter",		   
+		tooltipField: 'snotes',
+		tooltipComponentParams: {column: 'snotes'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Edit", 
+		field: "spid",
+		width: 120,
+		filter: false, 
+		sortable: false, 
+		suppressMenu: true,
+		cellRenderer: EditCellRenderer,
+		cellRendererParams: {edit_type: "spec", edit_id: "spid", edit_user: "specuser", tid: "",
+			my_user: "", my_status: ""},		
+	},
+	{
+		headerName: "Group", 
+		field: "sgroup",
+		filter: "agTextColumnFilter",		 
+		width: 120  
+	},
+	{
+		headerName: "Tag", 
+		field: "stag",
+		filter: "agNumberColumnFilter",
+		width: 120,
+		cellRenderer: TagCellRenderer
+	}
+];
+// end column definitions 
+
+// Row data
+var rowData8 = [];
+
+// Grid options
+var gridOptions8 = {
+	
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+		menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows2">No Spectroscopy Observations</span>',
+
+	columnDefs: columnDefs8,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData8,
+    rowHeight: 38,
+    headerHeight: 38,
+
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	suppressColumnVirtualisation: true, 
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true,
+};
+
+
+//
+// Draw the grid
+//
+var eGridDiv8 = document.querySelector('#myGrid8');
+new agGrid.Grid(eGridDiv8, gridOptions8);
+
+</script>
+
+<!-- end Spectroscopy grid -->
+
+
+<!-- start Time Series grid -->
+
+<a name="tseries" class="sticky_anchor"></a>
+
+<div class="grid_header">Time Series Observations <span class="grid_badge">3</span>
+
+<button class="myButt5" onClick="window.open('add_new.php?id=49617264&param=tseries','newtseries',
+'width=800,height=1200,status=yes,resizable=yes,scrollbars=yes');
+return false;"><i class="fa fa-plus" aria-hidden="true"></i> Add new</button>
+</div>
+
+<div id="myGrid9" class="ag-theme-balham grid-width"></div>
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs9 = [
+	{
+		headerName: "Name", 
+		field: "tsplname",
+		pinned: 'left', 
+		lockPosition: true,
+		filter: "agNumberColumnFilter", 
+		width: 160
+	},
+	{
+		headerName: "TOI", 
+		field: "tstoi",
+		pinned: 'left', 
+		lockPosition: true,
+		filter: "agTextColumnFilter", 
+		width: 120
+	},
+	{
+		headerName: "User", 
+		field: "tsuser",
+		width: 140,
+		filter: "agTextColumnFilter",		
+		cellRenderer: UserCellRenderer,
+		cellRendererParams: {user_id: "tsobid", user_name: "tsuser"}   
+	},
+	{
+		headerName: "Telescope", 
+		field: "tstel",
+		filter: "agTextColumnFilter",
+		width: 150
+	},
+	{
+		headerName: "Camera", 
+		field:"tscam",
+		filter: "agTextColumnFilter",
+		width: 150
+	},
+	{
+		headerName: "Filter", 
+		field:"tsfilt",
+		filter: "agTextColumnFilter",
+		width: 150
+	}, 
+	{
+		headerName: "Pixel scale (arcsec)", 
+		field:"tspix",
+		filter: "agNumberColumnFilter",
+		width: 120
+	},
+	{
+		headerName: "Estimated PSF (arcsec)", 
+		field:"tspsf",
+		filter: "agNumberColumnFilter",
+		width: 120
+	},
+	{
+		headerName: "Photometric Aperture Radius (pixel)", 
+		field:"tspar",
+		filter: "agNumberColumnFilter",
+		width: 120
+	},
+	{
+		headerName: "Transit Coverage", 
+		field:"tstcov",
+		filter: "agTextColumnFilter",
+		width: 120
+	},
+	{
+		headerName: "Faintest Neighbor delta Mag", 
+		field:"tsmag",
+		filter: "agNumberColumnFilter",
+		width: 120
+	},
+	{
+		headerName: "Observation date (UT)", 
+		field: "tsdate",
+		filter: "agTextColumnFilter",
+		width: 120
+	},
+	{
+		headerName: "Observation duration (m)", 
+		field: "tsdur",
+		filter: "agNumberColumnFilter",
+		width: 120
+	},
+	{
+		headerName: "Number of Observations", 
+		field: "tsnum",
+		filter: "agNumberColumnFilter",
+		width: 120
+	},
+	{
+		headerName: "Observation Type", 
+		field: "tstype",
+		filter: "agTextColumnFilter",
+		width: 120
+	},
+	{
+		headerName: "Notes", 
+		field: "tsnotes",
+		filter: "agTextColumnFilter",
+		tooltipField: 'tsnotes',
+		tooltipComponentParams: {column: 'tsnotes'},
+		tooltipComponent: CustomTooltip2
+	},
+	{
+		headerName: "Edit", 
+		field: "tsid",
+		width: 120,
+		filter: false, 
+		sortable: false, 
+		suppressMenu: true,
+		cellRenderer: EditCellRenderer,
+		cellRendererParams: {edit_type: "tser", edit_id: "tsid", edit_user: "tsuser", tid: "49617264",
+			my_user: "", my_status: ""},		
+	},	
+	{
+		headerName: "Group", 
+		field: "tsgroup",
+		filter: "agTextColumnFilter",		 
+		width: 120
+	},
+	{
+		headerName: "Tag", 
+		field: "tstag",
+		filter: "agNumberColumnFilter",
+		width: 120,
+		cellRenderer: TagCellRenderer
+	}
+];
+// end column definitions 
+
+// Row data
+var rowData9 = [{"tsplname":"","tstoi":"","tstel":"CDK20 (0.51 m)","tscam":"Moravian C3-26000","tsfilt":"B","tspix":0.449,"tspsf":2.9,"tspar":14,"tstcov":"Full","tsmag":null,"tsdate":"2024-10-15","tsdur":330,"tsnum":104,"tstype":"Continuous","tsnotes":"","tsuser":"pevans","tsgroup":"tfopwg","tstag":443734,"tsobid":684,"tsid":27726},{"tsplname":"","tstoi":"","tstel":"planewave (0.36 m)","tscam":"Moravian","tsfilt":"Rc","tspix":0.735,"tspsf":2.8,"tspar":9,"tstcov":"Full","tsmag":2.2,"tsdate":"2024-10-05","tsdur":297,"tsnum":54,"tstype":"Continuous","tsnotes":"Full","tsuser":"radford","tsgroup":"tfopwg","tstag":443658,"tsobid":2328,"tsid":27643},{"tsplname":"","tstoi":"","tstel":"TRAPPIST-South-0.6m (0.6 m)","tscam":"FLI ProLine PL3041-BB","tsfilt":"zp","tspix":0.64,"tspsf":2.66,"tspar":7,"tstcov":"Full","tsmag":null,"tsdate":"2024-09-15","tsdur":242,"tsnum":125,"tstype":"Continuous","tsnotes":"","tsuser":"barkaoui","tsgroup":"tfopwg","tstag":443101,"tsobid":1426,"tsid":27500}];
+
+// Grid options
+var gridOptions9 = {
+	
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+        menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows4">No Time Series Observations</span>',
+
+	columnDefs: columnDefs9,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData9,
+    rowHeight: 38,
+    headerHeight: 38,
+
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	suppressColumnVirtualisation: true, 
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true,
+};
+
+
+//
+// Draw the grid
+//
+var eGridDiv9 = document.querySelector('#myGrid9');
+new agGrid.Grid(eGridDiv9, gridOptions9);
+
+</script>
+
+<!-- end Time Series grid -->
+
+
+<!-- start Files grid -->
+
+<a name="files" class="sticky_anchor"></a>
+
+<div class="grid_header">Files <span class="grid_badge">35</span>
+
+<button class="myButt5" onClick="window.open('add_new.php?id=49617264&param=file','newfile',
+'width=800,height=900,status=yes,resizable=yes,scrollbars=yes');
+return false;"><i class="fa fa-plus" aria-hidden="true"></i> Add new</button>
+
+</div>
+
+
+<div id="myGrid10" class="ag-theme-balham grid-width"></div>
+
+
+<script type="text/javascript" charset="utf-8">
+
+var columnDefs10 = [
+	{
+		headerName: "Name", 
+		field: "fplname",
+		pinned: 'left', 
+		lockPosition: true,
+		filter: "agNumberColumnFilter", 
+       	width: 160
+	},
+	{
+		headerName: "TOI", 
+		field: "ftoi",
+		pinned: 'left', 
+		lockPosition: true,
+		filter: "agTextColumnFilter", 
+    	width: 120
+    },
+	{
+		headerName: "Type", 
+		field: "ftype",
+		filter: "agTextColumnFilter",
+		width: 160
+	},
+	{
+		headerName: "File Name", 
+		field: "fname",
+		filter: "agTextColumnFilter",
+		minWidth: 120,
+		cellRenderer: FileCellRenderer,
+		cellRendererParams: {fname: "fname", fid: "fid", fext: "fext"}
+	},
+	{
+		headerName: "Description", 
+		field: "fdesc",		
+		filter: "agTextColumnFilter",
+		width: 350,
+		tooltipField: 'fdesc',
+		tooltipComponentParams: {column: 'fdesc'},
+		tooltipComponent: CustomTooltip3
+	},
+	{
+		headerName: "Date", 
+		field: "fdate",
+		filter: "agTextColumnFilter"
+	},
+	{
+		headerName: "User", 
+		field: "fuser",
+		width: 140,
+		filter: "agTextColumnFilter",		
+		cellRenderer: UserCellRenderer,
+		cellRendererParams: {user_id: "fobid", user_name: "fuser"}   
+	},
+	{
+		headerName: "Edit", 
+		field: "fid",
+		width: 120,
+		filter: false, 
+		sortable: false, 
+		suppressMenu: true,
+		cellRenderer: EditCellRenderer,
+		cellRendererParams: {edit_type: "file", edit_id: "fid", edit_user: "fuser", tid: "49617264",
+			my_user: "", my_status: ""},		
+	},
+	{
+		headerName: "Group", 
+		field: "fgroup",
+		filter: "agTextColumnFilter",		 
+		width: 120 
+	},
+	{
+		headerName: "Tag", 
+		field: "ftag",
+		filter: "agNumberColumnFilter",
+		width: 120,
+		cellRenderer: TagCellRenderer
+	}
+];
+// end column definitions 
+
+// Row data
+var rowData10 = [{"ftype":"Light_Curve","fname":"TIC49617264_B_180_0040_out.fits","fplname":"","ftoi":"","fdesc":"Sample fits file with WCS","fdate":"2024-10-15 20:49:29","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006056,"fext":"fits"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_field.png","fplname":"","ftoi":"","fdesc":"FoV zoom","fdate":"2024-10-15 20:48:11","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006055,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_field_zoom.png","fplname":"","ftoi":"","fdesc":"FoV zoom","fdate":"2024-10-15 20:47:49","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006054,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_fitpanel03_rel_flux_T1.png","fplname":"","ftoi":"","fdesc":"AIJ model fit","fdate":"2024-10-15 20:47:21","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006053,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_lightcurve.png","fplname":"","ftoi":"","fdesc":"AIJ lightcurves T1","fdate":"2024-10-15 20:46:48","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006052,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_lightcurve_comp_stars.png","fplname":"","ftoi":"","fdesc":"AIJ lightcurves comp stars","fdate":"2024-10-15 20:46:16","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006051,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_measurements.apertures","fplname":"","ftoi":"","fdesc":"AIJ apertures","fdate":"2024-10-15 20:45:49","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006050,"fext":"apertures"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_measurements.plotcfg","fplname":"","ftoi":"","fdesc":"AIJ plot config","fdate":"2024-10-15 20:45:20","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006049,"fext":"plotcfg"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_measurements.txt","fplname":"","ftoi":"","fdesc":"AIJ measurements table","fdate":"2024-10-15 20:44:40","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006048,"fext":"txt"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_measurements_14px_NEB-table.txt","fplname":"","ftoi":"","fdesc":"NEB table","fdate":"2024-10-15 20:43:54","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006047,"fext":"txt"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_measurements_dmagRMS-plot.png","fplname":"","ftoi":"","fdesc":"Dmag vs RMS plot","fdate":"2024-10-15 20:43:31","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006046,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_B-filter_seeing-profile.png","fplname":"","ftoi":"","fdesc":"AIJ seeing profile","fdate":"2024-10-15 20:43:05","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006045,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264-11_20241015_El_Sauce_T1_14px_NEBdepth-plot.zip","fplname":"","ftoi":"","fdesc":"NEB check zip","fdate":"2024-10-15 20:42:35","fuser":"pevans","fgroup":"tfopwg","ftag":443734,"fobid":684,"fid":1006044,"fext":"zip"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_measurements_dmagRMS-plot.png","fplname":"","ftoi":"","fdesc":"dmagRmsplot","fdate":"2024-10-05 16:19:37","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004502,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_single_seeing-profile.png","fplname":"","ftoi":"","fdesc":"Seeing Profile","fdate":"2024-10-05 16:18:04","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004500,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_measurements_9px_NEB-table.txt","fplname":"","ftoi":"","fdesc":"Neb table","fdate":"2024-10-05 16:17:23","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004499,"fext":"txt"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_T7_9px_NEBcheck.zip","fplname":"","ftoi":"","fdesc":"NEB Depth Plots","fdate":"2024-10-05 16:16:52","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004498,"fext":"zip"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_measurements.tbl","fplname":"","ftoi":"","fdesc":"AIJ Photometry Measurements Table","fdate":"2024-10-05 16:15:31","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004497,"fext":"tbl"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_measurements.plotcfg","fplname":"","ftoi":"","fdesc":"AIJ Plot configuration File","fdate":"2024-10-05 16:15:06","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004496,"fext":"plotcfg"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_measurements.apertures","fplname":"","ftoi":"","fdesc":"AIJ Photometry Aperture file","fdate":"2024-10-05 16:14:36","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004495,"fext":"apertures"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_lightcurve.png","fplname":"","ftoi":"","fdesc":"Light Curve Plot","fdate":"2024-10-05 16:14:05","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004494,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_comparisonstars_lightcurve.png","fplname":"","ftoi":"","fdesc":"comparisons light curve plot","fdate":"2024-10-05 16:13:29","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004493,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_notes.txt","fplname":"","ftoi":"","fdesc":"Notes and Results Text","fdate":"2024-10-05 16:13:00","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004492,"fext":"txt"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_fitpanel303_rel_flux_T1.png","fplname":"","ftoi":"","fdesc":"Data Fit panel","fdate":"2024-10-05 16:12:33","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004491,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_field-zoom.png","fplname":"","ftoi":"","fdesc":"field zoom","fdate":"2024-10-05 16:12:02","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004490,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_field.png","fplname":"","ftoi":"","fdesc":"Field Image with Apertures","fdate":"2024-10-05 16:11:26","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004489,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC49617264.11_20241005_Brierfield036m_Rc_WCS.fits","fplname":"","ftoi":"","fdesc":"Fits ","fdate":"2024-10-05 16:07:00","fuser":"radford","fgroup":"tfopwg","ftag":443658,"fobid":2328,"fid":1004488,"fext":"fits"},{"ftype":"Light_Curve","fname":"TIC_49617264.11_20240915_TRAPPIST-South-0.6m_zp_7pix_zoom-field.png","fplname":"","ftoi":"","fdesc":"AIJ Field","fdate":"2024-09-18 09:02:26","fuser":"barkaoui","fgroup":"tfopwg","ftag":443101,"fobid":1426,"fid":1001254,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC_49617264.11_20240915_TRAPPIST-South-0.6m_zp_7pix_seeing-profile.png","fplname":"","ftoi":"","fdesc":"AIJ Seeing Profile","fdate":"2024-09-18 09:02:25","fuser":"barkaoui","fgroup":"tfopwg","ftag":443101,"fobid":1426,"fid":1001253,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC_49617264.11_20240915_TRAPPIST-South-0.6m_zp_7pix_measurements.apertures","fplname":"","ftoi":"","fdesc":"AIJ Aperture File","fdate":"2024-09-18 09:02:25","fuser":"barkaoui","fgroup":"tfopwg","ftag":443101,"fobid":1426,"fid":1001252,"fext":"apertures"},{"ftype":"Light_Curve","fname":"TIC_49617264.11_20240915_TRAPPIST-South-0.6m_zp_7pix_field.png","fplname":"","ftoi":"","fdesc":"AIJ Field","fdate":"2024-09-18 09:02:25","fuser":"barkaoui","fgroup":"tfopwg","ftag":443101,"fobid":1426,"fid":1001251,"fext":"png"},{"ftype":"Light_Curve","fname":"TIC_49617264.11_20240915_TRAPPIST-South-0.6m_zp_7pix_measurements.plotcfg","fplname":"","ftoi":"","fdesc":"AIJ Plot Configuration File","fdate":"2024-09-18 09:02:24","fuser":"barkaoui","fgroup":"tfopwg","ftag":443101,"fobid":1426,"fid":1001250,"fext":"plotcfg"},{"ftype":"Light_Curve","fname":"TIC_49617264.11_20240915_TRAPPIST-South-0.6m_zp_7pix_measurements.tbl","fplname":"","ftoi":"","fdesc":"AIJ Measurements Table","fdate":"2024-09-18 09:02:23","fuser":"barkaoui","fgroup":"tfopwg","ftag":443101,"fobid":1426,"fid":1001249,"fext":"tbl"},{"ftype":"Light_Curve","fname":"TIC_49617264.11_20240915_TRAPPIST-South-0.6m_zp_7pix_lightcurve.pdf","fplname":"","ftoi":"","fdesc":"T1 Lightcurve","fdate":"2024-09-18 09:02:23","fuser":"barkaoui","fgroup":"tfopwg","ftag":443101,"fobid":1426,"fid":1001248,"fext":"pdf"},{"ftype":"Light_Curve","fname":"TIC_49617264.11_20240915_TRAPPIST-South-0.6m_zp_7pix_lightcurve.png","fplname":"","ftoi":"","fdesc":"AIJ Lightcurve","fdate":"2024-09-18 09:02:22","fuser":"barkaoui","fgroup":"tfopwg","ftag":443101,"fobid":1426,"fid":1001247,"fext":"png"}];
+
+// Grid options
+var gridOptions10 = {
+	
+	popupParent: document.querySelector("body"),  /* prevent filter menu clipping */
+
+	defaultColDef: {
+    	sortable: true,
+        resizable: true,
+		wrapHeaderText: true,
+		autoHeaderHeight: true,
+        menuTabs: ['filterMenuTab'],
+		filterParams: {buttons: ['clear']}
+    },
+
+	overlayNoRowsTemplate:
+    '<span class="norows norows2">No Files</span>',
+
+	columnDefs: columnDefs10,
+	suppressContextMenu: true,
+  	animateRows: true,
+    rowData: rowData10,
+    rowHeight: 38,
+    headerHeight: 38,
+
+	tooltipShowDelay: 0,
+	tooltipHideDelay: 2000,
+
+	//suppressColumnVirtualisation: true,  /* don't need for files table */
+
+  	onGridReady: function($event) { 
+	  	$event.columnApi.autoSizeColumn(['fname'], true); 
+	  	 $('[data-toggle="popover"]').popover({'html': 'true', 'trigger': 'hover'});
+	},
+
+    domLayout: 'autoHeight',
+    enableCellTextSelection: true,
+};
+
+
+//
+// Draw the grid
+//
+var eGridDiv10 = document.querySelector('#myGrid10');
+new agGrid.Grid(eGridDiv10, gridOptions10);
+
+</script>
+
+
+<!-- end Files grid -->
+
+
+
+<button onclick="topFunction()" id="scrollBtn" 
+title="Top"><i class="fa fa-arrow-up" aria-hidden="true"></i> Top</button>
+
+<br><br><br>
+<center>
+
+<table>
+<tr>
+<td align=center valign=middle>
+
+
+<a target="nexsci" href="http://nexsci.caltech.edu/">
+<img src="images/nexsci.jpg" border="0" alt="nexsci"></a>
+&nbsp;
+
+<a target="caltech" href="http://www.caltech.edu/">
+<img src="images/caltech.jpg" border="0" alt="caltech"></a>
+&nbsp;
+
+<a target="nasa" href="http://www.nasa.gov/">
+<img src="images/nasa.png" border="0" alt="nasa"></a>
+&nbsp;
+
+<a target="kepler" href="https://www.nasa.gov/mission_pages/kepler/main/index.html">
+<img src="../images/kepler_crop.jpg" border="0" alt="kepler"></a>
+&nbsp;
+
+<a target="k2" href="https://www.nasa.gov/mission_pages/kepler/main/index.html">
+<img src="../images/k2.jpg" border="0" alt="k2"></a>
+&nbsp;
+
+<a target="tess" href="https://www.nasa.gov/tess-transiting-exoplanet-survey-satellite">
+<img src="images/tess.png" border="0" alt="tess"></a>
+
+<br><br>
+
+Questions? Contact us at <a href="mailto: exofop-support@ipac.caltech.edu">exofop-support@ipac.caltech.edu</a>.
+</td>
+</tr> 
+</table>
+
+<br><br><br><br><br><br>
+</center>
+
+</body>
+</html>

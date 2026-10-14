@@ -1,3 +1,5 @@
+> Historical pilot report. The investigation has since expanded to 159,505 actual period searches. See [the broad report](BROAD_RESEARCH_REPORT.md) and [current progress](PROGRESS.md) for the latest findings.
+
 # TESS research report — 2026-10-13 pilot
 
 ## Scientific result
