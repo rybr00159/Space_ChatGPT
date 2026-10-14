@@ -115,3 +115,14 @@ body cannot enter the scientific cache, both raw `CHECKSUM` and `DATASUM` are
 verified on a synthetic FITS product, and an empty/missing-TIC selection returns
 an incomplete status. These are targeted integrity checks rather than a claim
 that the entire broad raw cache has been audited.
+
+## Full scientific checkpoint, independent of raw-cache survival
+
+The completed 160,000-row SQLite state is also preserved in `data/broad_checkpoint/`: four checksum-verified gzip JSONL chunks, approximately 78.1 MB total, with each chunk below 20 MB. This stores the original result JSON strings, statuses, retrieval/source metadata, timestamps and method identity exactly. It avoids rerunning completed searches if a future task loses the local database. This is scientific analysis state; the 12.9 GB raw observations remain outside ordinary Git. The separate single-file compressed backup also remains locally retained.
+
+```bash
+python src/survey_checkpoint.py verify
+python src/survey_checkpoint.py restore --db /workspace/tess-research-data/broad/qlp_s0001/survey.sqlite
+```
+
+Restore requires an unused destination and never replaces an existing database. Raw-product verification/restoration is separate: retained result paths do not establish that the raw files survived. An actual round-trip into a separate SQLite file passed the SQLite integrity check, identical status counts and metadata, and exact SHA-256 equality of all 160,000 original sorted records. Evidence is in `results/broad/checkpoint_roundtrip.json`. Restoration was tested within this machine; new-cloud-task restoration and publication remain unverified.

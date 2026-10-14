@@ -4,10 +4,13 @@ No object is promoted as a credible new exoplanet candidate. These dossiers pres
 
 ## Broad-phase evidence
 
-The broad survey actually searched 159,505 stars. A detailed dossier or an automated flag-free row is a screening lead, not an accepted planet. The original 187-star detailed batch and its version history are preserved; the current-property full-sample queue receives further checks. Read [the broad report](../BROAD_RESEARCH_REPORT.md), [v3 batch review](broad_s1/V3_REVIEW.md), and the current `broad_s1/ranked_vetted_leads.csv` together with stellar-context and focused assessments.
+The broad survey actually searched 159,505 stars. A detailed dossier or an automated flag-free row is a screening lead, not an accepted planet. The original 187-star detailed batch and its version history are preserved; the current-property full-sample queue receives further checks. Read [the broad report](../BROAD_RESEARCH_REPORT.md), [v3 batch review](broad_s1/V3_REVIEW.md), and [all 389 exact signal rows](broad_s1/all_signal_evidence.csv) and [review summary](broad_s1/all_signal_review_summary.json) together with stellar-context and focused assessments.
 
 | Target | Strongest evidence | Present interpretation |
 |---|---|---|
+| TIC 269994642 | [Independent 2018/2025 pixels](broad_s1/tic269994642_pixels/README.md), [physical fits](broad_s1/tic269994642_physical/README.md), [prior scope](../reports/tic269994642_prior_check.md) | Strong recurring eclipse source; doubled-period binary fits equally well, alternating depths favor binary; not accepted as planet |
+| TIC 238202207 | [17-sector measurements](broad_s1/tic238202207_multisector/README.md), [physical fits](broad_s1/tic238202207_physical/README.md), [prior scope](../reports/tic238202207_prior_check.md) | Strong recurrence; unequal doubled-period binary and unresolved-source astrometry favor stellar explanation |
+| TIC 260820871 | [Three-sector follow-up](broad_s1/tic260820871_multisector/README.md), [physical blend model](broad_s1/tic260820871_physical/README.md), [pixel source identification](broad_s1/tic260820871_pixels/README.md) | Independent pixels place eclipse phases at a known faint neighboring variable; hot-star planetary interpretation rejected |
 | TIC 370247818 | [Eight sectors and event timings](broad_s1/tic370247818_multisector/README.md), [three pixel reductions](broad_s1/tic370247818_pixels/README.md), [physical fit](broad_s1/tic370247818_physical/README.md) | Real eclipse near target; off-phase secondary and grazing/light-budget evidence favor an EB |
 | TIC 141980042 | [23-sector assessment](broad_s1/tic141980042_multisector/README.md) | Strong secondary and crowded astrometry favor EB/blend |
 | TIC 308600649 | [Raw-variation review](broad_s1/V3_REVIEW.md), [current Gaia/TIC context](../reports/secondary_leads_20261014.md) | Strong ellipsoidal/RV variation and neighboring source; binary/blend favored |

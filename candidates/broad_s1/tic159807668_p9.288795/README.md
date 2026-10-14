@@ -6,7 +6,7 @@ Independent local primary: S/N 24.99, 3 sampled events; raw SAP local S/N 25.02;
 
 Assessment: **fails_or_incomplete_initial_vetting**.
 
-Warnings: qlp_centroid_shift_warning, aperture_dependent_depth
+Warnings: significant_additional_phase_secondary, qlp_centroid_shift_warning, aperture_dependent_depth
 
 See `vetting.json` for event depths, approximate uncertainty estimates, alternative detrending/apertures, and provenance. `diagnostic_arrays.npz` preserves small independent scientific arrays; raw archive FITS is cached outside Git.
 

@@ -32,7 +32,7 @@ Each sector was first independently searched near the sector-1 period, with an u
 |38|2.321712|24.70|23.49|9557|2.99|
 |39|2.321667|25.96|14.48|8459|0.96|
 
-This establishes or falsifies recurrence in independent observations, not planetary source attribution. The bright star CD-79 151 at about 86.6 arcsec remains a possible contaminant pending pixel analysis. All measurements, raw-source hashes, event depths, and period scores are retained.
+This establishes or falsifies recurrence in independent observations, not planetary source attribution. Source attribution requires this target’s own pixel and nearby-star evidence. A contaminant identified for a different target is not evidence for this source. All measurements, raw-source hashes, event depths, and period scores are retained.
 
 Conditional timing fit from 192 events: P=2.322070063 ±0.000001265 d, T0=1327.6341565 ±0.0003930 BTJD. Timing chi²/dof=160.6/190. Errors are conditional on fixed trapezoid shape and inflated for measured scatter; they are not validation probabilities.
 

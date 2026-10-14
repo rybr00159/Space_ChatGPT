@@ -1,0 +1,13 @@
+# TIC 115188494, sector 1 lead
+
+Refined period 4.348553 d, epoch BTJD 1328.444727, refined box duration 4.80 h.
+
+Independent local primary: S/N 4.03, 3 sampled events; raw SAP local S/N 3.43; half-phase secondary S/N -0.29.
+
+Assessment: **fails_or_incomplete_initial_vetting**.
+
+Warnings: weak_independent_raw_local_detection, v_shaped_or_unresolved_ingress, large_significant_raw_orbital_variability
+
+See `vetting.json` for event depths, approximate uncertainty estimates, alternative detrending/apertures, and provenance. `diagnostic_arrays.npz` preserves small independent scientific arrays; raw archive FITS is cached outside Git.
+
+No discovery or confirmation claim. Pixel source attribution, additional sectors, comprehensive literature checks, and empirical correlated-noise/trials tests remain required.

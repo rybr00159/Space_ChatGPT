@@ -1,11 +1,11 @@
 {
   "tic": 281703963,
   "sector": 1,
-  "checked_utc": "2026-10-13T21:55:31.843242+00:00",
+  "checked_utc": "2026-10-14T05:03:16.939678+00:00",
   "survey_label": "unmasked_broad",
   "vetting_method": {
-    "version": "raw-aperture-all-orbital-phase-v2",
-    "source_sha256": "c631f3cd44f773f9cd316eec5445a7a78a8f8a01ae2bd4b1608fb719c25383e8",
+    "version": "raw-aperture-all-orbital-phase-raw-variability-v3",
+    "source_sha256": "23c89080f4f10ef59b79d2896c86edb98dafeecc14081feb2c2a5c69fb37f333",
     "frozen_screen_sha256": "26eede8aaeb9fa2a624b73a5c3966366f77c4cc73738153eba7e46d13eb10307",
     "mandatory_tests": [
       "raw_local_quadratic",
@@ -14,7 +14,8 @@
       "odd_even",
       "half_phase_secondary",
       "all_phase_secondary",
-      "qlp_centroids"
+      "qlp_centroids",
+      "robust_raw_orbital_and_half_period_variability"
     ]
   },
   "input_peak": {
@@ -411,10 +412,79 @@
         "odd_even_sigma": 0.706277511784286
       },
       "variability": {
+        "status": "measured",
         "raw_mad": 0.0002094334150341034,
-        "residual_mad": 0.00019657642982354398,
-        "orbital_semiamplitude": 4.132455063838089e-05,
-        "half_period_semiamplitude": 5.777771089912679e-05
+        "residual_mad": 0.00019113221866942938,
+        "n_out_of_eclipse": 647,
+        "n_fit": 647,
+        "n_robust_rejected": 0,
+        "orbital_semiamplitude": 5.372825361401569e-05,
+        "half_period_semiamplitude": 3.415038337280645e-05,
+        "orbital_semiamplitude_err": 1.639864557629853e-05,
+        "half_period_semiamplitude_err": 1.8765100509203198e-05,
+        "orbital_snr": 3.2763836113191447,
+        "half_period_snr": 1.8198881138983327,
+        "coefficient_order": [
+          "intercept",
+          "sin_orbital",
+          "cos_orbital",
+          "sin_half_period",
+          "cos_half_period"
+        ],
+        "coefficients": [
+          1.0000175625085657,
+          -7.268399347460216e-06,
+          -5.32343461248265e-05,
+          9.323971569269475e-06,
+          -3.285288782869947e-05
+        ],
+        "coefficient_covariance": [
+          [
+            1.4738920294819343e-10,
+            -1.33855333051719e-11,
+            -3.787465222617651e-11,
+            2.2604372629508333e-11,
+            1.6524547080148743e-10
+          ],
+          [
+            -1.338553330517189e-11,
+            9.549529929130472e-11,
+            1.506821001644521e-11,
+            -9.620089148745633e-12,
+            -2.6363085172298478e-11
+          ],
+          [
+            -3.7874652226176465e-11,
+            1.506821001644537e-11,
+            2.6760632411421414e-10,
+            -2.7902555479040284e-11,
+            -5.0459763375734617e-11
+          ],
+          [
+            2.2604372629508378e-11,
+            -9.620089148745637e-12,
+            -2.790255547903982e-11,
+            1.2303317334011452e-10,
+            3.0960181103891025e-11
+          ],
+          [
+            1.6524547080148746e-10,
+            -2.6363085172298478e-11,
+            -5.045976337573471e-11,
+            3.0960181103890916e-11,
+            3.479450150724248e-10
+          ]
+        ],
+        "residual_chi2": 394.02779067269455,
+        "residual_dof": 642,
+        "eclipse_windows": {
+          "primary_half_width_days": 0.10415498352867848,
+          "half_phase_half_width_days": 0.10415498352867848,
+          "additional_epoch_btjd": 1325.4548711328755,
+          "additional_half_width_days": 0.06133333333333333
+        },
+        "model": "c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2*theta)+c2*cos(2*theta);theta=2*pi*(BTJD-epoch)/P",
+        "limitations": "Conditional diagonal errors; robust scatter/clipping does not calibrate correlated noise or the search trials."
       },
       "alternative_widths": [
         {
@@ -1258,10 +1328,79 @@
         "odd_even_sigma": 0.7090813393238595
       },
       "variability": {
+        "status": "measured",
         "raw_mad": 0.00021371625700393677,
-        "residual_mad": 0.0001976090175982488,
-        "orbital_semiamplitude": 4.7847497813441156e-05,
-        "half_period_semiamplitude": 5.482203242667684e-05
+        "residual_mad": 0.00019118666147145311,
+        "n_out_of_eclipse": 647,
+        "n_fit": 647,
+        "n_robust_rejected": 0,
+        "orbital_semiamplitude": 5.0436076405350853e-05,
+        "half_period_semiamplitude": 3.077156648628518e-05,
+        "orbital_semiamplitude_err": 1.639841295342908e-05,
+        "half_period_semiamplitude_err": 1.876483431700417e-05,
+        "orbital_snr": 3.0756681484109194,
+        "half_period_snr": 1.6398528207840792,
+        "coefficient_order": [
+          "intercept",
+          "sin_orbital",
+          "cos_orbital",
+          "sin_half_period",
+          "cos_half_period"
+        ],
+        "coefficients": [
+          1.0000139452926093,
+          -1.4844298857068208e-05,
+          -4.820212230398608e-05,
+          1.0733923513847567e-05,
+          -2.8838727260729446e-05
+        ],
+        "coefficient_covariance": [
+          [
+            1.4738502140088332e-10,
+            -1.3385153547091451e-11,
+            -3.7873577692581206e-11,
+            2.2603731325724306e-11,
+            1.6524078265785076e-10
+          ],
+          [
+            -1.3385153547091443e-11,
+            9.549259001475201e-11,
+            1.5067782519506734e-11,
+            -9.619816219269905e-12,
+            -2.636233723089118e-11
+          ],
+          [
+            -3.7873577692581206e-11,
+            1.5067782519506734e-11,
+            2.675987319128734e-10,
+            -2.7901763861652836e-11,
+            -5.0458331792663444e-11
+          ],
+          [
+            2.2603731325724393e-11,
+            -9.61981621926991e-12,
+            -2.7901763861652352e-11,
+            1.2302968279247263e-10,
+            3.095930273926578e-11
+          ],
+          [
+            1.6524078265785068e-10,
+            -2.636233723089123e-11,
+            -5.045833179266347e-11,
+            3.0959302739265595e-11,
+            3.4793514359939687e-10
+          ]
+        ],
+        "residual_chi2": 452.44007111369854,
+        "residual_dof": 642,
+        "eclipse_windows": {
+          "primary_half_width_days": 0.10415498352867848,
+          "half_phase_half_width_days": 0.10415498352867848,
+          "additional_epoch_btjd": 1325.4548711328755,
+          "additional_half_width_days": 0.06133333333333333
+        },
+        "model": "c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2*theta)+c2*cos(2*theta);theta=2*pi*(BTJD-epoch)/P",
+        "limitations": "Conditional diagonal errors; robust scatter/clipping does not calibrate correlated noise or the search trials."
       },
       "alternative_widths": [
         {
@@ -2105,10 +2244,79 @@
         "odd_even_sigma": 0.007604805575951108
       },
       "variability": {
+        "status": "measured",
         "raw_mad": 0.00010162460853425847,
-        "residual_mad": 0.00010018184114014164,
-        "orbital_semiamplitude": 2.4953269770169057e-05,
-        "half_period_semiamplitude": 2.0093509859035416e-05
+        "residual_mad": 9.763670874677394e-05,
+        "n_out_of_eclipse": 647,
+        "n_fit": 647,
+        "n_robust_rejected": 0,
+        "orbital_semiamplitude": 1.3547019693302037e-05,
+        "half_period_semiamplitude": 6.232425245321587e-06,
+        "orbital_semiamplitude_err": 1.639877459686973e-05,
+        "half_period_semiamplitude_err": 1.876524814846859e-05,
+        "orbital_snr": 0.826099512087199,
+        "half_period_snr": 0.3321259168017028,
+        "coefficient_order": [
+          "intercept",
+          "sin_orbital",
+          "cos_orbital",
+          "sin_half_period",
+          "cos_half_period"
+        ],
+        "coefficients": [
+          1.0000158518087299,
+          -1.037546208041206e-06,
+          -1.3507229191691853e-05,
+          3.7663052425384673e-06,
+          -4.965689202774284e-06
+        ],
+        "coefficient_covariance": [
+          [
+            1.4739152220241105e-10,
+            -1.338574393426778e-11,
+            -3.7875248205699726e-11,
+            2.260472832236446e-11,
+            1.6524807103439079e-10
+          ],
+          [
+            -1.3385743934267825e-11,
+            9.549680196498274e-11,
+            1.5068447123431004e-11,
+            -9.620240526403513e-12,
+            -2.6363500010666866e-11
+          ],
+          [
+            -3.787524820569972e-11,
+            1.5068447123430978e-11,
+            2.676105350542527e-10,
+            -2.7902994541863025e-11,
+            -5.046055738924901e-11
+          ],
+          [
+            2.260472832236446e-11,
+            -9.620240526403472e-12,
+            -2.7902994541862524e-11,
+            1.2303510933814242e-10,
+            3.0960668280218464e-11
+          ],
+          [
+            1.6524807103439079e-10,
+            -2.636350001066683e-11,
+            -5.0460557389249074e-11,
+            3.0960668280218444e-11,
+            3.4795049018815684e-10
+          ]
+        ],
+        "residual_chi2": 126.0841849250201,
+        "residual_dof": 642,
+        "eclipse_windows": {
+          "primary_half_width_days": 0.10415498352867848,
+          "half_phase_half_width_days": 0.10415498352867848,
+          "additional_epoch_btjd": 1325.4548711328755,
+          "additional_half_width_days": 0.06133333333333333
+        },
+        "model": "c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2*theta)+c2*cos(2*theta);theta=2*pi*(BTJD-epoch)/P",
+        "limitations": "Conditional diagonal errors; robust scatter/clipping does not calibrate correlated noise or the search trials."
       },
       "alternative_widths": [
         {
@@ -2952,10 +3160,79 @@
         "odd_even_sigma": 0.706277511784286
       },
       "variability": {
+        "status": "measured",
         "raw_mad": 0.0002094334150341034,
-        "residual_mad": 0.00019657642982354398,
-        "orbital_semiamplitude": 4.132455063838089e-05,
-        "half_period_semiamplitude": 5.777771089912679e-05
+        "residual_mad": 0.00019113221866942938,
+        "n_out_of_eclipse": 647,
+        "n_fit": 647,
+        "n_robust_rejected": 0,
+        "orbital_semiamplitude": 5.372825361401569e-05,
+        "half_period_semiamplitude": 3.415038337280645e-05,
+        "orbital_semiamplitude_err": 1.639864557629853e-05,
+        "half_period_semiamplitude_err": 1.8765100509203198e-05,
+        "orbital_snr": 3.2763836113191447,
+        "half_period_snr": 1.8198881138983327,
+        "coefficient_order": [
+          "intercept",
+          "sin_orbital",
+          "cos_orbital",
+          "sin_half_period",
+          "cos_half_period"
+        ],
+        "coefficients": [
+          1.0000175625085657,
+          -7.268399347460216e-06,
+          -5.32343461248265e-05,
+          9.323971569269475e-06,
+          -3.285288782869947e-05
+        ],
+        "coefficient_covariance": [
+          [
+            1.4738920294819343e-10,
+            -1.33855333051719e-11,
+            -3.787465222617651e-11,
+            2.2604372629508333e-11,
+            1.6524547080148743e-10
+          ],
+          [
+            -1.338553330517189e-11,
+            9.549529929130472e-11,
+            1.506821001644521e-11,
+            -9.620089148745633e-12,
+            -2.6363085172298478e-11
+          ],
+          [
+            -3.7874652226176465e-11,
+            1.506821001644537e-11,
+            2.6760632411421414e-10,
+            -2.7902555479040284e-11,
+            -5.0459763375734617e-11
+          ],
+          [
+            2.2604372629508378e-11,
+            -9.620089148745637e-12,
+            -2.790255547903982e-11,
+            1.2303317334011452e-10,
+            3.0960181103891025e-11
+          ],
+          [
+            1.6524547080148746e-10,
+            -2.6363085172298478e-11,
+            -5.045976337573471e-11,
+            3.0960181103890916e-11,
+            3.479450150724248e-10
+          ]
+        ],
+        "residual_chi2": 394.02779067269455,
+        "residual_dof": 642,
+        "eclipse_windows": {
+          "primary_half_width_days": 0.10415498352867848,
+          "half_phase_half_width_days": 0.10415498352867848,
+          "additional_epoch_btjd": 1325.4548711328755,
+          "additional_half_width_days": 0.06133333333333333
+        },
+        "model": "c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2*theta)+c2*cos(2*theta);theta=2*pi*(BTJD-epoch)/P",
+        "limitations": "Conditional diagonal errors; robust scatter/clipping does not calibrate correlated noise or the search trials."
       },
       "alternative_widths": [
         {
@@ -3522,6 +3799,13 @@
     "duration_days": 0.06133333333333333,
     "diagonal_snr": 7.868612140970603,
     "note": "Additional orbital phase selected after masking primary; score requires trials-aware confirmation."
+  },
+  "raw_variability_guard": {
+    "orbital_amplitude_to_primary_depth": 0.19447237140079643,
+    "half_period_amplitude_to_primary_depth": 0.11864958444051915,
+    "amplitude_fraction_threshold": 0.5,
+    "conditional_snr_threshold": 5.0,
+    "interpretation": "A warning for stellar variability/ellipsoidal light; no automatic confirmation or false-positive proof."
   },
   "warnings": [
     "significant_additional_phase_secondary"

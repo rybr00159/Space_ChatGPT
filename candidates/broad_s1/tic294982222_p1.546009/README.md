@@ -1,12 +1,12 @@
 # TIC 294982222, sector 1 lead
 
-Period 1.546009 d, epoch BTJD 1326.702355, screening duration 1.20 h.
+Refined period 1.546641 d, epoch BTJD 1326.702355, refined box duration 1.20 h.
 
-Independent local primary: S/N 5.52, 11 sampled events; raw SAP local S/N 5.69; half-phase secondary S/N 0.08.
+Independent local primary: S/N 6.33, 11 sampled events; raw SAP local S/N 6.46; half-phase secondary S/N -0.49.
 
 Assessment: **fails_or_incomplete_initial_vetting**.
 
-Warnings: weak_independent_raw_local_detection
+Warnings: weak_independent_raw_local_detection, large_significant_raw_orbital_variability
 
 See `vetting.json` for event depths, approximate uncertainty estimates, alternative detrending/apertures, and provenance. `diagnostic_arrays.npz` preserves small independent scientific arrays; raw archive FITS is cached outside Git.
 

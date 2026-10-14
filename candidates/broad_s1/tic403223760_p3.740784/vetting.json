@@ -1,0 +1,1591 @@
+{
+  "tic": 403223760,
+  "sector": 1,
+  "checked_utc": "2026-10-14T05:04:40.592059+00:00",
+  "survey_label": "unmasked_broad",
+  "vetting_method": {
+    "version": "raw-aperture-all-orbital-phase-raw-variability-v3",
+    "source_sha256": "23c89080f4f10ef59b79d2896c86edb98dafeecc14081feb2c2a5c69fb37f333",
+    "frozen_screen_sha256": "26eede8aaeb9fa2a624b73a5c3966366f77c4cc73738153eba7e46d13eb10307",
+    "mandatory_tests": [
+      "raw_local_quadratic",
+      "three_median_windows",
+      "four_apertures",
+      "odd_even",
+      "half_phase_secondary",
+      "all_phase_secondary",
+      "qlp_centroids",
+      "robust_raw_orbital_and_half_period_variability"
+    ]
+  },
+  "input_peak": {
+    "period": 3.740783975013681,
+    "t0_btjd": 1327.7326750602097,
+    "duration_days": 0.16,
+    "depth": 0.0009185483347591756,
+    "depth_err": 0.00010668197642123974,
+    "snr": 8.610154831892467,
+    "duty_cycle": 0.042771782885274695,
+    "sde_robust": 2.898111158275156,
+    "screening_pass": true,
+    "guard_failures": [],
+    "n_events": 5,
+    "n_positive_events": 5,
+    "events": [],
+    "event_snr_max_fraction": 0.3586482106146666,
+    "odd_even_sigma": 2.189727038575052,
+    "local_snr": 9.324807117267335,
+    "local_depth": 0.0011334642915711035,
+    "local_depth_err": 0.00012155364473675771,
+    "catalog": {
+      "known_period_match": false,
+      "known_harmonic_match": false,
+      "known_rv_period_match": false,
+      "possible_nearby_period_contamination": false,
+      "period_status": "no_cached_period_match"
+    },
+    "matched_names": []
+  },
+  "refined_ephemeris": {
+    "period": 3.740377121541834,
+    "t0_btjd": 1327.716008393543,
+    "duration_days": 0.2,
+    "depth": 0.0008732009802512758,
+    "snr": 9.253302148347867,
+    "period_interval_days": [
+      3.7204413014213404,
+      3.7611266486060213
+    ],
+    "period_grid_step": 0.00013561782394910793,
+    "note": "Local BLS refinement, not period uncertainty; requires independent sector timing."
+  },
+  "catalog_flags": {
+    "is_confirmed_host": false,
+    "is_toi_host": false,
+    "is_ctoi_host": false,
+    "is_eb_host": false,
+    "is_diamante_host": false,
+    "is_published_host": false,
+    "nearby_catalog_object": false,
+    "novelty_status": "unchecked_literature_and_all_aliases"
+  },
+  "metadata": {
+    "TICID": 403223760,
+    "SECTOR": 1,
+    "TESSMAG": 10.319,
+    "TEFF": 4756.2,
+    "RADIUS": 0.790339,
+    "PROCVER": null,
+    "DATE": null,
+    "CAMERA": 2,
+    "CCD": 1
+  },
+  "source": {
+    "url": "https://archive.stsci.edu/hlsps/qlp/s0001/0000/0004/0322/3760/hlsp_qlp_tess_ffi_s0001-0000000403223760_tess_v01_llc.fits",
+    "path": "/workspace/tess-research-data/broad/qlp_s0001/raw/760/hlsp_qlp_tess_ffi_s0001-0000000403223760_tess_v01_llc.fits",
+    "sha256": "aa787a9232b11b8921130d4ec53cefbb16742fa22a909060cad1996625cb0f64",
+    "raw_bytes": 80640
+  },
+  "fits_checksums": [
+    {
+      "hdu": 0,
+      "status": "absent"
+    },
+    {
+      "hdu": 1,
+      "status": "absent"
+    }
+  ],
+  "cadence_days": 0.02083339967714437,
+  "column_tests": {
+    "KSPSAP_FLUX": {
+      "local_quadratic": {
+        "n_events": 3,
+        "n_positive_events": 2,
+        "depth": 0.0011508630248933934,
+        "depth_err": 0.0005598093640028308,
+        "diagonal_depth_err": 0.00012295836757138926,
+        "event_scatter_depth_err": 0.0005598093640028308,
+        "snr": 2.0558123870317644,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1327.716008393543,
+            "n": 10,
+            "depth": 0.0016614138417014972,
+            "depth_err": 0.0001980454841037019,
+            "snr": 8.3890518848263,
+            "n_baseline": 44
+          },
+          {
+            "cycle": 1,
+            "time": 1331.4563855150848,
+            "n": 9,
+            "depth": -0.00012587304704709528,
+            "depth_err": 0.0002540975771142036,
+            "snr": -0.4953728739826666,
+            "n_baseline": 45
+          },
+          {
+            "cycle": 5,
+            "time": 1346.417894001252,
+            "n": 10,
+            "depth": 0.0014194473872599566,
+            "depth_err": 0.0001993671173529916,
+            "snr": 7.1197668206574845,
+            "n_baseline": 41
+          }
+        ],
+        "odd_even_sigma": null
+      },
+      "secondary_half_phase": {
+        "n_events": 3,
+        "n_positive_events": 1,
+        "depth": -0.0001939286339598993,
+        "depth_err": 0.0002289457568079128,
+        "diagonal_depth_err": 0.00011905841054643044,
+        "event_scatter_depth_err": 0.0002289457568079128,
+        "snr": -0.8470505706843342,
+        "events": [
+          {
+            "cycle": -1,
+            "time": 1325.8458198327721,
+            "n": 9,
+            "depth": -0.0006272003996769008,
+            "depth_err": 0.0002114645367131546,
+            "snr": -2.965983844977655,
+            "n_baseline": 33
+          },
+          {
+            "cycle": 1,
+            "time": 1333.3265740758557,
+            "n": 9,
+            "depth": -0.00016369959648451535,
+            "depth_err": 0.00020897440586696757,
+            "snr": -0.7833475865399804,
+            "n_baseline": 43
+          },
+          {
+            "cycle": 2,
+            "time": 1337.0669511973977,
+            "n": 10,
+            "depth": 0.0001618835556581115,
+            "depth_err": 0.00019886722507443137,
+            "snr": 0.8140283327105421,
+            "n_baseline": 42
+          }
+        ],
+        "odd_even_sigma": null
+      },
+      "variability": {
+        "status": "measured",
+        "raw_mad": 0.000600336715467448,
+        "residual_mad": 0.0005633656657653023,
+        "n_out_of_eclipse": 431,
+        "n_fit": 431,
+        "n_robust_rejected": 0,
+        "orbital_semiamplitude": 3.259143412812005e-05,
+        "half_period_semiamplitude": 0.00021064045139365369,
+        "orbital_semiamplitude_err": 0.00010742617933260525,
+        "half_period_semiamplitude_err": 0.0001141836704538153,
+        "orbital_snr": 0.30338446671562974,
+        "half_period_snr": 1.8447510975648043,
+        "coefficient_order": [
+          "intercept",
+          "sin_orbital",
+          "cos_orbital",
+          "sin_half_period",
+          "cos_half_period"
+        ],
+        "coefficients": [
+          0.9998392188391143,
+          -6.3714933597048e-06,
+          -3.196256640031939e-05,
+          2.124190005652533e-05,
+          -0.0002095666515581875
+        ],
+        "coefficient_covariance": [
+          [
+            8.754118201955637e-09,
+            2.053416436471218e-09,
+            -5.632100420446448e-09,
+            -3.5948987279778296e-09,
+            9.358290043980879e-09
+          ],
+          [
+            2.0534164364712177e-09,
+            1.8801257028223275e-09,
+            -2.663513282866987e-09,
+            -1.6134407234819757e-09,
+            1.5323764076046702e-09
+          ],
+          [
+            -5.6321004204464565e-09,
+            -2.663513282866992e-09,
+            1.0806003745622882e-08,
+            4.379262767348687e-09,
+            -4.7630393194038245e-09
+          ],
+          [
+            -3.5948987279778313e-09,
+            -1.6134407234819757e-09,
+            4.379262767348679e-09,
+            4.015491001982101e-09,
+            -3.092667015917491e-09
+          ],
+          [
+            9.358290043980874e-09,
+            1.532376407604669e-09,
+            -4.763039319403815e-09,
+            -3.0926670159174867e-09,
+            1.1977819214920762e-08
+          ]
+        ],
+        "residual_chi2": 402.86755923654016,
+        "residual_dof": 426,
+        "eclipse_windows": {
+          "primary_half_width_days": 0.4740699483606577,
+          "half_phase_half_width_days": 0.4740699483606577,
+          "additional_epoch_btjd": 1328.9486750602098,
+          "additional_half_width_days": 0.16
+        },
+        "model": "c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2*theta)+c2*cos(2*theta);theta=2*pi*(BTJD-epoch)/P",
+        "limitations": "Conditional diagonal errors; robust scatter/clipping does not calibrate correlated noise or the search trials."
+      },
+      "alternative_widths": [
+        {
+          "width_days": 0.5,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 5,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.0007301613191835754,
+                "depth_err": 0.00021955628388365856,
+                "snr": 3.3256225067576892
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": 6.882546235831288e-05,
+                "depth_err": 0.0002284408574056488,
+                "snr": 0.3012835056738454
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0008719234027030343,
+                "depth_err": 0.00028702529752425095,
+                "snr": 3.0377928713038433
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.00059521065733803,
+                "depth_err": 0.0002227980106016085,
+                "snr": 2.671525906945117
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0009031833088283259,
+                "depth_err": 0.00023541209401508915,
+                "snr": 3.836605390249979
+              }
+            ],
+            "event_snr_max_fraction": 0.3485126438312448,
+            "odd_even_sigma": 2.292179330065603,
+            "local_snr": 5.825499581478541,
+            "local_depth": 0.0006132598042836938,
+            "local_depth_err": 0.00010527162446865123
+          }
+        },
+        {
+          "width_days": 1.0,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 4,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.001447436229673027,
+                "depth_err": 0.00021950658366701292,
+                "snr": 6.594044722907986
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": -6.377754126585256e-05,
+                "depth_err": 0.00023101911392035213,
+                "snr": -0.276070408995859
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0009711203059560303,
+                "depth_err": 0.000278726551769146,
+                "snr": 3.4841327451299158
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.0013445444117615724,
+                "depth_err": 0.0002227224353108528,
+                "snr": 6.0368611266529895
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0016282317936792134,
+                "depth_err": 0.00031068993911659586,
+                "snr": 5.240696877114421
+              }
+            ],
+            "event_snr_max_fraction": 0.36377240694465107,
+            "odd_even_sigma": 3.109964999233026,
+            "local_snr": 9.371558198027664,
+            "local_depth": 0.0010293938355395336,
+            "local_depth_err": 0.0001098423350511956
+          }
+        },
+        {
+          "width_days": 2.0,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 5,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.0013514393327310747,
+                "depth_err": 0.00021950575390666227,
+                "snr": 6.156737619305098
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": 0.00019041835493105452,
+                "depth_err": 0.00023501466736954818,
+                "snr": 0.8102403014345981
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0007173324459613939,
+                "depth_err": 0.0003247439403265658,
+                "snr": 2.2089171094002156
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.001275714148549989,
+                "depth_err": 0.00022270895416447593,
+                "snr": 5.72816729949638
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0013333553211124505,
+                "depth_err": 0.0002353560874704419,
+                "snr": 5.665268043172689
+              }
+            ],
+            "event_snr_max_fraction": 0.3498475603435063,
+            "odd_even_sigma": 2.1159110879597844,
+            "local_snr": 9.468314082755144,
+            "local_depth": 0.0010177056486291602,
+            "local_depth_err": 0.00010748541289760661
+          }
+        }
+      ],
+      "additional_phase_secondary": {
+        "n_events": 3,
+        "n_positive_events": 3,
+        "depth": 0.0011560968958260194,
+        "depth_err": 0.0002555457466924816,
+        "diagonal_depth_err": 0.0001326996376418588,
+        "event_scatter_depth_err": 0.0002555457466924816,
+        "snr": 4.52403106210663,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1328.9486750602098,
+            "n": 8,
+            "depth": 0.0015318508445835905,
+            "depth_err": 0.00022558532528233467,
+            "snr": 6.790560700995864,
+            "n_baseline": 32
+          },
+          {
+            "cycle": 1,
+            "time": 1332.6890521817515,
+            "n": 8,
+            "depth": 0.0012186725807904887,
+            "depth_err": 0.00022463672105670453,
+            "snr": 5.425081772284514,
+            "n_baseline": 35
+          },
+          {
+            "cycle": 2,
+            "time": 1336.4294293032935,
+            "n": 7,
+            "depth": 0.0006582037030468046,
+            "depth_err": 0.00024027927556994995,
+            "snr": 2.739327815457762,
+            "n_baseline": 34
+          }
+        ],
+        "odd_even_sigma": null
+      }
+    },
+    "SAP_FLUX": {
+      "local_quadratic": {
+        "n_events": 3,
+        "n_positive_events": 2,
+        "depth": 0.0013680042102559467,
+        "depth_err": 0.0006092658705456525,
+        "diagonal_depth_err": 0.00012875012075944323,
+        "event_scatter_depth_err": 0.0006092658705456525,
+        "snr": 2.2453320896356392,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1327.716008393543,
+            "n": 10,
+            "depth": 0.0019124601804474497,
+            "depth_err": 0.0001981416514712528,
+            "snr": 9.651984659696435,
+            "n_baseline": 44
+          },
+          {
+            "cycle": 1,
+            "time": 1331.4563855150848,
+            "n": 9,
+            "depth": -0.00011956317859203666,
+            "depth_err": 0.0003210553946935134,
+            "snr": -0.3724066954432407,
+            "n_baseline": 45
+          },
+          {
+            "cycle": 5,
+            "time": 1346.417894001252,
+            "n": 10,
+            "depth": 0.0013904170326624497,
+            "depth_err": 0.00019938938624924674,
+            "snr": 6.973375357725203,
+            "n_baseline": 41
+          }
+        ],
+        "odd_even_sigma": null
+      },
+      "secondary_half_phase": {
+        "n_events": 3,
+        "n_positive_events": 1,
+        "depth": -0.0002535612643040355,
+        "depth_err": 0.0004264956754974203,
+        "diagonal_depth_err": 0.00012659352098857326,
+        "event_scatter_depth_err": 0.0004264956754974203,
+        "snr": -0.594522474368135,
+        "events": [
+          {
+            "cycle": -1,
+            "time": 1325.8458198327721,
+            "n": 9,
+            "depth": -0.0012017256841705746,
+            "depth_err": 0.0002648623598864991,
+            "snr": -4.537170493706798,
+            "n_baseline": 33
+          },
+          {
+            "cycle": 1,
+            "time": 1333.3265740758557,
+            "n": 9,
+            "depth": -0.00020978934308821126,
+            "depth_err": 0.00020888441570539489,
+            "snr": -1.0043321919433792,
+            "n_baseline": 43
+          },
+          {
+            "cycle": 2,
+            "time": 1337.0669511973977,
+            "n": 10,
+            "depth": 0.00024246913248012603,
+            "depth_err": 0.00019910375176051322,
+            "snr": 1.2178029310656775,
+            "n_baseline": 42
+          }
+        ],
+        "odd_even_sigma": null
+      },
+      "variability": {
+        "status": "measured",
+        "raw_mad": 0.0008559445218094345,
+        "residual_mad": 0.0007118126427966776,
+        "n_out_of_eclipse": 431,
+        "n_fit": 431,
+        "n_robust_rejected": 0,
+        "orbital_semiamplitude": 1.5938438029897587e-05,
+        "half_period_semiamplitude": 0.0005148991935993666,
+        "orbital_semiamplitude_err": 0.0001277501018645117,
+        "half_period_semiamplitude_err": 0.0001357860404452772,
+        "orbital_snr": 0.1247626248220253,
+        "half_period_snr": 3.7919891611161227,
+        "coefficient_order": [
+          "intercept",
+          "sin_orbital",
+          "cos_orbital",
+          "sin_half_period",
+          "cos_half_period"
+        ],
+        "coefficients": [
+          0.9996477263463339,
+          -1.5934199426546258e-05,
+          -3.6755335386654776e-07,
+          0.00018193917027541117,
+          -0.00048168383602605237
+        ],
+        "coefficient_covariance": [
+          [
+            1.2379829297892848e-08,
+            2.903884134820381e-09,
+            -7.964759006582951e-09,
+            -5.0838053095554335e-09,
+            1.3234232231268224e-08
+          ],
+          [
+            2.9038841348203802e-09,
+            2.658821222487197e-09,
+            -3.766666043782373e-09,
+            -2.2816827781139028e-09,
+            2.167043888215532e-09
+          ],
+          [
+            -7.964759006582948e-09,
+            -3.766666043782375e-09,
+            1.52815484868957e-08,
+            6.193031012339221e-09,
+            -6.735757086327508e-09
+          ],
+          [
+            -5.083805309555429e-09,
+            -2.2816827781139024e-09,
+            6.193031012339215e-09,
+            5.678595148584775e-09,
+            -4.373563258916164e-09
+          ],
+          [
+            1.323423223126821e-08,
+            2.1670438882155292e-09,
+            -6.735757086327503e-09,
+            -4.373563258916163e-09,
+            1.6938697173247324e-08
+          ]
+        ],
+        "residual_chi2": 387.3771341316886,
+        "residual_dof": 426,
+        "eclipse_windows": {
+          "primary_half_width_days": 0.4740699483606577,
+          "half_phase_half_width_days": 0.4740699483606577,
+          "additional_epoch_btjd": 1328.9486750602098,
+          "additional_half_width_days": 0.16
+        },
+        "model": "c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2*theta)+c2*cos(2*theta);theta=2*pi*(BTJD-epoch)/P",
+        "limitations": "Conditional diagonal errors; robust scatter/clipping does not calibrate correlated noise or the search trials."
+      },
+      "alternative_widths": [
+        {
+          "width_days": 0.5,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 5,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.0006601086219986119,
+                "depth_err": 0.00021973515531988703,
+                "snr": 3.0041102027467383
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": 1.328787927579178e-06,
+                "depth_err": 0.00022843968091897058,
+                "snr": 0.005816799963271311
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0007440512823921885,
+                "depth_err": 0.0002726870759287028,
+                "snr": 2.7285901976033853
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.0006025376138295568,
+                "depth_err": 0.00022282696357600653,
+                "snr": 2.7040606045149045
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0008961684205104348,
+                "depth_err": 0.00023552953528594838,
+                "snr": 3.804908880843446
+              }
+            ],
+            "event_snr_max_fraction": 0.3784013965518785,
+            "odd_even_sigma": 2.1490124855782993,
+            "local_snr": 5.435792501903703,
+            "local_depth": 0.0005683017752316964,
+            "local_depth_err": 0.00010454809947816587
+          }
+        },
+        {
+          "width_days": 1.0,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 4,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.0016093665647838318,
+                "depth_err": 0.00023933026160258042,
+                "snr": 6.724459138628543
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": -8.12666816939478e-05,
+                "depth_err": 0.00022841584518182144,
+                "snr": -0.3557839064503544
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0008911224479749569,
+                "depth_err": 0.00026176375494922134,
+                "snr": 3.4043003705681967
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.0013996886213020199,
+                "depth_err": 0.0002227238184487742,
+                "snr": 6.284413723914059
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0015358158006789635,
+                "depth_err": 0.0002935348786036884,
+                "snr": 5.232140752692362
+              }
+            ],
+            "event_snr_max_fraction": 0.3656171869929791,
+            "odd_even_sigma": 3.0558467600841834,
+            "local_snr": 9.395111115869879,
+            "local_depth": 0.0010313456847708374,
+            "local_depth_err": 0.00010977471921845883
+          }
+        },
+        {
+          "width_days": 2.0,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 5,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.0021253747761695863,
+                "depth_err": 0.00033371153804958074,
+                "snr": 6.368898086627774
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": 0.0003666384190379457,
+                "depth_err": 0.00031357817093742433,
+                "snr": 1.1692089980048699
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0005921670642610177,
+                "depth_err": 0.00033480725554814906,
+                "snr": 1.768680500341957
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.0012000289117436447,
+                "depth_err": 0.0002849151081853024,
+                "snr": 4.211882337117668
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0013707420488441313,
+                "depth_err": 0.00026669829553015064,
+                "snr": 5.139673075597766
+              }
+            ],
+            "event_snr_max_fraction": 0.4546675449240816,
+            "odd_even_sigma": 1.970249127468563,
+            "local_snr": 8.422761538503249,
+            "local_depth": 0.0011414650336159166,
+            "local_depth_err": 0.00013552147100424246
+          }
+        }
+      ],
+      "additional_phase_secondary": {
+        "n_events": 3,
+        "n_positive_events": 3,
+        "depth": 0.0011932712143207177,
+        "depth_err": 0.0002598804776026662,
+        "diagonal_depth_err": 0.00013269162875126207,
+        "event_scatter_depth_err": 0.0002598804776026662,
+        "snr": 4.59161544310043,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1328.9486750602098,
+            "n": 8,
+            "depth": 0.0015462210495088432,
+            "depth_err": 0.00022540547426624135,
+            "snr": 6.859731577248647,
+            "n_baseline": 32
+          },
+          {
+            "cycle": 1,
+            "time": 1332.6890521817515,
+            "n": 8,
+            "depth": 0.0012970754244303506,
+            "depth_err": 0.00022459827830593164,
+            "snr": 5.775090682857184,
+            "n_baseline": 35
+          },
+          {
+            "cycle": 2,
+            "time": 1336.4294293032935,
+            "n": 7,
+            "depth": 0.000672458269819012,
+            "depth_err": 0.0002404966730718678,
+            "snr": 2.7961229618260073,
+            "n_baseline": 34
+          }
+        ],
+        "odd_even_sigma": null
+      }
+    },
+    "KSPSAP_FLUX_SML": {
+      "local_quadratic": {
+        "n_events": 3,
+        "n_positive_events": 2,
+        "depth": 0.0010050186779975905,
+        "depth_err": 0.0005068914573883971,
+        "diagonal_depth_err": 0.0001186803452560029,
+        "event_scatter_depth_err": 0.0005068914573883971,
+        "snr": 1.9827098353080188,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1327.716008393543,
+            "n": 10,
+            "depth": 0.0015455686210890437,
+            "depth_err": 0.0001980544512857511,
+            "snr": 7.803756043125292,
+            "n_baseline": 44
+          },
+          {
+            "cycle": 1,
+            "time": 1331.4563855150848,
+            "n": 9,
+            "depth": -7.204546637543078e-05,
+            "depth_err": 0.00022169649642651157,
+            "snr": -0.324973409759376,
+            "n_baseline": 45
+          },
+          {
+            "cycle": 5,
+            "time": 1346.417894001252,
+            "n": 10,
+            "depth": 0.0013283222624833235,
+            "depth_err": 0.00019937232642663799,
+            "snr": 6.662520753461235,
+            "n_baseline": 41
+          }
+        ],
+        "odd_even_sigma": null
+      },
+      "secondary_half_phase": {
+        "n_events": 3,
+        "n_positive_events": 1,
+        "depth": -0.00017820372471928154,
+        "depth_err": 0.00023770350217313467,
+        "diagonal_depth_err": 0.00011905799178863418,
+        "event_scatter_depth_err": 0.00023770350217313467,
+        "snr": -0.7496891004554251,
+        "events": [
+          {
+            "cycle": -1,
+            "time": 1325.8458198327721,
+            "n": 9,
+            "depth": -0.0006407359826875592,
+            "depth_err": 0.00021146397580731243,
+            "snr": -3.0300006430948914,
+            "n_baseline": 33
+          },
+          {
+            "cycle": 1,
+            "time": 1333.3265740758557,
+            "n": 9,
+            "depth": -0.0001111208742338385,
+            "depth_err": 0.00020897395984370714,
+            "snr": -0.5317450763575828,
+            "n_baseline": 43
+          },
+          {
+            "cycle": 2,
+            "time": 1337.0669511973977,
+            "n": 10,
+            "depth": 0.00017010954840677704,
+            "depth_err": 0.00019886612446222128,
+            "snr": 0.8553973124723555,
+            "n_baseline": 42
+          }
+        ],
+        "odd_even_sigma": null
+      },
+      "variability": {
+        "status": "measured",
+        "raw_mad": 0.0005860301882392672,
+        "residual_mad": 0.0005424531023102985,
+        "n_out_of_eclipse": 431,
+        "n_fit": 431,
+        "n_robust_rejected": 0,
+        "orbital_semiamplitude": 9.250495233246379e-06,
+        "half_period_semiamplitude": 0.00022114113174800544,
+        "orbital_semiamplitude_err": 0.0001074276903644181,
+        "half_period_semiamplitude_err": 0.00011418527653493467,
+        "orbital_snr": 0.08610903950244753,
+        "half_period_snr": 1.9366869219811182,
+        "coefficient_order": [
+          "intercept",
+          "sin_orbital",
+          "cos_orbital",
+          "sin_half_period",
+          "cos_half_period"
+        ],
+        "coefficients": [
+          0.9998315962816466,
+          -3.975078426137868e-06,
+          -8.35286858308972e-06,
+          3.525514243757465e-05,
+          -0.00021831279184348091
+        ],
+        "coefficient_covariance": [
+          [
+            8.754364470494432e-09,
+            2.0534742026395292e-09,
+            -5.632258861206465e-09,
+            -3.5949998587184283e-09,
+            9.358553308922193e-09
+          ],
+          [
+            2.0534742026395284e-09,
+            1.8801785940216075e-09,
+            -2.663588212118564e-09,
+            -1.6134861123698948e-09,
+            1.5324195160126057e-09
+          ],
+          [
+            -5.632258861206464e-09,
+            -2.6635882121185646e-09,
+            1.0806307737263758e-08,
+            4.379385963611188e-09,
+            -4.763173311966632e-09
+          ],
+          [
+            -3.5949998587184266e-09,
+            -1.6134861123698946e-09,
+            4.379385963611187e-09,
+            4.015603964713497e-09,
+            -3.092754018008301e-09
+          ],
+          [
+            9.35855330892219e-09,
+            1.5324195160126053e-09,
+            -4.763173311966628e-09,
+            -3.0927540180083003e-09,
+            1.1978156171764254e-08
+          ]
+        ],
+        "residual_chi2": 369.3359070000152,
+        "residual_dof": 426,
+        "eclipse_windows": {
+          "primary_half_width_days": 0.4740699483606577,
+          "half_phase_half_width_days": 0.4740699483606577,
+          "additional_epoch_btjd": 1328.9486750602098,
+          "additional_half_width_days": 0.16
+        },
+        "model": "c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2*theta)+c2*cos(2*theta);theta=2*pi*(BTJD-epoch)/P",
+        "limitations": "Conditional diagonal errors; robust scatter/clipping does not calibrate correlated noise or the search trials."
+      },
+      "alternative_widths": [
+        {
+          "width_days": 0.5,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 5,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.0006353006920206683,
+                "depth_err": 0.00021956464390321178,
+                "snr": 2.8934562538252777
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": 0.00010551848339213077,
+                "depth_err": 0.00022843868601648743,
+                "snr": 0.46191161940283193
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0008063293798029614,
+                "depth_err": 0.00025688635613444903,
+                "snr": 3.1388563874561917
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.0005177658706846389,
+                "depth_err": 0.00022280424855049855,
+                "snr": 2.323859953538037
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0008009055957128863,
+                "depth_err": 0.0002354203529811579,
+                "snr": 3.4020235955426825
+              }
+            ],
+            "event_snr_max_fraction": 0.3268320755386103,
+            "odd_even_sigma": 2.012056481620956,
+            "local_snr": 5.416058007881208,
+            "local_depth": 0.0005608741343742811,
+            "local_depth_err": 0.0001035576305789417
+          }
+        },
+        {
+          "width_days": 1.0,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 4,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.0013664333894464198,
+                "depth_err": 0.00021950951821397268,
+                "snr": 6.224939130495712
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": -4.016679782914423e-05,
+                "depth_err": 0.00022843800004710324,
+                "snr": -0.17583238261962525
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0009201965552373403,
+                "depth_err": 0.0003043953035671065,
+                "snr": 3.0230313820675465
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.0012311515650035298,
+                "depth_err": 0.00022272392292067885,
+                "snr": 5.527702407801041
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0015305477698094316,
+                "depth_err": 0.00028112217176190084,
+                "snr": 5.4444221180311025
+              }
+            ],
+            "event_snr_max_fraction": 0.3585102101080899,
+            "odd_even_sigma": 3.160640119217393,
+            "local_snr": 8.940283527693632,
+            "local_depth": 0.0009782552627776704,
+            "local_depth_err": 0.00010942105580291766
+          }
+        },
+        {
+          "width_days": 2.0,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 5,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.0012345904909435435,
+                "depth_err": 0.00021950874544567826,
+                "snr": 5.624333957341427
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": 0.000195995103471569,
+                "depth_err": 0.000244877759121044,
+                "snr": 0.8003793573375844
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0006949374841695999,
+                "depth_err": 0.0003055231831730643,
+                "snr": 2.2745818400823317
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.0011864992686980713,
+                "depth_err": 0.00022271504183113424,
+                "snr": 5.327432125566499
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0012453654734979613,
+                "depth_err": 0.0002354699952807918,
+                "snr": 5.288849953102924
+              }
+            ],
+            "event_snr_max_fraction": 0.33723687813192693,
+            "odd_even_sigma": 1.7630788168645173,
+            "local_snr": 8.902063469664187,
+            "local_depth": 0.0009580471177265165,
+            "local_depth_err": 0.00010762079162783783
+          }
+        }
+      ],
+      "additional_phase_secondary": {
+        "n_events": 3,
+        "n_positive_events": 3,
+        "depth": 0.001110714688219516,
+        "depth_err": 0.00023273193738647085,
+        "diagonal_depth_err": 0.00013270510767177736,
+        "event_scatter_depth_err": 0.00023273193738647085,
+        "snr": 4.772506518411701,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1328.9486750602098,
+            "n": 8,
+            "depth": 0.0014241456491363086,
+            "depth_err": 0.00022559762327943632,
+            "snr": 6.312768851169552,
+            "n_baseline": 32
+          },
+          {
+            "cycle": 1,
+            "time": 1332.6890521817515,
+            "n": 8,
+            "depth": 0.0012082609347597102,
+            "depth_err": 0.00022463974868350048,
+            "snr": 5.3786604634340724,
+            "n_baseline": 35
+          },
+          {
+            "cycle": 2,
+            "time": 1336.4294293032935,
+            "n": 7,
+            "depth": 0.0006435051912439548,
+            "depth_err": 0.00024029318331251825,
+            "snr": 2.6780001928187485,
+            "n_baseline": 34
+          }
+        ],
+        "odd_even_sigma": null
+      }
+    },
+    "KSPSAP_FLUX_LAG": {
+      "local_quadratic": {
+        "n_events": 3,
+        "n_positive_events": 2,
+        "depth": 0.00127820391696853,
+        "depth_err": 0.000599049645022171,
+        "diagonal_depth_err": 0.0001260505035955033,
+        "event_scatter_depth_err": 0.000599049645022171,
+        "snr": 2.133719513215342,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1327.716008393543,
+            "n": 10,
+            "depth": 0.0017597503751603332,
+            "depth_err": 0.00019803333878508144,
+            "snr": 8.886131930897392,
+            "n_baseline": 44
+          },
+          {
+            "cycle": 1,
+            "time": 1331.4563855150848,
+            "n": 9,
+            "depth": -0.00015682188953727608,
+            "depth_err": 0.0002853748826767816,
+            "snr": -0.5495294052030995,
+            "n_baseline": 45
+          },
+          {
+            "cycle": 5,
+            "time": 1346.417894001252,
+            "n": 10,
+            "depth": 0.001490526910828459,
+            "depth_err": 0.00019936493723163854,
+            "snr": 7.47637438922694,
+            "n_baseline": 41
+          }
+        ],
+        "odd_even_sigma": null
+      },
+      "secondary_half_phase": {
+        "n_events": 3,
+        "n_positive_events": 1,
+        "depth": -0.00019634500240085545,
+        "depth_err": 0.00021658570186287946,
+        "diagonal_depth_err": 0.00011905800072467215,
+        "event_scatter_depth_err": 0.00021658570186287946,
+        "snr": -0.9065464650347121,
+        "events": [
+          {
+            "cycle": -1,
+            "time": 1325.8458198327721,
+            "n": 9,
+            "depth": -0.0005924595474566528,
+            "depth_err": 0.00021146240642023575,
+            "snr": -2.801725174162956,
+            "n_baseline": 33
+          },
+          {
+            "cycle": 1,
+            "time": 1333.3265740758557,
+            "n": 9,
+            "depth": -0.00020027403068179872,
+            "depth_err": 0.00020897198080375661,
+            "snr": -0.9583774337186092,
+            "n_baseline": 43
+          },
+          {
+            "cycle": 2,
+            "time": 1337.0669511973977,
+            "n": 10,
+            "depth": 0.00015755304862117095,
+            "depth_err": 0.0001988691770284793,
+            "snr": 0.7922446855532991,
+            "n_baseline": 42
+          }
+        ],
+        "odd_even_sigma": null
+      },
+      "variability": {
+        "status": "measured",
+        "raw_mad": 0.0006301260881489803,
+        "residual_mad": 0.0005840920853653458,
+        "n_out_of_eclipse": 431,
+        "n_fit": 431,
+        "n_robust_rejected": 0,
+        "orbital_semiamplitude": 4.2949781368307864e-05,
+        "half_period_semiamplitude": 0.0001891659233353188,
+        "orbital_semiamplitude_err": 0.00010977103757745958,
+        "half_period_semiamplitude_err": 0.00011667602867370651,
+        "orbital_snr": 0.39126697092573703,
+        "half_period_snr": 1.6212920981767032,
+        "coefficient_order": [
+          "intercept",
+          "sin_orbital",
+          "cos_orbital",
+          "sin_half_period",
+          "cos_half_period"
+        ],
+        "coefficients": [
+          0.9998739806693792,
+          -1.0704872459158404e-05,
+          -4.1594343668563844e-05,
+          9.944502725848094e-06,
+          -0.00018890434991508087
+        ],
+        "coefficient_covariance": [
+          [
+            9.140452259518356e-09,
+            2.1440371803847228e-09,
+            -5.8806545475252805e-09,
+            -3.753547695248635e-09,
+            9.771287227835677e-09
+          ],
+          [
+            2.14403718038472e-09,
+            1.9630988332671226e-09,
+            -2.781058633546977e-09,
+            -1.6846445942728542e-09,
+            1.600002772888465e-09
+          ],
+          [
+            -5.880654547525292e-09,
+            -2.7810586335469854e-09,
+            1.128289098620822e-08,
+            4.572527047658083e-09,
+            -4.973240308714715e-09
+          ],
+          [
+            -3.75354769524864e-09,
+            -1.6846445942728584e-09,
+            4.5725270476580825e-09,
+            4.192701418395843e-09,
+            -3.2291516474229853e-09
+          ],
+          [
+            9.771287227835676e-09,
+            1.6000027728884675e-09,
+            -4.973240308714701e-09,
+            -3.229151647422979e-09,
+            1.2506420656128147e-08
+          ]
+        ],
+        "residual_chi2": 444.7844074464324,
+        "residual_dof": 426,
+        "eclipse_windows": {
+          "primary_half_width_days": 0.4740699483606577,
+          "half_phase_half_width_days": 0.4740699483606577,
+          "additional_epoch_btjd": 1328.9486750602098,
+          "additional_half_width_days": 0.16
+        },
+        "model": "c0+s1*sin(theta)+c1*cos(theta)+s2*sin(2*theta)+c2*cos(2*theta);theta=2*pi*(BTJD-epoch)/P",
+        "limitations": "Conditional diagonal errors; robust scatter/clipping does not calibrate correlated noise or the search trials."
+      },
+      "alternative_widths": [
+        {
+          "width_days": 0.5,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 5,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.000845600764595611,
+                "depth_err": 0.00021954622639239012,
+                "snr": 3.851584144672509
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": 6.914216466324952e-05,
+                "depth_err": 0.00022844191145007738,
+                "snr": 0.30266847368049415
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0008712719312602424,
+                "depth_err": 0.00030350350266135796,
+                "snr": 2.8707145835888
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.0006225686322413049,
+                "depth_err": 0.00022280817161703215,
+                "snr": 2.7941911991961867
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0009533531215488722,
+                "depth_err": 0.00023541490936000018,
+                "snr": 4.049671807706068
+              }
+            ],
+            "event_snr_max_fraction": 0.3461733080306903,
+            "odd_even_sigma": 2.518051114508959,
+            "local_snr": 6.157041927910307,
+            "local_depth": 0.0006528187916991657,
+            "local_depth_err": 0.00010602799190629058
+          }
+        },
+        {
+          "width_days": 1.0,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 4,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.0015493940770630044,
+                "depth_err": 0.00023350260944514893,
+                "snr": 6.635446519183186
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": -2.573161594798812e-06,
+                "depth_err": 0.00023013571422072045,
+                "snr": -0.011181061590166413
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0009359496153683589,
+                "depth_err": 0.0002989325348606135,
+                "snr": 3.130972732040606
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.00135794305268222,
+                "depth_err": 0.00022272444272631678,
+                "snr": 6.09696464411343
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.0017160259337206663,
+                "depth_err": 0.00031142522676814923,
+                "snr": 5.510234194990948
+              }
+            ],
+            "event_snr_max_fraction": 0.36277456364565946,
+            "odd_even_sigma": 3.1984067451888736,
+            "local_snr": 9.447697394342566,
+            "local_depth": 0.0010637422812224905,
+            "local_depth_err": 0.00011259275533734566
+          }
+        },
+        {
+          "width_days": 2.0,
+          "stats": {
+            "n_events": 5,
+            "n_positive_events": 5,
+            "events": [
+              {
+                "cycle": 0,
+                "time": 1327.716008393543,
+                "n": 10,
+                "depth": 0.001422711902437479,
+                "depth_err": 0.00023453316020958113,
+                "snr": 6.066143914004014
+              },
+              {
+                "cycle": 1,
+                "time": 1331.4563855150848,
+                "n": 9,
+                "depth": 0.00024694606496833416,
+                "depth_err": 0.00025191549804826893,
+                "snr": 0.9802734126386198
+              },
+              {
+                "cycle": 4,
+                "time": 1342.6775168797103,
+                "n": 10,
+                "depth": 0.0007315776214643632,
+                "depth_err": 0.0003537107042525232,
+                "snr": 2.068293700668078
+              },
+              {
+                "cycle": 5,
+                "time": 1346.417894001252,
+                "n": 10,
+                "depth": 0.0012861546248790212,
+                "depth_err": 0.000222713440187058,
+                "snr": 5.774930438857997
+              },
+              {
+                "cycle": 6,
+                "time": 1350.158271122794,
+                "n": 9,
+                "depth": 0.001380917113994573,
+                "depth_err": 0.00026527673492833363,
+                "snr": 5.20557188841923
+              }
+            ],
+            "event_snr_max_fraction": 0.3590595496625851,
+            "odd_even_sigma": 1.922621979755738,
+            "local_snr": 9.2908836867896,
+            "local_depth": 0.0010636303916890183,
+            "local_depth_err": 0.00011448107925421122
+          }
+        }
+      ],
+      "additional_phase_secondary": {
+        "n_events": 3,
+        "n_positive_events": 3,
+        "depth": 0.0011673063698550924,
+        "depth_err": 0.00029620663388409325,
+        "diagonal_depth_err": 0.00013269629155399418,
+        "event_scatter_depth_err": 0.00029620663388409325,
+        "snr": 3.940851541872839,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1328.9486750602098,
+            "n": 8,
+            "depth": 0.0016095072132442953,
+            "depth_err": 0.00022557729757664738,
+            "snr": 7.135058494516327,
+            "n_baseline": 32
+          },
+          {
+            "cycle": 1,
+            "time": 1332.6890521817515,
+            "n": 8,
+            "depth": 0.0012297851627182921,
+            "depth_err": 0.00022463087039331316,
+            "snr": 5.4746934852054085,
+            "n_baseline": 35
+          },
+          {
+            "cycle": 2,
+            "time": 1336.4294293032935,
+            "n": 7,
+            "depth": 0.0005941138125587711,
+            "depth_err": 0.00024027627198492039,
+            "snr": 2.4726278947596514,
+            "n_baseline": 34
+          }
+        ],
+        "odd_even_sigma": null
+      }
+    }
+  },
+  "integrated_trapezoid": {
+    "epoch_btjd": 1327.7541499981312,
+    "duration_days": 0.4740699483606577,
+    "ingress_fraction": 0.49999983957140093,
+    "depth": 0.0015664473468200452,
+    "baseline_offset": 8.401184753100346e-05,
+    "depth_err": 0.00020035077689639841,
+    "duration_err": 0.06364729684051212,
+    "epoch_err": 0.013319221835011075,
+    "chi2": 119.22761737083191,
+    "n_points": 112,
+    "delta_chi2_flat": 69.10133279523801,
+    "warning": "Fixed period; diagonal/covariance errors approximate; no limb darkening or source validation."
+  },
+  "centroid_tests": {
+    "SAP_X": {
+      "n_events": 6,
+      "offset_pixels": 0.00019025800832577218,
+      "error_pixels": 0.00010629141702644002,
+      "sigma": 1.7899658659969266,
+      "note": "QLP centroid local-baseline warning only; no pixel source attribution."
+    },
+    "SAP_Y": {
+      "n_events": 6,
+      "offset_pixels": -0.00028488850247236966,
+      "error_pixels": 9.94759650986793e-05,
+      "sigma": 2.8638928226508056,
+      "note": "QLP centroid local-baseline warning only; no pixel source attribution."
+    }
+  },
+  "additional_phase_search": {
+    "phase": 0.32955678708639186,
+    "epoch_btjd": 1328.9486750602098,
+    "duration_days": 0.16,
+    "diagonal_snr": 4.403668157956646,
+    "note": "Additional orbital phase selected after masking primary; score requires trials-aware confirmation."
+  },
+  "raw_variability_guard": {
+    "orbital_amplitude_to_primary_depth": 0.013849118170578115,
+    "half_period_amplitude_to_primary_depth": 0.4474026730045156,
+    "amplitude_fraction_threshold": 0.5,
+    "conditional_snr_threshold": 5.0,
+    "interpretation": "A warning for stellar variability/ellipsoidal light; no automatic confirmation or false-positive proof."
+  },
+  "warnings": [
+    "weak_independent_raw_local_detection",
+    "fewer_than_three_independent_positive_events",
+    "v_shaped_or_unresolved_ingress"
+  ],
+  "assessment": "fails_or_incomplete_initial_vetting",
+  "limitations": [
+    "No source localization/pixel dilution model.",
+    "No survey-wide empirical false-alarm calibration.",
+    "Fixed-period trapezoid is not a limb-darkened transit model.",
+    "Catalog absence does not establish novelty.",
+    "Raw SAP/aperture errors use KSPSAP relative errors with local residual floors."
+  ]
+}

@@ -1,8 +1,8 @@
 # TIC 309257799, sector 1 lead
 
-Period 1.239228 d, epoch BTJD 1326.391105, screening duration 1.20 h.
+Refined period 1.238767 d, epoch BTJD 1326.402772, refined box duration 1.76 h.
 
-Independent local primary: S/N 15.51, 16 sampled events; raw SAP local S/N 15.08; half-phase secondary S/N -1.04.
+Independent local primary: S/N 13.73, 16 sampled events; raw SAP local S/N 15.06; half-phase secondary S/N -1.39.
 
 Assessment: **fails_or_incomplete_initial_vetting**.
 

@@ -1,0 +1,9 @@
+{
+  "retrieved_utc": "2026-10-14T10:25:48.115961+00:00",
+  "url": "https://gea.esac.esa.int/tap-server/tap/sync?request=doQuery&lang=ADQL&format=csv&query=select+g.source_id%2Cg.ra%2Cg.dec%2Cg.phot_g_mean_mag%2Cg.bp_rp%2Cg.ruwe%2Cg.non_single_star%2Cg.phot_variable_flag%2Cv.in_vari_eclipsing_binary+from+gaiadr3.gaia_source+g+left+outer+join+gaiadr3.vari_summary+v+on+g.source_id%3Dv.source_id+where+1%3DCONTAINS%28POINT%28%27ICRS%27%2Cg.ra%2Cg.dec%29%2CCIRCLE%28%27ICRS%27%2C58.3712874049044%2C-73.7856844482717%2C0.0333333333333333%29%29",
+  "query": "select g.source_id,g.ra,g.dec,g.phot_g_mean_mag,g.bp_rp,g.ruwe,g.non_single_star,g.phot_variable_flag,v.in_vari_eclipsing_binary from gaiadr3.gaia_source g left outer join gaiadr3.vari_summary v on g.source_id=v.source_id where 1=CONTAINS(POINT('ICRS',g.ra,g.dec),CIRCLE('ICRS',58.3712874049044,-73.7856844482717,0.0333333333333333))",
+  "http_status": 200,
+  "content_type": "text/csv",
+  "sha256": "0e87f5a5ab2928fa90241431fbf61418d1f58e97304363b8e3d418a50b536673",
+  "bytes": 3093
+}
