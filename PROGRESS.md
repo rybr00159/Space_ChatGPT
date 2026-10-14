@@ -2,6 +2,12 @@
 
 Updated 2026-10-14. **159,505 distinct TIC targets actually period-searched, 495 insufficient-data cases, zero errors. All 389 strict shortlisted scan/peak signals on 357 TICs received detailed v3 checks, including 32 alternate peaks. No credible new exoplanet candidate is established.** The historical 19-star pilot is not added to these counts and has no TIC overlap with the broad sample.
 
+## Latest targeted request — TIC 71316387
+
+Completed the user's alternating-eclipse claim audit: five retained QLP sectors 1/28/68/95/105, 134 primary depth fits and 99 accepted timings, plus an independent 136-event implementation and native sector 28 pixel localization. Both eclipse types lie near the target; persistent unequal depths favor a roughly 1.30367-day eclipsing system. The original precise 5293/2487 ppm/19.6σ calculation is not certified; the main common contrast is 2466 ± 286 ppm with conservative sector covariance. Current RAVEN entry is a PC, not validated; original RAVEN summary used S1/28 and includes odd/even diagnostics. No new planet or stellar-mass confirmation is claimed.
+
+Read [the complete audit](candidates/tic71316387/README.md). Reproduce with `python scripts/tic71316387_retrieve.py --download`, `python src/validate_71316387.py`, and the independent catalog/pixel/event scripts listed there. No broad-survey frozen source or stored classification was changed. All raw observations/pixels/paper sources remain retained; no paid calls. Next useful steps for this target are spectra/resolved follow-up and obtaining the original quoted analysis to compare masks/noise definitions. No external communication is authorized. The broader research resumption steps below remain available.
+
 ## Secured scientific conclusions
 
 - **TIC 269994642:** real approximately 2.7% eclipses independently recur in 2018/2025 pixels near the target. Photometric period 1.746372 days; a 3.492744-day grazing binary fits as well as a dark transit. Unequal depths, conservative parity about 3.33 conditional standard errors, and Gaia RUWE2.08 favor binary testing. Radius profile reaches a stellar-sized upper boundary. No mass or planetary classification. Sector27 coverage was prescan/collateral data and is excluded, with the failed experiment preserved.

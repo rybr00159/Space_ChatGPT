@@ -33,3 +33,7 @@ Raw broad/follow-up light curves and pixels are retained outside Git; their exac
 | TOI-1803 | Broad 4.59 day residual | [Assessment](toi1803/README.md); broad curvature, local/raw models and narrower-event tests weaken it |
 
 Raw observations remain in the external cache and exact products are identified in `data/observations.json`. Compact normalized arrays, event windows, measurement tables and plots in these directories are scientific evidence, including negative findings. Dossier labels do not imply that the physical source is conclusively identified or that further planets are excluded.
+## Targeted claim validation
+
+[TIC 71316387 / CTOI 71316387.01](tic71316387/README.md): five-sector alternating eclipses and independent pixel localization support a roughly 1.30367-day eclipsing interpretation of this existing RAVEN PC. Exact quoted depths/significance were not certified; no new planet or confirmed mass classification.
+

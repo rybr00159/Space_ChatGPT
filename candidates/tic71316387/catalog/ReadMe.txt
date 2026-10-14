@@ -1,0 +1,6 @@
+- figures_val: Summary plots of validated planets.
+- figures_vet: Summary plots of vetted candidates.
+- nsfp09_table.csv: Candidates with NSFP probability > 0.9. Columns described in Table 1 of the article.
+- vet_table.csv: Vetted candidates. Columns described in Table 2 of the article.
+- val_table.csv: Validated candidates. Columns described in Table 2 of the article.
+- val_rp8_table.csv: Candidates with NSFP and RAVEN probability > 0.99 and planetary radius > 8 Earth radii.
