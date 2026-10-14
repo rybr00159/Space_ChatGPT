@@ -1,0 +1,1057 @@
+{
+  "target": {
+    "tic": "273879360",
+    "gaia_dr3": "4692910966756908288",
+    "ra_deg": 32.252462825,
+    "dec_deg": -71.323170344
+  },
+  "association": {
+    "skymapper_dr4_object_id": 498719638,
+    "smss_j": "020900.55-711923.4",
+    "ra_deg": 32.252496,
+    "dec_deg": -71.323179,
+    "target_separation_arcsec": 0.04933284061539437,
+    "gaia_dr3_id1": "4692910966756908288",
+    "gaia_dr3_dist1_arcsec": 0.05,
+    "master_flags_psf": 0,
+    "master_self_sources_within15arcsec": 1,
+    "note": "Exact Gaia crossmatch; resolved target, 65.59 arcsec from foreground TIC273879358."
+  },
+  "raw_epoch_rows": 50,
+  "strict_quality_rows": 31,
+  "master_used_rows": 34,
+  "native_mjd_start_range": [
+    56965.48527778,
+    59435.60551987
+  ],
+  "utc_midtime_range": [
+    "2014-11-04 11:39:08.000",
+    "2021-08-09 14:32:46.917"
+  ],
+  "per_filter": {
+    "g": {
+      "raw_rows": 8,
+      "strict_quality_rows": 5,
+      "master_used_rows": 5,
+      "strict_quality_median_psf_mag": 15.059677,
+      "strict_quality_min_psf_mag": 15.042843,
+      "strict_quality_max_psf_mag": 15.09463,
+      "strict_quality_median_error_mag": 0.0075
+    },
+    "i": {
+      "raw_rows": 10,
+      "strict_quality_rows": 8,
+      "master_used_rows": 9,
+      "strict_quality_median_psf_mag": 14.465,
+      "strict_quality_min_psf_mag": 14.4572,
+      "strict_quality_max_psf_mag": 14.4897,
+      "strict_quality_median_error_mag": 0.005050000000000001
+    },
+    "r": {
+      "raw_rows": 9,
+      "strict_quality_rows": 4,
+      "master_used_rows": 6,
+      "strict_quality_median_psf_mag": 14.711444499999999,
+      "strict_quality_min_psf_mag": 14.678144,
+      "strict_quality_max_psf_mag": 14.719006,
+      "strict_quality_median_error_mag": 0.005900000000000001
+    },
+    "u": {
+      "raw_rows": 5,
+      "strict_quality_rows": 3,
+      "master_used_rows": 3,
+      "strict_quality_median_psf_mag": 16.558304,
+      "strict_quality_min_psf_mag": 16.42763,
+      "strict_quality_max_psf_mag": 16.584644,
+      "strict_quality_median_error_mag": 0.0297
+    },
+    "v": {
+      "raw_rows": 6,
+      "strict_quality_rows": 2,
+      "master_used_rows": 2,
+      "strict_quality_median_psf_mag": 16.271585,
+      "strict_quality_min_psf_mag": 16.2618,
+      "strict_quality_max_psf_mag": 16.28137,
+      "strict_quality_median_error_mag": 0.03495
+    },
+    "z": {
+      "raw_rows": 12,
+      "strict_quality_rows": 9,
+      "master_used_rows": 9,
+      "strict_quality_median_psf_mag": 14.3925,
+      "strict_quality_min_psf_mag": 14.3714,
+      "strict_quality_max_psf_mag": 14.399,
+      "strict_quality_median_error_mag": 0.008
+    }
+  },
+  "ephemeris_source": "candidates/stellar_systems/tic273879360/source_summary.json",
+  "ephemeris": {
+    "period_days": 7.5868912871546215,
+    "period_error_days": 9.594670345454697e-07,
+    "epoch_btjd": 1327.8999181878462,
+    "epoch_error_days": 0.0002463718707414083,
+    "secondary_phase": 0.6917919273084346,
+    "secondary_phase_error_conditional": 3.9597369749607485e-05,
+    "primary_duration_days": 0.1743613901293776,
+    "secondary_duration_days": 0.13900312680749385
+  },
+  "timing": {
+    "native_time": "dr4.images.date AS mjd_start: MJD at start of exposure",
+    "scale_assumption": "UTC; scale is not explicitly declared in retained TAP column metadata",
+    "conversion": "UTC mid-exposure -> TDB plus astropy barycentric light-travel correction",
+    "site": "Siding Spring Observatory: lon149.0661deg, lat−31.2733deg, elevation1165m",
+    "astropy_iers_download": false
+  },
+  "quality": {
+    "strict_selection": "flags==0, nimaflags==0, img_qual<=2, finite mag_psf, e_mag_psf>0",
+    "use_in_clipped": "Retained as provenance only; no variable-star clipping used for phase test",
+    "notes": "Image quality3 measurements and flagged measurements are retained and separately shown."
+  },
+  "coverage": {
+    "primary_in_window_all": 0,
+    "secondary_in_window_all": 0,
+    "primary_in_window_strict": 0,
+    "secondary_in_window_strict": 0,
+    "nearest_primary_center_hours_all": 3.1703605056003625,
+    "nearest_secondary_center_hours_all": 3.4108163224727774,
+    "primary_half_duration_hours": 2.0923366815525313,
+    "secondary_half_duration_hours": 1.6680375216899264,
+    "minimum_distance_past_primary_window_minutes_all": 64.68142944286988,
+    "minimum_distance_past_secondary_window_minutes_all": 104.56672804697106
+  },
+  "assessment": "No epoch lies inside either predicted eclipse window, including all 50 raw measurements. This is a resolved public ground-photometry retrieval and a phase-coverage check, not independent eclipse confirmation or a useful eclipse nondetection.",
+  "limitations": [
+    "Sparse clustered observations; no independent period fit or mass constraint.",
+    "TESS duration windows are used as the prediction, not ground-data selected windows.",
+    "Public metadata does not explicitly state UTC. A several-minute timing-scale/site ambiguity would not bridge the nearest-window gaps.",
+    "Per-band magnitudes are AB PSF measurements; filter-specific medians are removed only for plotting."
+  ],
+  "metadata": {
+    "dr4.images": {
+      "image_id": {
+        "description": "Unique image ID as used by the Science Data Pipeline",
+        "unit": null
+      },
+      "night_mjd": {
+        "description": "Truncated Modified Julian Date at the start of night",
+        "unit": null
+      },
+      "date": {
+        "description": "Modified Julian Date at the start of the exposure",
+        "unit": "d"
+      },
+      "ra": {
+        "description": "Right Ascension of the exposure centre taken from the telescope",
+        "unit": "deg"
+      },
+      "decl": {
+        "description": "Declination of the exposure centre taken from the telescope",
+        "unit": "deg"
+      },
+      "field_id": {
+        "description": "SkyMapper field ID",
+        "unit": null
+      },
+      "exp_time": {
+        "description": "Exposure time",
+        "unit": "s"
+      },
+      "airmass": {
+        "description": "Airmass of the exposure centre taken from the telescope",
+        "unit": null
+      },
+      "filter": {
+        "description": "SkyMapper photometric filter (uvgriz)",
+        "unit": null
+      },
+      "rotator_pos": {
+        "description": "Angular position of the instrument rotator",
+        "unit": "deg"
+      },
+      "object": {
+        "description": "Survey/field/image_type identifier (not unique)",
+        "unit": null
+      },
+      "image_type": {
+        "description": "Image type: ms=Main Survey - fs=Shallow Survey - std=Standard Field - 3ps=Non-survey Image - bad=Bad-seeing Image",
+        "unit": null
+      },
+      "img_qual": {
+        "description": "Quality level of this image from 1=best to 3=worst",
+        "unit": null
+      },
+      "fwhm_mean": {
+        "description": "Average full width at half maximum for the exposure",
+        "unit": "arcsec"
+      },
+      "elong_mean": {
+        "description": "Average elongation (A/B) for the exposure",
+        "unit": null
+      },
+      "background": {
+        "description": "Average background counts for the exposure",
+        "unit": "counts"
+      },
+      "zpapprox": {
+        "description": "Approximate photometric zeropoint for the exposure (appropriate for centre of mosaic)",
+        "unit": "ABmag"
+      },
+      "zp_rms": {
+        "description": "RMS in photometric zeropoint for the exposure",
+        "unit": "ABmag"
+      },
+      "zp_fitstars": {
+        "description": "Number of stars in photometric zeropoint for the exposure",
+        "unit": null
+      },
+      "zp_gradient_x": {
+        "description": "Gradient in photometric zeropoint in x_mosaic coordinate",
+        "unit": "ABmag/pixel"
+      },
+      "zp_gradient_y": {
+        "description": "Gradient in photometric zeropoint in y_mosaic coordinate",
+        "unit": "ABmag/pixel"
+      },
+      "wcs_fitstars": {
+        "description": "Number of stars in WCS solution for mosaic",
+        "unit": null
+      },
+      "wcs_rms": {
+        "description": "RMS in WCS solution for mosaic",
+        "unit": "arcsec"
+      }
+    },
+    "dr4.master": {
+      "object_id": {
+        "description": "Global unique object ID in the master table.",
+        "unit": null
+      },
+      "raj2000": {
+        "description": "Mean ICRS Right Ascension of the object",
+        "unit": "deg"
+      },
+      "dej2000": {
+        "description": "Mean ICRS Declination of the object",
+        "unit": "deg"
+      },
+      "e_raj2000": {
+        "description": "RMS variation around the mean Right Ascension in milliarcseconds",
+        "unit": "mas"
+      },
+      "e_dej2000": {
+        "description": "RMS variation around the mean Declination in milliarcseconds",
+        "unit": "mas"
+      },
+      "smss_j": {
+        "description": "SkyMapper Southern Survey designation of the form SMSS Jhhmmss.ss+/-ddmmss.s derived from mean ICRS coordinates",
+        "unit": null
+      },
+      "mean_epoch": {
+        "description": "Mean MJD epoch of the observations",
+        "unit": "d"
+      },
+      "rms_epoch": {
+        "description": "RMS variation around the mean epoch",
+        "unit": "d"
+      },
+      "glon": {
+        "description": "Galactic longitude derived from ICRS coordinates. Not to be used as primary astrometric reference.",
+        "unit": "deg"
+      },
+      "glat": {
+        "description": "Galactic latitude derived from ICRS coordinates. Not to be used as primary astrometric reference.",
+        "unit": "deg"
+      },
+      "flags": {
+        "description": "Bitwise OR of Source Extractor flags across all observations",
+        "unit": null
+      },
+      "nimaflags": {
+        "description": "Total number of flagged pixels from bad or saturated or crosstalk-affected pixel masks across all observations",
+        "unit": null
+      },
+      "ngood": {
+        "description": "Number of observations used across all filters",
+        "unit": null
+      },
+      "u_flags": {
+        "description": "Bitwise OR of Source Extractor flags from u-band measurements in photometry table",
+        "unit": null
+      },
+      "u_nimaflags": {
+        "description": "Number of flagged pixels from bad or saturated or crosstalk-affected pixels masks from u-band measurements in photometry table",
+        "unit": null
+      },
+      "u_ngood": {
+        "description": "Number of u-band observations used",
+        "unit": null
+      },
+      "u_nclip": {
+        "description": "Number of u-band observations with magnitudes clipped from the final PSF magnitude estimate",
+        "unit": null
+      },
+      "v_flags": {
+        "description": "Bitwise OR of Source Extractor flags from v-band measurements in photometry table",
+        "unit": null
+      },
+      "v_nimaflags": {
+        "description": "Number of flagged pixels from bad or saturated or crosstalk-affected pixels masks from v-band measurements in photometry table",
+        "unit": null
+      },
+      "v_ngood": {
+        "description": "Number of v-band observations used",
+        "unit": null
+      },
+      "v_nclip": {
+        "description": "Number of v-band observations with magnitudes clipped from the final PSF magnitude estimate",
+        "unit": null
+      },
+      "g_flags": {
+        "description": "Bitwise OR of Source Extractor flags from g-band measurements in photometry table",
+        "unit": null
+      },
+      "g_nimaflags": {
+        "description": "Number of flagged pixels from bad or saturated or crosstalk-affected pixels masks from g-band measurements in photometry table",
+        "unit": null
+      },
+      "g_ngood": {
+        "description": "Number of g-band observations used",
+        "unit": null
+      },
+      "g_nclip": {
+        "description": "Number of g-band observations with magnitudes clipped from the final PSF magnitude estimate",
+        "unit": null
+      },
+      "r_flags": {
+        "description": "Bitwise OR of Source Extractor flags from r-band measurements in photometry table",
+        "unit": null
+      },
+      "r_nimaflags": {
+        "description": "Number of flagged pixels from bad or saturated or crosstalk-affected pixels masks from r-band measurements in photometry table",
+        "unit": null
+      },
+      "r_ngood": {
+        "description": "Number of r-band observations used",
+        "unit": null
+      },
+      "r_nclip": {
+        "description": "Number of r-band observations with magnitudes clipped from the final PSF magnitude estimate",
+        "unit": null
+      },
+      "i_flags": {
+        "description": "Bitwise OR of Source Extractor flags from i-band measurements in photometry table",
+        "unit": null
+      },
+      "i_nimaflags": {
+        "description": "Number of flagged pixels from bad or saturated or crosstalk-affected pixels masks from i-band measurements in photometry table",
+        "unit": null
+      },
+      "i_ngood": {
+        "description": "Number of i-band observations used",
+        "unit": null
+      },
+      "i_nclip": {
+        "description": "Number of i-band observations with magnitudes clipped from the final PSF magnitude estimate",
+        "unit": null
+      },
+      "z_flags": {
+        "description": "Bitwise OR of Source Extractor flags from z-band measurements in photometry table",
+        "unit": null
+      },
+      "z_nimaflags": {
+        "description": "Number of flagged pixels from bad or saturated or crosstalk-affected pixels masks from z-band measurements in photometry table",
+        "unit": null
+      },
+      "z_ngood": {
+        "description": "Number of z-band observations used",
+        "unit": null
+      },
+      "z_nclip": {
+        "description": "Number of z-band observations with magnitudes clipped from the final PSF magnitude estimate",
+        "unit": null
+      },
+      "class_star": {
+        "description": "Maximum stellarity index from photometry table (between 0=no star and 1=star)",
+        "unit": null
+      },
+      "chi2_psf": {
+        "description": "Maximum chi-squared from photometry table",
+        "unit": null
+      },
+      "flags_psf": {
+        "description": "Bitmask indicating whether photometry is likely biased by neighbours at &gt;1%; bits 0-5 correspond to filters z-u",
+        "unit": null
+      },
+      "radius_petro": {
+        "description": "Mean r-band Petrosian radius",
+        "unit": "pix"
+      },
+      "mean_fwhm": {
+        "description": "Mean FWHM of detections",
+        "unit": "pix"
+      },
+      "u_psf": {
+        "description": "Weighted mean u-band PSF magnitude",
+        "unit": "mag"
+      },
+      "e_u_psf": {
+        "description": "Error in weighted mean u-band PSF magnitude",
+        "unit": "mag"
+      },
+      "u_petro": {
+        "description": "Weighted mean u-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "e_u_petro": {
+        "description": "Error in weighted mean u-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "u_apc05": {
+        "description": "Weighted mean u-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "e_u_apc05": {
+        "description": "Error in weighted mean u-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "u_mmvar": {
+        "description": "Magnitude range between minimum and maximum unclipped u-band PSF magnitudes",
+        "unit": "mag"
+      },
+      "v_psf": {
+        "description": "Weighted mean v-band PSF magnitude",
+        "unit": "mag"
+      },
+      "e_v_psf": {
+        "description": "Error in weighted mean v-band PSF magnitude",
+        "unit": "mag"
+      },
+      "v_petro": {
+        "description": "Weighted mean v-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "e_v_petro": {
+        "description": "Error in weighted mean v-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "v_apc05": {
+        "description": "Weighted mean v-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "e_v_apc05": {
+        "description": "Error in weighted mean v-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "v_mmvar": {
+        "description": "Magnitude range between minimum and maximum unclipped v-band PSF magnitudes",
+        "unit": "mag"
+      },
+      "g_psf": {
+        "description": "Weighted mean g-band PSF magnitude",
+        "unit": "mag"
+      },
+      "e_g_psf": {
+        "description": "Error in weighted mean g-band PSF magnitude",
+        "unit": "mag"
+      },
+      "g_petro": {
+        "description": "Weighted mean g-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "e_g_petro": {
+        "description": "Error in weighted mean g-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "g_apc05": {
+        "description": "Weighted mean g-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "e_g_apc05": {
+        "description": "Error in weighted mean g-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "g_mmvar": {
+        "description": "Magnitude range between minimum and maximum unclipped g-band PSF magnitudes",
+        "unit": "mag"
+      },
+      "r_psf": {
+        "description": "Weighted mean r-band PSF magnitude",
+        "unit": "mag"
+      },
+      "e_r_psf": {
+        "description": "Error in weighted mean r-band PSF magnitude",
+        "unit": "mag"
+      },
+      "r_petro": {
+        "description": "Weighted mean r-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "e_r_petro": {
+        "description": "Error in weighted mean r-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "r_apc05": {
+        "description": "Weighted mean r-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "e_r_apc05": {
+        "description": "Error in weighted mean r-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "r_mmvar": {
+        "description": "Magnitude range between minimum and maximum unclipped -band PSF magnitudes",
+        "unit": "mag"
+      },
+      "i_psf": {
+        "description": "Weighted mean i-band PSF magnitude",
+        "unit": "mag"
+      },
+      "e_i_psf": {
+        "description": "Error in weighted mean i-band PSF magnitude",
+        "unit": "mag"
+      },
+      "i_petro": {
+        "description": "Weighted mean i-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "e_i_petro": {
+        "description": "Error in weighted mean i-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "i_apc05": {
+        "description": "Weighted mean i-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "e_i_apc05": {
+        "description": "Error in weighted mean i-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "i_mmvar": {
+        "description": "Magnitude range between minimum and maximum unclipped i-band PSF magnitudes",
+        "unit": "mag"
+      },
+      "z_psf": {
+        "description": "Weighted mean z-band PSF magnitude",
+        "unit": "mag"
+      },
+      "e_z_psf": {
+        "description": "Error in weighted mean z-band PSF magnitude",
+        "unit": "mag"
+      },
+      "z_petro": {
+        "description": "Weighted mean z-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "e_z_petro": {
+        "description": "Error in weighted mean z-band Petrosian magnitude",
+        "unit": "mag"
+      },
+      "z_apc05": {
+        "description": "Weighted mean z-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "e_z_apc05": {
+        "description": "Error in weighted mean z-band aperture-corrected magnitude from flux in 5 arcsec diameter",
+        "unit": "mag"
+      },
+      "z_mmvar": {
+        "description": "Magnitude range between minimum and maximum unclipped z-band PSF magnitudes",
+        "unit": "mag"
+      },
+      "self_id1": {
+        "description": "Unique identifier (object_id) of closest SMSS DR4 source",
+        "unit": null
+      },
+      "self_dist1": {
+        "description": "Distance on sky to closest SMSS DR4 source",
+        "unit": "arcsec"
+      },
+      "self_id2": {
+        "description": "Unique identifier (object_id) of second-closest SMSS DR4 source",
+        "unit": null
+      },
+      "self_dist2": {
+        "description": "Distance on sky to second-closest SMSS DR4 source",
+        "unit": "arcsec"
+      },
+      "self_id3": {
+        "description": "Unique identifier (object_id) of third-closest SMSS DR4 source",
+        "unit": null
+      },
+      "self_dist3": {
+        "description": "Distance on sky to third-closest SMSS DR4 source",
+        "unit": "arcsec"
+      },
+      "cnt_self_15": {
+        "description": "Number of SMSS DR4 sources within 15 arcsec",
+        "unit": null
+      },
+      "ebmv_sfd": {
+        "description": "E(B-V) from Schlegel+1998 extinction maps at the ICRS coordinates",
+        "unit": "mag"
+      },
+      "ebmv_gnilc": {
+        "description": "E(B-V) from Planck satellite GNILC reddening maps at the ICRS coordinates",
+        "unit": "mag"
+      },
+      "ebmv_g_err": {
+        "description": "Error in the E(B-V) from GNILC",
+        "unit": "mag"
+      },
+      "gaia_dr3_id1": {
+        "description": "Unique identifier (source_id) of closest Gaia DR3 source",
+        "unit": null
+      },
+      "gaia_dr3_dist1": {
+        "description": "Distance on sky to closest Gaia DR3 source",
+        "unit": "arcsec"
+      },
+      "gaia_dr3_id2": {
+        "description": "Unique identifier (source_id) of second-closest Gaia DR3 source",
+        "unit": null
+      },
+      "gaia_dr3_dist2": {
+        "description": "Distance on sky to second-closest Gaia DR3 source",
+        "unit": "arcsec"
+      },
+      "cnt_gaia_dr3_15": {
+        "description": "Number of Gaia DR3 sources within 15 arcsec",
+        "unit": null
+      },
+      "twomass_key": {
+        "description": "Unique identifier (pts_key) of closest 2MASS PSC source",
+        "unit": null
+      },
+      "twomass_dist": {
+        "description": "Distance on sky to closest 2MASS PSC source",
+        "unit": "arcsec"
+      },
+      "allwise_cntr": {
+        "description": "Unique identifier (cntr) of closest AllWISE source",
+        "unit": null
+      },
+      "allwise_dist": {
+        "description": "Distance on sky to closest AllWISE source",
+        "unit": "arcsec"
+      },
+      "catwise_id": {
+        "description": "Unique identifier (id) of closest CatWISE2020 source",
+        "unit": null
+      },
+      "catwise_dist": {
+        "description": "Distance on sky to closest CatWISE2020 source",
+        "unit": "arcsec"
+      },
+      "refcat2_id": {
+        "description": "Unique identifier (objid) of closest ATLAS Refcat2 source (only useful for this copy of Refcat2)",
+        "unit": null
+      },
+      "refcat2_dist": {
+        "description": "Distance on sky to closest ATLAS Refcat2 source",
+        "unit": "arcsec"
+      },
+      "ps1_dr1_id": {
+        "description": "Unique identifier (objid) of closest Pan-STARRS1 DR1 source",
+        "unit": null
+      },
+      "ps1_dr1_dist": {
+        "description": "Distance on sky to closest Pan-STARRS1 DR1 source",
+        "unit": "arcsec"
+      },
+      "galex_guv_id": {
+        "description": "Unique identifier (objid) of closest GALEX GUVcat AIS source (Bianchi et al. 2017)",
+        "unit": null
+      },
+      "galex_guv_dist": {
+        "description": "Distance on sky to closest GALEX GUVcat AIS source",
+        "unit": "arcsec"
+      },
+      "vhs_dr6_id": {
+        "description": "Unique identifier (objid) of closest Pan-STARRS1 DR1 source",
+        "unit": null
+      },
+      "vhs_dr6_dist": {
+        "description": "Distance on sky to closest Pan-STARRS1 DR1 source",
+        "unit": "arcsec"
+      },
+      "ls_dr9_id": {
+        "description": "Unique identifier (unique_id) of closest Legacy Survey DR9 source",
+        "unit": null
+      },
+      "ls_dr9_dist": {
+        "description": "Distance on sky to closest Legacy Survey DR9 source",
+        "unit": "arcsec"
+      },
+      "des_dr2_id": {
+        "description": "Unique identifier (coadd_object_id) of closest DES DR2 source",
+        "unit": null
+      },
+      "des_dr2_dist": {
+        "description": "Distance on sky to closest DES DR2 source",
+        "unit": "arcsec"
+      },
+      "nsc_dr2_id": {
+        "description": "Unique identifier (id) of closest NSC DR2 source",
+        "unit": null
+      },
+      "nsc_dr2_dist": {
+        "description": "Distance on sky to closest NSC DR2 source",
+        "unit": "arcsec"
+      },
+      "splus_dr3_id": {
+        "description": "Unique identifier of closest S-PLUS DR3 source",
+        "unit": null
+      },
+      "splus_dr3_dist": {
+        "description": "Distance on sky to closest S-PLUS DR3 source",
+        "unit": "arcsec"
+      }
+    },
+    "dr4.photometry": {
+      "object_id": {
+        "description": "Global object ID in master table associated with this observation.",
+        "unit": null
+      },
+      "object_id_local": {
+        "description": "Object ID in this (image,CCD) tuple. Not globally unique.",
+        "unit": null
+      },
+      "image_id": {
+        "description": "Unique image ID as used by the Science Data Pipeline",
+        "unit": null
+      },
+      "ccd": {
+        "description": "CCD on which the object was detected (1-32)",
+        "unit": null
+      },
+      "filter": {
+        "description": "SkyMapper photometric filter (u, v, g, r, i, z)",
+        "unit": null
+      },
+      "ra_img": {
+        "description": "ICRS Right Ascension of the object on this image",
+        "unit": "deg"
+      },
+      "decl_img": {
+        "description": "ICRS Declination of the object on this image",
+        "unit": "deg"
+      },
+      "x_img": {
+        "description": "CCD x-pixel coordinate of the object on this image",
+        "unit": "pix"
+      },
+      "y_img": {
+        "description": "CCD y-pixel coordinate of the object on this image",
+        "unit": "pix"
+      },
+      "flags": {
+        "description": "Flags raised by Source Extractor",
+        "unit": null
+      },
+      "nimaflags": {
+        "description": "Number of flagged pixels from bad, saturated, and crosstalk pixel mask",
+        "unit": null
+      },
+      "imaflags": {
+        "description": "OR-combined flagged pixel types within isophotal radius from bad, saturated, and crosstalk pixel mask",
+        "unit": null
+      },
+      "background": {
+        "description": "Mean background level in counts",
+        "unit": "ct"
+      },
+      "flux_max": {
+        "description": "Peak count above background of the brightest object pixel",
+        "unit": "ct"
+      },
+      "mu_max": {
+        "description": "ZP-corrected peak surface brightness of object above background",
+        "unit": "ABmag/arcsec2"
+      },
+      "class_star": {
+        "description": "Source Extractor stellarity index (between 0=not star and 1=star)",
+        "unit": null
+      },
+      "a": {
+        "description": "Length of object semi-major axis in pixels",
+        "unit": "pix"
+      },
+      "e_a": {
+        "description": "Error in semi-major axis",
+        "unit": "pix"
+      },
+      "b": {
+        "description": "Length of object semi-minor axis in pixels",
+        "unit": "pix"
+      },
+      "e_b": {
+        "description": "Error in semi-minor axis",
+        "unit": "pix"
+      },
+      "pa": {
+        "description": "Object ellipse position angle on sky (E of N, -90..+90 deg)",
+        "unit": "deg"
+      },
+      "e_pa": {
+        "description": "Error in position angle",
+        "unit": "deg"
+      },
+      "elong": {
+        "description": "Object elongation (a/b)",
+        "unit": null
+      },
+      "fwhm": {
+        "description": "Object full width at half maximum on detector",
+        "unit": "pix"
+      },
+      "radius_petro": {
+        "description": "Radius of Petrosian ellipse in units of a and b",
+        "unit": null
+      },
+      "radius_kron": {
+        "description": "Radius of Kron ellipse in units of a and b",
+        "unit": null
+      },
+      "radius_frac20": {
+        "description": "Radius of circular aperture enclosing 20 per cent of total (Kron) flux",
+        "unit": "pix"
+      },
+      "radius_frac50": {
+        "description": "Radius of circular aperture enclosing 50 per cent of total (Kron) flux (i.e. half-light radius)",
+        "unit": "pix"
+      },
+      "radius_frac90": {
+        "description": "Radius of circular aperture enclosing 90 per cent of total (Kron) flux",
+        "unit": "pix"
+      },
+      "chi2_psf": {
+        "description": "Reduced Chi-squared of PSF fit",
+        "unit": null
+      },
+      "flux_psf": {
+        "description": "Total counts under PSF fit",
+        "unit": "ct"
+      },
+      "e_flux_psf": {
+        "description": "Error in PSF counts",
+        "unit": "ct"
+      },
+      "mag_psf": {
+        "description": "ZP-corrected PSF magnitude",
+        "unit": "mag"
+      },
+      "e_mag_psf": {
+        "description": "Error in PSF magnitude",
+        "unit": "mag"
+      },
+      "flux_petro": {
+        "description": "Total counts within Petrosian ellipse",
+        "unit": "ct"
+      },
+      "e_flux_petro": {
+        "description": "Error in Petrosian flux",
+        "unit": "ct"
+      },
+      "mag_petro": {
+        "description": "ZP-corrected Petrosian magnitude",
+        "unit": "mag"
+      },
+      "e_mag_petro": {
+        "description": "Error in Petrosian magnitude",
+        "unit": "mag"
+      },
+      "flux_kron": {
+        "description": "Total counts within Kron ellipse",
+        "unit": "ct"
+      },
+      "e_flux_kron": {
+        "description": "Error in Kron flux",
+        "unit": "ct"
+      },
+      "mag_kron": {
+        "description": "ZP-corrected Kron magnitude",
+        "unit": "mag"
+      },
+      "e_mag_kron": {
+        "description": "Error in Kron magnitude",
+        "unit": "mag"
+      },
+      "flux_ap02": {
+        "description": "Total counts within 2 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap02": {
+        "description": "Error in 2 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apc02": {
+        "description": "ZP-corrected magnitude within 2 arcsec diameter aperture, corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apc02": {
+        "description": "Error in 2 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "flux_ap03": {
+        "description": "Total counts within 3 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap03": {
+        "description": "Error in 3 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apc03": {
+        "description": "ZP-corrected magnitude within 3 arcsec diameter aperture, corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apc03": {
+        "description": "Error in 3 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "flux_ap04": {
+        "description": "Total counts within 4 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap04": {
+        "description": "Error in 4 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apc04": {
+        "description": "ZP-corrected magnitude within 4 arcsec diameter aperture, corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apc04": {
+        "description": "Error in 4 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "flux_ap05": {
+        "description": "Total counts within 5 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap05": {
+        "description": "Error in 5 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apc05": {
+        "description": "ZP-corrected magnitude within 5 arcsec diameter aperture, corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apc05": {
+        "description": "Error in 5 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "flux_ap06": {
+        "description": "Total counts within 6 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap06": {
+        "description": "Error in 6 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apc06": {
+        "description": "ZP-corrected magnitude within 6 arcsec diameter aperture, corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apc06": {
+        "description": "Error in 6 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "flux_ap08": {
+        "description": "Total counts within 8 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap08": {
+        "description": "Error in 8 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apc08": {
+        "description": "ZP-corrected magnitude within 8 arcsec diameter aperture, corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apc08": {
+        "description": "Error in 8 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "flux_ap10": {
+        "description": "Total counts within 10 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap10": {
+        "description": "Error in 10 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apc10": {
+        "description": "ZP-corrected magnitude within 10 arcsec diameter aperture, corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apc10": {
+        "description": "Error in 10 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "flux_ap15": {
+        "description": "Total counts within 15 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap15": {
+        "description": "Error in 15 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apr15": {
+        "description": "ZP-corrected magnitude within 15 arcsec diameter aperture, NOT corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apr15": {
+        "description": "Error in 15 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "flux_ap20": {
+        "description": "Total counts within 20 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap20": {
+        "description": "Error in 20 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apr20": {
+        "description": "ZP-corrected magnitude within 20 arcsec diameter aperture, NOT corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apr20": {
+        "description": "Error in 20 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "flux_ap30": {
+        "description": "Total counts within 30 arcsec diameter aperture centred on object",
+        "unit": "ct"
+      },
+      "e_flux_ap30": {
+        "description": "Error in 30 arcsec aperture flux",
+        "unit": "ct"
+      },
+      "mag_apr30": {
+        "description": "ZP-corrected magnitude within 30 arcsec diameter aperture, NOT corrected for PSF losses",
+        "unit": "mag"
+      },
+      "e_mag_apr30": {
+        "description": "Error in 30 arcsec aperture magnitude",
+        "unit": "mag"
+      },
+      "use_in_clipped": {
+        "description": "Flag indicating whether this observation was used in computing the clipped mean magnitudes in the master table",
+        "unit": null
+      },
+      "img_qual": {
+        "description": "Quality level of this image from 1=best to 3=worst",
+        "unit": null
+      },
+      "x_mosaic": {
+        "description": "Mosaic x-pixel coordinate of the object on this image",
+        "unit": "pix"
+      },
+      "y_mosaic": {
+        "description": "Mosaic y-pixel coordinate of the object on this image",
+        "unit": "pix"
+      }
+    }
+  }
+}

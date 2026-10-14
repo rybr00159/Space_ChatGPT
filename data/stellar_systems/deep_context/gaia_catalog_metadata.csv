@@ -1,0 +1,18 @@
+<VOTABLE version="1.2" xmlns="http://www.ivoa.net/xml/VOTable/v1.2">
+<RESOURCE type="results">
+<INFO name="QUERY_STATUS" value="ERROR">
+(TAP) Cannot execute query 'SELECT tap_schema.tables."table_name" AS "table_name" , tap_schema.tables."description" AS "description"
+FROM tap_schema.tables
+WHERE tap_schema.tables."table_name" LIKE '%rvs%' OR tap_schema.tables."table_name" LIKE '%xp_sampled%' OR tap_schema.tables."table_name" LIKE '%tmass%' OR tap_schema.tables."table_name" LIKE '%allwise%'
+Limit 50000' for job ' (source query: 'select table_name,description from TAP_SCHEMA.tables where table_name like '%rvs%' or table_name like '%xp_sampled%' or table_name like '%tmass%' or table_name like '%allwise%'')18a6430b-c813-11f1-94ad-bc97e148b76b-O': Can not execute the following SQL: 
+WITH cte_authorisation_132 AS ( SELECT  FROM tap_schema.all_tables AS orig_table WHERE orig_table.table_name != 'public.dual' AND (orig_table.public = TRUE OR orig_table.schema_name = 'user_anonymous' ) ) SELECT cte_authorisation_132.table_name AS "table_name" , cte_authorisation_132.description AS "description"
+FROM tap_schema.tables
+WHERE cte_authorisation_132."table_name" LIKE '%rvs%' OR cte_authorisation_132."table_name" LIKE '%xp_sampled%' OR cte_authorisation_132."table_name" LIKE '%tmass%' OR cte_authorisation_132."table_name" LIKE '%allwise%'
+Limit 50000
+Because: ERROR: missing FROM-clause entry for table "cte_authorisation_132"
+  Position: 213
+</INFO>
+<INFO name="HttpErrorCode" value="500"/>
+<INFO name="Action" value="Handling request"/>
+</RESOURCE>
+</VOTABLE>

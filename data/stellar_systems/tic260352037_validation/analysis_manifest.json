@@ -1,0 +1,978 @@
+{
+  "checked_utc": "2026-10-14T21:24:47.257233+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "dependencies": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "astropy": "8.0.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "requests": "2.34.2"
+  },
+  "code": [
+    {
+      "path": "src/stellar_giant_validate.py",
+      "sha256": "8406195c11a9388584a483bf2f8b57f3c7863b774ea4c964998608b3e87bf469"
+    },
+    {
+      "path": "src/broad_vet.py",
+      "sha256": "23c89080f4f10ef59b79d2896c86edb98dafeecc14081feb2c2a5c69fb37f333"
+    },
+    {
+      "path": "src/archive.py",
+      "sha256": "c763981d596b0a04298d2addf3e7c8956b78fa7ada5ea3cd117af3b7c081c18c"
+    }
+  ],
+  "inputs": [
+    {
+      "tic": 260352037,
+      "sector": 1,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/qlp_s0001/raw/037/hlsp_qlp_tess_ffi_s0001-0000000260352037_tess_v01_llc.fits",
+      "sha256": "96fdd8a2f01b3e7f400eb859b1f6f4840fccd69645fef290e7438af592612ad8",
+      "bytes": 80640,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0001/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0001-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 993
+    },
+    {
+      "tic": 260352037,
+      "sector": 2,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0002-0000000260352037_tess_v01_llc.fits",
+      "sha256": "f4599d336b77e2139950c641149375f5ca7710a4da8610c39074105ada7e8362",
+      "bytes": 80640,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0002/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0002-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 999
+    },
+    {
+      "tic": 260352037,
+      "sector": 3,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0003-0000000260352037_tess_v01_llc.fits",
+      "sha256": "fa2c90334cc67b44fa204fe4365ede75cb9aba72d13076f1f7944bee5616381e",
+      "bytes": 83520,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0003/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0003-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 794
+    },
+    {
+      "tic": 260352037,
+      "sector": 4,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0004-0000000260352037_tess_v01_llc.fits",
+      "sha256": "095a9c55de2166c50edafb523860d1afeea3eb475b973fc55443f60c59724a9f",
+      "bytes": 69120,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0004/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0004-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 701
+    },
+    {
+      "tic": 260352037,
+      "sector": 5,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0005-0000000260352037_tess_v01_llc.fits",
+      "sha256": "cc71dc75364030d9af4ff3adc7f01deaf42b729a7da61e94503a71d97248bd3b",
+      "bytes": 77760,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0005/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0005-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 1034
+    },
+    {
+      "tic": 260352037,
+      "sector": 6,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0006-0000000260352037_tess_v01_llc.fits",
+      "sha256": "81ba6fb002c5613201cf13b8e9aa608eb35bd8305841629f04eadabed3db487f",
+      "bytes": 66240,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0006/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0006-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 829
+    },
+    {
+      "tic": 260352037,
+      "sector": 7,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0007-0000000260352037_tess_v01_llc.fits",
+      "sha256": "23eec9c2320918114d9e55edf9f5b699f2bc705f674b47ee42ee95d7c83fcf83",
+      "bytes": 72000,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0007/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0007-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 1029
+    },
+    {
+      "tic": 260352037,
+      "sector": 8,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0008-0000000260352037_tess_v01_llc.fits",
+      "sha256": "b127df58a11a648e9c8b658c8f1db1a3bd1041cebb9df0ecf97a64a74aa31849",
+      "bytes": 63360,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0008/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0008-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 736
+    },
+    {
+      "tic": 260352037,
+      "sector": 9,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0009-0000000260352037_tess_v01_llc.fits",
+      "sha256": "4b62491b6c793b49cfcad06bcaea8d9e1dd3daf10dde140a9b8cc0e2f57078ba",
+      "bytes": 74880,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0009/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0009-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 1001
+    },
+    {
+      "tic": 260352037,
+      "sector": 10,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0010-0000000260352037_tess_v01_llc.fits",
+      "sha256": "d6a35c6779645cd8da9e77caac45d9de98378b7c8a845e1ad3ca3f78604d0bef",
+      "bytes": 77760,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0010/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0010-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 950
+    },
+    {
+      "tic": 260352037,
+      "sector": 11,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0011-0000000260352037_tess_v01_llc.fits",
+      "sha256": "cf268387087e2519fb6cff98cf00c8fa4b1f6e1fbd4f9c6cf230b92c3d54c72d",
+      "bytes": 80640,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0011/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0011-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 792
+    },
+    {
+      "tic": 260352037,
+      "sector": 12,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0012-0000000260352037_tess_v01_llc.fits",
+      "sha256": "2d0f88ece59f52644b21112bf9841999a4c3405a2b4101c3581702630aeb9e05",
+      "bytes": 83520,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0012/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0012-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 922
+    },
+    {
+      "tic": 260352037,
+      "sector": 13,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0013-0000000260352037_tess_v01_llc.fits",
+      "sha256": "319d8c5de7a519f56279578cdd84ea6dbdbfc757c523b9f047d94ca60f5e3863",
+      "bytes": 83520,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0013/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0013-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 1799.9999999999995,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 1120
+    },
+    {
+      "tic": 260352037,
+      "sector": 27,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0027-0000000260352037_tess_v01_llc.fits",
+      "sha256": "40681f9119105a0bbf863f19a47f07aa617767bed6ad79a5573851e3fe406e43",
+      "bytes": 198720,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0027/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0027-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 3292
+    },
+    {
+      "tic": 260352037,
+      "sector": 28,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0028-0000000260352037_tess_v01_llc.fits",
+      "sha256": "afa46c4b50eb82d40efee6b8d0a7dba176ffd03d9f2f658b222a0c15699f94d0",
+      "bytes": 204480,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0028/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0028-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 3153
+    },
+    {
+      "tic": 260352037,
+      "sector": 29,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0029-0000000260352037_tess_v01_llc.fits",
+      "sha256": "d42f7f26bd4ededcb7616a65bb323e3dd15829baf6ea18745f0baea4f98a4233",
+      "bytes": 213120,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0029/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0029-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 2869
+    },
+    {
+      "tic": 260352037,
+      "sector": 31,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0031-0000000260352037_tess_v01_llc.fits",
+      "sha256": "c184944ddc1d2366f45f4651098b3127944e52156d4ba053925f44c8d4dd5540",
+      "bytes": 204480,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0031/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0031-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 3095
+    },
+    {
+      "tic": 260352037,
+      "sector": 32,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0032-0000000260352037_tess_v01_llc.fits",
+      "sha256": "b0de0ccaa01ea49d97e35b09f8db9e3680de54fa3743f4e80f4629feccf46d4c",
+      "bytes": 210240,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0032/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0032-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 3327
+    },
+    {
+      "tic": 260352037,
+      "sector": 33,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0033-0000000260352037_tess_v01_llc.fits",
+      "sha256": "0e5d8569a84031d0bc96e46e0382b0c6b6a9054b6f3a9f45e8d73a8d5764e4ac",
+      "bytes": 204480,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0033/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0033-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 3439
+    },
+    {
+      "tic": 260352037,
+      "sector": 34,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0034-0000000260352037_tess_v01_llc.fits",
+      "sha256": "f77f8d0a18d85b796d75f62bf6c1af8f08d7e26a0eb4b8f023a82df34ea5d99b",
+      "bytes": 204480,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0034/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0034-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 3008
+    },
+    {
+      "tic": 260352037,
+      "sector": 35,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0035-0000000260352037_tess_v01_llc.fits",
+      "sha256": "c065aaa5a060124f0d4d0d4dfa35f9b2d51b6258fe544a879be5fa035ddbf64f",
+      "bytes": 198720,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0035/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0035-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 2098
+    },
+    {
+      "tic": 260352037,
+      "sector": 36,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0036-0000000260352037_tess_v01_llc.fits",
+      "sha256": "31b099b1bad538a8c798376ef0fd84d3ed1e685308bd086308ba40c4292ee1a8",
+      "bytes": 204480,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0036/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0036-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 2493
+    },
+    {
+      "tic": 260352037,
+      "sector": 37,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0037-0000000260352037_tess_v01_llc.fits",
+      "sha256": "ab7109ef9e07e5da9f29922cef6450e12ce7e578665d4e1ae02f1629c30066ba",
+      "bytes": 204480,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0037/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0037-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 2821
+    },
+    {
+      "tic": 260352037,
+      "sector": 38,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0038-0000000260352037_tess_v01_llc.fits",
+      "sha256": "18da916746cb7486110b559f614cb286a25956b6b2a1daa32a143486d104834f",
+      "bytes": 218880,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0038/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0038-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 2952
+    },
+    {
+      "tic": 260352037,
+      "sector": 39,
+      "era": "old",
+      "path": "/workspace/tess-research-data/broad/followup/hlsp_qlp_tess_ffi_s0039-0000000260352037_tess_v01_llc.fits",
+      "sha256": "146b1039c37f9d9817ee696a5fe6d940ed916b6c13d7a19d0a698a63075c71fd",
+      "bytes": 227520,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0039/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0039-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 600.0,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 3269
+    },
+    {
+      "tic": 260352037,
+      "sector": 61,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0061-0000000260352037_tess_v01_llc.fits",
+      "sha256": "62adfafc34ee5eadaec628d6a503837fc9f9f963b9984aa1389c926f991e3af9",
+      "bytes": 653760,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0061/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0061-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 9373
+    },
+    {
+      "tic": 260352037,
+      "sector": 62,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0062-0000000260352037_tess_v01_llc.fits",
+      "sha256": "a46b56fc057fef3f2d0c62f45b4ba948a52e573fac048280a029d6fe4238eb71",
+      "bytes": 659520,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0062/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0062-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 10406
+    },
+    {
+      "tic": 260352037,
+      "sector": 63,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0063-0000000260352037_tess_v01_llc.fits",
+      "sha256": "73f28b41b93c23dbfbe1863a129e8974e9ffa15f8390a40fadb28757cc2675be",
+      "bytes": 682560,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0063/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0063-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 10646
+    },
+    {
+      "tic": 260352037,
+      "sector": 64,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0064-0000000260352037_tess_v01_llc.fits",
+      "sha256": "f006eebd9cd23a1bd35f173ba27a81e25aece5d04cecdf75a2f5cc1360a624ef",
+      "bytes": 691200,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0064/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0064-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 11032
+    },
+    {
+      "tic": 260352037,
+      "sector": 65,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0065-0000000260352037_tess_v01_llc.fits",
+      "sha256": "d4babaada79e2edbff4c7ca19472cbd2003c5e38afb09a18ef18bac805ec25b2",
+      "bytes": 714240,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0065/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0065-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 11043
+    },
+    {
+      "tic": 260352037,
+      "sector": 66,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0066-0000000260352037_tess_v01_llc.fits",
+      "sha256": "5540a1e80429d5a4184c15b71c43f347f0da34db7be27f8f5530cf10aa09c852",
+      "bytes": 740160,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0066/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0066-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 10098
+    },
+    {
+      "tic": 260352037,
+      "sector": 68,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0068-0000000260352037_tess_v01_llc.fits",
+      "sha256": "dd54e52b1c1f44da8d61275264b1873e91a428060982153f0615222eb542d0f5",
+      "bytes": 708480,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0068/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0068-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 9365
+    },
+    {
+      "tic": 260352037,
+      "sector": 69,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0069-0000000260352037_tess_v01_llc.fits",
+      "sha256": "d4412589cfd2ec8d08e498974e9dd92eff466eae5c1bc5e28075cdf84972fd0c",
+      "bytes": 662400,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0069/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0069-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 8468
+    },
+    {
+      "tic": 260352037,
+      "sector": 88,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0088-0000000260352037_tess_v01_llc.fits",
+      "sha256": "c84c02f15c60de45cca7b49179c016eca19190c6c8977ddee74c6ba2b46ec7ca",
+      "bytes": 714240,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0088/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0088-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 11562
+    },
+    {
+      "tic": 260352037,
+      "sector": 89,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0089-0000000260352037_tess_v01_llc.fits",
+      "sha256": "36dba78ebee74eebaa8006d7d98eebb9d6e2487e2760907ea88400cfe3c15d89",
+      "bytes": 694080,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0089/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0089-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 11281
+    },
+    {
+      "tic": 260352037,
+      "sector": 90,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0090-0000000260352037_tess_v01_llc.fits",
+      "sha256": "801c2f89c186a65c1ef6a57880ec4b5d924c0c53a7ac626bcb37777def7685bc",
+      "bytes": 705600,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0090/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0090-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 11205
+    },
+    {
+      "tic": 260352037,
+      "sector": 93,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0093-0000000260352037_tess_v01_llc.fits",
+      "sha256": "bb6c5a177ce4ccfdf92c25f6a6b95a558f8198bce25e4d8da176af9d65a4d0e9",
+      "bytes": 673920,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0093/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0093-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 9389
+    },
+    {
+      "tic": 260352037,
+      "sector": 95,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0095-0000000260352037_tess_v01_llc.fits",
+      "sha256": "bc0994671f9834a2e427216cb13ddffe1e42c9e71d186e59991015f8dcaea324",
+      "bytes": 648000,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0095/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0095-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 7386
+    },
+    {
+      "tic": 260352037,
+      "sector": 96,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0096-0000000260352037_tess_v01_llc.fits",
+      "sha256": "138c8085d5570b7b509a66cbe6db4b4f7c112c735a0e2fd9148ec2567597dd38",
+      "bytes": 659520,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0096/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0096-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 7464
+    },
+    {
+      "tic": 260352037,
+      "sector": 97,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0097-0000000260352037_tess_v01_llc.fits",
+      "sha256": "80965dc18ba56a468f1e503a19ed80f820fe4e105d4c989c9777edcffadc4893",
+      "bytes": 1388160,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0097/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0097-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 14561
+    },
+    {
+      "tic": 260352037,
+      "sector": 98,
+      "era": "later",
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/hlsp_qlp_tess_ffi_s0098-0000000260352037_tess_v01_llc.fits",
+      "sha256": "57cc319a8615a8429eb4ffded9da06702cb52b874e90ac956bb169a14138d30d",
+      "bytes": 1460160,
+      "url": "https://archive.stsci.edu/hlsps/qlp/s0098/0000/0002/6035/2037/hlsp_qlp_tess_ffi_s0098-0000000260352037_tess_v01_llc.fits",
+      "native_exposure_seconds": 199.99999999999991,
+      "time_system": "TDB",
+      "bjd_reference": 2457000,
+      "n_good": 12585
+    },
+    {
+      "kind": "pixel_cube",
+      "sector": 1,
+      "path": "/workspace/tess-research-data/stellar_systems/hidden_sources/tic260352037/tess-s0001-4-4_94.787911_-57.078221_11x11_astrocut.fits",
+      "sha256": "2d4b46ecb5e9d2d17e12490483f091745cbc7d2f91996a99a9b5ba3e069dfec8",
+      "bytes": 3228480,
+      "url": "https://mast.stsci.edu/tesscut/api/v0.1/astrocut?ra=94.787911339&dec=-57.078220725&x=11&y=11&units=px&sector=1",
+      "checks": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 2,
+          "status": "verified_raw_ones_complement"
+        }
+      ]
+    },
+    {
+      "kind": "pixel_cube",
+      "sector": 28,
+      "path": "/workspace/tess-research-data/stellar_systems/hidden_sources/tic260352037/tess-s0028-4-4_94.787911_-57.078221_11x11_astrocut.fits",
+      "sha256": "4a6543bf57c6c40a32b9659398f7f81fcff0e41a2e5293a44f2815da7d7b80bf",
+      "bytes": 8654400,
+      "url": "https://mast.stsci.edu/tesscut/api/v0.1/astrocut?ra=94.787911339&dec=-57.078220725&x=11&y=11&units=px&sector=28",
+      "checks": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 2,
+          "status": "verified_raw_ones_complement"
+        }
+      ]
+    },
+    {
+      "kind": "pixel_cube",
+      "sector": 39,
+      "path": "/workspace/tess-research-data/stellar_systems/hidden_sources/tic260352037/tess-s0039-4-3_94.787911_-57.078221_11x11_astrocut.fits",
+      "sha256": "11fbd22ad2adbcf0d839c448180782b4e396c29178306d34f069b38bbe18aa35",
+      "bytes": 9685440,
+      "url": "https://mast.stsci.edu/tesscut/api/v0.1/astrocut?ra=94.787911339&dec=-57.078220725&x=11&y=11&units=px&sector=39",
+      "checks": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 2,
+          "status": "verified_raw_ones_complement"
+        }
+      ]
+    },
+    {
+      "kind": "pixel_cube",
+      "sector": 95,
+      "path": "/workspace/tess-research-data/stellar_systems/tic260352037_validation/pixels_s0095/tess-s0095-4-4_94.787911_-57.078221_11x11_astrocut.fits",
+      "sha256": "6020c909c92e9b0675d3a9b2894d067f18d19388585676ec25824fffe755f7fd",
+      "bytes": 25810560,
+      "url": "https://mast.stsci.edu/tesscut/api/v0.1/astrocut?ra=94.787911339&dec=-57.078220725&x=11&y=11&units=px&sector=95",
+      "checks": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 2,
+          "status": "verified_raw_ones_complement"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/timing_stability.json",
+      "sha256": "007f83255e405f6ff711cddbf2d1480c1aa7266d006106a085eab5030a3be0f8",
+      "bytes": 1053
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/centroid_bootstrap_s28_primary.npz",
+      "sha256": "eb40984c0071a48f678673ee3636ac778d08b5393a9dec705eb67d159381df54",
+      "bytes": 3334
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/photometry.json",
+      "sha256": "d9d83932cfa24515839cb6e923ba3059716a90c5ffe4982a294c3b7058706c5b",
+      "bytes": 182264
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/centroid_bootstrap_s1_secondary.npz",
+      "sha256": "fe14c7c31d6aa227a456788b1f6244d182df586cf3413aa8c9bb22a30704175e",
+      "bytes": 3143
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/centroid_bootstrap_s39_secondary.npz",
+      "sha256": "1558ac1984c76f32be1f571deac5e8ad865a6adb6c288c35a788291a1c4276f1",
+      "bytes": 3320
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/centroid_bootstrap_s95_secondary.npz",
+      "sha256": "649cdc7bb68eea7b0d890bb9807ff3838d41982f2f112123b98e5d030de85e31",
+      "bytes": 3337
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/centroid_bootstrap_s39_primary.npz",
+      "sha256": "a9454fb67a5e19cccdf4afa0e86161da8001594d6089e294f85c6e80574a7f46",
+      "bytes": 3338
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/empirical_source_diagnostics.png",
+      "sha256": "6667c07561a9406f9d4ab1a35382cbd277ff1bca8de86b1b95372b495a6c40b2",
+      "bytes": 563185
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/centroid_bootstrap_s95_primary.npz",
+      "sha256": "3c22c2cd3093e7c77444768805599f90dbcf2ed90c4dca3841ebb11d7db7f215",
+      "bytes": 3326
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/pixels.json",
+      "sha256": "a8dc204168db04328a5f6d108653b3147c54ced506a49eba4c93e2c4592f6b52",
+      "bytes": 142763
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/centroid_bootstrap_s28_secondary.npz",
+      "sha256": "4e187686975c798b1ed08339fb8aeb4b2c332aa166a7e378d3f4dfc44e673c7d",
+      "bytes": 3330
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/wide_pair_dynamics.json",
+      "sha256": "f7934e0650ae49c2571257c16cab9accb6b4a3c885cdae90e66151fb4854c529",
+      "bytes": 1354
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/morphology.json",
+      "sha256": "dad3dde374fe399bf70fa4162519d4f438fa225ac6cf5c3b4c3a86515072a937",
+      "bytes": 26625
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/event_depths.csv",
+      "sha256": "32d5d812564e80a2474143db1d59a2057286b270053c581c96f5102b0ebe9798",
+      "bytes": 209947
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/README.md",
+      "sha256": "e26893d65a29ffdd6fd969b2c4381c5dc217ee6b29e8cc21970dd7a047a10e70",
+      "bytes": 1390
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector_timings.csv",
+      "sha256": "542f8e12dea53c323ffea7615953eb395d14e64152cc4d4334e30e4730cff31f",
+      "bytes": 6788
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/holdout_diagnostics.png",
+      "sha256": "26f81a1315e30a33030a0ce6a62888f9a7caf6f786e824431f58111c9c280604",
+      "bytes": 250985
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/centroid_bootstrap_s1_primary.npz",
+      "sha256": "a8f9d62ed6c83c20baef4bc7217e6f823341bc2b904fb34a619f139a4dcfb416",
+      "bytes": 3324
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/primary_events.json",
+      "sha256": "679d3b7a640800fc1ae1a36efd1053dc7c2cd5e10563b500a30cbb1c1ece636b",
+      "bytes": 1640
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/secondary_difference.npz",
+      "sha256": "df346752e411fa8b84e0a3a68afe0e24cc45a65aad9efabd6821fd9dd2602b6a",
+      "bytes": 57206
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/primary_difference_background.npz",
+      "sha256": "c2a61dd4d0182fc7abce1818e4517bfae58aef97ac0949956ff1cc62f2b96367",
+      "bytes": 60898
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/secondary_events.json",
+      "sha256": "4ca1dc1e8a80b6155be4bf4d82dc3c9c4f5237e5e82f409f2bb74635932dd466",
+      "bytes": 1546
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/primary_difference.npz",
+      "sha256": "e2c30d0b5175a5b6a8c71a27beca38ae6bc47bd15a4856a05cc469016bb0cd7c",
+      "bytes": 60914
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/secondary_difference_pointing.npz",
+      "sha256": "8fb8ecfec22e5703096661040887aa788dff3c422290af129d62870cc53075f8",
+      "bytes": 57169
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/ffi_product_ids.txt",
+      "sha256": "41a9137643bb86847cf1c540d554110f19810cc4ba6c63207f9ca52461c8efb7",
+      "bytes": 49998
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/raw_manifest.json",
+      "sha256": "df73d1426046c51647ac88e0187f122f1d629cff1c02762673ba4e7e25db565e",
+      "bytes": 8908
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/secondary_difference_background.npz",
+      "sha256": "05cb013e13cf3353b28884ea694887813195df705e44feabe03c5cc1d52a6147",
+      "bytes": 57255
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector1/primary_difference_pointing.npz",
+      "sha256": "6e0cbb83679e0026840486565ca695f2fbb882f0780fd72d3a87c0139db76fd4",
+      "bytes": 60867
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/primary_events.json",
+      "sha256": "128d1be16a281c45e22dd09fad0e75a69dc7dd0ecd83950e30d4932ca08b6ea2",
+      "bytes": 1469
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/secondary_difference.npz",
+      "sha256": "64008164b2561a9eb8cd5843257e725aa2f57fdb4bf59b33224d8b007eee0f84",
+      "bytes": 51552
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/primary_difference_background.npz",
+      "sha256": "ae4d1f2b3aeda5f309965df342ec56d206875ec31bc73ad2e221a6f1ed964c1f",
+      "bytes": 53368
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/secondary_events.json",
+      "sha256": "8cd0529c5a3a44940c66d4639afff794dcd89a5e31271c8d58628f11364b9516",
+      "bytes": 1419
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/primary_difference.npz",
+      "sha256": "650cd77869695fae3b4b294b3302c65bdc159ac46ef98e3c3c00e08fe5c22672",
+      "bytes": 53400
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/secondary_difference_pointing.npz",
+      "sha256": "fb76e17bc63b1897cfa293f4a70bc50a62d24f6a0336b4b1602b0a2d38818591",
+      "bytes": 51538
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/ffi_product_ids.txt",
+      "sha256": "a158d4d40647cd74151c239a3b7ca7c1db5b31d2e3d74e5dbe4c3cac82e7699c",
+      "bytes": 135096
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/raw_manifest.json",
+      "sha256": "bfc16bb8f0a2d80ae644c3c02dfc61e1e168aa1d63cc09395aa4134adc233318",
+      "bytes": 8916
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/secondary_difference_background.npz",
+      "sha256": "114ac61945417260001570eacab2fe419c2ae16e3dc78b46928af15261ac3f36",
+      "bytes": 51542
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector28/primary_difference_pointing.npz",
+      "sha256": "379a30467afe7fe4b6b9d51e9272def73e6778f762db0aea054b5b803ebfb28d",
+      "bytes": 53371
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/primary_events.json",
+      "sha256": "50d5529bfe682dbe276b658c43e241daa9312f8bab993f1e646e22da14b54a0a",
+      "bytes": 1623
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/secondary_difference.npz",
+      "sha256": "78b7e101196f06fce75bdcb31f348f7bba382be5b55b8359099d974d7a64a510",
+      "bytes": 58870
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/primary_difference_background.npz",
+      "sha256": "704a19cbc8a59bc48e2704ecc89e69d554f47fc221fd4c822aba6682c28f2d9a",
+      "bytes": 57057
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/secondary_events.json",
+      "sha256": "9264c2343dd5ab01a5abedc693efdc56cf8449a54ec64a0d7c5a23482b7cf6f3",
+      "bytes": 1681
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/primary_difference.npz",
+      "sha256": "44b364a7854b14dfe74d55091f092643593c188682179720bd4843f66e600fd0",
+      "bytes": 57029
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/secondary_difference_pointing.npz",
+      "sha256": "9d044d2772d83f5b27c89b1219315151a106fc8d4bd2220e60c3996040f85f66",
+      "bytes": 58831
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/ffi_product_ids.txt",
+      "sha256": "8773c44d412e47f18c238016188c5325882d9d1380d3d6a76d78d9d923d801de",
+      "bytes": 151281
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/raw_manifest.json",
+      "sha256": "bfb5e2dde1b381ae4123c33f1bb11eec830a993474ff292f594b006612b08980",
+      "bytes": 8922
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/secondary_difference_background.npz",
+      "sha256": "e44ca2849daae753ac256a7c04a40a987c5bd6252b5e035de9a99e2263fd9ea6",
+      "bytes": 58890
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector39/primary_difference_pointing.npz",
+      "sha256": "1d542ecf6ea2290caef14d36bf78cf0bbf525a5d0186d789b1685f1455bfc4ef",
+      "bytes": 57052
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/primary_events.json",
+      "sha256": "99eef69c759d5bd18f8a764ef685aaf32779863ebe3ffb8342b03d53322a3d85",
+      "bytes": 1466
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/secondary_difference.npz",
+      "sha256": "dbd908c206ff2c988b922cb61d716f8162c7ac4da30024b1cbccf0a12f31a8e9",
+      "bytes": 47821
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/primary_difference_background.npz",
+      "sha256": "28387a65e363ccf105bf7d1ec9507b1f7750a24c0e51a5e41b0c3d7865c1558c",
+      "bytes": 51480
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/secondary_events.json",
+      "sha256": "aa88e6299a599f665b8a4d3d93ca9421417e25c7fdcf5541d5c5ee22ca918606",
+      "bytes": 1355
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/primary_difference.npz",
+      "sha256": "3ec7cace5ed4f06f502c06327c6a3779d86a38028150b5d0c62a31313e1f37a6",
+      "bytes": 51510
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/secondary_difference_pointing.npz",
+      "sha256": "5db0a5e28cb253ae6e1922af8bc0a23045f349e0675f57e65239142852475564",
+      "bytes": 47785
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/ffi_product_ids.txt",
+      "sha256": "4cc6b130b2d8419416cdcc78b8d11a6960268c5a5fe1714c113950f4b60401d9",
+      "bytes": 404274
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/raw_manifest.json",
+      "sha256": "5b4767d0b4be7743ad60028d01f9dd748d60a7162dd1863e9d858f96d7c8faa1",
+      "bytes": 8925
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/secondary_difference_background.npz",
+      "sha256": "9cfe1fbf27775c6163438b733f83e125fe7f20ac859088fdcc5c206bd5c61b06",
+      "bytes": 47831
+    },
+    {
+      "path": "candidates/stellar_systems/tic260352037_validation/sector95/primary_difference_pointing.npz",
+      "sha256": "6e505a0bf6b98068556a4f7107d180051b470057240af648925b1979cd6871a5",
+      "bytes": 51476
+    }
+  ],
+  "coverage_query_url": "https://mast.stsci.edu/tesscut/api/v0.1/sector?ra=94.787911339&dec=-57.078220725",
+  "coverage_query_sha256": "47995cc6e84d8cc1fdc5fa71f8222c731b63fd8400952eff304aef669dcb937b",
+  "mast_target_query": {
+    "service": "Mast.Caom.Filtered",
+    "params": {
+      "columns": "*",
+      "filters": [
+        {
+          "paramName": "obs_collection",
+          "values": [
+            "TESS"
+          ]
+        },
+        {
+          "paramName": "target_name",
+          "values": [
+            "260352037"
+          ]
+        }
+      ]
+    },
+    "response_sha256": "0f3dd164f8b857aa74ed10ded63afa72c437f0caafb6e84c70940dde497f517d",
+    "n_rows": 0
+  },
+  "checks": [
+    "All 41 original QLP byte hashes match immutable manifests and FITS checksums verified where present.",
+    "All 41 curves declare BTJD TDB and native exposure matches retained timestamp interval within 1%.",
+    "All 4 raw pixel cubes match manifests and science-coverage checks.",
+    "All 16 later sectors have positive primary and secondary depths at the old fixed ephemeris.",
+    "All five quantitative analysis files identify the current method source hash.",
+    "Scientific analyses completed and authored Python compiles."
+  ],
+  "limitations": [
+    "Raw-cache storage persistence unverified; immutable product URLs and hashes retained.",
+    "Clean-cache full rerun not independently executed.",
+    "Conditional statistical uncertainties exclude uncalibrated profile/color/intra-pixel systematics."
+  ]
+}

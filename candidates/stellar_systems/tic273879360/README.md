@@ -1,6 +1,6 @@
-# TIC 273879360: a potentially unreported background eclipsing binary
+# TIC 273879360: an independently characterized, previously flagged eclipsing binary
 
-Checked 2026-10-14 UTC. **Deep primary and secondary eclipses originate on or very near TIC 273879360, a background star whose light contaminated the brighter TIC 273879358. The observations strongly favor a luminous stellar companion. No prior binary classification was found in the documented catalog/literature checks, but first discovery and component masses are not confirmed.** The Gaia/TIC source itself was already catalogued; the potentially new result is its unresolved eclipsing multiplicity.
+Checked 2026-10-14 UTC; novelty wording corrected on that date after rereading the prior publication. **Deep primary and secondary eclipses originate on or very near TIC 273879360, a background star whose light contaminated the brighter TIC 273879358. Independent TESS and earlier ground photometry strongly support an eccentric eclipsing binary. This source was previously publicly machine-flagged for eclipse-like features in Kostov et al. (2025) Table 2; our result independently characterizes that unvetted candidate. No vetted binary classification or period was found in that prior row, but first recognition must not be claimed. Component masses remain unmeasured.** The Gaia/TIC source position was already catalogued.
 
 ## Source identification
 
@@ -49,7 +49,7 @@ A joint exposure-integrated trapezoid fit to the four source-core light curves g
 | Secondary phase | 0.69179 ± 0.00004 |
 | Primary / secondary total duration | 4.185 / 3.336 h |
 
-The timing solution is conditional on the estimated templates and these same photons; the small diagonal errors omit some baseline, morphology and correlated systematics. The secondary's displacement from phase 0.5 favors an eccentric orbit, but a physical eccentricity/orbit has not been fitted. Trapezoids are descriptive eclipse shapes, not stellar-radius or mass solutions.
+The timing solution is conditional on the estimated templates and these same photons; the small diagonal errors omit some baseline, morphology and correlated systematics. The secondary's displacement from phase 0.5 favors an eccentric orbit. These preserved trapezoid results precede the deeper physical-model analysis summarized in the [current stellar report](../../../STELLAR_RESEARCH_REPORT.md); trapezoids themselves are descriptive eclipse shapes, not stellar-radius or mass solutions.
 
 Repeated losses of roughly a quarter of the source-core light, followed by a distinct approximately 7–9% eclipse, are strong evidence for a luminous eclipsing system. Ordinary dark planetary transits cannot account for that optical light budget under the catalogued stellar interpretation. Spectroscopy is needed to measure the components and independently confirm their masses; resolved photometry can further constrain close blends.
 
@@ -57,11 +57,13 @@ Repeated losses of roughly a quarter of the source-core light, followed by a dis
 
 Exact identifiers and 120-arcsecond field positions were compared against current VSX, live ASAS-SN plus its CDS mirror, Rowan 2022 ASAS-SN EBs, Petrosky 2021 WISE variables, Prša 2022 TESS EBs, Shi 2022 EA systems, Tang 2025 eccentric EBs, Battley 2022 **YOUNGSTER**, SB9, WDS, Tian 2020 wide binaries, and Gaia DR3 variability/actual NSS solution tables. The complete Traven 2020 GALAH SB2 table and both vetted Kostov 2025 TESS Ten Thousand tables were also checked. No binary/variable/source classification match was found for this source in that scope.
 
-TIC 273879360 **does appear** in Kostov's Table 2 of approximately 900,000 unvetted/unvalidated targets. That row provides TIC, coordinates and magnitude; it has no period or EB classification. It is a prior target inventory entry, not a newly uncatalogued position. Tables 3/4 containing the 10,001 vetted EBs have no matching source or field entry.
+**Correction, 2026-10-14 UTC:** TIC 273879360 appears in Kostov's Table 2 of approximately 900,000 unvetted/unvalidated targets. That table is a published **neural-network eclipse-like-feature flag list**, not a generic observed-target inventory. The [paper abstract and Section III.4](https://arxiv.org/abs/2506.05631) explain that these sources were selected for high neural-network eclipse-feature scores (0.9 or higher), and explicitly distinguish the list from an EB catalog. The preserved exact-TIC row provides position and magnitude, but no period or vetted EB classification. This is prior recognition of possible eclipse-like variability. Tables 3/4 containing the 10,001 vetted EBs have no matching source or field entry in the documented check.
 
-Current ExoFOP has no uploaded companion/TOI/CTOI/files for this target. SIMBAD and selected arXiv alias searches found no source-associated report. These finite searches do not exhaust journal full text, supplementary tables, unpublished work or every alias. The appropriate result is **“strong potentially unreported eclipsing-binary candidate on or near TIC 273879360,”** pending external recognition review, not an established discovery of a new star.
+Current ExoFOP has no uploaded companion/TOI/CTOI/files for this target. SIMBAD and selected arXiv alias searches found no additional source-associated report; those nulls cannot override the positive Kostov flag. These finite searches do not exhaust journal full text, supplementary tables, unpublished work or every alias. The appropriate result is **“independently characterized eccentric eclipsing-binary candidate on or near previously machine-flagged TIC 273879360,”** pending external recognition review. It is not the first recognition of eclipse-like variability or an established discovery of a new star.
 
 The detailed source checks are [prior_audit_supplement.md](../../../reports/stellar_systems/prior_audit_supplement.md) and [complete-catalog matches](../../../results/stellar_systems/scout_fullcatalog_matches.json).
+
+The [deeper context audit](../../../reports/stellar_systems/deep_context.md) records the prior-flag interpretation and catalog-model limitations. [Independent archived ASAS-SN photometry](../deep_context/ground_photometry/README.md) confirms nine primary eclipse events at the fixed TESS ephemeris, eight preceding TESS observations. This strengthens the astrophysical interpretation without establishing first discovery or resolving component masses.
 
 ## Reproduce and preserve
 
