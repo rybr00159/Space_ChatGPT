@@ -1,4 +1,4 @@
-# TIC 370247818: physical transit-shape assessment
+# TIC 370247818: physical transit/eclipse assessment
 
 This is a conditional light-curve fit, **not a mass measurement or planet
 validation**. A grazing stellar companion remains an allowed explanation.
@@ -56,6 +56,10 @@ false-alarm probabilities. Reported penalties include stellar-density and
 limb-darkening priors. Compare data chi² and prior penalties separately in the
 JSON. Eight-sector bootstrap (100 draws) is `{'draws': 100, 'converged_draws': 100, 'radius_ratio_p16_median_p84': [0.20017674925451737, 0.2749393921593299, 0.3003446335987328], 'impact_parameter_p16_median_p84': [1.070972051673143, 1.155489143694115, 1.1813725593253466], 'a_over_rstar_p16_median_p84': [6.449805392393976, 6.495891453397066, 6.5824842458737765], 'duration_T14_hours_p16_median_p84': [2.251664318452434, 2.2802083316888098, 2.31475900631092], 'period_days_p16_median_p84': [3.5221921144086408, 3.5221960061580644, 3.5222030374848066], 'epoch_btjd_p16_median_p84': [1326.9151192287077, 1326.9162728787219, 1326.91710409585], 'conditional_companion_radius_rjup_p16_median_p84': [3.2803601248708176, 4.505519358039695, 4.921843138353318]}`;
 it probes sector sensitivity but only eight independent groups are available.
+Bootstrap refits condition on the same stellar priors and use the best-fit
+initialization; their narrow range is not a radius posterior and does not
+replace the broad, upper-bound-reaching radius profile. Gaussian covariance
+is particularly unreliable along the grazing degeneracy.
 
 Alternative illustrative fits vary eccentricity (omega=90 deg), dilution,
 stellar mass ratio, density-prior removal, and Gaia stellar density. Their
@@ -66,6 +70,60 @@ under circular geometry; eccentric velocity can also shorten a transit.
 An unresolved luminous companion or contaminating star changes both depth and
 stellar interpretation. Stellar-companion total mass changes Kepler a/R and
 is explored separately without assuming a mass-radius relation.
+Eccentric alternatives shown here fit the primary alone with omega=90 degrees;
+they are illustrative velocity changes and do not jointly fit the observed
+secondary phase. Exact transit/occultation timing and companion luminosity
+must be included before interpreting an eccentric binary orbit.
+
+An independently evaluated eclipse occurs at phase
+0.47546039, about 2.07 hours earlier than exact half-phase. It was missed by
+the original half-phase-only check. Raw SAP depth is
+1326.5±232.2 ppm
+(conditional S/N 5.71), and small-aperture depth is
+1136.8±129.7 ppm
+(S/N 8.77), consistent across all eight sectors.
+The initial selected-phase statistic is not a blind-search false-alarm probability.
+The small-e timing approximation implies e cos(omega)≈-0.03855 if the same
+binary produces both eclipses; precise inference requires a joint orbit fit.
+The detected secondary also requires geometric overlap. With the main
+grazing primary geometry, the usual conjunction approximation requires
+e sin(omega) ≲ 0.049.
+The illustrative e=0.3 and e=0.6 periastron planet-like primary alternatives
+predict no secondary overlap and therefore cannot describe both eclipses.
+They demonstrate primary-only degeneracy, not allowed joint orbit solutions.
+
+For a generous *illustrative* companion radius ≤2 Rjup, the sampled circular
+primary profile gives a coupled Lambert reflected/thermal maximum of
+193 ppm. An even more generous comparison sums
+independent reflected (geometric albedo ≤1) and zero-albedo, uniform-substellar
+temperature blackbody thermal extremes at the reddest assumed wavelength,
+1.1 micron: 713 ppm. These extremes
+need not coexist physically; this comparison grants full occultation despite
+the grazing geometry. The sampled maximum is at k=0.120,
+slightly below the exact illustrative 2-Rjup cutoff, and is not a likelihood
+profile jointly marginalized over orbital/stellar/atmospheric uncertainties.
+
+The observed secondary therefore strains an ordinary passive, planet-sized
+interpretation under the adopted geometry. It is readily compatible with
+larger, intrinsically luminous grazing companions: illustrative uniform-disc
+secondary inversions require optical brightness temperature near 3650 K over
+k≈0.2--0.4. At the primary best-fit k≈0.278, only ≈14% of the companion disc
+is eclipsed, with companion/star total light ratio ≈0.0093. This is a plausible
+faint-star geometry, although a full luminous binary fit is still needed.
+
+The budget assumes blackbody spectra with a 0.6--1.1-micron top-hat photon
+weight, rather than an actual TESS throughput/atmosphere calculation. It couples
+Bond and geometric albedo using Lambert scattering, assumes steady passive
+irradiation, and uses circular separation. Internal luminosity, eccentricity,
+non-Lambert scattering, unusual atmospheres, target misidentification, and
+blending can change it. Two Rjup is a comparison radius, not an absolute planet
+limit. Eclipse brightness and radius never establish companion mass.
+The measured secondary is box-averaged: unresolved ingress and exposure
+averaging can make its true peak deeper. The illustrative temperature/light
+ratios are approximate and should be replaced by a joint luminous eclipse fit.
+Nonetheless, the repeated off-phase secondary and grazing shape favor an
+**eclipsing-binary explanation**, and no credible planetary candidate is promoted.
+
 
 Gaia median RV 13.65±3.68 km/s is a systemic-velocity estimate. The target has
 no published amplitude in the cached table, so it cannot exclude a stellar

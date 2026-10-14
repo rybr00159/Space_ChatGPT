@@ -1,10 +1,10 @@
 {
   "tic": 370247818,
-  "checked_utc": "2026-10-13T21:49:51.910901+00:00",
-  "source_sha256": "e1ec8ac9b9a4b2fc4ff731b8be703a0494a645d786690a043c1af8711564d09a",
+  "checked_utc": "2026-10-13T22:01:32.358494+00:00",
+  "source_sha256": "6fec2e32c006174ffda270c8e2e5dbb6de803d623a929aab0199649f4de0a4e7",
   "provenance": {
     "local_arrays_sha256": "ab2269763e65d53363f81790c9fc6b8e9d453fdf679e0484544564739724e951",
-    "timing_json_sha256": "4e97d6492570882e685b4ba3435e6dd6a0dc86c98898e4bd9e4feeea074b7641",
+    "timing_json_sha256": "751a3e44c9560c78f871b7f181e2781b61c677e63fa7fe6a8256fcfa9a3938d0",
     "tic_cone_sha256": "26b13636b6f706397c24e246b8e541280523c032c8f3bd5a776d13ab203061f1",
     "gaia_stellar_sha256": "67a241138827b28f2e91e5584ec96eb9bba952a43aa4e485bebb78c2f154c886",
     "raw_sources": [
@@ -166,7 +166,8 @@
       32,
       39
     ],
-    "n_event_windows": 41
+    "n_event_windows": 41,
+    "scientific_input_arrays_sha256": "9a3fb6d7a5192434c7ff62c592a00256bf5c742b0b44557304f4960ea102460e"
   },
   "prior": {
     "radius_rsun": 1.68401,
@@ -198,7 +199,9 @@
     "python": "3.12.14",
     "numpy": "2.5.4",
     "scipy": "1.18.1",
-    "batman": "2.5.1"
+    "batman": "2.5.1",
+    "batman-package": "2.5.3",
+    "setuptools": "84.0.0"
   },
   "circular_density_prior_best": {
     "vector": [
@@ -558,7 +561,10 @@
         0.5694893156133459
       ],
       "converged": true,
-      "nfev": 15
+      "nfev": 15,
+      "secondary_impact_parameter_conjunction_approx": 1.6664593938319427,
+      "secondary_geometric_overlap_possible_approx": false,
+      "joint_eclipse_warning": "Primary-only illustrative fit: predicted secondary has no geometric overlap."
     },
     {
       "label": "eccentric_0.6_periastron",
@@ -672,7 +678,10 @@
         0.536709769109224
       ],
       "converged": true,
-      "nfev": 10
+      "nfev": 10,
+      "secondary_impact_parameter_conjunction_approx": 3.2374088385763633,
+      "secondary_geometric_overlap_possible_approx": false,
+      "joint_eclipse_warning": "Primary-only illustrative fit: predicted secondary has no geometric overlap."
     },
     {
       "label": "dilution_0.25",
@@ -786,7 +795,10 @@
         0.5951146495032644
       ],
       "converged": true,
-      "nfev": 15
+      "nfev": 15,
+      "secondary_impact_parameter_conjunction_approx": 1.173669024525267,
+      "secondary_geometric_overlap_possible_approx": true,
+      "joint_eclipse_warning": "Primary-only fit: secondary phase, shape and luminosity have not been jointly modeled."
     },
     {
       "label": "dilution_0.50",
@@ -900,7 +912,10 @@
         0.601815557425042
       ],
       "converged": true,
-      "nfev": 14
+      "nfev": 14,
+      "secondary_impact_parameter_conjunction_approx": 1.1536029300649628,
+      "secondary_geometric_overlap_possible_approx": true,
+      "joint_eclipse_warning": "Primary-only fit: secondary phase, shape and luminosity have not been jointly modeled."
     },
     {
       "label": "companion_mass_ratio_0.2",
@@ -1014,7 +1029,10 @@
         0.5881967175531019
       ],
       "converged": true,
-      "nfev": 14
+      "nfev": 14,
+      "secondary_impact_parameter_conjunction_approx": 0.994687262873034,
+      "secondary_geometric_overlap_possible_approx": true,
+      "joint_eclipse_warning": "Primary-only fit: secondary phase, shape and luminosity have not been jointly modeled."
     },
     {
       "label": "companion_mass_ratio_0.5",
@@ -1128,7 +1146,10 @@
         0.5827029809814575
       ],
       "converged": true,
-      "nfev": 27
+      "nfev": 27,
+      "secondary_impact_parameter_conjunction_approx": 0.9364085449417621,
+      "secondary_geometric_overlap_possible_approx": true,
+      "joint_eclipse_warning": "Primary-only fit: secondary phase, shape and luminosity have not been jointly modeled."
     },
     {
       "label": "density_prior_removed",
@@ -1242,7 +1263,10 @@
         0.577383396323202
       ],
       "converged": true,
-      "nfev": 38
+      "nfev": 38,
+      "secondary_impact_parameter_conjunction_approx": 0.9151648343776767,
+      "secondary_geometric_overlap_possible_approx": true,
+      "joint_eclipse_warning": "Primary-only fit: secondary phase, shape and luminosity have not been jointly modeled."
     },
     {
       "label": "gaia_stellar",
@@ -1356,10 +1380,1329 @@
         0.5915651484922256
       ],
       "converged": true,
-      "nfev": 8
+      "nfev": 8,
+      "secondary_impact_parameter_conjunction_approx": 1.1730369567941343,
+      "secondary_geometric_overlap_possible_approx": true,
+      "joint_eclipse_warning": "Primary-only fit: secondary phase, shape and luminosity have not been jointly modeled."
     }
   ],
   "supersampling_25_vs_101_max_difference_ppm": 20.050371239532794,
+  "secondary_light_budget": {
+    "status": "Off-phase secondary supported in independent raw/aperture reductions",
+    "source_json_sha256": "751a3e44c9560c78f871b7f181e2781b61c677e63fa7fe6a8256fcfa9a3938d0",
+    "additional_phase_search": {
+      "epoch_btjd": 1328.5900738623502,
+      "phase": 0.4754603903475132,
+      "duration_days": 0.06133333333333333,
+      "diagonal_snr": 9.914229340896341,
+      "local_event_stats": {
+        "n_events": 48,
+        "n_positive_events": 44,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1328.5900738623502,
+            "n": 3,
+            "depth": 0.0003445365377157117,
+            "depth_err": 0.0009350140160668733,
+            "snr": 0.36848275191103663
+          },
+          {
+            "cycle": 1,
+            "time": 1332.1122740301555,
+            "n": 3,
+            "depth": 0.0003240558222649126,
+            "depth_err": 0.0009763534366502001,
+            "snr": 0.3319042163427266
+          },
+          {
+            "cycle": 2,
+            "time": 1335.6344741979608,
+            "n": 3,
+            "depth": -0.00021576495011510488,
+            "depth_err": 0.0010785237747393652,
+            "snr": -0.20005581255475466
+          },
+          {
+            "cycle": 4,
+            "time": 1342.6788745335714,
+            "n": 3,
+            "depth": 0.0015058435316522845,
+            "depth_err": 0.0008793736533947387,
+            "snr": 1.71240464828474
+          },
+          {
+            "cycle": 5,
+            "time": 1346.2010747013767,
+            "n": 3,
+            "depth": 0.0015874846241663576,
+            "depth_err": 0.0008903004304463151,
+            "snr": 1.7830886854345764
+          },
+          {
+            "cycle": 33,
+            "time": 1444.822679399925,
+            "n": 3,
+            "depth": 0.0011516717545876354,
+            "depth_err": 0.0010521511223245364,
+            "snr": 1.0945877737061442
+          },
+          {
+            "cycle": 34,
+            "time": 1448.3448795677302,
+            "n": 3,
+            "depth": -0.0006789107254754345,
+            "depth_err": 0.001115841016101309,
+            "snr": -0.6084296200613897
+          },
+          {
+            "cycle": 35,
+            "time": 1451.8670797355355,
+            "n": 3,
+            "depth": 0.0020001801830746846,
+            "depth_err": 0.0012901038809583908,
+            "snr": 1.5504024230892115
+          },
+          {
+            "cycle": 36,
+            "time": 1455.3892799033408,
+            "n": 3,
+            "depth": 0.0023744395834536247,
+            "depth_err": 0.0011314438119179426,
+            "snr": 2.0985925756477863
+          },
+          {
+            "cycle": 37,
+            "time": 1458.9114800711461,
+            "n": 3,
+            "depth": 0.0008751894387603043,
+            "depth_err": 0.0010654340784917043,
+            "snr": 0.8214393141988453
+          },
+          {
+            "cycle": 38,
+            "time": 1462.4336802389512,
+            "n": 3,
+            "depth": 0.0009831250132620317,
+            "depth_err": 0.0010655788040407142,
+            "snr": 0.9226206541777908
+          },
+          {
+            "cycle": 90,
+            "time": 1645.5880889648265,
+            "n": 3,
+            "depth": -5.652503002129272e-05,
+            "depth_err": 0.0011282443338050223,
+            "snr": -0.050099990159632485
+          },
+          {
+            "cycle": 91,
+            "time": 1649.1102891326318,
+            "n": 3,
+            "depth": 0.0014418798591057103,
+            "depth_err": 0.0011281338683704505,
+            "snr": 1.2781106032996374
+          },
+          {
+            "cycle": 93,
+            "time": 1656.1546894682424,
+            "n": 3,
+            "depth": 0.0019072888840196978,
+            "depth_err": 0.000996751548661895,
+            "snr": 1.913504811284385
+          },
+          {
+            "cycle": 94,
+            "time": 1659.6768896360477,
+            "n": 3,
+            "depth": 0.000404030239091524,
+            "depth_err": 0.000996784151086944,
+            "snr": 0.405333731130204
+          },
+          {
+            "cycle": 95,
+            "time": 1663.199089803853,
+            "n": 3,
+            "depth": 0.002114918607250771,
+            "depth_err": 0.0009840529878044162,
+            "snr": 2.1491917950165482
+          },
+          {
+            "cycle": 96,
+            "time": 1666.7212899716583,
+            "n": 3,
+            "depth": 0.002033700275906103,
+            "depth_err": 0.0010392777362561922,
+            "snr": 1.9568400293381978
+          },
+          {
+            "cycle": 97,
+            "time": 1670.2434901394636,
+            "n": 3,
+            "depth": 0.0010962502289577625,
+            "depth_err": 0.0010390942336561395,
+            "snr": 1.05500559376652
+          },
+          {
+            "cycle": 98,
+            "time": 1673.7656903072689,
+            "n": 3,
+            "depth": 0.000820147274402494,
+            "depth_err": 0.0010923318558518837,
+            "snr": 0.7508224446707915
+          },
+          {
+            "cycle": 99,
+            "time": 1677.2878904750742,
+            "n": 3,
+            "depth": 0.0004995332355991478,
+            "depth_err": 0.0009966671683652446,
+            "snr": 0.5012036630227251
+          },
+          {
+            "cycle": 100,
+            "time": 1680.8100906428795,
+            "n": 3,
+            "depth": 0.0020072995982461928,
+            "depth_err": 0.0009966671683652446,
+            "snr": 2.014011961022665
+          },
+          {
+            "cycle": 201,
+            "time": 2036.5523075912138,
+            "n": 9,
+            "depth": 0.0016806921678251818,
+            "depth_err": 0.0013309995674147216,
+            "snr": 1.2627293118431953
+          },
+          {
+            "cycle": 202,
+            "time": 2040.074507759019,
+            "n": 9,
+            "depth": 0.0007143399452459454,
+            "depth_err": 0.0013119408411836992,
+            "snr": 0.5444909730849081
+          },
+          {
+            "cycle": 203,
+            "time": 2043.5967079268244,
+            "n": 9,
+            "depth": 0.003748810861807783,
+            "depth_err": 0.0013195550327387974,
+            "snr": 2.840965908050802
+          },
+          {
+            "cycle": 204,
+            "time": 2047.1189080946297,
+            "n": 9,
+            "depth": 0.001232776869569685,
+            "depth_err": 0.0013258838701640338,
+            "snr": 0.9297774091008212
+          },
+          {
+            "cycle": 205,
+            "time": 2050.641108262435,
+            "n": 8,
+            "depth": 0.0013193281799102063,
+            "depth_err": 0.0015197708397604135,
+            "snr": 0.8681099448639202
+          },
+          {
+            "cycle": 206,
+            "time": 2054.1633084302402,
+            "n": 9,
+            "depth": -0.0008061391949534258,
+            "depth_err": 0.0014537723674742551,
+            "snr": -0.5545154200131003
+          },
+          {
+            "cycle": 207,
+            "time": 2057.6855085980455,
+            "n": 9,
+            "depth": 0.002478893558446771,
+            "depth_err": 0.001316291467803149,
+            "snr": 1.8832406188759774
+          },
+          {
+            "cycle": 209,
+            "time": 2064.729908933656,
+            "n": 9,
+            "depth": 0.0017589032010615346,
+            "depth_err": 0.0009047117736304911,
+            "snr": 1.9441586285577825
+          },
+          {
+            "cycle": 210,
+            "time": 2068.2521091014614,
+            "n": 8,
+            "depth": 0.0025573152638108665,
+            "depth_err": 0.0009457768890018267,
+            "snr": 2.703930803923384
+          },
+          {
+            "cycle": 211,
+            "time": 2071.7743092692667,
+            "n": 8,
+            "depth": 0.003453852504791022,
+            "depth_err": 0.0009456249031603022,
+            "snr": 3.6524551048181575
+          },
+          {
+            "cycle": 213,
+            "time": 2078.8187096048773,
+            "n": 9,
+            "depth": 0.0035440331143057335,
+            "depth_err": 0.0009002428945098205,
+            "snr": 3.93675210981304
+          },
+          {
+            "cycle": 214,
+            "time": 2082.3409097726826,
+            "n": 9,
+            "depth": 0.001547097088896665,
+            "depth_err": 0.000915428172780717,
+            "snr": 1.6900256458102902
+          },
+          {
+            "cycle": 215,
+            "time": 2085.863109940488,
+            "n": 8,
+            "depth": 0.0006704862145304746,
+            "depth_err": 0.0009569868529723095,
+            "snr": 0.7006221793413449
+          },
+          {
+            "cycle": 241,
+            "time": 2177.4403143034256,
+            "n": 8,
+            "depth": 0.0010758771710173143,
+            "depth_err": 0.0008861192519444518,
+            "snr": 1.2141449005384637
+          },
+          {
+            "cycle": 242,
+            "time": 2180.962514471231,
+            "n": 9,
+            "depth": 0.001455702694209915,
+            "depth_err": 0.0008592309316613609,
+            "snr": 1.6941926094248605
+          },
+          {
+            "cycle": 243,
+            "time": 2184.484714639036,
+            "n": 7,
+            "depth": 0.002041912407637514,
+            "depth_err": 0.0009451650742184072,
+            "snr": 2.1603764922503603
+          },
+          {
+            "cycle": 244,
+            "time": 2188.0069148068415,
+            "n": 9,
+            "depth": 0.0010382973980301857,
+            "depth_err": 0.0008864807037230227,
+            "snr": 1.171257754026192
+          },
+          {
+            "cycle": 245,
+            "time": 2191.5291149746467,
+            "n": 8,
+            "depth": 0.0022345933541165763,
+            "depth_err": 0.0009226783700615135,
+            "snr": 2.4218551411014433
+          },
+          {
+            "cycle": 246,
+            "time": 2195.051315142452,
+            "n": 9,
+            "depth": 0.0014041060546751138,
+            "depth_err": 0.0008469251151895746,
+            "snr": 1.6578869010878496
+          },
+          {
+            "cycle": 247,
+            "time": 2198.5735153102573,
+            "n": 9,
+            "depth": 0.002340020412100685,
+            "depth_err": 0.0008547954714418541,
+            "snr": 2.737520834257088
+          },
+          {
+            "cycle": 294,
+            "time": 2364.116923197106,
+            "n": 9,
+            "depth": 0.0011471386540460315,
+            "depth_err": 0.0008203302791279703,
+            "snr": 1.3983863368611311
+          },
+          {
+            "cycle": 295,
+            "time": 2367.6391233649115,
+            "n": 9,
+            "depth": 0.0013664506025116152,
+            "depth_err": 0.0008242647394898273,
+            "snr": 1.6577812164540362
+          },
+          {
+            "cycle": 296,
+            "time": 2371.161323532717,
+            "n": 8,
+            "depth": 0.0007776805815252752,
+            "depth_err": 0.0008220839326800305,
+            "snr": 0.9459868397987072
+          },
+          {
+            "cycle": 298,
+            "time": 2378.2057238683274,
+            "n": 9,
+            "depth": 0.0008745989453597947,
+            "depth_err": 0.0008070770740239139,
+            "snr": 1.0836622343876419
+          },
+          {
+            "cycle": 299,
+            "time": 2381.727924036132,
+            "n": 9,
+            "depth": 0.0005238053399375664,
+            "depth_err": 0.0008109479694882216,
+            "snr": 0.6459173210189217
+          },
+          {
+            "cycle": 300,
+            "time": 2385.250124203938,
+            "n": 9,
+            "depth": 0.001098741598653863,
+            "depth_err": 0.0007862574105085288,
+            "snr": 1.3974324234899462
+          },
+          {
+            "cycle": 301,
+            "time": 2388.772324371743,
+            "n": 8,
+            "depth": 0.0018395264209761786,
+            "depth_err": 0.0008379871445155371,
+            "snr": 2.1951726026055667
+          }
+        ],
+        "event_snr_max_fraction": 0.1151088384237378,
+        "odd_even_sigma": 2.206355263634005,
+        "local_snr": 9.783309410309373,
+        "local_depth": 0.0013833023462040627,
+        "local_depth_err": 0.0001413941119705749
+      },
+      "note": "Targeted additional-phase ranking; no trials/false-alarm claim; raw local verification required."
+    },
+    "pooled_secondary_measurements": {
+      "KSPSAP_FLUX": {
+        "depth": 0.0013182877340799514,
+        "depth_err": 0.00022945548056169451,
+        "snr": 5.7452876298829505,
+        "consistency_chi2": 9.636963547077878,
+        "consistency_dof": 7,
+        "n_sectors": 8,
+        "sectors": [
+          1,
+          5,
+          12,
+          13,
+          27,
+          28,
+          32,
+          39
+        ],
+        "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
+      },
+      "SAP_FLUX": {
+        "depth": 0.001326520179023131,
+        "depth_err": 0.0002322316174229693,
+        "snr": 5.712056754990025,
+        "consistency_chi2": 9.81410821015304,
+        "consistency_dof": 7,
+        "n_sectors": 8,
+        "sectors": [
+          1,
+          5,
+          12,
+          13,
+          27,
+          28,
+          32,
+          39
+        ],
+        "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
+      },
+      "KSPSAP_FLUX_SML": {
+        "depth": 0.0011367646627864505,
+        "depth_err": 0.0001296573293810094,
+        "snr": 8.767453935796935,
+        "consistency_chi2": 3.609388640617806,
+        "consistency_dof": 7,
+        "n_sectors": 8,
+        "sectors": [
+          1,
+          5,
+          12,
+          13,
+          27,
+          28,
+          32,
+          39
+        ],
+        "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
+      },
+      "KSPSAP_FLUX_LAG": {
+        "depth": 0.0013511142117846751,
+        "depth_err": 0.0003168912299722907,
+        "snr": 4.263652900406294,
+        "consistency_chi2": 10.662421520516546,
+        "consistency_dof": 7,
+        "n_sectors": 8,
+        "sectors": [
+          1,
+          5,
+          12,
+          13,
+          27,
+          28,
+          32,
+          39
+        ],
+        "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
+      }
+    },
+    "assumptions": [
+      "Approximate blackbody star/companion, top-hat photon weighting 0.6--1.1 microns, not actual TESS response.",
+      "Steady passive irradiation; thermal surface temperature is capped by the zero-redistribution substellar temperature.",
+      "Lambert scattering couples Bond albedo A_B and geometric albedo A_g=2A_B/3.",
+      "Most generous comparison sums independent A_g<=1 reflected and zero-Bond-albedo red-edge blackbody thermal limits, although those extremes need not be jointly realizable.",
+      "Full occultation assumed for the planet-light budget; grazing would reduce eclipse depth.",
+      "Measured secondary is a local box-averaged depth; ingress/exposure loss can make the true peak deeper, so inferred uniform-disc brightness temperatures are approximate.",
+      "Circular irradiation distance and target star identity assumed; eccentric/internal-luminosity alternatives remain conditional.",
+      "An occultation measures brightness, not companion mass; the optical secondary does not by itself prove a stellar mass."
+    ],
+    "planet_secondary_budget_by_radius_ratio": [
+      {
+        "radius_ratio": 0.055,
+        "a_over_rstar_from_primary_profile": 11.468601792190297,
+        "conditional_radius_rjup": 0.9013025116043712,
+        "max_substellar_temperature_K": 1884.818811508055,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 15.33250703761431,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 15.33250703761431,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 42.8311233820273,
+        "primary_penalized_chi2": 1923.9489052457548
+      },
+      {
+        "radius_ratio": 0.0572947299526529,
+        "a_over_rstar_from_primary_profile": 11.757976906226068,
+        "conditional_radius_rjup": 0.9389069819640047,
+        "max_substellar_temperature_K": 1861.4807224046585,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 15.829707454788592,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 15.829707454788592,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 43.471427541719585,
+        "primary_penalized_chi2": 1865.582308162261
+      },
+      {
+        "radius_ratio": 0.0596852014608622,
+        "a_over_rstar_from_primary_profile": 7.4531838999955555,
+        "conditional_radius_rjup": 0.9780803996779636,
+        "max_substellar_temperature_K": 2338.050707357918,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 42.75219278714275,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 42.75219278714275,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 154.03811293147407,
+        "primary_penalized_chi2": 2135.425462925008
+      },
+      {
+        "radius_ratio": 0.06217540908854149,
+        "a_over_rstar_from_primary_profile": 7.507762177569854,
+        "conditional_radius_rjup": 1.01888822493694,
+        "max_substellar_temperature_K": 2329.5368828526903,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 45.721980032363966,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 45.721980032363966,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 164.16997619414622,
+        "primary_penalized_chi2": 2053.3543790988692
+      },
+      {
+        "radius_ratio": 0.06476951406224918,
+        "a_over_rstar_from_primary_profile": 7.539548409975291,
+        "conditional_radius_rjup": 1.0613986490854515,
+        "max_substellar_temperature_K": 2324.6211103032224,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 49.19934832086549,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 49.19934832086549,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 176.29990102528959,
+        "primary_penalized_chi2": 1972.169586086281
+      },
+      {
+        "radius_ratio": 0.06747185122474765,
+        "a_over_rstar_from_primary_profile": 7.5736773710943455,
+        "conditional_radius_rjup": 1.1056827085720278,
+        "max_substellar_temperature_K": 2319.377522563001,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 52.91032040518854,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 52.91032040518854,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 189.18695338001288,
+        "primary_penalized_chi2": 1893.0421599594113
+      },
+      {
+        "radius_ratio": 0.07028693627868163,
+        "a_over_rstar_from_primary_profile": 7.610288630049932,
+        "conditional_radius_rjup": 1.1518144036536755,
+        "max_substellar_temperature_K": 2313.791814293267,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 56.866396804066916,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 56.866396804066916,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 202.85912362295687,
+        "primary_penalized_chi2": 1817.423549021156
+      },
+      {
+        "radius_ratio": 0.07321947333247973,
+        "a_over_rstar_from_primary_profile": 7.635163469378089,
+        "conditional_radius_rjup": 1.1998708220529686,
+        "max_substellar_temperature_K": 2310.0196518443286,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 61.309145443837465,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 61.309145443837465,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 218.36130155055994,
+        "primary_penalized_chi2": 1746.936964290774
+      },
+      {
+        "radius_ratio": 0.07627436276108898,
+        "a_over_rstar_from_primary_profile": 7.6493298010015955,
+        "conditional_radius_rjup": 1.2499322677744076,
+        "max_substellar_temperature_K": 2307.8796166683574,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 66.28559286993584,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 66.28559286993584,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 235.87243650316947,
+        "primary_penalized_chi2": 1683.4197472850385
+      },
+      {
+        "radius_ratio": 0.07945670939467778,
+        "a_over_rstar_from_primary_profile": 7.65615597165658,
+        "conditional_radius_rjup": 1.302082395295304,
+        "max_substellar_temperature_K": 2306.8505432487786,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 71.80395182753062,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 71.80395182753062,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 255.39786010420866,
+        "primary_penalized_chi2": 1628.8942781693193
+      },
+      {
+        "radius_ratio": 0.08,
+        "a_over_rstar_from_primary_profile": 7.6577717906393765,
+        "conditional_radius_rjup": 1.3109854714245401,
+        "max_substellar_temperature_K": 2306.6071532883825,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 72.75852317750396,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 72.75852317750396,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 258.7664714875964,
+        "primary_penalized_chi2": 1620.827333235188
+      },
+      {
+        "radius_ratio": 0.08277183104899057,
+        "a_over_rstar_from_primary_profile": 7.643285860390212,
+        "conditional_radius_rjup": 1.3564083493554158,
+        "max_substellar_temperature_K": 2308.791916116465,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 78.18323943873807,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 78.18323943873807,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 278.3166152739993,
+        "primary_penalized_chi2": 1585.4248080011632
+      },
+      {
+        "radius_ratio": 0.08622526741160955,
+        "a_over_rstar_from_primary_profile": 7.6133295593920804,
+        "conditional_radius_rjup": 1.4130009105789496,
+        "max_substellar_temperature_K": 2313.3296787653267,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 85.51229881084538,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 85.51229881084538,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 304.98838017231884,
+        "primary_penalized_chi2": 1554.675288370131
+      },
+      {
+        "radius_ratio": 0.08982278929897178,
+        "a_over_rstar_from_primary_profile": 7.620411110226481,
+        "conditional_radius_rjup": 1.4719546471722456,
+        "max_substellar_temperature_K": 2312.254555052425,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 92.62431567386102,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 92.62431567386102,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 330.20510633815906,
+        "primary_penalized_chi2": 1537.861919649618
+      },
+      {
+        "radius_ratio": 0.09,
+        "a_over_rstar_from_primary_profile": 7.621967715709742,
+        "conditional_radius_rjup": 1.4748586553526075,
+        "max_substellar_temperature_K": 2312.0184315185606,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 92.95217364657788,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 1.0,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 92.95217364657788,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 331.3410510106525,
+        "primary_penalized_chi2": 1537.4027949701117
+      },
+      {
+        "radius_ratio": 0.09357040829961143,
+        "a_over_rstar_from_primary_profile": 7.581192677191881,
+        "conditional_radius_rjup": 1.5333680729506598,
+        "max_substellar_temperature_K": 2318.2276273711273,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 101.5572006036251,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.9866618073591723,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 101.5572006036251,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 362.95594300852423,
+        "primary_penalized_chi2": 1532.016837670563
+      },
+      {
+        "radius_ratio": 0.09747438681974015,
+        "a_over_rstar_from_primary_profile": 7.521581979184299,
+        "conditional_radius_rjup": 1.5973438119586876,
+        "max_substellar_temperature_K": 2327.395808070813,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 111.96218826174308,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.9650314715014884,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 111.96218826174308,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 401.6607387331989,
+        "primary_penalized_chi2": 1528.9129722999594
+      },
+      {
+        "radius_ratio": 0.1,
+        "a_over_rstar_from_primary_profile": 7.462075467807653,
+        "conditional_radius_rjup": 1.6387318392806753,
+        "max_substellar_temperature_K": 2336.6573193487275,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 119.72627398976883,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.9427447698396014,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 119.72627398976883,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 431.13668762261506,
+        "primary_penalized_chi2": 1527.677519039727
+      },
+      {
+        "radius_ratio": 0.10154124854795346,
+        "a_over_rstar_from_primary_profile": 7.422358371714876,
+        "conditional_radius_rjup": 1.6639887699584395,
+        "max_substellar_temperature_K": 2342.9007139218797,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 124.76992108667861,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.9266427869031227,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 124.76992108667861,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 450.42837708814517,
+        "primary_penalized_chi2": 1527.1106330374498
+      },
+      {
+        "radius_ratio": 0.1057777893565491,
+        "a_over_rstar_from_primary_profile": 7.315812363277109,
+        "conditional_radius_rjup": 1.7334143130730155,
+        "max_substellar_temperature_K": 2359.8998103565514,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 139.37105825321976,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.87692181639509,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 139.37105825321976,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 506.52661429142324,
+        "primary_penalized_chi2": 1526.0038724253536
+      },
+      {
+        "radius_ratio": 0.11,
+        "a_over_rstar_from_primary_profile": 7.222616197547657,
+        "conditional_radius_rjup": 1.8026050232087425,
+        "max_substellar_temperature_K": 2375.0763528144034,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 154.6340164097372,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.8250438224992044,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 154.6340164097372,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 565.2870520588631,
+        "primary_penalized_chi2": 1525.2948108744713
+      },
+      {
+        "radius_ratio": 0.1101910886576742,
+        "a_over_rstar_from_primary_profile": 7.21873833958986,
+        "conditional_radius_rjup": 1.8057364538833036,
+        "max_substellar_temperature_K": 2375.7142047296834,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 155.3384933018882,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.8227164471293176,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 155.3384933018882,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 567.9998636264781,
+        "primary_penalized_chi2": 1525.2687314580155
+      },
+      {
+        "radius_ratio": 0.11478852123327772,
+        "a_over_rstar_from_primary_profile": 7.133311841125542,
+        "conditional_radius_rjup": 1.8810760452891802,
+        "max_substellar_temperature_K": 2389.897304183873,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 172.63277150433393,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.7681859800176355,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 172.63277150433393,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 634.6026621899168,
+        "primary_penalized_chi2": 1524.749082002715
+      },
+      {
+        "radius_ratio": 0.11957776955863655,
+        "a_over_rstar_from_primary_profile": 7.058217525758671,
+        "conditional_radius_rjup": 1.959558982459052,
+        "max_substellar_temperature_K": 2402.577054576355,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 191.3460760148894,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.7153653496957456,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 191.3460760148894,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 706.6709993664421,
+        "primary_penalized_chi2": 1524.3641767503093
+      },
+      {
+        "radius_ratio": 0.12,
+        "a_over_rstar_from_primary_profile": 7.0521880415502585,
+        "conditional_radius_rjup": 1.9664782071368099,
+        "max_substellar_temperature_K": 2403.6039135647366,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 193.02940196779997,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.7108996213711484,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 193.02940196779997,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 713.1531658850657,
+        "primary_penalized_chi2": 1524.3356884254522
+      },
+      {
+        "radius_ratio": 0.12456683664004797,
+        "a_over_rstar_from_primary_profile": 6.992146026046905,
+        "conditional_radius_rjup": 2.041316413205212,
+        "max_substellar_temperature_K": 2413.9018057033695,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 211.58877932994963,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.6649183972652546,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 211.0339080470726,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 784.6168059120176,
+        "primary_penalized_chi2": 1524.0698465397725
+      },
+      {
+        "radius_ratio": 0.1297640593881414,
+        "a_over_rstar_from_primary_profile": 6.933546076150068,
+        "conditional_radius_rjup": 2.126484957136557,
+        "max_substellar_temperature_K": 2424.081077496183,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 233.51069429180544,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.6172709097028153,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 216.2090380362581,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 869.0235153967551,
+        "primary_penalized_chi2": 1523.8394463599568
+      },
+      {
+        "radius_ratio": 0.13,
+        "a_over_rstar_from_primary_profile": 6.931101916739797,
+        "conditional_radius_rjup": 2.130351391064878,
+        "max_substellar_temperature_K": 2424.5084495368287,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 234.52593486042483,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.6152234049535932,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 216.42876629213274,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 872.9322220844879,
+        "primary_penalized_chi2": 1523.8304026417575
+      },
+      {
+        "radius_ratio": 0.13517812254915584,
+        "a_over_rstar_from_primary_profile": 6.881371253694208,
+        "conditional_radius_rjup": 2.2152069339548666,
+        "max_substellar_temperature_K": 2433.2534621319196,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 257.2595963365006,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.5724525867158266,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 220.9033820704487,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 960.4588103028175,
+        "primary_penalized_chi2": 1523.6562840484078
+      },
+      {
+        "radius_ratio": 0.14,
+        "a_over_rstar_from_primary_profile": 6.840937802799269,
+        "conditional_radius_rjup": 2.294224574992945,
+        "max_substellar_temperature_K": 2440.433755904797,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 279.21164578787716,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.5363322936341516,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 224.62533359216772,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 1044.9793522114633,
+        "primary_penalized_chi2": 1523.5282667900653
+      },
+      {
+        "radius_ratio": 0.14081807321746367,
+        "a_over_rstar_from_primary_profile": 6.834559124682345,
+        "conditional_radius_rjup": 2.30763060127615,
+        "max_substellar_temperature_K": 2441.572315883848,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 283.01178891700755,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.530531849923725,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 225.22015188654422,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 1059.6115558781942,
+        "primary_penalized_chi2": 1523.509155689936
+      },
+      {
+        "radius_ratio": 0.1466933359535906,
+        "a_over_rstar_from_primary_profile": 6.79228138146704,
+        "conditional_radius_rjup": 2.4039104023744553,
+        "max_substellar_temperature_K": 2449.159165792371,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 310.95545001525574,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.4914797460042161,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 229.2424583881869,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 1167.2159401804006,
+        "primary_penalized_chi2": 1523.389802534298
+      },
+      {
+        "radius_ratio": 0.15,
+        "a_over_rstar_from_primary_profile": 6.770979690429388,
+        "conditional_radius_rjup": 2.4580977589210122,
+        "max_substellar_temperature_K": 2453.008702020234,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 327.1811215446454,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.47131423073932366,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 231.30767791986554,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 1229.7004324709694,
+        "primary_penalized_chi2": 1523.334225985685
+      },
+      {
+        "radius_ratio": 0.15281372853299566,
+        "a_over_rstar_from_primary_profile": 6.754099898870947,
+        "conditional_radius_rjup": 2.504207224262138,
+        "max_substellar_temperature_K": 2456.072058938346,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 341.2703246985458,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.4550936276175968,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 232.96492509794453,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 1283.9585815904463,
+        "primary_penalized_chi2": 1523.292314745191
+      },
+      {
+        "radius_ratio": 0.15918947835192718,
+        "a_over_rstar_from_primary_profile": 6.719522668201576,
+        "conditional_radius_rjup": 2.608688666537848,
+        "max_substellar_temperature_K": 2462.3831619796056,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 374.1628056227066,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.4212480116160585,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 236.4230068338764,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 1410.6361351051241,
+        "primary_penalized_chi2": 1523.212416116292
+      },
+      {
+        "radius_ratio": 0.16583123951776998,
+        "a_over_rstar_from_primary_profile": 6.688290662112383,
+        "conditional_radius_rjup": 2.7175293214514937,
+        "max_substellar_temperature_K": 2468.125705079463,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 409.8369941425502,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.3897534376499497,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 239.6030660147719,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 1548.0233467965913,
+        "primary_penalized_chi2": 1523.1468318937887
+      },
+      {
+        "radius_ratio": 0.17275011065244236,
+        "a_over_rstar_from_primary_profile": 6.659979113367852,
+        "conditional_radius_rjup": 2.8309110656541705,
+        "max_substellar_temperature_K": 2473.366138742422,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 448.5384470344123,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.3605246484370597,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 242.56374889137933,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 1697.0701553483225,
+        "primary_penalized_chi2": 1523.0930555653997
+      },
+      {
+        "radius_ratio": 0.17995765343859257,
+        "a_over_rstar_from_primary_profile": 6.634322757352392,
+        "conditional_radius_rjup": 2.9490233641205914,
+        "max_substellar_temperature_K": 2478.1440438772897,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 490.519404212836,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.333419778131663,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 245.32330638287897,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 1858.7431072496058,
+        "primary_penalized_chi2": 1523.0489794368623
+      },
+      {
+        "radius_ratio": 0.1874659119395865,
+        "a_over_rstar_from_primary_profile": 6.611142487269448,
+        "conditional_radius_rjup": 3.0720635867518764,
+        "max_substellar_temperature_K": 2482.484729563661,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 536.0438574495948,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.30828653365647335,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 247.88265405147052,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 2034.0470143010896,
+        "primary_penalized_chi2": 1523.0129431320333
+      },
+      {
+        "radius_ratio": 0.19528743272557117,
+        "a_over_rstar_from_primary_profile": 6.590236823832955,
+        "conditional_radius_rjup": 3.2002373381877636,
+        "max_substellar_temperature_K": 2486.419102398397,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 585.4034671569868,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.28499664586612633,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 250.25703692721345,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 2224.0958357582817,
+        "primary_penalized_chi2": 1522.9836091813631
+      },
+      {
+        "radius_ratio": 0.20343528583924492,
+        "a_over_rstar_from_primary_profile": 6.571485463849846,
+        "conditional_radius_rjup": 3.333758801379357,
+        "max_substellar_temperature_K": 2489.9640031468366,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 638.9019369014441,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.263428397909765,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 252.4573704890898,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 2430.04036066357,
+        "primary_penalized_chi2": 1522.9598783141575
+      },
+      {
+        "radius_ratio": 0.21192308663636888,
+        "a_over_rstar_from_primary_profile": 6.554806001613618,
+        "conditional_radius_rjup": 3.472851095496546,
+        "max_substellar_temperature_K": 2493.1299911132865,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 696.8600971889024,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.243450814061937,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 254.47673692187823,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 2653.0896951301,
+        "primary_penalized_chi2": 1522.940845848521
+      },
+      {
+        "radius_ratio": 0.22076501853751665,
+        "a_over_rstar_from_primary_profile": 6.540073244056463,
+        "conditional_radius_rjup": 3.6177466487681698,
+        "max_substellar_temperature_K": 2495.936535925971,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 759.6333669047068,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.2249325043076432,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 256.29935336028365,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 2894.588900046149,
+        "primary_penalized_chi2": 1522.9258009917166
+      },
+      {
+        "radius_ratio": 0.22997585672908047,
+        "a_over_rstar_from_primary_profile": 6.527183747938838,
+        "conditional_radius_rjup": 3.7686875868779506,
+        "max_substellar_temperature_K": 2498.3997343487154,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 827.6020432624414,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.20779111233767722,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 257.9525237136557,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 3155.9731164455306,
+        "primary_penalized_chi2": 1522.9141531124033
+      },
+      {
+        "radius_ratio": 0.23957099285313915,
+        "a_over_rstar_from_primary_profile": 6.516080696932353,
+        "conditional_radius_rjup": 3.925926137565222,
+        "max_substellar_temperature_K": 2500.527397757474,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 901.1649631091623,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.19192517669270967,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 259.43436716100774,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 3438.736787838928,
+        "primary_penalized_chi2": 1522.9054100459293
+      },
+      {
+        "radius_ratio": 0.24956646072744626,
+        "a_over_rstar_from_primary_profile": 6.506690334187419,
+        "conditional_radius_rjup": 4.089725052106564,
+        "max_substellar_temperature_K": 2502.331109968318,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 980.7558434151631,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.17724097222687224,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 260.7451788061344,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 3744.505775867668,
+        "primary_penalized_chi2": 1522.8991810203224
+      },
+      {
+        "radius_ratio": 0.25997896313851615,
+        "a_over_rstar_from_primary_profile": 6.498967147154583,
+        "conditional_radius_rjup": 4.260358044382634,
+        "max_substellar_temperature_K": 2503.817517926986,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 1066.833077053261,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.1636537603938287,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 261.88686715842806,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 4074.9886882236015,
+        "primary_penalized_chi2": 1522.895159196929
+      },
+      {
+        "radius_ratio": 0.2708258997525814,
+        "a_over_rstar_from_primary_profile": 6.492857278468528,
+        "conditional_radius_rjup": 4.438110248263914,
+        "max_substellar_temperature_K": 2504.9953044066606,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 1159.8916367783586,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.1510820936263019,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 262.8582852961688,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 4432.02848490711,
+        "primary_penalized_chi2": 1522.8931163347415
+      },
+      {
+        "radius_ratio": 0.2778214315527998,
+        "a_over_rstar_from_primary_profile": 6.489874522978415,
+        "conditional_radius_rjup": 4.552748255201098,
+        "max_substellar_temperature_K": 2505.570887968143,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 1221.7085980525226,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.14372112166368192,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 263.3779950874093,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 4669.049478499334,
+        "primary_penalized_chi2": 1522.8927709132483
+      },
+      {
+        "radius_ratio": 0.2821253961910618,
+        "a_over_rstar_from_primary_profile": 6.488373952021243,
+        "conditional_radius_rjup": 4.623278694079678,
+        "max_substellar_temperature_K": 2505.860603818092,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 1260.437630588818,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.1394541800358966,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 263.65994439022785,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 4817.484093938182,
+        "primary_penalized_chi2": 1522.8928930336024
+      },
+      {
+        "radius_ratio": 0.29389633431912887,
+        "a_over_rstar_from_primary_profile": 6.485419940978943,
+        "conditional_radius_rjup": 4.816172804966342,
+        "max_substellar_temperature_K": 2506.431229717405,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 1369.054932751459,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.1286988847709799,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 264.2937645529825,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 5233.530412308183,
+        "primary_penalized_chi2": 1522.8943945969597
+      },
+      {
+        "radius_ratio": 0.3061583837979833,
+        "a_over_rstar_from_primary_profile": 6.48400891812932,
+        "conditional_radius_rjup": 5.017114913924681,
+        "max_substellar_temperature_K": 2506.7039344125237,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 1486.3252204905018,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.118754363102935,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 264.76140738476846,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 5682.291586684952,
+        "primary_penalized_chi2": 1522.8975871676953
+      },
+      {
+        "radius_ratio": 0.3189320349535657,
+        "a_over_rstar_from_primary_profile": 6.4841090069986,
+        "conditional_radius_rjup": 5.2264408024498525,
+        "max_substellar_temperature_K": 2506.6845875654585,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 1612.888755143335,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.10955666118763555,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 265.0540603208785,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 6166.113920548718,
+        "primary_penalized_chi2": 1522.902495972987
+      },
+      {
+        "radius_ratio": 0.33223863301662904,
+        "a_over_rstar_from_primary_profile": 6.4857091735058745,
+        "conditional_radius_rjup": 5.444500261634377,
+        "max_substellar_temperature_K": 2506.375341494452,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 1749.4198997336525,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.10105449202595863,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 265.18010896153163,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 6687.450847510529,
+        "primary_penalized_chi2": 1522.9092028063644
+      },
+      {
+        "radius_ratio": 0.3461004137913874,
+        "a_over_rstar_from_primary_profile": 6.488800031366216,
+        "conditional_radius_rjup": 5.67165767668163,
+        "max_substellar_temperature_K": 2505.7783302877533,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 1896.6369056805936,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.09319544050408406,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 265.13686785180874,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 7248.903412531685,
+        "primary_penalized_chi2": 1522.9178447188642
+      },
+      {
+        "radius_ratio": 0.3605405408123447,
+        "a_over_rstar_from_primary_profile": 6.493389433919918,
+        "conditional_radius_rjup": 5.90829263580663,
+        "max_substellar_temperature_K": 2504.8926558412563,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 2055.294464907889,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.08593304371596962,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 264.92656365318004,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 7853.182071221161,
+        "primary_penalized_chi2": 1522.9286137336776
+      },
+      {
+        "radius_ratio": 0.3755831440513949,
+        "a_over_rstar_from_primary_profile": 6.499419892192734,
+        "conditional_radius_rjup": 6.1548005645416115,
+        "max_substellar_temperature_K": 2503.7303093207984,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 2226.2387441742267,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.079220275062824,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 264.5448685034972,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 8503.352198102579,
+        "primary_penalized_chi2": 1522.9417564967293
+      },
+      {
+        "radius_ratio": 0.39125336023987267,
+        "a_over_rstar_from_primary_profile": 6.506947772523926,
+        "conditional_radius_rjup": 6.411593386506311,
+        "max_substellar_temperature_K": 2502.281608854073,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 2410.2953340260574,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.07301871270726805,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 263.99499380237603,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 9202.31960979798,
+        "primary_penalized_chi2": 1522.9575745007528
+      },
+      {
+        "radius_ratio": 0.4075773748729368,
+        "a_over_rstar_from_primary_profile": 6.515952453193645,
+        "conditional_radius_rjup": 6.679100211747169,
+        "max_substellar_temperature_K": 2500.5520047053224,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 2608.3932236474407,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.06728969507837582,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 263.276976995607,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 9953.388716261585,
+        "primary_penalized_chi2": 1522.9764243408845
+      },
+      {
+        "radius_ratio": 0.4245824659664744,
+        "a_over_rstar_from_primary_profile": 6.526436101166434,
+        "conditional_radius_rjup": 6.957768053795653,
+        "max_substellar_temperature_K": 2498.542834424774,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 2821.504001551354,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.06199770464428295,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 262.39015761126495,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 10759.98020957942,
+        "primary_penalized_chi2": 1522.9987183962899
+      },
+      {
+        "radius_ratio": 0.44229704963964694,
+        "a_over_rstar_from_primary_profile": 6.538414630736919,
+        "conditional_radius_rjup": 7.248062576643947,
+        "max_substellar_temperature_K": 2496.2530905736016,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 3050.6466723323,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.05711064739973292,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 261.33660966710784,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 11625.646631158921,
+        "primary_penalized_chi2": 1523.024925592698
+      },
+      {
+        "radius_ratio": 0.4607507275992488,
+        "a_over_rstar_from_primary_profile": 6.551887682785719,
+        "conditional_radius_rjup": 7.550468872886262,
+        "max_substellar_temperature_K": 2493.6851699061403,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 3296.916231874977,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.05259799111674725,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 260.1167560152298,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 12554.195372745451,
+        "primary_penalized_chi2": 1523.0555723297343
+      },
+      {
+        "radius_ratio": 0.47997433660522343,
+        "a_over_rstar_from_primary_profile": 6.566874726884036,
+        "conditional_radius_rjup": 7.865492274325997,
+        "max_substellar_temperature_K": 2490.8379770744527,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 3561.453775111263,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.04843230353426362,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 258.7341153891566,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 13549.545489989732,
+        "primary_penalized_chi2": 1523.0912435251344
+      },
+      {
+        "radius_ratio": 0.5,
+        "a_over_rstar_from_primary_profile": 6.583386757520613,
+        "conditional_radius_rjup": 8.193659196403376,
+        "max_substellar_temperature_K": 2487.7123355126114,
+        "max_Lambert_coupled_thermal_plus_reflection_ppm": 3845.4751612807545,
+        "max_coupled_Bond_albedo": 1.0,
+        "same_impact_geometric_disc_occulted_fraction": 0.04458714175972226,
+        "same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm": 257.18811922427375,
+        "very_generous_independent_extremes_rededge_envelope_ppm": 14615.850014077589,
+        "primary_penalized_chi2": 1523.1325838204348
+      }
+    ],
+    "uniform_companion_brightness_examples": [
+      {
+        "radius_ratio": 0.12,
+        "impact_parameter_same_for_secondary": 0.9573028062699692,
+        "companion_radius_rsun_conditional": 0.2020812,
+        "geometric_companion_disc_occulted_fraction": 0.7108996213711484,
+        "companion_to_star_out_of_eclipse_light_ratio": 0.0018694623243109098,
+        "required_top_hat_blackbody_brightness_temperature_K": 3706.9488542140916,
+        "warning": "Same-impact approximation, uniform companion, no atmospheric spectrum; conditional EB plausibility illustration, not a joint binary fit."
+      },
+      {
+        "radius_ratio": 0.20343528583924492,
+        "impact_parameter_same_for_secondary": 1.0717447684815145,
+        "companion_radius_rsun_conditional": 0.34258705570614684,
+        "geometric_companion_disc_occulted_fraction": 0.263428397909765,
+        "companion_to_star_out_of_eclipse_light_ratio": 0.005061086133789051,
+        "required_top_hat_blackbody_brightness_temperature_K": 3659.840257499317,
+        "warning": "Same-impact approximation, uniform companion, no atmospheric spectrum; conditional EB plausibility illustration, not a joint binary fit."
+      },
+      {
+        "radius_ratio": 0.2778214315527998,
+        "impact_parameter_same_for_secondary": 1.1580681232601588,
+        "companion_radius_rsun_conditional": 0.46785406894923043,
+        "geometric_companion_disc_occulted_fraction": 0.14372112166368192,
+        "companion_to_star_out_of_eclipse_light_ratio": 0.009315803866104058,
+        "required_top_hat_blackbody_brightness_temperature_K": 3649.639992241997,
+        "warning": "Same-impact approximation, uniform companion, no atmospheric spectrum; conditional EB plausibility illustration, not a joint binary fit."
+      },
+      {
+        "radius_ratio": 0.4075773748729368,
+        "impact_parameter_same_for_secondary": 1.2997697641703008,
+        "companion_radius_rsun_conditional": 0.6863643750597743,
+        "geometric_companion_disc_occulted_fraction": 0.06728969507837582,
+        "companion_to_star_out_of_eclipse_light_ratio": 0.020110011094025562,
+        "required_top_hat_blackbody_brightness_temperature_K": 3651.9667929445127,
+        "warning": "Same-impact approximation, uniform companion, no atmospheric spectrum; conditional EB plausibility illustration, not a joint binary fit."
+      }
+    ],
+    "illustrative_2_rjup_radius_ratio": 0.12204559355348245,
+    "adopted_raw_secondary_depth": 0.001326520179023131,
+    "adopted_raw_secondary_error": 0.0002322316174229693,
+    "illustrative_2rjup_max_budget": {
+      "coupled_Lambert_ppm": 193.02940196779997,
+      "independent_extremes_rededge_ppm": 713.1531658850657,
+      "observed_raw_secondary_ppm": 1326.520179023131,
+      "observed_raw_secondary_error_ppm": 232.23161742296932,
+      "largest_sampled_profile_k": 0.12,
+      "warning": "Maximum over sampled primary profile up to illustrative 2Rjup; not a marginalized or universal planetary luminosity bound."
+    },
+    "small_e_e_cos_omega_from_phase_0_47546039035": -0.03854672869920062,
+    "best_primary_max_e_sin_omega_for_secondary_overlap_approx": 0.0491620423290931,
+    "assessment": "Grazing eclipsing-binary explanation favored; no credible planet candidate classification from these conditional physical fits."
+  },
   "radius_to_mass_classification": null,
   "discovery_claim": false,
   "paid_calls": 0,

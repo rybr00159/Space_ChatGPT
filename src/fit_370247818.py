@@ -137,6 +137,7 @@ def secondary_budget(profile_rows, prior, best):
                   'Lambert scattering couples Bond albedo A_B and geometric albedo A_g=2A_B/3.',
                   'Most generous comparison sums independent A_g<=1 reflected and zero-Bond-albedo red-edge blackbody thermal limits, although those extremes need not be jointly realizable.',
                   'Full occultation assumed for the planet-light budget; grazing would reduce eclipse depth.',
+                  'Measured secondary is a local box-averaged depth; ingress/exposure loss can make the true peak deeper, so inferred uniform-disc brightness temperatures are approximate.',
                   'Circular irradiation distance and target star identity assumed; eccentric/internal-luminosity alternatives remain conditional.',
                   'An occultation measures brightness, not companion mass; the optical secondary does not by itself prove a stellar mass.'],
               'planet_secondary_budget_by_radius_ratio': [], 'uniform_companion_brightness_examples': []}
@@ -151,6 +152,8 @@ def secondary_budget(profile_rows, prior, best):
         thermal = k**2 * blackbody_photon_ratio(t_upper, prior['teff_K'])
         reflected = 2 / 3 * bond * (k / ar)**2
         coupled = thermal + reflected
+        occulted = circle_overlap_fraction(k, row['impact_parameter'])
+        partial = occulted * thermal + min(1., 1.5 * occulted) * reflected
         best_albedo = int(np.argmax(coupled))
         hc_k = .014387768775039337
         red = 1.1e-6
@@ -162,6 +165,8 @@ def secondary_budget(profile_rows, prior, best):
             'max_substellar_temperature_K': float(t_ss),
             'max_Lambert_coupled_thermal_plus_reflection_ppm': float(coupled.max() * 1e6),
             'max_coupled_Bond_albedo': float(bond[best_albedo]),
+            'same_impact_geometric_disc_occulted_fraction': occulted,
+            'same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm': float(partial.max() * 1e6),
             'very_generous_independent_extremes_rededge_envelope_ppm': float(upper * 1e6),
             'primary_penalized_chi2': row['penalized_chi2']})
     # Under a same-impact, uniform-companion illustrative eclipse model,
@@ -198,8 +203,13 @@ def secondary_budget(profile_rows, prior, best):
         budget['illustrative_2rjup_max_budget'] = {
             'coupled_Lambert_ppm': max(r['max_Lambert_coupled_thermal_plus_reflection_ppm'] for r in planet_rows),
             'independent_extremes_rededge_ppm': max(r['very_generous_independent_extremes_rededge_envelope_ppm'] for r in planet_rows),
-            'observed_raw_secondary_ppm': observed * 1e6, 'observed_raw_secondary_error_ppm': observed_error * 1e6}
+            'observed_raw_secondary_ppm': observed * 1e6, 'observed_raw_secondary_error_ppm': observed_error * 1e6,
+            'largest_sampled_profile_k': max(r['radius_ratio'] for r in planet_rows),
+            'warning': 'Maximum over sampled primary profile up to illustrative 2Rjup; not a marginalized or universal planetary luminosity bound.'}
     budget['small_e_e_cos_omega_from_phase_0_47546039035'] = float((.47546039035 - .5) * np.pi / 2)
+    budget['best_primary_max_e_sin_omega_for_secondary_overlap_approx'] = float(
+        (1 + best['radius_ratio'] - best['impact_parameter']) /
+        (1 + best['radius_ratio'] + best['impact_parameter']))
     budget['assessment'] = 'Grazing eclipsing-binary explanation favored; no credible planet candidate classification from these conditional physical fits.'
     return budget
 
@@ -394,7 +404,63 @@ def write_report(summary):
     best = summary['circular_density_prior_best']
     profile = summary['radius_ratio_profile_summary']
     boot = summary['sector_bootstrap_summary']
-    text = f'''# TIC 370247818: physical transit-shape assessment
+    secondary = summary['secondary_light_budget']
+    budget = secondary.get('illustrative_2rjup_max_budget', {})
+    raw_secondary = secondary.get('pooled_secondary_measurements', {}).get('SAP_FLUX', {})
+    small_secondary = secondary.get('pooled_secondary_measurements', {}).get('KSPSAP_FLUX_SML', {})
+    if budget:
+        secondary_text = f'''An independently evaluated eclipse occurs at phase
+0.47546039, about 2.07 hours earlier than exact half-phase. It was missed by
+the original half-phase-only check. Raw SAP depth is
+{raw_secondary['depth'] * 1e6:.1f}±{raw_secondary['depth_err'] * 1e6:.1f} ppm
+(conditional S/N {raw_secondary['snr']:.2f}), and small-aperture depth is
+{small_secondary['depth'] * 1e6:.1f}±{small_secondary['depth_err'] * 1e6:.1f} ppm
+(S/N {small_secondary['snr']:.2f}), consistent across all eight sectors.
+The initial selected-phase statistic is not a blind-search false-alarm probability.
+The small-e timing approximation implies e cos(omega)≈-0.03855 if the same
+binary produces both eclipses; precise inference requires a joint orbit fit.
+The detected secondary also requires geometric overlap. With the main
+grazing primary geometry, the usual conjunction approximation requires
+e sin(omega) ≲ {secondary['best_primary_max_e_sin_omega_for_secondary_overlap_approx']:.3f}.
+The illustrative e=0.3 and e=0.6 periastron planet-like primary alternatives
+predict no secondary overlap and therefore cannot describe both eclipses.
+They demonstrate primary-only degeneracy, not allowed joint orbit solutions.
+
+For a generous *illustrative* companion radius ≤2 Rjup, the sampled circular
+primary profile gives a coupled Lambert reflected/thermal maximum of
+{budget['coupled_Lambert_ppm']:.0f} ppm. An even more generous comparison sums
+independent reflected (geometric albedo ≤1) and zero-albedo, uniform-substellar
+temperature blackbody thermal extremes at the reddest assumed wavelength,
+1.1 micron: {budget['independent_extremes_rededge_ppm']:.0f} ppm. These extremes
+need not coexist physically; this comparison grants full occultation despite
+the grazing geometry. The sampled maximum is at k={budget['largest_sampled_profile_k']:.3f},
+slightly below the exact illustrative 2-Rjup cutoff, and is not a likelihood
+profile jointly marginalized over orbital/stellar/atmospheric uncertainties.
+
+The observed secondary therefore strains an ordinary passive, planet-sized
+interpretation under the adopted geometry. It is readily compatible with
+larger, intrinsically luminous grazing companions: illustrative uniform-disc
+secondary inversions require optical brightness temperature near 3650 K over
+k≈0.2--0.4. At the primary best-fit k≈0.278, only ≈14% of the companion disc
+is eclipsed, with companion/star total light ratio ≈0.0093. This is a plausible
+faint-star geometry, although a full luminous binary fit is still needed.
+
+The budget assumes blackbody spectra with a 0.6--1.1-micron top-hat photon
+weight, rather than an actual TESS throughput/atmosphere calculation. It couples
+Bond and geometric albedo using Lambert scattering, assumes steady passive
+irradiation, and uses circular separation. Internal luminosity, eccentricity,
+non-Lambert scattering, unusual atmospheres, target misidentification, and
+blending can change it. Two Rjup is a comparison radius, not an absolute planet
+limit. Eclipse brightness and radius never establish companion mass.
+The measured secondary is box-averaged: unresolved ingress and exposure
+averaging can make its true peak deeper. The illustrative temperature/light
+ratios are approximate and should be replaced by a joint luminous eclipse fit.
+Nonetheless, the repeated off-phase secondary and grazing shape favor an
+**eclipsing-binary explanation**, and no credible planetary candidate is promoted.
+'''
+    else:
+        secondary_text = 'Off-phase secondary assessment remains pending; no planetary mass inference is justified.'
+    text = f'''# TIC 370247818: physical transit/eclipse assessment
 
 This is a conditional light-curve fit, **not a mass measurement or planet
 validation**. A grazing stellar companion remains an allowed explanation.
@@ -452,6 +518,10 @@ false-alarm probabilities. Reported penalties include stellar-density and
 limb-darkening priors. Compare data chi² and prior penalties separately in the
 JSON. Eight-sector bootstrap ({boot.get('draws', 0)} draws) is `{boot}`;
 it probes sector sensitivity but only eight independent groups are available.
+Bootstrap refits condition on the same stellar priors and use the best-fit
+initialization; their narrow range is not a radius posterior and does not
+replace the broad, upper-bound-reaching radius profile. Gaussian covariance
+is particularly unreliable along the grazing degeneracy.
 
 Alternative illustrative fits vary eccentricity (omega=90 deg), dilution,
 stellar mass ratio, density-prior removal, and Gaia stellar density. Their
@@ -462,6 +532,12 @@ under circular geometry; eccentric velocity can also shorten a transit.
 An unresolved luminous companion or contaminating star changes both depth and
 stellar interpretation. Stellar-companion total mass changes Kepler a/R and
 is explored separately without assuming a mass-radius relation.
+Eccentric alternatives shown here fit the primary alone with omega=90 degrees;
+they are illustrative velocity changes and do not jointly fit the observed
+secondary phase. Exact transit/occultation timing and companion luminosity
+must be included before interpreting an eccentric binary orbit.
+
+{secondary_text}
 
 Gaia median RV 13.65±3.68 km/s is a systemic-velocity estimate. The target has
 no published amplitude in the cached table, so it cannot exclude a stellar
@@ -529,6 +605,28 @@ def plot(data, model, best, profile_rows, alternative_rows, summary):
                         sector=data['sector'], exposure_days=data['exposure'], prediction=prediction,
                         phase_hours=phase_hours, profile_k=x,
                         profile_penalized_chi2=[r['penalized_chi2'] for r in profile_rows])
+    light = summary.get('secondary_light_budget', {})
+    budgets = light.get('planet_secondary_budget_by_radius_ratio', [])
+    if budgets:
+        fig, ax = plt.subplots(figsize=(9, 5), layout='constrained')
+        xx = [r['radius_ratio'] for r in budgets]
+        ax.plot(xx, [r['max_Lambert_coupled_thermal_plus_reflection_ppm'] for r in budgets],
+                label='Coupled Lambert reflection + maximal thermal, full occultation')
+        ax.plot(xx, [r['very_generous_independent_extremes_rededge_envelope_ppm'] for r in budgets],
+                '--', label='Independent reflected/red-edge thermal extremes')
+        ax.plot(xx, [r['same_impact_partial_Lambert_plus_uniform_substellar_thermal_upper_ppm'] for r in budgets],
+                ':', label='Same-impact grazing, coupled illustrative upper envelope')
+        observed = light['adopted_raw_secondary_depth'] * 1e6
+        err = light['adopted_raw_secondary_error'] * 1e6
+        ax.axhline(observed, color='tab:red', label='Observed raw-SAP secondary')
+        ax.axhspan(observed - err, observed + err, color='tab:red', alpha=.15)
+        ax.axvline(light['illustrative_2_rjup_radius_ratio'], color='.4', ls=':', label='Illustrative 2 Rjup radius')
+        ax.set(xlim=(.08, .5), ylim=(50, 15000), yscale='log',
+               xlabel='Companion/star radius ratio along primary profile', ylabel='Secondary depth ppm',
+               title='TIC 370247818: conditional passive-planet light comparisons')
+        ax.legend(fontsize=8)
+        fig.savefig(OUT / 'secondary_light_budget.png', dpi=150)
+        plt.close(fig)
 
 
 def run(args):
@@ -542,6 +640,11 @@ def run(args):
         # observations requires a separately preserved experiment directory.
         if old['provenance']['local_arrays_sha256'] != provenance['local_arrays_sha256']:
             raise ValueError('Input arrays changed; preserve old evidence and use a new experiment')
+        if (old['prior'] != prior or old['timing_initialization']['period'] != timing['period']
+                or old['timing_initialization']['epoch_btjd'] != timing['epoch_btjd']):
+            raise ValueError('Stellar prior or timing initialization changed; preserve and version the experiment')
+        if old['provenance']['timing_json_sha256'] != provenance['timing_json_sha256']:
+            save(OUT / ('experiment_previous_' + old['provenance']['timing_json_sha256'][:12] + '.json'), old)
     save(checkpoint, stamp)
     model = TransitFit(data, prior, timing)
     best_path = OUT / 'best_circular.json'
@@ -591,6 +694,16 @@ def run(args):
         save(alternatives_path, list(alternatives_by_label.values()))
         print('ALTERNATIVE', label, 'k', round(row['radius_ratio'], 4), 'b', round(row['impact_parameter'], 4),
               'chi2', round(row['penalized_chi2'], 2), flush=True)
+    for row in alternatives_by_label.values():
+        ecc = row['assumptions']['eccentricity']
+        omega = np.deg2rad(row['assumptions']['omega_degrees'])
+        secondary_b = row['impact_parameter'] * (1 + ecc * np.sin(omega)) / (1 - ecc * np.sin(omega))
+        row['secondary_impact_parameter_conjunction_approx'] = float(secondary_b)
+        row['secondary_geometric_overlap_possible_approx'] = bool(secondary_b < 1 + row['radius_ratio'])
+        row['joint_eclipse_warning'] = ('Primary-only illustrative fit: predicted secondary has no geometric overlap.'
+            if not row['secondary_geometric_overlap_possible_approx'] else
+            'Primary-only fit: secondary phase, shape and luminosity have not been jointly modeled.')
+    save(alternatives_path, list(alternatives_by_label.values()))
     boots = bootstrap(data, prior, timing, vector, args.bootstrap, OUT / 'sector_bootstrap.json')
     bsummary = {'draws': len(boots), 'converged_draws': sum(row['converged'] for row in boots)}
     for key in ('radius_ratio', 'impact_parameter', 'a_over_rstar', 'duration_T14_hours',
@@ -602,10 +715,12 @@ def run(args):
     convergence = float(np.max(np.abs(model.physical_model(vector) - dense_model.physical_model(vector))) * 1e6)
     summary = {'tic': SEED, 'checked_utc': datetime.now(timezone.utc).isoformat(),
                **stamp, 'software_versions': {'python': platform.python_version(), 'numpy': np.__version__,
-                 'scipy': scipy.__version__, 'batman': batman.__version__},
+                 'scipy': scipy.__version__, 'batman': batman.__version__, 'batman-package': version('batman-package'),
+                 'setuptools': version('setuptools')},
                'circular_density_prior_best': best, 'radius_ratio_profile_summary': profile_summary,
                'sector_bootstrap_summary': bsummary, 'alternative_assumptions': list(alternatives_by_label.values()),
                'supersampling_25_vs_101_max_difference_ppm': convergence,
+               'secondary_light_budget': secondary_budget(profile_rows, prior, best),
                'radius_to_mass_classification': None, 'discovery_claim': False, 'paid_calls': 0,
                'limitations': ['Dark-companion model; no direct companion luminosity or mass inference.',
                    'Conditional target-star identity, stellar radius, density and limb-darkening assumptions.',

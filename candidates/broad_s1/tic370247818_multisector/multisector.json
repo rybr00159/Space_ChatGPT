@@ -1,6 +1,6 @@
 {
   "tic": 370247818,
-  "checked_utc": "2026-10-13T21:48:26.280593+00:00",
+  "checked_utc": "2026-10-13T21:56:22.485396+00:00",
   "sources": [
     {
       "sector": 1,
@@ -131,6 +131,20 @@
       ]
     }
   ],
+  "vetting_method": {
+    "version": "raw-aperture-all-orbital-phase-v2",
+    "source_sha256": "c631f3cd44f773f9cd316eec5445a7a78a8f8a01ae2bd4b1608fb719c25383e8",
+    "frozen_screen_sha256": "26eede8aaeb9fa2a624b73a5c3966366f77c4cc73738153eba7e46d13eb10307",
+    "mandatory_tests": [
+      "raw_local_quadratic",
+      "three_median_windows",
+      "four_apertures",
+      "odd_even",
+      "half_phase_secondary",
+      "all_phase_secondary",
+      "qlp_centroids"
+    ]
+  },
   "independent_sector_searches": [
     {
       "sector": 1,
@@ -8082,7 +8096,7 @@
         32,
         39
       ],
-      "note": "Targeted fixed-half-phase measurement; conditional local-baseline errors with observed scatter floors."
+      "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
     },
     "SAP_FLUX": {
       "depth": -0.00038818811594346634,
@@ -8101,7 +8115,7 @@
         32,
         39
       ],
-      "note": "Targeted fixed-half-phase measurement; conditional local-baseline errors with observed scatter floors."
+      "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
     },
     "KSPSAP_FLUX_SML": {
       "depth": -0.00038784380707222954,
@@ -8120,7 +8134,7 @@
         32,
         39
       ],
-      "note": "Targeted fixed-half-phase measurement; conditional local-baseline errors with observed scatter floors."
+      "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
     },
     "KSPSAP_FLUX_LAG": {
       "depth": -0.0004706454842150473,
@@ -8139,7 +8153,7 @@
         32,
         39
       ],
-      "note": "Targeted fixed-half-phase measurement; conditional local-baseline errors with observed scatter floors."
+      "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
     }
   },
   "additional_phase_search": {
@@ -8562,7 +8576,7 @@
         32,
         39
       ],
-      "note": "Targeted fixed-half-phase measurement; conditional local-baseline errors with observed scatter floors."
+      "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
     },
     "SAP_FLUX": {
       "depth": 0.001326520179023131,
@@ -8581,7 +8595,7 @@
         32,
         39
       ],
-      "note": "Targeted fixed-half-phase measurement; conditional local-baseline errors with observed scatter floors."
+      "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
     },
     "KSPSAP_FLUX_SML": {
       "depth": 0.0011367646627864505,
@@ -8600,7 +8614,7 @@
         32,
         39
       ],
-      "note": "Targeted fixed-half-phase measurement; conditional local-baseline errors with observed scatter floors."
+      "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
     },
     "KSPSAP_FLUX_LAG": {
       "depth": 0.0013511142117846751,
@@ -8619,8 +8633,13 @@
         32,
         39
       ],
-      "note": "Targeted fixed-half-phase measurement; conditional local-baseline errors with observed scatter floors."
+      "note": "Targeted fixed-ephemeris measurement; conditional local-baseline errors with observed scatter floors."
     }
+  },
+  "planetary_assessment": {
+    "status": "eclipsing_stellar_source_favored",
+    "reason": "Recurring secondary appears in independently normalized raw SAP and alternate aperture flux.",
+    "confirmed": false
   },
   "limitations": [
     "Targeted local period search has no global false-alarm calibration.",

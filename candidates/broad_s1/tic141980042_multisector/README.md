@@ -1,5 +1,7 @@
 # TIC 141980042 independent multi-sector check
 
+Assessment: **eclipsing_stellar_source_favored**. Recurring secondary appears in independently normalized raw SAP and alternate aperture flux.
+
 Joint local period: 2.32206949 d, BTJD epoch 1327.6359422, box duration 1.47 h.
 
 Each sector was first independently searched near the sector-1 period, with an unrestricted local transit epoch. Then the joint fixed ephemeris was tested in raw SAP, processed flux, and alternative apertures.
@@ -35,3 +37,5 @@ This establishes or falsifies recurrence in independent observations, not planet
 Conditional timing fit from 192 events: P=2.322070063 ±0.000001265 d, T0=1327.6341565 ±0.0003930 BTJD. Timing chi²/dof=160.6/190. Errors are conditional on fixed trapezoid shape and inflated for measured scatter; they are not validation probabilities.
 
 Pooled half-phase secondary: 868 ±86 ppm, conditional S/N 10.09, sector-consistency chi²/dof 17.0/22. A significant recurring secondary is evidence favoring an eclipsing stellar source; source localization and physical modeling are still required.
+
+Additional-phase secondary at phase 0.49815: raw local processed-flux depth 864 ±88 ppm, S/N 9.78; raw SAP S/N 10.26. This is a targeted phase search, so its score is not a false-alarm probability. The catalog-unlisted recurring primary must be judged together with this counterevidence.

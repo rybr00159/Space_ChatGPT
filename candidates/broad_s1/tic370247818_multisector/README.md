@@ -1,5 +1,7 @@
 # TIC 370247818 independent multi-sector check
 
+Assessment: **eclipsing_stellar_source_favored**. Recurring secondary appears in independently normalized raw SAP and alternate aperture flux.
+
 Joint local period: 3.52220017 d, BTJD epoch 1326.9154072, box duration 1.47 h.
 
 Each sector was first independently searched near the sector-1 period, with an unrestricted local transit epoch. Then the joint fixed ephemeris was tested in raw SAP, processed flux, and alternative apertures.
