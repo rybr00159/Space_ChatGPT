@@ -1,0 +1,15 @@
+{
+  "retrieved_utc": "2026-10-14T16:57:50.868568+00:00",
+  "requested_url": "https://gea.esac.esa.int/tap-server/tap/sync",
+  "parameters": {
+    "request": "doQuery",
+    "lang": "ADQL",
+    "format": "csv",
+    "query": "select g.source_id,g.ra,g.dec,g.phot_g_mean_mag,g.ruwe,g.non_single_star,g.ipd_frac_multi_peak,v.in_vari_eclipsing_binary,c.best_class_name,c.best_class_score,e.frequency,e.global_ranking from gaiadr3.gaia_source g left outer join gaiadr3.vari_summary v on g.source_id=v.source_id left outer join gaiadr3.vari_classifier_result c on g.source_id=c.source_id left outer join gaiadr3.vari_eclipsing_binary e on g.source_id=e.source_id where 1=CONTAINS(POINT('ICRS',g.ra,g.dec),CIRCLE('ICRS',84.009677,-73.620702,0.0333333333333333)) order by g.phot_g_mean_mag"
+  },
+  "url": "https://gea.esac.esa.int/tap-server/tap/sync?request=doQuery&lang=ADQL&format=csv&query=select+g.source_id%2Cg.ra%2Cg.dec%2Cg.phot_g_mean_mag%2Cg.ruwe%2Cg.non_single_star%2Cg.ipd_frac_multi_peak%2Cv.in_vari_eclipsing_binary%2Cc.best_class_name%2Cc.best_class_score%2Ce.frequency%2Ce.global_ranking+from+gaiadr3.gaia_source+g+left+outer+join+gaiadr3.vari_summary+v+on+g.source_id%3Dv.source_id+left+outer+join+gaiadr3.vari_classifier_result+c+on+g.source_id%3Dc.source_id+left+outer+join+gaiadr3.vari_eclipsing_binary+e+on+g.source_id%3De.source_id+where+1%3DCONTAINS%28POINT%28%27ICRS%27%2Cg.ra%2Cg.dec%29%2CCIRCLE%28%27ICRS%27%2C84.009677%2C-73.620702%2C0.0333333333333333%29%29+order+by+g.phot_g_mean_mag",
+  "http_status": 200,
+  "content_type": "text/csv",
+  "bytes": 20548,
+  "sha256": "47feb049b65158f527dc287f8bbe5407df49039515b500fa2db49479033bc3c9"
+}

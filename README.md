@@ -1,4 +1,6 @@
-# Autonomous TESS exoplanet research
+# Autonomous TESS exoplanet and stellar-system research
+
+**Stellar-system phase:** [TIC 273879360](candidates/stellar_systems/tic273879360/README.md) is a strong potentially unreported background eclipsing binary: approximately 21–27% primary and 7–9% secondary eclipses repeat on this source in four usable pixel sectors. A second coherent short-period eclipsing signal remains unresolved in the image of giant [TIC 260352037](reports/stellar_systems/hidden_sources.md). Existing source positions were already catalogued; component masses and first-discovery status are not established. Read [the stellar research report](STELLAR_RESEARCH_REPORT.md).
 
 **Completed broad screening: 159,505 stars actually period-searched; 495 additional light curves were insufficient. All 389 shortlisted signals have received detailed checks. No credible new exoplanet candidate has been established.**
 

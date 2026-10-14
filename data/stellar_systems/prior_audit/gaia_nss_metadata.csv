@@ -1,0 +1,18 @@
+<VOTABLE version="1.2" xmlns="http://www.ivoa.net/xml/VOTable/v1.2">
+<RESOURCE type="results">
+<INFO name="QUERY_STATUS" value="ERROR">
+(TAP) Cannot execute query 'SELECT tap_schema.tables."table_name" AS "table_name" , tap_schema.tables."description" AS "description"
+FROM tap_schema.tables
+WHERE tap_schema.tables."table_name" LIKE 'gaiadr3.nss%'
+Limit 50000' for job ' (source query: 'select table_name,description from TAP_SCHEMA.tables where table_name like 'gaiadr3.nss%'')a7516e31-c7ef-11f1-94ad-bc97e148b76b-O': Can not execute the following SQL: 
+WITH cte_authorisation_63 AS ( SELECT  FROM tap_schema.all_tables AS orig_table WHERE orig_table.table_name != 'public.dual' AND (orig_table.public = TRUE OR orig_table.schema_name = 'user_anonymous' ) ) SELECT cte_authorisation_63.table_name AS "table_name" , cte_authorisation_63.description AS "description"
+FROM tap_schema.tables
+WHERE cte_authorisation_63."table_name" LIKE 'gaiadr3.nss%'
+Limit 50000
+Because: ERROR: missing FROM-clause entry for table "cte_authorisation_63"
+  Position: 212
+</INFO>
+<INFO name="HttpErrorCode" value="500"/>
+<INFO name="Action" value="Handling request"/>
+</RESOURCE>
+</VOTABLE>

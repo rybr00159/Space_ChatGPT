@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>
+        ASAS-SN Variable Stars Database
+
+    </title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="hErR3gY0Azq3aVA8NBYQLvZ9vbSkmLKRlJ3rUfPSUcBfAabuNZ2Ar8REQdaTvy9-XGR0saUop0o-LAGACtbzbA" />
+    <meta name="action-cable-url" content="/cable" />
+
+    <link rel="stylesheet" href="/assets/application-def4191eddc62d5f24a999eb0f3865dddd24c0f495cf2ea5e1273bbbdcfeac61.css" media="all" />
+
+    <script src="/assets/application-5f2d528891c86c594fcbb4d663fc7999d8426760b8ec9cc834143de20ca586da.js"></script>
+
+    <script>
+//<![CDATA[
+window.gon={};gon.slices={"Eclipsing Binary":46336,"RR Lyrae":7815,"Cepheids":545,"Rotational Variables":17916,"Long Period Variables":103780,"Delta Scuti":3938};gon.slices2={"Eclipsing Binary":133541,"RR Lyrae":36203,"Cepheids":1699,"Rotational Variables":23735,"Long Period Variables":202291,"Delta Scuti":7512};gon.slices_abbrev={"Eclipsing Binary":"EB","RR Lyrae":"RR","Cepheids":"CEP","Rotational Variables":"ROT","Long Period Variables":"LPV","Delta Scuti":"DSCT"};gon.addresses={"Eclipsing Binary":"variables?ra=\u0026dec=\u0026radius=\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=EA\u0026variable_type[]=EB\u0026variable_type[]=EW\u0026variable_type[]=ELL\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=true\u0026","RR Lyrae":"variables?ra=\u0026dec=\u0026radius=\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=RRAB\u0026variable_type[]=RRC\u0026variable_type[]=RRD\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=true\u0026","Cepheids":"variables?ra=\u0026dec=\u0026radius=\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=CWA\u0026variable_type[]=CWB\u0026variable_type[]=DCEP\u0026variable_type[]=DCEPS\u0026variable_type[]=RVA\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=true\u0026","Rotational Variables":"variables?ra=\u0026dec=\u0026radius=\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=ROT\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=true\u0026","Long Period Variables":"variables?ra=\u0026dec=\u0026radius=\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=M\u0026variable_type[]=SR\u0026variable_type[]=SRD\u0026variable_type[]=LSP\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=true\u0026","Delta Scuti":"variables?ra=\u0026dec=\u0026radius=\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=DSCT\u0026variable_type[]=HADS\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=true\u0026"};gon.addresses_prob={"Eclipsing Binary":"variables?ra=\u0026dec=\u0026radius=0.5\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=0.95\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=EA\u0026variable_type[]=EB\u0026variable_type[]=EW\u0026variable_type[]=ELL\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=false\u0026","RR Lyrae":"variables?ra=\u0026dec=\u0026radius=0.5\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=0.95\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=RRAB\u0026variable_type[]=RRC\u0026variable_type[]=RRD\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=false\u0026","Cepheids":"variables?ra=\u0026dec=\u0026radius=0.5\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=0.95\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=CWA\u0026variable_type[]=CWB\u0026variable_type[]=DCEP\u0026variable_type[]=DCEPS\u0026variable_type[]=RVA\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=false\u0026","Rotational Variables":"variables?ra=\u0026dec=\u0026radius=0.5\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=0.95\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=ROT\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=false\u0026","Long Period Variables":"variables?ra=\u0026dec=\u0026radius=0.5\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=0.95\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=M\u0026variable_type[]=SR\u0026variable_type[]=SRD\u0026variable_type[]=LSP\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=false\u0026","Delta Scuti":"variables?ra=\u0026dec=\u0026radius=0.5\u0026vmag_min=\u0026vmag_max=\u0026amplitude_min=\u0026amplitude_max=\u0026period_min=\u0026period_max=\u0026lksl_min=\u0026lksl_max=\u0026class_prob_min=0.95\u0026class_prob_max=\u0026parallax_over_err_min=\u0026parallax_over_err_max=\u0026name=\u0026variable_type[]=DSCT\u0026variable_type[]=HADS\u0026references[]=I\u0026references[]=II\u0026references[]=III\u0026references[]=IV\u0026references[]=V\u0026references[]=IX\u0026sort_by=raj2000\u0026sort_order=asc\u0026show_non_periodic=true\u0026show_without_class=true\u0026asassn_discov_only=false\u0026"};
+//]]>
+</script>
+    <!-- include Aladin Lite CSS file in the head section of your page -->
+
+    <script src="/packs/js/runtime-1ad383648a146bdb9f88.js" defer="defer"></script>
+<script src="/packs/js/variables/index-fb6b71be193b310ed02b.js" defer="defer"></script>
+<script src="/packs/js/74-17183a38b79052e6e769.js" defer="defer"></script>
+<script src="/packs/js/application-ba1f5de358ec336f7af2.js" defer="defer"></script>
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54701555-11', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body class="layout">
+    <header class="layout__header">
+      <nav class='navbar navbar-inverse'>
+<div class='container-fluid'>
+<div class='navbar-header'>
+<a class='navbar-brand' href='javascript:void(0)'>
+<img height="45px" class="img-responsive" alt="ASAS-sn Navigation Logo" src="/assets/nav_logo-e4e7cd1847a61767cda5d35ff9357e4dc2800573e056394f63e247e09c84ad35.png" />
+</a>
+</div>
+<ul class='nav navbar-nav'>
+<li class=''>
+<a href="/">Sky Patrol</a>
+</li>
+<li class=''>
+<a href="http://asas-sn.ifa.hawaii.edu/skypatrol/">*new* Sky Patrol V2</a>
+</li>
+<li class='active'>
+<a href="/variables">Variable Stars Database</a>
+</li>
+<li class=''>
+<a href="/atlas">Variable Stars Atlas</a>
+</li>
+<li class=''>
+<a href="/photometry">Photometry Database</a>
+</li>
+<li class=''>
+<a href="/citizen_asassn">Citizen ASAS-SN</a>
+</li>
+<li class=''>
+<a href="/binaries">Binary Stars Database</a>
+</li>
+</ul>
+</div>
+</nav>
+
+    </header>
+
+    <main class="layout__page page container">
+
+        <div class="page__header page-header">
+          <div>
+            <h3>
+              ASAS-SN Variable Stars Database
+
+            </h3>
+          </div>
+
+        </div>
+
+      
+<div class='well center-block text-center project-banner'>
+<div class='row center-block banner-row-1'>
+<div class='col-md-2 col-md-offset-1'>
+<div class='thumbnail center-block'>
+<a class="banner-img asas-sn-logo" href="http://www.astronomy.ohio-state.edu/asassn/index.shtml"><img alt="ASAS-sn Logo" src="/assets/assassin_logo-5cd4abefd6eeab270d54532d90ab33a1389fbb908cd45e5dede93e9e39ed8def.png" /></a>
+</div>
+</div>
+<div class='col-md-2'>
+<div class='thumbnail center-block'>
+<a class="osu-img banner-img" href="http://www.astronomy.ohio-state.edu/"><img alt="OSU Astronomy Logo" src="/assets/astronomy_osu-781d5e8a5fc6b73b43538dd55ccba2f92482864d8b8ea0c9fe85a63f9aa48652.png" /></a>
+</div>
+</div>
+<div class='col-md-2'>
+<div class='thumbnail stretch'>
+<img class="gordon-betty-moore-logo" alt="Gorden Betty Moore Logo" src="/assets/gorden-betty-moore-logo-20c9c46ed6eb8562263b5e70ffa65f5c5962e4ba718174ace2bc98d8279e9ba6.png" />
+<div class='caption'>
+<small>
+Making ASAS-SN light curves public is primarily funded by grants
+<a href="https://www.moore.org/grant-detail?grantId=GBMF5490">GBMF5490</a>
+<small>and</small>
+<a href="https://www.moore.org/grant-detail?grantId=GBMF10501">GBMF10501</a>
+</small>
+</div>
+</div>
+</div>
+<div class='col-md-2'>
+<div class='thumbnail stretch'>
+<img alt="Alfred P. Sloan Foundation Logo" class="sloan-img" src="/assets/sloan_long-4d514f1ff8bf1f75a690828906cea2db6dc59fee59201790b8cf86d26accc72f.png" />
+<div class='caption'>
+<small>
+ASAS-SN is funded in part by the Alfred P. Sloan Foundation under grant
+<a href="https://sloan.org/"> G202114192</a>
+</small>
+</div>
+</div>
+</div>
+<div class='col-md-2'>
+<div class='thumbnail center-block'>
+<a class="nsf-img" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1908570"><img alt="National Science Foundation Logo" src="/assets/nsf_logo-bdc22bb64b5e416d8effd5ac256ae052a5edbe8d6f9c3c7d0cc279612cc0526e.png" /></a>
+</div>
+</div>
+</div>
+</div>
+
+<div class='panel panel-primary'>
+<div class='panel-heading'>
+Using in Publications
+</div>
+<div class='panel-body'>
+<p style='margin-bottom: 0;'>
+When using ASAS-SN light curves in publications cite:
+<a class='alert-link' href='http://adsabs.harvard.edu/abs/2014ApJ...788...48S'>
+Shappee et al. (2014)
+</a>
+and
+<strong>either:</strong>
+(i) The ASAS-SN Catalog of Variable Stars I:
+<a class='alert-link' href='http://adsabs.harvard.edu/abs/2018MNRAS.477.3145J'>
+Jayasinghe et al. (2018a)
+</a>
+(ii) The ASAS-SN Catalog of Variable Stars II:
+<a class='alert-link' href='http://adsabs.harvard.edu/abs/2018arXiv180907329J'>
+Jayasinghe et al. (2018b)
+</a>
+, (iii) The ASAS-SN Catalog of Variable Stars III:
+<a class='alert-link' href='http://adsabs.harvard.edu/abs/2019MNRAS.485..961J'>
+Jayasinghe et al. (2019b)
+</a>
+, (iv) The ASAS-SN Catalog of Variable Stars V:
+<a class='alert-link' href='https://ui.adsabs.harvard.edu/abs/2020MNRAS.491...13J/abstract'>
+Jayasinghe et al. (2020)
+</a>
+, or (v) The ASAS-SN Catalog of Variable Stars IX:
+<a class='alert-link' href='https://ui.adsabs.harvard.edu/abs/2021MNRAS.503..200J/abstract'>
+Jayasinghe et al. (2021)
+</a>
+, or (vi) The ASAS-SN Catalog of Variable Stars X:
+<a class='alert-link' href='https://ui.adsabs.harvard.edu/abs/2022arXiv220502239C/abstract'>
+Christy et al. (2022).
+</a>
+</p>
+</div>
+</div>
+
+<div class='panel panel-default panel-dense'>
+<div class='panel-body'>
+<p style='margin-bottom: 0;'>
+<strong>Database Updated:</strong>
+08/10/2021 (Crossmatches to Gaia EDR3, TIC v8, and GALEX GR6+7 AIS added)
+</p>
+</div>
+</div>
+<form action='/variables' id='variables-stars-db-search' method='get'>
+<div class='panel panel-default panel-inverse search-panel'>
+<div class='panel-heading'>
+<div class='title'>
+<h4>Search Light Curves</h4>
+</div>
+<div class='actions'>
+<button class='btn btn-default btn-xs panel-header-btn' data-target='#search-form' data-toggle='collapse' type='button'>
+<span class='glyphicon glyphicon-triangle-top'></span>
+</button>
+</div>
+</div>
+<div class='collapse in' id='search-form'>
+<div class='panel-body'>
+<div class='row'>
+<div class='col-md-4 form-group form-group-sm'>
+<label class='control-label' for='right-ascension'>Right Ascension</label>
+<input class='form-control' id='right-ascension' name='ra' pattern='((2[0-3]|[0-1]?\d)(:| )[0-5]?\d(:| )([0-5])?\d(\.\d+)?)|\d+(\.\d+)?' placeholder='Degrees or hh:mm:ss.ss' type='text' value='94.78791015296669'>
+</div>
+<div class='col-md-4 form-group form-group-sm'>
+<label class='control-label' for='declination'>Declination</label>
+<input class='form-control' id='declination' name='dec' pattern='(\-?(360|3[0-5]\d|0?\d{2}|0?0?\d)(:| )[0-5]?\d(:| )([0-5])?\d(\.\d+)?)|\d+(\.\d+)?' placeholder='Degrees or dd:mm:ss' type='text' value='-57.07821822202367'>
+</div>
+<div class='col-md-4 form-group form-group-sm'>
+<label class='control-label' for='radius'>Radius (arcmin)</label>
+<input class='form-control' id='radius' max='10' min='0' name='radius' step='0.01' type='number' value='2'>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label'>Mean VMag</label>
+<span class='input-group'>
+<span class='input-group-addon'>Min</span>
+<input class='form-control' id='vmag-min' name='vmag_min' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label' style='opacity: 0'>Mean VMag Max</label>
+<span class='input-group'>
+<span class='input-group-addon'>Max</span>
+<input class='form-control' id='vmag-max' name='vmag_max' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label'>Amplitude</label>
+<span class='input-group'>
+<span class='input-group-addon'>Min</span>
+<input class='form-control' id='amplitude-min' name='amplitude_min' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label' style='opacity: 0'>Amplitude Max</label>
+<span class='input-group'>
+<span class='input-group-addon'>Max</span>
+<input class='form-control' id='amplitude-max' name='amplitude_max' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label'>Period</label>
+<span class='input-group'>
+<span class='input-group-addon'>Min</span>
+<input class='form-control' id='period-min' name='period_min' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label' style='opacity: 0'>period Max</label>
+<span class='input-group'>
+<span class='input-group-addon'>Max</span>
+<input class='form-control' id='period-max' name='period_max' step='0.01' type='number' value=''>
+</span>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label' data-placement='top' data-toggle='tooltip' title='
+    The Lafler-Kinman string length (LKSL) statistic is a measure of
+    scatter in the light curve. Light curves with a smaller LKSL
+    statistic will have lower scatter. The LKSL statistic is
+    calculated for both the periodic and aperiodic sources and varies
+    significantly across the different variability types. We refer
+    the reader to &quot;The ASAS-SN Catalog of Variable Stars II&quot;
+    for a detailed explanation. A LKSL statistic of &lt;0.5 is recommended
+    to obtain the best quality light curves.
+    '>LKSL Statistic</label>
+<span class='input-group'>
+<span class='input-group-addon'>Min</span>
+<input class='form-control' id='lksl-min' name='lksl_min' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label' style='opacity: 0'>lksl Max</label>
+<span class='input-group'>
+<span class='input-group-addon'>Max</span>
+<input class='form-control' id='lksl-max' name='lksl_max' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label' data-placement='top' data-toggle='tooltip' title='
+    Class probabilities are derived from a random forest classifier.
+    Variables are classified into the broad groups: CEPH, RRAB, RRC/RRD,
+    ROT, SR/IRR, M, DSCT and ECL. The output classification of the RF
+    classifier is the class with the highest probability. A Class
+    probability of &gt;0.9 is recommended to obtain the best classifications.
+    '>Class Probability</label>
+<span class='input-group'>
+<span class='input-group-addon'>Min</span>
+<input class='form-control' id='class_prob-min' name='class_prob_min' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label' style='opacity: 0'>class_prob Max</label>
+<span class='input-group'>
+<span class='input-group-addon'>Max</span>
+<input class='form-control' id='class_prob-max' name='class_prob_max' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label' data-placement='top' data-toggle='tooltip' title='
+    The Gaia DR2 parallax divided by the error in the parallax.
+    '>Parallax/Error</label>
+<span class='input-group'>
+<span class='input-group-addon'>Min</span>
+<input class='form-control' id='parallax_over_err-min' max='100' min='0' name='parallax_over_err_min' step='0.01' type='number' value=''>
+</span>
+</div>
+<div class='col-md-2 form-group form-group-sm'>
+<label class='control-label' style='opacity: 0'>parallax_over_err Max</label>
+<span class='input-group'>
+<span class='input-group-addon'>Max</span>
+<input class='form-control' id='parallax_over_err-max' max='100' min='0' name='parallax_over_err_max' step='0.01' type='number' value=''>
+</span>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-3 form-group form-group-sm'>
+<label class='control-label' for='name'>ASAS-SN or Other Name</label>
+<input class='form-control' id='name' name='name' type='text' value=''>
+</div>
+<div class='col-md-3 form-group form-group-sm'>
+<label class='control-label' for='category-select'>Variable Type</label>
+<div>
+<span id='multiselect-native-true'>
+<select class='form-control multi-select-input-grouped' id='category-select' multiple name='variable_type[]'>
+<optgroup label='Rotational Variables'>
+<option value='ROT'>
+ROT (Spotted stars showing rotational modulation)
+</option>
+</optgroup>
+<optgroup label='Delta Scuti'>
+<option value='DSCT'>
+DSCT (δ Scuti type variables)
+</option>
+<option value='HADS'>
+HADS (High amplitude δ Scuti type variables)
+</option>
+</optgroup>
+<optgroup label='Cepheids'>
+<option value='CWA'>
+CWA ( W Virginis type variables with P &gt; 8d)
+</option>
+<option value='CWB'>
+CWB ( W Virginis type variables with P &lt; 8d)
+</option>
+<option value='DCEP'>
+DCEP ( δ Cephei-type/classical Cepheid variables)
+</option>
+<option value='DCEPS'>
+DCEPS (δ Cephei-type variables with almost symmetrical light curves)
+</option>
+<option value='RVA'>
+RVA (RV Tauri variables)
+</option>
+</optgroup>
+<optgroup label='Mira Variables'>
+<option value='M'>
+M (Mira variables)
+</option>
+</optgroup>
+<optgroup label='Eclipsing Binaries'>
+<option value='EA'>
+EA (Detached Algol-type binaries)
+</option>
+<option value='EB'>
+EB (Beta Lyrae type binaries)
+</option>
+<option value='EW'>
+EW (W Ursae Majoris type binaries)
+</option>
+<option value='ELL'>
+ELL
+</option>
+</optgroup>
+<optgroup label='Irregular Variables'>
+<option value='YSO'>
+YSO (Young Stellar Objects)
+</option>
+<option value='L'>
+L (Red irregular variables)
+</option>
+<option value='GCAS'>
+GCAS (Rapidly rotating early type stars with mass outflow)
+</option>
+</optgroup>
+<optgroup label='Semi-Regular Variables'>
+<option value='SR'>
+SR (Long period semi-regular variables)
+</option>
+<option value='SRD'>
+SRD (&#39;yellow&#39; semi-regular variables)
+</option>
+<option value='LSP'>
+LSP
+</option>
+</optgroup>
+<optgroup label='Uncertain Classifications'>
+<option value='GCAS%3A'>
+GCAS: (Suspected GCAS variables)
+</option>
+<option value='ROT%3A'>
+ROT: (Suspected rotational variables)
+</option>
+<option value='SR%3A'>
+SR: (Suspected semi-regular variables)
+</option>
+<option value='VAR'>
+VAR (Variable star of unspecified type)
+</option>
+<option value='RRAB%3A'>
+RRAB: (Suspected RRAB variables)
+</option>
+<option value='DSCT%3A'>
+DSCT: (Suspected DSCT: variables)
+</option>
+<option value='M%3A'>
+M: (Suspected Mira variables)
+</option>
+</optgroup>
+<optgroup label='RR Lyrae'>
+<option value='RRAB'>
+RRAB (RR Lyrae variables with asymmetric light curves)
+</option>
+<option value='RRC'>
+RRC (RR Lyrae variables with nearly symmetric light curves)
+</option>
+<option value='RRD'>
+RRD (Double Mode RR Lyrae variables)
+</option>
+</optgroup>
+<optgroup label='R Coronae Borealis Variables'>
+<option value='RCB'>
+RCB
+</option>
+<option value='RCB%3A'>
+RCB:
+</option>
+<option value='DYPer'>
+DYPer
+</option>
+</optgroup>
+<optgroup label='Cataclysmic Variables'>
+<option value='CV'>
+CV
+</option>
+<option value='CV%2BE'>
+CV+E
+</option>
+<option value='CV%3A'>
+CV:
+</option>
+<option value='UG'>
+UG
+</option>
+<option value='UGER'>
+UGER
+</option>
+<option value='UGSS'>
+UGSS
+</option>
+<option value='UGSU'>
+UGSU
+</option>
+<option value='UGSU%2BE'>
+UGSU+E
+</option>
+<option value='UGSU%3A'>
+UGSU:
+</option>
+<option value='UGWZ'>
+UGWZ
+</option>
+<option value='UGZ'>
+UGZ
+</option>
+<option value='AM'>
+AM
+</option>
+<option value='AM%2BE'>
+AM+E
+</option>
+<option value='AM%3A'>
+AM:
+</option>
+<option value='DQ'>
+DQ
+</option>
+<option value='DQ%3A'>
+DQ:
+</option>
+</optgroup>
+<optgroup label='Flare stars'>
+<option value='UV'>
+UV
+</option>
+<option value='UV%3A'>
+UV:
+</option>
+</optgroup>
+<optgroup label='Other Rotational Variables'>
+<option value='SXARI'>
+SXARI
+</option>
+<option value='SXARI%3A'>
+SXARI:
+</option>
+<option value='HB'>
+HB
+</option>
+<option value='R'>
+R
+</option>
+</optgroup>
+<optgroup label='Other Variables'>
+<option value='SXPHE'>
+SXPHE
+</option>
+<option value='PPN'>
+PPN
+</option>
+<option value='PVTELI'>
+PVTELI
+</option>
+<option value='V1093HER'>
+V1093HER
+</option>
+<option value='V361HYA'>
+V361HYA
+</option>
+<option value='V838MON'>
+V838MON
+</option>
+<option value='WR'>
+WR
+</option>
+<option value='ZAND'>
+ZAND
+</option>
+<option value='SDOR'>
+SDOR
+</option>
+<option value='SDOR%3A'>
+SDOR:
+</option>
+<option value='HMXB'>
+HMXB
+</option>
+<option value='LMXB'>
+LMXB
+</option>
+</optgroup>
+<optgroup label='Pulsating White Dwarfs'>
+<option value='ZZ'>
+ZZ
+</option>
+<option value='ZZ%3A'>
+ZZ:
+</option>
+<option value='ZZA'>
+ZZA
+</option>
+<option value='ZZB'>
+ZZB
+</option>
+<option value='ZZLep'>
+ZZLep
+</option>
+<option value='ZZO'>
+ZZO
+</option>
+</optgroup>
+</select>
+</span>
+</div>
+</div>
+<div class='col-md-3 form-group form-group-sm'>
+<label class='control-label' for='references-select'>References</label>
+<div>
+<select class='multi-select-input' id='references-select' multiple name='references[]'>
+<option selected value='I'>
+The ASAS-SN Catalog of Variable Stars: I
+</option>
+<option selected value='II'>
+The ASAS-SN Catalog of Variable Stars: II
+</option>
+<option selected value='III'>
+The ASAS-SN Catalog of Variable Stars: III
+</option>
+<option selected value='IV'>
+The ASAS-SN Catalog of Variable Stars: IV
+</option>
+<option selected value='V'>
+The ASAS-SN Catalog of Variable Stars: V
+</option>
+<option selected value='IX'>
+The ASAS-SN Catalog of Variable Stars: IX
+</option>
+</select>
+</div>
+</div>
+<div class='col-md-3 form-group form-group-sm'>
+<label class='control-label'>Sort By</label>
+<div class='row'>
+<div class='col-md-8'>
+<select class='form-control single-select-input' name='sort_by'>
+<option value='raj2000'>
+RAJ2000
+</option>
+<option value='dej2000'>
+DEJ2000
+</option>
+<option value='distance'>
+Distance from Search
+</option>
+<option value='mean_vmag'>
+Mean VMag
+</option>
+<option value='amplitude'>
+Amplitude
+</option>
+<option value='period'>
+Period
+</option>
+<option value='dist'>
+Distance (pc)
+</option>
+<option value='lksl_statistic'>
+LKSL Statistic
+</option>
+<option value='class_probability'>
+Classification Probability
+</option>
+<option value='rfr_score'>
+RF Regression Score
+</option>
+<option value='bp_rp'>
+BP-RP
+</option>
+<option value='j_k'>
+J-K
+</option>
+<option value='w1_w2'>
+W1-W2
+</option>
+<option value='w3_w4'>
+W3-W4
+</option>
+</select>
+</div>
+<div class='col-md-4'>
+<select class='form-control single-select-input' name='sort_order'>
+<option selected value='asc'>
+Ascending
+</option>
+<option value='desc'>
+Descending
+</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-12 checkbox-group'>
+<div class='checkbox'>
+<label for='non-periodic'>
+<input checked id='non-periodic' name='show_non_periodic' style='position: inherit;' type='checkbox'>
+<span>Show non-periodic variables</span>
+</label>
+</div>
+<div class='checkbox'>
+<label for='no_class_probability'>
+<input checked id='no_class_probability' name='show_without_class' style='position: inherit;' type='checkbox'>
+<span>Show variables without ASAS-SN classifications</span>
+</label>
+</div>
+<div class='checkbox'>
+<label for='asassn_discov_only'>
+<input id='asassn_discov_only' name='asassn_discov_only' style='position: inherit;' type='checkbox'>
+<span>Show ASAS-SN Discoveries Only</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class='panel-footer'>
+<div class='info'>
+<div class='query-total'>
+Total Light Curves Found:
+<strong>0</strong>
+</div>
+<div class='extra-links'>
+<a href="/">Can&#39;t find what your looking for? Go to the Live Computation Sky Patrol Page</a>
+or
+<a href="/variables/lookup">Lookup by Name</a>
+</div>
+</div>
+<div class='actions'>
+<a class="btn btn-sm btn-default" href="/variables">Reset</a>
+<input class='btn btn-sm btn-primary' id='variables-stars-db-search-submit' type='button' value='Search'>
+</div>
+</div>
+</div>
+</div>
+</form>
+<div class='panel panel-default panel-dense'>
+<div class='panel-heading'>
+<h5>Export V-Band Data</h5>
+</div>
+<div class='panel-body'>
+<div class='horizontal-btn-group'>
+<a class="btn btn-primary" target="_blank" href="https://drive.google.com/drive/folders/1IAtztpddDeh5XOiuxmLWdLUaT_quXkug?usp=sharing">Full Dataset</a>
+<a class="btn btn-primary" href="/variables.csv?action=index&amp;asassn_discov_only=false&amp;controller=variables&amp;dec=-57.07821822202367&amp;ra=94.78791015296669&amp;radius=2&amp;show_non_periodic=true&amp;show_without_class=true">CSV Catalog (Up to 1,000 Variables)</a>
+<a class="btn btn-primary" href="/variables.tar?action=index&amp;asassn_discov_only=false&amp;controller=variables&amp;dec=-57.07821822202367&amp;ra=94.78791015296669&amp;radius=2&amp;show_non_periodic=true&amp;show_without_class=true">Tarball (Up to 1,000 Variables)</a>
+</div>
+</div>
+</div>
+<div class='panel panel-default panel-dense'>
+<div class='panel-heading'>
+<h5>Export g-Band Data</h5>
+</div>
+<div class='panel-body'>
+<div class='horizontal-btn-group'>
+<a class="btn btn-primary" target="_blank" href="https://drive.google.com/drive/folders/1gxcIokRsw1eyPmbPZ0-C8blfRGItSOAu?usp=sharing">Full Dataset and CSV Catalog</a>
+</div>
+</div>
+</div>
+<div class='panel panel-info panel-dense hidden' id='export-progress-panel'>
+<div class='panel-heading' id='export-progress-panel-head-loading'>
+<div style='display: flex; align-items: center;'>
+<div class='lds-ring'>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+<h5 style='margin-left: 8px;'>Creating Export</h5>
+</div>
+</div>
+<div class='panel-heading hidden' id='export-progress-panel-head-done'>
+<h5>Export Ready</h5>
+</div>
+<div class='panel-heading hidden' id='export-progress-panel-head-error'>
+<h5>Error Creating Export</h5>
+</div>
+<div class='panel-body' id='export-progress-panel-body-loading'>
+<p style='margin-bottom: 0;'>
+Your export is being created and the download will start automatically
+when finished.
+<strong>Do not refresh the page.</strong>
+</p>
+</div>
+<div class='panel-body hidden' id='export-progress-panel-body-done'>
+<a id='export-download-link' target='blank'>
+If the download did not start automatically, click here to download.
+</a>
+</div>
+<div class='panel-body hidden' id='export-progress-panel-body-error'>
+<p style='margin-bottom: 0;'>
+A error occurred while creating the export. Please refresh the page
+and try again.
+</p>
+</div>
+</div>
+<div class='panel panel-default table-panel'>
+<table class='table table-striped table-hover'>
+<thead>
+<th>ASAS-SN Name</th>
+<th>Other Names</th>
+<th>Right Ascension</th>
+<th>Declination</th>
+<th>Distance from Search (arcsec)</th>
+<th>Mean VMag</th>
+<th>Amplitude</th>
+<th>Period</th>
+<th>Type</th>
+</thead>
+<tbody>
+
+</tbody>
+</table>
+<div class='panel-footer'>
+<div class='pagination-position-text'>
+<span class="pagy-info">No Variables found</span>
+</div>
+
+<nav class='pagination-nav pagy-nav'>
+<ul class='pagination'>
+<li class='page-item prev disabled'>
+<a class='page-link' href='javascript:void(0)'>
+&lsaquo;&nbsp;Prev
+</a>
+</li>
+<li class='page-item active'><a href="/variables?ra=94.78791015296669&dec=-57.07821822202367&radius=2&show_non_periodic=true&show_without_class=true&asassn_discov_only=false&page=1"  class=page-link >1</a></li>
+<li class='page-item next disabled'>
+<a class='page-link' href='javascript:void(0)'>
+Next&nbsp;&rsaquo;
+</a>
+</li>
+</ul>
+</nav>
+
+</div>
+</div>
+
+    </main>
+
+
+  <a href="/f61217a453d065015090cd27fd6fb2c2"> </a></body>
+</html>

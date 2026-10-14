@@ -1,5 +1,9 @@
 # Candidate evidence index
 
+## Stellar-system candidates
+
+[Stellar research report](../STELLAR_RESEARCH_REPORT.md): strongest is [background TIC273879360](stellar_systems/tic273879360/README.md), with four-sector source-attributed deep primary/secondary eclipses and no binary classification in recorded finite checks. [Giant-image TIC260352037](../reports/stellar_systems/hidden_sources.md) contains a robust unresolved short-period eclipse signal. Existing sky positions were already catalogued; masses and first-discovery status remain unconfirmed. [TIC197764088](stellar_systems/tic197764088/README.md) is a preserved known-neighbor falsification.
+
 No object is promoted as a credible new exoplanet candidate. These dossiers preserve investigated signals and their failures, so that attractive periodograms are not mistaken for discoveries and later research can revisit evidence.
 
 ## Broad-phase evidence
