@@ -1,0 +1,8 @@
+{
+  "url": "https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+s.GaiaDR3%2C+COUNT%28%2A%29+AS+n%2C+MIN%28s.MJD%29+AS+tmin%2C+MAX%28s.MJD%29+AS+tmax%2C+MIN%28s.RVcomp1%29+AS+rvmin%2C+MAX%28s.RVcomp1%29+AS+rvmax+FROM+%22J%2Fother%2FPASA%2F42.51%2Fallspec%22+AS+s+JOIN+%22J%2Fother%2FPASA%2F42.51%2Fallstar%22+AS+a+ON+s.GaiaDR3+%3D+a.GaiaDR3+WHERE+s.flagSp+%3D+0+AND+s.flagRed+%3D+0+AND+s.e_RVcomp1+%3E+0+AND+s.e_RVcomp1+%3C+2+AND+s.SNRpxCCD2+%3E+30+AND+s.logg+%3E+3.7+AND+s.Teff+BETWEEN+4000+AND+7000+AND+a.flagSp+%3D+0+GROUP+BY+s.GaiaDR3+HAVING+COUNT%28%2A%29+%3E%3D+3",
+  "query": "SELECT s.GaiaDR3, COUNT(*) AS n, MIN(s.MJD) AS tmin, MAX(s.MJD) AS tmax, MIN(s.RVcomp1) AS rvmin, MAX(s.RVcomp1) AS rvmax FROM \"J/other/PASA/42.51/allspec\" AS s JOIN \"J/other/PASA/42.51/allstar\" AS a ON s.GaiaDR3 = a.GaiaDR3 WHERE s.flagSp = 0 AND s.flagRed = 0 AND s.e_RVcomp1 > 0 AND s.e_RVcomp1 < 2 AND s.SNRpxCCD2 > 30 AND s.logg > 3.7 AND s.Teff BETWEEN 4000 AND 7000 AND a.flagSp = 0 GROUP BY s.GaiaDR3 HAVING COUNT(*) >= 3",
+  "http_status": 200,
+  "bytes": 120913,
+  "sha256": "fa08ebc5117322785e6561c2a6056c954941e68fc55589f26f10cadc03d73ce3",
+  "checked_utc": "2026-10-15T02:01:24.559512+00:00"
+}

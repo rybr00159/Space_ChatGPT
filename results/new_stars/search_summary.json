@@ -1,0 +1,103 @@
+{
+  "method_sha256": "1f645d3bb100c42369b41fcce6dbda42dddca53852ee0c251acbb1889c9042f4",
+  "imaging": {
+    "distinct_primary_fields": 76,
+    "pilot_fields": 12,
+    "expanded_fields": 64,
+    "pilot_peaks": 84,
+    "expanded_peaks": 951,
+    "gaia_missing_but_deeper_catalogued_peaks": 495,
+    "validated_uncatalogued_stars": 0,
+    "one_faint_peak_unverified": true,
+    "expanded_last_peak_saturated_in_grz": true
+  },
+  "infrared": {
+    "selected_catwise_rows": 1946,
+    "successful_fields": 10,
+    "failed_fixed_fields": 2,
+    "successful_solid_angle_deg2": 784.8998608178113,
+    "gaia_unmatched": 250,
+    "gaia_query_failures": 0,
+    "epoch_tested": 260,
+    "gaia_unmatched_epoch_consistent": 27,
+    "epoch_consistent_unmatched_already_tic_star": 27,
+    "optical_tested": 28,
+    "apparent_optical_motion_matches": 1,
+    "last_optical_match_falsified_as_stationary_sdss_galaxy": true,
+    "validated_new_stars": 0
+  },
+  "astrometric_companions": {
+    "primary_selection": "parallax between 0.5 and 0.98 and parallax_over_error>15 and phot_g_mean_mag<16.5 and pm>10 and ruwe<1.4 and abs(b)>30 and ra between 0 and 5 and dec between -60 and -40",
+    "primary_rows": 4103,
+    "neighbor_rows": 1086,
+    "unique_neighbor_sources": 1081,
+    "primaries_with_neighbors": 941,
+    "unusable_neighbor_astrometry": 210,
+    "screened_pairs_directed": 16,
+    "unique_screened_pairs": 11,
+    "shifted_controls": {
+      "0.2": {
+        "neighbor_rows": 930,
+        "surviving_matches": 0,
+        "unusable_astrometry": 188
+      },
+      "0.4": {
+        "neighbor_rows": 952,
+        "surviving_matches": 0,
+        "unusable_astrometry": 177
+      },
+      "0.6": {
+        "neighbor_rows": 871,
+        "surviving_matches": 0,
+        "unusable_astrometry": 172
+      }
+    },
+    "caveat": "All sources were already Gaia-catalogued; only associations could be new. Selection outside El-Badry 2021 parallax >1 mas scope is deliberate, not evidence of novelty.",
+    "known_pairs": 5,
+    "unrecognized_pairs_in_bounded_checks": 6,
+    "positive_controls": "El-Badry exact pair, Tian exact pair, SUPERWIDE high- and low-parallax-error tables, WDS same cone endpoint, SIMBAD same cone endpoint, and known 4.826 arcsec Gaia pair measurement all recovered",
+    "provenance_snapshots_verified": 96,
+    "failed_http_responses_preserved": 19,
+    "monte_carlo_caveat": "20,000 independent-source Gaussian draws with Gaia within-source parallax/PM covariance plus 0.02 mas and 0.03 mas/yr floors. Quantiles propagate measurement error only; no radial velocities, line-of-sight separation or binding prior.",
+    "changed_dr2_aliases": [
+      {
+        "dr2_source_id": "4991594601816875264",
+        "dr3_source_id": "4991594606112330752",
+        "angular_distance": "0.041560624",
+        "magnitude_difference": "-0.012626648",
+        "proper_motion_propagation": "true"
+      }
+    ],
+    "code_sha256": "f557a705153e9b3c366100a6f1693bfb7431e3f418f558d1ef4539ceb0a7ac41",
+    "poisson_control_interpretation": "Zero matches in 12,309 shifted-primary trials. A homogeneous independent Poisson model gives 95% upper expectation approximately one accidental passing directed pair in the 4,103-primary native sample; Galactic correlations and mismatched position systematics limit that approximation. It is not an individual binding probability."
+  },
+  "spectroscopy": {
+    "repeat_stars": 3430,
+    "repeat_quality_visits": 13176,
+    "strong_amplitude_screened": 40,
+    "already_binary_flagged": 39,
+    "remaining_strong_lead_rejected_for_reduction_quality": true,
+    "strict_unflagged_repeat_stars": 1799,
+    "strict_amplitude_above3kms": 7,
+    "documented_gaia_nss_solutions": 3,
+    "additional_gaia_rv_variability_cases": 2,
+    "provisional_sparse_rv_leads": 2,
+    "component_masses_measured": 0
+  },
+  "same_field_rv_controls": {
+    "field543": {
+      "paired_stars": 94,
+      "median_new_minus_old_kms": 0.14067199999999858,
+      "robust_scatter_kms": 0.5015146542000001,
+      "caveat": "Control includes real binaries and selection effects; scatter is not a calibrated survey false-alarm model."
+    },
+    "field469": {
+      "paired_stars": 54,
+      "median_new_minus_old_kms": -0.10454574999999933,
+      "robust_scatter_kms": 0.44891423010000014,
+      "caveat": "Control includes real binaries and selection effects; scatter is not a calibrated survey false-alarm model."
+    }
+  },
+  "conclusion": "No previously unknown/uncatalogued star established. Two cleaner possible unreported associations and two provisional RV leads remain among already catalogued stars.",
+  "counting_caveat": "Tracks overlap and have different selection units; do not add their star/peak/catalog-query counts into a claimed independent survey total."
+}

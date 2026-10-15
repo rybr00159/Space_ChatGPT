@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>Best practices for GALAH DR4</title>
+
+  
+  <meta name="author" content="GALAH Survey">
+  
+
+  <meta name="description" content="Fourth Data Release">
+
+  
+
+  
+
+  <link rel="alternate" type="application/rss+xml" title="GALAH Survey" href="https://www.galah-survey.org/feed.xml">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/custom.css">
+    
+  
+
+  
+
+  
+
+  
+
+  
+  <meta property="og:site_name" content="GALAH Survey">
+  <meta property="og:title" content="Best practices for GALAH DR4">
+  <meta property="og:description" content="Fourth Data Release">
+
+  
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.galah-survey.org/dr4/using_the_data/">
+  <link rel="canonical" href="https://www.galah-survey.org/dr4/using_the_data/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="Best practices for GALAH DR4">
+  <meta property="twitter:description" content="Fourth Data Release">
+
+  
+
+  
+
+
+  
+
+  
+
+  
+    <script defer data-domain="galah-survey.org" src="https://plausible.io/js/plausible.js"></script>
+  
+
+  <!--  -->
+
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand navbar-brand-logo" href="https://www.galah-survey.org/"><img alt="GALAH Survey Logo" src="/assets/img/logo_mobile.png" class="mobile" /></a>
+    <a class="navbar-brand navbar-brand-logo" href="https://www.galah-survey.org/"><img alt="GALAH Survey Logo" src="/assets/img/logo_desktop.png" class="desktop" /></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GALAH&nbsp;2</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/galah_2/overview">Overview</a>
+            </div>
+          </li>
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data&nbsp;Release&nbsp;4</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/dr4/overview">Overview</a>
+                  <a class="dropdown-item" href="/dr4/the_catalogues">The catalogues</a>
+                  <a class="dropdown-item" href="/dr4/the_spectra">The spectra</a>
+                  <a class="dropdown-item" href="/dr4/using_the_data">Best practices</a>
+                  <a class="dropdown-item" href="/dr4/caveats">Caveats</a>
+                  <a class="dropdown-item" href="/dr4/flags">Flags</a>
+                  <a class="dropdown-item" href="/dr4/table_schema">Table schema</a>
+                  <a class="dropdown-item" href="/dr4/cite_us">Cite us</a>
+            </div>
+          </li>
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data&nbsp;Release&nbsp;3</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/dr3/overview">Overview</a>
+                  <a class="dropdown-item" href="/dr3/the_catalogues">The catalogues</a>
+                  <a class="dropdown-item" href="/dr3/the_spectra">The spectra</a>
+                  <a class="dropdown-item" href="/dr3/using_the_data">Best practices</a>
+                  <a class="dropdown-item" href="/dr3/caveats">Caveats</a>
+                  <a class="dropdown-item" href="/dr3/flags">Flags</a>
+                  <a class="dropdown-item" href="/dr3/table_schema">Table schema</a>
+                  <a class="dropdown-item" href="/dr3/cite_us">Cite us</a>
+            </div>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/science/galactic_archaeology">Galactic&nbsp;archaeology</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The&nbsp;Survey</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/survey/progress">Progress</a>
+                  <a class="dropdown-item" href="/survey/goals">Goals</a>
+                  <a class="dropdown-item" href="/survey/people">People</a>
+                  <a class="dropdown-item" href="/survey/structure">Structure</a>
+                  <a class="dropdown-item" href="/survey/funding">Funding</a>
+            </div>
+          </li>
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The&nbsp;Details</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/details/workflow">Workflow</a>
+                  <a class="dropdown-item" href="/details/facilities">Facilities</a>
+                  <a class="dropdown-item" href="/details/observing">Observing</a>
+                  <a class="dropdown-item" href="/details/reduction">Data reduction</a>
+                  <a class="dropdown-item" href="/details/analysis">Analysis</a>
+            </div>
+          </li>
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The&nbsp;Results</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/science/results">Key results</a>
+                  <a class="dropdown-item" href="/science/2021-meeting">2021 Science Meeting</a>
+                  <a class="dropdown-item" href="/science/galah_publications">GALAH publications</a>
+                  <a class="dropdown-item" href="/science/external_publications">External publications</a>
+            </div>
+          </li>
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/contact/join_galah">Join GALAH</a>
+                  <a class="dropdown-item" href="/contact/help">Questions and help</a>
+            </div>
+          </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" id="nav-search-link" href="#" title="Search">
+            <span id="nav-search-icon" class="fa fa-search"></span>
+            <span id="nav-search-text">Search</span>
+          </a>
+        </li></ul>
+  </div>
+
+  
+
+  
+
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    var searchjson = '[ \
+       \
+       \
+        { \
+          "title"    : "2021 GALAH Science Meeting", \
+          "category" : "page", \
+          "url"      : "/science/2021-meeting/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Analysis", \
+          "category" : "page", \
+          "url"      : "/details/analysis/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Known caveats for GALAH DR4", \
+          "category" : "page", \
+          "url"      : "/dr4/caveats/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Known caveats for GALAH DR3", \
+          "category" : "page", \
+          "url"      : "/dr3/caveats/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "How to credit the GALAH team", \
+          "category" : "page", \
+          "url"      : "/dr4/cite_us/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "How to credit us", \
+          "category" : "page", \
+          "url"      : "/dr3/cite_us/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Publications using GALAH data", \
+          "category" : "page", \
+          "url"      : "/science/external_publications/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Facilities", \
+          "category" : "page", \
+          "url"      : "/details/facilities/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Flags in GALAH DR4", \
+          "category" : "page", \
+          "url"      : "/dr4/flags/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Flags in GALAH DR3", \
+          "category" : "page", \
+          "url"      : "/dr3/flags/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Funding", \
+          "category" : "page", \
+          "url"      : "/survey/funding/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Galactic Archaeology", \
+          "category" : "page", \
+          "url"      : "/science/galactic_archaeology/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH Survey publications", \
+          "category" : "page", \
+          "url"      : "/science/galah_publications/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH Survey Science goals", \
+          "category" : "page", \
+          "url"      : "/survey/goals/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Help?", \
+          "category" : "page", \
+          "url"      : "/contact/help/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH Survey", \
+          "category" : "page", \
+          "url"      : "/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Join us", \
+          "category" : "page", \
+          "url"      : "/contact/join_galah/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Observing and target selection", \
+          "category" : "page", \
+          "url"      : "/details/observing/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH DR4", \
+          "category" : "page", \
+          "url"      : "/dr4/overview/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH 2 Overview", \
+          "category" : "page", \
+          "url"      : "/galah_2/overview/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH DR3", \
+          "category" : "page", \
+          "url"      : "/dr3/overview/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "People", \
+          "category" : "page", \
+          "url"      : "/survey/people/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Survey progress", \
+          "category" : "page", \
+          "url"      : "/survey/progress/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Reduction", \
+          "category" : "page", \
+          "url"      : "/details/reduction/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Science Results", \
+          "category" : "page", \
+          "url"      : "/science/results/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Survey Management", \
+          "category" : "page", \
+          "url"      : "/survey/structure/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Table Schema", \
+          "category" : "page", \
+          "url"      : "/dr4/table_schema/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Table Schema", \
+          "category" : "page", \
+          "url"      : "/dr3/table_schema/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Tag Index", \
+          "category" : "page", \
+          "url"      : "/tags/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH DR4 catalogues", \
+          "category" : "page", \
+          "url"      : "/dr4/the_catalogues/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH DR3 catalogues", \
+          "category" : "page", \
+          "url"      : "/dr3/the_catalogues/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH DR4 spectra", \
+          "category" : "page", \
+          "url"      : "/dr4/the_spectra/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "GALAH DR3 spectra", \
+          "category" : "page", \
+          "url"      : "/dr3/the_spectra/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Best practices for GALAH DR4", \
+          "category" : "page", \
+          "url"      : "/dr4/using_the_data/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Best practices for GALAH DR3", \
+          "category" : "page", \
+          "url"      : "/dr3/using_the_data/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Workflow", \
+          "category" : "page", \
+          "url"      : "/details/workflow/", \
+          "date"     : "January 1, 1970" \
+        } \
+       \
+    ]';
+    searchjson = JSON.parse(searchjson);
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: searchjson
+    });
+  </script>
+</div>
+
+
+
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="page-heading">
+          <h1>Best practices for GALAH DR4</h1>
+          
+            
+              <hr class="small">
+              <span class="page-subheading">Fourth Data Release</span>
+            
+          
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md " role="main">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+      
+
+      <p class="main_blockquote">On this page we provide advice and instructions for using the GALAH DR4 catalogues. We would recommend taking the time to read <a href="https://arxiv.org/abs/2409.19858v1">Buder <em>et al.</em> (2024)</a>, which supplies even more information and quality assessment for GALAH DR4.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#recommended-catalogue" id="markdown-toc-recommended-catalogue">Recommended catalogue</a></li>
+  <li><a href="#recommended-flag-values" id="markdown-toc-recommended-flag-values">Recommended flag values</a></li>
+  <li><a href="#recommended-columns" id="markdown-toc-recommended-columns">Recommended columns</a></li>
+  <li><a href="#joining-galah-dr4-catalogues" id="markdown-toc-joining-galah-dr4-catalogues">Joining GALAH DR4 catalogues</a></li>
+</ul>
+
+<hr />
+
+<h3 id="recommended-catalogue">Recommended catalogue</h3>
+
+<p class="box-success">We highly recommend using the <code class="language-plaintext highlighter-rouge">galah_dr4_allstar_240705.fits</code> catalogue if you want to work with the GALAH DR4 stellar parameters and elemental abundances.</p>
+
+<p class="box-warning">For more information, see our <a href="/dr4/the_catalogues">Catalogue documentation</a>.</p>
+
+<p>If your science case contains stellar parameters and elemental abundances, then we recommend the <code class="language-plaintext highlighter-rouge">galah_dr4_allstar_240705.fits</code> catalogue. It contains one entry per star.</p>
+
+<p>There is an extended version called <code class="language-plaintext highlighter-rouge">galah_dr4_allspec_240705.fits</code> that contains one entry per observation. This table is for expert use only.</p>
+
+<p>Consult the <a href="/dr4/the_catalogues">catalogue documentation</a> for details on the catalogues and acquiring them. If you just want the entire <code class="language-plaintext highlighter-rouge">galah_dr4_allstar_240705</code> catalogue, it can be directly <a href="https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/catalogs/">directly downloaded</a>, or with <code class="language-plaintext highlighter-rouge">wget</code> (removing the <code class="language-plaintext highlighter-rouge">--spider</code> flag):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">--spider</span> https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/catalogs/galah_dr4_allstar_240705.fits
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="recommended-flag-values">Recommended flag values</h3>
+
+<p class="box-success">Overall, we make three recommendations: (1) <code class="language-plaintext highlighter-rouge">snr_px_ccd3 &gt; 30</code>; (2) only stellar parameters for stars with <code class="language-plaintext highlighter-rouge">flag_sp == 0</code>; (3) only elemental abundances with <code class="language-plaintext highlighter-rouge">flag_X_fe == 0</code>.</p>
+
+<p class="box-warning">For more information, see our <a href="/dr4/flags">Flag bitmask documentation</a>.</p>
+
+<p>The main recommended <code class="language-plaintext highlighter-rouge">galah_dr4_allstar_240705</code> catalogue contains a number of flags. For most science cases, the most important to consider is the spectroscopic quality flag (<code class="language-plaintext highlighter-rouge">flag_sp</code>). <code class="language-plaintext highlighter-rouge">flag_sp</code> folds in many potential sources of errors in the input values (e.g., missing data, very low signal spectra, poor analysis results, possible binarity). <strong>By default, we recommend that users only consider stellar parameters (T<sub>eff</sub>, log <em>g</em>, [Fe/H], broadening velocity, radial velocity) for stars with <code class="language-plaintext highlighter-rouge">flag_sp == 0</code>.</strong></p>
+
+<p>Due to an error in calculating flag_fe_h for DR4, it is not meaningful as an indicator of the reliability of the derived metallicity, and should not be used. For the remaining elements, there are useful quality flags. For each indivudual elemental abundance <code class="language-plaintext highlighter-rouge">X_fe</code> there is a <code class="language-plaintext highlighter-rouge">flag_X_fe</code> that indicates problems with the elemental abundance determination. <strong>We strongly recommend only considering the abundance of element <code class="language-plaintext highlighter-rouge">X</code> when <code class="language-plaintext highlighter-rouge">flag_X_fe == 0</code></strong>. As for all of our previous GALAH releases, we want to stress that we discourage the use of element abundances with <code class="language-plaintext highlighter-rouge">flag_X_fe &gt; 0</code> without consideration of the possible systematics that these flagged measurements can introduce.</p>
+
+<p><strong>We would recommend considering only stars with a red camera signal to noise per pixel <code class="language-plaintext highlighter-rouge">snr_px_ccd3 &gt; 30</code>.</strong></p>
+
+<hr />
+
+<h3 id="recommended-columns">Recommended columns</h3>
+
+<p class="box-success">For stellar parameters and elemental abundances, use the values found in <code class="language-plaintext highlighter-rouge">galah_dr4_allstar_240705</code> catalogue. We do <strong>not</strong> recommend values found only in the <code class="language-plaintext highlighter-rouge">galah_dr4_allspec_240705</code> catalogue as these are meant for expert use and are typically for diagnostic purposes.</p>
+
+<p class="box-warning">For more information, see our <a href="/dr4/table_schema">Table schema documentation</a>.
+<!---
+In the catalogues that constitute GALAH DR4, for many parameters we provide only one value, e.g., for the overall α-element abundance there is just `alpha_fe`. However, some parameters have multiple values calculated by different methods. In this section, we discuss these parameters and in most cases make a recommendation on the value to use.
+---></p>
+<ul>
+  <li><strong>For stellar luminosity, mass and age, we recommend <code class="language-plaintext highlighter-rouge">lbol</code>, <code class="language-plaintext highlighter-rouge">mass</code> and <code class="language-plaintext highlighter-rouge">age</code> in the <code class="language-plaintext highlighter-rouge">galah_dr4_allstar_240705</code> catalogue.</strong>
+    <ul>
+      <li>These are determined by Bayesian fitting to isochrones as described in <a href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.477.2966L/abstract">Lin et al. (2018)</a>.</li>
+    </ul>
+  </li>
+  <li><strong>For heliocentric distance, we recommend the <code class="language-plaintext highlighter-rouge">r_med</code> value, which is in the <code class="language-plaintext highlighter-rouge">galah_dr4_allspec_240705</code>, <code class="language-plaintext highlighter-rouge">galah_dr4_vac_dynamics_240705</code>, and <code class="language-plaintext highlighter-rouge">galah_dr4_vac_wise_tmass_gaiadr3_240705</code> tables</strong>.
+    <ul>
+      <li>This matches the <code class="language-plaintext highlighter-rouge">r_med_photogeo</code> field from Gaia DR3 except for star clusters, where we replace it with the cluster mean distance from <a href="https://ui.adsabs.harvard.edu/abs/2020A%26A...633A..99C/abstract">Cantat-Gaudin &amp; Anders (2020)</a> (for open clusters) or <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.505.5957B/abstract">Baumgardt &amp; Vasiliev (2021)</a> (for globular clusters).
+&lt;!—</li>
+      <li><code class="language-plaintext highlighter-rouge">distance_bstep</code> was calculated as part of the estimation of age, mass, radius etc found in the <code class="language-plaintext highlighter-rouge">GALAH_DR3_VAC_ages_v2</code> catalogue.</li>
+      <li><code class="language-plaintext highlighter-rouge">distance_bstep</code> was used for the vast majority of stars (96 per cent) in the calculation of Galactic kinematic and dynamic parameters in <code class="language-plaintext highlighter-rouge">GALAH_DR3_VAC_dynamics_v2</code>. For the other 4 per cent of the stars we mostly use the photogeometric distances <code class="language-plaintext highlighter-rouge">r_med_photogeo</code> in the <code class="language-plaintext highlighter-rouge">GALAH_DR3_VAC_GaiaEDR3_v2</code> table as calculated by <a href="https://doi.org/10.3847/1538-3881/abd806">Bailer-Jones <em>et al.</em> (2020)</a>. The distance used for a given spectrum is provided by the <code class="language-plaintext highlighter-rouge">use_dist_flag</code> in the <code class="language-plaintext highlighter-rouge">GALAH_DR3_VAC_dynamics_v2</code> table.
+  —&gt;</li>
+    </ul>
+  </li>
+  <li><strong>For reddening, we recommend the <code class="language-plaintext highlighter-rouge">ebv</code> value from the <code class="language-plaintext highlighter-rouge">galah_dr4_allstar_240705</code> table</strong>.
+    <ul>
+      <li>This is from <a href="https://doi.org/10.1086/305772">Schlegel <em>et al.</em> (1998)</a> and was used as part of the estimation of the bolometric corrections.
+&lt;!—</li>
+    </ul>
+  </li>
+  <li>Distinct from the iron abundance ([Fe/H]) calculated from the spectra, the <code class="language-plaintext highlighter-rouge">GALAH_DR3_VAC_ages_v2</code> table includes the initial and current metallicity of the star (<code class="language-plaintext highlighter-rouge">meh_ini_bstep</code> and <code class="language-plaintext highlighter-rouge">meh_act_bstep</code>) as calculated by BSTEP. These values were not used as part of the abundance analysis.</li>
+</ul>
+
+<p>This table summarizies the parameters in GALAH DR4 for which there are multiple values for a given star. We have bolded our recommended column.</p>
+
+<p>| Parameter and<br />recommended value | <code class="language-plaintext highlighter-rouge">main_allstar</code> | <code class="language-plaintext highlighter-rouge">main_allspec</code> | <code class="language-plaintext highlighter-rouge">VAC_ages</code> | <code class="language-plaintext highlighter-rouge">VAC_rv</code> | <code class="language-plaintext highlighter-rouge">VAC_GaiaEDR3</code> |
+| :—— |:— | :— | :—— |:— | :— | :— |
+| Radial velocity:<br /><strong><code class="language-plaintext highlighter-rouge">rv_galah</code></strong> | <strong><code class="language-plaintext highlighter-rouge">rv_galah</code></strong>,<br /><code class="language-plaintext highlighter-rouge">rv_gaia_dr2</code> | <strong><code class="language-plaintext highlighter-rouge">rv_galah</code></strong>,<br /><code class="language-plaintext highlighter-rouge">rv_gaia_dr2</code>,<br /><code class="language-plaintext highlighter-rouge">rv_guess</code>,<br /><code class="language-plaintext highlighter-rouge">rv_5854</code>,<br /><code class="language-plaintext highlighter-rouge">rv_6708</code>,<br /><code class="language-plaintext highlighter-rouge">rv_6722</code> |  | <strong><code class="language-plaintext highlighter-rouge">rv_galah</code></strong>,<br /><code class="language-plaintext highlighter-rouge">rv_sme_v2</code>,<br /><code class="language-plaintext highlighter-rouge">rv_sme_v1</code>,<br /><code class="language-plaintext highlighter-rouge">rv_obst</code>,<br /><code class="language-plaintext highlighter-rouge">rv_nogr_obst</code>,<br /><code class="language-plaintext highlighter-rouge">dr2_radial_velocity</code> | <code class="language-plaintext highlighter-rouge">dr2_radial_velocity</code> |
+| Effective Temperature:<br /><strong><code class="language-plaintext highlighter-rouge">teff</code></strong> | <strong><code class="language-plaintext highlighter-rouge">teff</code></strong>,<br /><code class="language-plaintext highlighter-rouge">irfm_teff</code> | <strong><code class="language-plaintext highlighter-rouge">teff</code></strong>,<br /><code class="language-plaintext highlighter-rouge">irfm_teff</code>,<br /><code class="language-plaintext highlighter-rouge">init_teff</code>,<br /><code class="language-plaintext highlighter-rouge">teff_guess</code> | <code class="language-plaintext highlighter-rouge">teff_bstep</code> |  |  |
+| Surface gravity:<br /><strong><code class="language-plaintext highlighter-rouge">logg</code></strong> | <strong><code class="language-plaintext highlighter-rouge">logg</code></strong> | <strong><code class="language-plaintext highlighter-rouge">logg</code></strong>,<br /><code class="language-plaintext highlighter-rouge">init_logg</code>,<br /><code class="language-plaintext highlighter-rouge">logg_guess</code> | <code class="language-plaintext highlighter-rouge">logg_bstep</code> |  |  |
+| [Fe/H]:<br /><strong><code class="language-plaintext highlighter-rouge">fe_h</code></strong> |  <strong><code class="language-plaintext highlighter-rouge">fe_h</code></strong>,<br /><code class="language-plaintext highlighter-rouge">fe_h_atmo</code> |  <strong><code class="language-plaintext highlighter-rouge">fe_h</code></strong>,<br /><code class="language-plaintext highlighter-rouge">fe_h_atmo</code>,<br /><code class="language-plaintext highlighter-rouge">init_fe_h_atmo</code>,<br /><code class="language-plaintext highlighter-rouge">feh_guess</code> |  |  |  |
+| Broadening velocity:<br /><strong><code class="language-plaintext highlighter-rouge">vbroad</code></strong> | <strong><code class="language-plaintext highlighter-rouge">vbroad</code></strong>  | <strong><code class="language-plaintext highlighter-rouge">vbroad</code></strong>,<br /><code class="language-plaintext highlighter-rouge">init_vbroad</code> |  |  |  |
+| Stellar luminosity:<br /><strong><code class="language-plaintext highlighter-rouge">log_lum_bstep</code></strong> |  | <code class="language-plaintext highlighter-rouge">lbol</code> | <strong><code class="language-plaintext highlighter-rouge">log_lum_bstep</code></strong> |  |  |
+| Stellar mass:<br /><strong><code class="language-plaintext highlighter-rouge">m_act_bstep</code></strong> |  | <code class="language-plaintext highlighter-rouge">mass</code> | <strong><code class="language-plaintext highlighter-rouge">m_act_bstep</code></strong>,<br /><code class="language-plaintext highlighter-rouge">m_ini_bstep</code> |  |  |
+| Stellar age:<br /><strong><code class="language-plaintext highlighter-rouge">age_bstep</code></strong> |  | <code class="language-plaintext highlighter-rouge">age</code> | <strong><code class="language-plaintext highlighter-rouge">age_bstep</code></strong> |  |  |
+| Distance:<br /><strong><code class="language-plaintext highlighter-rouge">distance_bstep</code></strong> | <code class="language-plaintext highlighter-rouge">r_est_dr2</code> | <code class="language-plaintext highlighter-rouge">r_est_dr2</code> | <strong><code class="language-plaintext highlighter-rouge">distance_bstep</code></strong> |  | <code class="language-plaintext highlighter-rouge">r_med_geo</code>,<br /><code class="language-plaintext highlighter-rouge">r_med_photogeo</code> |
+| E(B-V):<br /><strong><code class="language-plaintext highlighter-rouge">ebv</code></strong> | <strong><code class="language-plaintext highlighter-rouge">ebv</code></strong>,<br /><code class="language-plaintext highlighter-rouge">irfm_ebv</code> | <strong><code class="language-plaintext highlighter-rouge">ebv</code></strong>,<br /><code class="language-plaintext highlighter-rouge">irfm_ebv</code> | <code class="language-plaintext highlighter-rouge">ebv_bstep</code> |  |  |
+| Parallax  | <code class="language-plaintext highlighter-rouge">parallax_dr2</code> | <code class="language-plaintext highlighter-rouge">parallax_dr2</code> |  |  | <code class="language-plaintext highlighter-rouge">parallax</code>,<br /><code class="language-plaintext highlighter-rouge">parallax_corr</code> |
+| Metallicity |  |  | <code class="language-plaintext highlighter-rouge">meh_act_bstep</code>,<br /><code class="language-plaintext highlighter-rouge">meh_ini_bstep</code> |  |  |
+—&gt;</p>
+
+<hr />
+
+<h3 id="joining-galah-dr4-catalogues">Joining GALAH DR4 catalogues</h3>
+
+<p class="box-success">Join GALAH DR4 tables using the <code class="language-plaintext highlighter-rouge">sobject_id</code>.</p>
+
+<p>The catalogues of GALAH DR4 must be joined or cross-matched using the <code class="language-plaintext highlighter-rouge">sobject_id</code>. The value-added catalogues are based on the extended catalogue which contains measurements per observed spectrum. 110,923 stars were observed multiple times, and therefore have multiple observed spectra. The <code class="language-plaintext highlighter-rouge">sobject_id</code> column is our internal ID for each observation and using this column for joining will ensure that you are matching information derived from the same spectrum.</p>
+
+<!---
+For instance, to join the `GALAH_DR4_main_allstar` and `GALAH_DR4_VAC_dynamics` catalogues [using Data Central](https://datacentral.org.au/services/query/), the following ADQL query could be used:
+
+```sql
+SELECT
+  TOP 100
+  g_ms.dr3_source_id, g_ms.teff, g_ms.logg, g_ms.fe_h,
+  g_ages.sobject_id, g_ages.age_bstep, g_ages.e_age_bstep
+  FROM galah_dr3p2.main_star AS g_ms
+  JOIN galah_dr3p2.vac_dyn AS g_dyn
+  	ON g_ms.sobject_id = g_dyn.sobject_id
+```
+
+{: .box-warning}
+Data Central's ADQL engine does not like column name clashes. So if you are merging tables, it is necessary to explicitly list the columns of interest.
+--->
+
+
+      
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="mailto:galahsurvey@gmail.com" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li></ul>
+
+      
+        <div class="footer-custom-content">
+          
+            <!--
+* UNSW Kensington: Bedegal peoples
+* UNSW Canberra: Ngunnawal people
+* Sydney: Gadigal people
+* ANU: Ngunnawal and Ngambri people
+* MQ: Wallumattagal clan of the Dharug nation
+* Monash: the people of the Kulin Nations
+* USQ: Giabal and Jarowair peoples of the Toowoomba area
+* UWA: Whadjuk Noongar people
+-->
+<p class="footer-custom-content">
+<small>The GALAH Survey acknowledges Traditional Owners of Country throughout Australia. Their sovereignty was never ceded. We pay our respects to elders past, present, and future. We use the Anglo-Australian Telescope located on the unceded lands of the Gamilaraay people. Our members work throughout Australia on unceded lands, including those of the Bedegal, Gadigal, Ngunnawal and Ngambri, Giabal and Jarowair, and Whadjuk Noongar peoples, the Wallumattagal clan of the Dharug nation, and the people of the Kulin Nations.</small>
+</p>
+<br/>
+<p class="copyright text-muted">
+<small>The GALAH Survey is supported by <a href="https://astro3d.org.au">The ARC Centre of Excellence for All Sky Astrophysics in 3 Dimensions (ASTRO 3D)</a></small>
+</p>
+
+          
+        </div>
+      
+      <p class="copyright text-muted">
+      
+        GALAH Survey
+        &nbsp;&bull;&nbsp;
+      
+      2026
+
+      
+
+      
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1410 @@
+                                                Draft version November 7, 2019
+                                                Preprint typeset using LATEX style emulateapj v. 12/16/11
+
+
+
+
+                                                                         THE SEPARATION DISTRIBUTION OF ULTRA-WIDE BINARIES
+                                                                                   ACROSS GALACTIC POPULATIONS
+                                                                  Hai-Jun Tian1,2,3 , Kareem El-Badry3,4 , Hans-Walter Rix3 , and Andrew Gould3
+                                                                                       1 China Three Gorges University, Yichang 443002, China
+                                                                  2 Center for Astronomy and Space Sciences, China Three Gorges University, Yichang 443002, China
+                                                                        3 Max Planck Institute for Astronomy, Königstuhl 17, D-69117 Heidelberg, Germany and
+                                                       4 Department of Astronomy and Theoretical Astrophysics Center, University of California Berkeley, Berkeley, CA 94720
+
+                                                                                                    Draft version November 7, 2019
+arXiv:1909.04765v2 [astro-ph.GA] 6 Nov 2019
+
+
+
+
+                                                                                                       ABSTRACT
+                                                         We present an extensive and pure sample of ultra-wide binary stars with separations of 0.01 .
+                                                       s/pc . 1 in the solar neighborhood. Using data from Gaia DR2, we define kinematic sub-populations
+                                                       via the systems’ tangential velocities, i.e., disk-like (v⊥,tot ≤ 40 km s−1 ), intermediate (v⊥,tot = (40 −
+                                                       85) km s−1 ), and halo-like (v⊥,tot ≥ 85 km s−1 ) binaries, presuming that these velocity cuts represent
+                                                       a rough ordering in the binaries’ age and metallicity. Through stringent cuts on astrometric precision,
+                                                       we can obtain pure binary samples at such wide separations with thousands of binaries in each sample.
+                                                       For all three kinematic populations, the distribution of binary separations extends smoothly to 1 pc,
+                                                       displaying neither strong truncation nor bimodality. Fitting a smoothly-broken power law for the
+                                                       separation distribution, we find its slope at s = 102.5−4 AU is the same for all sub-populations,
+                                                       p(s) ∝ sγ with γ ≈ −1.54. However, the logarithmic slope of p(s) steepens at s & 104 AU, to γ & 2.
+                                                       We find some evidences that the degree of steepening increases with the binaries’ age, with a slope-
+                                                       change of only ∆γ ≈ 0.5 for disk-like stars, but ∆γ & 1 for halo-like stars. This trend is contrary
+                                                       to what might be expected if steepening at wide separations were due to gravitational perturbations
+                                                       by molecular clouds or stars, which would preferentially disrupt disk binaries. If we were to interpret
+                                                       steepening at s & 104 AU as a consequence of disruption by MACHOs, we would have to invoke a
+                                                       MACHO population inconsistent with other constraints. As a more plausible alternative, we propose a
+                                                       simple model to predict the separation distribution of wide binaries formed in dissolving star clusters.
+                                                       This model generically predicts γ ≃ −1.5 as observed, with steepening at larger separations due to
+                                                       the finite size of binaries’ birth clusters.
+                                                       Subject headings: binaries: general – binaries: visual – Galaxy: stellar content – stars: formation,
+                                                                            statistics
+
+                                                                    1. INTRODUCTION                                  ruption by molecular clouds – to constrain the plausi-
+                                                 It has long been recognized that wide binaries provide              ble parameters of MACHOs. Chanamé & Gould (2004,
+                                              a powerful tracer of the Galactic gravitational potential              hereafter CG04) built a catalog of 1147 candidate wide
+                                              on small scales (e.g. Bahcall & Soneira 1981; Bahcall et               binaries selected via common proper motion, from which
+                                              al. 1985) as well as useful constraints for studies of the             they selected 801 binaries with disk-like orbits and 116
+                                              star formation process (van Albada 1968; Chanamé 2007;                binaries with halo-like orbits. Fitting the two subsam-
+                                              Moeckel & Bate 2010; Kouwenhoven et al. 2010; Moeckel                  ples, they showed that the angular separation distribu-
+                                              & Clarke 2011). The orbits of wide binaries are so frag-               tions could be well described by single power laws with
+                                                                                                                     logarithmic slopes of -1.67±0.07 for the disk binaries and
+                                              ile (with escape velocities vesc .kms−1 ) that they can
+                                                                                                                     -1.55±0.10 for the halo binaries, over the angular sepa-
+                                              be easily unbound by external gravitational perturba-
+                                                                                                                     ration range 3.500 < ∆θ < 90000 . In a companion pa-
+                                              tions arising from molecular clouds, stars, or compact
+                                                                                                                     per, Yoo et al. (2004, hereafter Y04) argued that the
+                                              objects (e.g. Retterer & King 1982; Bahcall et al. 1985;
+                                                                                                                     CG04 separation distribution constraints ruled out most
+                                              Weinberg et al. 1987; Jiang, & Tremaine 2010; Allen &
+                                                                                                                     of the previously plausible MACHO parameter space,
+                                              Monroy-Rodrı́guez 2014), or by internal perturbations
+                                                                                                                     since there was no strong evidence of a break in the
+                                              due to evolution of the component stars (Boersma 1961;
+                                                                                                                     separation distribution at the widest separations, and
+                                              Savedoff 1966; El-Badry & Rix 2018).
+                                                                                                                     their simulations predicted a detectable break for MA-
+                                                 One of the most important applications of wide bi-
+                                                                                                                     CHO masses M & 43 M .
+                                              naries is to constrain the mass of viable MAssive Com-
+                                                                                                                        When combined with constraints from microlensing
+                                              pact Halo Objects (MACHOs), such as discrete black
+                                                                                                                     surveys (which ruled out a dominant MACHO pop-
+                                              holes (BHs), which are a proposed dark matter candi-
+                                              date. Studies using wide binaries to constrain MACHOs                  ulation with typical masses in the range of 10−7 .
+                                              have typically assumed a simple initial separation dis-                M/M . 30; Alcock et al. 2001; Afonso et al. 2003)
+                                              tribution (such as a smooth power law) and then inter-                 and theoretical lower limits on the long-term survivabil-
+                                              preted deviations from it as arising from disruption of                ity of hydrogenous objects (which rule out MACHOs
+                                              the widest binaries by MACHOs.                                         with M . 10−7 M ; de Rujula et al. 1992), the Y04
+                                                 A number of previous studies have used halo wide bi-                wide binary constraints ruled out almost all possible MA-
+                                              naries – which are expected to be less vulnerable to dis-              CHO masses. Only a small window of MACHO masses,
+2                                                        HJT, et al.
+
+30 . M/M . 43, was still considered viable. However,            clues on formation or destruction mechanisms of binaries
+Quinn et al. (2009) later argued that the Y04 constraints       in different populations?
+depend critically on the validity of the two widest bina-          Most previous works using wide binaries as dynamical
+ries in the CG04 sample. After removing one spurious            tracers have implicitly assumed that the primordial sepa-
+candidate binary from the CG04 sample, they repeated            ration distribution can be well-approximated as a simple
+the analysis of Y04 and found the wide binary sepa-             power law at wide separations, and that it is the same for
+ration distribution consistent with a MACHO mass of             different populations. This is a serviceable assumption,
+30 . M/M . 500.                                                 and most previous works have found a power-law sepa-
+   Precise proper motions and parallaxes from Gaia DR2          ration distribution to provide a good fit for wide binaries
+(Gaia Collaboration et al. 2016, 2018) have allowed             in the range of separations where external perturbations
+the construction of larger and purer wide binary cata-          are expected to be subdominate (Lépine, & Bongiorno
+logs than were available previously. Distance measure-          2007; Andrews et al. 2017), but there is little a prior
+ments from Gaia parallaxes have also made it possible           motivation for it. Now that the present-day separation
+to measure the physical separation distribution; this is        distribution can be constrained in more detail, we reex-
+more easily interpretable than the angular separation           amine this assumption.
+distribution, whose physical scale depends on distance.            The remainder of this paper is organized as follows.
+El-Badry & Rix (2018, hereafter ER18) searched Gaia             In Section 2, we describe how to build an initial the
+DR2 for high-confidence wide binaries within 200 pc of          wide binary candidate catalog that is extensive but not
+the Sun. Their search yielded ∼55,000 high-confidence           pure. Sections 3 then presents three pure subsamples
+wide binaries, including ∼3,500 in which at least one           with different stellar populations selected from the can-
+component is a white dwarf. A similar search was car-           didate catalog, i.e., the disk-like, the kinematically in-
+ried out by Pittordis, & Sutherland (2019), who used the        termediate, and the halo-like binaries. In Section 4, we
+projected orbital velocities of Gaia wide binaries to con-      illustrate the observed separation distributions for the
+strain the gravitational force law in the low acceleration      three subsamples. In order to infer the intrinsic separa-
+regime. Both of these studies limited their search to pro-      tion distributions, we describe the method in Section 5,
+jected separations of s < 50, 000 AU (0.25 pc), primarily       including the selection function of the observed sample,
+because the contamination rate from chance alignments           a smoothly broken power law parameterization, and the
+would have become non-negligible at wider separations           likelihood for fitting the separation distribution. Section
+given their selection criteria. Because they searched for       6 lists the key results of the investigation. We discuss
+nearby binaries without any kinematic selection, the ma-        possible theoretical interpretations of our results in Sec-
+jority of the binaries in these samples have disk-like kine-    tion 7 and summarize in Section 8.
+matics and roughly solar metallicity (see El-Badry & Rix           Throughout the paper, we adopt the Solar motion
+2019).                                                          as (U , V , W ) = (9.58, 10.52, 7.01) kms−1 (Tian et al.
+   Fitting the separation distribution with a broken            2015), and the circular speed of the local standard of rest
+power-law model, ER18 found that for MS/MS binaries,            (LSR) as v0 = 238kms−1 (Schönrich 2012). α∗ is used
+it was nearly consistent with a single power law of loga-       to denote the right ascension in the gnomonic projection
+rithmic slope γ ≈ −1.6 but displayed evidence of a weak         coordinate system, for example, µα∗ ,i ≡ µα,i cos δi , and
+break at log(s/AU) ≈ 3.8. They found the separation             ∆α∗ ≡ ∆α cos(δ).
+distributions for binaries containing a white dwarf to fall
+off more steeply at large separations and interpreted this       2. THE INITIAL WIDE BINARY CANDIDATE CATALOG
+steepening as evidence of non-adiabatic and/or asymmet-            We first construct a catalog of wide binary candidates
+ric mass loss in the end stages of stellar evolution. The       that is large but not pure. In Section 3, we describe how
+effects of disruption due to external perturbations are         pure subsamples can then be selected from the initial
+expected to become significant only at very wide sepa-          candidate catalog.
+rations (s & 20, 000 AU; Weinberg et al. 1987), so ER18            We select wide binary candidates with a procedure
+did not attempt to constrain the effects of external per-       similar to that of ER18, whose catalog was restricted
+turbations using their sample.                                  to pairs of stars within 200 pc of the Sun and projected
+   In this paper, we (a) extend the ER18 analysis to wider      separations s < 0.25 pc. They selected stars whose po-
+separations and (b) compare the separation distributions        sitions, proper motions, and parallaxes were consistent
+of binaries between the Milky Way disk and halo. Con-           with being gravitationally bound. For the present study,
+structing a large sample of halo binaries requires us to        we extend the search volume from 200 pc to 4.0 kpc and
+search to larger distances than ER18, but we show that          the maximum projected separation from s = 0.25 pc to
+it is still possible to obtain a high-purity binary sam-        s = 1.0 pc. We briefly summarize the selection procedure
+ple at larger distances for halo stars, which have large        below.
+proper motions and thus have fewer nearby neighbors in
+phase space. We kinematically select three pure subsam-                2.1. General criteria for the wide binary query
+ples with different average ages, using v⊥,tot , the total        In the first step, we search for wide binary candidates
+tangential velocity with respect to the Sun, as a proxy         that satisfy the following criteria:
+of stellar age. By investigating the three binary popula-
+tions, we try to answer three basic questions: (1) Is there        1. parallax > 0.25, and parallax over error > 20
+a slope change in the separation distribution of wide bi-             for the primary star. Possible companions are
+naries at s ≈ 10, 000 AU, as found tentatively by ER18?               searched in a circle corresponding to a projected
+(2) If so, does its strength vary between stellar popu-               radius 1.0 pc around each primary, within an angu-
+lations? (3) Can it provide a meaningful constraints or               lar separation θ/arcsec ≤ 206 × $/mas, where $
+                                         Separation Distributions of Ultra-wide Binaries                                        3
+
+      is the parallax of the primary star. The secondary                  For each candidate binary, we define nearby neigh-
+      companions are required to meet a lower thresh-                  bor binaries as those that are within 1 degree on the
+      old for parallax error, parallax over error > 2                  sky, ±3 mas yr−1 in both proper motion coordinates, and
+      (lower than the cut in ER18).                                    ±5 pc in 1/$. According to this definition, we count the
+                                                                       number (N ) of nearby neighbors in position-parallax-
+   2. Consistent distances for the primary and sec-                    proper motion space, and remove candidate pairs that
+      ondary. We require ∆d ≤ 3σ∆d + 2s, where ∆d =                    have N > 10 nearby neighbors. 16,166,274 (> 95%)
+      |1/$1 − 1/$2 | is the difference in distance between             pairs are removed in this step.
+                               2
+      the two stars, σ∆d = (σ$,1  /$14 + σ$,2
+                                          2
+                                              /$14 )1/2 is its            Because our binary candidate catalog is larger and con-
+      uncertainty, and $i and σ$,i represent the paral-                tains fainter stars than the one constructed in ER18, the
+      lax of a primary or secondary and reported uncer-                practical effect of this cut is different from the one ap-
+      tainty. The +2s term prevents us from missing the                plied in ER18. There, most of the candidate pairs re-
+      nearest and widest binaries, for which the orbital               moved were members of bound clusters. The cut here
+      separation can be an non-negligible fraction of the              also removes clusters, but a large majority of the removed
+      distance.                                                        candidates are simply pairs in regions of high stellar den-
+                                                                       sity. As we discuss below, the contamination rate is high
+   3. Small proper motion differences between the                      for such pairs anyway, so removing them is an acceptable
+      two stars, consistent with a bound Keplerian                     concession.
+      orbit.      We require ∆µ ≤ ∆µorbit + 3.0σ∆µ ,                      This leaves 807,611 pairs as wide binary candidates.
+                                                             1/2
+      where ∆µ = (µ∗α,1 − µ∗α,2 )2 + (µδ,1 − µδ,2 )2
+                        
+                                                                  ,
+                                                                               2.4. Properties of the initial candidates
+      which is the total scalar difference in proper
+      motion between the two stars and σ∆µ =                             Figure 1 (top panel) shows a color-magnitude diagram
+         h                                                  i1/2   (CMD) for all 807,611 (pairs) of wide binary candidates.
+       1       2        2        2       2         2          2
+      ∆µ     σ   ∗
+               µα,1 + σ   ∗
+                        µα,2   ∆µα +   σµ  δ,1
+                                               + σ µ δ,2
+                                                           ∆µ δ        The (primary) stars with MG < 2.75(GBP − GRP ) + 5.75
+                                                ∆µorbit                are designated as “main sequence” stars (a few giants are
+      is    its   uncertainty.                  mas yr−1        =
+                          −1/2                                        not excluded), and the objects with MG > 3.25(GBP −
+              $ 3/2   θ                                                GRP ) + 9.63 are classified as likely white dwarfs (WDs).
+                
+      0.44 mas        arcsec      represents the maxi-
+      mum proper motion difference permissible for a                   Here MG = G + 5 log ($/mas) − 10. The main sequence
+      circular orbit of total mass 5 M . We also require               and red clump are visibly smeared out, primarily because
+      the proper motions to be reasonably precise, with                the photometry is not corrected for extinction. Devia-
+      σ∆µ ≤ 1.5 mas yr−1 .                                             tions from the expected CMD morphology are more pro-
+                                                                       nounced for secondaries, (top right panel in Figure 1) be-
+                       2.2. Quality cuts                               cause the cuts on astrometric and photometric precision
+  We apply additional quality cuts on the astrometry and               (Section 2.2) are looser for secondaries. A large cloud
+photometry of both components of candidate binaries:                   of objects is visible between the white dwarfs and main
+     p                                                                 sequence for secondaries. These are primarily sources
+  1. χ2 /(ν 0 − 5) < 1.2 × max(1, exp(−0.2(G − 19.5)),                 with large parallax errors; they are removed from the
+     to make sure that both members of a candidate                     sample once more stringent quality cuts are applied (See
+     binary pair have an acceptable astrometric solu-                  lower panels of Figure 1). A secondary sequence is ap-
+     tion (Lindegren et al. 2018). χ2 and ν 0 are re-                  parent above the main sequence for both primaries and
+     spectively referred to as astrometric chi2 al and                 secondaries, indicating that the catalog contains hierar-
+     astrometric n good obs al in the Gaia archive.                    chical triples with components that are spatially unre-
+                                                                       solved close binaries.
+   2. 1.0     +      0.015(GBP − GRP )2               <                  Figure 2 (top panel) presents the sky distribution of
+      phot bp rp excess factor         <        1.3 +                  all binary candidates in the b vs. l plane, where b and l
+      0.06(GBP − GRP )2 , to ensure that both stars                    represent galactic latitude and longitude. Clear imprints
+      have photometry that is relatively uncontaminated                of the Gaia scanning law are apparent, as there are more
+      by nearby sources (Evans et al. 2018).                           sources with well-constrained astrometry in regions of the
+   3. phot g mean flux over error>50 for both mem-                     sky that were visited more often. An higher density of
+      ber stars, phot rp mean flux over error>20                       candidates is also apparent near the galactic plane; this
+      (>10) for the primary (secondary) star, and                      was even more pronounced prior to the removal of sources
+      phot bp mean flux over error>20 (>10) for the                    with many phase-space neighbors. A few blank patches
+      primary (secondary) star, to remove pairs with                   at b ∼ 0◦ are very dense regions where our queries timed
+      low-SNR photometry.                                              out and no candidates could be identified.
+                                                                         Figure 3 illustrates the distributions of distance
+These selection criteria yield an initial sample of                    (log(d), first column), magnitude difference (∆G = |G1 −
+16,973,885 wide binary candidates.                                     G2 |, second column), apparent magnitude (G, third col-
+                                                                       umn), and angular separation (log θ, fourth column) for
+  2.3. Removing clusters, moving groups, and pairs in                  all wide binary candidates (black). The distribution of
+                      high density regions                             physical separation is displayed separately in Figure 4.
+  Along with wide binaries, the criteria specified in Sec-             For the initial candidate sample, the distributions are
+tions 2.1 naturally select stars in bound clusters and mov-            dominated by contaminants (chance-alignments) at large
+ing groups. We remove these using a similar approach to                separations (θ ∼ 4.2 arcmin and s > 0.05 pc). This can
+that adopted by ER18.                                                  be seen in the distributions of log θ and log(s), where
+4                                                                                     HJT, et al.
+
+       0
+                                                                                                           75
+                        Initial Candidates 0                    Initial Candidates
+                                                                N = 807611                                 50
+       5                                       5
+                                                                                                           25
+
+
+
+
+                                                                                                b (deg)
+ MG
+
+
+
+
+                                      MG
+                                                                                                            0
+      10                                      10
+
+                                                                                                          −25
+      15                                      15
+                          Primary                                 Secondary                               −50
+           −1   0   1    2       3        4        −1   0   1    2       3        4
+                GBP − GRP [mag]                         GBP − GRP [mag]
+                                                                                                          −75                   Initial Candidates
+                                                                                                                0   50   100   150   200    250     300    350
+       0
+                              Disk-like        0
+                                                                      Disk-like
+                                                                                                                                l (deg)
+                                                                      N = 4361
+                                                                                                           75
+       5                                       5
+ MG
+
+
+
+
+                                                                                                           50
+                                      MG
+
+
+
+
+      10                                      10                                                           25
+
+
+
+
+                                                                                                b (deg)
+                                                                                                            0
+      15                                      15
+                          Primary                                 Secondary
+                                                                                                          −25
+           −1   0   1    2       3        4        −1   0   1    2       3        4
+                GBP − GRP [mag]                         GBP − GRP [mag]                                   −50
+
+                                                                                                          −75                   Disk-like
+       0                                       0
+                             Intermediate                            Intermediate
+                                                                     N = 10090                                  0   50   100   150   200    250     300    350
+
+       5                                       5
+                                                                                                                                l (deg)
+ MG
+
+
+
+
+                                      MG
+
+
+
+
+                                                                                                           75
+      10                                      10
+                                                                                                           50
+
+      15                                      15                                                           25
+                                                                                                b (deg)
+
+
+
+
+                          Primary                                 Secondary
+           −1   0   1    2       3        4        −1   0   1    2       3        4                         0
+                GBP − GRP [mag]                         GBP − GRP [mag]
+                                                                                                          −25
+
+       0                                       0                                                          −50
+                              Halo-like                               Halo-like
+                                                                      N = 4351                            −75                   Intermediate
+       5                                       5
+                                                                                                                0   50   100   150   200    250     300    350
+ MG
+
+
+
+
+                                      MG
+
+
+
+
+                                                                                                                                l (deg)
+      10                                      10
+
+                                                                                                           75
+      15                                      15
+                          Primary                                 Secondary                                50
+           −1   0   1    2       3        4        −1   0   1    2       3        4
+                                                                                                           25
+                GBP − GRP [mag]                         GBP − GRP [mag]
+                                                                                                b (deg)
+
+
+
+
+                                                                                                            0
+  Fig. 1.— Color-magnitude diagrams (CMDs) for the observed
+binaries. All the initial binary candidates (807,611 pairs) are dis-                                      −25
+played with the black dots, while the blue (4361 pairs), magenta
+(4351 pairs), and the green (10,090 pairs) dots show disk-like, in-                                       −50
+termediate, and halo-like MS-MS wide binaries, respectively. Here
+the “primary” and “secondary” label the brighter and fainter mem-
+bers, respectively.
+                                                                                                          −75                   Halo-like
+                                                                                                                0   50   100   150   200    250     300    350
+the large-separation peak is due entirely to chance align-                                                                      l (deg)
+ments. We discuss chance-alignment further below.
+                                                                                               Fig. 2.— Distribution of the observed binary samples in the
+       2.5. Contamination rates of the initial sample                                        b vs. l plane, including 807,611 initial wide binary candidates
+                                                                                             (black), 4361 high-confidence disk-like binaries (blue), 10,090 high-
+  We use three methods to quantify the contamination                                         confidence intermediate binaries (green), and 4351 high-confidence
+rates of the candidate binaries as a function of sepa-                                       halo-like binaries (magenta). Imprints of the Gaia scanning law
+                                                                                             can be seen in all samples.
+ration: (1) A “shifted Gaia DR2 catalog”, where the
+coordinates (α̂, δ̂) for each object in this catalog have                                    been constructed by shifting 1◦ from its original location
+                                                               Separation Distributions of Ultra-wide Binaries                                           5
+
+      105 Initial Candidates                             105                                105                            105
+              Shifted GaiaDR2
+      104     Disk-like                                                                     104                            104
+                                                         104
+              Intermediate
+              Halo-like
+      103                                                                                   103                            103
+                                                         103
+  N
+
+
+
+
+                                                     N
+
+
+
+
+                                                                                        N
+
+
+
+
+                                                                                                                       N
+      102                                                                                   102                            102
+                                                         102
+
+      101                                                                                   101                            101
+                                                         101
+
+      100                                                                                   100                            100
+            0.5   1.0   1.5       2.0   2.5    3.0   3.5       0   2   4   6       8   10   12     5     10       15       20    0    1        2     3
+                          log(d/pc)                                    ∆G [mag]                         G [mag]                      log(θ/arcsec)
+  Fig. 3.— Comparison of various wide binaries subsets and chance alignments. From left to right, the sub-panels show distributions
+of distances (log(d), first column), magnitude difference (∆G = |G1 − G2 |, second column), magnitude (G, third column), and angular
+separation (log θ, fourth column), for the whole candidate catalog (black), the clean disk-like subset (blue), the intermediate clean subset
+(green), and the halo-like clean subset (magenta). The red dotted curves display distributions of the chance alignments estimated from a
+shifted Gaia DR2 catalog. This catalog is produced by shifting all the objects of Gaia DR2 by 1◦ in both the right ascension and declination
+directions. Matching the original Gaia DR2 with the shifted catalog, the matched pairs are regarded as chance alignments if they pass our
+selection criteria for binaries.
+                                                                                              butions of the random alignment pairs chosen from the
+       105 Initial Candidates
+                                                                                              shifted Gaia DR2 catalog in the whole sky. We matched
+                  Shifted GaiaDR2                                                             the original Gaia DR2 with the shifted catalog, and re-
+       10    4    Disk-like                                                                   gard the matched pairs as chance alignments if they pass
+                  Intermediate                                                                the selection criteria for binaries. This approach is not
+                  Halo-like                                                                   appropriate for the widest and most nearby binaries,
+       103                                                                                    which can have projected separations of 1◦ or larger, and
+                                                                                              so continue to appear as binaries even when the coordi-
+  N
+
+
+
+
+                                                                                              nates of one component are artificially shifted by 1◦ in
+       102                                                                                    each direction. Therefore, we remove the chance align-
+                                                                                              ments with d < 60 pc and θ > 0.5◦ from the shifted cata-
+       101                                                                                    log. The red dotted curves suggest that the distributions
+                                                                                              for the initial candidates are indeed almost fully dom-
+                                                                                              inated by contaminants at large angular and projected
+       100                                                                                    separations, as displayed in the last two sub-panels of
+                                                                                              Figure 3. On the other had, chance alignments are sub-
+                              2                 3                  4           5              dominant at log(s) . 4.5 (Figure 3). The distribution
+                                              log(s/AU )                                      of chance alignments can be well described as N ∼ s ds,
+                                                                                              since the area within which chance alignments can be
+  Fig. 4.— Distributions of projected separation (log(s)) for the                             found scales as 2πs ds.
+initial candidate sample, the three clean subsets, and the chance                               We selected in a random region of ∼ 4000 deg2 from
+alignments selected from the shifted Gaia DR2 catalog. The color
+codes are same as those in Figure 3. As an estimate of the contami-                           the mock Gaia DR2 catalog (Rybizki et al. 2018). The
+nation rate in the three clean subsets, the blue, green and magenta                           mock catalog does not contain any true binaries, so any
+dotted curves display the distributions of the chance alignments                              pairs that pass our selection criteria in the mock catalog
+selected from the shifted catalog with the disk-like, intermediate                            must be chance alignments. We only query a fraction of
+and halo-like criteria, respectively.
+                                                                                              the sky in the mock catalog because querying it is com-
+                                                                                              putationally expensive and many of the queries time out.
+(α, δ), i.e., (α̂, δ̂) = (α + ∆α∗ / cos(δ), δ + ∆δ), with                                     In estimating the true contamination rate, we scale up
+∆α∗ = ∆δ = 1.0◦ . We then repeat the binary candidate                                         the rate predicted by the mock catalog at all separations,
+identification procedure, now identifying pairs that pass                                     assuming the contamination rate approaches ∼100% at
+the binary cuts when the coordinates of the “primary”                                         1 pc separations.
+are shifted relative to candidate secondaries. This pro-                                        In defining candidate wide binaries in this study, we
+cedure removes genuine binaries, but preserves chance                                         used the two dimensional velocities (i.e., 2-D tangen-
+alignment statistics; see Lépine, & Bongiorno (2007)                                         tial velocities from proper motions), positions and dis-
+for further discussion of this method of estimating the                                       tances. The incomplete kinematic information induces
+chance alignment rate. (2) The mock Gaia DR2 catalog                                          substantial contamination, particularly at large separa-
+produced by Rybizki et al. (2018), which is based on the                                      tions. Gaia DR2 provides about 7.2 million stars with
+Besançon stellar population synthesis model (Robin et                                        measured RVs. Among them, 8220 wide binary candi-
+al. 2003) and is populated with the Galactic distribution                                     dates have reliable (uncertainty σRV < 3 kms−1 ) RVs
+function using Galaxia (Sharma et al. 2011), assuming a                                       for both binary components. These RVs provide the
+similar selection function and uncertainty model to Gaia                                      third dimension of velocity and can be effectively used to
+DR2. (3) Comparison of radial velocities (RVs) for the                                        check whether candidate pairs are true binaries or chance
+subset of bright wide binaries where both stars have RVs                                      alignments. Significant RV differences (∆RV) between
+included in Gaia DR2.                                                                         member stars imply that star pairs are probably chance
+  The red dotted curves in Figure 3 present the distri-
+6                                                                            HJT, et al.
+
+                                                                                     3. THREE PURE BINARY SAMPLES WITH DIFFERENT
+                                                                                                          KINEMATIC AGES
+                          160
+                                                                                      As low contamination is crucial for our subsequent
+                                                                                    analysis of the separation distributions, we proceed to
+      RVstar2 [kms−1 ]
+
+                           80                                                       define subsamples that we can assume to be nearly pure.
+                                                                                    Specifically, we kinematically select three pure subsam-
+                                                                                    ples, consisting of young disk-like, intermediate, and old
+                            0                                                       halo-like binaries, with different average ages. Since
+                                                                                    the phase-space density of contaminants varies between
+                          −80
+                                                                                    the samples (with more contaminants in the low-velocity
+                                                                                    samples), we use different quality cuts for the three sam-
+                                                                                    ples.
+                         −160                                                         Using the Gaia DR2 proper motion and parallax, we
+                                                                                    calculate the total tangential velocity with respect to the
+                                    −160   −80       0        80   160
+                                                                                    Sun for each candidate binary:
+                                                             −1                                 v⊥,tot ≡ 4.74km/s × (µtot × yr)/$.           (1)
+                                           RVstar1 [kms ]
+                                                                                                         p
+                                0           1            2               3          Here $ and µtot = µ2α∗ + µ2δ are the parallax and total
+                                                                                    proper motion of a binary, respectively.
+                                                                                       Using v⊥,tot as a proxy of age, we select three pure
+                         10+2              σ∆RV [kms−1 ]                            subsamples with different average ages. We determine
+                                                                                    what cuts are needed to obtain a pure subsample in each
+                                                                                    population using the shifted catalog the estimated the
+     ∆RV[kms−1 ]
+
+
+
+
+                         10+1                                                       chance alignment rate given any sub-selection.
+                                                                                       The space density of halo stars in the solar neighbor-
+                                                                                    hood is much lower than that of disk stars, so it is neces-
+                         10+0                                                       sary to search to larger distances to obtain a large sam-
+                                                                                    ple of halo binaries. Fortunately, the contamination rate
+                                                                                    at fixed distance is also much lower for halo stars, be-
+                         10−1                                                       cause they have fewer phase-space neighbors. We thus
+                                                                                    use different distance limits for the three populations and
+                                                                                    self-consistently estimate the contamination rate for each
+                                     2           3       4         5                population given these limits. We choose disk-like bina-
+                                                                                    ries with
+                                             log(s/AU)
+  Fig. 5.— Radial velocity 1-to-1 comparison (top) and ∆RV vs.
+                                                                                       1. d < 120 pc,
+log(s/AU) scatter (bottom) for 8220 binary candidates. The re-
+liable RVs with uncertainties σRVs < 3 kms are obtained from                           2. v⊥,tot < 40 kms−1 .
+Gaia DR2. 28 pairs have ∆RV > 10 kms−1 , 140 pairs have
+∆RV/σ∆RV > 5, and only 20 pairs meet both conditions. Most                            To select the intermediate-age binary subsample, we
+of them are at large separations (s > 104.9 AU). The black dashed                   use the conditions:
+line marks the location of ∆RV = 10 kms−1 .
+                                                                                       1. d < 300 pc,
+                                                                                       2. 40 < v⊥,tot < 85 kms−1 .
+alignments. We regard those pairs with ∆RV/σRV > 5                                    We choose old halo-like binaries with the following cri-
+and ∆RV > 10 kms−1 as likely contaminants. Figure 5                                 teria,
+displays the 1-to-1 scatter distribution (the top panel)
+of the two component RVs, and the ∆RVs distribution                                    1. d < 700 pc,
+(the bottom panel) as a function of projected separation.
+                                                                                       2. v⊥,tot > 85 kms−1 .
+Only 20 pairs meet the criteria of chance alignments, i.e.,
+∆RV/σRV > 5 and ∆RV > 10 kms−1 . Most binaries                                        To get pure binary samples, we further impose the fol-
+with substantially large ∆RV have larger-than-average                               lowing cuts on all of the above three selections:
+RV uncertainties. This implies that the contamination
+rate of the candidate binary catalog is of order 0.24%,                                1. ∆µ ≤ ∆µorbit + 1.0σ∆µ and σ∆µ ≤ 0.12 mas yr−1 .
+with most contaminants at log(s/AU) > 5, for binaries                                     This more stringent cut on proper motion un-
+that are bright enough for both stars to have measured                                    certainty reduces the contamination from chance
+RVs (G . 13). However, we stress that the true contam-                                    alignments with larger uncertainty.
+ination rate for the whole catalog of binary candidates is                             2. The number of nearby neighbors N < 2, to strictly
+much higher, as can be seen in Figure 3. The RVs pro-                                     remove contaminants at wide separation from mov-
+vide an estimate of the chance-alignment rate for binaries                                ing groups or star clusters.
+where both components are bright.
+  Table 1 summarizes the contamination rates in the                                    3. We exclude binaries containing a WD from all three
+different projected separation bins, estimated with the                                   subsamples to remove the effect from internal or-
+above three methods.                                                                      bital evolution.
+                                           Separation Distributions of Ultra-wide Binaries                                                      7
+.
+                                                       TABLE 1
+        Contamination rates of the wide binary candidates and cleaned subsamples estimated by different methods
+
+    Separations                                                  Contamination Rates
+     log(s/AU)                 Mocka                                Gaia RVsb                                      Shifted Gaia DR2c
+                    All   Disk Intermediate      Halo    All     Disk Intermediate Halo                      All   Disk Intermediate     Halo
+    (0.00, 3.40]    0%    0%        0%           0%      0%       0%        0%       0%                    <0.3%    0%         0%         0%
+    (3.40, 4.12]   <2%    0%        0%           0%     <0.1%     0%        0%       0%                     <2%     0%         0%         0%
+    (4.12, 4.39]   ∼10%   0%        0%           0%     <0.1%     0%        0%       0%                    ∼10%     0%         0%         0%
+    (4.39, 4.65]   ∼30%   0%        0%           0%     <0.2%     0%        0%       0%                    ∼30%     0%         0%         0%
+    (4.65, 4.91]   ∼80%   0%        0%           0%     ∼0.4%     0%        0%       0%                    ∼80%    ∼1%       ∼0.1%       ∼1%
+    (4.91, 5.20]   >90%   0%        0%           0%     ∼1.5%     0%        0%       0%                    >90%     0%        ∼1%        ∼5%
+    (5.20, 5.31]   >95%   0%        0%           0%     ∼11%      0%        0%       0%                    >95%     0%       ∼10%        ∼15%
+    a Using the mock catalog from Rybizki et al. (2018) to estimate the contamination rate, assuming the contamination for the initial
+      candidates reaches 100% at the widest separations.
+    b Using the reliable (σ               −1 ) Gaia radial velocities (RVs) to estimate the contamination rate of the the brightest wide
+                            RV < 3 kms
+      binaries, where both components have G . 13. Pairs with ∆RV/σRV > 5 and ∆RV > 10 kms−1 are regarded as chance alignments.
+    c Using the shifted Gaia DR2 to estimate the contamination rate. Each object is shifted by 1◦ in each coordinate i.e., (α̂, δ̂) = (α
+
+      + 1.0◦ / cos(δ), δ + 1.0◦ ), where (α̂, δ̂) and (α, δ) are the shifted and original coordinates, respectively.
+
+   The above criteria can effectively suppress the three
+kinds of contamination rates close to zero for the three                                                                      Disk-like
+                                                                                                     300
+subsamples at each (except the largest) separation bin                                                                        Intermediate
+
+
+
+
+                                                                                  U 2 + W 2 (km/s)
+(see Table 1). Finally, we get 4361 disk-like, 10,090 inter-                                                                  Halo-like
+mediate and 4351 halo-like genuine wide binaries. Figure
+4 compares the separation distributions of binaries and                                              200
+chance-alignments in the three subsamples. With these
+more aggressive cuts on distance and astrometric SNR,
+chance alignments are subdominant out to separations                                                 100
+of 1,pc. The separation distributions of all three samples
+                                                                                √
+
+
+fall off monotonically at large separations.
+   Figure 1 displays the color-magnitude diagrams
+(CMD) for the disk-like (blue), intermediate (green) and                                               0
+                                                                                                           −300        −150          0
+halo-like (magenta) wide binaries. The unresolved close
+binary sequences (ER18; Widmark et al. 2018) are visible                                                            V (km/s)
+but already sparse above the main sequence in the three
+                                                                            Fig. 6.— Toomre diagram for disk-like (blue dots), intermediate
+subsamples. Following ER18, we use the region at 1 .                      (green dots) and halo-like (magenta dots) stars in the mock catalog
+(GBP − GRP ) . 2 of the CMD (Figure 1) to estimate the                    separated using the cuts in v⊥,tot that we use to select binaries in
+unresolved binary fraction of the disk and halo samples.                  each kinematic sub-population.
+In this region, the line MG = 2.8 (GBP − GRP ) + 2.4 di-                  randomly select 150,000 stars in the whole sky from this
+vides the binary and single-star main sequences. We find                  mock catalog and use the criteria of v⊥,tot to separate
+that about 4.0% (4.3%), 10.9% (7.4%) and 6.6% (4.8%)                      the mock stars into disk-like, intermediate and halo-like
+of the primary (secondary) disk-like, intermediate and                    populations. Figure 6 shows the Toomre diagram for
+halo-like binaries probably have a bright unresolved com-                 disk-like stars (blue points), intermediate (green points),
+panion.                                                                   and halo-like stars (magenta points). As one can see,
+   Figure 2 presents the final disk-like (the 4361 blue                   the disk-like, intermediate and halo-like stars are clearly
+dots), intermediate (the 10,090 green dots) and halo-                     divided. This indicates that the criteria of v⊥,tot work
+like (the 4351 magenta dots) binaries distribution in the                 well for the selection of the three kinematic subsamples.
+b vs. l plane. Figure 3 illustrates the distributions
+of distance (log(d), first column), magnitude difference                          4. OBSERVED SEPARATION DISTRIBUTIONS
+(∆G = |G1 − G2 |, second column), magnitude (G, third                       We display distributions of the angular (θ) and the pro-
+column), and angular separation (log θ, fourth column),                   jected physical separations (s = (θ × (1/$)) AU) for the
+respectively, for the three subsamples. For demonstrat-                   disk-like, intermediate, and halo-like binaries in Figure
+ing the contamination rate, the distributions of projected                3 (the last sub-panels) and Figure 4. At θ < 1.5 arcsec,
+separations (log(s)) for the three subsets are specifically               there are no binaries in our sample, which is due to the
+displayed in Figure 4. In this figure, the blue, green                    Gaia angular resolution limit. At 1.5 < θ/arcsec < 6.0
+and magenta dotted curves show the distributions of the                   or 25 < s/AU < 1000 (250 < s/AU < 15000 for the
+chance alignments selected from the shifted catalog with                  halo-like binaries), the samples are significantly incom-
+the disk-like, intermediate and halo-like criteria, respec-               plete. ER18 investigated this incompleteness effect and
+tively.                                                                   concluded that the incompleteness is due to blending of
+   We use the mock Gaia DR2 catalog (Rybizki et al.                       the two stars, which is more severe for binaries with mag-
+2018) to illustrate the effect of v⊥,tot for distinguishing               nitude difference between the two components. Accord-
+the three subsamples. The mock catalog contains the                       ing to Figure A1 of ER18, the separation distribution is
+full 6-D phase information for each star, so the disk-like,               84% complete for ∆G < 5 at θ > 5 arcsec and is complete
+intermediate and halo-like stars are easily separated. We                 for all ∆G at θ > 10 arcsec, relative to the completeness
+8                                                        HJT, et al.
+
+at arbitrarily large angular separations.                       where φ0 is a normalization parameter. The break sep-
+   Consistent with ER18, we find that the main sequence         aration sb marks the transition between the two single
+binaries do not obey Opik’s law (i.e., a flat distribution      power laws with index γ1 and γ2 , respectively. The Λ
+of log-separation) at any s & 500 AU. It is worthwhile to       parameter quantifies how abruptly or smoothly the two
+mention that there is an obvious drop at s ∼ 105.0 AU in        power laws are joined. The model has four fit parameters
+the raw separation distributions of the three subsamples,       m
+                                                                ~ = (γ1 , γ2 , log(sb /AU), Λ). We suppose that φ(s) is in-
+as shown in Figure 4.                                           dependent of both the distance and the absolute magni-
+   We note that, when insufficiently stringent astromet-        tude of the two member stars, although the separation
+ric quality cuts are applied, the separation distribution of    distribution is expected to vary somewhat with the mass
+all binary candidates in Figure 4 appears bimodal (black        (and thus, absolute magnitude) of the two stars (e.g.,
+histogram). However, the peak at large separations is           Duchêne & Kraus 2013; Moe, & Di Stefano 2017; Moe
+due entirely to chance alignments, not real binaries. For       & Kratter 2018). This supposition is validated with two
+this reason, it shifts toward wider separations and even-       special datasets selected from the pure samples: one with
+tually disappears as more stringent quality cuts are ap-        ∆G > 2.5 mag, which contains 1633 disk-like, 3481 inter-
+plied. Some previous works (Dhital et al. 2010; Oelkers         mediate, and 986 halo-like binaries; the other one with
+et al. 2017) have found the separation distribution of          MG1 < 7 mag, which includes 2287 disk-like, 6684 in-
+wide binaries to be bimodal and have proposed that the          termediate, and 3542 halo-like binaries. The analysis on
+wider-separation population contains binaries formed by         these datasets indicates that the large ∆G or stellar mass
+different formation mechanism. Our analysis suggests            just slightly affects the shape of the observed separation
+that this apparent bimodality is simply due to chance           distribution at small separations, and this selection ef-
+alignments, as also suggested by Andrews et al. 2017.           fect can be well overcome with the selection function
+                                                                when the intrinsic separation distribution is derived in
+ 5. INFERRING INTRINSIC SEPARATION DISTRIBUTION                 the following section.
+  As discussed in Section 4, the separation distribution
+at θ < 10 arcsec is heavily incomplete. Before model-            5.3. Likelihood for Fitting the Separation Distribution
+ing the intrinsic-separation distribution, one must ac-            Given a sample of binaries with projected separations
+count for the selection effect to compensate for the in-        si , the likelihood function is
+completeness at small separation. In this section, we                                             Y
+directly adopt an empirical fitting function from ER18                          L = p ({si } |m)
+                                                                                              ~ =   p (si |m)
+                                                                                                           ~ ,       (4)
+as the selection function, and we use a smoothly bro-                                             i
+ken power law with four free parameters to model the            where m~ is a set of free model parameters to be fitted
+intrinsic-separation distribution.                              and p(si |m)
+                                                                          ~ is the probability of detecting the i-th binary
+                                                                given model parameters m.~ For the i-th binary, p(si |m) ~
+                 5.1. Selection Function                        can be specified
+  The selection function depends on the angular separa-
+tion θ and the magnitude contrast ∆G between the two                                           φ (si |m)
+                                                                                                      ~
+                                                                         p (si |m)
+                                                                                ~ = R smax                             (5)
+member stars. For this study, we empirically character-                               smin
+                                                                                           φ (s| m)
+                                                                                                 ~  f ∆G (s|di ) ds
+ize the probability of detecting a companion at an angu-
+lar separation θ with a fitting selection function f∆G (θ)      where φ (si |m)
+                                                                             ~ is the probability that a binary with dis-
+found by ER18,                                                  tance di , magnitude difference ∆G, and physical sep-
+                                                                aration si is found in the catalog, given an intrinsic-
+                                  1                             separation distribution (specified by Equation (3)) with
+                f∆G (θ) =              −β
+                                            .           (2)
+                            1 + (θ/θ0 )                         parameters m. ~    The selection function, f∆G (s/di ) =
+                                                                f∆G (θ), is given by Equation (2). Here smin and smax
+Here ∆G is the magnitude contrast in G-band between             are the minimum and maximum separations of the ob-
+the two member stars, θ0 characterizes the angular sep-         served distribution in the disk and Rhalo   binary samples,
+                                                                                                       smax
+aration below which the sensitivity drops to 0, and β de-       and φ(s|m)
+                                                                         ~ is normalized such that smin     φ (s|m)
+                                                                                                                 ~ ds = 1.
+termines how rapidly the sensitivity falls off at θ  θ0 .      Equation (5) does not account for the observational un-
+Following ER18, we adopt β = 10 for all ∆G, θ0 =                certainties in si or di . These are small because all the
+2.25 arcsec at ∆G < 1.5 mag, and θ0 = 0.9(∆G + 1) at            binaries in our clean samples have parallax errors smaller
+∆G > 1.5 mag. We stress that f∆G (θ) does not represent         than 5%.
+the absolute selection function, but rather the fraction of       The denominator in Equation (5) reflects the fraction
+binaries detected at angular separation θ relative the the      of predicted binaries that could have been detected at
+number that would be detected at arbitrarily large sep-         a distance di and magnitude difference ∆G; it accounts
+aration. See El-Badry et al. (2019), their Appendix D,          for the fact that at large distances and large ∆G, only
+for details.                                                    binaries with large s can be detected. We set smax =
+                                                                105.25 AU (i.e., ∼ 0.8 pc), omitting the widest separation
+    5.2. Function form of the separation distribution           bin due to a high contamination rate beyond 105.25 AU.
+  We model the separation distribution as a smoothly            The choice of smin has no effect on our results because the
+broken power law:                                               integrand in Equation (5) goes to 0 at small separations.
+                                                                We set smin = 10−2 AU.
+                                s 1/Λ i (γ2 −γ1 )Λ
+                       "                 #
+                s  γ1 1 h                                       If either member star of a binary is too faint, the bi-
+    φ (s) = φ0              1+                       (3)        nary probably can not be detected. Therefore, whether
+                sb       2      sb
+                                      Separation Distributions of Ultra-wide Binaries                                     9
+
+a binary can be observed or not also depends on the ap-             5. The posterior distributions of the free parameters
+parent magnitude of both stars. However, this has no                   (except γ1 ) gradually present a double-peak fea-
+effect on the inferred separation distribution as long as              ture from the disk-like to the halo subsamples. It
+the undetected binaries have the same intrinsic separa-                indicates that the intrinsic separation distributions
+tion distribution.                                                     favor two breaks for all the three subsamples, in
+                                                                       particular for the old population. One break takes
+                        6. RESULTS                                     place at s ∼ 103.8 AU, the corresponding smooth-
+  We use emcee (Foreman-Mackey et al. 2013) to sample                  ing parameter is Λ ∼ 0.05. The other break is at
+the posterior distribution of the broken-power-law model               s ∼ 104.5 AU and its Λ ∼ 0.7.
+of binary separations (Eq.3), for the three subsamples of           6. The three free parameters, i.e., γ2 , log(sb /AU) and
+disk-like, intermediate and halo-like binaries. We use flat            Λ, are degenerate and correlated with each other.
+priors for γ1 , γ2 , and log(sb /AU) and use an exponential            So we will discuss the two breaks with two fixed Λ
+prior on Λ, taking a prior of exp(–3Λ) for Λ. The top                  , i.e., Λ = 0.05 (Figure 8) and Λ = 0.7 (Figure 9),
+panel of Figure 7 displays the contours and marginalized               respectively, in the Appendix.
+probabilities of the model parameters posteriors m,~ while
+the bottom panel illustrates the inferred intrinsic separa-
+tion distributions for the three subsamples. The median              7. INTERPRETING SEPARATION DISTRIBUTIONS
+values of m~ = (γ1 , γ2 , log(sb /AU), Λ) are                       At smaller separations, the observed separation dis-
+                                                                 tribution of binaries presumably reflects a combination
+   • (−1.51+0.03         +0.69       +0.67       +0.59
+            −0.03 , −2.07−0.19 , 3.97−0.32 , 0.51−0.39 )   for   of birth separations and subsequent evolution (e.g. El-
+     the disk-like binaries,                                     Badry et al. 2019; Liu 2019; Moe, & Di Stefano 2017,
+                                                                 and references therein). For the very wide binaries (be-
+            +0.03
+   • (−1.56−0.04  , −2.84+0.77       +0.34       +0.29
+                         −0.38 , 4.39−0.21 , 0.57−0.41 )   for   yond a few 1000 AU) of primary interest here, the for-
+     the intermediate binaries                                   mation process leading to the ”initial” separation dis-
+                                                                 tribution at the time of birth cluster dispersal, and the
+   • (−1.55+0.05         +0.72       +0.24       +0.26
+            −0.06 , −3.33−0.68 , 4.59−0.29 , 0.67−0.34 )   for   subsequent evolutionary processes, are not firmly estab-
+     the halo-like binaries.                                     lished. Wide binaries presumably did not form within a
+                                                                 common disk, but resulted from turbulent fragmentation
+  These results, which are illustrated in Figures 7, can         (at closer separations) and stochastic pairing during clus-
+be summarized as follows:                                        ter dissolution (at wider separations). After formation,
+                                                                 wide binaries could retain their original orbital parame-
+   1. At s < sb , the three subsamples have the same             ters, except (1) that they may be affected or become dis-
+      separation distributions, i.e., a power law with an        rupted by gravitational encounters with molecular clouds
+      index of γ1 ∼ −1.54 shown as the black dashed              or other massive objects (e.g. Chanamé & Gould 2004);
+      lines in the bottom panels of Figure 7.                    (2) that either one or both binary members evolve off
+                                                                 main sequence, inducing rapid mass loss (e.g. ER18); or
+   2. At s > sb , the separation distributions become            (3) that dynamical evolution leads to widening within
+      significantly steeper for all three subsamples, ex-        unstable triples (Reipurth, & Mikkola 2012, e.g.).
+      cluding single power-law models over the entire               This present work was originally initiated with the goal
+      separation range (see the bottom panel of Figure           of detecting or constraining signs of binary disruption by
+      7). This profile steepening (∆γ ≡ γ2 − γ2 ) in-            massive objects. In such an analysis one must presume
+      creases from 0.56±0.50 for the disk-like binaries,         to have confident prior knowledge about the initial sep-
+      through 1.28±0.60 for the intermediate binaries,           aration distribution to ∼ 1 pc, e.g. that it was a perfect
+      to 1.78±0.70 for the halo-like binaries. There is          single power-law at large s. We first pursue this approach
+      thus a strong hint of a steeper fall-off at ultra-wide     of modeling, asking what population of massive scatter-
+      separations (s > 104.5 AU) for the halo-like sample        ing objects could lead to the breaks seen. This, however,
+      than the disk sample, although the marginalized            turns out to have physically implausible implications, at
+      constraints on γ2 are quite broad due to degenera-         variance with other constraints. In light of this we then
+      cies with other parameters.                                ask what separation distribution we may have expected at
+                                                                 birth, and find it to be consistent with the observations.
+   3. The ∆γ for the disk-like sample is significant, but
+      small enough to explain why ER18 found compa-                      7.1. An initial single power law, broken
+      rably good fits for MS/MS binaries with a single                           by a population of scatters?
+      power law with a slope -1.6 over 500 < s/AU <                 We start out by noting that the outer slope of the disk-
+      50, 000. The ∆γ = 1.78±0.70 for the halo-like sam-         like binary is if anything flatter than that of the halo-
+      ple, however, indicates a quite substantive change         like populations, showing a steepening by only . 0.6:
+      in the separation distribution slope at s ∼ 104.3 AU       this argues against, or at least provides not evidence for,
+      (i.e., ∼0.1 pc).                                           molecular clouds being a dominant mechanism is setting
+                                                                 the outer slope of wide disk-like binaries by means of
+   4. The smoothing parameter Λ differs among the sub-           tidal disruption that would induce a cut-off.
+      samples: the halo-like subsample has the strongest            We now use the approach of previous studies, assuming
+      break (highest ∆γ), yet the smoothest power-law            that the separation distribution for wide binaries follows
+      transition, i.e. the highest parameter Λ.                  a single (initial) power law. By implication, any break
+10                                                                                    HJT, et al.
+
+
+
+
+                                                                                                  Disk-like
+                                                                                                  Intermediate
+                                1.
+                                      6                                                           Halo-like
+                          −
+                                      4
+                                2.
+                          −
+                  γ2
+                                      2
+                                3.
+                          −
+                                      0
+                                4.
+                          −
+                                                  5
+                                1. 3. 4. 4. 5. 5.
+                  log (sb/AU)
+                                  6 5 2 0  5  0
+                                1.
+                   Λ
+                                      8
+                                0.
+                                      4
+                                0.
+
+
+                                                       − 0
+                                                       − 5
+                                                       − 0
+                                                       − 5
+                                                           40
+
+                                                             0
+
+                                                             2
+
+                                                             4
+
+                                                             6
+                                                             5
+                                                             0
+                                                             5
+                                                             0
+                                                             5
+
+                                                                                                                   4
+
+                                                                                                                       8
+
+                                                                                                                            2
+
+                                                                                                                                  6
+                                                           6
+                                                           5
+                                                           5
+                                                           4
+
+
+                                                          4.
+
+                                                          3.
+
+                                                          2.
+
+                                                          1.
+                                                          3.
+                                                          4.
+                                                          4.
+                                                          5.
+                                                          5.
+
+                                                                                                                 0.
+
+                                                                                                                       0.
+
+                                                                                                                            1.
+
+                                                                                                                                  1.
+                                                        1.
+                                                        1.
+                                                        1.
+                                                        1.
+                                                        1.
+                                                        −
+
+                                                        −
+
+                                                        −
+
+                                                        −
+                                                      −
+
+
+
+
+                                                                   γ1            γ2               log (sb/AU)          Λ
+
+                                                      10+0
+                                     P (log(s/AU ))
+
+
+
+
+                                                      10−1
+                                                                         Disk-like
+                                                                         Intermediate
+                                                      10−2               Halo-like
+
+
+
+                                                      10−3
+
+
+                                                             2.0        2.5     3.0         3.5         4.0      4.5        5.0
+                                                                                          log(s/AU )
+
+  Fig. 7.— Top: contours and marginalized probability distributions of the four parameters of the smoothly broken power law for the
+intrinsic-separation distribution of the disk-like (blue), intermediate (green) and halo-like (magenta) binaries, visualized with corner.py
+(Foreman-Mackey 2016). The dashed lines mark the best-fit constraints for each sample. Bottom: intrinsic distributions of projected
+separation for each sample. The uncertainties (within 1σ) are displayed with shaded regions. The separation distributions of the three
+subsamples are indistinguishable at small separations, s < 104.4 AU (∼ 0.12 pc). The separation distributions for all three subsamples
+deviate from a single power law (illustrated with the black dashed line) at s > 104.0 AU (∼ 0.05 pc), with a somewhat steeper fall-off at
+wide separations for halo binaries than for disk binaries.
+                                       Separation Distributions of Ultra-wide Binaries                                     11
+
+in such power law is then attributed to external pertur-         2007; Wyrzykowski et al. 2008; Quinn et al. 2009; Green
+bations, e.g., binary disruption as a consequence of en-         2016). We also note that the steepening in the observed
+countering MACHOs. Disk-like binaries are more likely            separation distributions is relatively gradual, and is not
+to encounter molecular clouds - acting as perturbers -           manifest as a sharp truncation or break. The arguably
+during much of their orbits, and any such encounters will        most obvious way to resolve this tension is to acknowl-
+be at lower velocities. It has therefore been inferred (e.g.     edge that the assumption of an initial single power law
+Chanamé & Gould 2004) that such samples should not be           was too restrictive, and not realized in nature.
+used to probe the properties of MACHOs, as their per-
+turbative effect would be subdominant. However, halo                      7.2. A simple model for the primordial
+binaries spend only a small fraction of their lifetime in                     wide-binary separation distribution
+the disk and cross it at high speed, so MACHOs (if they
+exist) could be the dominant perturbers, with the ob-               We now lay out a very simple model for the separation
+served separation distribution providing constraints on          distribution of wide binaries (wider than a few 1000 AU)
+their density and mass.                                          that might be expected as a consequence of their forma-
+  Such external perturbations can be usefully divided            tion. Given their dynamical fragility, we presume that
+into two regimes: a diffusive regime in which perturba-          most could have formed only as the cluster (or associa-
+tions are described by a multitude of individually weak          tion) was dispersing. A pair of stars in a dispersing star
+gravitational encounters, and a catastrophic regime in           cluster at separation s will be and presumably  p remain
+which perturbations are dominated by a single closest            bound provided that vtot < vmax (s, m) = 2Gmtot /s,
+encounter. As described in Section 6, we detect steepen-         where mtot is the total mass of the pair and vtot is their
+ing at ∼ 0.1 pc in the separation distribution, which is         total relative velocity. For a Gaussian velocity distribu-
+particularly distinct for the halo-like subsample.               tion σ (the velocity dispersion of the birth cluster), and
+  For those two disruption regimes (Binney & Tremaine            for “wide binaries” (vtot  σ), this will occur with prob-
+2008, Eq. 8.65a and b), the timescales to disrupt a solar        ability,
+mass binary at a separation of ∼ 0.1 pc can be expressed                                       3
+as:                                                                                4π    v
+                                                                 p(s | mtot , σ) =      √ tot                         3/2
+                                                                                                   ≃ 0.1G3/2 σ −3 ×mtot s−3/2 ,
+                                                                                    3     8πσ
+                  h    v    i h 30M i h ρ i h 0.1pc i
+                                          H
+  td,diff ≈ 3 Gyr                                       (6)                                                                (9)
+                    200km/s       M       ρ       s              for separations smaller than the cluster’s tidal radius,
+and                                                              Rtidal . Here we have taken into account the fact that
+                              h ρ i h 0.1pc i3/2
+                                 H
+                                                                 while phase space available to yield s scales ∝ s2 ds, the
+             td,cat ≈ 3 Gyr                      .       (7)     s2 in this expression is canceled for a typical cluster pro-
+                                 ρ      s                        file ρ ∝ r−2 , within Rtidal , with no pairs larger than this
+Here, v is the relative velocity of a MACHO perturber            radius.
+passing by one of binary components, M is the individ-              Thus for an ensemble of dissolving clusters with char-
+ual mass of the perturbers, and ρ is their mean mass             acteristic tidal radii Rtidal ∼ O(Rtyp ), the separation dis-
+density near the Sun. The local halo mass density is de-         tribution of subsequently bound wide pairs for s  Rtyp
+noted by ρH , and we adopted ρH = 0.01M pc−3 . In the            will always be the same (i.e., sγ , γ = −3/2); the sum
+catastrophic regime, the disruption timescale at a given         of such distribution will have the same power law. How-
+separation is independent of the mass and velocity of the        ever, as these clusters will not all have the same Rtidal ,
+perturber, set merely by ρ. If the perturber mass                the individual-cluster distributions will have breaks at
+                                                                 s ∼ Rtyp . Hence, for s  Rtyp , the joint distribution will
+                       M > 10 M ,                        (8)     be characterized by a true power law, while for s & Rtyp
+                                                                 it will fall off more rapidly in a manner that presumably
+td,diff would be shorter than the typical time, i.e., 10 Gyr.    could be approximated as a power law, depending on the
+The condition to see a distinct break due to disruption in       statistics of Rtyp .
+the diffusive regime is 30M   ρH
+                          M · ρ < 1. Therefore, Mcrit ∼             This simple model has two attractive features in this
+30 M , marks the transition between the two regimes.             context. First, it provides an explanation of why wide
+Previous authors expected to see a signature of binary           binaries in the range ∼ 1000AU to 10, 000 AU have a
+separation function at s ∼ 0.1 pc in the several studies         separation distribution of γ h −1.5 across all popula-
+(CG04; Y04; Quinn et al. 2009), but failed to detect the         tions. And it implies that the birth cluster size has an
+break signature due to the paucity of observational wide         imprint on the (maximal) binary separation distribution
+binaries at large separations.                                   even long after the cluster has been dispersed. If stars
+   However, the implied lower limits on the MACHO den-           born in earlier epochs of the Milky Way’s evolution (viz.
+sity or MACHO mass implied by the above analysis (crit-          the halo-like population) formed in clusters that were
+ically hinging on the assumption of an initial single power      more compact (smaller Rtidal ), or with a narrower distri-
+law for the binary separations) would be in direct con-          bution of Rtidal among the clusters, then their separation
+flict with the the stringent upper limits from the survival      distribution should experience a more distinct departure
+of compact ultra-faint dwarf galaxies and the star clus-         from the γ ≃ −1.5 power law. On the other hand, halo
+ter in Eridanus II. With these latter systems, Brandt            binaries are subject to fewer gravitational perturbations
+(2016) closed the window of allowed MACHO mass in                due to their higher velocities. These two effects work in
+∼ 20 − 100M , and thereby ruled out the entire window            opposite directions and it is not immediately clear which
+of MACHO mass in > 10−7 M by combining his re-                   will dominate. The fact that the observed separation dis-
+sults with the existing constraints (Y04; Tisserand et al.       tributions across the three samples are quite similar even
+12                                                               HJT, et al.
+
+at wide separations suggests that they partially cancel.               subsamples for s < 105.3 AU and accounting for the se-
+If the clusters that gave birth at a later epoch to the                lection function, several important findings have been
+disk-like binaries had a wider distribution of Rtidal , e.g.           discovered: (1) we confirm that the slope for separations
+because a larger fraction of them were born in barely-                 from 102.5 AU to 104.0 AU is p(s) ∝ sγ = s−1.54 , as
+bound associations, then we would expect a less distinct               found in previous studies; this slope is essentially the
+break in the separation power-law. In this model, the                  same for all three subsamples. (2) we show for the first
+present-day separation distribution is still mostly a re-              time at high significance how the slope steepens beyond
+flection of the initial distribution. Of course, some tidal            104 AU ≤ s ≤ 105 AU; and we find first tentative evi-
+disruption may have played a role as s approaches one                  dence that this slope-steepening differs among these sub-
+parsec. Note also, that this model can only infer - not                populations: by only ∆γ ∼ 0.5 for stars of disk-like kine-
+predict - the break radius, sb , which is larger for the               matics, but by ∆γ = 1 − 3 for stars with halo-like kine-
+halo-like binaries than for the disk-like ones.                        matics. The actual values of ∆γ would be even larger
+                                                                       than these estimates, if we had unrecognized contamina-
+                       8. CONCLUSION                                   tion at the largest separations. (3) we also find some, al-
+  We have compiled an extensive yet pure catalog of can-               beit tentative, evidence that sb increases from 5, 000 AU
+didate wide binaries (a < 1 pc) selected from Gaia DR2                 for the disk-like subsample to 20, 000 AU for the halo-like
+in the solar neighborhood with distances d < 4 kpc, fol-               subsample.
+lowing a procedure similar to that of ER18. This ini-                     We have offered interpretations for these observational
+tial candidate catalog consists of 807,611 possible bi-                findings in the two limiting cases: we start by presum-
+naries. Its contamination rates are lower than 10%                     ing that the birth separation was a single power-law
+at a < 20, 000 AU; however, the contamination rates                    to ∼ 1 pc, altered only by binary disruption effected
+quickly increase beyond 20,000 AU, until up to 100% at                 by some possible MACHO populations. The break in
+the largest separation bin, i.e., a ∼ 1.0 pc. To address               ∼ 0.1 pc in the separation distribution of the halo-like
+this, we subsequently applied additional selection crite-              subsample, would imply M > 10 M at a very high
+ria, tailored towards three kinematically-selected, pre-               mean MACHO density. However, this window of MA-
+sumably pure subsamples: disk-like, intermediate, and                  CHO candidates has been closed by other studies, e.g.,
+halo-like binaries. The raw catalog is described in Table              Brandt (2016), and we must conclude that – in light of
+2, which will be released on-line and available via the                a complex, but not truncated, separation distributions –
+PaperData Service of China-VO.                                         MACHO limits or detections would be hard to derive,
+  This raw catalog of candidate wide binaries can provide              as no clearly defined null-hypothesis for the undisturbed
+a starting point for several scientific applications beyond            separation distribution exists.
+the scope of this paper. For instance, one could select                   We therefore build a conceptually different simple
+a subsample of wide binaries containing a WD member                    model asking what we should expect for the initial (birth)
+from the raw catalog to determine stellar ages. The age of             separation distribution. We find that a simple model,
+a WD can be easily constrained from its cooling age and                where binaries form by stars remaining stochastically
+mass given an initial-final mass relation and an initial               bound as the cluster disperses, works remarkably well in
+mass-age relation, while the age of its companion MS                   two respects: in generically predicts a distribution power
+                                                                                  3
+star could not be measured precisely. The two members                  law of s− 2 , as observed in all populations. And it im-
+in a binary usually can be regards to be co-eval, so the               plies that the separation distribution will steepen beyond
+MS star’s age can be simply obtained from its companion                separations in excess of the initial cluster size; therefore,
+WD star (Fouesneau et al. 2019).                                       (expected) structural differences between the birth clus-
+  To reach low contamination to separations of ∼ 1 pc,                 ters or associations of the different populations may now
+we defined three subsamples of MS-MS binaries from the                 be reflected in the separation distribution of ultra-wide
+raw catalog via the systems’ projected velocities with                 binaries.
+respect to the Sun, v⊥,tot : 4361 disk-like binaries with
+v⊥,tot ≤ 40 km/s, 10,090 kinematically intermediate bi-
+naries with 40 ≤ km/s≤ v⊥,tot ≤ 85 km/s, and 4351 bi-
+naries with halo-like kinematics (v⊥,tot ≥ 85 km/s). We                   The authors thank Bing Yue, Qiang Yuan, Chao Liu
+presume that these velocity cuts represent a rough or-                 and Ling Zhu for the helpful discussions. HJT ac-
+dering in the binaries’ age. Using three catalogs, i.e., the           knowledges the National Natural Science Foundation of
+mock Gaia DR2 catalog (Rybizki et al. 2018), a shifted                 China (NSFC) under grants 11873034, U1731124. KE
+Gaia DR2 catalog, and around 7.2 million Gaia DR2                      was supported in part by an NSF graduate research
+stars with RVs, we quantify the contamination rates of                 fellowship and by SFB 881. This work has made use
+the three subsamples after we have applied additional                  of data from the European Space Agency (ESA) mis-
+cuts in the different separation bins, and find that the               sion Gaia (https://www.cosmos.esa.int/gaia), pro-
+contamination rates in the three subsamples are negligi-               cessed by the Gaia Data Processing and Analysis Con-
+ble in the range of separation s < 1.0 pc.                             sortium (DPAC, https://www.cosmos.esa.int/web/
+  We then proceeded to model the separation dis-                       gaia/dpac/consortium). Funding for the DPAC has
+tributions of these subsamples as a smoothly bro-                      been provided by national institutions, in particular the
+ken power law, with four free parameters m             ~ =             institutions participating in the Gaia Multilateral Agree-
+(γ1 , γ2 , log(sb /AU), Λ). Fitting these model for the three          ment.
+
+                                                              REFERENCES
+Afonso, C., Albert, J. N., Andersen, J., et al. 2003, A&A, 400, 951    Alcock, C., Allsman, R. A., Alves, D. R., et al. 2001, ApJ, 550,
+                                                                         L169
+                                        Separation Distributions of Ultra-wide Binaries                                               13
+
+Allen, C., & Monroy-Rodrı́guez, M. A. 2014, ApJ, 790, 158             Liu, C. 2019, arXiv e-prints, arXiv:1907.02250
+Andrews, J. J., Chanamé, J., & Agüeros, M. A. 2017, MNRAS,          Lindegren, L., Hernández, J., Bombrun, A., et al. 2018, A&A,
+   472, 675                                                             616, A2
+Badenes, C., Mazzola, C., Thompson, T. A., et al. 2018, ApJ,          Moe, M., & Di Stefano, R. 2017, ApJS, 230, 15
+   854, 147                                                           Moe, M., & Kratter, K. M. 2018, ApJ, 854, 44
+Bahcall, J. N., & Soneira, R. M. 1981, ApJ, 246, 122                  Moeckel, N., & Bate, M. R. 2010, MNRAS, 404, 721
+Bahcall, J. N., Hut, P., & Tremaine, S. 1985, ApJ, 290, 15            Moeckel, N., & Clarke, C. J. 2011, MNRAS, 415, 1179
+Batista, V., Gould, A., Dieters, S., et al. 2011, A&A, 529, A102      Oelkers, R. J., Stassun, K. G., & Dhital, S. 2017, AJ, 153, 259
+Binney, J., & Tremaine, S. 2008, Galactic Dynamics: Second            Pittordis, C., & Sutherland, W. 2019, MNRAS, 1859
+   Edition                                                            Quinn, D. P., Wilkinson, M. I., Irwin, M. J., et al. 2009, MNRAS,
+Brandt, T. D. 2016, ApJ, 824, L31                                       396, L11
+Boersma, J. 1961, Bull. Astron. Inst. Netherlands, 15, 291            Raghavan, D., McAlister, H. A., Henry, T. J., et al. 2010, ApJS,
+Chanamé, J., & Gould, A. 2004, ApJ, 601, 289                           190, 1
+Chanamé, J. 2007, Binary Stars as Critical Tools & Tests in          Reipurth, B., & Mikkola, S. 2012, Nature, 492, 221
+   Contemporary Astrophysics, 316                                     Retterer, J. M., & King, I. R. 1982, ApJ, 254, 214
+Dhital, S., West, A. A., Stassun, K. G., et al. 2010, AJ, 139, 2566   Robin, A. C., Reylé, C., Derrière, S., et al. 2003, A&A, 409, 523
+Duchêne, G., & Kraus, A. 2013, ARA&A, 51, 269                        Rybizki, J., Demleitner, M., Fouesneau, M., et al. 2018, PASP,
+de Rujula, A., Jetzer, P., & Masso, E. 1992, A&A, 254, 99               130, 74101
+El-Badry, K., & Rix, H.-W. 2018, MNRAS, 480, 4884                     Jiang, Y.-F., & Tremaine, S. 2010, MNRAS, 401, 977
+El-Badry, K., & Rix, H.-W. 2019, MNRAS, 482, L139                     Savedoff, M. P. 1966, AJ, 71, 396
+El-Badry, K., Rix, H.-W., Tian, H., et al. 2019, MNRAS, 489,          Sharma, S., Bland-Hawthorn, J., Johnston, K. V., et al. 2011,
+   5822                                                                 ApJ, 730, 3
+Evans, D. W., Riello, M., De Angeli, F., et al. 2018, A&A, 616, A4    Schönrich, R. 2012 MNRAS, 427, 274
+Fouesneau, M., Rix, H.-W., von Hippel, T., et al. 2019, ApJ, 870,     Tian, H.-J., Liu, C., Carlin, J. L., et al. 2015, ApJ, 809, 145
+   9                                                                  Tisserand, P., Le Guillou, L., Afonso, C., et al. 2007, A&A, 469,
+Foreman-Mackey, D. 2016, The Journal of Open Source Software,           387
+   1, 24                                                              van Albada, T. S. 1968, Bull. Astron. Inst. Netherlands, 20, 57
+Foreman-Mackey, D., Hogg, D. W., Lang, D., et al. 2013, PASP,         Wyrzykowski, L., Kozlowski, S., Belokurov, V., et al. 2008,
+   125, 306                                                             Manchester Microlensing Conference, 11
+Gaia Collaboration, Brown, A. G. A., Vallenari, A., Makarov, V.       Wasserman, I., & Weinberg, M. D. 1987, ApJ, 312, 390
+   V., et al. 2016, A&A, 595, A2                                      Weinberg, M. D., Shapiro, S. L., & Wasserman, I. 1987, ApJ, 312,
+Gaia Collaboration: Brown, A. G. A., Vallenari, A., Makarov, V.         367
+   V., et al. 2018, A&A, 616, A1                                      Widmark, A., Leistedt, B., & Hogg, D. W. 2018, ApJ, 857, 114
+Green, A. M. 2016, Phys. Rev. D, 94, 063530                           Yoo, J., Chanamé, J., & Gould, A. 2004, ApJ, 601, 311
+Kouwenhoven, M. B. N., Goodwin, S. P., Parker, R. J., et al.          Zapatero Osorio, M. R., & Martı́n, E. L. 2004, A&A, 419, 167
+   2010, MNRAS, 404, 1835
+Lépine, S., & Bongiorno, B. 2007, AJ, 133, 889
+
+                                                               APPENDIX
+
+  In order to quantify and clearly illustrate the smaller-separation break in p(s), we sample the posterior distribution
+of the broken-power-law model with a fixed value of Λ = 0.05, setting smax = 104.6 AU for each binary subsample.
+The resulting constraints on the intrinsic separation distributions are displayed in Figure 8, similar to Figure 7. The
+best fit values of m
+                   ~ = (γ1 , γ2 , log(sb /AU)) are
+    • (−1.52+0.03        +0.07         +0.16
+             −0.03 −1.74−0.06 , 3.51−0.19 ) for the disk-like binaries,
+                   ,
+
+    • (−1.58+0.02        +0.21       +0.18
+            −0.03 , −1.90−0.14 , 3.88−0.33 ) for the intermediate binaries
+
+    • (−1.56+0.03        +0.11       +0.10
+            −0.03 , −1.90−0.08 , 3.81−0.13 ) for the halo-like binaries.
+
+  Figure 9 is similar to Figure 8, but with Λ = 0.7 and smax = 105.3 AU. The best fit values of m
+                                                                                                ~ = (γ1 , γ2 , log(sb /AU))
+are
+    • (−1.52+0.03        +0.41       +0.34
+            −0.02 , −2.17−0.20 , 4.13−0.31 ) for the disk-like binaries,
+
+            +0.02        +0.45       +0.18
+    • (−1.54−0.03 , −2.77−0.49 , 4.33−0.33 ) for the intermediate binaries
+
+    • (−1.53+0.03        +0.61       +0.21
+            −0.04 , −2.95−0.54 , 4.45−0.30 ) for the halo-like binaries.
+
+  In the two extreme cases, we further confirm that (1) the slope for separations from 102.5 AU to 104.0 AU is
+p(s) ≈ s−1.5 ; (2) At s > 104.0 AU, the separation distributions obviously deviate from the single power law; (3) At
+s > 104.5 AU, the slope steepens by a slightly larger amount for the old population than for the young population.
+  It is worth to mention that the intermediate subsample presents bimodal parameter constraints, in particular for
+the parameters of γ2 and log(sb /AU). The value of one peak is consistent with the value in the disk-like population,
+the value of the other one matches with that of the halo-like subsample, see Figure 8 (the top panel).
+14                                                              HJT, et al.
+
+                                                              TABLE 2
+                                                         Catalog description
+
+   Column                           units    Description
+   source id                                 Gaia source id (int64); star 1
+   source id2                                Gaia source id (int64); star 2
+   astrometric chi2 al                       astrometric goodness-of-fit (χ2 ) in the along-scan direction; star 1
+   astrometric chi2 al 2                     astrometric goodness-of-fit (χ2 ) in the along-scan direction; star 2
+   astrometric n good obs al                 number of good CCD transits; star 1
+   astrometric n good obs al2                number of good CCD transits; star 2
+   dec                              deg      declination; star 1
+   dec2                             deg      declination; star 2
+   ra                               deg      right ascension; star 1
+   ra2                              deg      right ascension; star 2
+   pairdistance                     deg      angular separation between star 1 and star 2
+   parallax                         mas      parallax; star 1
+   parallax2                        mas      parallax; star 2
+   parallax over error                       parallax divided by its error; star 1
+   parallax over error2                      parallax divided by its error; star 2
+   phot bp mean flux over error              integrated BP mean flux divided by its error; star 1
+   phot bp mean flux over error2             integrated BP mean flux divided by its error; star 2
+   phot bp mean mag                 mag      integrated BP mean magnitude; star 1
+   phot bp mean mag2                mag      integrated BP mean magnitude; star 2
+   phot bp rp excess factor                  ratio of total integrated BP and RP flux to G-band flux; star 1
+   phot bp rp excess factor2                 ratio of total integrated BP and RP flux to G-band flux; star 2
+   phot g mean flux over error               integrated G-band mean flux divide by its error; star 1
+   phot g mean flux over error2              integrated G-band mean flux divide by its error; star 2
+   phot g mean mag                  mag      G-band mean magnitude (Vega scale); star 1
+   phot g mean mag2                 mag      G-band mean magnitude (Vega scale); star 2
+   phot rp mean flux over error              integrated RP mean flux divided by its error; star 1
+   phot rp mean flux over error2             integrated RP mean flux divided by its error; star 2
+   phot rp mean mag                 mag      integrated RP mean magnitude; star 1
+   phot rp mean mag2                mag      integrated RP mean magnitude; star 2
+   pmdec                            mas yr−1 proper motion in the declination direction; star 1
+   pmdec2                           mas yr−1 proper motion in the declination direction; star 2
+   pmdec error                      mas yr−1 standard error of proper motion in the declination direction; star 1
+   pmdec error2                     mas yr−1 standard error of proper motion in the declination direction; star 2
+   pmra                             mas yr−1 proper motion in right ascension direction; i.e., µ∗α = µα cos δ; star 1
+   pmra2                            mas yr−1 proper motion in right ascension direction; i.e., µ∗α = µα cos δ; star 2
+   pmra error                       mas yr−1 standard error of proper motion in right ascension direction; star 1
+   pmra error2                      mas yr−1 standard error of proper motion in right ascension direction; star 2
+   radial velocity                  km s−1   spectroscopic barycentric radial velocity; star 1
+   radial velocity2                 km s−1   spectroscopic barycentric radial velocity; star 1
+   radial velocity error            km s−1   standard error of spectroscopic barycentric radial velocity; star 1
+   radial velocity error2           km s−1   standard error of spectroscopic barycentric radial velocity; star 2
+   rv nb transits                            number of transits used to compute radial velocity; star 1
+   rv nb transits2                           number of transits used to compute radial velocity; star 2
+   s AU                             AU       projected physical separation between two stars
+   binary type                               type of wide binary. Different types are assigned different integer identifiers: MS-WD,
+                                             WD-WD, and MS-MS are assigned with 1, 2, and 3, respectively.
+   num                                       number of pairs in neighborhood for each binary
+   U                                km s−1   radial velocity in the Cartesian coordinates (positive to the Galactic Center); star 1
+   V                                km s−1   azimuthal velocity in the Cartesian coordinates; star 1
+   W                                km s−1   vertical velocity in the Cartesian coordinates; star 1
+   U2                               km s−1   radial velocity in the Cartesian coordinates; star 2
+   V2                               km s−1   azimuthal velocity in the Cartesian coordinates; star 2
+   W2                               km s−1   vertical velocity in the Cartesian coordinates; star 2
+   U error                          km s−1   error of radial velocity in the Cartesian coordinates; star 1
+   V error                          km s−1   error of azimuthal velocity in the Cartesian coordinates; star 1
+   W error                          km s−1   error of vertical velocity in the Cartesian coordinates; star 1
+   U error2                         km s−1   error of radial velocity in the Cartesian coordinates; star 2
+   V error2                         km s−1   error of azimuthal velocity in the Cartesian coordinates; star 2
+   W error2                         km s−1   error of vertical velocity in the Cartesian coordinates; star 2
+
+Note: Each row in the catalog corresponds to a single binary; “star 1” and “star 2” designations in each binary are arbitrary. Full
+descriptions of Gaia variables can be found at https://gea.esac.esa.int/archive/documentation/GDR2/.
+                                                                  Separation Distributions of Ultra-wide Binaries                          15
+
+
+
+
+                                                                                                            Disk-like
+                                                                                                            Intermediate
+                                                                                                            Halo-like
+                                    1.
+                                            6                                                               Λ = 0.05
+                              −
+                                            8
+                                    1.
+                              −
+                      γ2
+                                            0
+                                    2.
+                              −
+                                            2
+                                    2.
+                              −
+                                            2
+                      log (sb/AU)
+                                    4.
+                                            0
+                                    4.
+                                            8
+                                    3.
+                                            6
+                                    3.
+                                            4
+                                    3.
+
+
+                                                            − 0
+                                                            − 6
+                                                            − 2
+                                                            − 8
+                                                                44
+
+                                                                  2
+
+                                                                  0
+
+                                                                  8
+
+                                                               3. 6
+                                                                  4
+                                                                  6
+                                                                  8
+                                                                  0
+                                                                  2
+                                                                6
+                                                                5
+                                                                5
+                                                                4
+
+
+                                                               2.
+
+                                                               2.
+
+                                                               1.
+
+                                                               1.
+
+                                                               3.
+                                                               3.
+                                                               4.
+                                                               4.
+                                                       1.
+                                                             1.
+                                                             1.
+                                                             1.
+                                                             1.
+
+                                                             −
+
+                                                             −
+
+                                                             −
+
+                                                             −
+                                                      −
+
+
+
+
+                                                                     γ1                       γ2            log (sb/AU)
+
+                                                     10+0
+                                    P (log(s/AU ))
+
+
+
+
+                                                     10−1
+                                                                            Disk-like
+                                                                            Intermediate
+                                                                            Halo-like
+
+                                                     10−2
+                                                            2.0            2.5         3.0            3.5           4.0    4.5
+                                                                                             log(s/AU )
+
+  Fig. 8.— Similar to Figure 7, but with a fixed smoothing parameter, i.e., Λ = 0.05, and setting smax = 104.6 AU. This figure highlights the
+small-separation break in the inferred intrinsic separation distribution, which is hard to identify from the observed separation distributions
+in Figure 4. At s < 104.5 AU, the distributions for the three samples are formally consistent, although there is a hint of a steeper fall-off
+at large separations for the halo-like sample than the disk sample.
+16                                                                                   HJT, et al.
+
+
+
+
+                                                                                                            Disk-like
+                                                                                                            Intermediate
+                                                                                                            Halo-like
+                                    1.
+                                            6                                                               Λ = 0.7
+                              −
+                                            4
+                                    2.
+                              −
+                      γ2
+                                            2
+                                    3.
+                              −
+                                            0
+                                    4.
+                              −
+                                            5
+                                    5.
+                      log (sb/AU)
+                                            0
+                                    5.
+                                            5
+                                    4.
+                                            0
+                                    4.
+                                            5
+                                    3.
+
+
+                                                             − 0
+                                                             − 5
+                                                             − 0
+                                                             − 5
+                                                                 40
+
+                                                                   0
+
+                                                                   2
+
+                                                                   4
+
+                                                                   6
+                                                                   5
+                                                                   0
+                                                                   5
+                                                                   0
+                                                                   5
+                                                                 6
+                                                                 5
+                                                                 5
+                                                                 4
+
+
+                                                                4.
+
+                                                                3.
+
+                                                                2.
+
+                                                                1.
+                                                                3.
+                                                                4.
+                                                                4.
+                                                                5.
+                                                                5.
+                                                            1.
+                                                              1.
+                                                              1.
+                                                              1.
+                                                              1.
+                                                              −
+
+                                                              −
+
+                                                              −
+
+                                                              −
+                                                        −
+
+
+
+
+                                                                  γ1                      γ2                log (sb/AU)
+
+                                                     10+0
+                                    P (log(s/AU ))
+
+
+
+
+                                                     10−1
+
+                                                                        Disk-like
+                                                                        Intermediate
+                                                     10−2               Halo-like
+
+
+
+                                                     10−3
+
+                                                            2.0        2.5     3.0         3.5        4.0     4.5     5.0
+                                                                                         log(s/AU )
+
+  Fig. 9.— Similar to Figure 8, but with a fixed smoothing parameter, i.e., Λ = 0.7, and setting smax = 105.3 AU. This figure highlights the
+wider-separation break in the separation distributions. There is a strong hint of a steeper fall-off at ultra-wide separations (s > 104.5 AU)
+for the halo-like sample than the disk sample.
+

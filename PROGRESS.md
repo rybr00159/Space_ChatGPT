@@ -1,5 +1,44 @@
 # Research checkpoint — stellar systems and completed exoplanet phase
 
+## Latest fresh search for uncatalogued stars and companions
+
+Evening 14 October 2026, America/Halifax; archive manifests use UTC 15 October. The user requested a new search beyond the old two candidates and then asked to continue. **No genuinely uncatalogued star is established.** Four complementary methods were actually executed and promising signals actively falsified. The investigation remains open; no claim that all public astronomical data are exhausted. Read [NEW_STAR_SEARCH_REPORT.md](NEW_STAR_SEARCH_REPORT.md), [search counts](results/new_stars/search_summary.json) and [ranked leads](results/new_stars/ranked_leads.csv).
+
+- Direct imaging:12-field pilot plus 64-field stratified expansion;1035 recurring peaks, 495 Gaia-missing but deeper-catalogued.27 residual leads reduced to one, then rejected as inside all g/r/z native saturation masks (value 18462). One separate faint, broadened pilot peak at RA 216.428278/Dec 23.612155 remains unverified after stationary/common-motion PS1, deep-stack and SDSS checks. Not a star candidate.3832 static injection trials quantify only the detection step; at 4 arcsec, magnitude 21 recovery is 2.85%, so the negative result does not exclude close faint companions.
+- Gaia:4103 fixed primaries, 1086 neighbor rows, 11 unique screened associations.5 were already recognized. Of 6 remaining, pairs 1/3 have cleaner quality and independent 1993/1996 paired images. Gaia IDs 4977459112829640832/4977459112829654400 (4.034 arcsec) and 4923799509418222080/4923799509418221952 (4.763 arcsec). Existing source positions, possible new associations only. No binding, masses or priority proven. Others have compromised photometry/dynamics. Catalogues' selection gaps mean null matches do not establish novelty.12309 shifted-primary trials yield zero passes, with finite-count/clustering caveats.
+- Infrared:1946 selected CatWISE rows in 10 successful fixed fields, two failed fields;250 Gaia-unmatched and 10 matched controls received old-epoch tests.27 independently consistent no-Gaia cases are all already TIC STAR entries.28 optical tests leave one apparent mover, then SDSS falsifies its proposed optical counterpart as a stationary galaxy (0.126 arcsec over 6.87 years versus 2.64 arcsec predicted). Different blended movers remain unexcluded; no new star established.
+- Spectroscopy:3430 repeated GALAH stars/13176 quality visits.39/40 strongest cases already flagged binaries; last strong case has reduction problems. A 1799-star strict subset leaves two weaker sparse-RV leads at Gaia 4690783166942834816/TIC 51939231 and 5437472031746145536/TIC 24731098. Same-field controls, four observed-flux spectra, exact rest-frame handling, known-catalogue checks and three QLP curves were examined. Wavelength/mask dependence prevents precise RV/orbit claims; no component mass or new star. The first is already a 20.766-day ROT variable.
+
+All original observations and 218 intermediate image plots were retained.186 MB bulk plots moved intact outside ordinary Git; four diagnostics remain tracked. `data/new_stars/imaging/plot_preservation.json` proves identities. `/workspace/tess-research-data/new_stars/` has the cache. Small public-query snapshots are additionally archived in `data/new_stars/checkpoint/` for exact offline restoration. The overlay is not independently verified durable storage. No paid APIs or external messages/submissions/observing requests. Parallel workers hit usage limits; root continued locally rather than abandoning analysis.
+
+Verified checkpoint: 10 methods, 479 scientific artifacts and all 5,955 cached files (377.9 MB) match their recorded hashes. Offline query restoration independently reproduced all 5,466 archived files exactly. All 10 new Python modules compile; Gaia derivation/controls and all five infrared stages reproduced from retained inputs. This verifies reproducibility, not discovery claims.
+
+Reproduce without rerunning completed broad TESS searches:
+
+```sh
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+export MPLCONFIGDIR=/workspace/tess-research-data/matplotlib
+python scripts/new_star_checkpoint.py verify
+# If a future cloud task loses raw query responses:
+python scripts/new_star_checkpoint.py restore-queries
+python scripts/new_star_checkpoint.py download --max-downloads 20
+python src/new_companion_search.py
+python src/infrared_star_scout.py fetch
+python src/infrared_star_scout.py gaia
+python src/infrared_star_scout.py counterparts
+python src/infrared_star_scout.py novelty
+python src/infrared_star_scout.py optical
+python src/spectroscopic_companion_scout.py
+python scripts/rv_lead_recognition.py
+python src/rv_spectral_validation.py
+python src/rv_photometric_veto.py
+python scripts/summarize_new_stars.py
+```
+
+Image runs use `python scripts/run_uncatalogued_imaging.py --expanded --run-name expanded64_v4`, which preserves bulk plots outside Git. Frozen version snapshots/earlier outputs are in the image data directories. After deliberate regenerated artifact changes, `python scripts/new_star_checkpoint.py freeze` refreshes a verified checkpoint; never change expected raw hashes to accept a mismatch.
+
+Exact next science: independently review pairs 1/3's literature/other catalogues, then obtain differential RVs or stronger astrometry to test physical association. For the faint image peak, split original DECam exposures by night/band, model the primary's motion and require persistent PSF-like detections; existing coadds/PS1 are insufficient. For RV leads, seek genuinely reduced/independent spectral epochs and resolve line-profile/calibration discrepancies before fitting or claiming a stellar companion. The available ESO/RAVE/APOGEE cone queries are retained and bounded, not proof that no spectrum exists anywhere. Two timed-out infrared fields can be attempted under new response names without overwriting old errors. Do not count reruns or metadata as new stars.
+
 ## Latest two-system deep validation
 
 Updated 2026-10-14. **Both eclipse signals survive further falsification; no new star is confirmed. TIC273879360 was already publicly machine-flagged for eclipse-like variability.** The prior description of Kostov2025 Table2 as a generic target inventory was incorrect; it is a published NN eclipse-feature collection. This correction changes novelty assessment, not the measured source localization/eclipses.
