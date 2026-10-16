@@ -101,3 +101,12 @@ prior files and notes missing from the bulk tables; literature searches are
 finite and incomplete. All original responses remain in timestamped `live/`
 subdirectories. Derived positions/separations and finite-check results are in
 `results/multisector_recognition/live_context_summary.json`.
+
+After a live target check, `--deep-tic TIC` retrieves Gaia DR3 properties,
+60-arcsecond neighbors/classifications, actual target NSS and selected
+variability tables, an ASAS-SN published 2021 cone, and a 60-arcsecond SIMBAD
+alias/bibliography query. These retain source names and coordinates so that
+nearby objects cannot inherit the target's classification. Existing successful
+responses are reused only after URL and SHA-256 verification; changed or failed
+responses are never silently accepted. The derived context and finite-check
+limitations are in `results/multisector_recognition/deep_context_summary.json`.

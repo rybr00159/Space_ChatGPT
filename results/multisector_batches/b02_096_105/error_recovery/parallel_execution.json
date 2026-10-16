@@ -1,0 +1,30 @@
+{
+  "batch": "b02_096_105",
+  "driver_sha256": "cc857d2c1a298fd156dcab974e298f3f12ab5f18cacab3d781b726535fd704a1",
+  "frozen_methods": {
+    "src/fast_screen.py": "26eede8aaeb9fa2a624b73a5c3966366f77c4cc73738153eba7e46d13eb10307",
+    "src/multisector_screen.py": "0dee5e8e693143957303079fc5a7315a9ab3b0c47d303592fe8a94ecca7ce42d",
+    "src/multisector_missing_errors.py": "0440a5d0828ea0ab46576e4e9d96d5f13bdcc18838d602e0e83e03839e6c267d"
+  },
+  "formula": {
+    "min_good_flux": 400,
+    "max_positive_producer_errors_exclusive": 20,
+    "max_adjacent_gap_cadences": 2.5,
+    "min_difference_pairs": 100,
+    "estimator": "1.4826 * median(abs(diff(flux) - median(diff(flux)))) / sqrt(2)",
+    "weighting": "One positive constant in original corrected-flux units per target-sector observation.",
+    "limitations": "Adjacent differences assume locally independent comparable scatter; correlated noise can bias low and rapid variability high. Frozen detrending still applies observed-scatter floors. Empirical errors are not producer errors or a survey false-alarm calibration."
+  },
+  "started_utc": "2026-10-16T05:51:36.656755+00:00",
+  "workers": 3,
+  "planned_new_records": 689,
+  "serial_parallel_exact_equivalence": {
+    "tic": 5775542,
+    "sector": 96,
+    "numeric_values_compared": 1092
+  },
+  "finished_utc": "2026-10-16T05:53:54.152870+00:00",
+  "final_counts": {
+    "screened": 689
+  }
+}

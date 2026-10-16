@@ -1,0 +1,35 @@
+{
+  "updated_utc": "2026-10-16T05:53:54.136014+00:00",
+  "main_db_read_only": "/workspace/tess-research-data/multisector/b02_096_105/survey.sqlite",
+  "recovery_db": "/workspace/tess-research-data/multisector/b02_096_105/error_recovery.sqlite",
+  "methods": {
+    "src/fast_screen.py": "26eede8aaeb9fa2a624b73a5c3966366f77c4cc73738153eba7e46d13eb10307",
+    "src/multisector_screen.py": "0dee5e8e693143957303079fc5a7315a9ab3b0c47d303592fe8a94ecca7ce42d",
+    "src/multisector_missing_errors.py": "0440a5d0828ea0ab46576e4e9d96d5f13bdcc18838d602e0e83e03839e6c267d"
+  },
+  "assumptions": {
+    "min_good_flux": 400,
+    "max_positive_producer_errors_exclusive": 20,
+    "max_adjacent_gap_cadences": 2.5,
+    "min_difference_pairs": 100,
+    "estimator": "1.4826 * median(abs(diff(flux) - median(diff(flux)))) / sqrt(2)",
+    "weighting": "One positive constant in original corrected-flux units per target-sector observation.",
+    "limitations": "Adjacent differences assume locally independent comparable scatter; correlated noise can bias low and rapid variability high. Frozen detrending still applies observed-scatter floors. Empirical errors are not producer errors or a survey false-alarm calibration."
+  },
+  "counts": {
+    "screened": 689
+  },
+  "sector_counts": {
+    "96": {
+      "screened": 301
+    },
+    "105": {
+      "screened": 388
+    }
+  },
+  "additionally_period_searched_observations": 689,
+  "unique_additionally_period_searched_tics": 585,
+  "seed_rows": 898,
+  "seed_tics": 213,
+  "interpretation": "Alternative uncertainty-assumption search, separate from frozen producer-error main analysis. No candidate validation or discovery claim."
+}

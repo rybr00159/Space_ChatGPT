@@ -1,0 +1,38 @@
+{
+  "url": "https://mast.stsci.edu/api/v0/invoke",
+  "request": {
+    "service": "Mast.Caom.Filtered",
+    "params": {
+      "columns": "obsid,obs_id,target_name,sequence_number,dataproduct_type,provenance_name",
+      "filters": [
+        {
+          "paramName": "obs_collection",
+          "values": [
+            "TESS"
+          ]
+        },
+        {
+          "paramName": "provenance_name",
+          "values": [
+            "SPOC"
+          ]
+        },
+        {
+          "paramName": "target_name",
+          "values": [
+            "238182368",
+            "55525572"
+          ]
+        }
+      ]
+    },
+    "format": "json",
+    "pagesize": 100000,
+    "page": 1
+  },
+  "retrieved_utc": "2026-10-16T05:53:42.146707+00:00",
+  "valid": true,
+  "http_status": 200,
+  "bytes": 12452,
+  "sha256": "b3f30c871fd03b47e2501511b0f43ee2eff77827cf7b30ab6ba901f3f4839759"
+}

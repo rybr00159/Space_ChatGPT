@@ -1,14 +1,55 @@
-# Research checkpoint — stellar systems and completed exoplanet phase
+# Research checkpoint — multi-sector exoplanet and stellar investigations
 
-## Active broad multi-sector exoplanet search
+## Latest checkpoint — completed six-sector batches, unresolved TIC 229146531
 
-15 October 2026, America/Halifax. User authorized execution of a systematic wider-sector search. New fixed sample: 1,024 observations each from Sectors83/86/95/98, 4,096 total sector observations /3,613 distinct TICs; 321 overlap old Sector1 searched stars. Selected counts are not actual searches. See [the new report](MULTISECTOR_RESEARCH_REPORT.md), [live completed counts](results/multisector/summary.json), [controls](candidates/multisector_controls/README.md) and [archive selection](reports/multisector/archive_probe.md).
+**16 October 2026 UTC.** Actually period-searched **5,058 target-sector observations /4,391 distinct TICs** across sampled Sectors83/86/95/96/98/105. 5,059selected observations, one genuinely unusable S83curve. Producer-error searches3819; separate empirical-error searches1239. First batch4095observations /3612stars; second963/850;71shared TICs counted once. Exactly3998TICs were outside the frozen159505-star Sector1survey. Do not add repeated pools, controls, metadata inventories or follow-up observations as new survey stars.
 
-Main command in progress: `OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /workspace/openrouter-check-venv/bin/python src/multisector_survey.py run --workers 3 --downloads 12`. Do not launch another writer. It skips completed observations and refuses changed scientific source hashes. Source methods/old Sector1 results stay frozen. Raw cache and SQLite are in `/workspace/tess-research-data/multisector/`.
+All planned pools completed:471producer-only plus12mixed first-batch repeated stars,113second-batch repeated stars and71cross-batch all-observation searches. These sets overlap. No survey, pool or follow-up process is left running. Read [the current scientific report](MULTISECTOR_RESEARCH_REPORT.md), [searchable deduplicated table](results/multisector/all_observations.csv), [accounting/index](results/multisector/campaign_summary.json), [ranked assessments](results/multisector/ranked_assessments.csv) and [last follow-up report](reports/multisector/batch02_followup.md).
 
-Recovery controls executed 288 distinct actual-noise injections through two methods, 12 real control observations through both, and 32 structured surrogates from8 preselected stars. Most increased retention comes from a lower threshold; 300ppm sensitivity remains poor and no survey FAP is established. Separate blind pooled searches include every repeated star regardless of single-sector thresholds. Sector95 missing/nonpositive producer errors require a separately labeled empirical-error search, without changing original FITS/errors or claiming the first run succeeded. Follow-up/recognition are active; no credible new planet candidate established.
+**No credible new planet or previously unknown star established.** [TIC229146531](candidates/multisector/tic229146531/README.md) is the highest-priority unresolved signal: P≈0.935024d in six sectors, stable native target-area deficit, but dark-companion and doubled-period grazing stellar models have almost identical fits. Already a Gaia321.389d astrometric binary; that orbit does not explain the short-period signal. Odd/even differences reverse between sectors. No measured inner companion mass, reliable radius or novelty established. Initial coarse-period historical non-recovery was invalid because phase uncertainty accumulated. Do not revive that rejection.
 
-Checkpoint: `python scripts/multisector_checkpoint.py freeze`, `verify`, and `restore --destination /tmp/unused.sqlite` preserve a consistent full database and exact raw observation manifest. Initial exact offline restoration passed. Archive metadata restoration: `python scripts/multisector_inventory_checkpoint.py verify`. Later pooled/alternative-error checkpoints and final counts will be appended after their running phases complete. Retain all raw and failed products. No paid API calls or external submissions.
+Known-neighbor contamination, published SB1orbits, variability aliases and native background/image-motion tests weaken other leads. New final pooled checks added14stars /30observations, then external sectors, native cubes and a reference-image/gradient positive control. TIC183373155is background/redistribution affected; its S29predicted event is in a gap, not a null. TIC71274048has no convincing native source-localized deficit. The low-S/N Gaussian offset for293268396and ill-conditioned high-order baseline extrapolations are invalid diagnostics. Frozen full helper crashes for zero events have explicit coverage/local-statistic fallbacks; do not silently replace missing depths with zeros.
+
+### Environment and verification
+
+Repository `/workspace/Space_ChatGPT`; Python `/workspace/openrouter-check-venv/bin/python`;5CPUs, approximately23GBfree at the last check. Raw/static/prepared data, live SQLite and preserved bulk figures remain under `/workspace/tess-research-data/multisector/`. The overlay is not independently verified durable storage. No OpenRouter requests were made: project research spend remains$0. No external messages/submissions/observing requests. Worker usage limits were reached; root continued locally through additional astrophysical/pixel checks and preservation.
+
+```sh
+cd /workspace/Space_ChatGPT
+export PATH=/workspace/openrouter-check-venv/bin:$PATH
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+export MPLCONFIGDIR=/workspace/tess-research-data/matplotlib
+python scripts/multisector_checkpoint.py verify
+python scripts/multisector_inventory_checkpoint.py verify
+python scripts/latest_sector_probe.py verify
+python scripts/multisector_supplemental_checkpoint.py verify
+python scripts/multisector_candidate_checkpoint.py verify
+python scripts/restore_multisector_raw.py --tic 229146531 --max-downloads 0
+python scripts/summarize_multisector.py
+```
+
+The original core source hashes remain: `src/broad_vet.py`23c89080f4f10ef59b79d2896c86edb98dafeecc14081feb2c2a5c69fb37f333; `src/fast_screen.py`26eede8aaeb9fa2a624b73a5c3966366f77c4cc73738153eba7e46d13eb10307. New scientific drivers keep independent identities; method snapshots are retained. Never replace expected hashes merely to accept a mismatch. The main backup-WAL bug was caught, fixed and meaningfully regression-tested; the failed archive is retained in cache and identified by `data/multisector/checkpoint/wal_failure_record.json`.
+
+### If a future environment loses its cache
+
+The main archive restores4096producer records; supplemental archives restore551first-batch recovery records,963second-batch producer records,689second-batch recovery records, all667completed pooled-star JSON files, and exact small follow-up responses. Both metadata query archives preserve exact queries. TIC229146531's7original FITSincluding the native cube restore exactly without network. Use a fresh destination for a dry run; these commands refuse different existing files:
+
+```sh
+python scripts/multisector_checkpoint.py restore --destination /tmp/new_multisector_main.sqlite
+python scripts/multisector_supplemental_checkpoint.py restore --destination /tmp/new_multisector_supplement --archive-only
+python scripts/multisector_candidate_checkpoint.py restore --destination /tmp/new_multisector_candidate
+python scripts/multisector_inventory_checkpoint.py restore-queries
+python scripts/latest_sector_probe.py restore-queries
+```
+
+For actual cache reconstruction, use `/workspace/tess-research-data/multisector/survey.sqlite` as the missing main destination and `/workspace/tess-research-data/multisector` as the supplemental/candidate destination. Restore completed results first; do not repeat thousands of searches. `python scripts/restore_multisector_raw.py --tic TIC_ID --max-downloads 20` retrieves missing static QLP FITSby recorded URL/hash; omit `--tic` only for a deliberate bounded broader restore. Existing mismatches stop restoration; mismatching new responses are retained separately. Dynamic TESSCut regeneration may change container/header bytes, so important229originals are archived directly and other cutouts have recorded science hashes/FFIidentities. Prepared NPZand bulk figures can be regenerated with the corresponding frozen code; source method changes must be separately versioned. Nothing was deleted simply to save repository space.
+
+### Exact next scientific work
+
+1. Independently reduce/classify TIC229146531. Reproduce its existing physical/parity/overview tests with `scripts/tic229146531_physical.py --models --timing`, `scripts/tic229146531_parity.py`, `scripts/tic229146531_overview.py`; these intentionally regenerate derived files. Test joint variability/eclipse models and both0.935/1.870d hypotheses; do not interpret a grazing radius or conditional chi-square difference as a mass/probability. Seek independent reduced archive data and expand alias/literature recognition before any novelty claim. Resolved multicolour photometry and RVs would discriminate physical hypotheses; no observing request or catalogue submission has been made.
+2. Improve correlated-noise calibration and300–500ppm recovery in a new versioned method. Existing288injections/32surrogates show poor300ppm sensitivity and no globalFAP. Preserve frozen controls/results. Avoid merely lowering significance cuts; quantify completeness and structured false alarms on more noise backgrounds, especially QLP missing-error products.
+3. Define another pre-flux sector sample only after selecting the method/control criteria, using `scripts/latest_sector_probe.py` and `scripts/run_multisector_batch.py` with a fresh batch name. Timing exclusions99–104and corrected74–79products remain mandatory under current evidence. The last106/107inventory requests were404, not searched sectors. The current6sectors are partial samples; many targets and sectors remain unexamined.
+4. Preserve raw datasets, update the ledger/log/docs and commit meaningful progress. Never call another completed scan a newly searched star. Reuse the current immutable selection and named batch machinery; do not write two processes into a live SQLite database.
 
 ## Latest targeted comparison — TIC 4206066
 

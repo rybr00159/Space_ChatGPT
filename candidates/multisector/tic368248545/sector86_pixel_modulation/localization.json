@@ -1,0 +1,102 @@
+{
+  "tic": 368248545,
+  "sector": 86,
+  "method": {
+    "version": "multisector-raw-alternative-detrending-falsification-v1",
+    "source_sha256": "69b6bf17e5a76cdbe3122ad0f3082745fa826de670ba84cbe381a9824a00cc6d",
+    "source_snapshot": "candidates/multisector/method_snapshots/69b6bf17e5a76cdbe3122ad0f3082745fa826de670ba84cbe381a9824a00cc6d.py",
+    "frozen_helpers": {
+      "fast_screen.py": "26eede8aaeb9fa2a624b73a5c3966366f77c4cc73738153eba7e46d13eb10307",
+      "broad_vet.py": "23c89080f4f10ef59b79d2896c86edb98dafeecc14081feb2c2a5c69fb37f333",
+      "archive.py": "c763981d596b0a04298d2addf3e7c8956b78fa7ada5ea3cd117af3b7c081c18c"
+    }
+  },
+  "gaussian_helper_sha256": "fe15b7a1342b8726a345760abcb8bc514fdc0d79f82c2b3524eaa8175514655a",
+  "source": {
+    "url": "https://mast.stsci.edu/tesscut/api/v0.1/astrocut?ra=69.8271910489&dec=50.1833607143&x=9&y=9&units=px&sector=86",
+    "path": "/workspace/tess-research-data/multisector/followup/tic368248545/pixels/tess-s0086-1-1_69.827191_50.183361_9x9_astrocut.fits",
+    "sha256": "0021cba81ba7b10e2feaef482a6995ff5f6321c56f5afe261041cfb9039481f8",
+    "science_sha256": "119a03225e0f45a0ad24575917432266e7f8e8c5c31f525ceb2167874521758c",
+    "bytes": 18936000,
+    "checksums": [
+      {
+        "hdu": 0,
+        "status": "verified_raw_ones_complement"
+      },
+      {
+        "hdu": 1,
+        "status": "verified_raw_ones_complement"
+      },
+      {
+        "hdu": 2,
+        "status": "verified_raw_ones_complement"
+      }
+    ],
+    "n_native": 11207,
+    "n_quality_finite": 7378,
+    "exposure_days": 0.0023148148148148,
+    "detector_column": 1664.9636511607523,
+    "detector_row": 684.8029725849306,
+    "on_science_silicon": true,
+    "checked_utc": "2026-10-16T01:22:52.198436+00:00"
+  },
+  "frequency_per_day": 6.22895785603216,
+  "period_days": 0.16054049860549208,
+  "target_xy": [
+    4.963651160752361,
+    4.802972584930535
+  ],
+  "known_ew_xy": [
+    4.353003905523198,
+    3.7697421887316
+  ],
+  "known_ew_radec": [
+    69.83119,
+    50.18965
+  ],
+  "free_gaussian": {
+    "source_flux_e_s": 6.9039892665773515,
+    "x": 4.362434826073621,
+    "y": 3.7728203255089503,
+    "sigma_x": 0.642303250926502,
+    "sigma_y": 0.6279407304926682,
+    "chi2_diagonal": 0.009484578298771917,
+    "dof": 37,
+    "width_bound_hit": false
+  },
+  "fixed_positions": {
+    "catalog_target": {
+      "source_flux_e_s": 9.244376566227011,
+      "x": 4.963651159752362,
+      "y": 4.8029725839305355,
+      "sigma_x": 1.0847896682739646,
+      "sigma_y": 1.564033933360377,
+      "chi2_diagonal": 0.572484953318552,
+      "dof": 37,
+      "width_bound_hit": false
+    },
+    "known_ew_neighbor": {
+      "source_flux_e_s": 6.919814842313044,
+      "x": 4.353003906523197,
+      "y": 3.7697421897315997,
+      "sigma_x": 0.6449970634204681,
+      "sigma_y": 0.6280512017465046,
+      "chi2_diagonal": 0.009588048880908598,
+      "dof": 37,
+      "width_bound_hit": false
+    }
+  },
+  "free_radec": [
+    69.8311101751472,
+    50.18962492531509
+  ],
+  "offset_target_pixels": 1.1927593045857718,
+  "offset_known_ew_pixels": 0.00992054375770181,
+  "method_description": "Project each native-pixel sine/cosine coefficient onto the summed-aperture modulation phase; fit an integrated empirical Gaussian plus background plane.",
+  "limitations": [
+    "Conditioned frequency/phase and pixel-diagonal errors; not a calibrated localization confidence interval.",
+    "Empirical Gaussian is not the TESS PRF; source blending, WCS and proper-motion systematics remain.",
+    "No pixel-level correction for all spacecraft trends; constant/linear baselines are fitted per contiguous interval.",
+    "Localizing the dominant periodic variable does not rule out a weaker overlapping planetary transit."
+  ]
+}

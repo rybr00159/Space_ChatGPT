@@ -1,0 +1,123 @@
+{
+  "updated_utc": "2026-10-16T11:09:55.562286+00:00",
+  "selected_observations": 5059,
+  "selected_unique_tics": 4392,
+  "period_searched_observations": 5058,
+  "period_searched_unique_tics": 4391,
+  "unusable_observations": 1,
+  "sectors": {
+    "83": {
+      "selected": 1024,
+      "producer_searched": 1023,
+      "empirical_searched": 0,
+      "unusable": 1
+    },
+    "86": {
+      "selected": 1024,
+      "producer_searched": 1024,
+      "empirical_searched": 0,
+      "unusable": 0
+    },
+    "95": {
+      "selected": 1024,
+      "producer_searched": 566,
+      "empirical_searched": 458,
+      "unusable": 0
+    },
+    "98": {
+      "selected": 1024,
+      "producer_searched": 932,
+      "empirical_searched": 92,
+      "unusable": 0
+    },
+    "96": {
+      "selected": 456,
+      "producer_searched": 155,
+      "empirical_searched": 301,
+      "unusable": 0
+    },
+    "105": {
+      "selected": 507,
+      "producer_searched": 119,
+      "empirical_searched": 388,
+      "unusable": 0
+    }
+  },
+  "batches": {
+    "b01": {
+      "searched_unique_tics": 3612
+    },
+    "b02_096_105": {
+      "searched_unique_tics": 850
+    }
+  },
+  "shared_searched_tics": 71,
+  "old_sector1_searched_tics": 159505,
+  "overlap_with_old_sector1": 393,
+  "outside_old_sector1": 3998,
+  "search_tables": [
+    {
+      "label": "b01_producer",
+      "path": "results/multisector/signals.csv.gz",
+      "rows": 56720,
+      "sha256": "7e5e0559a10e7031009c9e97ed4ea1f1436bc18ea898d0307c87adc63c4233ad",
+      "counting_unit": "correlated_peak_rows_not_discoveries"
+    },
+    {
+      "label": "b01_empirical",
+      "path": "results/multisector_error_recovery/signals.csv",
+      "rows": 8800,
+      "sha256": "d3f7c23f689b19b187427465a388a9830e2aeb1e1bca58658177c47b992f5aa4",
+      "counting_unit": "correlated_peak_rows_not_discoveries"
+    },
+    {
+      "label": "b02_producer",
+      "path": "results/multisector_batches/b02_096_105/signals.csv",
+      "rows": 4384,
+      "sha256": "f8aee84dc3eec1155d8694b8a53aaefa09d2ef17cc107292303259c4015372bb",
+      "counting_unit": "correlated_peak_rows_not_discoveries"
+    },
+    {
+      "label": "b02_empirical",
+      "path": "results/multisector_batches/b02_096_105/error_recovery/signals.csv",
+      "rows": 11024,
+      "sha256": "0b7ca693d905956653e8af98acc77b0247d17d99104a975c837044d8aa8d9339",
+      "counting_unit": "correlated_peak_rows_not_discoveries"
+    },
+    {
+      "label": "b01_producer_pooled",
+      "path": "results/multisector/combined_signals.csv.gz",
+      "rows": 7600,
+      "sha256": "3f06204a2276eaf778184c4c27e414ca93fcc410bc4d55fb6b6da60fb5bcdf3a",
+      "counting_unit": "correlated_peak_rows_not_discoveries"
+    },
+    {
+      "label": "b01_mixed_pooled",
+      "path": "results/multisector_mixed_pool/signals.csv.gz",
+      "rows": 192,
+      "sha256": "e667a9fda378bb0a20425939fad6d874f03128562c8afcf92ac18891d0159ecc",
+      "counting_unit": "correlated_peak_rows_not_discoveries"
+    },
+    {
+      "label": "b02_pooled",
+      "path": "results/multisector_batches/b02_096_105/pooled/signals.csv.gz",
+      "rows": 1808,
+      "sha256": "2aa226c7d0343c9f61a40e502e14915e7d8088085880649f1d018edbcdf9aae7",
+      "counting_unit": "correlated_peak_rows_not_discoveries"
+    },
+    {
+      "label": "cross_batch_pooled",
+      "path": "results/multisector_cross_batch/signals.csv.gz",
+      "rows": 1152,
+      "sha256": "1d496136b1f8b3c33f12a2d737af899d140022da9a61fc17d0992d54841715d5",
+      "counting_unit": "correlated_peak_rows_not_discoveries"
+    }
+  ],
+  "source_sha256": "a7462821bc75f368d918599170b2954efc0bfcfa4d164158eaa1c666f08d5eaf",
+  "notes": [
+    "All four databases are read-only. Each target-sector observation appears once, with the successful uncertainty assumption explicit.",
+    "Follow-up observations, control stars and repeated pooled searches are not counted as additional survey stars.",
+    "The search samples part of six sectors; it is not a complete census of any sector.",
+    "Stored catalogue parameters are selection estimates, not precise stellar characterization."
+  ]
+}

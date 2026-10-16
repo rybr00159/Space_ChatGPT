@@ -8,6 +8,7 @@ and expected SHA-256, without repeating completed period searches.
 from pathlib import Path
 from datetime import datetime,timezone
 import argparse,gzip,hashlib,json,sqlite3,sys
+from contextlib import closing
 
 ROOT=Path(__file__).resolve().parents[1]
 CACHE=Path('/workspace/tess-research-data/multisector')
@@ -24,9 +25,17 @@ def sha(path):
 def freeze():
     OUT.mkdir(parents=True,exist_ok=True)
     local=CACHE/'checkpoint/survey_snapshot.sqlite';local.parent.mkdir(parents=True,exist_ok=True)
-    with sqlite3.connect((CACHE/'survey.sqlite').as_uri()+'?mode=ro',uri=True)as source:
-        with sqlite3.connect(local)as destination:source.backup(destination)
-    with sqlite3.connect(local)as conn:
+    with closing(sqlite3.connect((CACHE/'survey.sqlite').as_uri()+'?mode=ro',uri=True))as source:
+        with closing(sqlite3.connect(local))as destination:
+            source.backup(destination)
+            # A backup inherits WAL mode. Close/checkpoint the destination
+            # before hashing its main file; otherwise later rows can reside
+            # solely in the local -wal and be omitted from the gzip archive.
+            destination.execute('PRAGMA wal_checkpoint(TRUNCATE)')
+            mode=destination.execute('PRAGMA journal_mode=DELETE').fetchone()[0]
+            if mode.lower()!='delete':raise ValueError('Snapshot must be self-contained, without WAL')
+            destination.commit()
+    with closing(sqlite3.connect(local))as conn:
         if conn.execute('PRAGMA quick_check').fetchone()[0]!='ok':raise ValueError('Snapshot database failed integrity check')
         rows=conn.execute('SELECT tic,sector,status,result_json FROM observations').fetchall()
         methods=json.loads(conn.execute("SELECT value FROM metadata WHERE key='methods'").fetchone()[0])
