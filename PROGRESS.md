@@ -1,5 +1,13 @@
 # Research checkpoint — stellar systems and completed exoplanet phase
 
+## Latest targeted comparison — TIC 4206066
+
+15 October 2026, America/Halifax. Read the user's supplied Rabtsevich draft and checked exact TIC membership in the old complete Sector 1 parent inventory, selected targets, exported targets/signals and read-only survey database. All absent. The prior Reddit review mentioned this star but no previous photometric analysis was executed. The old 159,505-star count is unchanged.
+
+Retrieved and preserved the paper's Sector 6 TESS-SPOC, Sector 32 SPOC and Sector 98 QLP observations. Unmodified screening with the actual original broad configuration finds near-3.18-day peaks at 3.179552/3.184918/3.181348 days. Local S/N is 5.37/8.83/6.32; the actual prioritizer retains only Sector 32. Sector 98 also retains a near-11.13-day peak, without establishing three independently clean transits or validating the tentative planet. Current QLP DET_FLUX needs a file-interface adaptation from old KSPSAP_FLUX; search functions and the old survey are unchanged.
+
+Read [the comparison](candidates/tic4206066/README.md), [complete results](candidates/tic4206066/recovery.json) and [diagnostics](candidates/tic4206066/recovery.png). Reproduce with `/workspace/openrouter-check-venv/bin/python scripts/tic4206066_recovery.py`, adding `--download` only to restore missing originals by immutable hashes. Raw FITS and PDF remain in `/workspace/tess-research-data/tic4206066/`; compact curves and outputs are tracked. This control does not reproduce pixel localization, physical transit fitting or FPP tests. The paper explicitly claims a candidate, not statistical validation. No paid API calls. Return to the broader discovery checkpoint below after this requested comparison; no additional discovery claim follows.
+
 ## Latest fresh search for uncatalogued stars and companions
 
 Evening 14 October 2026, America/Halifax; archive manifests use UTC 15 October. The user requested a new search beyond the old two candidates and then asked to continue. **No genuinely uncatalogued star is established.** Four complementary methods were actually executed and promising signals actively falsified. The investigation remains open; no claim that all public astronomical data are exhausted. Read [NEW_STAR_SEARCH_REPORT.md](NEW_STAR_SEARCH_REPORT.md), [search counts](results/new_stars/search_summary.json) and [ranked leads](results/new_stars/ranked_leads.csv).
