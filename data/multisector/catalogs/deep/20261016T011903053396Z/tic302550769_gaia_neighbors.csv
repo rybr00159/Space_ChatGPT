@@ -1,0 +1,10 @@
+<VOTABLE version="1.2" xmlns="http://www.ivoa.net/xml/VOTable/v1.2">
+<RESOURCE type="results">
+<INFO name="QUERY_STATUS" value="ERROR">
+Cannot parse query 'select g.source_id,g.ra,g.dec,g.phot_g_mean_mag,g.phot_bp_mean_mag,g.phot_rp_mean_mag,g.bp_rp,g.parallax,g.parallax_error,g.pmra,g.pmdec,g.ruwe,g.non_single_star,g.phot_variable_flag,g.radial_velocity,g.rv_amplitude_robust,g.rv_chisq_pvalue,g.teff_gspphot,g.radius_flame,g.ipd_frac_multi_peak,g.astrometric_excess_noise,v.best_class_name,v.best_class_score from gaiadr3.gaia_source g left outer join gaiadr3.vari_classifier_result v on g.source_id=v.source_id where 1=CONTAINS(POINT('ICRS',g.ra,g.dec),CIRCLE('ICRS',27.4925825079898,69.3543611150652,0.016666666666666666)) order by g.phot_g_mean_mag' for job '957e0e09-c8ff-11f1-9670-bc97e148b76b-O': 1 unresolved identifiers: radius_flame [l.1 c.257 - l.1 c.271] !
+ - Unknown column "g.radius_flame" !
+</INFO>
+<INFO name="HttpErrorCode" value="400"/>
+<INFO name="Action" value="Handling request"/>
+</RESOURCE>
+</VOTABLE>

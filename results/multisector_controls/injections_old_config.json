@@ -1,0 +1,30 @@
+{
+  "method": "old",
+  "seed": 20261016,
+  "phases": 16,
+  "periods": [
+    3.18,
+    7.3,
+    11.13
+  ],
+  "depths_ppm": [
+    300,
+    500,
+    1000
+  ],
+  "duration_days": 0.08,
+  "methods_sha256": {
+    "src/multisector_controls.py": "5c6a841cd66d5e2a66f8b5a6f71a2d5715a1e14dd46d3129ced1dd06233624bb",
+    "src/fast_screen.py": "26eede8aaeb9fa2a624b73a5c3966366f77c4cc73738153eba7e46d13eb10307"
+  },
+  "selection": "Fixed TIC150359842 S93 and TIC24293000 S1, chosen before injection outcomes; no quiet-star selection.",
+  "exposure_model": "11-midpoint exposure-integrated rectangular box injected multiplicatively before detrending",
+  "recovery": "Period relative error<.003 AND maximum transit-center epoch discrepancy across sector <=.75 injected duration; queued also passes event guards and local SNR threshold.",
+  "limitations": [
+    "Two backgrounds only; conditional sensitivity, not representative completeness.",
+    "Box shapes, fixed duration, no limb darkening/stellar radius distribution.",
+    "Raw retained noise and systematics remain; no generated white-noise substitution.",
+    "Old/new queue thresholds differ (8 versus5.5), report finding and queueing separately.",
+    "No trials-corrected significance or false-alarm probability."
+  ]
+}

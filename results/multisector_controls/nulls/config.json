@@ -1,0 +1,32 @@
+{
+  "seed": 20261016,
+  "selection_sha256": "9efc4e1190c818ec18e1d113b75e3bccc621b188dad16f90ad33e51ded359ac9",
+  "targets": [
+    195591929,
+    120533610,
+    305156527,
+    430836829,
+    160552138,
+    435826406,
+    305175225,
+    356401688
+  ],
+  "sector": 83,
+  "iterations_per_star": 4,
+  "nominal_block_days": 0.4,
+  "methods_sha256": {
+    "src/multisector_nulls.py": "919d50bdf9e2c5fc85492b949627951c829962edeb6a304caa90b7be69d15442",
+    "src/multisector_controls.py": "5c6a841cd66d5e2a66f8b5a6f71a2d5715a1e14dd46d3129ced1dd06233624bb",
+    "src/multisector_screen.py": "0dee5e8e693143957303079fc5a7315a9ab3b0c47d303592fe8a94ecca7ce42d",
+    "src/fast_screen.py": "26eede8aaeb9fa2a624b73a5c3966366f77c4cc73738153eba7e46d13eb10307"
+  },
+  "construction": "Quality0 finite positive flux/error. Gap-defined segments. Normalize each segment by 1-day reflected running median; resample flux/error pairs in random circular 0.4-day blocks within the same segment; restore the original smooth baseline. Screen with the frozen two-width method.",
+  "limitations": [
+    "Not a valid survey-wide FAP calibration; only eight selected observed stars.",
+    "Stars were not selected to lack true events; astrophysical signal fragments remain.",
+    "Block joins introduce artifacts; correlations longer than blocks change.",
+    "Variability, gaps, heterogeneous noise and short segments limit stationarity.",
+    "Repeated surrogates of a star and the two detrenders are correlated.",
+    "Maximum is across reported refined peaks and two widths, not every possible model."
+  ]
+}

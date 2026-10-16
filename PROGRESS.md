@@ -1,5 +1,15 @@
 # Research checkpoint — stellar systems and completed exoplanet phase
 
+## Active broad multi-sector exoplanet search
+
+15 October 2026, America/Halifax. User authorized execution of a systematic wider-sector search. New fixed sample: 1,024 observations each from Sectors83/86/95/98, 4,096 total sector observations /3,613 distinct TICs; 321 overlap old Sector1 searched stars. Selected counts are not actual searches. See [the new report](MULTISECTOR_RESEARCH_REPORT.md), [live completed counts](results/multisector/summary.json), [controls](candidates/multisector_controls/README.md) and [archive selection](reports/multisector/archive_probe.md).
+
+Main command in progress: `OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /workspace/openrouter-check-venv/bin/python src/multisector_survey.py run --workers 3 --downloads 12`. Do not launch another writer. It skips completed observations and refuses changed scientific source hashes. Source methods/old Sector1 results stay frozen. Raw cache and SQLite are in `/workspace/tess-research-data/multisector/`.
+
+Recovery controls executed 288 distinct actual-noise injections through two methods, 12 real control observations through both, and 32 structured surrogates from8 preselected stars. Most increased retention comes from a lower threshold; 300ppm sensitivity remains poor and no survey FAP is established. Separate blind pooled searches include every repeated star regardless of single-sector thresholds. Sector95 missing/nonpositive producer errors require a separately labeled empirical-error search, without changing original FITS/errors or claiming the first run succeeded. Follow-up/recognition are active; no credible new planet candidate established.
+
+Checkpoint: `python scripts/multisector_checkpoint.py freeze`, `verify`, and `restore --destination /tmp/unused.sqlite` preserve a consistent full database and exact raw observation manifest. Initial exact offline restoration passed. Archive metadata restoration: `python scripts/multisector_inventory_checkpoint.py verify`. Later pooled/alternative-error checkpoints and final counts will be appended after their running phases complete. Retain all raw and failed products. No paid API calls or external submissions.
+
 ## Latest targeted comparison — TIC 4206066
 
 15 October 2026, America/Halifax. Read the user's supplied Rabtsevich draft and checked exact TIC membership in the old complete Sector 1 parent inventory, selected targets, exported targets/signals and read-only survey database. All absent. The prior Reddit review mentioned this star but no previous photometric analysis was executed. The old 159,505-star count is unchanged.
