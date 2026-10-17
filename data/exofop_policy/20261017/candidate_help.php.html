@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>ExoFOP</title>
+<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+
+<script>
+function showAutoTag(_autotagval) {
+ var str = '';
+ var checkBox = document.getElementById("autotag");
+ if (_autotagval != '')  {str = _autotagval}
+    if (checkBox.checked == true){
+      document.getElementById('tag').value = str;
+    }
+    else {
+      document.getElementById('tag').value = "";
+    }
+}
+</script>
+
+</head>
+
+<body topmargin=0 leftmargin=0 marginwidth=0 marginheight=0>
+
+<table width=100% cellspacing=0 cellpadding=0 border=0>
+<tr>
+<td bgcolor=#000000 height=50>
+<a href="/tess"><img src="images/exofop-logo.png" class="logo" alt="exofop" width="65" height="40"></a>
+<!--<a class="top2" href="/tess"><span class="label label-primary mybadge2">TESS</span></a>-->
+</td></tr>
+
+</table>
+</p>
+
+<center>
+
+
+<table width=90% cellspacing="0">
+<tr>
+<th><h4>Guidelines for Submitting Published Planet Candidates</h4></th>
+</tr>
+<tr><td>
+<p>
+ExoFOP now supports community upload of published planet candidates from TESS, Kepler, K2, and beyond. Candidates must be published in a peer-reviewed journal that offers online access before being uploaded to ExoFOP. Candidates can also be presented in a Research Note of the American Astronomical Society (RNAAS) if the methodology to detect and vet the candidate has been previously published in a peer-reviewed journal that is available online and is cited by the Research Note. All uploaded planet candidates must include a field for the discovery data source; this will be set to TESS by default but can be changed to reflect the project that collected the data leading to the detection of the planet candidate (for example, HARPS or NGTS). In addition, there is an optional field for a new candidate name, allowing for published planet candidates to be associated with names beyond the standard TIC ID format used by ExoFOP. Uploaded candidates with verified publication will be known as Community Candidates.
+</p>
+
+<p>To request access to submit published candidates, complete the <a target = "_help" href="pub_candidate_upload_request.php">Published Candidate Upload Request</a>. After approval, then you can submit candidates.</p>
+
+<p>There are two types of planet candidates:
+<ul>
+<li>Community TESS Objects of Interest (cTOIs) are intended to be a mechanism for community members to identify planetary systems or other potentially interesting objects discovered by TESS but not identified as a TESS Object of Interest (TOI) by the TESS project.</li>
+
+<li>Other Discovery Data Source candidates that are discovered by projects other than TESS.</li>
+</ul>
+
+<p>
+Insufficiently or ill-defined candidates are not a useful product for the community. Therefore, the following are guidelines for the creation of the candidates to make them as useful and understandable as possible by the community and ExoFOP users. <b>The ExoFOP team reserves the right to review all uploaded material;</b> poorly defined or duplicate candidates will be removed and may result in suspension or removal of your account.
+</p>
+
+<p>
+<ol>
+<li>ExoFOP will only allow upload of Community Candidates accepted and published in the refereed literature. The URL link to the paper must be provided.</li>
+<li>Upload as many parameters and their associated errors as have been measured for the candidates.  Candidates with few or no parameters are of little or no use.  Realistic uncertainties on the parameters make the parameters more useful.</li>
+<li>For transiting planetary candidates, the most useful parameters, along with the associated uncertainties are the orbital period in days, the transit midpoint time in Barycentric Julian Date, and the transit depth in ppm.  Without these three parameters, there can be no effective follow-up by anyone in the community. Candidates require at least two of these three parameters to be included and be greater than zero (0) in order for the candidate to be created. Older candidates that do not meet this requirement may be removed. <i>For cTOI (TESS data source) consideration by the TESS Object of Interest working group, all four of orbital period, transit epoch, transit depth, and transit duration must be included and greater than zero (0).</i></li>
+
+<li>
+You must crosscheck all newly proposed candidates against the existing candidates, the TOI list, and confirmed planets to make sure that you are not duplicating an <a target="_candtoi" href="/tess/view_ctoi.php">existing candidate</a>, <a target="_candtoi" href="/tess/view_toi.php">TOI</a>, or <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PS">confirmed planet</a>. Duplicate objects will be removed, and repeated duplications may lead to suspension of your account.
+</li>
+<li>If you have found a candidate with a period that has a similar or integer multiple (2x, 3x etc) of a known candidate period (TOI or otherwise) on the star, it is recommended to NOT create a new candidate but rather add your parameters as an additional parameter set to the existing object.</li>
+<li>Upload supporting material (e.g., image of the light curve with the fitted transit) to the TIC host star and attach the same tag to the uploaded files as the tag that was used to create the candidate. Without supporting material, candidates may be removed.</li>
+<li>ExoFOP reserves the right to remove candidate content if needed.</li>
+<li>If you have questions or do not understand something, please contact the ExoFOP staff prior to uploading data at <a href="mailto:exofop-support@ipac.caltech.edu">exofop-support@ipac.caltech.edu</a>.</li>
+ <li><b>Summary of upload content for creating a new Candidate:</b>
+  <ul>
+    <li><b>Select a new TID.nn name <i>(required)</i>:</b> On the web form, choose from the dropdown preset of names that conform to our naming standards preferably selecting the next name in the sequence.  When using the bulk upload, refer to the overviews of the TIC to define the next available candidate available to use in the same standard.</li>
+    <li><b>Select a discovery source <i>(required)</i>:</b> On the web form, TESS is set by default; if the candidate is from a different discovery source uncheck TESS and enter that source. When using the bulk upload, leave the discovery source blank if TESS, otherwise enter a different discovery source.</li>
+    <li><b>Candidate name <i(optional)</i>:</b> Enter an identifier used by your team in the paper for refernce within ExoFOP. This name may not be identical to an existing confirmed planet name, nor identical to another object from the same discovery data source. Candidate names should not include identifiers that point to other systems. <b>Planet candidates should not be assigned a lowercase letter ('b', 'c', etc) until they are confirmed in the published, refereed literature.</b></li>
+    <li><b>An initial disposition for the new candidate <i>(optional)</i>:</b> FP = false positive or PC = planet candidate <i>(CP = confirmed planet is not an allowable option for new candidates)</i></li>
+    <li><b>At least 2 of the following parameters <i>(required)</i>:</b> Orbital period in days, the Transit Midpoint time in Barycentric Julian Date, and the Transit Depth in ppm and greater than zero (0).  <i>For cTOI (TESS data source) consideration by the TESS Object of Interest working group, all four of orbital period, transit epoch, transit depth, and transit duration must be included and greater than zero (0).</i>
+    <li><b>A Tag (see <a href="tag_help.php">Tag Help</a>) <i>(required)</i>:</b> for the candidate creation. You can either create a new tag or use an existing tag you own.</li>
+    <li><b>Paper URL <i>(required)</i>:</b> Enter the URL link to the published paper with your candidate.
+    <li><b>An initial note for the candidate creation (<i>required</i>)</b>. This can include for instance a URL link to the paper, website, a short description, or a citation. Descriptive notes are more useful for other users (including yourself in the future).</li>
+    <li><b>Once you have added a new candidate, the inital parameters are fixed:</b>  You will be able to update the disposition of the object, add updated parameters as additional planet parameters, associate observations (imaging, spectroscopic, time series) with the object, and associate uploaded files with the object. </li>
+     <li><b>Upload  supporting material.</b></li>
+</ul></li>
+  </ul>
+</ol>
+</td></tr>
+<table>
+<!--<button type="button" onclick="javascript:window.close();" class="btn btn-primary btn-xs marge"><i class="fas fa-window-close"></i> Close</button>-->
+
+<table>
+<tr>
+<td align=center valign=middle>
+
+
+<a target="nexsci" href="http://nexsci.caltech.edu/">
+<img src="images/nexsci.jpg" border="0" alt="nexsci"></a>
+&nbsp;
+
+<a target="caltech" href="http://www.caltech.edu/">
+<img src="images/caltech.jpg" border="0" alt="caltech"></a>
+&nbsp;
+
+<a target="nasa" href="http://www.nasa.gov/">
+<img src="images/nasa.png" border="0" alt="nasa"></a>
+&nbsp;
+
+<a target="kepler" href="https://www.nasa.gov/mission_pages/kepler/main/index.html">
+<img src="../images/kepler_crop.jpg" border="0" alt="kepler"></a>
+&nbsp;
+
+<a target="k2" href="https://www.nasa.gov/mission_pages/kepler/main/index.html">
+<img src="../images/k2.jpg" border="0" alt="k2"></a>
+&nbsp;
+
+<a target="tess" href="https://www.nasa.gov/tess-transiting-exoplanet-survey-satellite">
+<img src="images/tess.png" border="0" alt="tess"></a>
+
+<br><br>
+
+Questions? Contact us at <a href="mailto: exofop-support@ipac.caltech.edu">exofop-support@ipac.caltech.edu</a>.
+</td>
+</tr> 
+</table>
+
+<br><br><br><br><br><br>
+</center>
+
+</body>
+</html>

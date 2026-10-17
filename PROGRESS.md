@@ -1,5 +1,11 @@
 # Research checkpoint — multi-sector exoplanet and stellar investigations
 
+## Publication and ExoFOP route checked — 17 October 2026
+
+Read [the current-policy and publication-readiness note](reports/tic214311908_publication_path.md). Official ExoFOP announcement dated **19 August 2026** requires publication in an online peer-reviewed journal before new Community Candidate upload, plus approval through Published Candidate Upload Request. Existing account access alone is insufficient. The detailed guidelines explicitly allow an RNAAS note if the detection/vetting methodology was previously published in an online peer-reviewed journal and cited in the note; RNAAS itself is not peer reviewed. Do not assume a GitHub report, preprint or generic BLS citation qualifies.
+
+Current evidence justifies developing a candidate paper and seeking expert review/follow-up; acceptance is not established. Before journal submission, make final deblended products/calibration/injections reproducible, bound systematic and false-positive claims, and complete paper-level novelty/reference checks. Resolved multiband transit photometry remains the most useful new observation; it is scientifically recommended rather than a blanket formal requirement for candidate publication. Official page snapshots/hashes are in `data/exofop_policy/20261017/`. No credentials, login, candidate creation, request, email or external submission were used.
+
 ## Latest assessment — comparison of TIC 214311908 investigations, 17 October 2026
 
 The user authorized access to the other model's findings after the independent review and supplied the GitHub directory. Reviewed `rybr00159/Space` commit `99d4f66fca99c32c3245396f367b8a73d5d13fa5`. **Strong, unvalidated planet candidate is now a reasonable classification.** Read [the comparative report](candidates/tic214311908_external_comparison/README.md), [host/FPP audit](candidates/tic214311908_external_comparison/host_audit.md), [detection audit](candidates/tic214311908_external_comparison/detection_audit.md) and [new independent physical checks](candidates/tic214311908_external_comparison/shape_checks.json).

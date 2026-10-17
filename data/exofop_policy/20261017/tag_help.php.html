@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>ExoFOP</title>
+<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+
+<script>
+function showAutoTag(_autotagval) {
+ var str = '';
+ var checkBox = document.getElementById("autotag");
+ if (_autotagval != '')  {str = _autotagval}
+    if (checkBox.checked == true){
+      document.getElementById('tag').value = str;
+    }
+    else {
+      document.getElementById('tag').value = "";
+    }
+}
+</script>
+
+</head>
+
+<body topmargin=0 leftmargin=0 marginwidth=0 marginheight=0>
+
+<table width=100% cellspacing=0 cellpadding=0 border=0>
+<tr>
+<td bgcolor=#000000 height=50>
+<a href="/tess"><img src="images/exofop-logo.png" class="logo" alt="exofop" width="65" height="40"></a>
+<!--<a class="top2" href="/tess"><span class="label label-primary mybadge2">TESS</span></a>-->
+</td></tr>
+
+</table>
+</p>
+
+<center>
+
+
+<table width=90% cellspacing="0">
+<tr>
+<th><h4>Data Tagging</h4>
+</tr>
+<tr><td>
+<p>The purpose of the "Data Tagging" is to connect different types of data together.  By assigning the same "Data Tag" to an entry in the Observation Summary Table, to specific files that are a result of those same observations, and to specific data parameters that are derived from or associated with those files will enable all of that content to be associated. Users can also choose to associate content across multiple targets, multiple observing nights or multiple instruments.</p>
+
+<p>If a pre-existing "Data Tag" is not being utilized, a new "Data Tag" needs to be entered by the user of the form outlined below. The "Data Tags" are designed to be unique, connected to the user who has created the tag, and contain a very brief description useful for users to understand the data associated with the tag.</p>
+
+<p>Once a "Data Tag" is created, the "Data Tag" will be assigned a short-hand "Data Tag" of integer form that can be used in place of the full tag.</p>
+
+<p>As a fictitious example: "Data Tag" <b>20171207_ciardi_PalomarAO_1</b> was created by the user <b>ciardi</b> when they uploaded data to the Observation Summary Table.  That "Data Tag" was assigned the unique short-hand tag number <b>22</b> by the ExoFOP service.  All new data uploaded can be attached to the "Data Tag" with either the full tag name (case insensitive) or the short-hand tag number.  All data associated with the "Data Tag" can be downloaded utilizing the full tag name or the associated short-hand tag number.</p>
+
+<p><b>Tag string format</b>: contiguous text of a maximum of 100 characters  composed of 4 required sections separated by an underscore "_".
+<br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>YYYYMMDD_username_description_nnnnnnnnnnnnnn</b>
+<br /><br />
+   <b>YYYYMMDD</b> = year month day that is relevant for the tagged data
+<br /><br />
+   <b>username</b> = login username
+<br /><br />
+   <b>description</b> = short description containing letters, numbers and hyphens (not underscores nor other punctuation)
+<br /><br />
+   <b>nnnnnnnnnnnnnn</b> = a number within the range of  0-99999999999999
+</p>
+
+<hr>
+
+<p><b>Auto Tag string format</b>: when checked, tag text is automaticaly created composed of 4 required sections separated by an underscore "_".  If desired, the user can edit the auto-generated tag but it must still comply with the general tag string format.  The autotag generation has NO knowledge of previous tags or data; if you wish to connect data together with tags you must use the same tags to connect them.
+<br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>YYYYMMDD_username_autotag-n_TICID</b>
+<br /><br />
+   <b>YYYYMMDD</b> = year month day for today (Pacific time)
+<br /><br />
+   <b>username</b> = login username
+<br /><br />
+   <b>description</b> = autotag-n  where n is auto incremented if there has already been an Auto Tag created by the user for today
+<br /><br />
+   <b>TICID</b> = TIC ID 
+</p>
+
+</td></tr>
+<table>
+
+
+</center>
+
+</body>
+</html>

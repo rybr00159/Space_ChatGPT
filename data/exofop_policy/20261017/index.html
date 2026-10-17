@@ -1,0 +1,515 @@
+<html>
+<head>
+<title>ExoFOP</title>
+<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" href="fontawesome-5.13.0/css/all.css" >
+<link rel="stylesheet" type="text/css" href="style.css?id=24680">
+
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css" />
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css" />
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css" />
+<link rel="icon" href="images/favicon.png">
+
+<!--
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+<script src="https://use.fontawesome.com/de533863d5.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/7e2127efbf.js" crossorigin="anonymous"></script>
+-->
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<!--<script src="balloons-js-main/docs/script.js"></script>-->
+<script src="user_info.js"></script>
+
+<script type ="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
+<script>
+$(document).ready(function() {
+   $('.tooltipster').tooltipster({
+     contentAsHTML: 'true',
+     theme: 'tooltipster-light',
+     maxWidth: 300,
+     trigger: 'click'
+     });
+     $('.tooltipster2').tooltipster({
+       theme: 'tooltipster-punk',
+     contentAsHTML: 'true',
+       maxWidth: 300,
+       trigger: 'click',
+          side: 'right',
+       interactive: 'true'
+      });
+
+     $('.tooltipster3').tooltipster({
+    theme: ['tooltipster-borderless', 'tooltipster-borderless-customized'],
+       maxWidth: 300,
+       trigger: 'hover',
+          arrow: false,
+	     side: 'bottom',
+	        animation: 'grow'
+      });
+
+     $('.tooltipster4').tooltipster({
+       theme: 'tooltipster-punk',
+     contentAsHTML: 'true',
+       maxWidth: 600,
+       trigger: 'click',
+          side: 'top',
+       interactive: 'true'
+      });
+
+
+
+
+  // thumbnail popover previews 
+   $('.myPop').popover({'html': 'true', 'trigger': 'hover'});
+});
+</script>
+
+
+<script>
+//balloons();
+</script>
+
+
+</head>
+
+<body topmargin=0 leftmargin=0 marginwidth=0 marginheight=0>
+
+<table width=100% cellspacing=0 cellpadding=0 border=0>
+<tr>
+<td bgcolor=#000000 height=50>
+<a href="/tess"><img src="images/exofop-logo.png" class="logo" alt="exofop" width="65" height="40"></a>
+<!--<a class="top2" href="/tess"><span class="label label-primary mybadge2">TESS</span></a>-->
+</td><td bgcolor=#000000 align=right>
+
+<div class="headright">
+</div>
+
+
+<a class="top2" href="news.php">News</a>
+
+<a class="top2" href="help.php">Help</a>
+
+<a class="top2" href="login.php?ref=%2Ftess%2F">Login</a></td>
+</tr>
+
+</table><script>
+function goBack() {
+    window.history.back();
+}
+
+function PopupCenter(url, title, w, h) {  
+    // Fixes dual-screen position                         Most browsers      Firefox  
+    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;  
+    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;  
+              
+    width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;  
+    height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;  
+              
+    var left = ((width / 2) - (w / 2)) + dualScreenLeft;  
+    var top = ((height / 2) - (h / 2)) + dualScreenTop;  
+    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);  
+  
+    // Puts focus on the newWindow  
+    if (window.focus) {  
+        newWindow.focus();  
+    }  
+}  
+
+</script>
+
+
+<center>
+
+<div class="welcome_head">
+
+<h3 class="white">Welcome to ExoFOP</h3>
+<p>
+The Exoplanet Follow-up Observing Program (ExoFOP) serves the international community by enabling the sharing of observations, data, and results made by the community from around the world for the confirmation and characterization of exoplanets and their host stars.
+</p>
+
+
+
+<div align="center">
+
+
+
+<div class="info info-news">
+<h4 class="toppad">News</h4>
+<ul>
+
+<li> <b>September 15, 2026</b>:
+The Roman Community Participation Program
+(CPP) worked with the Roman project office to define a <a
+target='_blank' href="https://arxiv.org/pdf/2608.17077">list of
+targets and observing modes</a> to demonstrate the Level 1
+requirements of the Roman Coronagraph in the first 18 months of the
+mission. The ExoFOP table of <a target='_blank'
+href='view_targets_roman_cg.php'>Roman CG Demonstration Targets</a>
+enables the collection, curation, and sharing of observations and data
+for these targets by the community.
+</li>
+
+<li> 
+<b>August 19, 2026</b>:
+ExoFOP has reopened support for community planet candidates from TESS,
+Kepler, K2, and beyond. To ensure the quality and utility of
+candidates uploaded to ExoFOP for the community, going forward
+candidates must first be published in a peer-reviewed journal with
+online access before being uploaded to ExoFOP, and approval to upload
+candidates is required.  See the <a target = "_help"
+href="candidate_help.php">Candidate Guidelines</a> for details
+regarding candidate requirements. To request access to submit
+published candidates, complete the <a target = "_help"
+href="pub_candidate_upload_request.php">Published Candidate Upload
+Request</a>.
+</li>
+
+<li>
+<b>July 30, 2026</b>: The Gaia Follow-up Observing Program
+(GFOP) community survey has now closed. We received 286 total
+responses which will aid in the development of GFOP. The responses can
+be viewed <a target="feedback"
+href="GFOP-Community-Feedback.pdf"><b>here</b></a>. Stay tuned for
+more information about a GFOP kickoff event in October.
+</li>
+
+</ul>
+</div>
+
+
+<div class="info_pcp">
+
+<h4 class="toppad2">ExoFOP Professional Conduct Policy</h4>
+
+<p>
+All users are expected to follow the <a target="pcp" class="font12"
+href="pcp.php">ExoFOP Data Use and Professional Conduct Policy</a>. 
+</p>
+
+<p>
+Please include the following standard acknowledgment in any published material 
+that makes use of ExoFOP: "This research has made use of the Exoplanet 
+Follow-up Observation Program (ExoFOP; DOI: 10.26134/ExoFOP5) website, which is operated by the California 
+Institute of Technology, under contract with the National Aeronautics and Space 
+Administration under the Exoplanet Exploration Program." 
+</p>
+
+
+</div>
+</div>
+
+
+<div align="center">
+<button type="button" class="myButt3" onclick="location.href='/account.php';">
+<i class="fas fa-user"></i> &nbsp;REQUEST AN ACCOUNT</button>
+
+&nbsp;
+
+<button type="button" class="myButt3" onclick="location.href='/password.php';">
+<i class="fas fa-key"></i> &nbsp;RESET YOUR PASSWORD</button>
+
+&nbsp;
+ 
+<button type="button" class="myButt3 " onclick="location.href='pub_candidate_upload_request.php';">
+<i class="fas fa-bell"></i> &nbsp;CANDIDATE APPROVAL</button>
+
+</div>
+<br>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="card_head">
+<a name ="stars"></a>Stars
+</div>
+
+<div class="card_body">
+
+Go to Target: 
+<button aria-label="Help" title="Help" class="myButt6" onclick="PopupCenter('help_target_examples.php','help_g1',400,400);"><span aria-hidden="true">?</span> <span class="sr-only">Help</span></button>
+<br><br>
+<form action="gototicid.php" method="post" style="margin-top:-3px;margin-bottom:15px;">
+<input type="text" class="greybox" name="target" size=20><button type="submit" class="myButt4"><i class="fas fa-search"></i></button><br>
+</form>
+	
+<ul class="card_list">
+<li><a href="gaiadr3_tic_crossmatch.php">Gaia DR3-TIC Crossmatch</a></li>
+<li><a href="find_ticid.php">Find TIC IDs</a>
+<li><a href="search.php">Search the TESS Candidate Target List</a>
+<li><a href="CTL_v8_ExoFOP-TESS.csv.gz">Download the TESS Candidate Target List</a>
+<li><a href="add_new.php?param=mytois">Follow your favorite targets</a>
+<li><a href="https://outerspace.stsci.edu/display/TESS/TIC+v8.2+and+CTL+v8.xx+Data+Release+Notes" target="tic8.2">TIC v8.2 release notes</a>
+
+
+
+</ul>
+
+</div>
+</div>
+
+
+<div class="card">
+
+<div class="card_head">
+Planets
+</div>
+
+<div class="card_body">
+
+<ul class="card_list">
+<li><a href="view_toi.php">TOIs</a> <span class="badge">8,151</span>
+<li><a href="view_ctoi.php">Community Candidates</a> <span class="badge">5,138</span>
+<li><a href="view_koi.php">KOIs</a> <span class="badge">9,564</span>
+
+<li><a target="eaK2" 
+href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=k2pandc">K2 Candidates 
+(Exoplanet Archive)</a>
+
+<li><a target="eaK2C9" 
+href="https://exoplanetarchive.ipac.caltech.edu/docs/exofop_k2c9.html">K2C9 Microlensing (Exoplanet Archive)</a>
+
+<li><a href="search_tois.php">Search TOIs</a>
+<li><a href="saved_searches.php">Saved Searches</a>
+<li><a href="table_prefs.php">Table Preferences</a>
+
+</ul>
+
+</div>
+</div>
+
+
+<div class="card">
+
+<div class="card_head">
+MISSION TARGETS
+<button aria-label="Help" title="Help" class="myButt6" onclick="PopupCenter('help_mission_targets.php','help_g1',700,850);"><span aria-hidden="true">?</span> <span class="sr-only">Help</span></button>
+
+</div>
+
+<div class="card_body">
+
+<ul class="card_list">
+<li><a href="view_toi_ariel.php">Ariel TESS Candidates</a> <span class="badge">436</span>
+<li><a href="view_targets_ariel.php">Ariel Known Exoplanets</a> <span class="badge">114</span>
+<li><a href="view_stellar_ariel.php">Ariel Known Exoplanet Host Stars</a> <span class="badge">53</span>
+<li>&nbsp;
+<li><a href="view_hwo.php">HWO ExEP Precursor Targets</a> <span class="badge">164</span>
+<li>&nbsp;
+<li><a href="view_targets_pandora.php">Pandora Targets</a> <span class="badge">21</span>
+<li>&nbsp;
+<li><span class="label label-warning">NEW</span> <a href="view_targets_roman_cg.php">Roman CG Demonstration<br>Targets</a> <span class="badge">23</span>
+</div>
+</div>
+
+<div class="card">
+
+<div class="card_head">
+<!--<span class="fa-stack fa-sm">
+	<i class="fa fa-square fa-stack-2x"></i>
+    <i class="fas fa-eye fa-stack-1x fa-inverse"></i>
+</span>
+<br>-->
+Observations
+</div>
+
+<div class="card_body">
+<ul class="card_list">
+
+<li><a href="view_imaging.php">Imaging</a>
+<span class="badge">36,971</span>
+
+<li><a href="view_spect.php">Spectroscopy</a>
+<span class="badge">34,775</span>
+
+<li><a href="view_tseries.php">Time Series</a>
+<span class="badge">22,426</span>
+
+<li><a href="view_stellarcomp.php">Stellar Companions</a>
+<span class="badge">9,662</span>
+
+<li><a href="table_prefs.php">Table Preferences</a>
+
+</ul>
+</div>
+</div>
+
+ 
+
+<div class="card">
+<div class="card_head">
+Bulk Uploads
+</div>
+
+<div class="card_body">
+<ul class="card_list">
+
+
+<li><a href="add_new.php?param=bulkfiles">Files</a>
+<li><a href="add_new.php?param=bulkobs">Observations</a>
+<li><a href="add_new.php?param=bulkobsnotes">Observing Notes</a>
+<li><a href="add_new.php?param=bulkparams">Candidates/Parameters</a>
+<li><a href="add_new.php?param=bulkstellarcomp">Stellar Companions</a>
+
+
+</ul>
+</div>
+</div>
+
+
+<div class="card">
+
+<div class="card_head">
+<!--<span class="fa-stack fa-sm">
+	<i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-tags fa-stack-1x fa-inverse"></i>
+</span>
+<br>-->
+Data Tags
+</div>
+
+<div class="card_body">
+	
+	<form action="gototag.php" method="post" style="margin-top:0;margin-bottom:0">
+	View Data Tag (e.g. tag number or yyyymmdd_user_description_nnnn): 
+	<br>
+	<input type="text" class="greybox" name="tag" size=20>
+	<button type="submit" class="myButt4"><i class="fas fa-search"></i></button>
+	</form>
+
+<br>
+
+	<form action="gotousertags.php" method="post" style="margin-top:0;margin-bottom:0">	
+	View 100 most recent Data Tags for a user (enter username or leave blank to view your own if you are logged in): 
+	<br />
+	<input type="text" class="greybox" name="username" size=20>
+	<button type="submit" class="myButt4"><i class="fas fa-search"></i></button>
+   	</form>
+
+</div> 
+</div>
+
+
+<div class="card">
+<div class="card_head">
+TFOP Working Group
+</div>
+
+<div class="card_body">
+<ul class="card_list">
+
+<li><a target="tfopwg" href="https://tess.mit.edu/followup/apply-join-tfop/">Apply to Join TFOP Working Group</a>
+
+
+<br><br>Additional links available to TFOPWG <br> members when logged in.
+</ul>
+</div>
+</div>
+
+
+
+<div class="card">
+<div class="card_head">
+Change Log
+</div>
+<div class="card_body">
+
+<ul class="card_list">
+
+<li><a href="view_changelog.php?timerange=week">View the Change Log (last week)</a>
+<span class="badge">86</span>
+</ul>
+
+
+	<form action="gotocl.php" method="post" style="margin-top:15px; margin-bottom:0">
+	Search the Change Log (all)<br />(enter TICnnn or TOInnn<br />for detailed activity):<br/>
+    <input type="text" class="greybox" name="target" size=20>
+    <button type="submit" class="myButt4"><i class="fas fa-search"></i></button>
+	</form>
+<br />
+<ul class="card_list">
+<li> <a href="help.php#subscribe">Subscribe to the Change Log Summary</a>
+</ul>
+
+</div>
+</div>
+
+
+<div class="card">
+<div class="card_head">
+<!--<span class="fa-stack fa-sm">
+	<i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+</span>
+<br>-->
+Other Links
+</div>
+
+<div class="card_body">
+
+<ul class="card_list">
+
+<li><a target="news" href="news.php">ExoFOP News</a></li>
+<li><a target="feedback" href="GFOP-Community-Feedback.pdf">GFOP Community Survey Feedback</a>
+<li><a target="tsmesm" href="Supplementary_ExoFOP_Calculations.pdf">Supplementary ExoFOP Calculations</a></li>
+<li><a href="kepler_ubv.php">UBV Imaging of the Kepler Field</li>
+<li><a href="Introduction_to_ExoFOP_php_functions.php">ExoFOP Download Functions</li>
+<li><a href="tools.php">Tools (Python Notebooks)</a>
+<li><a href="https://astro.swarthmore.edu/transits/aladin_finder.html">Swarthmore Finding Chart</a>
+<li><a href="/tess/contributed/TESSMosaic/">TESS Camera 4 Image Mosaic</a>
+<li><a href="directory.php">ExoFOP Directory</a> <span class="badge">2,018</span>
+
+</ul>
+
+</div>
+</div>
+
+<br><br>
+
+<table>
+<tr>
+<td align=center valign=middle>
+
+
+<a target="nexsci" href="http://nexsci.caltech.edu/">
+<img src="images/nexsci.jpg" border="0" alt="nexsci"></a>
+&nbsp;
+
+<a target="caltech" href="http://www.caltech.edu/">
+<img src="images/caltech.jpg" border="0" alt="caltech"></a>
+&nbsp;
+
+<a target="nasa" href="http://www.nasa.gov/">
+<img src="images/nasa.png" border="0" alt="nasa"></a>
+&nbsp;
+
+<a target="kepler" href="https://www.nasa.gov/mission_pages/kepler/main/index.html">
+<img src="../images/kepler_crop.jpg" border="0" alt="kepler"></a>
+&nbsp;
+
+<a target="k2" href="https://www.nasa.gov/mission_pages/kepler/main/index.html">
+<img src="../images/k2.jpg" border="0" alt="k2"></a>
+&nbsp;
+
+<a target="tess" href="https://www.nasa.gov/tess-transiting-exoplanet-survey-satellite">
+<img src="images/tess.png" border="0" alt="tess"></a>
+
+<br><br>
+
+Questions? Contact us at <a href="mailto: exofop-support@ipac.caltech.edu">exofop-support@ipac.caltech.edu</a>.
+</td>
+</tr> 
+</table>
+
+<br><br><br><br><br><br>
+</center>
+</body>
+</html>
