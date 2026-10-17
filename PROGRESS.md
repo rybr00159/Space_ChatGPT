@@ -1,5 +1,25 @@
 # Research checkpoint — multi-sector exoplanet and stellar investigations
 
+## Latest assessment — comparison of TIC 214311908 investigations, 17 October 2026
+
+The user authorized access to the other model's findings after the independent review and supplied the GitHub directory. Reviewed `rybr00159/Space` commit `99d4f66fca99c32c3245396f367b8a73d5d13fa5`. **Strong, unvalidated planet candidate is now a reasonable classification.** Read [the comparative report](candidates/tic214311908_external_comparison/README.md), [host/FPP audit](candidates/tic214311908_external_comparison/host_audit.md), [detection audit](candidates/tic214311908_external_comparison/detection_audit.md) and [new independent physical checks](candidates/tic214311908_external_comparison/shape_checks.json).
+
+The six-sector calibrated PRF/WCS/colour analysis is substantially stronger than our initial two-sector Gaussian quicklook. Their source-specific background binary tests address the faint neighbor; our simple 50%-eclipse flux-budget observation was incomplete. New fits to our original 13 QLP windows/1961 samples independently disfavor two specified circular K-star binary models by conditional light-curve Δχ² 74.7/102.3. This is not a complete binary-population calculation. Large grazing-body/eccentric alternatives and unresolved hosts remain relevant; no mass, validation, confirmation or novelty is established.
+
+The supplied nominal FPP 0.0013–0.0033 is conditional on its custom model. Published posterior-table arithmetic reproduces, but a complete independent PRF/evidence/FPP rerun was not performed. Its strict companion-host definition gives approximately 0.005–0.009 at adopted priors; joint prior draws have strict median 0.0127 and 5–95% range 0.00222–0.106. Do not quote an exact 99.9% planet probability as a calibrated observational conclusion. Original blind detection and holdout timing records remain unchanged.
+
+Corrected a real error in our catalogue dossier: the saved multi-table El-Badry response already lists target Gaia 5925373272850784768 and companion 5925373272850782208, separation 756.8 AU and catalogue R 1.993e-5. We initially read the empty shifted-control table. The original response is retained and a new all-table/string-ID rereading check reproduces the positive entry.
+
+Public source snapshots: 98 exact files /3,216,352 bytes under `data/tic214311908_external_comparison/source_snapshot`, with pinned URLs and Git blob/SHA-256 identities in `source_manifest.json`. The ZIP exceeded the transfer limit; the user-supplied public directory was used instead, with no ZIP-byte identity claim. Cached selected responses remain outside Git at `/workspace/tess-research-data/tic214311908_external_review`. Reproduce compact checks with:
+
+```sh
+cd /workspace/Space_ChatGPT
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /workspace/openrouter-check-venv/bin/python scripts/compare_tic214311908.py
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /workspace/openrouter-check-venv/bin/python candidates/tic214311908_external_comparison/shape_checks.py
+```
+
+The first verifies pinned sources, geometry, catalogue table selection and all 1500 prior-draw summaries. `--restore-sources` retrieves only missing expected public files without executing them. The second fits our existing saved QLP windows and is not an external-code execution. Preserve original outputs and source hashes before deliberate regeneration. Two delegated reviews reached their execution quota after supplying numerical results; root completed the audits and preservation locally. No paid calls or external messages/submissions. Next decisive science remains resolved in-event multi-band photometry plus companion imaging and spectroscopy/RVs, not another attractive fold.
+
 ## Latest targeted review — TIC 214311908, 17 October 2026
 
 The user requested an independent investigation and withheld the other model's findings. None was accessed. **A promising recurrent 5.6915-day transit/eclipsing signal survives; its host and planetary origin remain unresolved.** Read [the full evidence](candidates/tic214311908/README.md), [measurements](candidates/tic214311908/measurements.csv), [independent analysis](candidates/tic214311908/independent_variability/README.md), [source assignment](candidates/tic214311908/source_localization/README.md) and [TARS recognition audit](candidates/tic214311908/tars_recognition/README.md).

@@ -1,6 +1,15 @@
 # Independent review of TIC 214311908
 
-**17 October 2026. Assessment: a promising, recurrent transit/eclipsing signal, with the host star unresolved. No planet, discovery priority, or previously unknown star is established.**
+**Subsequent authorized comparison, 17 October 2026:** the supplied investigation
+adds six-sector calibrated PRF localization and source-specific stellar tests
+beyond this initial independent review. The [comparison and new bounded checks](../tic214311908_external_comparison/README.md)
+support **strong, unvalidated planet candidate** as a reasonable classification.
+Our initial simple faint-neighbor flux-budget argument is incomplete; precise
+FPP, confirmation and novelty remain unestablished. The catalogue dossier also
+corrects an El-Badry table-reading error. The original blind recovery and
+predictive timing records below are unchanged.
+
+**Initial independent assessment, 17 October 2026: a promising, recurrent transit/eclipsing signal, with the host star unresolved by that analysis. No planet, discovery priority, or previously unknown star is established. See the subsequent comparison above for the current assessment.**
 
 The user requested a review without access to another model's findings. No period, plot, epoch or assessment from that model was supplied or used. The approximately **5.6915-day** signal was identified in independent searches of public observations. Two additional sectors were then tested at a frozen discovery ephemeris before examining their flux.
 

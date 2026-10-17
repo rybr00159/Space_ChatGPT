@@ -4,6 +4,12 @@ Checked 2026-10-17 using public services, independently of the other model's
 findings. These checks identify the target and potential blends; they do not
 establish that any measured TESS dip belongs to the target or validate a planet.
 
+**Correction after the authorized comparison, 17 October 2026:** the original
+El-Badry response contains the target and TIC 214311910 in the main catalogue.
+We initially read its empty shifted-control table as the whole response. The
+entry and the wide-system interpretation are corrected below; the original
+response remains unchanged. See the [comparison audit](../../tic214311908_external_comparison/host_audit.md).
+
 ## Target
 
 TIC 214311908 is **Gaia DR3 5925373272850784768 / 2MASS
@@ -54,7 +60,11 @@ the catalogue supplies neither an RV semi-amplitude nor a planet mass.
   Nearby Stars (2021A&A...649A...6G). Finite arXiv metadata searches for the TIC,
   Gaia ID, 2MASS name and UCAC4 alias return zero results. This does not search
   every paper's full text, supplements, unpublished reports or all aliases.
-- WDS and El-Badry et al. 2021 binary-catalogue queries within 30″ return no rows.
+- WDS query within 30″ returns no rows. **Corrected:** the El-Badry et al. 2021
+  main catalogue contains Gaia 5925373272850784768 / 5925373272850782208,
+  projected separation 756.78493 AU and chance-alignment statistic
+  R = 1.99306465 × 10⁻⁵. Its shifted-control table is empty. The previous
+  no-entry statement was a table-selection error, not an absence of data.
 
 This is **no prior report found in the checked scope**, not a claim of novelty.
 The source is already catalogued as a star. Public pipeline threshold-crossing
@@ -86,11 +96,12 @@ and 0.23/0.18 mag respectively, before dilution. Their periods and harmonics
 provide concrete contamination tests if a similar TESS period appears.
 
 The 11.67″ neighbor has parallax 16.4126 ± 0.3929 mas and proper motion
-(−112.7960 ± 0.4412, +87.2053 ± 0.3229) mas yr⁻¹, suggestive of a physical wide
+(−112.7960 ± 0.4412, +87.2053 ± 0.3229) mas yr⁻¹. Together with the corrected
+El-Badry main-catalogue association, this strongly supports a physical wide
 pair with the target. Its high RUWE and 20% multiple-peak image fraction make
-its astrometry uncertain. Association is not proved here. A projected separation
-would be roughly 750 AU if both objects are at the target's distance. This would
-not identify which star produces any transit-like signal. ExoFOP includes
+its individual astrometry uncertain. The catalogue R is a chance-alignment
+statistic, not a newly measured orbit. This wide-system association does not
+identify which component produces the short-period signal. ExoFOP includes
 **duplicate TIC 1515709367 for this same Gaia source**; do not count it as a
 second separate contaminant. ExoFOP leaves the Mira's Gaia DR3 field blank but
 retains the correct identical Gaia DR2 ID, so a DR3-only join would miss it.

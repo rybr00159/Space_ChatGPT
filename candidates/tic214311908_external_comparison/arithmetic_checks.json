@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-10-17T18:44:10.809186+00:00",
+  "method_sha256": "a9cba78cad3b249bc829ad2094e47b58ef6a9a69aa5d17ebfe318c8a4471cd40",
+  "source_manifest_sha256": "239204522dfa84127ee9ab4836d5c9c6961f6f622c5b12e7052bab6de17ee019",
+  "source_commit": "99d4f66fca99c32c3245396f367b8a73d5d13fa5",
+  "pinned_files_verified": 98,
+  "period_comparison": {
+    "independent_days": 5.691513805926734,
+    "external_days": 5.691506,
+    "difference_seconds": 0.6744320697691819,
+    "difference_over_quadrature_errors": 0.5536107479270991,
+    "limitation": "Shared observations; descriptive agreement, not an independent combined measurement."
+  },
+  "ordinary_dark_occultor_geometry": {
+    "nominal_neighbor_to_target_T_flux": 0.02928464744724173,
+    "required_neighbor_eclipse_fraction": 0.5395318495284865,
+    "minimum_radius_ratio_uniform_brightness": 0.7345283177172182,
+    "maximum_flat_to_total_duration_ratio_central_small_angle": 0.1530512241115581,
+    "limitation": "A uniform-surface-brightness, circular/small-angle geometry check for an ordinary dark occultor. Limb darkening changes the bounds. Luminous compact-star occultations need separate SED and binary modelling; this is not a universal exclusion."
+  },
+  "photoeccentric_sanity": {
+    "density_relation": "rho_circular = rho_star * g**3",
+    "g": "(1+e*sin(omega))/sqrt(1-e**2)",
+    "example_rho_circular_g_cm3": 1.8,
+    "rho_star_g_cm3": 9.445379,
+    "minimum_apoastron_e_ignoring_companion_mass": 0.5024511116995701
+  },
+  "zero_exceedance_one_sided_95pct_upper": {
+    "25": 0.11292814500684323,
+    "400": 0.0074613555287995625,
+    "1000": 0.0029912495450953314
+  },
+  "published_prior_draw_arithmetic": {
+    "n": 1500,
+    "FPP_pct_5_16_50_84_95": [
+      0.00024296626145798306,
+      0.0006488399511895437,
+      0.0021516122380390024,
+      0.006046422644109923,
+      0.011887187502084244
+    ],
+    "frac_FPP_lt_0p015": 0.968,
+    "FPP_strict_pct_5_50_95": [
+      0.0022199438403005304,
+      0.012732870892152474,
+      0.10617938473504795
+    ],
+    "frac_strict_lt_0p015": 0.5566666666666666
+  },
+  "wide_pair_catalogue_correction": {
+    "source": "data/tic214311908/catalogs/elbadry_binary_cone.tsv",
+    "source_sha256": "0296bf6905ecc6c25d2872c927771679b285b0adda6cf8ca0af0b6bb6818e190",
+    "rows": [
+      {
+        "table": "J/MNRAS/506/2269/catalog",
+        "source1": "5925373272850784768",
+        "source2": "5925373272850782208",
+        "projected_separation_AU": 756.7849326670193,
+        "chance_alignment_statistic_R": 1.9930646526789798e-05,
+        "binary_type": "MSMS"
+      }
+    ],
+    "correction": "Original report read the empty shifted-control table and incorrectly reported no El-Badry match. A real main-catalogue pair was already in the preserved response.",
+    "limitation": "The catalogue R statistic is not a new measured orbit or a short-period host identification."
+  },
+  "scope": "Input identities, geometry, catalogue rereading and published-table arithmetic. No complete external raw-cube PRF extraction, evidence integration or independent FPP calibration."
+}
