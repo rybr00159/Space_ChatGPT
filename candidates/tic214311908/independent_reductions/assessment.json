@@ -1,0 +1,833 @@
+{
+  "script_sha256": "3a56a4f9ec750f89677325474d7ade5d6b448074fe72ff5d9908d0299040af66",
+  "fixed_ephemeris": {
+    "registered_utc": "2026-10-17T13:46:21.571595+00:00",
+    "script_sha256": "3aea6069a8be975a3960f1112928ce7dbcd4fac82991f0eb8a5f3e60b42b5881",
+    "discovery_source": {
+      "path": "candidates/tic214311908/pooled_w0.75.json",
+      "sha256": "5b9443baa49205fbbf3c50785ff31ea92ee4ab347d4db9a52063a3973fd89b43"
+    },
+    "discovery_sectors": [
+      12,
+      39,
+      66,
+      93
+    ],
+    "uninspected_sectors": [
+      103,
+      104
+    ],
+    "period_days": 5.691497928943136,
+    "epoch_btjd": 1632.6146842062005,
+    "duration_days": 0.04958333333333333,
+    "aperture_radii_pixels": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "primary_radius_pixels": 1.5,
+    "local_event_windows_days": [
+      0.04958333333333333,
+      0.07
+    ],
+    "background": "median of lower25percentile reference-image pixels farther than3pixels from propagated target; constant per cadence, same mask across sector",
+    "time_policy": "Native FFI TIME/BJDREFI/BJDREFF/TIMESYS verified; no QLP photometry or timestamp applied.",
+    "limitations": "Same fixed ephemeris; apertures and two windows are correlated diagnostics, not independent tests. Real blend/stellar classification and calibrated red-noise FAP remain unresolved. All predicted coverage retained; a gap is not a null."
+  },
+  "tests": [
+    {
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Fgsfc-eleanor-lite%2Fs0012%2F0000%2F0002%2F1431%2F1908%2Fhlsp_gsfc-eleanor-lite_tess_ffi_s0012-0000000214311908_tess_v1.0_lc.fits",
+        "path": "/workspace/tess-research-data/tic214311908/independent_reductions/hlsp_gsfc-eleanor-lite_tess_ffi_s0012-0000000214311908_tess_v1.0_lc.fits",
+        "bytes": 109440,
+        "sha256": "d4172cc62354644177eeccedf3062bf2f4b743e9bc204389e265bcf25e67a024",
+        "md5": "69f8a7f44ca15c7e6a8ab1e6b0dd5c1a",
+        "retrieved_or_verified_utc": "2026-10-17T13:50:12.657160+00:00",
+        "mast_uri": "mast:HLSP/gsfc-eleanor-lite/s0012/0000/0002/1431/1908/hlsp_gsfc-eleanor-lite_tess_ffi_s0012-0000000214311908_tess_v1.0_lc.fits",
+        "provenance_name": "GSFC-ELEANOR-LITE",
+        "sector": 12,
+        "hdus": [
+          {
+            "hdu": 0,
+            "name": "PRIMARY",
+            "columns": [],
+            "rows": 0
+          },
+          {
+            "hdu": 1,
+            "name": "",
+            "columns": [
+              "TIME",
+              "BARYCORR",
+              "RAW_FLUX",
+              "CORR_FLUX",
+              "FLUX_ERR",
+              "QUALITY",
+              "X_CENTROID",
+              "Y_CENTROID",
+              "X_COM",
+              "Y_COM",
+              "FLUX_BKG",
+              "FFIINDEX",
+              "PCA_FLUX"
+            ],
+            "rows": 1289
+          },
+          {
+            "hdu": 2,
+            "name": "",
+            "columns": [
+              "L_180",
+              "TPF",
+              "TPF_ERR"
+            ],
+            "rows": 15
+          }
+        ],
+        "reported_period_metadata": {
+          "0": {
+            "APERTURE": "L_180"
+          },
+          "1": {},
+          "2": {}
+        }
+      },
+      "flux_column": "RAW_FLUX",
+      "checksums": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 2,
+          "status": "verified_raw_ones_complement"
+        }
+      ],
+      "error_policy": "Producer FLUX_ERR with original QUALITY==0; approximate errors shared by RAW/CORR/PCA flux, local residual floors retained.",
+      "primary": {
+        "n_events": 3,
+        "n_positive_events": 3,
+        "depth": 0.002272029727344992,
+        "depth_err": 0.0003937373970148036,
+        "diagonal_depth_err": 0.0003937373970148036,
+        "event_scatter_depth_err": 0.00016322756690582017,
+        "snr": 5.7704189253315175,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1632.6146842062005,
+            "n": 2,
+            "depth": 0.0021655245109029647,
+            "depth_err": 0.0007788616684888083,
+            "snr": 2.7803711474267807,
+            "n_baseline": 18
+          },
+          {
+            "cycle": 2,
+            "time": 1643.9976800640868,
+            "n": 3,
+            "depth": 0.002646716996167901,
+            "depth_err": 0.0008058316197943456,
+            "snr": 3.2844541355219636,
+            "n_baseline": 17
+          },
+          {
+            "cycle": 3,
+            "time": 1649.68917799303,
+            "n": 2,
+            "depth": 0.0021489642030154015,
+            "depth_err": 0.0005536815168428801,
+            "snr": 3.881227994152493,
+            "n_baseline": 16
+          }
+        ],
+        "odd_even_sigma": null
+      }
+    },
+    {
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Fgsfc-eleanor-lite%2Fs0012%2F0000%2F0002%2F1431%2F1908%2Fhlsp_gsfc-eleanor-lite_tess_ffi_s0012-0000000214311908_tess_v1.0_lc.fits",
+        "path": "/workspace/tess-research-data/tic214311908/independent_reductions/hlsp_gsfc-eleanor-lite_tess_ffi_s0012-0000000214311908_tess_v1.0_lc.fits",
+        "bytes": 109440,
+        "sha256": "d4172cc62354644177eeccedf3062bf2f4b743e9bc204389e265bcf25e67a024",
+        "md5": "69f8a7f44ca15c7e6a8ab1e6b0dd5c1a",
+        "retrieved_or_verified_utc": "2026-10-17T13:50:12.657160+00:00",
+        "mast_uri": "mast:HLSP/gsfc-eleanor-lite/s0012/0000/0002/1431/1908/hlsp_gsfc-eleanor-lite_tess_ffi_s0012-0000000214311908_tess_v1.0_lc.fits",
+        "provenance_name": "GSFC-ELEANOR-LITE",
+        "sector": 12,
+        "hdus": [
+          {
+            "hdu": 0,
+            "name": "PRIMARY",
+            "columns": [],
+            "rows": 0
+          },
+          {
+            "hdu": 1,
+            "name": "",
+            "columns": [
+              "TIME",
+              "BARYCORR",
+              "RAW_FLUX",
+              "CORR_FLUX",
+              "FLUX_ERR",
+              "QUALITY",
+              "X_CENTROID",
+              "Y_CENTROID",
+              "X_COM",
+              "Y_COM",
+              "FLUX_BKG",
+              "FFIINDEX",
+              "PCA_FLUX"
+            ],
+            "rows": 1289
+          },
+          {
+            "hdu": 2,
+            "name": "",
+            "columns": [
+              "L_180",
+              "TPF",
+              "TPF_ERR"
+            ],
+            "rows": 15
+          }
+        ],
+        "reported_period_metadata": {
+          "0": {
+            "APERTURE": "L_180"
+          },
+          "1": {},
+          "2": {}
+        }
+      },
+      "flux_column": "CORR_FLUX",
+      "checksums": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 2,
+          "status": "verified_raw_ones_complement"
+        }
+      ],
+      "error_policy": "Producer FLUX_ERR with original QUALITY==0; approximate errors shared by RAW/CORR/PCA flux, local residual floors retained.",
+      "primary": {
+        "n_events": 3,
+        "n_positive_events": 3,
+        "depth": 0.0024510722470323268,
+        "depth_err": 0.0004198030823883908,
+        "diagonal_depth_err": 0.0004198030823883908,
+        "event_scatter_depth_err": 0.00024563697945701807,
+        "snr": 5.8386237497052464,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1632.6146842062005,
+            "n": 2,
+            "depth": 0.0018727261617820005,
+            "depth_err": 0.0010711457591149871,
+            "snr": 1.748339239404078,
+            "n_baseline": 18
+          },
+          {
+            "cycle": 2,
+            "time": 1643.9976800640868,
+            "n": 3,
+            "depth": 0.002672073938847738,
+            "depth_err": 0.0009937887537588537,
+            "snr": 2.6887745798501217,
+            "n_baseline": 17
+          },
+          {
+            "cycle": 3,
+            "time": 1649.68917799303,
+            "n": 2,
+            "depth": 0.0025250264138756734,
+            "depth_err": 0.0005136557800541682,
+            "snr": 4.9157948025220195,
+            "n_baseline": 16
+          }
+        ],
+        "odd_even_sigma": null
+      }
+    },
+    {
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Fgsfc-eleanor-lite%2Fs0012%2F0000%2F0002%2F1431%2F1908%2Fhlsp_gsfc-eleanor-lite_tess_ffi_s0012-0000000214311908_tess_v1.0_lc.fits",
+        "path": "/workspace/tess-research-data/tic214311908/independent_reductions/hlsp_gsfc-eleanor-lite_tess_ffi_s0012-0000000214311908_tess_v1.0_lc.fits",
+        "bytes": 109440,
+        "sha256": "d4172cc62354644177eeccedf3062bf2f4b743e9bc204389e265bcf25e67a024",
+        "md5": "69f8a7f44ca15c7e6a8ab1e6b0dd5c1a",
+        "retrieved_or_verified_utc": "2026-10-17T13:50:12.657160+00:00",
+        "mast_uri": "mast:HLSP/gsfc-eleanor-lite/s0012/0000/0002/1431/1908/hlsp_gsfc-eleanor-lite_tess_ffi_s0012-0000000214311908_tess_v1.0_lc.fits",
+        "provenance_name": "GSFC-ELEANOR-LITE",
+        "sector": 12,
+        "hdus": [
+          {
+            "hdu": 0,
+            "name": "PRIMARY",
+            "columns": [],
+            "rows": 0
+          },
+          {
+            "hdu": 1,
+            "name": "",
+            "columns": [
+              "TIME",
+              "BARYCORR",
+              "RAW_FLUX",
+              "CORR_FLUX",
+              "FLUX_ERR",
+              "QUALITY",
+              "X_CENTROID",
+              "Y_CENTROID",
+              "X_COM",
+              "Y_COM",
+              "FLUX_BKG",
+              "FFIINDEX",
+              "PCA_FLUX"
+            ],
+            "rows": 1289
+          },
+          {
+            "hdu": 2,
+            "name": "",
+            "columns": [
+              "L_180",
+              "TPF",
+              "TPF_ERR"
+            ],
+            "rows": 15
+          }
+        ],
+        "reported_period_metadata": {
+          "0": {
+            "APERTURE": "L_180"
+          },
+          "1": {},
+          "2": {}
+        }
+      },
+      "flux_column": "PCA_FLUX",
+      "checksums": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 2,
+          "status": "verified_raw_ones_complement"
+        }
+      ],
+      "error_policy": "Producer FLUX_ERR with original QUALITY==0; approximate errors shared by RAW/CORR/PCA flux, local residual floors retained.",
+      "primary": {
+        "n_events": 3,
+        "n_positive_events": 3,
+        "depth": 0.0023651092894865305,
+        "depth_err": 0.00039187475990042596,
+        "diagonal_depth_err": 0.00039187475990042596,
+        "event_scatter_depth_err": 0.0001289078054716237,
+        "snr": 6.035370305777021,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1632.6146842062005,
+            "n": 2,
+            "depth": 0.0023270659583664818,
+            "depth_err": 0.0006682535969934308,
+            "snr": 3.482309663331835,
+            "n_baseline": 18
+          },
+          {
+            "cycle": 2,
+            "time": 1643.9976800640868,
+            "n": 3,
+            "depth": 0.0027189666726130535,
+            "depth_err": 0.001372038486750468,
+            "snr": 1.98169854480733,
+            "n_baseline": 17
+          },
+          {
+            "cycle": 3,
+            "time": 1649.68917799303,
+            "n": 2,
+            "depth": 0.0023376373160498096,
+            "depth_err": 0.0005169959360280502,
+            "snr": 4.521577740067532,
+            "n_baseline": 16
+          }
+        ],
+        "odd_even_sigma": null
+      }
+    },
+    {
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_12_cam_1_ccd_2%2Fhlsp_tars_tess_ffi_s0012-0000000214311908_tess_v01_lc.fits",
+        "path": "/workspace/tess-research-data/tic214311908/independent_reductions/hlsp_tars_tess_ffi_s0012-0000000214311908_tess_v01_lc.fits",
+        "bytes": 23040,
+        "sha256": "f470edb82f5ae85e9711e0d1b42199bed04a16b68954b517b6199eac8ba9a33b",
+        "md5": "bd8bdea54ce457bc8419392dabef2d16",
+        "retrieved_or_verified_utc": "2026-10-17T13:50:12.581631+00:00",
+        "mast_uri": "mast:HLSP/tars/sec_12_cam_1_ccd_2/hlsp_tars_tess_ffi_s0012-0000000214311908_tess_v01_lc.fits",
+        "provenance_name": "TARS",
+        "sector": 12,
+        "hdus": [
+          {
+            "hdu": 0,
+            "name": "PRIMARY",
+            "columns": [],
+            "rows": 0
+          },
+          {
+            "hdu": 1,
+            "name": "LIGHTCURVE",
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "rows": 852
+          }
+        ],
+        "reported_period_metadata": {
+          "0": {},
+          "1": {
+            "APERTURE": 1,
+            "PER1": 8.5715718,
+            "POW1": 0.4067543,
+            "PER2": 16.2682937,
+            "POW2": 0.255917,
+            "PER3": 5.7368405,
+            "POW3": 0.1988813,
+            "PER4": 3.7859906,
+            "POW4": 0.1281778,
+            "PER5": 2.3798764,
+            "POW5": 0.039841,
+            "SNR1": 553.3416639,
+            "SNR2": 348.1451373,
+            "SNR3": 270.5547645,
+            "SNR4": 174.3709131,
+            "SNR5": 54.1990152,
+            "AMPFIT": 0.0024474,
+            "P2PRMS": 0.0015032,
+            "REDCHI2": 2.0993357,
+            "SNR": 6.4692915,
+            "BIC1T": 1802.5788066,
+            "BIC2T": 1796.0350402,
+            "BIC2TS": 1749.8789639
+          }
+        }
+      },
+      "flux_column": "FLUX",
+      "checksums": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        }
+      ],
+      "error_policy": "Explicit constant adjacent-difference MAD; no original QUALITY/FLUX_ERR supplied. Residual floors do not calibrate red noise.",
+      "primary": {
+        "n_events": 3,
+        "n_positive_events": 3,
+        "depth": 0.0019462157760721578,
+        "depth_err": 0.0006063707509239992,
+        "diagonal_depth_err": 0.0006063707509239992,
+        "event_scatter_depth_err": 0.00043265840787849773,
+        "snr": 3.209613546013685,
+        "events": [
+          {
+            "cycle": 0,
+            "time": 1632.6146842062005,
+            "n": 2,
+            "depth": 0.0013436552110754054,
+            "depth_err": 0.001102302352383676,
+            "snr": 1.218953409806135,
+            "n_baseline": 18
+          },
+          {
+            "cycle": 1,
+            "time": 1638.3061821351437,
+            "n": 3,
+            "depth": 0.002801616875764503,
+            "depth_err": 0.0011160939170171825,
+            "snr": 2.510198141077559,
+            "n_baseline": 14
+          },
+          {
+            "cycle": 3,
+            "time": 1649.68917799303,
+            "n": 2,
+            "depth": 0.0017718030010287378,
+            "depth_err": 0.0009561022326202876,
+            "snr": 1.8531522472999,
+            "n_baseline": 17
+          }
+        ],
+        "odd_even_sigma": null
+      }
+    },
+    {
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_39_cam_1_ccd_2%2Fhlsp_tars_tess_ffi_s0039-0000000214311908_tess_v01_lc.fits",
+        "path": "/workspace/tess-research-data/tic214311908/independent_reductions/hlsp_tars_tess_ffi_s0039-0000000214311908_tess_v01_lc.fits",
+        "bytes": 48960,
+        "sha256": "2ef4098ac76b79c6d812fd28c284cdfe9cbd9dcb6f54b9053b214d45c97417d9",
+        "md5": "83ea5035878dc91fb510524f76925860",
+        "retrieved_or_verified_utc": "2026-10-17T13:50:12.628411+00:00",
+        "mast_uri": "mast:HLSP/tars/sec_39_cam_1_ccd_2/hlsp_tars_tess_ffi_s0039-0000000214311908_tess_v01_lc.fits",
+        "provenance_name": "TARS",
+        "sector": 39,
+        "hdus": [
+          {
+            "hdu": 0,
+            "name": "PRIMARY",
+            "columns": [],
+            "rows": 0
+          },
+          {
+            "hdu": 1,
+            "name": "LIGHTCURVE",
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "rows": 2991
+          }
+        ],
+        "reported_period_metadata": {
+          "0": {},
+          "1": {
+            "APERTURE": 1,
+            "PER1": 8.7464183,
+            "POW1": 0.1472577,
+            "PER2": 4.3991864,
+            "POW2": 0.0210947,
+            "PER3": 2.4312587,
+            "POW3": 0.0127214,
+            "PER4": 2.0215462,
+            "POW4": 0.0080082,
+            "PER5": 0.5175356,
+            "POW5": 0.005122,
+            "SNR1": 324.8015719,
+            "SNR2": 46.5279732,
+            "SNR3": 28.0592875,
+            "SNR4": 17.6633838,
+            "SNR5": 11.2974929,
+            "AMPFIT": 0.001298,
+            "P2PRMS": 0.0029341,
+            "REDCHI2": 0.5618668,
+            "SNR": 3.2290341,
+            "BIC1T": 1702.8679408,
+            "BIC2T": 1703.6160908,
+            "BIC2TS": 1698.3386229
+          }
+        }
+      },
+      "flux_column": "FLUX",
+      "checksums": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        }
+      ],
+      "error_policy": "Explicit constant adjacent-difference MAD; no original QUALITY/FLUX_ERR supplied. Residual floors do not calibrate red noise.",
+      "primary": {
+        "n_events": 4,
+        "n_positive_events": 4,
+        "depth": 0.002552012345273582,
+        "depth_err": 0.0004001249508803271,
+        "diagonal_depth_err": 0.0004001249508803271,
+        "event_scatter_depth_err": 0.0003303678966587768,
+        "snr": 6.378038509367691,
+        "events": [
+          {
+            "cycle": 129,
+            "time": 2366.8179170398653,
+            "n": 8,
+            "depth": 0.0019123416790610866,
+            "depth_err": 0.0007463409287928573,
+            "snr": 2.5622897060652106,
+            "n_baseline": 56
+          },
+          {
+            "cycle": 130,
+            "time": 2372.5094149688084,
+            "n": 7,
+            "depth": 0.0032526571994511183,
+            "depth_err": 0.0008230361279862912,
+            "snr": 3.9520223825524408,
+            "n_baseline": 55
+          },
+          {
+            "cycle": 131,
+            "time": 2378.2009128977516,
+            "n": 7,
+            "depth": 0.0021652478067873504,
+            "depth_err": 0.000795921085908672,
+            "snr": 2.7204302601373747,
+            "n_baseline": 56
+          },
+          {
+            "cycle": 132,
+            "time": 2383.8924108266947,
+            "n": 7,
+            "depth": 0.003071031759505768,
+            "depth_err": 0.0008463547788018426,
+            "snr": 3.628539516080159,
+            "n_baseline": 56
+          }
+        ],
+        "odd_even_sigma": 1.4121186176898057
+      }
+    },
+    {
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_66_cam_1_ccd_1%2Fhlsp_tars_tess_ffi_s0066-0000000214311908_tess_v01_lc.fits",
+        "path": "/workspace/tess-research-data/tic214311908/independent_reductions/hlsp_tars_tess_ffi_s0066-0000000214311908_tess_v01_lc.fits",
+        "bytes": 118080,
+        "sha256": "1a74e584ce37dffeed74c6bbb0b7916d6d4a24fcff34ee2e46e3d00f74f75994",
+        "md5": "4fa969e0cca83d5fbb08eae9d05a905c",
+        "retrieved_or_verified_utc": "2026-10-17T13:50:12.530287+00:00",
+        "mast_uri": "mast:HLSP/tars/sec_66_cam_1_ccd_1/hlsp_tars_tess_ffi_s0066-0000000214311908_tess_v01_lc.fits",
+        "provenance_name": "TARS",
+        "sector": 66,
+        "hdus": [
+          {
+            "hdu": 0,
+            "name": "PRIMARY",
+            "columns": [],
+            "rows": 0
+          },
+          {
+            "hdu": 1,
+            "name": "LIGHTCURVE",
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "rows": 8705
+          }
+        ],
+        "reported_period_metadata": {
+          "0": {},
+          "1": {
+            "APERTURE": 1,
+            "PER1": 8.0918201,
+            "POW1": 0.0145594,
+            "PER2": 3.0745833,
+            "POW2": 0.0049108,
+            "PER3": 3.7641173,
+            "POW3": 0.0044572,
+            "PER4": 4.4989999,
+            "POW4": 0.0034197,
+            "PER5": 5.7542783,
+            "POW5": 0.0029502,
+            "SNR1": 59.9197363,
+            "SNR2": 20.2104083,
+            "SNR3": 18.3438428,
+            "SNR4": 14.0740524,
+            "SNR5": 12.1415709,
+            "AMPFIT": 0.0004627,
+            "P2PRMS": 0.0035663,
+            "REDCHI2": 0.5270084,
+            "SNR": 3.2499485,
+            "BIC1T": 4613.2424417,
+            "BIC2T": 4614.195815,
+            "BIC2TS": 4621.3842725
+          }
+        }
+      },
+      "flux_column": "FLUX",
+      "checksums": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        }
+      ],
+      "error_policy": "Explicit constant adjacent-difference MAD; no original QUALITY/FLUX_ERR supplied. Residual floors do not calibrate red noise.",
+      "primary": {
+        "n_events": 4,
+        "n_positive_events": 4,
+        "depth": 0.0032102440218602854,
+        "depth_err": 0.0003061790548946289,
+        "diagonal_depth_err": 0.0003061790548946289,
+        "event_scatter_depth_err": 0.0002841665616520088,
+        "snr": 10.484858355072937,
+        "events": [
+          {
+            "cycle": 258,
+            "time": 3101.02114987353,
+            "n": 22,
+            "depth": 0.0025878682350512754,
+            "depth_err": 0.0005482782219049964,
+            "snr": 4.719990930990675,
+            "n_baseline": 166
+          },
+          {
+            "cycle": 259,
+            "time": 3106.712647802473,
+            "n": 21,
+            "depth": 0.003636259901639206,
+            "depth_err": 0.0005938149612357185,
+            "snr": 6.123557234179841,
+            "n_baseline": 92
+          },
+          {
+            "cycle": 260,
+            "time": 3112.404145731416,
+            "n": 21,
+            "depth": 0.003072219215688559,
+            "depth_err": 0.0006218491096838063,
+            "snr": 4.940457689568296,
+            "n_baseline": 148
+          },
+          {
+            "cycle": 261,
+            "time": 3118.095643660359,
+            "n": 20,
+            "depth": 0.003845675272786609,
+            "depth_err": 0.0007219450076180838,
+            "snr": 5.326825772332247,
+            "n_baseline": 164
+          }
+        ],
+        "odd_even_sigma": 1.4952235412177641
+      }
+    },
+    {
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHLSP%2Ftars%2Fsec_93_cam_1_ccd_1%2Fhlsp_tars_tess_ffi_s0093-0000000214311908_tess_v01_lc.fits",
+        "path": "/workspace/tess-research-data/tic214311908/independent_reductions/hlsp_tars_tess_ffi_s0093-0000000214311908_tess_v01_lc.fits",
+        "bytes": 129600,
+        "sha256": "03d4f80de63e38f491d1f533db10164cb3d06c3e7c9cfe04fd3d16250a43adc0",
+        "md5": "88a760c3f9478342cae67a11555af67a",
+        "retrieved_or_verified_utc": "2026-10-17T13:50:12.797578+00:00",
+        "mast_uri": "mast:HLSP/tars/sec_93_cam_1_ccd_1/hlsp_tars_tess_ffi_s0093-0000000214311908_tess_v01_lc.fits",
+        "provenance_name": "TARS",
+        "sector": 93,
+        "hdus": [
+          {
+            "hdu": 0,
+            "name": "PRIMARY",
+            "columns": [],
+            "rows": 0
+          },
+          {
+            "hdu": 1,
+            "name": "LIGHTCURVE",
+            "columns": [
+              "TIME",
+              "FLUX"
+            ],
+            "rows": 9732
+          }
+        ],
+        "reported_period_metadata": {
+          "0": {},
+          "1": {
+            "APERTURE": 1,
+            "PER1": 4.5891302,
+            "POW1": 0.0327748,
+            "PER2": 8.6209164,
+            "POW2": 0.0311508,
+            "PER3": 5.8904204,
+            "POW3": 0.0307453,
+            "PER4": 3.7549608,
+            "POW4": 0.0194916,
+            "PER5": 1.9115499,
+            "POW5": 0.0097905,
+            "SNR1": 187.4575123,
+            "SNR2": 178.1691511,
+            "SNR3": 175.8497314,
+            "SNR4": 111.4835775,
+            "SNR5": 55.9972206,
+            "AMPFIT": 0.0010457,
+            "P2PRMS": 0.0045315,
+            "REDCHI2": 0.82383,
+            "SNR": 4.6497651,
+            "BIC1T": 8042.5917492,
+            "BIC2T": 7702.2069387,
+            "BIC2TS": 7969.0596811
+          }
+        }
+      },
+      "flux_column": "FLUX",
+      "checksums": [
+        {
+          "hdu": 0,
+          "status": "verified_raw_ones_complement"
+        },
+        {
+          "hdu": 1,
+          "status": "verified_raw_ones_complement"
+        }
+      ],
+      "error_policy": "Explicit constant adjacent-difference MAD; no original QUALITY/FLUX_ERR supplied. Residual floors do not calibrate red noise.",
+      "primary": {
+        "n_events": 3,
+        "n_positive_events": 3,
+        "depth": 0.0027734868932811096,
+        "depth_err": 0.0005499480830913422,
+        "diagonal_depth_err": 0.0004086888907134224,
+        "event_scatter_depth_err": 0.0005499480830913422,
+        "snr": 5.043179490127352,
+        "events": [
+          {
+            "cycle": 387,
+            "time": 3835.2243827071943,
+            "n": 21,
+            "depth": 0.001960649601078308,
+            "depth_err": 0.0007133924815242272,
+            "snr": 2.7483463196713314,
+            "n_baseline": 167
+          },
+          {
+            "cycle": 389,
+            "time": 3846.6073785650806,
+            "n": 22,
+            "depth": 0.003812311773499338,
+            "depth_err": 0.0006971634087987237,
+            "snr": 5.468318797838658,
+            "n_baseline": 166
+          },
+          {
+            "cycle": 390,
+            "time": 3852.2988764940237,
+            "n": 21,
+            "depth": 0.0024985419726941726,
+            "depth_err": 0.0007134305805152419,
+            "snr": 3.5021514929871906,
+            "n_baseline": 167
+          }
+        ],
+        "odd_even_sigma": null
+      }
+    }
+  ],
+  "limitations": "Fixed discovery timing in independent public reductions of the same photons.\n\nTARS lacks reported uncertainties/quality columns, so its descriptive local\nscores explicitly use adjacent-difference empirical errors and residual floors.\nThese are not independent observations or calibrated significance estimates.\n"
+}

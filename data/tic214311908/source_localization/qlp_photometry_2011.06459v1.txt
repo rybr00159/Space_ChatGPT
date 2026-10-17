@@ -1,0 +1,739 @@
+                                               Draft version November 13, 2020
+                                               Typeset using LATEX RNAAS style in AASTeX62
+
+
+
+
+                                                Photometry of 10 Million Stars from the First Two Years of TESS Full Frame
+                                                                                  Images
+                                                  Chelsea X. Huang,1, ∗ Andrew Vanderburg,2 Andras Pál,1 Lizhou Sha,1, 2 Liang Yu,1 Willie Fong,1 Michael Fausnaugh,1
+                                                                        Avi Shporer,1 Natalia Guerrero,1 Roland Vanderspek,1 and George Ricker1
+                                                      1 Kavli Institute for Astrophysics and Space Research, Massachusetts Institute of Technology, Cambridge, MA, USA 02139
+                                                                                    2 Department of Astronomy, University of Wisconsin-Madison
+arXiv:2011.06459v1 [astro-ph.EP] 12 Nov 2020
+
+
+
+
+                                                                                                  (Revised November 13, 2020)
+
+                                                                                                         ABSTRACT
+                                                         The Transiting Exoplanet Survey Satellite (TESS) is the first high-precision full-sky photometry
+                                                       survey in space. We present light curves from a magnitude limited set of stars and other stationary
+                                                       luminous objects from the TESS Full Frame Images, as reduced by the MIT Quick Look Pipeline
+                                                       (QLP). Our light curves cover the full two-year TESS Primary Mission and include ∼ 14,770,000
+                                                       and ∼ 9,600,000 individual light curve segments in the Southern and Northern ecliptic hemispheres,
+                                                       respectively. We describe the photometry and detrending techniques we used to create the light
+                                                       curves, and compare the noise properties with theoretical expectations. All of the QLP light curves
+                                                       are available at MAST as a High Level Science Product via 10.17909/t9-r086-e880a) . This is the
+                                                       largest collection of TESS photometry available to the public to date.
+
+                                                       Keywords: TESS — survey — pipeline
+
+
+                                                                                                       INTRODUCTION
+                                                 NASA’s Transiting Exoplanet Survey Satellite (TESS) mission launched on 2018 April 18, and began science oper-
+                                               ations on 2018 July 25. TESS uses four identical cameras to observe stars over a total 24◦ × 96◦ field of view. Like its
+                                               predecessor, Kepler, TESS observes stars in so-called “postage stamps,” or small subimages from the TESS cameras
+                                               centered on particularly bright or important stars. Unlike Kepler, however, TESS also saves and downloads images
+                                               from its entire field of view every 30 minutes. These full frame images (or FFIs) greatly increase the mission’s discovery
+                                               space (with some simulations projecting tens of thousands of planet discoveries from the FFIs (Barclay et al. 2018;
+                                               Huang et al. 2018a), but also substantially increase data processing requirements.
+                                                 Before TESS’s launch, sophisticated and highly successful software tools were developed to analyze data from space
+                                               missions like CoRoT (Auvergne et al. 2009) and Kepler (Jenkins et al. 2010). However, because none of these missions
+                                               downloaded continuous FFIs, the architectures of these pipelines are difficult to adapt to a mission like TESS. In
+                                               the meantime, unhindered by data downlink rates, ground-based transit surveys like HAT (Bakos et al. 2007, 2013),
+                                               WASP (Pollacco et al. 2006), and KELT (Pepper et al. 2007, 2012) have been extracting light curves and searching
+                                               for planets from full frame data for many years. These pipelines (e.g. Collier Cameron et al. 2009; Pál 2009, , etc.)
+                                               are well suited for analyzing large volumes of wide field images.
+                                                 Here, we present light curves for a magnitude limited sample of stars observed by TESS produced by the MIT Quick
+                                               Look Pipeline (QLP). The QLP, whose architecture includes heritage from both ground-based photometric surveys
+                                               and methods developed for analysis of space-based photometry, was built to rapidly process TESS data as soon as it is
+                                               beamed to Earth. The QLP has already been used to identify and alert planet candidates throughout the entire TESS
+                                               Primary Mission, leading to the discovery of more than 1000 planetary candidates (Guerrero et al. 2020, submitted
+                                               to ApJS ), dozens of which have already been confirmed(e.g. Huang et al. 2018b; Vanderspek et al. 2019; Huang et al.
+
+
+                                               Corresponding author: Chelsea X. Huang
+                                               xuhuang@mit.edu
+                                                 a) https://archive.stsci.edu/hlsp/qlp
+                                               ∗ Torres Postdoctoral Fellow
+2                                                      Huang et al.
+
+2020; Armstrong et al. 2020). Here, we describe how QLP produces light curves and evaluate its performance in
+terms of photometric precision. We publicly release QLP light curves for all sources in the TESS Input Catalog (TIC,
+Stassun et al. 2018, 2019) observed by TESS in its primary mission down to a limiting TESS magnitude T of 13.5.
+
+                                                LIGHT CURVE EXTRACTION
+  We extract light curves for all stars in the TIC with TESS magnitude brighter than 13.5 observed in the TESS
+Primary mission (UT 2018 July 25 - UT 2020 July 04). Figure 1 shows the sky locations of stars with QLP light
+curves. We also added in stars with proper motion larger than 200 mas yr−1 and brightness between TESS Magnitude
+13.5 and 15.
+  Our procedure is as follows:
+
+     1. We process the TESS FFIs using the TICA software, which will be described by Fausnaugh et al. (in prep.).
+        The TICA software carries out correction of various instrumental effects described in Vanderspek et al. (2019).
+
+     2. The images then go through a global background subtraction using nebuliser (Irwin 1985). Because TESS orbits
+        the Earth, its cameras experience significant levels of scattered background light. Nebuliser removes much of the
+        large-scale scattered background features in the images (features with spatial variation scale >20 pixels).
+
+     3. We then determine an astrometric solution for each image following Huang et al. (2015) by relating the measured
+        centroids of bright sources (8 < T < 10) to their coordinates in the TIC. This astrometric solution is then used
+        to obtain the precise position of all catalog sources in the images. The typical astrometric precision for each
+        frame is better than 0.1 pixel (2.00 1).
+
+     4. A reference image is constructed with the median combination of 40 good quality images (images with minimal
+        scattered light, as well as good pointing stability), which we identify within each TESS orbit. We then compute
+        difference images for each frame by directly subtracting the reference frame from each individual frames.
+
+     5. We measure the differential source brightness from the difference images by summing the flux within a series of 5
+        circular apertures with different radii (1.75, 2.5, 3.0, 3.5 and 8.0 pixels) centered on these positions. We continue
+        to process the light curves from all five different apertures identically.
+
+     6. We then perform a second step of background subtraction. Nebuliser effectively removes large background varia-
+        tions, but leaves in some small-scale features. We therefore estimate the background light levels in the difference
+        images at the position of each source by calculating the median pixel values (with iterative outlier rejection)
+        within annuli around the target stars. The background annuli have inner radius and width of 4.0/3.0, 4.0/3.0,
+        4.0/3.0, 5.0/4.0 and 10.0/5.0 pixels, respectively. We subtract this background estimate from the difference fluxes
+        for each source.
+
+     7. Finally, we convert the measured difference fluxes into absolute fluxes by adding the expected flux from each
+        source based on the TESS-band magnitude estimates from the TIC and the instrument zeropoint magnitude
+        (Vanderspek et al. 2018). This is equivalent to deblending the flux time series assuming the variations observed
+        are from the target star.
+
+     8. The time series for each light curve is corrected to the Solar System barycentric reference frame from the TESS
+        spacecraft reference frame following the procedure described by Eastman et al. (2010) Sector 2.1 using the
+        coordinates of the target star at Epoch J2000, and TESS orbits vectors from JPL horizon 1 .
+
+  The time series extracted from this step is called the “raw light curve” and are post-processed to prepare for the
+needs of transit search.
+
+                                              LIGHT CURVE POST-PROCESSING
+  TESS light curves usually contain low-frequency variability from stellar activity or instrumental noise, which must
+be filtered before the small, short-duration signals caused by transiting planets can be readily detected. We therefore
+
+    1 https://ssd.jpl.nasa.gov/horizons.cgi
+                                             TESS light curves from MIT QLP                                                               3
+
+
+
+
+Figure 1. Left: An illustration of all the stars for which we extracted photometry from the TESS Primary Mission FFIs in
+terms of their equatorial coordinates. Right: The photometric precision of the time series, compared to expected theoretical
+precision estimated in Sullivan et al. (2015) (solid line). The dashed horizontal line is a reference indicating 20 ppm precision.
+
+
+detrend the light curves by applying a high-pass filter before they are searched for transits. Before detrending, we reject
+outliers in the light curve using the quaternion time series 2 . Any exposure corresponding to abnormal amplitudes of
+scatter in the quaternion time series are not used in the detrending. We then fit the light curves from each spacecraft
+orbit with a basis spline (Vanderburg & Johnson 2014). We choose the spacing of the spline break points by minimizing
+the Bayesian Information Criterion following Shallue & Vanderburg (2018), imposing a minimum allowed spacing of
+0.3 days. This minimum spacing is optimized for the detection of planets with short orbital periods; more aggressive
+splines would lead to the distortion of long-duration transits.
+  After detrending, we identify anomalous exposures where light curves tend to be noisier than expected based on
+TESS’s typical photometric precision. For each exposure, we look at the set of stars with TESS magnitude between
+9.5 and 10 and calculate the fraction which exhibit photometric precision more than 75% worse than the pre-flight
+anticipated photometric precision of 200 parts per million (ppm) per hour for stars with T = 10 mag. If more than 20
+% of the stars observed on the same CCD have poor precision at a particular exposure, we assign a bad quality flag to
+the corresponding exposure. This bad quality flag is stored as bit 13 in the QUALITY column provided in the light
+curve products. The rest of the bits are adopted from the SPOC Full Frame Image headers (Jenkins 2015; Jenkins
+et al. 2016).
+  We combine the detrended light curves observed in two TESS orbits of each TESS sector by offsetting the median
+of the light curves to the expected TESS magnitude, after rejecting bad quality points. These magnitude time series
+are then converted to normalized flux time series in the final light curve products.
+  The QLP produces light curves of each source from up to five apertures. We identify an optimal light curve for
+each target based on the source’s brightness. Early in the mission, we calculated the photometric precision in each
+aperture for a set of stars and determined the aperture size that yielded the best photometric precision as a function
+of TESS-band magnitude (in 13 evenly spaced bins between TESS mag of 6 to 13.5). We used these results to select
+the optimal aperture. We provide “raw light curve” from the optimal aperture in the FITS file of QLP HLSP product
+on MAST under keywords SAP FLUX. We provided flattened light curves from three apertures with different sizes.
+The light curve from the optimal aperture is under FITS keyword KSPSAP FLUX. The light curve from the
+relatively bigger/smaller apertures are under FITS keyword KSPSAP FLUX LAG and KSPSAP FLUX SML,
+respectively.
+  We show the precision of our light curves in Figure 1. For comparison, the solid line is the theoretical photometric
+precision estimated by Sullivan et al. (2015) scaled to a 6.5 hr time scale assuming Gaussian noise. The photometric
+precision roughly follows the predictions for the majority of the stars and has a lower noise floor (approximately 20
+ppm) for the brightest stars when the spacecraft operates nominally 3 .
+                                                               CAVEATS
+
+
+  2 The quaternion series can be downloaded from https://archive.stsci.edu/missions/tess/engineering/. For more details see (Vanderburg
+
+et al. 2019)
+   3 The in-orbit performance of the TESS photometers is better than preflight calculations by Sullivan et al. (2015), which has been traced
+
+to an underestimation in their assumed telescope aperture.
+4                                                   Huang et al.
+
+  QLP light curve production depends critically on the TESS band magnitudes estimated by the TIC. If a star’s TESS
+band magnitude is incorrect, the amplitude of features in the QLP light curve will be likewise incorrect because the
+QLP will deblend the light curve incorrectly. The uncertainties of the amplitude of variations in the flux time series
+therefore depend on the uncertainties in the TESS magnitudes. This is not represented in the error-bars we provide
+in the light curve time series. Instead, the uncertainties are estimated with the Median Absolute Median Deviation
+statistics of each orbit of light curves multiplied by 1.4826.
+  We note that light curves from Sectors 1–13 were produced using the TIC version 7, while light curves in Sector
+14 onward were produced using TIC version 8. A small fraction of stars have different estimated TESS magnitudes
+in TIC 7 versus TIC 8. These changes in magnitude affect the amount of deblending applied by QLP and thus the
+amplitude of light curve features.
+  Our method of deblending the light curve time series also do not take into account that the target stars’ point
+spread functions may be not fully contained in the smallest circular aperture (with a radius of 1.75 pixel), leading to
+underestimation of signal amplitudes in this particular aperture for a large fraction of stars.
+  The TICA software we used to calibrate the TESS raw FFIs went through many iterations and version changes
+during the TESS Primary Mission. We did not keep a record of the particular versions of the calibration software used
+for each sector of data. We expect this issue to be resolved with future data reprocessing and releases. Errors in the
+TICA smear correction estimate affect the light curves of a small number of stars for one specific version of TICA, so
+the smear correction was disabled for QLP processing in later sectors. Users can examine light curves of stars located
+in the same column to identify such contamination.
+
+  We thank the entire TESS Mission team for years of effort to make this work possible. This paper includes data
+collected by the TESS mission, which are publicly available from the Mikulski Archive for Space Telescopes (MAST).
+Funding for the TESS mission is provided by NASA’s Science Mission directorate. CXH acknowledges support from
+MIT’s Kavli Institute as a Torres postdoctoral fellow.
+  Software: nebuliser(Irwin1985),FITSH(Pál2012),Golang(Meyerson2014),Numpy(Oliphant2006–),Scipy(Virtanen
+et al. 2020), Astropy (Astropy Collaboration et al. 2013; Price-Whelan et al. 2018)
+    Facility: TESS
+                                           TESS light curves from MIT QLP                                                        5
+
+                                                         REFERENCES
+Armstrong, D. J., Lopez, T. A., Adibekyan, V., et al. 2020,       Meyerson, J. 2014, IEEE software, 31, 104
+  Nature, 583, 39, doi: 10.1038/s41586-020-2421-7                 Oliphant, T. 2006–, NumPy: A guide to NumPy, USA:
+Astropy Collaboration, Robitaille, T. P., Tollerud, E. J.,          Trelgol Publishing. http://www.numpy.org/
+  et al. 2013, A&A, 558, A33,                                     Pál, A. 2009, PhD thesis, Department of Astronomy,
+  doi: 10.1051/0004-6361/201322068
+                                                                    Eötvös Loránd University
+Auvergne, M., Bodin, P., Boisnard, L., et al. 2009, A&A,
+                                                                  —. 2012, MNRAS, 421, 1825,
+  506, 411, doi: 10.1051/0004-6361/200810860
+                                                                    doi: 10.1111/j.1365-2966.2011.19813.x
+Bakos, G. Á., Noyes, R. W., Kovács, G., et al. 2007, ApJ,
+  656, 552, doi: 10.1086/509874                                   Pepper, J., Kuhn, R. B., Siverd, R., James, D., & Stassun,
+Bakos, G. Á., Csubry, Z., Penev, K., et al. 2013, PASP,            K. 2012, PASP, 124, 230, doi: 10.1086/665044
+  125, 154, doi: 10.1086/669529                                   Pepper, J., Pogge, R. W., DePoy, D. L., et al. 2007, PASP,
+Barclay, T., Pepper, J., & Quintana, E. V. 2018, ApJS,              119, 923, doi: 10.1086/521836
+  239, 2, doi: 10.3847/1538-4365/aae3e9                           Pollacco, D. L., Skillen, I., Collier Cameron, A., et al. 2006,
+Collier Cameron, A., Pollacco, D., Hellier, C., et al. 2009, in     PASP, 118, 1407, doi: 10.1086/508556
+  IAU Symposium, Vol. 253, Transiting Planets, ed.                Price-Whelan, A. M., Sipőcz, B. M., Günther, H. M., et al.
+  F. Pont, D. Sasselov, & M. J. Holman, 29–35
+                                                                    2018, AJ, 156, 123, doi: 10.3847/1538-3881/aabc4f
+Eastman, J., Siverd, R., & Gaudi, B. S. 2010, PASP, 122,
+                                                                  Shallue, C. J., & Vanderburg, A. 2018, AJ, 155, 94,
+  935, doi: 10.1086/655938
+                                                                    doi: 10.3847/1538-3881/aa9e09
+Huang, C. X., Penev, K., Hartman, J. D., et al. 2015,
+  MNRAS, 454, 4159, doi: 10.1093/mnras/stv2257                    Stassun, K. G., Oelkers, R. J., Pepper, J., et al. 2018, AJ,
+Huang, C. X., Shporer, A., Dragomir, D., et al. 2018a,              156, 102, doi: 10.3847/1538-3881/aad050
+  arXiv e-prints, arXiv:1807.11129.                               Stassun, K. G., Oelkers, R. J., Paegert, M., et al. 2019, AJ,
+  https://arxiv.org/abs/1807.11129                                  158, 138, doi: 10.3847/1538-3881/ab3467
+Huang, C. X., Burt, J., Vanderburg, A., et al. 2018b, ApJ,        Sullivan, P. W., Winn, J. N., Berta-Thompson, Z. K., et al.
+  868, L39, doi: 10.3847/2041-8213/aaef91                           2015, ApJ, 809, 77, doi: 10.1088/0004-637X/809/1/77
+Huang, C. X., Quinn, S. N., Vanderburg, A., et al. 2020,          Vanderburg, A., & Johnson, J. A. 2014, PASP, 126, 948,
+  ApJL, 892, L7, doi: 10.3847/2041-8213/ab7302
+                                                                    doi: 10.1086/678764
+Irwin, M. J. 1985, MNRAS, 214, 575,
+                                                                  Vanderburg, A., Huang, C. X., Rodriguez, J. E., et al.
+  doi: 10.1093/mnras/214.4.575
+                                                                    2019, ApJL, 881, L19, doi: 10.3847/2041-8213/ab322d
+Jenkins, J. M. 2015, in AAS/Division for Extreme Solar
+  Systems Abstracts, Vol. 3, AAS/Division for Extreme             Vanderspek, R., Doty, J. P., Fausnaugh, M., et al. 2018,
+  Solar Systems Abstracts, 106.05                                   TESS Instrument Handbook, TESS Science Office
+Jenkins, J. M., Caldwell, D. A., Chandrasekaran, H., et al.       Vanderspek, R., Huang, C. X., Vanderburg, A., et al. 2019,
+  2010, ApJL, 713, L87, doi: 10.1088/2041-8205/713/2/L87            ApJL, 871, L24, doi: 10.3847/2041-8213/aafb7a
+Jenkins, J. M., Twicken, J. D., McCauliff, S., et al. 2016,       Virtanen, P., Gommers, R., Oliphant, T. E., et al. 2020,
+  Society of Photo-Optical Instrumentation Engineers                Nature Methods, 17, 261,
+  (SPIE) Conference Series, Vol. 9913, The TESS science             doi: https://doi.org/10.1038/s41592-019-0686-2
+  processing operations center, 99133E
+6                                              Huang et al.
+
+
+
+
+    QLP Data Production Description
+    Documents
+    This document is a supplement material to the RNAAS article.
+
+
+
+       1. Introduction
+    This document describes the primary mission light curve time series format produced by the
+    MIT Quick Look Pipeline. These light curves are available at MAST as a High Level Science
+    Product via doi:10.17909/t9-r086-e880 (https://archive.stsci.edu/hslp/qlp).
+
+    We try our best to follow the conventions in the data format established by the TESS data
+    release notes. The details are described as the following.
+
+
+       2. Light Curve Files
+
+    2.1. Purpose
+    The QLP light curve files contain the output of flux time series from the photometric analysis on
+    the TESS Full Frame Images and the subsequent detrending step. A single file contains the
+    light curves for one target for one sector (two TESS orbits). Raw photometry is provided from
+    the best aperture, while detrended photometry time series from three apertures are provided. If
+    a target was observed in more than one sector then multiple files will be created.
+
+
+
+    2.2. Filename Format
+    The file names of the QLP light curves follow the naming convention below:
+
+    hlsp_qlp_tess_ffi_ssctr-tid_tess_vvnum_llc.fits.gz
+
+    Lettering in italics indicates parameters that will be instantiated for some specific instance of a
+    file, for example timestamps and target identifiers. tid, is a 16 digit zero-padded target identifier
+    that refers to an entry in the TESS Input Catalog (TIC). sctr, is a 4 digit zero-padded integer
+    indicating the sector in which the data were last observed. vnum, is a 2 digit number referring
+    the versions of the light curve.
+
+
+    2.3. Composition
+    We adopt the convention from the official TESS data products for the composition of the FITS
+    files. The primary header contains information about the target that does not vary with the data
+                           TESS light curves from MIT QLP                                            7
+
+
+
+
+acquisition time, such as its TIC ID, coordinates, and stellar information. We default the stellar
+parameters to -1 if they are not presented in the corresponding catalog. The primary HDU does
+not have a data table. The second HDU contains a FITS binary table where each row in the
+table contains the data at some cadence. The definitions of the columns for this table are
+summarized in table 1. The header for the second HDU contains keywords that are needed to
+describe the binary table and properties.
+
+
+
+2.3.1. Primary Header
+The primary header keywords are described in the following Table:
+
+
+
+                       Header Card                            Data Type          Example Value
+
+ SIMPLE =                T / conforms to FITS standard             L1        const
+
+ BITPIX =               8 / array data type                        I4        const
+
+ NAXIS =                0 / number of array dimensions             I4        const
+
+ EXTEND =                  T                                       L1        const
+
+ NEXTEND = 1 / number of standard extensions                       I4        const
+
+ EXTNAME = ‘PRIMARY’ / name of extension                           C7        const
+
+ ORIGIN = ‘MIT/QLP’ / institution responsible for                  C7        const
+ creating this file
+
+ TELESCOP = "TESS" / telescope                                     C4        const
+
+
+ INSTRUME = "TESS Photometer" / detector type                     C15        const
+
+
+ FILTER = “TESS” / filter used for observations                    C4        const
+
+ OBJECT =        / string version of TICID                        C20        TIC 55129913
+
+ TICID =       / unique TESS target identifier                     I8        55129913
+
+
+ SECTOR=       / last observed sector                              I4        8
+
+
+ CAMERA =       / camera                                           I2        2
+
+
+ CCD =        / ccd                                                I2        1
+8                                               Huang et al.
+
+
+
+
+     RADESYS =”ICRS" / reference frame of celestial                 C4     const
+     coordinates
+
+
+     RA_OBJ =        / [deg] right ascension, J2000.0               R4     125.640067
+
+     DEC_OBJ =        / [deg] declination, J2000.0                  R4     -32.6201092
+
+
+     TESSMAG =          / [mag] TESS magnitude, TIC v8              R4     12.9946
+
+
+     RADIUS =       / [solar radii] stellar radius                  R4     60.3377
+
+     LOGG =        / [cm/s2] log10 surface gravity                  R4     -1
+
+
+     MASS =      / [solar mass] log10 stellar mass                  R4     -1
+
+
+     TEFF =      / [K] effective temperature                        R4     4725
+
+
+     MH =       /metallicity                                        R4     -1
+
+
+     EQUINOX = 2000.0 / equinox of celestial coordinate             R8     const
+     system
+
+     PMRA =         / [mas/yr] RA proper motion                     R4     -1.98566
+
+
+     PMDEC =         / [mas/yr] Dec proper motion                   R4     2.747
+
+     TICVER =       / TIC Version                                    I4    8
+
+     CALIB = / pipeline used for image calibration                  C4     TICA
+
+     END
+
+
+
+    2.3.2. Light curve binary table extension header
+    The following table summarizes the light curve binary table columns:
+
+
+
+      Column                   TYPE                  FORM           UNIT        Description
+      Number
+               TESS light curves from MIT QLP                               9
+
+
+
+
+1    TIME                 64-bit float     Days        BJD - 2457000
+                                                       (BTJD)
+
+2    CADENCENO            32-bit integer               timestamp count
+                                                       from start of
+                                                       mission
+
+3    SAP_FLUX             32-bit float                 Normalized
+                                                       simple aperture
+                                                       photometry light
+                                                       curve from the
+                                                       best aperture
+
+4    KSPSAP_FLUX          32-bit float                 Normalized light
+                                                       curve detrended
+                                                       by kepler spline
+
+5    KSPSAP_FLUX_ERR      32-bit float                 1σ uncertainty of
+                                                       the KSPSAP
+                                                       light curve.
+
+6    QUALITY              32-bit integer   Bit field   Each bit is a flag
+                                                       defined in
+                                                       section 2.3.3.
+
+7    ORBITID              32-bit integer               The orbit number
+                                                       count from start
+                                                       of mission
+
+8    SAP_X                32-bit float     pixels      CCD column
+                                                       position of
+                                                       target’s flux-
+                                                       weighted
+                                                       centroid.
+
+9    SAP_Y                32-bit float     pixels      CCD row
+                                                       position of
+                                                       target’s flux-
+                                                       weighted
+                                                       centroid.
+
+10   SAP_BKG              32-bit float                 Estimated
+                                                       background flux
+                                                       contribution to
+                                                       the target
+                                                       aperture. Already
+                                                       subtracted from
+                                                       SAP_FLUX, and
+                                                       a median image.
+
+11   SAP_BKG_ERR          32-bit float                 1σ uncertainty of
+10                                           Huang et al.
+
+
+
+
+                                                                              the SAP
+                                                                              background light
+                                                                              curve.
+
+      12           KSPSAP_FLUX_SML               32-bit float                 Detrended
+                                                                              normalized
+                                                                              simple aperture
+                                                                              photometry light
+                                                                              curve from a
+                                                                              smaller aperture
+
+      13           KSPSAP_FLUX_LAG               32-bit float                 Detrended
+                                                                              normalized
+                                                                              simple aperture
+                                                                              photometry light
+                                                                              curve from a
+                                                                              larger aperture
+
+
+
+     The following table summarizes the keywords in the second HDU.
+
+
+
+                                 Header Card                                Data     Example
+                                                                            Type      Value
+
+      XTENSION= 'BINTABLE'           / binary table extension               C8      const
+
+      BITPIX =             8 / array data type                               I4     const
+
+      NAXIS =              2 / number of array dimensions                    I4     const
+
+      NAXIS1 =            56 / length of dimension 1                         I4     const
+
+      NAXIS2 =             / length of dimension 2                           I4     1200
+
+      PCOUNT =               0 / number of group parameters                  I4     const
+
+      GCOUNT =                1 / number of groups                           I4     const
+
+      TFIELDS =             13 / number of table fields                      I4     const
+
+      TTYPE1 = 'TIME     ' / column title: data time stamps                 C4      const
+
+      TFORM1 = 'D       ' / column format: 64-bit floating point            C1      const
+
+      TUNIT1 = ‘BJD - 2457000, days’ / column units: Barycenter corrected   C15     const
+      TESS Julian Date
+
+      TTYPE2 = 'CADENCENO' / column title: unique cadence number            C9      const
+                           TESS light curves from MIT QLP                            11
+
+
+
+
+TFORM2 = 'J       ' / column format: signed 32-bit integer             C1    const
+
+TTYPE3 = 'SAP_FLUX' / column title: normalized aperture                C8    const
+photometry flux
+
+TFORM3 = 'E        ' / column format: 32-bit floating point            C1    const
+
+TTYPE4 = 'KSPSAP_FLUX' / column title: detrended aperture              C11   const
+photometry flux
+
+TFORM4 = 'E        ' / column format: 32-bit floating point            C1    const
+
+TTYPE5 = 'KSPSAP_FLUX_ERR' / column title: normalized                  C15   const
+detrended aperture photometry flux err
+
+TFORM5 = 'E        ' / column format: 32-bit floating point            C1    const
+
+TTYPE6 = 'QUALITY ' / column title: aperture photometry quality flag   C7    const
+
+TFORM6 = 'J       ' column format: signed 32-bit integer               C1    const
+
+TTYPE7 = 'ORBITID ' / column title: unique orbit number                C7    const
+
+TFORM7 = 'J       '      column format: signed 32-bit integer          C1    const
+
+TTYPE8 = 'SAP_X ' / column title: derived weighted column              C5    const
+centroid in aperture
+
+TFORM8 = 'E        '    / column format: 32-bit floating point         C1    const
+
+TUNIT8 = ‘pixel’ / column units: pixel                                 C5    const
+
+TTYPE9 = 'SAP_Y ' / column title: derived weighted row centroid in     C5    const
+aperture
+
+TFORM9 = 'E        ' / column format: 32-bit floating point            C1    const
+
+TUNIT9 = ‘pixel’ / column units: pixel                                 C5    const
+
+TTYPE10 = 'SAP_BKG ' / column title: aperture phot. background         C7    const
+flux
+
+TFORM10 = 'E           ' / column format: 32-bit floating point        C1    const
+
+TTYPE11 = 'SAP_BKG_ERR' / column title: ap. phot. background           C11   const
+flux error
+
+TFORM11 = 'E           ' / column format: 32-bit floating point        C1    const
+
+TTYPE12 = 'SAP_FLUX_SML' / column title: normalized small              C12   const
+aperture photometry flux
+
+TFORM12 = 'E           ' / column format: 32-bit floating point        C1    const
+12                                             Huang et al.
+
+
+
+
+     TTYPE13 = 'SAP_FLUX_LAG' / column title: normalized large           C12   const
+     aperture photometry flux
+
+     TFORM13 = 'E        ' / column format: 32-bit floating point        C1    const
+
+     INHERIT = T / inherit the primary header                            C1    const
+
+     EXTNAME = ‘LIGHTCURVE’ / name of extension                          C10   const
+
+     EXTVER = 1 / extension version number (not format version)          I4    const
+
+     TELESCOP= ‘TESS’ / telescope                                        C4    const
+
+     INSTRUME= ‘TESS Photometer’ / detector type                         C15   const
+
+     OBJECT = / string version of TICID                                  C20   TIC
+                                                                               55129913
+
+     TICID= / unique TESS target identifier                              I8    55129913
+
+     RADESYS = ‘ICRS’ / reference frame of celestial coordinates         C4    const
+
+     RA_OBJ = / [deg] right ascension                                    R4    125.64006
+                                                                               7
+
+     DEC_OBJ = / [deg] declination                                       R4    -
+                                                                               32.620109
+                                                                               2
+
+     EQUINOX = 2000.0 / equinox of celestial coordinate system           R8    const
+
+     TIMEREF = ‘SOLARSYSTEM’ / barycentric correction applied to         C11   const
+     times
+
+     TASSIGN = ‘SPACECRAFT’ / where time is assigned                     C10   const
+
+     TIMESYS = ‘TDB’ / time system is Barycentric Dynamical Time (TDB)   C3    const
+
+     BJDREFI = 2457000 / integer part of BJD reference date              I4    const
+
+     BJDREFF = 0.0 / fraction of the day in BJD reference date           R4    const
+
+     TIMEUNIT= ‘d’ / time unit for TIME, TSTART and TSTOP                C1    const
+
+     TELAPSE = / [d] TSTOP - TSTART                                      R4    27.0
+
+     TSTART = / observation start time in TBJD                           R4    1630.2
+
+     TSTOP = / observation stop time in TBJD                             R4    1657.2
+
+     TIMEDEL = / [d] time resolution of data                             R4    0.02083
+
+     MJD-BEG = / observation start time in MJD                           R4    58629.5
+                          TESS light curves from MIT QLP                                                13
+
+
+
+
+ MJD-END = / observation end time in MJD                                        R4      58656.5
+
+ BESTAP = / [pix] the radius and background aperture of the best               C12      3.0:4.0:3.0
+ aperture
+
+ SMALLAP = / [pix] the radius and background aperture of the smaller           C12      2.5:4.0:3.0
+ aperture
+
+ LARGEAP = / [pix] the radius and background aperture of the larger            C12      3.5:4.0:3.0
+ aperture
+
+ KSPPENCO = / the penalty coefficient used in the detrending                    R4      0.75
+
+ KSPBSMIN = / [d] the minimum break space used in the detrending                R4      0.75
+
+ KSPBSMAX = / [d] the maximum break space used in the detrending                R4      1.5
+
+
+
+2.3.3. Quality Flags
+The light curve files include an integer table column that describes any anomalies detected in
+the data for that cadence or image. These integers should be treated as individual bits that have
+the meanings summarized as below. We adopt the bits definition from the SPOC TESS Full
+Frame Image data product. We then added one extra bit (bit 13, value 4195) using our own
+anomaly detection algorithm described in the RNAAS article, Section Lightcurve Post
+Processing.
+
+Only 9 different bits are used for the quality flags of these full frame image light curves. They are
+the following:
+
+
+
+  Bit         Value                                    Description
+
+   1      1            Attitude tweak
+
+   3      4            Spacecraft in coarse pointing
+
+   4      8            Spacecraft in Earth pointing
+
+   5      16           Argabrightening event
+
+   6      32           Reaction Wheel desaturation Event
+
+   8      128          Manual Exclude.
+
+   11     1024         Cosmic ray detected on collateral pixel row or column.
+
+   12     2048         Straylight from Earth or Moon in camera FOV.
+14                                               Huang et al.
+
+
+
+
+        13     4196          Low precision points. The cadence was excluded because low precision
+                             data occurred in a large fraction of the stars
+
+
+
+
+        3. Alternative format of light curves
+
+     3.1 Purpose
+     We provide a light weighted format of the QLP light curve files in comma separated ascii files. A
+     single file contains the light curves for one target for one sector (two orbits). Only normalized
+     raw photometry and normalized background flux in the good quality cadences are provided from
+     the best aperture. If a target was observed in more than one sector then multiple files will be
+     created.
+
+
+
+     3.2. Filename Format
+     The file names of the QLP light curves follow the naming convention below:
+
+     hlsp_qlp_tess_ffi_ssctr-tid_tess_vvnum_llc.txt
+
+     Lettering in italics indicates parameters that will be instantiated for some specific instance of a
+     file, for example timestamps and target identifiers. tid, is a 16 digit zero-padded target identifier
+     that refers to an entry in the TESS Input Catalog (TIC). sctr, is a 4 digit zero-padded integer
+     indicating the sector in which the data were last observed. vnum, is a 2 digit number referring
+     the versions of the light curve.
+
+
+
+     3.3. Composition
+
+      Column header                     Format       Description
+
+      Time (BTJD)                       R4           [Days] BJD - 2457000 (BTJD)
+
+      Normalized SAP_FLUX               R4           Normalized simple aperture photometry flux time
+                                                     series from the best aperture with bad cadences
+                                                     rejected.
+
+      Normalized SAP_BKG                R4           Normalized simple aperture background flux time
+                                                     series with bad cadences rejected. The scatter of
+                                                     the background flux time series is scaled to be
+TESS light curves from MIT QLP                          15
+
+
+
+
+             similar to that of the flux time series.
+

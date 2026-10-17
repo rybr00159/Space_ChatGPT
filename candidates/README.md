@@ -1,5 +1,7 @@
 # Candidate evidence index
 
+**Targeted review, 17 October 2026:** [TIC 214311908](tic214311908/README.md) has a recurring 5.6915-day signal across six TESS sectors, including tests on previously uninspected native FFIs. Its shape is compatible with a planet; the host remains unresolved among nearby stars. No planet or novelty claim is established.
+
 ## Stellar-system candidates
 
 [Stellar research report](../STELLAR_RESEARCH_REPORT.md): strongest is [background TIC 273879360](stellar_systems/tic273879360/README.md), independently characterized as a strongly supported eccentric eclipsing-binary candidate through source-attributed TESS eclipses and earlier ground photometry. **Novelty correction, 2026-10-14:** it was already publicly neural-network flagged for eclipse-like features in Kostov2025 Table 2. That unvetted row has no period or vetted binary classification; this is not first recognition of an entirely unflagged system. [Giant-image TIC 260352037](../reports/stellar_systems/hidden_sources.md) contains a robust unresolved short-period eclipse signal whose actual source remains uncertain. Existing sky positions were already catalogued; component masses and first validated publication remain unestablished. [TIC 197764088](stellar_systems/tic197764088/README.md) is a preserved known-neighbor falsification.

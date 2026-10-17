@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-10-17T13:53:28.099664+00:00",
+  "script_sha256": "92d68a5469ccc725ef5cf5146d28fbcde7717f1826971344c66cc6b9abff4cb0",
+  "gaussian_helper_sha256": "fe15b7a1342b8726a345760abcb8bc514fdc0d79f82c2b3524eaa8175514655a",
+  "gaia_table": {
+    "path": "candidates/tic214311908/catalogs/gaia_neighbors_derived.csv",
+    "sha256": "431c1338c1eca69c3102018dc2934e0dd62acc4ce4ba5e466ae2f985d84a7399"
+  },
+  "selection": "All Gaia sources within12arcsec plus named Mira and two known neighboring EBs, chosen from catalogues independently of difference-image preferred centers.",
+  "no_holdout_data_accessed": true,
+  "sectors": [
+    {
+      "sector": 66,
+      "file": "sector66_source_comparison.json",
+      "sha256": "69e95aaefb552e98ca4046b2700d0f1d36a25c2e04eab0a53125b3209c1d7457",
+      "old_to_corrected_target_offset_pixels": 0.16113577945137766,
+      "target_offset_range_pixels": [
+        0.13113238454462445,
+        0.5646045977597689
+      ]
+    },
+    {
+      "sector": 93,
+      "file": "sector93_source_comparison.json",
+      "sha256": "6fdb8bd22632c091870716033ca48bbeea0bb9daa37e228b7be00abe92e3f153",
+      "old_to_corrected_target_offset_pixels": 0.17477067764100332,
+      "target_offset_range_pixels": [
+        0.2682491618133654,
+        0.3594197537931257
+      ]
+    }
+  ],
+  "limitations": [
+    "Two sectors and eight overlapping reductions reuse the same photons; variants are not independent evidence.",
+    "Gaussian model is not a calibrated TESS PRF; unresolved blending and unknown WCS residuals remain.",
+    "Diagonal errors/event-scatter floor do not model all pixel/event covariance. Do not translate delta-chi-square to sigma or FAP.",
+    "Proper motion is propagated on the sphere; annual parallax, perspective acceleration and missing-PM motion are not modeled.",
+    "Catalog associations and reference-image peaks do not assign the transit host."
+  ]
+}

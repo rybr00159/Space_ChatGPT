@@ -1,0 +1,48 @@
+{
+  "frozen_utc": "2026-10-17T13:47:03.764760+00:00",
+  "purpose": "Independent proposal frozen before native-FFI holdout testing; no holdout data accessed by this analyst.",
+  "input_sectors": [
+    12,
+    39,
+    66,
+    93
+  ],
+  "n_timed_events": 12,
+  "parameters_order": [
+    "epoch_btjd",
+    "period_days"
+  ],
+  "parameters": [
+    1632.6116121251637,
+    5.691513805926734
+  ],
+  "conditional_covariance_days_squared": [
+    [
+      5.346180159637676e-06,
+      -1.862012276178295e-08
+    ],
+    [
+      -1.8620122761782952e-08,
+      7.781077363498084e-11
+    ]
+  ],
+  "chi2": 17.218437867003306,
+  "ndof": 10,
+  "conservative_covariance_days_squared": [
+    [
+      9.205287090452715e-06,
+      -3.206094268497337e-08
+    ],
+    [
+      -3.2060942684973376e-08,
+      1.3397799712173766e-10
+    ]
+  ],
+  "prediction_formula": "midtime(n)=epoch+n*period; sigma(n)=sqrt([1,n] @ conservative_covariance @ [1,n]); add independent timing-noise allowance below",
+  "timing_noise_allowance_days": 0.005,
+  "suggested_predeclared_center_tolerance_days": "max(0.020, 3*sqrt(sigma(n)**2+0.005**2)); add half duration for full transit extraction",
+  "method_sha256": "1f975c19b430f335c597946f0d99f30331273768eb0b26233a65c81efadbd263",
+  "assessment_sha256": "92da86d2b14ff583a41f11f051e8a2c2f326fff6ec15a85e7a3d0dd2bb60dfe2",
+  "event_shapes_sha256": "23511ae49f5281176de0cfde93aa4e50e2c00f6a8ebc4e2c8b6878281517a752",
+  "exclusion": "only first weak S12 cycle0 broad free-duration fit excluded"
+}

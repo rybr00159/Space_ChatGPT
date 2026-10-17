@@ -1,0 +1,4330 @@
+{
+  "created_utc": "2026-10-17T13:45:47.711783+00:00",
+  "method": "independent LS followed by local polynomial tests on original fluxes",
+  "method_sha256": "1f975c19b430f335c597946f0d99f30331273768eb0b26233a65c81efadbd263",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "astropy": "8.0.1",
+    "scipy": "1.18.1"
+  },
+  "initial_assessment_was_blind_to_parent_BLS": true,
+  "supplied_hypotheses": {
+    "period_days": 5.691497928943136,
+    "epoch_btjd": 1632.6146842062005,
+    "duration_days": 0.04958333333333333,
+    "known_neighbor_period_days": 0.31608296204421177,
+    "known_neighbor_epoch_btjd_tdb": 558.1301637445576
+  },
+  "warning": "Conditional diagonal errors and Gaussian LS probabilities are diagnostics, not calibrated detection/false-positive probabilities.",
+  "sectors": [
+    {
+      "sector": 12,
+      "original": {
+        "tic": 214311908,
+        "sector": 12,
+        "url": "https://archive.stsci.edu/hlsps/qlp/s0012/0000/0002/1431/1908/hlsp_qlp_tess_ffi_s0012-0000000214311908_tess_v01_llc.fits",
+        "http_status": 200,
+        "path": "/workspace/tess-research-data/tic214311908/queries/hlsp_qlp_tess_ffi_s0012-0000000214311908_tess_v01_llc.fits",
+        "sha256": "34677cec9a65c8d195d72e842e904173308c3afec8dc5e3a23d97214ce71fede",
+        "bytes": 83520,
+        "retrieved_utc": "2026-10-17T13:37:07.690467+00:00",
+        "request_body": null
+      },
+      "n_total": 1289,
+      "n_quality_zero": 753,
+      "time_min": 1629.8907240869867,
+      "time_max": 1652.8701843837678,
+      "channels": {
+        "SAP_FLUX": {
+          "median": 0.8726557493209839,
+          "robust_scatter": 0.2572929378267509,
+          "n": 753,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 14.22313437818327,
+              "power": 0.878925692762226
+            },
+            {
+              "period": 7.972594693604274,
+              "power": 0.3950426899158942
+            },
+            {
+              "period": 4.706681362873325,
+              "power": 0.08987757586858912
+            },
+            {
+              "period": 3.906539193410206,
+              "power": 0.07360114829733462
+            },
+            {
+              "period": 2.915321897138542,
+              "power": 0.050676243607150014
+            },
+            {
+              "period": 2.111635122332349,
+              "power": 0.02786065554869664
+            },
+            {
+              "period": 2.567832114218793,
+              "power": 0.022546718780347686
+            },
+            {
+              "period": 2.2943577272666458,
+              "power": 0.015658397546154747
+            },
+            {
+              "period": 1.7655267707996896,
+              "power": 0.01543507935487086
+            },
+            {
+              "period": 1.4288659722859036,
+              "power": 0.010917592033514447
+            },
+            {
+              "period": 3.275461873755918,
+              "power": 0.010735338788825738
+            },
+            {
+              "period": 1.6473944190970418,
+              "power": 0.01051492916822875
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.007774963240876898,
+            "error": 0.013020280829405147,
+            "conditional_snr": 0.5971425150306923,
+            "sine": 0.0017964089246758426,
+            "cosine": -0.0075645864640660945,
+            "phase_rad_at_btjd3000": -1.3376390959475906
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0022117961421230436,
+            "error": 0.01305839595804487,
+            "conditional_snr": 0.1693773223931401,
+            "sine": -0.0005149833611873941,
+            "cosine": 0.0021510077433636804,
+            "phase_rad_at_btjd3000": 1.8057880256127274
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.04183906110299723,
+            "error": 0.01344591196651312,
+            "conditional_snr": 3.111656628958817,
+            "sine": -0.04049603051353494,
+            "cosine": -0.010515633439179158,
+            "phase_rad_at_btjd3000": -2.8875330489932662
+          }
+        },
+        "KSPSAP_FLUX": {
+          "median": 1.0007644891738892,
+          "robust_scatter": 0.007636298074775587,
+          "n": 753,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.8485045550166681,
+              "power": 0.030021762680309202
+            },
+            {
+              "period": 0.7299166726428574,
+              "power": 0.027649782294492557
+            },
+            {
+              "period": 0.763886253627531,
+              "power": 0.02591793556876655
+            },
+            {
+              "period": 0.3110279230928413,
+              "power": 0.02533304590598419
+            },
+            {
+              "period": 1.043778905778742,
+              "power": 0.024817298182791686
+            },
+            {
+              "period": 0.8924418183023495,
+              "power": 0.023285648056507933
+            },
+            {
+              "period": 0.8067977366676842,
+              "power": 0.022542070772659555
+            },
+            {
+              "period": 0.18206507810575445,
+              "power": 0.021484828744971506
+            },
+            {
+              "period": 0.6076708073781317,
+              "power": 0.02119040940243652
+            },
+            {
+              "period": 0.5067250429080671,
+              "power": 0.019925204969175263
+            },
+            {
+              "period": 0.6782141705657712,
+              "power": 0.018695901903583233
+            },
+            {
+              "period": 0.9869924376536234,
+              "power": 0.017088499870741805
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0008046722763980911,
+            "error": 0.00045174458804856613,
+            "conditional_snr": 1.7812549340637203,
+            "sine": 0.0004862033587375331,
+            "cosine": -0.0006411737411622748,
+            "phase_rad_at_btjd3000": -0.9220030483875062
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0003548218403396361,
+            "error": 0.00045187504728720455,
+            "conditional_snr": 0.7852211412641181,
+            "sine": -0.00022106459242084915,
+            "cosine": 0.00027754095978757814,
+            "phase_rad_at_btjd3000": 2.243406569988087
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.0002856675624847524,
+            "error": 0.0004605856814586448,
+            "conditional_snr": 0.6202267547268553,
+            "sine": -0.0001459741214082149,
+            "cosine": -0.0002455555174193397,
+            "phase_rad_at_btjd3000": -2.107135916092429
+          },
+          "best_short_period": {
+            "period": 0.15954340688814367,
+            "power": 0.005760299841399637,
+            "fit": {
+              "amplitude": 0.0009417050845165779,
+              "error": 0.00045176024102126257,
+              "conditional_snr": 2.084524043965736,
+              "sine": 0.0008966895420466067,
+              "cosine": -0.00028767400193382416,
+              "phase_rad_at_btjd3000": -0.31044464050985443
+            },
+            "gaussian_single_sector_Baluev_FAP_0p05to20cyclesday": 1.0
+          },
+          "short_half_samples": [
+            {
+              "amplitude": 0.0006097221353302434,
+              "error": 0.0006291592889707954,
+              "conditional_snr": 0.9691061485043825,
+              "sine": 0.000497985337209104,
+              "cosine": 0.0003518120041107275,
+              "phase_rad_at_btjd3000": 0.6150554662209282
+            },
+            {
+              "amplitude": 0.0009542602933718331,
+              "error": 0.000653089443134818,
+              "conditional_snr": 1.4611479383151567,
+              "sine": -0.0009311068263226712,
+              "cosine": 0.0002089324902484529,
+              "phase_rad_at_btjd3000": 2.9208574321544925
+            }
+          ]
+        },
+        "KSPSAP_FLUX_SML": {
+          "median": 1.0004525184631348,
+          "robust_scatter": 0.006525634538089468,
+          "n": 753,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.3110279230928413,
+              "power": 0.025413764806792038
+            },
+            {
+              "period": 0.5889807391181612,
+              "power": 0.02086522674769937
+            },
+            {
+              "period": 0.18206507810575445,
+              "power": 0.01793755135142012
+            },
+            {
+              "period": 0.2765866922432467,
+              "power": 0.016425037718879827
+            },
+            {
+              "period": 0.28086879704462625,
+              "power": 0.014984001036684808
+            },
+            {
+              "period": 0.09526521716055611,
+              "power": 0.014662302346935408
+            },
+            {
+              "period": 0.6076708073781317,
+              "power": 0.013757711088682912
+            },
+            {
+              "period": 0.3057854202777134,
+              "power": 0.013470794440261556
+            },
+            {
+              "period": 0.5037627545558202,
+              "power": 0.013196711221445844
+            },
+            {
+              "period": 0.05208215264846225,
+              "power": 0.012733527088395454
+            },
+            {
+              "period": 0.052232103508072114,
+              "power": 0.012711832366038959
+            },
+            {
+              "period": 0.06261166504163843,
+              "power": 0.012609777734176424
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0009151693348210746,
+            "error": 0.00039251122719639577,
+            "conditional_snr": 2.3315749242585695,
+            "sine": 0.0004870753872537044,
+            "cosine": -0.0007747854403178353,
+            "phase_rad_at_btjd3000": -1.0095705652982208
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0004249256771828739,
+            "error": 0.00039405086559857904,
+            "conditional_snr": 1.0783523506220314,
+            "sine": -0.0004040480492548249,
+            "cosine": 0.0001315560907852409,
+            "phase_rad_at_btjd3000": 2.8268225434033227
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.0002251718727677517,
+            "error": 0.00039453044650772666,
+            "conditional_snr": 0.570733829951301,
+            "sine": -0.00020164859335212554,
+            "cosine": 0.00010020088365301812,
+            "phase_rad_at_btjd3000": 2.68042136688476
+          }
+        },
+        "KSPSAP_FLUX_LAG": {
+          "median": 1.0006589889526367,
+          "robust_scatter": 0.008580713154992923,
+          "n": 753,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.6768823400559658,
+              "power": 0.027176265321910593
+            },
+            {
+              "period": 0.7031162382475532,
+              "power": 0.02440103697172548
+            },
+            {
+              "period": 0.18206507810575445,
+              "power": 0.01880529635111959
+            },
+            {
+              "period": 0.8464209782160457,
+              "power": 0.018545630284582764
+            },
+            {
+              "period": 0.7330211514713338,
+              "power": 0.018073502156428542
+            },
+            {
+              "period": 0.3107475244067271,
+              "power": 0.01737144025577525
+            },
+            {
+              "period": 0.06536631326131373,
+              "power": 0.0171301415514629
+            },
+            {
+              "period": 0.4063638837570232,
+              "power": 0.015998734080427353
+            },
+            {
+              "period": 0.09526521716055611,
+              "power": 0.015172825316416227
+            },
+            {
+              "period": 0.9898267121662484,
+              "power": 0.01491334124661138
+            },
+            {
+              "period": 0.05630164919206016,
+              "power": 0.014868060115511592
+            },
+            {
+              "period": 1.043778905778742,
+              "power": 0.013949586249092058
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0007960466829563937,
+            "error": 0.000477599045302088,
+            "conditional_snr": 1.6667677433334969,
+            "sine": 0.00029130562321726263,
+            "cosine": -0.000740831529652916,
+            "phase_rad_at_btjd3000": -1.1961532597426694
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0006471655247755595,
+            "error": 0.000478367714807704,
+            "conditional_snr": 1.352862044704897,
+            "sine": -0.00041115754444712084,
+            "cosine": 0.000499772638408946,
+            "phase_rad_at_btjd3000": 2.2592198371687027
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.00015965186478801569,
+            "error": 0.0004902224626498882,
+            "conditional_snr": 0.3256722752462638,
+            "sine": -9.245165818014998e-05,
+            "cosine": -0.00013015916729155712,
+            "phase_rad_at_btjd3000": -2.188399610953606
+          }
+        },
+        "SAP_X": {
+          "median": 1559.8485107421875,
+          "robust_scatter": 0.023346606445312498,
+          "n": 753,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 12.2081404650698,
+              "power": 0.45988360850921683
+            },
+            {
+              "period": 7.792360317015394,
+              "power": 0.12031276723961493
+            },
+            {
+              "period": 5.8190978288357975,
+              "power": 0.07387690550453338
+            },
+            {
+              "period": 4.643278560598175,
+              "power": 0.052391659672313365
+            },
+            {
+              "period": 3.8627608898983703,
+              "power": 0.037564131659330646
+            },
+            {
+              "period": 3.3068858157471674,
+              "power": 0.024286503665543697
+            },
+            {
+              "period": 2.567832114218793,
+              "power": 0.020652677445429573
+            },
+            {
+              "period": 2.3097318951922836,
+              "power": 0.016760016238425966
+            },
+            {
+              "period": 2.8908715948441768,
+              "power": 0.01596620211735142
+            },
+            {
+              "period": 1.9231326632208163,
+              "power": 0.015577651427238428
+            },
+            {
+              "period": 2.098777690440667,
+              "power": 0.011665339298181258
+            },
+            {
+              "period": 1.7655267707996896,
+              "power": 0.011490554954926544
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0008811961279214308,
+            "error": 0.0010881915279975299,
+            "conditional_snr": 0.8097803605795313,
+            "sine": -0.0008512025219407353,
+            "cosine": 0.00022794929810257065,
+            "phase_rad_at_btjd3000": 2.8799354699972577
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0003010015229054302,
+            "error": 0.0010864395695014209,
+            "conditional_snr": 0.27705316646701583,
+            "sine": 0.00026534209440065484,
+            "cosine": 0.00014211083607685302,
+            "phase_rad_at_btjd3000": 0.4917016579547787
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.007700621344524389,
+            "error": 0.001057897197133889,
+            "conditional_snr": 7.279177376958101,
+            "sine": 0.003198349249686689,
+            "cosine": 0.007005007578066794,
+            "phase_rad_at_btjd3000": 1.142483620873091
+          }
+        },
+        "SAP_Y": {
+          "median": 270.09954833984375,
+          "robust_scatter": 0.027237707519531248,
+          "n": 753,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 11.790548212735889,
+              "power": 0.3607819523254133
+            },
+            {
+              "period": 5.8190978288357975,
+              "power": 0.06782082911826769
+            },
+            {
+              "period": 7.792360317015394,
+              "power": 0.04999845609648513
+            },
+            {
+              "period": 4.581561227676255,
+              "power": 0.03161818493703838
+            },
+            {
+              "period": 3.3068858157471674,
+              "power": 0.02370291085891667
+            },
+            {
+              "period": 3.8627608898983703,
+              "power": 0.01600707263102217
+            },
+            {
+              "period": 2.3097318951922836,
+              "power": 0.014607165035186965
+            },
+            {
+              "period": 2.5871051274322823,
+              "power": 0.013916762111150317
+            },
+            {
+              "period": 1.9231326632208163,
+              "power": 0.011075386191534508
+            },
+            {
+              "period": 2.8908715948441768,
+              "power": 0.01018359973180533
+            },
+            {
+              "period": 1.7655267707996896,
+              "power": 0.009329160328385103
+            },
+            {
+              "period": 2.098777690440667,
+              "power": 0.007250803865133983
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.001648190747391426,
+            "error": 0.0021201626565413557,
+            "conditional_snr": 0.7773888207615813,
+            "sine": -0.0016279832409879433,
+            "cosine": 0.00025730003274212717,
+            "phase_rad_at_btjd3000": 2.984840922905145
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0006566361320111768,
+            "error": 0.0021155640738627127,
+            "conditional_snr": 0.3103834765033869,
+            "sine": 0.0005962976632422994,
+            "cosine": 0.0002749547356827537,
+            "phase_rad_at_btjd3000": 0.43204885622298783
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.014453913520946838,
+            "error": 0.0020417980378932875,
+            "conditional_snr": 7.079012347303596,
+            "sine": 0.003593026065590523,
+            "cosine": 0.014000206418585296,
+            "phase_rad_at_btjd3000": 1.319577204203525
+          }
+        },
+        "SAP_BKG": {
+          "median": 273.9200134277344,
+          "robust_scatter": 459.75426904907226,
+          "n": 753,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 16.232562986888993,
+              "power": 0.42553266214066143
+            },
+            {
+              "period": 11.790548212735889,
+              "power": 0.3503419474970161
+            },
+            {
+              "period": 7.792360317015394,
+              "power": 0.33477401075917623
+            },
+            {
+              "period": 3.7371216691512132,
+              "power": 0.12460550519462824
+            },
+            {
+              "period": 3.044051191017673,
+              "power": 0.04003125248558544
+            },
+            {
+              "period": 5.451001990894394,
+              "power": 0.027516146617161764
+            },
+            {
+              "period": 1.9558696975265701,
+              "power": 0.024168690298863656
+            },
+            {
+              "period": 1.5168988864308988,
+              "power": 0.021558147661437998
+            },
+            {
+              "period": 2.493528511417076,
+              "power": 0.020962966664916965
+            },
+            {
+              "period": 1.247823083759544,
+              "power": 0.010695347254408287
+            },
+            {
+              "period": 1.3998516501717775,
+              "power": 0.006336334126934776
+            },
+            {
+              "period": 0.33885192862153185,
+              "power": 0.005465408695940555
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 35.12198256251769,
+            "error": 26.977211962446447,
+            "conditional_snr": 1.3019129853525688,
+            "sine": 34.55182188254352,
+            "cosine": 6.3027980864678685,
+            "phase_rad_at_btjd3000": 0.18043192926300006
+          },
+          "known_EB_half_period": {
+            "amplitude": 27.387494259645653,
+            "error": 26.861338696579107,
+            "conditional_snr": 1.019587838454736,
+            "sine": -27.10624469581316,
+            "cosine": 3.9148870115016785,
+            "phase_rad_at_btjd3000": 2.998156993678375
+          },
+          "five_day_fundamental": {
+            "amplitude": 112.15710439838213,
+            "error": 27.386132805319754,
+            "conditional_snr": 4.095397666975296,
+            "sine": -111.60299604972631,
+            "cosine": -11.134960249338995,
+            "phase_rad_at_btjd3000": -3.0421488072005634
+          }
+        }
+      },
+      "events": [
+        {
+          "cycle": 0,
+          "predicted_time_btjd": 1632.6146842062005,
+          "known_EB_phase": 0.3750043108952923,
+          "nearest_quality_zero_days": 0.005281248859773768,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 29,
+              "n_inside": 2,
+              "n_baseline": 25,
+              "depth": 0.008913445068880836,
+              "error": 0.005549290476657252,
+              "conditional_snr": 1.6062314824525212,
+              "baseline": 0.9541759272449026,
+              "residual_sigma": 0.006773944311297815,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX": {
+              "status": "measured",
+              "n": 29,
+              "n_inside": 2,
+              "n_baseline": 25,
+              "depth": 0.00900245213870583,
+              "error": 0.006045892667653493,
+              "conditional_snr": 1.4890195101991157,
+              "baseline": 0.9984534682007971,
+              "residual_sigma": 0.007722607645844881,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_SML": {
+              "status": "measured",
+              "n": 29,
+              "n_inside": 2,
+              "n_baseline": 25,
+              "depth": 0.006633286400235576,
+              "error": 0.006089407218110966,
+              "conditional_snr": 1.0893156201652958,
+              "baseline": 0.9993988380772608,
+              "residual_sigma": 0.007785554797354427,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_LAG": {
+              "status": "measured",
+              "n": 29,
+              "n_inside": 2,
+              "n_baseline": 25,
+              "depth": 0.008387241062926038,
+              "error": 0.006848468105418555,
+              "conditional_snr": 1.2246886360308804,
+              "baseline": 0.9980973196108698,
+              "residual_sigma": 0.008744642005046235,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 29,
+              "n_inside": 2,
+              "n_baseline": 25,
+              "depth": -0.0010205626939523427,
+              "error": 0.00041927716069233944,
+              "conditional_snr": -2.434100374719002,
+              "baseline": 1559.814653265431,
+              "residual_sigma": 0.0005363853572818698,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 29,
+              "n_inside": 2,
+              "n_baseline": 25,
+              "depth": -0.00018841541736946965,
+              "error": 0.000485779051711771,
+              "conditional_snr": -0.3878623763324871,
+              "baseline": 270.02054827891857,
+              "residual_sigma": 0.0006214618744846574,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 29,
+              "n_inside": 2,
+              "n_baseline": 25,
+              "depth": 290.4382764420724,
+              "error": 167.00039982847017,
+              "conditional_snr": 1.7391471921048574,
+              "baseline": 993.4683057389474,
+              "residual_sigma": 213.64523882076963,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 2
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.015634284641249607,
+            "depth_diagonal_error": 0.004126620688399835,
+            "midpoint_btjd": 1632.592753039112,
+            "midpoint_shift_days": -0.021931167088531888,
+            "midpoint_diagonal_error_days": 0.009109517702919323,
+            "duration_days": 0.15292218248841172,
+            "duration_diagonal_error_days": 0.02590295883410125,
+            "chi2": 30.011204462050603,
+            "ndof": 23,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.02083348453220424,
+            "boundary_warning": false
+          }
+        },
+        {
+          "cycle": 1,
+          "predicted_time_btjd": 1638.3061821351437,
+          "known_EB_phase": 0.3813463551937275,
+          "nearest_quality_zero_days": 0.873603746721983,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "KSPSAP_FLUX": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "KSPSAP_FLUX_SML": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "KSPSAP_FLUX_LAG": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "SAP_X": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "SAP_Y": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "SAP_BKG": {
+              "status": "insufficient_window",
+              "n": 0
+            }
+          },
+          "inside_quality_counts": {
+            "4096": 3
+          },
+          "corrected_exploratory_shape": {
+            "status": "insufficient_data"
+          }
+        },
+        {
+          "cycle": 2,
+          "predicted_time_btjd": 1643.9976800640868,
+          "known_EB_phase": 0.38768839949261746,
+          "nearest_quality_zero_days": 0.45581056771402473,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "KSPSAP_FLUX": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "KSPSAP_FLUX_SML": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "KSPSAP_FLUX_LAG": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "SAP_X": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "SAP_Y": {
+              "status": "insufficient_window",
+              "n": 0
+            },
+            "SAP_BKG": {
+              "status": "insufficient_window",
+              "n": 0
+            }
+          },
+          "inside_quality_counts": {
+            "2048": 3
+          },
+          "corrected_exploratory_shape": {
+            "status": "insufficient_data"
+          }
+        },
+        {
+          "cycle": 3,
+          "predicted_time_btjd": 1649.68917799303,
+          "known_EB_phase": 0.3940304437910527,
+          "nearest_quality_zero_days": 0.00649428085080217,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 26,
+              "n_inside": 2,
+              "n_baseline": 22,
+              "depth": 0.01715242353998077,
+              "error": 0.005026708284906554,
+              "conditional_snr": 3.41225759837377,
+              "baseline": 0.7076353832388285,
+              "residual_sigma": 0.0045427059912738635,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX": {
+              "status": "measured",
+              "n": 26,
+              "n_inside": 2,
+              "n_baseline": 22,
+              "depth": 0.017139213037695188,
+              "error": 0.005010818197568412,
+              "conditional_snr": 3.4204420040647836,
+              "baseline": 1.007858301416226,
+              "residual_sigma": 0.006449551724042754,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_SML": {
+              "status": "measured",
+              "n": 26,
+              "n_inside": 2,
+              "n_baseline": 22,
+              "depth": 0.017364805846725416,
+              "error": 0.0033962151524927317,
+              "conditional_snr": 5.112987566167623,
+              "baseline": 1.0038809628135057,
+              "residual_sigma": 0.004354104224830524,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_LAG": {
+              "status": "measured",
+              "n": 26,
+              "n_inside": 2,
+              "n_baseline": 22,
+              "depth": 0.013173242333204362,
+              "error": 0.004601664166611081,
+              "conditional_snr": 2.8627126744248836,
+              "baseline": 1.0060495643780487,
+              "residual_sigma": 0.005912289676304383,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 26,
+              "n_inside": 2,
+              "n_baseline": 22,
+              "depth": -0.0009166867472458762,
+              "error": 0.0003466252897058588,
+              "conditional_snr": -2.644604345008304,
+              "baseline": 1559.8582141726279,
+              "residual_sigma": 0.0004426715918810032,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 26,
+              "n_inside": 2,
+              "n_baseline": 22,
+              "depth": 0.00034575003070358434,
+              "error": 0.00028876707002570707,
+              "conditional_snr": 1.1973319210975284,
+              "baseline": 270.11080412405414,
+              "residual_sigma": 0.00036878145469295304,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 26,
+              "n_inside": 2,
+              "n_baseline": 22,
+              "depth": 332.7216512079937,
+              "error": 251.6913544502359,
+              "conditional_snr": 1.3219431074013273,
+              "baseline": 232.55665792186093,
+              "residual_sigma": 321.4324397152853,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 2
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.017425554908866478,
+            "depth_diagonal_error": 0.004191017708283351,
+            "midpoint_btjd": 1649.6902019449901,
+            "midpoint_shift_days": 0.0010239519601296352,
+            "midpoint_diagonal_error_days": 0.005056185626342639,
+            "duration_days": 0.06608862525098062,
+            "duration_diagonal_error_days": 0.0142358345891762,
+            "chi2": 34.12058067035722,
+            "ndof": 20,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.02083348453220424,
+            "boundary_warning": false
+          }
+        }
+      ]
+    },
+    {
+      "sector": 39,
+      "original": {
+        "tic": 214311908,
+        "sector": 39,
+        "url": "https://archive.stsci.edu/hlsps/qlp/s0039/0000/0002/1431/1908/hlsp_qlp_tess_ffi_s0039-0000000214311908_tess_v01_llc.fits",
+        "http_status": 200,
+        "path": "/workspace/tess-research-data/tic214311908/queries/hlsp_qlp_tess_ffi_s0039-0000000214311908_tess_v01_llc.fits",
+        "sha256": "37777b2745390240cf7e71d86e718b45b4716ce70ba58e81e5f96b948cae8edd",
+        "bytes": 227520,
+        "retrieved_utc": "2026-10-17T13:37:07.736381+00:00",
+        "request_body": null
+      },
+      "n_total": 3879,
+      "n_quality_zero": 2438,
+      "time_min": 2361.876582216997,
+      "time_max": 2386.8073457371283,
+      "channels": {
+        "SAP_FLUX": {
+          "median": 0.9588220119476318,
+          "robust_scatter": 0.13288983378095884,
+          "n": 2438,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 14.007058031608898,
+              "power": 0.8022941893045009
+            },
+            {
+              "period": 6.264213169099588,
+              "power": 0.08512113345344113
+            },
+            {
+              "period": 3.5718083759523234,
+              "power": 0.031104706066441116
+            },
+            {
+              "period": 2.755834666817985,
+              "power": 0.026838218832202887
+            },
+            {
+              "period": 5.006306583086099,
+              "power": 0.026007171542020154
+            },
+            {
+              "period": 2.2433459900244443,
+              "power": 0.012053829018436027
+            },
+            {
+              "period": 4.169113580650043,
+              "power": 0.009250005622241842
+            },
+            {
+              "period": 2.104476696038076,
+              "power": 0.009160970161984867
+            },
+            {
+              "period": 1.7918778456898736,
+              "power": 0.007028745097596065
+            },
+            {
+              "period": 1.1921063131012897,
+              "power": 0.004442974315842628
+            },
+            {
+              "period": 0.1555128508883442,
+              "power": 0.0041625374703521565
+            },
+            {
+              "period": 1.3181670545798128,
+              "power": 0.0037840658011456373
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.005322576570911391,
+            "error": 0.0036499775573402256,
+            "conditional_snr": 1.458249122712416,
+            "sine": -0.0040139178670708835,
+            "cosine": 0.0034954663078942687,
+            "phase_rad_at_btjd3000": 2.425125596455506
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0056250943078999865,
+            "error": 0.0036602065234392425,
+            "conditional_snr": 1.536824294442947,
+            "sine": -0.0030559599718496563,
+            "cosine": 0.004722583469164042,
+            "phase_rad_at_btjd3000": 2.1451266299627414
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.031440908783212644,
+            "error": 0.0036061214845315398,
+            "conditional_snr": 8.718760285275591,
+            "sine": -0.008802181186366971,
+            "cosine": 0.030183643774015514,
+            "phase_rad_at_btjd3000": 1.8545482515415224
+          }
+        },
+        "KSPSAP_FLUX": {
+          "median": 1.000107765197754,
+          "robust_scatter": 0.008760528520610013,
+          "n": 2438,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.957162266696034,
+              "power": 0.007655010614353163
+            },
+            {
+              "period": 0.34635743295118665,
+              "power": 0.006265245910952227
+            },
+            {
+              "period": 0.7195744461822245,
+              "power": 0.005628860000762759
+            },
+            {
+              "period": 0.3740743960967886,
+              "power": 0.005548842803779937
+            },
+            {
+              "period": 0.40529124736541344,
+              "power": 0.005400405419056095
+            },
+            {
+              "period": 0.8622621966602508,
+              "power": 0.005229949466166812
+            },
+            {
+              "period": 0.1267366038801019,
+              "power": 0.005039449457307693
+            },
+            {
+              "period": 0.906138113051206,
+              "power": 0.004596807985870833
+            },
+            {
+              "period": 0.7731299212354295,
+              "power": 0.00454519829744246
+            },
+            {
+              "period": 0.09042281284408249,
+              "power": 0.004345822926964876
+            },
+            {
+              "period": 0.06865837757382859,
+              "power": 0.00423444889626739
+            },
+            {
+              "period": 0.06005774624678564,
+              "power": 0.004066338738186609
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.00023287555642210832,
+            "error": 0.0002710352222938724,
+            "conditional_snr": 0.8592077238197878,
+            "sine": 0.00020454024763388192,
+            "cosine": -0.00011132974389971807,
+            "phase_rad_at_btjd3000": -0.49845077486080225
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0001736229388362348,
+            "error": 0.00027057205829721375,
+            "conditional_snr": 0.6416883544032334,
+            "sine": -0.00015667306493017495,
+            "cosine": -7.482296181999294e-05,
+            "phase_rad_at_btjd3000": -2.696046366730944
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.0001778457576077141,
+            "error": 0.00027159109159171924,
+            "conditional_snr": 0.6548291277354127,
+            "sine": 0.0001777527127429501,
+            "cosine": 5.752096277363808e-06,
+            "phase_rad_at_btjd3000": 0.032348815551213286
+          },
+          "best_short_period": {
+            "period": 0.15569978306124746,
+            "power": 0.0022550246601848066,
+            "fit": {
+              "amplitude": 0.0006373873304787445,
+              "error": 0.00027169977204268865,
+              "conditional_snr": 2.3459251573409494,
+              "sine": -0.00038973353891312535,
+              "cosine": 0.0005043514426479533,
+              "phase_rad_at_btjd3000": 2.2286941486811696
+            },
+            "gaussian_single_sector_Baluev_FAP_0p05to20cyclesday": 1.0
+          },
+          "short_half_samples": [
+            {
+              "amplitude": 0.0002900643753405283,
+              "error": 0.0003264361473925813,
+              "conditional_snr": 0.8885792142121095,
+              "sine": -0.00023607927625249645,
+              "cosine": -0.00016853461711407636,
+              "phase_rad_at_btjd3000": -2.521605292528582
+            },
+            {
+              "amplitude": 8.185913850795415e-05,
+              "error": 0.0004336313493595573,
+              "conditional_snr": 0.1887758775486465,
+              "sine": -8.008462425713703e-05,
+              "cosine": 1.695203571426156e-05,
+              "phase_rad_at_btjd3000": 2.9329952800471495
+            }
+          ]
+        },
+        "KSPSAP_FLUX_SML": {
+          "median": 1.0001522302627563,
+          "robust_scatter": 0.006215828268206245,
+          "n": 2438,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.9596184304132716,
+              "power": 0.007824269722226634
+            },
+            {
+              "period": 0.126693667034679,
+              "power": 0.006169421691346891
+            },
+            {
+              "period": 0.7195744461822245,
+              "power": 0.00563471776888856
+            },
+            {
+              "period": 0.8622621966602508,
+              "power": 0.0052867300466603725
+            },
+            {
+              "period": 0.40529124736541344,
+              "power": 0.005175336941383704
+            },
+            {
+              "period": 0.5367625769149358,
+              "power": 0.005142673923174131
+            },
+            {
+              "period": 0.11880474053482266,
+              "power": 0.004790336798013812
+            },
+            {
+              "period": 0.11731395015471083,
+              "power": 0.004541842703478416
+            },
+            {
+              "period": 1.0912271840953793,
+              "power": 0.004454092793801284
+            },
+            {
+              "period": 0.3748242710466458,
+              "power": 0.004146530000884394
+            },
+            {
+              "period": 0.06656844991781857,
+              "power": 0.0040655778806598705
+            },
+            {
+              "period": 0.5534446048378089,
+              "power": 0.004065249593277709
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.00021949771965671562,
+            "error": 0.00019951331153572616,
+            "conditional_snr": 1.100165788273285,
+            "sine": 0.00014502281987888323,
+            "cosine": -0.00016476538061399644,
+            "phase_rad_at_btjd3000": -0.8490413172619945
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.00010723772954409312,
+            "error": 0.00019981025170879094,
+            "conditional_snr": 0.5366978352060954,
+            "sine": -0.00010712129292834704,
+            "cosine": -4.9959222503285665e-06,
+            "phase_rad_at_btjd3000": -3.0949884293558636
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.0002951771062032323,
+            "error": 0.0001993195392372248,
+            "conditional_snr": 1.4809240846775205,
+            "sine": 0.0002834667471616435,
+            "cosine": 8.231723561995469e-05,
+            "phase_rad_at_btjd3000": 0.2826214468230624
+          }
+        },
+        "KSPSAP_FLUX_LAG": {
+          "median": 1.000281810760498,
+          "robust_scatter": 0.01106546999560962,
+          "n": 2438,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.3740743960967886,
+              "power": 0.006743875136280212
+            },
+            {
+              "period": 0.957162266696034,
+              "power": 0.006533949051773743
+            },
+            {
+              "period": 0.3466785213462956,
+              "power": 0.006183646283363878
+            },
+            {
+              "period": 0.7195744461822245,
+              "power": 0.005489850198017481
+            },
+            {
+              "period": 0.7715348459403611,
+              "power": 0.004638878045462226
+            },
+            {
+              "period": 0.40573096972070116,
+              "power": 0.004209824520185476
+            },
+            {
+              "period": 0.8622621966602508,
+              "power": 0.004177776977126432
+            },
+            {
+              "period": 0.1267795698382302,
+              "power": 0.0041493251005786025
+            },
+            {
+              "period": 0.06864577438314909,
+              "power": 0.004069796991272047
+            },
+            {
+              "period": 0.23450298161009087,
+              "power": 0.0037315221708714833
+            },
+            {
+              "period": 0.906138113051206,
+              "power": 0.0036707812373784074
+            },
+            {
+              "period": 0.06005774624678564,
+              "power": 0.0036576932996217927
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0003557213498082213,
+            "error": 0.0003390679678437924,
+            "conditional_snr": 1.0491151731917687,
+            "sine": 0.0003419995505287605,
+            "cosine": -9.784674827253464e-05,
+            "phase_rad_at_btjd3000": -0.27865805583444425
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0001997273637723337,
+            "error": 0.00033911456806249635,
+            "conditional_snr": 0.5889672181099733,
+            "sine": -0.00019822307386623133,
+            "cosine": -2.4466974199289733e-05,
+            "phase_rad_at_btjd3000": -3.0187823110387826
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.00025165419633677667,
+            "error": 0.00033717793807383587,
+            "conditional_snr": 0.7463542774310131,
+            "sine": 0.00019020511855360727,
+            "cosine": 0.00016477817637635498,
+            "phase_rad_at_btjd3000": 0.7138917282171626
+          }
+        },
+        "SAP_X": {
+          "median": 664.1154479980469,
+          "robust_scatter": 0.007736956787109375,
+          "n": 2438,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 8.366388766089422,
+              "power": 0.13513613464151034
+            },
+            {
+              "period": 5.144035312370863,
+              "power": 0.05157499561350611
+            },
+            {
+              "period": 4.078182256564023,
+              "power": 0.043756829974148155
+            },
+            {
+              "period": 3.0478184763250766,
+              "power": 0.039574250866972104
+            },
+            {
+              "period": 2.4981046596440835,
+              "power": 0.017858322795163386
+            },
+            {
+              "period": 1.642356689566956,
+              "power": 0.016755946963715327
+            },
+            {
+              "period": 2.05814760370463,
+              "power": 0.012350571773133515
+            },
+            {
+              "period": 1.910910249431572,
+              "power": 0.007895933507030231
+            },
+            {
+              "period": 1.439985476211914,
+              "power": 0.006400932194592887
+            },
+            {
+              "period": 1.3135370019687922,
+              "power": 0.005454090075042334
+            },
+            {
+              "period": 1.0282195066016369,
+              "power": 0.005452806074144806
+            },
+            {
+              "period": 0.9105507858803052,
+              "power": 0.004023756316538969
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.00018795910357456182,
+            "error": 0.0002555946614003753,
+            "conditional_snr": 0.7353796145222844,
+            "sine": 0.00015555947132837508,
+            "cosine": -0.00010549822508738859,
+            "phase_rad_at_btjd3000": -0.5959350504119219
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.00019873823042681877,
+            "error": 0.0002558731781083989,
+            "conditional_snr": 0.7767059912103202,
+            "sine": 0.00019867303815690248,
+            "cosine": 5.090004193444808e-06,
+            "phase_rad_at_btjd3000": 0.025614401491906694
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.002277372728856691,
+            "error": 0.00024994197904668395,
+            "conditional_snr": 9.111605571592778,
+            "sine": -0.0015137830211263909,
+            "cosine": -0.0017014368960057342,
+            "phase_rad_at_btjd3000": -2.2978963829488963
+          }
+        },
+        "SAP_Y": {
+          "median": 337.15406799316406,
+          "robust_scatter": 0.025495761108398435,
+          "n": 2438,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 13.03089087172531,
+              "power": 0.3250471680337826
+            },
+            {
+              "period": 6.1610103342049385,
+              "power": 0.06432372670754902
+            },
+            {
+              "period": 8.366388766089422,
+              "power": 0.06153403608024952
+            },
+            {
+              "period": 5.074236535712325,
+              "power": 0.026946967975697178
+            },
+            {
+              "period": 3.5718083759523234,
+              "power": 0.026600522783121788
+            },
+            {
+              "period": 2.7762940142518664,
+              "power": 0.01198829180736763
+            },
+            {
+              "period": 4.169113580650043,
+              "power": 0.010115680663863987
+            },
+            {
+              "period": 2.2568847473212603,
+              "power": 0.009234416766960508
+            },
+            {
+              "period": 1.7918778456898736,
+              "power": 0.0076969472974625815
+            },
+            {
+              "period": 2.5149045052324683,
+              "power": 0.0072372498149255735
+            },
+            {
+              "period": 3.0728625744788616,
+              "power": 0.005239481429376862
+            },
+            {
+              "period": 2.0695375846470605,
+              "power": 0.004934230982751332
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0010538090964122213,
+            "error": 0.0008263496470537763,
+            "conditional_snr": 1.2752581188476535,
+            "sine": -0.0009968180670276326,
+            "cosine": 0.0003418586739113644,
+            "phase_rad_at_btjd3000": 2.811212285043639
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.001291098312418165,
+            "error": 0.0008279319011657085,
+            "conditional_snr": 1.5594257336869484,
+            "sine": -0.0006554494955796584,
+            "cosine": 0.0011123492307155182,
+            "phase_rad_at_btjd3000": 2.1032723886075644
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.007488370166834702,
+            "error": 0.0008123689017257291,
+            "conditional_snr": 9.217942920915645,
+            "sine": -0.0006594155327977503,
+            "cosine": 0.007459280053104658,
+            "phase_rad_at_btjd3000": 1.6589691501913402
+          }
+        },
+        "SAP_BKG": {
+          "median": 15.244999885559082,
+          "robust_scatter": 182.841646131134,
+          "n": 2438,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 17.234777438751912,
+              "power": 0.5438839310151719
+            },
+            {
+              "period": 5.780101903224168,
+              "power": 0.07016600868486475
+            },
+            {
+              "period": 3.60625268417345,
+              "power": 0.02266739637315077
+            },
+            {
+              "period": 2.6962267440611423,
+              "power": 0.022141372275032805
+            },
+            {
+              "period": 2.1406157901488667,
+              "power": 0.01399574858353958
+            },
+            {
+              "period": 0.6143628008874581,
+              "power": 0.006033815091302315
+            },
+            {
+              "period": 1.3370183400697342,
+              "power": 0.005688394480270118
+            },
+            {
+              "period": 1.7499523892841977,
+              "power": 0.005456015964146808
+            },
+            {
+              "period": 0.3744489581454646,
+              "power": 0.004956688863576777
+            },
+            {
+              "period": 0.9720907885905251,
+              "power": 0.003684050914812044
+            },
+            {
+              "period": 1.503676521623647,
+              "power": 0.003181421711992842
+            },
+            {
+              "period": 0.8206342647784597,
+              "power": 0.002985806781247039
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 2.925211190160274,
+            "error": 7.612569958447532,
+            "conditional_snr": 0.38426066441783174,
+            "sine": 1.8435585116557656,
+            "cosine": -2.2711566483051024,
+            "phase_rad_at_btjd3000": -0.8889457423703606
+          },
+          "known_EB_half_period": {
+            "amplitude": 12.92973774338936,
+            "error": 7.637978376620865,
+            "conditional_snr": 1.6928219884683195,
+            "sine": 11.130617452061488,
+            "cosine": -6.579321640465043,
+            "phase_rad_at_btjd3000": -0.5338505903515651
+          },
+          "five_day_fundamental": {
+            "amplitude": 98.9191084279722,
+            "error": 7.303094220105976,
+            "conditional_snr": 13.544821612138092,
+            "sine": -49.54226925301137,
+            "cosine": -85.61865199503579,
+            "phase_rad_at_btjd3000": -2.0953609193429226
+          }
+        }
+      },
+      "events": [
+        {
+          "cycle": 129,
+          "predicted_time_btjd": 2366.8179170398653,
+          "known_EB_phase": 0.19312802541844576,
+          "nearest_quality_zero_days": 0.003213577000224177,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 8,
+              "n_baseline": 56,
+              "depth": 0.014356566156360228,
+              "error": 0.0037205367122898807,
+              "conditional_snr": 3.8587352488518207,
+              "baseline": 0.945363645168444,
+              "residual_sigma": 0.008382911190292885,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 8,
+              "n_baseline": 56,
+              "depth": 0.014368347376396601,
+              "error": 0.0037134237687471952,
+              "conditional_snr": 3.8692991350254857,
+              "baseline": 1.0010090914340808,
+              "residual_sigma": 0.008859371403600111,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_SML": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 8,
+              "n_baseline": 56,
+              "depth": 0.011909804636648227,
+              "error": 0.0025166529309554216,
+              "conditional_snr": 4.73239853225482,
+              "baseline": 0.9999958748004946,
+              "residual_sigma": 0.005998075234291472,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_LAG": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 8,
+              "n_baseline": 56,
+              "depth": 0.015619651431666354,
+              "error": 0.004887226308057156,
+              "conditional_snr": 3.19601558166348,
+              "baseline": 1.0014467851601152,
+              "residual_sigma": 0.011664891416851505,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 8,
+              "n_baseline": 56,
+              "depth": -0.001079139777061755,
+              "error": 0.0003888264608210818,
+              "conditional_snr": -2.7753763845776955,
+              "baseline": 664.104893150262,
+              "residual_sigma": 0.0009267149861127108,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 8,
+              "n_baseline": 56,
+              "depth": -0.00020648972778758434,
+              "error": 0.00040177331172975677,
+              "conditional_snr": -0.513945853940828,
+              "baseline": 337.1394152448913,
+              "residual_sigma": 0.0009575720443867282,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 8,
+              "n_baseline": 56,
+              "depth": -113.7986816989278,
+              "error": 49.44283195563842,
+              "conditional_snr": -2.3016214322236106,
+              "baseline": -30.603682957777885,
+              "residual_sigma": 117.84026537799421,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 8
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.01814984743944721,
+            "depth_diagonal_error": 0.003970651671505033,
+            "midpoint_btjd": 2366.822023618647,
+            "midpoint_shift_days": 0.004106578781806834,
+            "midpoint_diagonal_error_days": 0.003254536871539067,
+            "duration_days": 0.05932670803670616,
+            "duration_diagonal_error_days": 0.009040762335533548,
+            "chi2": 67.05762209638112,
+            "ndof": 60,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.006944554278106807,
+            "boundary_warning": false
+          }
+        },
+        {
+          "cycle": 130,
+          "predicted_time_btjd": 2372.5094149688084,
+          "known_EB_phase": 0.19947006971688097,
+          "nearest_quality_zero_days": 0.000693342883096193,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 69,
+              "n_inside": 7,
+              "n_baseline": 57,
+              "depth": 0.012175917660733223,
+              "error": 0.002458172676486691,
+              "conditional_snr": 4.953239362393159,
+              "baseline": 1.0970968455110284,
+              "residual_sigma": 0.006198714177491867,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX": {
+              "status": "measured",
+              "n": 69,
+              "n_inside": 7,
+              "n_baseline": 57,
+              "depth": 0.01216656246411146,
+              "error": 0.002475180239404828,
+              "conditional_snr": 4.9154248528733335,
+              "baseline": 0.9994794775585373,
+              "residual_sigma": 0.00568623715079519,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_SML": {
+              "status": "measured",
+              "n": 69,
+              "n_inside": 7,
+              "n_baseline": 57,
+              "depth": 0.01079039686101033,
+              "error": 0.0020819868643331013,
+              "conditional_snr": 5.1827401247638,
+              "baseline": 1.000030632964575,
+              "residual_sigma": 0.004785590646113782,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_LAG": {
+              "status": "measured",
+              "n": 69,
+              "n_inside": 7,
+              "n_baseline": 57,
+              "depth": 0.013804131093317575,
+              "error": 0.002685898206735481,
+              "conditional_snr": 5.139484087185686,
+              "baseline": 0.998975233594697,
+              "residual_sigma": 0.006167207045771756,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 69,
+              "n_inside": 7,
+              "n_baseline": 57,
+              "depth": -0.0009287953538107883,
+              "error": 0.0003436640123236145,
+              "conditional_snr": -2.7026261712156794,
+              "baseline": 664.115447808999,
+              "residual_sigma": 0.0007899112777531854,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 69,
+              "n_inside": 7,
+              "n_baseline": 57,
+              "depth": 8.1208828695318e-06,
+              "error": 0.00045882828115976544,
+              "conditional_snr": 0.017699176800969867,
+              "baseline": 337.1562276033047,
+              "residual_sigma": 0.0010546161973425342,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 69,
+              "n_inside": 7,
+              "n_baseline": 57,
+              "depth": -44.83170447140342,
+              "error": 43.861828036372216,
+              "conditional_snr": -1.02211208420741,
+              "baseline": -19.73170354497694,
+              "residual_sigma": 100.81635372450822,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 7
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.013463467923403322,
+            "depth_diagonal_error": 0.002762507365117536,
+            "midpoint_btjd": 2372.5072634266126,
+            "midpoint_shift_days": -0.002151542195925039,
+            "midpoint_diagonal_error_days": 0.003642606688997222,
+            "duration_days": 0.07043687640359159,
+            "duration_diagonal_error_days": 0.010099260927183816,
+            "chi2": 68.8569331793748,
+            "ndof": 63,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.006944554278106807,
+            "boundary_warning": false
+          }
+        },
+        {
+          "cycle": 131,
+          "predicted_time_btjd": 2378.2009128977516,
+          "known_EB_phase": 0.20581211401531618,
+          "nearest_quality_zero_days": 0.0022970603317844507,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 62,
+              "n_inside": 7,
+              "n_baseline": 51,
+              "depth": 0.013662746654113803,
+              "error": 0.004086062559744634,
+              "conditional_snr": 3.3437438742904813,
+              "baseline": 0.8428171848434223,
+              "residual_sigma": 0.007716619774349324,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX": {
+              "status": "measured",
+              "n": 62,
+              "n_inside": 7,
+              "n_baseline": 51,
+              "depth": 0.013666344495892163,
+              "error": 0.0040410716917790215,
+              "conditional_snr": 3.381861431385732,
+              "baseline": 1.0002103456070002,
+              "residual_sigma": 0.009056838119044775,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_SML": {
+              "status": "measured",
+              "n": 62,
+              "n_inside": 7,
+              "n_baseline": 51,
+              "depth": 0.013292011292201094,
+              "error": 0.0021917666572117004,
+              "conditional_snr": 6.064519344915481,
+              "baseline": 1.000307479876197,
+              "residual_sigma": 0.004912658096474521,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_LAG": {
+              "status": "measured",
+              "n": 62,
+              "n_inside": 7,
+              "n_baseline": 51,
+              "depth": 0.013187937479866263,
+              "error": 0.00642812931560297,
+              "conditional_snr": 2.0515980361277486,
+              "baseline": 0.999547354436407,
+              "residual_sigma": 0.01439715521163285,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 62,
+              "n_inside": 7,
+              "n_baseline": 51,
+              "depth": -0.0006254286256210305,
+              "error": 0.0006060149501047646,
+              "conditional_snr": -1.0320349778712716,
+              "baseline": 664.1220377968209,
+              "residual_sigma": 0.0013579133120135566,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 62,
+              "n_inside": 7,
+              "n_baseline": 51,
+              "depth": -0.0005096745893199893,
+              "error": 0.00046660094015858327,
+              "conditional_snr": -1.0923136784652998,
+              "baseline": 337.159485268212,
+              "residual_sigma": 0.0010455247480773322,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 62,
+              "n_inside": 7,
+              "n_baseline": 51,
+              "depth": -6.642748543400176,
+              "error": 43.540706073392755,
+              "conditional_snr": -0.15256409788585137,
+              "baseline": 473.10583020939004,
+              "residual_sigma": 97.56278187742465,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 7
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.017229814200522112,
+            "depth_diagonal_error": 0.003980890821816477,
+            "midpoint_btjd": 2378.196838903313,
+            "midpoint_shift_days": -0.004073994438273711,
+            "midpoint_diagonal_error_days": 0.0037121974050318613,
+            "duration_days": 0.05837711620112945,
+            "duration_diagonal_error_days": 0.010246190522823313,
+            "chi2": 108.9005141331882,
+            "ndof": 56,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.006944554278106807,
+            "boundary_warning": false
+          }
+        },
+        {
+          "cycle": 132,
+          "predicted_time_btjd": 2383.8924108266947,
+          "known_EB_phase": 0.2121541583137514,
+          "nearest_quality_zero_days": 0.0017130823262050399,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 6,
+              "n_baseline": 56,
+              "depth": 0.012755251941781088,
+              "error": 0.0026194160068576697,
+              "conditional_snr": 4.869502174678497,
+              "baseline": 1.1223504134339586,
+              "residual_sigma": 0.006329183772956871,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 6,
+              "n_baseline": 56,
+              "depth": 0.012722677964022598,
+              "error": 0.0028254341926025155,
+              "conditional_snr": 4.502910737518789,
+              "baseline": 1.0020942370214587,
+              "residual_sigma": 0.006095488539773636,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_SML": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 6,
+              "n_baseline": 56,
+              "depth": 0.01424965602415603,
+              "error": 0.0021619689550086774,
+              "conditional_snr": 6.591054876687088,
+              "baseline": 1.002467994656097,
+              "residual_sigma": 0.0046658924860912224,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "KSPSAP_FLUX_LAG": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 6,
+              "n_baseline": 56,
+              "depth": 0.010613864543192034,
+              "error": 0.0031824153815970683,
+              "conditional_snr": 3.3351600185722945,
+              "baseline": 1.001737013053353,
+              "residual_sigma": 0.006863179278743836,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 6,
+              "n_baseline": 56,
+              "depth": -0.001375584811967201,
+              "error": 0.0006070629072277673,
+              "conditional_snr": -2.265967489677454,
+              "baseline": 664.1175717621933,
+              "residual_sigma": 0.0013069183487906912,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 6,
+              "n_baseline": 56,
+              "depth": 0.0003771669538347548,
+              "error": 0.0004316973374894271,
+              "conditional_snr": 0.8736837619342328,
+              "baseline": 337.20745419332104,
+              "residual_sigma": 0.0009293817243182956,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 66,
+              "n_inside": 6,
+              "n_baseline": 56,
+              "depth": 115.24554141689897,
+              "error": 61.900438693576504,
+              "conditional_snr": 1.8617887667548658,
+              "baseline": -118.42946417799033,
+              "residual_sigma": 133.26266217823047,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 6,
+            "2048": 1
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.013842719028529201,
+            "depth_diagonal_error": 0.0024753988300661826,
+            "midpoint_btjd": 2383.893304391041,
+            "midpoint_shift_days": 0.000893564346557252,
+            "midpoint_diagonal_error_days": 0.0027791000467164155,
+            "duration_days": 0.06906400071925464,
+            "duration_diagonal_error_days": 0.007705365955428673,
+            "chi2": 98.31532241057039,
+            "ndof": 60,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.006944554278106807,
+            "boundary_warning": false
+          }
+        }
+      ]
+    },
+    {
+      "sector": 66,
+      "original": {
+        "tic": 214311908,
+        "sector": 66,
+        "url": "https://archive.stsci.edu/hlsps/qlp/s0066/0000/0002/1431/1908/hlsp_qlp_tess_ffi_s0066-0000000214311908_tess_v01_llc.fits",
+        "http_status": 200,
+        "path": "/workspace/tess-research-data/tic214311908/queries/hlsp_qlp_tess_ffi_s0066-0000000214311908_tess_v01_llc.fits",
+        "sha256": "bfdd670ec704bf143c02a44f83fd83c44c05a61968c78d296843f59db862a506",
+        "bytes": 740160,
+        "retrieved_utc": "2026-10-17T13:37:07.570640+00:00",
+        "request_body": null
+      },
+      "n_total": 12154,
+      "n_quality_zero": 8437,
+      "time_min": 3097.7120537731575,
+      "time_max": 3121.4435660858494,
+      "channels": {
+        "SAP_FLUX": {
+          "median": 0.9951702952384949,
+          "robust_scatter": 0.05383102599413864,
+          "n": 8437,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 10.532161809272731,
+              "power": 0.26739951112479304
+            },
+            {
+              "period": 6.872240744393133,
+              "power": 0.14211907708436547
+            },
+            {
+              "period": 4.299257928362931,
+              "power": 0.10431895098971716
+            },
+            {
+              "period": 5.493521412844029,
+              "power": 0.0745959794171139
+            },
+            {
+              "period": 3.1280927674121366,
+              "power": 0.034511867506669985
+            },
+            {
+              "period": 2.8073857959068604,
+              "power": 0.026722196206854457
+            },
+            {
+              "period": 2.270253732937242,
+              "power": 0.025663084866995388
+            },
+            {
+              "period": 1.5356979382813254,
+              "power": 0.017018058044320973
+            },
+            {
+              "period": 1.915905820066802,
+              "power": 0.012821490657120693
+            },
+            {
+              "period": 1.156511579642533,
+              "power": 0.009969371031254594
+            },
+            {
+              "period": 1.2814054528067402,
+              "power": 0.009330519103906126
+            },
+            {
+              "period": 1.3545454135530675,
+              "power": 0.008207012762834292
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0007407875682590429,
+            "error": 0.0008680690025191387,
+            "conditional_snr": 0.8533740591004578,
+            "sine": -0.0003547645748897473,
+            "cosine": 0.000650314014680941,
+            "phase_rad_at_btjd3000": 2.070199742435588
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.00040742760805211785,
+            "error": 0.0008673867816671714,
+            "conditional_snr": 0.4697184885259799,
+            "sine": -0.0003449500008995978,
+            "cosine": -0.0002168104072281533,
+            "phase_rad_at_btjd3000": -2.5804610506164662
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.021151599603795278,
+            "error": 0.0008413976855420884,
+            "conditional_snr": 25.138647238098724,
+            "sine": 0.01670468813973893,
+            "cosine": 0.012974727741010137,
+            "phase_rad_at_btjd3000": 0.6603786151448598
+          }
+        },
+        "DET_FLUX": {
+          "median": 0.9999312162399292,
+          "robust_scatter": 0.016162719451084374,
+          "n": 8437,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.15794342905495656,
+              "power": 0.001671862092621245
+            },
+            {
+              "period": 0.20262577494858078,
+              "power": 0.001649661320050364
+            },
+            {
+              "period": 0.6510123881137988,
+              "power": 0.0016447863014554776
+            },
+            {
+              "period": 0.0613873160879932,
+              "power": 0.0015492651007482006
+            },
+            {
+              "period": 0.0769704181400099,
+              "power": 0.0014736031773870393
+            },
+            {
+              "period": 0.5213435804385524,
+              "power": 0.0013823110183688043
+            },
+            {
+              "period": 0.06316277564071052,
+              "power": 0.0013368599376508685
+            },
+            {
+              "period": 0.16880354478207144,
+              "power": 0.0012474614872890384
+            },
+            {
+              "period": 0.19712756336271964,
+              "power": 0.001231298326578984
+            },
+            {
+              "period": 0.16729622764253715,
+              "power": 0.001229394247005125
+            },
+            {
+              "period": 0.17809331995401567,
+              "power": 0.0012103353122340384
+            },
+            {
+              "period": 0.43421966056672523,
+              "power": 0.001205504287602068
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.00024096676193947208,
+            "error": 0.0002521381779816127,
+            "conditional_snr": 0.9556932784571986,
+            "sine": 0.000217125617185116,
+            "cosine": 0.00010450572578369408,
+            "phase_rad_at_btjd3000": 0.44858784590321854
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0009408478049570235,
+            "error": 0.0002525126582020568,
+            "conditional_snr": 3.725943133528662,
+            "sine": -0.0007966814833633268,
+            "cosine": -0.0005004929631457955,
+            "phase_rad_at_btjd3000": -2.580679633370572
+          },
+          "five_day_fundamental": {
+            "amplitude": 6.480425320739294e-05,
+            "error": 0.00024996972193361554,
+            "conditional_snr": 0.2592484109919641,
+            "sine": -6.322937184139207e-05,
+            "cosine": -1.4199921489602455e-05,
+            "phase_rad_at_btjd3000": -2.9206799791418283
+          },
+          "best_short_period": {
+            "period": 0.15796221163776838,
+            "power": 0.0016744585156346747,
+            "fit": {
+              "amplitude": 0.0009499662052927598,
+              "error": 0.0002525749430270278,
+              "conditional_snr": 3.7611260796804564,
+              "sine": 3.9207412137021504e-05,
+              "cosine": 0.0009491567678902382,
+              "phase_rad_at_btjd3000": 1.529512172125995
+            },
+            "gaussian_single_sector_Baluev_FAP_0p05to20cyclesday": 0.6971300027492787
+          },
+          "short_half_samples": [
+            {
+              "amplitude": 0.0010882561073848223,
+              "error": 0.00034094539864000956,
+              "conditional_snr": 3.191877971445709,
+              "sine": -0.001051147420329643,
+              "cosine": -0.00028176312035946543,
+              "phase_rad_at_btjd3000": -2.8796965024839585
+            },
+            {
+              "amplitude": 0.0009014033047083577,
+              "error": 0.00037330807868817895,
+              "conditional_snr": 2.4146364790066386,
+              "sine": -0.0005453246031224113,
+              "cosine": -0.0007177388069266792,
+              "phase_rad_at_btjd3000": -2.220528203384523
+            }
+          ]
+        },
+        "DET_FLUX_SML": {
+          "median": 0.999872624874115,
+          "robust_scatter": 0.011652606643462056,
+          "n": 8437,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.23830031473605687,
+              "power": 0.0014533801781702357
+            },
+            {
+              "period": 0.06318519844271019,
+              "power": 0.0014129914256590917
+            },
+            {
+              "period": 0.26025225920012407,
+              "power": 0.0013855545861301448
+            },
+            {
+              "period": 0.1581539455711646,
+              "power": 0.0013701504958269514
+            },
+            {
+              "period": 0.40878874942574733,
+              "power": 0.001329701906170312
+            },
+            {
+              "period": 0.16745362376176343,
+              "power": 0.0012443010375695167
+            },
+            {
+              "period": 0.2028567140101865,
+              "power": 0.0011849773622702158
+            },
+            {
+              "period": 0.07698706471660824,
+              "power": 0.0011776124855957556
+            },
+            {
+              "period": 0.06136615096230664,
+              "power": 0.0011669840767251094
+            },
+            {
+              "period": 0.052067159460845246,
+              "power": 0.0011429701349628522
+            },
+            {
+              "period": 0.19017680544251195,
+              "power": 0.0011157976150999276
+            },
+            {
+              "period": 0.646284617580972,
+              "power": 0.0010974127579100287
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.00033766612177423233,
+            "error": 0.00018774737527184777,
+            "conditional_snr": 1.7985131418498423,
+            "sine": 0.00026632023458765064,
+            "cosine": 0.00020758598807055694,
+            "phase_rad_at_btjd3000": 0.6620905106105491
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0006327529319768479,
+            "error": 0.00018800069986974467,
+            "conditional_snr": 3.3656945554737168,
+            "sine": -0.0004715559994708581,
+            "cosine": -0.0004219137498213794,
+            "phase_rad_at_btjd3000": -2.4116986205216593
+          },
+          "five_day_fundamental": {
+            "amplitude": 2.6503645595571906e-05,
+            "error": 0.00019079982784107083,
+            "conditional_snr": 0.13890812112078246,
+            "sine": 1.71143255790026e-05,
+            "cosine": 2.0237170993782094e-05,
+            "phase_rad_at_btjd3000": 0.8688111376153776
+          }
+        },
+        "DET_FLUX_LAG": {
+          "median": 0.9997636079788208,
+          "robust_scatter": 0.019815789927414198,
+          "n": 8437,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.6546038593706006,
+              "power": 0.0018154811171088487
+            },
+            {
+              "period": 0.0613873160879932,
+              "power": 0.0016787780703762536
+            },
+            {
+              "period": 0.16880354478207144,
+              "power": 0.0015779726148694917
+            },
+            {
+              "period": 0.15794342905495656,
+              "power": 0.0014793051069334582
+            },
+            {
+              "period": 0.20262577494858078,
+              "power": 0.0014379667908223268
+            },
+            {
+              "period": 0.17818246473412622,
+              "power": 0.0013427493799242213
+            },
+            {
+              "period": 0.5228751451457136,
+              "power": 0.0013211617975274186
+            },
+            {
+              "period": 0.4347499736894048,
+              "power": 0.001286589874415919
+            },
+            {
+              "period": 0.11714257097527231,
+              "power": 0.001199520249036234
+            },
+            {
+              "period": 0.0769704181400099,
+              "power": 0.0011802907064786955
+            },
+            {
+              "period": 0.1672176404878142,
+              "power": 0.0011393142758512058
+            },
+            {
+              "period": 0.13944409085643353,
+              "power": 0.001106283850341579
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0002436520464195188,
+            "error": 0.00030822122014607955,
+            "conditional_snr": 0.7905102909658245,
+            "sine": 0.00022265522870651818,
+            "cosine": 9.894932467716707e-05,
+            "phase_rad_at_btjd3000": 0.4181922451884333
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0010685873697822105,
+            "error": 0.00030871745386911944,
+            "conditional_snr": 3.461376596592551,
+            "sine": -0.0009207726869615179,
+            "cosine": -0.0005422698828108833,
+            "phase_rad_at_btjd3000": -2.609353250285573
+          },
+          "five_day_fundamental": {
+            "amplitude": 4.4910490664153895e-05,
+            "error": 0.00030438708307973156,
+            "conditional_snr": 0.14754400945584797,
+            "sine": -4.4858553112916894e-05,
+            "cosine": -2.1592554991636026e-06,
+            "phase_rad_at_btjd3000": -3.093495021555232
+          }
+        },
+        "SAP_X": {
+          "median": 1866.2679443359375,
+          "robust_scatter": 0.012487719726562499,
+          "n": 8437,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 14.957693840012666,
+              "power": 0.749383042164419
+            },
+            {
+              "period": 4.82356737875609,
+              "power": 0.3138394410837527
+            },
+            {
+              "period": 8.127483674133062,
+              "power": 0.10805199066432573
+            },
+            {
+              "period": 3.496831635975632,
+              "power": 0.08820950447014184
+            },
+            {
+              "period": 2.134146279578525,
+              "power": 0.027524269746737207
+            },
+            {
+              "period": 1.8559709046474098,
+              "power": 0.02228061914126056
+            },
+            {
+              "period": 2.9226328105203963,
+              "power": 0.016393772586150473
+            },
+            {
+              "period": 1.1236559953944092,
+              "power": 0.014415871955395121
+            },
+            {
+              "period": 1.590593641949367,
+              "power": 0.013882449388736107
+            },
+            {
+              "period": 2.564669938242434,
+              "power": 0.007760101341809002
+            },
+            {
+              "period": 1.0384308720636444,
+              "power": 0.007501121684408916
+            },
+            {
+              "period": 1.4025791973389674,
+              "power": 0.0058502554248189955
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.00029932639957978114,
+            "error": 0.0003035331865934472,
+            "conditional_snr": 0.9861406027430515,
+            "sine": 7.030451209070034e-05,
+            "cosine": -0.0002909528639918902,
+            "phase_rad_at_btjd3000": -1.3337055882895614
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0001397649779808145,
+            "error": 0.0003031927411025194,
+            "conditional_snr": 0.46097732245362494,
+            "sine": -7.292506818477438e-05,
+            "cosine": -0.00011923163800025383,
+            "phase_rad_at_btjd3000": -2.119719908381207
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.006658748882124571,
+            "error": 0.0002974748091583126,
+            "conditional_snr": 22.384244571717208,
+            "sine": -0.0033973396453982787,
+            "cosine": 0.005726868254901655,
+            "phase_rad_at_btjd3000": 2.1062216704011565
+          }
+        },
+        "SAP_Y": {
+          "median": 626.388916015625,
+          "robust_scatter": 0.03556285400390625,
+          "n": 8437,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 12.360748839391087,
+              "power": 0.26861097620253566
+            },
+            {
+              "period": 6.379594941235339,
+              "power": 0.0918467109329776
+            },
+            {
+              "period": 4.148931831681316,
+              "power": 0.04277658365946171
+            },
+            {
+              "period": 3.462815312101152,
+              "power": 0.0366952680631441
+            },
+            {
+              "period": 2.3763413231997883,
+              "power": 0.03414216385513228
+            },
+            {
+              "period": 2.680544771731156,
+              "power": 0.026371225017746074
+            },
+            {
+              "period": 2.9964375178561102,
+              "power": 0.014894692688615258
+            },
+            {
+              "period": 1.8088168450710687,
+              "power": 0.012866489766997242
+            },
+            {
+              "period": 1.1834252026983678,
+              "power": 0.010518452311154768
+            },
+            {
+              "period": 2.1470181967051754,
+              "power": 0.0074510956100771455
+            },
+            {
+              "period": 1.413719680301497,
+              "power": 0.006796393327074712
+            },
+            {
+              "period": 1.968890341442711,
+              "power": 0.005660217635741873
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.00021246159566287308,
+            "error": 0.0004522822140590184,
+            "conditional_snr": 0.4697544786387486,
+            "sine": -4.617298334603354e-06,
+            "cosine": 0.00021241141727247959,
+            "phase_rad_at_btjd3000": 1.5925304282136923
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.00028193814997566884,
+            "error": 0.00045178505018290103,
+            "conditional_snr": 0.6240537394088821,
+            "sine": 0.00013275034715122544,
+            "cosine": 0.00024872970418293803,
+            "phase_rad_at_btjd3000": 1.0805432381704942
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.010246696364336476,
+            "error": 0.0004497250642620705,
+            "conditional_snr": 22.7843568851332,
+            "sine": 0.000112399944470256,
+            "cosine": 0.010246079866729003,
+            "phase_rad_at_btjd3000": 1.5598267230584835
+          }
+        },
+        "SAP_BKG": {
+          "median": -410.55999755859375,
+          "robust_scatter": 255.6743880981445,
+          "n": 8437,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 15.613772343933116,
+              "power": 0.45654617824648314
+            },
+            {
+              "period": 6.496013808792019,
+              "power": 0.09917541906118477
+            },
+            {
+              "period": 4.517498153977377,
+              "power": 0.0840844570522295
+            },
+            {
+              "period": 2.284825450745242,
+              "power": 0.02808415074829569
+            },
+            {
+              "period": 1.865698285097975,
+              "power": 0.017035540391400525
+            },
+            {
+              "period": 1.6049363239720846,
+              "power": 0.012910051287945533
+            },
+            {
+              "period": 1.1490453648059173,
+              "power": 0.01042308091440315
+            },
+            {
+              "period": 1.032407467276273,
+              "power": 0.009824665715001629
+            },
+            {
+              "period": 1.2543142980604245,
+              "power": 0.009006015587741122
+            },
+            {
+              "period": 1.4193565518283953,
+              "power": 0.008640657654077089
+            },
+            {
+              "period": 0.9574340837030652,
+              "power": 0.006791108537199626
+            },
+            {
+              "period": 0.775880000785746,
+              "power": 0.005175156237517299
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 49.85942857271784,
+            "error": 28.10430529826818,
+            "conditional_snr": 1.7740850749934827,
+            "sine": 44.690715436030025,
+            "cosine": 22.106618271769648,
+            "phase_rad_at_btjd3000": 0.4593648542405441
+          },
+          "known_EB_half_period": {
+            "amplitude": 13.418130025457716,
+            "error": 28.13156621576418,
+            "conditional_snr": 0.4769777097564711,
+            "sine": -7.028051812562911,
+            "cosine": 11.430341250374857,
+            "phase_rad_at_btjd3000": 2.1220702094607393
+          },
+          "five_day_fundamental": {
+            "amplitude": 794.809341890659,
+            "error": 26.926538071315875,
+            "conditional_snr": 29.51769513725005,
+            "sine": 495.7918257152955,
+            "cosine": -621.2184442774993,
+            "phase_rad_at_btjd3000": -0.8972175665827803
+          }
+        }
+      },
+      "events": [
+        {
+          "cycle": 258,
+          "predicted_time_btjd": 3101.02114987353,
+          "known_EB_phase": 0.011251739940234984,
+          "nearest_quality_zero_days": 0.001142566929502209,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 0.012733489308738138,
+              "error": 0.0034297323071599763,
+              "conditional_snr": 3.712677307834042,
+              "baseline": 1.0357878283044755,
+              "residual_sigma": 0.014775339061188648,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 0.012383212617269415,
+              "error": 0.0034457391233528264,
+              "conditional_snr": 3.5937754351002957,
+              "baseline": 1.0016704014950677,
+              "residual_sigma": 0.014355345948639624,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_SML": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 0.01037997995746061,
+              "error": 0.002345635459773237,
+              "conditional_snr": 4.425231514220069,
+              "baseline": 1.0020525850742954,
+              "residual_sigma": 0.009775915955774785,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_LAG": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 0.01389544590680618,
+              "error": 0.0039433930065499705,
+              "conditional_snr": 3.523728394234575,
+              "baseline": 1.0018203500701466,
+              "residual_sigma": 0.01643108867002777,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": -0.0003956632773658632,
+              "error": 0.0003188123377123587,
+              "conditional_snr": -1.2410538444181591,
+              "baseline": 1866.2702897060408,
+              "residual_sigma": 0.0013259939663561226,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 2.4750647743200137e-05,
+              "error": 0.00032639920634794156,
+              "conditional_snr": 0.07582937477126077,
+              "baseline": 626.3739760556905,
+              "residual_sigma": 0.001357549025067169,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 49.592636297658146,
+              "error": 34.55965332684021,
+              "conditional_snr": 1.434986509518682,
+              "baseline": -353.47372660350936,
+              "residual_sigma": 143.73939264576018,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 22
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.014355619855236364,
+            "depth_diagonal_error": 0.00371383278934692,
+            "midpoint_btjd": 3101.015176878205,
+            "midpoint_shift_days": -0.005972995324812723,
+            "midpoint_diagonal_error_days": 0.004280270816072836,
+            "duration_days": 0.06844589692779868,
+            "duration_diagonal_error_days": 0.011489054179792147,
+            "chi2": 228.0342750830696,
+            "ndof": 254,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.002314825166195078,
+            "boundary_warning": false
+          }
+        },
+        {
+          "cycle": 259,
+          "predicted_time_btjd": 3106.712647802473,
+          "known_EB_phase": 0.017593784238670196,
+          "nearest_quality_zero_days": 0.0004935194824611244,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 163,
+              "n_inside": 21,
+              "n_baseline": 127,
+              "depth": 0.02700474908267769,
+              "error": 0.004368437179432762,
+              "conditional_snr": 6.1817872098104045,
+              "baseline": 0.9559111414599679,
+              "residual_sigma": 0.015654622902574553,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX": {
+              "status": "measured",
+              "n": 163,
+              "n_inside": 21,
+              "n_baseline": 127,
+              "depth": 0.026605641742788035,
+              "error": 0.004597482804217493,
+              "conditional_snr": 5.787001904255389,
+              "baseline": 1.0001156839775993,
+              "residual_sigma": 0.017237304116332747,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_SML": {
+              "status": "measured",
+              "n": 163,
+              "n_inside": 21,
+              "n_baseline": 127,
+              "depth": 0.02056119773493567,
+              "error": 0.00384581790807362,
+              "conditional_snr": 5.346378384626855,
+              "baseline": 1.0024268578836681,
+              "residual_sigma": 0.014452414337568874,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_LAG": {
+              "status": "measured",
+              "n": 163,
+              "n_inside": 21,
+              "n_baseline": 127,
+              "depth": 0.03205400330669455,
+              "error": 0.006346945134981889,
+              "conditional_snr": 5.050304142385818,
+              "baseline": 0.9993941723654354,
+              "residual_sigma": 0.023779381211392146,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 163,
+              "n_inside": 21,
+              "n_baseline": 127,
+              "depth": 0.00014824520537461337,
+              "error": 0.00044851840489366045,
+              "conditional_snr": 0.33052201148749055,
+              "baseline": 1866.227379225488,
+              "residual_sigma": 0.0016814318178089251,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 163,
+              "n_inside": 21,
+              "n_baseline": 127,
+              "depth": -4.388065151163444e-05,
+              "error": 0.0003721178279881906,
+              "conditional_snr": -0.11792138997712041,
+              "baseline": 626.3762320447578,
+              "residual_sigma": 0.0013950169025987633,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 163,
+              "n_inside": 21,
+              "n_baseline": 127,
+              "depth": -101.49435283510441,
+              "error": 40.21468004617118,
+              "conditional_snr": -2.523813510851683,
+              "baseline": 594.4394559911605,
+              "residual_sigma": 150.75912567884382,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 21
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.02811345535720653,
+            "depth_diagonal_error": 0.004388989431314005,
+            "midpoint_btjd": 3106.713031201669,
+            "midpoint_shift_days": 0.0003833991960154139,
+            "midpoint_diagonal_error_days": 0.0023297396668376406,
+            "duration_days": 0.0641008135559886,
+            "duration_diagonal_error_days": 0.006231854681572061,
+            "chi2": 217.28984696269993,
+            "ndof": 157,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.002314825166195078,
+            "boundary_warning": false
+          }
+        },
+        {
+          "cycle": 260,
+          "predicted_time_btjd": 3112.404145731416,
+          "known_EB_phase": 0.023935828537105408,
+          "nearest_quality_zero_days": 0.00016255802029263577,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 193,
+              "n_inside": 21,
+              "n_baseline": 156,
+              "depth": 0.02078345953165142,
+              "error": 0.004589198383716272,
+              "conditional_snr": 4.528777750248672,
+              "baseline": 0.9393875314675162,
+              "residual_sigma": 0.01725532171962972,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX": {
+              "status": "measured",
+              "n": 193,
+              "n_inside": 21,
+              "n_baseline": 156,
+              "depth": 0.018917380219025455,
+              "error": 0.004540106938711142,
+              "conditional_snr": 4.166725690473664,
+              "baseline": 1.0015637646052669,
+              "residual_sigma": 0.018200617548392774,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_SML": {
+              "status": "measured",
+              "n": 193,
+              "n_inside": 21,
+              "n_baseline": 156,
+              "depth": 0.013449725193087578,
+              "error": 0.0027839659451569286,
+              "conditional_snr": 4.831138547684151,
+              "baseline": 1.000887177797199,
+              "residual_sigma": 0.011152968654653077,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_LAG": {
+              "status": "measured",
+              "n": 193,
+              "n_inside": 21,
+              "n_baseline": 156,
+              "depth": 0.01952000174907453,
+              "error": 0.00520275387651388,
+              "conditional_snr": 3.7518595367716996,
+              "baseline": 1.0009054515367521,
+              "residual_sigma": 0.020843362117435194,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 193,
+              "n_inside": 21,
+              "n_baseline": 156,
+              "depth": -0.00042497049258556564,
+              "error": 0.00044100791763969864,
+              "conditional_snr": -0.9636346096914399,
+              "baseline": 1866.2874110135103,
+              "residual_sigma": 0.001765175228597377,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 193,
+              "n_inside": 21,
+              "n_baseline": 156,
+              "depth": 0.00011713191272411634,
+              "error": 0.00026663383557492496,
+              "conditional_snr": 0.43929875768224436,
+              "baseline": 626.3875334265556,
+              "residual_sigma": 0.0010672267386529937,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 193,
+              "n_inside": 21,
+              "n_baseline": 156,
+              "depth": -12.696342528180553,
+              "error": 32.349321180923226,
+              "conditional_snr": -0.39247631989470416,
+              "baseline": -310.23396161939615,
+              "residual_sigma": 129.48116831126458,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 21
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.0205794770500613,
+            "depth_diagonal_error": 0.0049127429503397525,
+            "midpoint_btjd": 3112.400266605803,
+            "midpoint_shift_days": -0.003879125612893568,
+            "midpoint_diagonal_error_days": 0.003505049000764921,
+            "duration_days": 0.060503688118861566,
+            "duration_diagonal_error_days": 0.009403563936749766,
+            "chi2": 164.78441331965536,
+            "ndof": 187,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.002314825166195078,
+            "boundary_warning": false
+          }
+        },
+        {
+          "cycle": 261,
+          "predicted_time_btjd": 3118.095643660359,
+          "known_EB_phase": 0.030277872836450115,
+          "nearest_quality_zero_days": 0.0007489263653042144,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 251,
+              "n_inside": 20,
+              "n_baseline": 216,
+              "depth": 0.019802125315183296,
+              "error": 0.004836430497518585,
+              "conditional_snr": 4.0943678039709495,
+              "baseline": 1.0021360961934112,
+              "residual_sigma": 0.019285497981410004,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX": {
+              "status": "measured",
+              "n": 251,
+              "n_inside": 20,
+              "n_baseline": 217,
+              "depth": 0.0203015234778699,
+              "error": 0.00442470934359083,
+              "conditional_snr": 4.588216287534583,
+              "baseline": 1.0027269970181016,
+              "residual_sigma": 0.017667676577613887,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_SML": {
+              "status": "measured",
+              "n": 251,
+              "n_inside": 20,
+              "n_baseline": 217,
+              "depth": 0.01489566711487321,
+              "error": 0.00495262196247541,
+              "conditional_snr": 3.0076325687147913,
+              "baseline": 1.0026902217940514,
+              "residual_sigma": 0.019774883979999814,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_LAG": {
+              "status": "measured",
+              "n": 251,
+              "n_inside": 20,
+              "n_baseline": 217,
+              "depth": 0.02129853050109726,
+              "error": 0.0049989883266012905,
+              "conditional_snr": 4.2605681609138095,
+              "baseline": 1.0022613248840522,
+              "residual_sigma": 0.019951478293064116,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 251,
+              "n_inside": 20,
+              "n_baseline": 217,
+              "depth": -0.00043258593324253526,
+              "error": 0.0007937247974838286,
+              "conditional_snr": -0.5450074567581451,
+              "baseline": 1866.2668403632852,
+              "residual_sigma": 0.003160690229467991,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 251,
+              "n_inside": 20,
+              "n_baseline": 217,
+              "depth": 0.0008682339979657172,
+              "error": 0.0014282653161418583,
+              "conditional_snr": 0.6078940573247683,
+              "baseline": 626.4417007535292,
+              "residual_sigma": 0.005687493000254357,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 251,
+              "n_inside": 20,
+              "n_baseline": 217,
+              "depth": 35.24473642894951,
+              "error": 31.79860412317563,
+              "conditional_snr": 1.108373697550524,
+              "baseline": -659.504262594488,
+              "residual_sigma": 126.62516993478395,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 20,
+            "128": 2
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.02124692335854491,
+            "depth_diagonal_error": 0.0037559694849261635,
+            "midpoint_btjd": 3118.093403664751,
+            "midpoint_shift_days": -0.00223999560838556,
+            "midpoint_diagonal_error_days": 0.002885800028521309,
+            "duration_days": 0.06644185753933371,
+            "duration_diagonal_error_days": 0.0075877320978090315,
+            "chi2": 401.45178669419914,
+            "ndof": 245,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.002314825166195078,
+            "boundary_warning": false
+          }
+        }
+      ]
+    },
+    {
+      "sector": 93,
+      "original": {
+        "tic": 214311908,
+        "sector": 93,
+        "url": "https://archive.stsci.edu/hlsps/qlp/s0093/0000/0002/1431/1908/hlsp_qlp_tess_ffi_s0093-0000000214311908_tess_v01_llc.fits",
+        "http_status": 200,
+        "path": "/workspace/tess-research-data/tic214311908/queries/hlsp_qlp_tess_ffi_s0093-0000000214311908_tess_v01_llc.fits",
+        "sha256": "de0ee0a99309168efa0854f8cb1b1df9d0dd520bbbe8432e313f0e432aeae875",
+        "bytes": 673920,
+        "retrieved_utc": "2026-10-17T13:37:07.565924+00:00",
+        "request_body": null
+      },
+      "n_total": 11047,
+      "n_quality_zero": 8908,
+      "time_min": 3830.476590570318,
+      "time_max": 3854.7751529289617,
+      "channels": {
+        "SAP_FLUX": {
+          "median": 1.020716369152069,
+          "robust_scatter": 0.2118967057268301,
+          "n": 8908,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 13.898700529634539,
+              "power": 0.8478967181304977
+            },
+            {
+              "period": 6.259943066456609,
+              "power": 0.09756466163840316
+            },
+            {
+              "period": 4.845246389825183,
+              "power": 0.04795473568938484
+            },
+            {
+              "period": 3.4312274420852997,
+              "power": 0.04289822329582198
+            },
+            {
+              "period": 2.695369507196608,
+              "power": 0.040266293941698894
+            },
+            {
+              "period": 2.205966493697396,
+              "power": 0.015422248607328635
+            },
+            {
+              "period": 1.4985303778048695,
+              "power": 0.00894957723795542
+            },
+            {
+              "period": 1.725554720919767,
+              "power": 0.006524927736966006
+            },
+            {
+              "period": 4.084985597510024,
+              "power": 0.0059885282995320865
+            },
+            {
+              "period": 1.86697630124939,
+              "power": 0.005388196688670324
+            },
+            {
+              "period": 1.3388920158492275,
+              "power": 0.0043358228695648355
+            },
+            {
+              "period": 1.2059880410732668,
+              "power": 0.0035536769393078077
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.004425376824192887,
+            "error": 0.002607087781368247,
+            "conditional_snr": 1.6974406676365796,
+            "sine": 0.00018018126672739824,
+            "cosine": -0.004421707220884715,
+            "phase_rad_at_btjd3000": -1.5300696059727492
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0017199676074269715,
+            "error": 0.002602031114615292,
+            "conditional_snr": 0.6610096235076217,
+            "sine": -0.001693898939748764,
+            "cosine": 0.0002983202180812996,
+            "phase_rad_at_btjd3000": 2.967265779012209
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.04261137437812528,
+            "error": 0.002611990639654397,
+            "conditional_snr": 16.31375462500255,
+            "sine": 0.04256333857451276,
+            "cosine": 0.0020227297852519733,
+            "phase_rad_at_btjd3000": 0.04748709076228129
+          }
+        },
+        "DET_FLUX": {
+          "median": 1.0000687837600708,
+          "robust_scatter": 0.014019486213499929,
+          "n": 8908,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.15797271861684098,
+              "power": 0.004234056836969611
+            },
+            {
+              "period": 0.15949353230011462,
+              "power": 0.0027624069417890185
+            },
+            {
+              "period": 0.32191373841509724,
+              "power": 0.002474875495586634
+            },
+            {
+              "period": 0.24474387635857214,
+              "power": 0.002087362211958166
+            },
+            {
+              "period": 0.3737382023182116,
+              "power": 0.0019202385281473296
+            },
+            {
+              "period": 1.0318622633323056,
+              "power": 0.0015874813137347502
+            },
+            {
+              "period": 0.14966937213514775,
+              "power": 0.0015393158834631085
+            },
+            {
+              "period": 0.16709812859748124,
+              "power": 0.0014915600863127983
+            },
+            {
+              "period": 0.6939486574641776,
+              "power": 0.0014892972088496295
+            },
+            {
+              "period": 0.2537754940961653,
+              "power": 0.001458919885956587
+            },
+            {
+              "period": 0.24824444689643502,
+              "power": 0.0013703190150114197
+            },
+            {
+              "period": 0.6052207861637756,
+              "power": 0.0013661853347485223
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0004192630221839153,
+            "error": 0.00022143999787049265,
+            "conditional_snr": 1.893348203648005,
+            "sine": 0.0002095436597416885,
+            "cosine": 0.0003631431349108086,
+            "phase_rad_at_btjd3000": 1.047439487434143
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0013513842026513423,
+            "error": 0.00022102837649280634,
+            "conditional_snr": 6.114075595607177,
+            "sine": -0.0004618072866977057,
+            "cosine": -0.0012700288552345994,
+            "phase_rad_at_btjd3000": -1.919552456563651
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.0002646077866095166,
+            "error": 0.0002158699030125028,
+            "conditional_snr": 1.2257743340635634,
+            "sine": 9.330369035656609e-05,
+            "cosine": 0.00024761199910390753,
+            "phase_rad_at_btjd3000": 1.2104361699326218
+          },
+          "best_short_period": {
+            "period": 0.15798693554169363,
+            "power": 0.004236280561332788,
+            "fit": {
+              "amplitude": 0.00136055916095309,
+              "error": 0.000221047842889259,
+              "conditional_snr": 6.155043827479039,
+              "sine": 0.0008084084498009697,
+              "cosine": -0.0010943477549407085,
+              "phase_rad_at_btjd3000": -0.9345583935343078
+            },
+            "gaussian_single_sector_Baluev_FAP_0p05to20cyclesday": 1.4146300896500949e-05
+          },
+          "short_half_samples": [
+            {
+              "amplitude": 0.0013904098589781998,
+              "error": 0.00031290802682210897,
+              "conditional_snr": 4.443509721048672,
+              "sine": -0.0008290793688359019,
+              "cosine": -0.0011161841138962872,
+              "phase_rad_at_btjd3000": -2.20966067590999
+            },
+            {
+              "amplitude": 0.001426796829095173,
+              "error": 0.0003122378811328649,
+              "conditional_snr": 4.569582729419164,
+              "sine": -9.265657088308159e-05,
+              "cosine": -0.001423785079072059,
+              "phase_rad_at_btjd3000": -1.6357823281008177
+            }
+          ]
+        },
+        "DET_FLUX_SML": {
+          "median": 0.9998767971992493,
+          "robust_scatter": 0.010560127942827855,
+          "n": 8908,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.5272943020358458,
+              "power": 0.003857870443900726
+            },
+            {
+              "period": 0.5692983704397936,
+              "power": 0.0026357885772423386
+            },
+            {
+              "period": 0.4719854243115414,
+              "power": 0.0024748348701469063
+            },
+            {
+              "period": 0.4322439460861402,
+              "power": 0.002369483911608692
+            },
+            {
+              "period": 0.24824444689643502,
+              "power": 0.002206031081382618
+            },
+            {
+              "period": 0.3956458649920479,
+              "power": 0.002108305258922974
+            },
+            {
+              "period": 0.15804121704716498,
+              "power": 0.002040909146085296
+            },
+            {
+              "period": 0.24474387635857214,
+              "power": 0.001993192358949595
+            },
+            {
+              "period": 0.6797131209239137,
+              "power": 0.0019126116927904357
+            },
+            {
+              "period": 0.2838122146779488,
+              "power": 0.001754061202147174
+            },
+            {
+              "period": 0.4904019161710286,
+              "power": 0.0017077863107153575
+            },
+            {
+              "period": 0.6336287862625347,
+              "power": 0.0016548258499494953
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0005034862524302329,
+            "error": 0.0001669743422871346,
+            "conditional_snr": 3.015351014615295,
+            "sine": 6.565076100261899e-05,
+            "cosine": 0.0004991877241739997,
+            "phase_rad_at_btjd3000": 1.4400316181068886
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0007111113991397868,
+            "error": 0.000166640075235381,
+            "conditional_snr": 4.2673492443839445,
+            "sine": -0.0001936897083190024,
+            "cosine": -0.0006842249037252627,
+            "phase_rad_at_btjd3000": -1.84665790641284
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.00010160800352760691,
+            "error": 0.00016284759618259335,
+            "conditional_snr": 0.6239453692253377,
+            "sine": 5.457334141458991e-05,
+            "cosine": 8.570844058616855e-05,
+            "phase_rad_at_btjd3000": 1.0038046773475449
+          }
+        },
+        "DET_FLUX_LAG": {
+          "median": 0.9999204874038696,
+          "robust_scatter": 0.017311129399932547,
+          "n": 8908,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 0.15797271861684098,
+              "power": 0.00483043380412725
+            },
+            {
+              "period": 0.15949353230011462,
+              "power": 0.0035708857312380556
+            },
+            {
+              "period": 0.3745062438633452,
+              "power": 0.0027602192079668746
+            },
+            {
+              "period": 0.32219830960584056,
+              "power": 0.0023454061315385157
+            },
+            {
+              "period": 0.24490833002228402,
+              "power": 0.0019434983508807983
+            },
+            {
+              "period": 0.14966937213514775,
+              "power": 0.001483596301634536
+            },
+            {
+              "period": 0.16709812859748124,
+              "power": 0.0014206240361143523
+            },
+            {
+              "period": 0.5124665020730903,
+              "power": 0.0013685715239263568
+            },
+            {
+              "period": 0.2537754940961653,
+              "power": 0.0013175706245502359
+            },
+            {
+              "period": 0.24841364018943776,
+              "power": 0.0012044490937443465
+            },
+            {
+              "period": 0.20302672605905622,
+              "power": 0.0011825357207945262
+            },
+            {
+              "period": 0.07007551316031274,
+              "power": 0.001147334621201471
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0004691846443657122,
+            "error": 0.00027568529862082746,
+            "conditional_snr": 1.7018848908988078,
+            "sine": 0.00026940118794435946,
+            "cosine": 0.0003841317878576931,
+            "phase_rad_at_btjd3000": 0.9591817207156822
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.0017885034551539793,
+            "error": 0.00027520097883032335,
+            "conditional_snr": 6.498899323525628,
+            "sine": -0.0006923558836028891,
+            "cosine": -0.0016490566817238832,
+            "phase_rad_at_btjd3000": -1.9682965129653338
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.00018063657866832696,
+            "error": 0.00026904091536659514,
+            "conditional_snr": 0.6714093223411449,
+            "sine": 4.9988119479279806e-05,
+            "cosine": 0.00017358214615542672,
+            "phase_rad_at_btjd3000": 1.2904035630539985
+          }
+        },
+        "SAP_X": {
+          "median": 1795.1004638671875,
+          "robust_scatter": 0.02533740234375,
+          "n": 8908,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 12.913812558118916,
+              "power": 0.7699294473479452
+            },
+            {
+              "period": 7.718089089734377,
+              "power": 0.13938840608294986
+            },
+            {
+              "period": 3.4312274420852997,
+              "power": 0.05007877311146098
+            },
+            {
+              "period": 4.845246389825183,
+              "power": 0.024407600488029216
+            },
+            {
+              "period": 6.052054145158206,
+              "power": 0.02197239194652805
+            },
+            {
+              "period": 2.695369507196608,
+              "power": 0.014226484919412748
+            },
+            {
+              "period": 1.7174238999145925,
+              "power": 0.010076626482228325
+            },
+            {
+              "period": 4.039709516428451,
+              "power": 0.009033525697748398
+            },
+            {
+              "period": 1.9892513589967098,
+              "power": 0.007343765815822732
+            },
+            {
+              "period": 2.3943571492842866,
+              "power": 0.0038508323863405565
+            },
+            {
+              "period": 2.1795831094260367,
+              "power": 0.003734783133585632
+            },
+            {
+              "period": 1.2601946379483175,
+              "power": 0.0034244135292092743
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.00022884675997826096,
+            "error": 0.0003285372092301823,
+            "conditional_snr": 0.6965626831569163,
+            "sine": -9.869993607670595e-05,
+            "cosine": -0.00020646830790947538,
+            "phase_rad_at_btjd3000": -2.016721421102281
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.00022489384496231582,
+            "error": 0.00032824202126804035,
+            "conditional_snr": 0.6851464175534946,
+            "sine": -0.00011684154621037141,
+            "cosine": 0.00019215955500860162,
+            "phase_rad_at_btjd3000": 2.1171098592605038
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.0035027855264564926,
+            "error": 0.0003356006442105801,
+            "conditional_snr": 10.437362343853524,
+            "sine": 0.003167882433860586,
+            "cosine": -0.001494666293722655,
+            "phase_rad_at_btjd3000": -0.4408495142706486
+          }
+        },
+        "SAP_Y": {
+          "median": 626.0108947753906,
+          "robust_scatter": 0.038413311767578125,
+          "n": 8908,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 12.913812558118916,
+              "power": 0.306634383651373
+            },
+            {
+              "period": 6.154243496426866,
+              "power": 0.1881087597271284
+            },
+            {
+              "period": 8.43233146052016,
+              "power": 0.05725745405112573
+            },
+            {
+              "period": 4.781680434710593,
+              "power": 0.04971265238094758
+            },
+            {
+              "period": 2.695369507196608,
+              "power": 0.02584116199736384
+            },
+            {
+              "period": 3.4638362574991417,
+              "power": 0.025574136313022786
+            },
+            {
+              "period": 4.039709516428451,
+              "power": 0.021134218941894673
+            },
+            {
+              "period": 2.1926954405889076,
+              "power": 0.016371099127199275
+            },
+            {
+              "period": 3.031663166670126,
+              "power": 0.014978155993798656
+            },
+            {
+              "period": 1.6111401151990323,
+              "power": 0.006673134894552265
+            },
+            {
+              "period": 1.4985303778048695,
+              "power": 0.006010242964588671
+            },
+            {
+              "period": 1.2059880410732668,
+              "power": 0.005328597904080929
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 0.0007131792575390431,
+            "error": 0.0005352713823416588,
+            "conditional_snr": 1.3323694878270689,
+            "sine": 0.0003323669466363767,
+            "cosine": 0.000630996724371492,
+            "phase_rad_at_btjd3000": 1.0859915597398242
+          },
+          "known_EB_half_period": {
+            "amplitude": 0.00026062205958506004,
+            "error": 0.00053491944436602,
+            "conditional_snr": 0.48721739755403004,
+            "sine": 0.00018303283573106765,
+            "cosine": -0.0001855339294754536,
+            "phase_rad_at_btjd3000": -0.7921840583558184
+          },
+          "five_day_fundamental": {
+            "amplitude": 0.014787109066830374,
+            "error": 0.0005273270597520614,
+            "conditional_snr": 28.04162766421085,
+            "sine": -0.014055362889064808,
+            "cosine": 0.004594057967748864,
+            "phase_rad_at_btjd3000": 2.825684379367337
+          }
+        },
+        "SAP_BKG": {
+          "median": -105.22999954223633,
+          "robust_scatter": 190.12121190490723,
+          "n": 8908,
+          "initial_unflattened_LS_peaks": [
+            {
+              "period": 16.400275305519955,
+              "power": 0.2498518434925649
+            },
+            {
+              "period": 8.63203653544559,
+              "power": 0.10431612043444649
+            },
+            {
+              "period": 4.719760755870465,
+              "power": 0.07099840724756033
+            },
+            {
+              "period": 3.276978815193141,
+              "power": 0.05679679106404669
+            },
+            {
+              "period": 6.154243496426866,
+              "power": 0.05106991303255489
+            },
+            {
+              "period": 2.205966493697396,
+              "power": 0.04517807627837557
+            },
+            {
+              "period": 1.6401404154794663,
+              "power": 0.042431559170107276
+            },
+            {
+              "period": 1.8961138240519864,
+              "power": 0.04234404831632441
+            },
+            {
+              "period": 2.695369507196608,
+              "power": 0.039106816447459426
+            },
+            {
+              "period": 1.4742846597193007,
+              "power": 0.03612205759421422
+            },
+            {
+              "period": 1.2059880410732668,
+              "power": 0.03572113637720095
+            },
+            {
+              "period": 1.097086668048852,
+              "power": 0.032102130804821855
+            }
+          ],
+          "known_EB_fundamental": {
+            "amplitude": 13.903432740059559,
+            "error": 4.522381728183097,
+            "conditional_snr": 3.074360718692664,
+            "sine": -1.4985230177579547,
+            "cosine": -13.822440838094032,
+            "phase_rad_at_btjd3000": -1.678786895273697
+          },
+          "known_EB_half_period": {
+            "amplitude": 6.134027670683177,
+            "error": 4.518033789395298,
+            "conditional_snr": 1.3576763602523136,
+            "sine": -3.0254541010071936,
+            "cosine": -5.336002525056153,
+            "phase_rad_at_btjd3000": -2.086589197057185
+          },
+          "five_day_fundamental": {
+            "amplitude": 67.15280250072657,
+            "error": 4.442290350909901,
+            "conditional_snr": 15.116707192939755,
+            "sine": 58.92696477091921,
+            "cosine": 32.204218770037464,
+            "phase_rad_at_btjd3000": 0.5001603654341114
+          }
+        }
+      },
+      "events": [
+        {
+          "cycle": 387,
+          "predicted_time_btjd": 3835.2243827071943,
+          "known_EB_phase": 0.8293754544629337,
+          "nearest_quality_zero_days": 3.5761469007411506e-05,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 222,
+              "depth": 0.013708025858004777,
+              "error": 0.0035291129388353277,
+              "conditional_snr": 3.884269530498131,
+              "baseline": 1.047556304391878,
+              "residual_sigma": 0.015068174424247634,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 222,
+              "depth": 0.013976940384444355,
+              "error": 0.0033769689908005364,
+              "conditional_snr": 4.138901015235859,
+              "baseline": 0.9999639781303568,
+              "residual_sigma": 0.013763507865645532,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_SML": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 222,
+              "depth": 0.011882409846575116,
+              "error": 0.00260324421002368,
+              "conditional_snr": 4.564462220187567,
+              "baseline": 1.0014182048246252,
+              "residual_sigma": 0.010625468799596537,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_LAG": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 222,
+              "depth": 0.013217313506963186,
+              "error": 0.004441752127942483,
+              "conditional_snr": 2.9756981313330817,
+              "baseline": 0.9995150708170402,
+              "residual_sigma": 0.01809511606052502,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 222,
+              "depth": 1.7349911071765485e-05,
+              "error": 0.00036794209015920785,
+              "conditional_snr": 0.04715391779249341,
+              "baseline": 1795.1171350954469,
+              "residual_sigma": 0.001499675091298218,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 222,
+              "depth": 3.2351346676694536e-05,
+              "error": 0.0002956473122684255,
+              "conditional_snr": 0.10942547195329126,
+              "baseline": 625.9851659311458,
+              "residual_sigma": 0.001205012750311812,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 222,
+              "depth": -46.46724330623464,
+              "error": 29.437721583940018,
+              "conditional_snr": -1.5784931987258557,
+              "baseline": -158.91771963476657,
+              "residual_sigma": 119.98360335699685,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 21
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.013928973460401315,
+            "depth_diagonal_error": 0.0035235065978650587,
+            "midpoint_btjd": 3835.2233158236977,
+            "midpoint_shift_days": -0.0010668834966593374,
+            "midpoint_diagonal_error_days": 0.004119789165595572,
+            "duration_days": 0.06919252805195218,
+            "duration_diagonal_error_days": 0.011034431511984171,
+            "chi2": 250.42855588430848,
+            "ndof": 253,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.0023148127652348194,
+            "boundary_warning": false
+          }
+        },
+        {
+          "cycle": 388,
+          "predicted_time_btjd": 3840.9158806361374,
+          "known_EB_phase": 0.8357174987613689,
+          "nearest_quality_zero_days": 0.05957636248513154,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "no_in_window_cadences",
+              "n": 104,
+              "nearest_days": 0.05957636248513154
+            },
+            "DET_FLUX": {
+              "status": "no_in_window_cadences",
+              "n": 104,
+              "nearest_days": 0.05957636248513154
+            },
+            "DET_FLUX_SML": {
+              "status": "no_in_window_cadences",
+              "n": 104,
+              "nearest_days": 0.05957636248513154
+            },
+            "DET_FLUX_LAG": {
+              "status": "no_in_window_cadences",
+              "n": 104,
+              "nearest_days": 0.05957636248513154
+            },
+            "SAP_X": {
+              "status": "no_in_window_cadences",
+              "n": 104,
+              "nearest_days": 0.05957636248513154
+            },
+            "SAP_Y": {
+              "status": "no_in_window_cadences",
+              "n": 104,
+              "nearest_days": 0.05957636248513154
+            },
+            "SAP_BKG": {
+              "status": "no_in_window_cadences",
+              "n": 104,
+              "nearest_days": 0.05957636248513154
+            }
+          },
+          "inside_quality_counts": {
+            "2048": 21
+          },
+          "corrected_exploratory_shape": {
+            "status": "insufficient_data"
+          }
+        },
+        {
+          "cycle": 389,
+          "predicted_time_btjd": 3846.6073785650806,
+          "known_EB_phase": 0.8420595430598041,
+          "nearest_quality_zero_days": 0.001081137611890881,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 0.016932955643355466,
+              "error": 0.0028795795767336267,
+              "conditional_snr": 5.880356903545936,
+              "baseline": 1.1637572775513634,
+              "residual_sigma": 0.013937918560899466,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 0.017036169432935403,
+              "error": 0.0028487739955258807,
+              "conditional_snr": 5.980175843956531,
+              "baseline": 1.0031669870908588,
+              "residual_sigma": 0.011886052824525713,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_SML": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 0.01375019246282282,
+              "error": 0.002145007000271374,
+              "conditional_snr": 6.410325216226904,
+              "baseline": 1.0037903393616885,
+              "residual_sigma": 0.00895525905619467,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_LAG": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 0.019110889561057776,
+              "error": 0.0032472234492514716,
+              "conditional_snr": 5.885301661474233,
+              "baseline": 1.0039051021156677,
+              "residual_sigma": 0.013558488091496335,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": -0.00043811617314821143,
+              "error": 0.00037023363731464526,
+              "conditional_snr": -1.1833505359640668,
+              "baseline": 1795.1047476526476,
+              "residual_sigma": 0.0015398637728201037,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": 0.00019184364325817361,
+              "error": 0.0003665812140864417,
+              "conditional_snr": 0.5233318999618347,
+              "baseline": 626.0218815187144,
+              "residual_sigma": 0.0015246727322304082,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 260,
+              "n_inside": 22,
+              "n_baseline": 224,
+              "depth": -5.364358867505464,
+              "error": 26.01565600167129,
+              "conditional_snr": -0.2061973323740462,
+              "baseline": -25.67935788435394,
+              "residual_sigma": 108.20347522631448,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 22
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.01661828989918736,
+            "depth_diagonal_error": 0.002728878894068689,
+            "midpoint_btjd": 3846.6180092116942,
+            "midpoint_shift_days": 0.010630646613721354,
+            "midpoint_diagonal_error_days": 0.003339826177437184,
+            "duration_days": 0.08834951520977809,
+            "duration_diagonal_error_days": 0.009052460465118638,
+            "chi2": 259.0469270634473,
+            "ndof": 254,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.0023148127652348194,
+            "boundary_warning": false
+          }
+        },
+        {
+          "cycle": 390,
+          "predicted_time_btjd": 3852.2988764940237,
+          "known_EB_phase": 0.8484015873582393,
+          "nearest_quality_zero_days": 0.0005231290010669909,
+          "channels": {
+            "SAP_FLUX": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 223,
+              "depth": 0.017694030898212774,
+              "error": 0.004003657299449894,
+              "conditional_snr": 4.419466896091219,
+              "baseline": 0.8912976583844818,
+              "residual_sigma": 0.014562303372481107,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 223,
+              "depth": 0.017727901879140775,
+              "error": 0.0038182903114253237,
+              "conditional_snr": 4.642889993485895,
+              "baseline": 1.0057399179184454,
+              "residual_sigma": 0.015671300768676198,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_SML": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 223,
+              "depth": 0.01814087708279373,
+              "error": 0.0029431314586433922,
+              "conditional_snr": 6.163801154555152,
+              "baseline": 1.004038413021474,
+              "residual_sigma": 0.012058975202017305,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "DET_FLUX_LAG": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 223,
+              "depth": 0.01812374342972661,
+              "error": 0.005229560877935048,
+              "conditional_snr": 3.4656338940800278,
+              "baseline": 1.0049870160110723,
+              "residual_sigma": 0.02144747086750562,
+              "depth_definition": "positive is reduction; relative to fitted baseline"
+            },
+            "SAP_X": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 223,
+              "depth": -0.00010501286020111625,
+              "error": 0.00040670358057432284,
+              "conditional_snr": -0.25820490700579346,
+              "baseline": 1795.0625751861721,
+              "residual_sigma": 0.001659695469740609,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_Y": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 223,
+              "depth": -7.4949546214633125e-06,
+              "error": 0.00039012284936567525,
+              "conditional_snr": -0.019211780683058736,
+              "baseline": 626.059969718587,
+              "residual_sigma": 0.0015920320269129887,
+              "depth_definition": "positive is reduction, native units"
+            },
+            "SAP_BKG": {
+              "status": "measured",
+              "n": 259,
+              "n_inside": 21,
+              "n_baseline": 223,
+              "depth": 56.903673762839944,
+              "error": 25.003451071696713,
+              "conditional_snr": 2.275832788028749,
+              "baseline": -343.84871024129876,
+              "residual_sigma": 102.03528184574823,
+              "depth_definition": "positive is reduction, native units"
+            }
+          },
+          "inside_quality_counts": {
+            "0": 21
+          },
+          "corrected_exploratory_shape": {
+            "status": "fitted",
+            "depth": 0.020792831586169676,
+            "depth_diagonal_error": 0.00384086908177773,
+            "midpoint_btjd": 3852.3044000367736,
+            "midpoint_shift_days": 0.005523542749968543,
+            "midpoint_diagonal_error_days": 0.002847788417936087,
+            "duration_days": 0.06334806668810294,
+            "duration_diagonal_error_days": 0.007663995772259314,
+            "chi2": 316.9773557110651,
+            "ndof": 253,
+            "fixed_ingress_fraction": 0.2,
+            "exposure_days": 0.0023148127652348194,
+            "boundary_warning": false
+          }
+        }
+      ]
+    }
+  ],
+  "combined_short_period_peaks": [
+    {
+      "period": 0.15803812354679123,
+      "power": 0.0018604057991825859
+    },
+    {
+      "period": 0.1580037053389973,
+      "power": 0.0018534748880872007
+    },
+    {
+      "period": 0.15807180804510304,
+      "power": 0.001840934621808701
+    },
+    {
+      "period": 0.1579700498561961,
+      "power": 0.0018388486270357754
+    },
+    {
+      "period": 0.15810625593237504,
+      "power": 0.0018146748812514022
+    },
+    {
+      "period": 0.1579356612895401,
+      "power": 0.0018020258048462264
+    },
+    {
+      "period": 0.15813996948373646,
+      "power": 0.0017611792302397208
+    },
+    {
+      "period": 0.15790203478477505,
+      "power": 0.0017559630353949423
+    },
+    {
+      "period": 0.1581744470888929,
+      "power": 0.001701482914708268
+    },
+    {
+      "period": 0.1578676758209828,
+      "power": 0.0016949215545463848
+    },
+    {
+      "period": 0.159514125237046,
+      "power": 0.001648920116144801
+    },
+    {
+      "period": 0.15954844193658133,
+      "power": 0.0016400663936139133
+    },
+    {
+      "period": 0.1594790611986596,
+      "power": 0.0016342863125663855
+    },
+    {
+      "period": 0.15783407825684406,
+      "power": 0.0016223671564959778
+    },
+    {
+      "period": 0.15944477433513396,
+      "power": 0.0016185418137793317
+    },
+    {
+      "period": 0.15820818973090775,
+      "power": 0.0016169584660732093
+    },
+    {
+      "period": 0.15958353649390478,
+      "power": 0.0016159608862206405
+    },
+    {
+      "period": 0.1596178830684111,
+      "power": 0.001585220036370797
+    },
+    {
+      "period": 0.15941050221130285,
+      "power": 0.0015756811683481553
+    },
+    {
+      "period": 0.15779974885770723,
+      "power": 0.0015442474553039982
+    }
+  ],
+  "exploratory_timing_ephemeris": {
+    "epoch_btjd": 1632.6116121251637,
+    "period_days": 5.691513805926734,
+    "epoch_diagonal_error_days": 0.002312180823300305,
+    "period_diagonal_error_days": 8.821041527789156e-06,
+    "chi2": 17.218437867003306,
+    "ndof": 10,
+    "n_events": 12,
+    "exclusion": "weak first S12 event at cycle0 excluded; all other fitted events retained",
+    "warning": "free-duration per-event timings, diagonal uncertainties; not an independently validated physical ephemeris"
+  },
+  "local_event_sector_summaries": [
+    {
+      "sector": 12,
+      "channel": "SAP_FLUX",
+      "n_events": 2,
+      "depth": 0.013439047893190002,
+      "error": 0.0037255055687906657,
+      "conditional_snr": 3.607308496804219
+    },
+    {
+      "sector": 12,
+      "channel": "KSPSAP_FLUX",
+      "n_events": 2,
+      "depth": 0.013825938237724008,
+      "error": 0.0038580103146957485,
+      "conditional_snr": 3.583696545615471
+    },
+    {
+      "sector": 12,
+      "channel": "KSPSAP_FLUX_SML",
+      "n_events": 2,
+      "depth": 0.014818679744372794,
+      "error": 0.0029660902675123953,
+      "conditional_snr": 4.996031276148903
+    },
+    {
+      "sector": 12,
+      "channel": "KSPSAP_FLUX_LAG",
+      "n_events": 2,
+      "depth": 0.011684555541396354,
+      "error": 0.003819519224928045,
+      "conditional_snr": 3.0591691920640813
+    },
+    {
+      "sector": 12,
+      "channel": "SAP_X",
+      "n_events": 2,
+      "depth": -0.0009588591409318143,
+      "error": 0.00026715163366526406,
+      "conditional_snr": -3.5891943754057167
+    },
+    {
+      "sector": 12,
+      "channel": "SAP_Y",
+      "n_events": 2,
+      "depth": 0.0002062802480568152,
+      "error": 0.00024822238746053245,
+      "conditional_snr": 0.8310299895476346
+    },
+    {
+      "sector": 12,
+      "channel": "SAP_BKG",
+      "n_events": 2,
+      "depth": 303.3632740529969,
+      "error": 139.15496692256048,
+      "conditional_snr": 2.1800391373871557
+    },
+    {
+      "sector": 39,
+      "channel": "SAP_FLUX",
+      "n_events": 4,
+      "depth": 0.012922518661275488,
+      "error": 0.0015018126866190393,
+      "conditional_snr": 8.604614128255468
+    },
+    {
+      "sector": 39,
+      "channel": "KSPSAP_FLUX",
+      "n_events": 4,
+      "depth": 0.012927195774376411,
+      "error": 0.001538926553512043,
+      "conditional_snr": 8.400138229387728
+    },
+    {
+      "sector": 39,
+      "channel": "KSPSAP_FLUX_SML",
+      "n_events": 4,
+      "depth": 0.012563663336328412,
+      "error": 0.0011106320804521398,
+      "conditional_snr": 11.312173993041627
+    },
+    {
+      "sector": 39,
+      "channel": "KSPSAP_FLUX_LAG",
+      "n_events": 4,
+      "depth": 0.012967339842183975,
+      "error": 0.001815408247088733,
+      "conditional_snr": 7.142933201377134
+    },
+    {
+      "sector": 39,
+      "channel": "SAP_X",
+      "n_events": 4,
+      "depth": -0.0009960911261169977,
+      "error": 0.00022076700544258328,
+      "conditional_snr": -4.511956504189025
+    },
+    {
+      "sector": 39,
+      "channel": "SAP_Y",
+      "n_events": 4,
+      "depth": -7.452087917261355e-05,
+      "error": 0.00021871823085407285,
+      "conditional_snr": -0.34071635858436194
+    },
+    {
+      "sector": 39,
+      "channel": "SAP_BKG",
+      "n_events": 4,
+      "depth": -25.202597161969646,
+      "error": 24.130939564851264,
+      "conditional_snr": -1.0444101065455131
+    },
+    {
+      "sector": 66,
+      "channel": "SAP_FLUX",
+      "n_events": 4,
+      "depth": 0.019025085807602187,
+      "error": 0.0020958929036574924,
+      "conditional_snr": 9.077317726684397
+    },
+    {
+      "sector": 66,
+      "channel": "DET_FLUX",
+      "n_events": 4,
+      "depth": 0.018415936562597067,
+      "error": 0.002080057368230686,
+      "conditional_snr": 8.853571465801355
+    },
+    {
+      "sector": 66,
+      "channel": "DET_FLUX_SML",
+      "n_events": 4,
+      "depth": 0.01340639311575839,
+      "error": 0.00154458407250251,
+      "conditional_snr": 8.679613725420314
+    },
+    {
+      "sector": 66,
+      "channel": "DET_FLUX_LAG",
+      "n_events": 4,
+      "depth": 0.019644111451591794,
+      "error": 0.0024537349191357956,
+      "conditional_snr": 8.005800177677889
+    },
+    {
+      "sector": 66,
+      "channel": "SAP_X",
+      "n_events": 4,
+      "depth": -0.0002798498263487451,
+      "error": 0.00021547280800643436,
+      "conditional_snr": -1.2987709629717563
+    },
+    {
+      "sector": 66,
+      "channel": "SAP_Y",
+      "n_events": 4,
+      "depth": 6.381073511942432e-05,
+      "error": 0.00017913115609680054,
+      "conditional_snr": 0.3562235431838652
+    },
+    {
+      "sector": 66,
+      "channel": "SAP_BKG",
+      "n_events": 4,
+      "depth": 0.43736394824726993,
+      "error": 17.14944466813757,
+      "conditional_snr": 0.02550309684720349
+    },
+    {
+      "sector": 93,
+      "channel": "SAP_FLUX",
+      "n_events": 3,
+      "depth": 0.016129791174392682,
+      "error": 0.0019489226226588228,
+      "conditional_snr": 8.276260425561468
+    },
+    {
+      "sector": 93,
+      "channel": "DET_FLUX",
+      "n_events": 3,
+      "depth": 0.016246133649880663,
+      "error": 0.0018915114608041416,
+      "conditional_snr": 8.588969184978618
+    },
+    {
+      "sector": 93,
+      "channel": "DET_FLUX_SML",
+      "n_events": 3,
+      "depth": 0.01423167228963954,
+      "error": 0.0014428520551965222,
+      "conditional_snr": 9.863570030193518
+    },
+    {
+      "sector": 93,
+      "channel": "DET_FLUX_LAG",
+      "n_events": 3,
+      "depth": 0.01727211404175527,
+      "error": 0.002343468035615278,
+      "conditional_snr": 7.370322009628125
+    },
+    {
+      "sector": 93,
+      "channel": "SAP_X",
+      "n_events": 3,
+      "depth": -0.0001786480308806948,
+      "error": 0.00021964716307395468,
+      "conditional_snr": -0.813340943632149
+    },
+    {
+      "sector": 93,
+      "channel": "SAP_Y",
+      "n_events": 3,
+      "depth": 6.869529980061781e-05,
+      "error": 0.0001982136053574854,
+      "conditional_snr": 0.34657207146161007
+    },
+    {
+      "sector": 93,
+      "channel": "SAP_BKG",
+      "n_events": 3,
+      "depth": 6.966011138352847,
+      "error": 15.37364731214001,
+      "conditional_snr": 0.45311375998927994
+    }
+  ]
+}

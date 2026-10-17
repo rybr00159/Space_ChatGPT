@@ -1,0 +1,955 @@
+<!DOCTYPE html><html>
+<head>
+<title>20.13.8 vari_eclipsing_binary‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3</title>
+<!--Generated on Sat Jul 15 11:29:14 2023 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 10 July 2023.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../gaia_index-8-2-2.css" type="text/css">
+<link rel="stylesheet" href="../../../esdc_a.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+<script src="../../../collapse.js" type="text/javascript"></script>
+<script src="../../../navigation.js" type="text/javascript"></script>
+<script src="../../../jquery.min.js" type="text/javascript"></script>
+<link rel="up" href="." title="20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="up up" href="../" title="Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="up up up" href="../../" title="Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="up up up up" href="../../../" title="Gaia Data Release 3 Documentation release 1.3">
+<link rel="start" href="../../../" title="Gaia Data Release 3 Documentation release 1.3">
+<link rel="prev" href="ssec_dm_vari_compact_companion.html" title="20.13.7 vari_compact_companion ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="next" href="ssec_dm_vari_epoch_radial_velocity.html" title="20.13.9 vari_epoch_radial_velocity ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_summary.html" title="20.13.1 vari_summary ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_classifier_result.html" title="20.13.2 vari_classifier_result ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_classifier_definition.html" title="20.13.3 vari_classifier_definition ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_classifier_class_definition.html" title="20.13.4 vari_classifier_class_definition ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_agn.html" title="20.13.5 vari_agn ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_cepheid.html" title="20.13.6 vari_cepheid ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_compact_companion.html" title="20.13.7 vari_compact_companion ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_epoch_radial_velocity.html" title="20.13.9 vari_epoch_radial_velocity ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_rad_vel_statistics.html" title="20.13.10 vari_rad_vel_statistics ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_long_period_variable.html" title="20.13.11 vari_long_period_variable ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_microlensing.html" title="20.13.12 vari_microlensing ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_ms_oscillator.html" title="20.13.13 vari_ms_oscillator ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_planetary_transit.html" title="20.13.14 vari_planetary_transit ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_rotation_modulation.html" title="20.13.15 vari_rotation_modulation ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_rrlyrae.html" title="20.13.16 vari_rrlyrae ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="subsection" href="ssec_dm_vari_short_timescale.html" title="20.13.17 vari_short_timescale ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_main_source_catalogue/" title="20.1 Main source catalogue ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_astrophysical_parameter_tables/" title="20.2 Astrophysical parameter tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_auxiliary_tables/" title="20.3 Auxiliary tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_cross-matches/" title="20.4 Cross-matches ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_extra--galactic_tables/" title="20.5 Extra–galactic tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_non--single_stars_tables/" title="20.6 Non–single stars tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_photometry/" title="20.7 Photometry ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_reference_frame/" title="20.8 Reference frame ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_science_alert_tables/" title="20.9 Science alert tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_simulation_tables/" title="20.10 Simulation tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_solar_system_object_tables/" title="20.11 Solar System object tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_spectroscopic_tables/" title="20.12 Spectroscopic tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="." title="20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dm_performance_verification/" title="20.14 Performance verification ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="section" href="../sec_dmdiff_dm_diffs/" title="20.15 Differences between the Gaia DR3 and EDR3/DR2 data models ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="chapter" href="../../chap_archive/" title="Chapter 18 Gaia ESA Archive ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="chapter" href="../../chap_cu9pvp/" title="Chapter 19 Performance verification ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="chapter" href="../" title="Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="part" href="../../../Introduction/" title="Part I Introduction to Gaia Data Release 3 ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="part" href="../../../Data_processing/" title="Part II Gaia data processing ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="part" href="../../../Data_analysis/" title="Part III Gaia data analysis ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="part" href="../../../Catalogue_consolidation/" title="Part IV Gaia catalogue ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="part" href="../../" title="Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="appendix" href="../../../Miscellaneous/" title="Miscellaneous ‣ Gaia Data Release 3 Documentation release 1.3">
+<link rel="bibliography" href="../../../bib.html" title="Bibliography ‣ Gaia Data Release 3 Documentation release 1.3">
+<style>
+
+.toc {
+	overflow: hidden;
+    float:left;
+    width: 150px;
+    height: 100%;
+    width: 15%;
+    
+}
+
+
+nav.ltx_page_navbar {
+    display: none;
+    /*margin-bottom: 1em;
+    padding: .25em;
+    border: black thin solid;
+    background-color: #EEEEFF;
+    width: 40em;*/
+	
+}
+
+figure.ltx_table figcaption::after {content: ' [Note that wide tables may scroll horizontally using scroll bars found below tables.]';}
+.ltx_page_main .ltx_page_content figure.ltx_table {max-width:100vw;}
+</style>
+<!-- Matomo --><script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//esdcwebanalytics.esac.esa.int/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '30']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script><!-- End Matomo Code -->
+</head>
+<body>
+<!--begin of second insertion point--><div class="esdc_tb">
+<div id="skiptocontent"><a href="#maincontent">skip to main content</a></div>
+<ul>
+<li class="esdc_external"><div class="esdch4"><a target="_blank" href="http://www.esa.int/"><span>→</span> European Space Agency
+
+					</a></div></li>
+<li class="esdc_external"><div class="esdch4"><a href="http://www.esa.int/About_Us/ESAC" target="_blank">About
+						ESAC</a></div></li>
+</ul>
+</div>
+<div id="esdc_top-title"><div class="title"><a href="/archive/documentation/GDR3/"><h3>gaia data release 3 documentation</h3></a></div></div>
+<div class="w3-container">
+<div id="search_box_nav" align="right"><form action="/archive/documentation/GDR3/search/search.php" method="get">
+<input name="query" id="query" size="auto" action="/archive/documentation/GDR3/search/include/js_suggest/suggest.php" columns="2" autocomplete="on" delay="1500" type="text"><input value="Search" type="submit"><input name="search" value="1" type="hidden">
+</form></div>
+<div class="buttonHolder"><p class="button" style="margin:0;padding:0;"><button id="button1" class="buttonControl" aria-controls="ltx_page_navbar"><span>Show</span> Contents</button></p></div>
+</div>
+<!--end of second insertion point--><div class="main-holder w3-container">
+<nav class="ltx_page_navbar" aria-expanded="false"><a href="../../../" title="Gaia Data Release 3 Documentation release 1.3" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Gaia Data Release 3 <span class="ltx_text"> </span><span class="ltx_ref" style="font-size:90%;">Documentation release 1.3</span></span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_document">
+<a href="../../../" title="Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title">Gaia Data Release 3 <span class="ltx_text"> </span><span class="ltx_ref" style="font-size:90%;">Documentation release 1.3</span></span></a>
+<ul class="ltx_toclist ltx_toclist_document">
+<li class="ltx_tocentry ltx_tocentry_part"><a href="../../../Introduction/" title="Part I Introduction to Gaia Data Release 3 ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">I </span>Introduction to Gaia Data Release 3</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_part"><a href="../../../Data_processing/" title="Part II Gaia data processing ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II </span>Gaia data processing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_part"><a href="../../../Data_analysis/" title="Part III Gaia data analysis ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">III </span>Gaia data analysis</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_part"><a href="../../../Catalogue_consolidation/" title="Part IV Gaia catalogue ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV </span>Gaia catalogue</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_part">
+<a href="../../" title="Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V </span>Gaia archive</span></a>
+<ul class="ltx_toclist ltx_toclist_part">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../chap_archive/" title="Chapter 18 Gaia ESA Archive ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Gaia ESA Archive</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../chap_cu9pvp/" title="Chapter 19 Performance verification ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Performance verification</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../" title="Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>Datamodel description</span></a>
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_main_source_catalogue/" title="20.1 Main source catalogue ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.1 </span>Main source catalogue</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_astrophysical_parameter_tables/" title="20.2 Astrophysical parameter tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.2 </span>Astrophysical parameter tables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_auxiliary_tables/" title="20.3 Auxiliary tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.3 </span>Auxiliary tables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_cross-matches/" title="20.4 Cross-matches ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.4 </span>Cross-matches</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_extra--galactic_tables/" title="20.5 Extra–galactic tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.5 </span>Extra–galactic tables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_non--single_stars_tables/" title="20.6 Non–single stars tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.6 </span>Non–single stars tables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_photometry/" title="20.7 Photometry ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.7 </span>Photometry</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_reference_frame/" title="20.8 Reference frame ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.8 </span>Reference frame</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_science_alert_tables/" title="20.9 Science alert tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.9 </span>Science alert tables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_simulation_tables/" title="20.10 Simulation tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.10 </span>Simulation tables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_solar_system_object_tables/" title="20.11 Solar System object tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.11 </span>Solar System object tables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_spectroscopic_tables/" title="20.12 Spectroscopic tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.12 </span>Spectroscopic tables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="." title="20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13 </span>Variability tables</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_summary.html" title="20.13.1 vari_summary ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.1 </span>vari_summary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_classifier_result.html" title="20.13.2 vari_classifier_result ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.2 </span>vari_classifier_result</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_classifier_definition.html" title="20.13.3 vari_classifier_definition ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.3 </span>vari_classifier_definition</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_classifier_class_definition.html" title="20.13.4 vari_classifier_class_definition ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.4 </span>vari_classifier_class_definition</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_agn.html" title="20.13.5 vari_agn ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.5 </span>vari_agn</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_cepheid.html" title="20.13.6 vari_cepheid ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.6 </span>vari_cepheid</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_compact_companion.html" title="20.13.7 vari_compact_companion ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.7 </span>vari_compact_companion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.8 </span>vari_eclipsing_binary</span></span></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_epoch_radial_velocity.html" title="20.13.9 vari_epoch_radial_velocity ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.9 </span>vari_epoch_radial_velocity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_rad_vel_statistics.html" title="20.13.10 vari_rad_vel_statistics ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.10 </span>vari_rad_vel_statistics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_long_period_variable.html" title="20.13.11 vari_long_period_variable ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.11 </span>vari_long_period_variable</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_microlensing.html" title="20.13.12 vari_microlensing ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.12 </span>vari_microlensing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_ms_oscillator.html" title="20.13.13 vari_ms_oscillator ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.13 </span>vari_ms_oscillator</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_planetary_transit.html" title="20.13.14 vari_planetary_transit ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.14 </span>vari_planetary_transit</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_rotation_modulation.html" title="20.13.15 vari_rotation_modulation ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.15 </span>vari_rotation_modulation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_rrlyrae.html" title="20.13.16 vari_rrlyrae ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.16 </span>vari_rrlyrae</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="ssec_dm_vari_short_timescale.html" title="20.13.17 vari_short_timescale ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.17 </span>vari_short_timescale</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dm_performance_verification/" title="20.14 Performance verification ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.14 </span>Performance verification</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_dmdiff_dm_diffs/" title="20.15 Differences between the Gaia DR3 and EDR3/DR2 data models ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.15 </span>Differences between the Gaia DR3 and EDR3/DR2 data models</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../../Miscellaneous/" title="Miscellaneous ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title">Miscellaneous</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../../bib.html" title="Bibliography ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main" id="maincontent">
+<header class="ltx_page_header">
+<div>
+<a href="." title="20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13 </span>Variability tables</span></a><a href="ssec_dm_vari_compact_companion.html" title="20.13.7 vari_compact_companion ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.7 </span>vari_compact_companion</span></a><a href="ssec_dm_vari_epoch_radial_velocity.html" title="20.13.9 vari_epoch_radial_velocity ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.9 </span>vari_epoch_radial_velocity</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">20.13.8 </span><span class="ltx_text ltx_font_smallcaps" style="font-size:120%;">vari_eclipsing_binary</span> </h1>
+<div class="ltx_date ltx_role_creation"></div>
+
+<div id="p1" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p">This table describes the properties of the eclipsing binaries resulting from the variability analysis.</p>
+</blockquote>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Columns description:</span></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">solution_id <a name="vari_eclipsing_binary-solution_id" id="vari_eclipsing_binary-solution_id" class="ltx_anchor"></a></span>: Solution Identifier (long)</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">All Gaia data processed by the Data Processing and Analysis Consortium comes tagged with a solution identifier. This is a numeric field attached to each table row that can be used to unequivocally identify the version of all the subsystems that were used in the generation of the data as well as the input data used. It is mainly for internal DPAC use but is included in the published data releases to enable end users to examine the provenance of processed data products. To decode a given solution ID visit <a href="https://gaia.esac.esa.int/decoder/solnDecoder.jsp" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://gaia.esac.esa.int/decoder/solnDecoder.jsp</a>
+<br class="ltx_break"></p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">source_id <a name="vari_eclipsing_binary-source_id" id="vari_eclipsing_binary-source_id" class="ltx_anchor"></a></span>: Unique source identifier (long)</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">A unique single numerical identifier of the source obtained from <span class="ltx_text ltx_font_typewriter">gaia_source</span> (for a detailed description see <span class="ltx_text ltx_font_typewriter">gaia_source.<a href="../sec_dm_main_source_catalogue/ssec_dm_gaia_source.html#gaia_source-source_id" title="20.1.1 gaia_source ‣ 20.1 Main source catalogue ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref">source_id</a></span>).
+<br class="ltx_break"></p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">global_ranking <a name="vari_eclipsing_binary-global_ranking" id="vari_eclipsing_binary-global_ranking" class="ltx_anchor"></a></span>: Number between 0 (worst) and 1 (best) (float)</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Number between 0 (worst) and 1 (best), based on the fraction of variance unexplained (FVU) for the geometrical model fit.
+<br class="ltx_break"></p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">reference_time <a name="vari_eclipsing_binary-reference_time" id="vari_eclipsing_binary-reference_time" class="ltx_anchor"></a></span>: Reference time used for the geometric model fit (double, Time[Barycentric JD in TCB <math id="p9.m1" class="ltx_Math" alttext="-" display="inline"><mo>-</mo></math> 2 455 197.5 (day)])</p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">Time with respect to which the phases of the gaussian components refer in the geometrical model, or of the cosine(s) if no gaussian component is present in the model.
+<br class="ltx_break"></p>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">frequency <a name="vari_eclipsing_binary-frequency" id="vari_eclipsing_binary-frequency" class="ltx_anchor"></a></span>: Frequency of geometric model of the eclipsing binary light curve (double, Frequency[day<math id="p11.m1" class="ltx_Math" alttext="{}^{-1}" display="inline"><msup><mi></mi><mrow><mo>-</mo><mn>1</mn></mrow></msup></math>])</p>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p">Frequency of geometric model of the eclipsing binary light curve.
+<br class="ltx_break"></p>
+</div>
+<div id="p13" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">frequency_error <a name="vari_eclipsing_binary-frequency_error" id="vari_eclipsing_binary-frequency_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">frequency</span> (float, Frequency[day<math id="p13.m1" class="ltx_Math" alttext="{}^{-1}" display="inline"><msup><mi></mi><mrow><mo>-</mo><mn>1</mn></mrow></msup></math>])</p>
+</div>
+<div id="p14" class="ltx_para">
+<p class="ltx_p">Uncertainty of <span class="ltx_text ltx_font_typewriter">frequency</span>.
+<br class="ltx_break"></p>
+</div>
+<div id="p15" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_reference_level <a name="vari_eclipsing_binary-geom_model_reference_level" id="vari_eclipsing_binary-geom_model_reference_level" class="ltx_anchor"></a></span>: Magnitude reference level of geometric model (float, Magnitude[mag])</p>
+</div>
+<div id="p16" class="ltx_para">
+<p class="ltx_p">Magnitude reference level of geometric model.
+<br class="ltx_break"></p>
+</div>
+<div id="p17" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_reference_level_error <a name="vari_eclipsing_binary-geom_model_reference_level_error" id="vari_eclipsing_binary-geom_model_reference_level_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_reference_level</span> (float, Magnitude[mag])</p>
+</div>
+<div id="p18" class="ltx_para">
+<p class="ltx_p">Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_reference_level</span>.
+<br class="ltx_break"></p>
+</div>
+<div id="p19" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian1_phase <a name="vari_eclipsing_binary-geom_model_gaussian1_phase" id="vari_eclipsing_binary-geom_model_gaussian1_phase" class="ltx_anchor"></a></span>: Phase of the Gaussian 1 component (float)</p>
+</div>
+<div id="p20" class="ltx_para">
+<p class="ltx_p">Phase with respect to reference_time. NaN if no Gaussian component in the model. Note: Gaussian1 does not necessarily correspond to the deepest eclipse.
+<br class="ltx_break"></p>
+</div>
+<div id="p21" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian1_phase_error <a name="vari_eclipsing_binary-geom_model_gaussian1_phase_error" id="vari_eclipsing_binary-geom_model_gaussian1_phase_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span> (float)</p>
+</div>
+<div id="p22" class="ltx_para">
+<p class="ltx_p">Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span>.
+<br class="ltx_break"></p>
+</div>
+<div id="p23" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian1_sigma <a name="vari_eclipsing_binary-geom_model_gaussian1_sigma" id="vari_eclipsing_binary-geom_model_gaussian1_sigma" class="ltx_anchor"></a></span>: Standard deviation [phase] of Gaussian 1 component (float)</p>
+</div>
+<div id="p24" class="ltx_para">
+<p class="ltx_p">NaN if no Gaussian component in the model. Note: Gaussian1 does not necessarily correspond to the deepest eclipse.
+<br class="ltx_break"></p>
+</div>
+<div id="p25" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian1_sigma_error <a name="vari_eclipsing_binary-geom_model_gaussian1_sigma_error" id="vari_eclipsing_binary-geom_model_gaussian1_sigma_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_sigma</span> (float)</p>
+</div>
+<div id="p26" class="ltx_para">
+<p class="ltx_p">Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_sigma</span>.
+<br class="ltx_break"></p>
+</div>
+<div id="p27" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian1_depth <a name="vari_eclipsing_binary-geom_model_gaussian1_depth" id="vari_eclipsing_binary-geom_model_gaussian1_depth" class="ltx_anchor"></a></span>: Magnitude depth of Gaussian 1 component (float, Magnitude[mag])</p>
+</div>
+<div id="p28" class="ltx_para">
+<p class="ltx_p">NaN if no Gaussian component in the model. Note: Gaussian1 does not necessarily correspond to the deepest eclipse.
+<br class="ltx_break"></p>
+</div>
+<div id="p29" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian1_depth_error <a name="vari_eclipsing_binary-geom_model_gaussian1_depth_error" id="vari_eclipsing_binary-geom_model_gaussian1_depth_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_depth</span> (float, Magnitude[mag])</p>
+</div>
+<div id="p30" class="ltx_para">
+<p class="ltx_p">Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_depth</span>. It can be null when the model could not derive it.
+<br class="ltx_break"></p>
+</div>
+<div id="p31" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian2_phase <a name="vari_eclipsing_binary-geom_model_gaussian2_phase" id="vari_eclipsing_binary-geom_model_gaussian2_phase" class="ltx_anchor"></a></span>: Phase of Gaussian 2 component (float)</p>
+</div>
+<div id="p32" class="ltx_para">
+<p class="ltx_p">Phase with respect to reference_time. NaN if no second Gaussian component in the model
+<br class="ltx_break"></p>
+</div>
+<div id="p33" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian2_phase_error <a name="vari_eclipsing_binary-geom_model_gaussian2_phase_error" id="vari_eclipsing_binary-geom_model_gaussian2_phase_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase</span> (float)</p>
+</div>
+<div id="p34" class="ltx_para">
+<p class="ltx_p">Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase</span>.
+<br class="ltx_break"></p>
+</div>
+<div id="p35" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian2_sigma <a name="vari_eclipsing_binary-geom_model_gaussian2_sigma" id="vari_eclipsing_binary-geom_model_gaussian2_sigma" class="ltx_anchor"></a></span>: Standard deviation [phase] of Gaussian 2 component (float)</p>
+</div>
+<div id="p36" class="ltx_para">
+<p class="ltx_p">NaN if no second Gaussian component in the model
+<br class="ltx_break"></p>
+</div>
+<div id="p37" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian2_sigma_error <a name="vari_eclipsing_binary-geom_model_gaussian2_sigma_error" id="vari_eclipsing_binary-geom_model_gaussian2_sigma_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_sigma</span> (float)</p>
+</div>
+<div id="p38" class="ltx_para">
+<p class="ltx_p">Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_sigma</span>.
+<br class="ltx_break"></p>
+</div>
+<div id="p39" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian2_depth <a name="vari_eclipsing_binary-geom_model_gaussian2_depth" id="vari_eclipsing_binary-geom_model_gaussian2_depth" class="ltx_anchor"></a></span>: Magnitude depth of Gaussian2 component (float, Magnitude[mag])</p>
+</div>
+<div id="p40" class="ltx_para">
+<p class="ltx_p">NaN if no second Gaussian component in the model
+<br class="ltx_break"></p>
+</div>
+<div id="p41" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_gaussian2_depth_error <a name="vari_eclipsing_binary-geom_model_gaussian2_depth_error" id="vari_eclipsing_binary-geom_model_gaussian2_depth_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_depth</span> (float, Magnitude[mag])</p>
+</div>
+<div id="p42" class="ltx_para">
+<p class="ltx_p">Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_depth</span>. It can be null when the model could not derive it.
+<br class="ltx_break"></p>
+</div>
+<div id="p43" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_cosine_half_period_amplitude <a name="vari_eclipsing_binary-geom_model_cosine_half_period_amplitude" id="vari_eclipsing_binary-geom_model_cosine_half_period_amplitude" class="ltx_anchor"></a></span>: Amplitude of the cosine component with half the period of the geometric model (float, Magnitude[mag])</p>
+</div>
+<div id="p44" class="ltx_para">
+<p class="ltx_p">The amplitude is half peak-to-peak. NaN if no cosine component with half the period of the geometric model.
+<br class="ltx_break"></p>
+</div>
+<div id="p45" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_cosine_half_period_amplitude_error <a name="vari_eclipsing_binary-geom_model_cosine_half_period_amplitude_error" id="vari_eclipsing_binary-geom_model_cosine_half_period_amplitude_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_amplitude</span> (float, Magnitude[mag])</p>
+</div>
+<div id="p46" class="ltx_para">
+<p class="ltx_p">Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_amplitude</span>.
+<br class="ltx_break"></p>
+</div>
+<div id="p47" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_cosine_half_period_phase <a name="vari_eclipsing_binary-geom_model_cosine_half_period_phase" id="vari_eclipsing_binary-geom_model_cosine_half_period_phase" class="ltx_anchor"></a></span>: Reference phase of the cosine component with half the period of the geometric model (float)</p>
+</div>
+<div id="p48" class="ltx_para">
+<p class="ltx_p">Phase with respect to <span class="ltx_text ltx_font_typewriter">reference_time</span>. When model contains Gaussian(s) this phase is equal to either <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span> or <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase</span>. NaN if no cosine component with half the period of the geometric model.
+<br class="ltx_break"></p>
+</div>
+<div id="p49" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">geom_model_cosine_half_period_phase_error <a name="vari_eclipsing_binary-geom_model_cosine_half_period_phase_error" id="vari_eclipsing_binary-geom_model_cosine_half_period_phase_error" class="ltx_anchor"></a></span>: Uncertainty of <span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_phase</span> (float)
+</p>
+</div>
+<div id="p50" class="ltx_para">
+<p class="ltx_p">When model contains Gaussian(s) this uncertainty is the same as either <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase_error</span> or <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase_error</span>.
+<br class="ltx_break"></p>
+</div>
+<div id="p51" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">model_type <a name="vari_eclipsing_binary-model_type" id="vari_eclipsing_binary-model_type" class="ltx_anchor"></a></span>: Type of geometrical model of the light curve (string)</p>
+</div>
+<div id="p52" class="ltx_para">
+<p class="ltx_p">Type of eclipsing binary geometric model of the G-band light curve.
+For each model the <span class="ltx_text ltx_font_typewriter">frequency</span> and <span class="ltx_text ltx_font_typewriter">geom_model_reference_level</span> as well as their uncertainties (<span class="ltx_text ltx_font_typewriter">_error</span>) are set. The additional fields (and their uncertainty) that are available for each <span class="ltx_text ltx_font_typewriter">model_type</span> are specified below:</p>
+</div>
+<div id="p53" class="ltx_para">
+<ul id="Ch20.I127" class="ltx_itemize">
+<li id="Ch20.I127.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="Ch20.I127.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">ONEGAUSSIAN</span> 
+<br class="ltx_break">Geometric model parameters defined:</p>
+<ul id="Ch20.I127.I1" class="ltx_itemize">
+<li id="Ch20.I127.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_sigma</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_depth</span></p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Derived parameters defined:</p>
+<ul id="Ch20.I127.I2" class="ltx_itemize">
+<li id="Ch20.I127.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_duration</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_depth</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch20.I127.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="Ch20.I127.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">ONEGAUSSIAN_WITH_ELLIPSOIDAL
+<br class="ltx_break"></span>Geometric model parameters defined:</p>
+<ul id="Ch20.I127.I3" class="ltx_itemize">
+<li id="Ch20.I127.I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_sigma</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I3.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_depth</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I3.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_amplitude</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I3.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I3.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_phase</span></p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Derived parameters defined:</p>
+<ul id="Ch20.I127.I4" class="ltx_itemize">
+<li id="Ch20.I127.I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_duration</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I4.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_depth</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch20.I127.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="Ch20.I127.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">TWOGAUSSIANS</span> 
+<br class="ltx_break">Geometric model parameters defined:</p>
+<ul id="Ch20.I127.I5" class="ltx_itemize">
+<li id="Ch20.I127.I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I5.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I5.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_sigma</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I5.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_depth</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I5.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I5.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase</span>
+</p>
+</div>
+</li>
+<li id="Ch20.I127.I5.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I5.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_sigma</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I5.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I5.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_depth</span></p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Derived parameters defined:</p>
+<ul id="Ch20.I127.I6" class="ltx_itemize">
+<li id="Ch20.I127.I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I6.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I6.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_duration</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I6.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I6.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_depth</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I6.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I6.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I6.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I6.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_duration</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I6.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I6.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_depth</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch20.I127.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="Ch20.I127.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">TWOGAUSSIANS_WITH_ELLIPSOIDAL_ON_ECLIPSE1</span> 
+<br class="ltx_break">In this model <span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_phase</span> is the same as <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span>.
+Geometric model parameters defined:</p>
+<ul id="Ch20.I127.I7" class="ltx_itemize">
+<li id="Ch20.I127.I7.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I7.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I7.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I7.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_sigma</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I7.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I7.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_depth</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I7.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I7.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I7.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I7.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_sigma</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I7.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I7.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_depth</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I7.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I7.i7.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_amplitude</span>
+</p>
+</div>
+</li>
+<li id="Ch20.I127.I7.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I7.i8.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_phase</span></p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Derived parameters defined:</p>
+<ul id="Ch20.I127.I8" class="ltx_itemize">
+<li id="Ch20.I127.I8.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I8.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I8.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I8.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_duration</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I8.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I8.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_depth</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I8.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I8.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I8.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I8.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_duration</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I8.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I8.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_depth</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch20.I127.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="Ch20.I127.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">TWOGAUSSIANS_WITH_ELLIPSOIDAL_ON_ECLIPSE2</span> 
+<br class="ltx_break">In this model <span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_phase</span> is the same as <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase</span>.
+Geometric model parameters defined:</p>
+<ul id="Ch20.I127.I9" class="ltx_itemize">
+<li id="Ch20.I127.I9.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I9.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I9.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I9.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_sigma</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I9.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I9.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_depth</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I9.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I9.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I9.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I9.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_sigma</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I9.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I9.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geomModelGaussian2Fepth</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I9.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I9.i7.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_amplitude</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I9.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I9.i8.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_phase</span>
+</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Derived parameters defined:</p>
+<ul id="Ch20.I127.I10" class="ltx_itemize">
+<li id="Ch20.I127.I10.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I10.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I10.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I10.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_duration</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I10.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I10.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_primary_ecl_depth</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I10.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I10.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_phase</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I10.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I10.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_duration</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I10.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I10.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_depth</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch20.I127.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="Ch20.I127.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">ELLIPSOIDAL</span> 
+<br class="ltx_break">Geometric model parameters defined:</p>
+<ul id="Ch20.I127.I11" class="ltx_itemize">
+<li id="Ch20.I127.I11.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I11.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_amplitude</span></p>
+</div>
+</li>
+<li id="Ch20.I127.I11.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch20.I127.I11.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">geom_model_cosine_half_period_phase</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="p54" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">num_model_parameters <a name="vari_eclipsing_binary-num_model_parameters" id="vari_eclipsing_binary-num_model_parameters" class="ltx_anchor"></a></span>: Number of free parameters of the geometric model (byte)</p>
+</div>
+<div id="p55" class="ltx_para">
+<p class="ltx_p">The number of parameters fitted for each model type.
+For each model the <span class="ltx_text ltx_font_typewriter">frequency</span> and <span class="ltx_text ltx_font_typewriter">geom_model_reference_level</span> are fitted, as well as the geometeric model parameters listed in the detailed description of <span class="ltx_text ltx_font_typewriter">model_type</span>.</p>
+</div>
+<div id="p56" class="ltx_para">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_th ltx_th_column"><span class="ltx_text ltx_font_typewriter">model_type</span></td>
+<td class="ltx_td ltx_align_left ltx_th ltx_th_column">Number of parameters</td>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_font_typewriter">ONEGAUSSIAN</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t">5</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">ONEGAUSSIAN_WITH_ELLIPSOIDAL</span></td>
+<td class="ltx_td ltx_align_left">6</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">TWOGAUSSIANS</span></td>
+<td class="ltx_td ltx_align_left">8</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">TWOGAUSSIANS_WITH_ELLIPSOIDAL_ON_ECLIPSE1</span></td>
+<td class="ltx_td ltx_align_left">9</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">TWOGAUSSIANS_WITH_ELLIPSOIDAL_ON_ECLIPSE2</span></td>
+<td class="ltx_td ltx_align_left">9</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><span class="ltx_text ltx_font_typewriter">ELLIPSOIDAL</span></td>
+<td class="ltx_td ltx_align_left">4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="p57" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">reduced_chi2 <a name="vari_eclipsing_binary-reduced_chi2" id="vari_eclipsing_binary-reduced_chi2" class="ltx_anchor"></a></span>: Reduced Chi2 of the geometrical model fit (float)</p>
+</div>
+<div id="p58" class="ltx_para">
+<p class="ltx_p">The reduced Chi-square: <math id="p58.m1" class="ltx_Math" alttext="\chi^{2}/\nu" display="inline"><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>/</mo><mi>ν</mi></mrow></math> computed over all observations, where <math id="p58.m2" class="ltx_Math" alttext="\nu" display="inline"><mi>ν</mi></math> is the number of degrees of freedom.</p>
+</div>
+<div id="p59" class="ltx_para">
+<p class="ltx_p">Note that for high signal to noise observations (i.e. small uncertainties), the reduced Chi-square will increase when the simple geometric model cannot sufficiently model the more complex true light curve shape. A low Chi-square is therefore not a good measure for eclipsing binary detection on itself.
+<br class="ltx_break"></p>
+</div>
+<div id="p60" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_primary_ecl_phase <a name="vari_eclipsing_binary-derived_primary_ecl_phase" id="vari_eclipsing_binary-derived_primary_ecl_phase" class="ltx_anchor"></a></span>: Primary eclipse: phase at geometrically deepest point (float)</p>
+</div>
+<div id="p61" class="ltx_para">
+<p class="ltx_p">Phase with respect to <span class="ltx_text ltx_font_typewriter">reference_time</span>. This value is derived from the geometrical model. It can be offset from <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span> or <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase</span> if a cosine component is present. NaN if no Gaussian component in the geometric model.
+<br class="ltx_break"></p>
+</div>
+<div id="p62" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_primary_ecl_phase_error <a name="vari_eclipsing_binary-derived_primary_ecl_phase_error" id="vari_eclipsing_binary-derived_primary_ecl_phase_error" class="ltx_anchor"></a></span>: Primary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_primary_ecl_phase</span> (float)</p>
+</div>
+<div id="p63" class="ltx_para">
+<p class="ltx_p">Primary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_primary_ecl_phase</span> estimated by a Jackknife resampling method.
+<br class="ltx_break"></p>
+</div>
+<div id="p64" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_primary_ecl_duration <a name="vari_eclipsing_binary-derived_primary_ecl_duration" id="vari_eclipsing_binary-derived_primary_ecl_duration" class="ltx_anchor"></a></span>: Primary eclipse: duration [phase fraction] (float)</p>
+</div>
+<div id="p65" class="ltx_para">
+<p class="ltx_p">This value is derived from the geometrical model, taking the Gaussian width estimated at a depth of 2% of the Gaussian, with an upper limit of 0.4. NaN if no Gaussian component in the geometric model.
+<br class="ltx_break"></p>
+</div>
+<div id="p66" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_primary_ecl_duration_error <a name="vari_eclipsing_binary-derived_primary_ecl_duration_error" id="vari_eclipsing_binary-derived_primary_ecl_duration_error" class="ltx_anchor"></a></span>: Primary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_primary_ecl_duration</span> (float)</p>
+</div>
+<div id="p67" class="ltx_para">
+<p class="ltx_p">Primary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_primary_ecl_duration</span>. Uncertainties are derived by a Jackknife resampling method. In rare instances, the uncertainty can be artificially larger than 1.
+<br class="ltx_break"></p>
+</div>
+<div id="p68" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_primary_ecl_depth <a name="vari_eclipsing_binary-derived_primary_ecl_depth" id="vari_eclipsing_binary-derived_primary_ecl_depth" class="ltx_anchor"></a></span>: Primary eclipse: depth (float, Magnitude[mag])</p>
+</div>
+<div id="p69" class="ltx_para">
+<p class="ltx_p">This value is derived from the geometrical model. NaN if no Gaussian component in the geometric model.
+<br class="ltx_break"></p>
+</div>
+<div id="p70" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_primary_ecl_depth_error <a name="vari_eclipsing_binary-derived_primary_ecl_depth_error" id="vari_eclipsing_binary-derived_primary_ecl_depth_error" class="ltx_anchor"></a></span>: Primary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_primary_ecl_depth</span> (float, Magnitude[mag])</p>
+</div>
+<div id="p71" class="ltx_para">
+<p class="ltx_p">Primary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_primary_ecl_depth</span> estimated by a Jackknife resampling method. It can be null when the model could not derive it.
+<br class="ltx_break"></p>
+</div>
+<div id="p72" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_secondary_ecl_phase <a name="vari_eclipsing_binary-derived_secondary_ecl_phase" id="vari_eclipsing_binary-derived_secondary_ecl_phase" class="ltx_anchor"></a></span>: Secondary eclipse: phase at geometrically second deepest point (float)</p>
+</div>
+<div id="p73" class="ltx_para">
+<p class="ltx_p">This value is derived from the geometrical model. It can be offset from <span class="ltx_text ltx_font_typewriter">geom_model_gaussian1_phase</span> or <span class="ltx_text ltx_font_typewriter">geom_model_gaussian2_phase</span> if a cosine component is present. NaN if no secondary Gaussian component in the geometric model.
+<br class="ltx_break"></p>
+</div>
+<div id="p74" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_secondary_ecl_phase_error <a name="vari_eclipsing_binary-derived_secondary_ecl_phase_error" id="vari_eclipsing_binary-derived_secondary_ecl_phase_error" class="ltx_anchor"></a></span>: Secondary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_phase</span> (float)</p>
+</div>
+<div id="p75" class="ltx_para">
+<p class="ltx_p">Secondary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_phase</span> estimated by a Jackknife resampling method.
+<br class="ltx_break"></p>
+</div>
+<div id="p76" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_secondary_ecl_duration <a name="vari_eclipsing_binary-derived_secondary_ecl_duration" id="vari_eclipsing_binary-derived_secondary_ecl_duration" class="ltx_anchor"></a></span>: Secondary eclipse: duration [phase fraction] (float)
+</p>
+</div>
+<div id="p77" class="ltx_para">
+<p class="ltx_p">This value is derived from the geometrical model, taking the Gaussian width estimated at a depth of 2% of the Gaussian, with an upper limit of 0.4. NaN if no secondary Gaussian component in the geometric model.
+<br class="ltx_break"></p>
+</div>
+<div id="p78" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_secondary_ecl_duration_error <a name="vari_eclipsing_binary-derived_secondary_ecl_duration_error" id="vari_eclipsing_binary-derived_secondary_ecl_duration_error" class="ltx_anchor"></a></span>: Secondary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_duration</span> (float)</p>
+</div>
+<div id="p79" class="ltx_para">
+<p class="ltx_p">Secondary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_duration</span>. Uncertainties are derived by a Jackknife resampling method. In rare instances, the uncertainty can be artificially larger than 1.
+<br class="ltx_break"></p>
+</div>
+<div id="p80" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_secondary_ecl_depth <a name="vari_eclipsing_binary-derived_secondary_ecl_depth" id="vari_eclipsing_binary-derived_secondary_ecl_depth" class="ltx_anchor"></a></span>: Secondary eclipse: depth (float, Magnitude[mag])</p>
+</div>
+<div id="p81" class="ltx_para">
+<p class="ltx_p">This value is derived from the geometrical model. NaN if no secondary Gaussian component in the geometric model.
+<br class="ltx_break"></p>
+</div>
+<div id="p82" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold ltx_font_smallcaps" style="font-size:120%;">derived_secondary_ecl_depth_error <a name="vari_eclipsing_binary-derived_secondary_ecl_depth_error" id="vari_eclipsing_binary-derived_secondary_ecl_depth_error" class="ltx_anchor"></a></span>: Secondary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_depth</span> (float, Magnitude[mag])</p>
+</div>
+<div id="p83" class="ltx_para">
+<p class="ltx_p">Secondary eclipse: uncertainty of <span class="ltx_text ltx_font_typewriter">derived_secondary_ecl_depth</span> estimated by a Jackknife resampling method. It can be null when the model could not derive it.
+<br class="ltx_break"></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="ssec_dm_vari_compact_companion.html" title="20.13.7 vari_compact_companion ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.7 </span>vari_compact_companion</span></a>&nbsp;<a href="../../../bib.html" title="Bibliography ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a>&nbsp;&nbsp;<a href="ssec_dm_vari_epoch_radial_velocity.html" title="20.13.9 vari_epoch_radial_velocity ‣ 20.13 Variability tables ‣ Chapter 20 Datamodel description ‣ Part V Gaia archive ‣ Gaia Data Release 3 Documentation release 1.3" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20.13.9 </span>vari_epoch_radial_velocity</span></a>
+</div>
+<div class="ltx_page_logo">
+<a href="https://www.cosmos.esa.int/web/esdc/cookie-policy">(Cookie policy) </a>Generated  on Sat Jul 15 11:29:14 2023 by <span class="ltx_page_logo_ltxml"><a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a></span>
+</div></footer>
+</div>
+</div>
+<!--begin of third insertion point--><div class="esdc_tb"></div>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+	   var hs1 = new hideShow('button1');
+	   //var hs2 = new hideShow('button2');
+	   //var hs3 = new hideShow('button3');
+	   //var hs4 = new hideShow('button4');
+	   }); // end ready() 
+	</script><!--end of third insertion point-->
+</body>
+</html>

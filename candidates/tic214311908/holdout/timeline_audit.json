@@ -1,0 +1,58 @@
+{
+  "audited_utc": "2026-10-17T14:13:07.797862+00:00",
+  "scope": "Distinguish the original locally preregistered predictive timing from the separate discovery-only refined timing.",
+  "timeline_utc": [
+    {
+      "event": "independent discovery-only assessment saved",
+      "time": "2026-10-17T13:45:47.711783+00:00"
+    },
+    {
+      "event": "root initial BLS holdout policy recorded",
+      "time": "2026-10-17T13:46:21.571595+00:00"
+    },
+    {
+      "event": "root native sector 103 retrieval completed",
+      "time": "2026-10-17T13:46:28.396154+00:00"
+    },
+    {
+      "event": "root native sector 104 retrieval completed",
+      "time": "2026-10-17T13:46:35.786521+00:00"
+    },
+    {
+      "event": "independent refined timing snapshot saved",
+      "time": "2026-10-17T13:47:03.764760+00:00"
+    }
+  ],
+  "predictive_test": {
+    "period_days": 5.691497928943136,
+    "epoch_btjd": 1632.6146842062005,
+    "timing_policy_preceded_both_retrievals": true,
+    "used_refined_independent_timing": false,
+    "source": "holdout/preregistration.json"
+  },
+  "independent_refinement": {
+    "input_sectors": [
+      12,
+      39,
+      66,
+      93
+    ],
+    "period_days": 5.691513805926734,
+    "epoch_btjd": 1632.6116121251637,
+    "worker_reported_no_holdout_access": true,
+    "non_access_basis": "Worker declaration and recorded discovery-only inputs; not operating-system-enforced isolation.",
+    "snapshot_preceded_root_retrieval": false
+  },
+  "correction": "The original filename and purpose phrase pre-holdout are preserved as worker-local records. They must not be interpreted as a snapshot preceding global retrieval. The main predictive test used the earlier initial BLS timing.",
+  "limitations": [
+    "Local process timestamps and source hashes preserve workflow provenance; this was not an externally timestamped public preregistration.",
+    "Byte identity and chronology do not establish calibrated significance, host identity, planetary origin or novelty."
+  ],
+  "source_sha256": {
+    "holdout/preregistration.json": "a2d2108cdaff037d417f609249bd4fd30959b3afee7b8d16e401f00e960e5d6d",
+    "holdout/sector103/assessment.json": "015887631228a39733e7f0386e1e1393f6ca5f1c1e2b0ccdaaec22f709db69b2",
+    "holdout/sector104/assessment.json": "de4d9ab153645b7806207b5a23517ba60706e877865ff95cdf8c366481e9c6fc",
+    "independent_variability/assessment.json": "92da86d2b14ff583a41f11f051e8a2c2f326fff6ec15a85e7a3d0dd2bb60dfe2",
+    "independent_variability/ephemeris_frozen_pre_holdout.json": "ca5aaa19174dccd92cbf2bfbb8f6c0c7b8843e9237701d3ac0405375861290e0"
+  }
+}

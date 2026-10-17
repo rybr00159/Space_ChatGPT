@@ -1,5 +1,48 @@
 # Research checkpoint — multi-sector exoplanet and stellar investigations
 
+## Latest targeted review — TIC 214311908, 17 October 2026
+
+The user requested an independent investigation and withheld the other model's findings. None was accessed. **A promising recurrent 5.6915-day transit/eclipsing signal survives; its host and planetary origin remain unresolved.** Read [the full evidence](candidates/tic214311908/README.md), [measurements](candidates/tic214311908/measurements.csv), [independent analysis](candidates/tic214311908/independent_variability/README.md), [source assignment](candidates/tic214311908/source_localization/README.md) and [TARS recognition audit](candidates/tic214311908/tars_recognition/README.md).
+
+Original QLP Sectors 12/39/66/93 contain 13 positive local event windows. A frozen discovery ephemeris then predicts eight positive sampled windows in previously uninspected native FFIs from Sectors 103/104; another S103 prediction falls in a gap. The 21 positive windows are not all individually significant. TARS and ELEANOR reductions support the same sequence and preserve one additional early window, but share the original photons. No QLP 103/104 timing or flux was used because of documented product issues.
+
+Independent discovery-only timing gives **P = 5.691513806 ± 0.000008821 days; T0 = BTJD 1632.611612 ± 0.002312 TDB**. Its worker never accessed held-out data, but saved the timing snapshot after root retrieved those data. The predictive test used the earlier preregistered BLS timing, P 5.691497929 days and T0 1632.614684206 BTJD; see [the chronology audit](candidates/tic214311908/holdout/timeline_audit.json). Keep the full covariance and systematic floor in `candidates/tic214311908/independent_variability/ephemeris_frozen_pre_holdout.json`, whose original filename is preserved. Convert barycentric TDB for a real observer before scheduling UTC. A nominal-target circular fit gives approximately 1.65 hours and a conditional radius of 5.1 Earth radii. Tested equal-star, doubled-period models fit worse by Δχ²≈15.7; this excludes neither other stellar configurations nor a background host. No mass, FPP or calibrated global FAP is measured.
+
+Host ambiguity is decisive. Faint TIC 1515709327 at approximately 3.15 arcseconds has about 2.9% of the nominal target T flux; an approximately 50% eclipse can mimic the QLP deficit. The nearly comoving TIC 214311910 at 11.7 arcseconds is another possible host. Propagated Gaia/native pixel fits cannot discriminate these sources from the target. QLP already adds the expected target TIC flux to difference photometry: do **not** generically multiply the depth by 1+contamination ratio. A separate weak 0.15804-day feature matches a known neighboring binary; its changing phase relative to the deep events rules out a simple alias explanation. Finite catalogue/literature checks found no prior planet designation or matching coherent transit ephemeris, but public TARS headers already contained weaker near-5.7-day sinusoidal peaks. Novelty is unproven.
+
+This instance began at old snapshot `2864163`, with no old raw cache or astronomy packages. The clean checkout was fast-forwarded to saved main `ff9216f`; the existing setup script restored pinned dependencies and passed import/pip checks and real FITS/BLS work. Reusable install/start instructions were saved as a configuration draft, not published. Previous broad/multisector live caches remain absent: restore their committed archives rather than rerunning finished surveys. The new cache is `/workspace/tess-research-data/tic214311908/`. All 13 original scientific TESS FITS are additionally archived for exact offline restoration. Redundant ZIPs and the 136 MB parent TARS catalogue remain cached with checksums/URLs. No originals were deleted. OpenRouter research spending remains $0; no external messages, submissions or observing requests.
+
+Verify before regenerating artifacts:
+
+```sh
+cd /workspace/Space_ChatGPT
+export PATH=/workspace/openrouter-check-venv/bin:$PATH
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+export MPLCONFIGDIR=/workspace/tess-research-data/matplotlib
+python scripts/tic214311908_checkpoint.py verify
+python scripts/tic214311908_checkpoint.py restore --destination /tmp/tic214311908_new_offline
+# If the original cloud cache is absent, restore directly to its missing paths:
+python scripts/tic214311908_checkpoint.py restore --destination /workspace/tess-research-data/tic214311908
+python scripts/tic214311908_retrieve.py --download-qlp
+```
+
+Restore refuses existing mismatching files. The scientific FITS and compact queries restore without network. After a lost-cache restore, use `verify --science-only` to check all scientific FITS and artifacts without demanding redundant ZIPs or the unneeded parent TARS catalogue. To reproduce current derived checks deliberately:
+
+```sh
+python scripts/tic214311908_screen.py
+python scripts/tic214311908_screen.py --pool
+python scripts/tic214311908_vet.py
+python scripts/tic214311908_pixels.py
+python scripts/tic214311908_reductions.py
+python scripts/tic214311908_holdout.py
+python scripts/tic214311908_holdout_diagnostics.py
+python scripts/tic214311908_summary.py
+```
+
+Read each independent method before rerunning: preserve the original assessment, main preregistration and separate discovery-only timing snapshot. The latter's original filename says pre-holdout; the chronology audit qualifies that wording. The stellar comparison retains exactly the same 13 events/1961 samples as the original physical fit. Earlier software attempts and expected hashes are retained; do not overwrite them to accept a mismatch. The checkpoint establishes byte identity and restoration, not astrophysical validity.
+
+**Next decisive science:** resolved event photometry measuring the target, TIC 1515709327 and TIC 214311910 simultaneously, supported by multicolour fluxes and accurate PRF modelling. Target-only RVs could miss a background binary. Existing TESS resolution cannot securely assign a 3-arcsecond source. No observing request or submission was sent. This one-star review does not modify the frozen survey counts below.
+
 ## Latest checkpoint — completed six-sector batches, unresolved TIC 229146531
 
 **16 October 2026 UTC.** Actually period-searched **5,058 target-sector observations /4,391 distinct TICs** across sampled Sectors83/86/95/96/98/105. 5,059selected observations, one genuinely unusable S83curve. Producer-error searches3819; separate empirical-error searches1239. First batch4095observations /3612stars; second963/850;71shared TICs counted once. Exactly3998TICs were outside the frozen159505-star Sector1survey. Do not add repeated pools, controls, metadata inventories or follow-up observations as new survey stars.

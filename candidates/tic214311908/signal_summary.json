@@ -1,0 +1,177 @@
+{
+  "tic": 214311908,
+  "review_date": "2026-10-17",
+  "script_sha256": "ae920a3b49de5c1a5ece746342246ceaa39b8680636a4f61b1a54083f9f4ced7",
+  "selected_discovery_ephemeris": {
+    "registered_utc": "2026-10-17T13:46:21.571595+00:00",
+    "script_sha256": "3aea6069a8be975a3960f1112928ce7dbcd4fac82991f0eb8a5f3e60b42b5881",
+    "discovery_source": {
+      "path": "candidates/tic214311908/pooled_w0.75.json",
+      "sha256": "5b9443baa49205fbbf3c50785ff31ea92ee4ab347d4db9a52063a3973fd89b43"
+    },
+    "discovery_sectors": [
+      12,
+      39,
+      66,
+      93
+    ],
+    "uninspected_sectors": [
+      103,
+      104
+    ],
+    "period_days": 5.691497928943136,
+    "epoch_btjd": 1632.6146842062005,
+    "duration_days": 0.04958333333333333,
+    "aperture_radii_pixels": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "primary_radius_pixels": 1.5,
+    "local_event_windows_days": [
+      0.04958333333333333,
+      0.07
+    ],
+    "background": "median of lower25percentile reference-image pixels farther than3pixels from propagated target; constant per cadence, same mask across sector",
+    "time_policy": "Native FFI TIME/BJDREFI/BJDREFF/TIMESYS verified; no QLP photometry or timestamp applied.",
+    "limitations": "Same fixed ephemeris; apertures and two windows are correlated diagnostics, not independent tests. Real blend/stellar classification and calibrated red-noise FAP remain unresolved. All predicted coverage retained; a gap is not a null."
+  },
+  "independent_frozen_timing": {
+    "frozen_utc": "2026-10-17T13:47:03.764760+00:00",
+    "purpose": "Independent proposal frozen before native-FFI holdout testing; no holdout data accessed by this analyst.",
+    "input_sectors": [
+      12,
+      39,
+      66,
+      93
+    ],
+    "n_timed_events": 12,
+    "parameters_order": [
+      "epoch_btjd",
+      "period_days"
+    ],
+    "parameters": [
+      1632.6116121251637,
+      5.691513805926734
+    ],
+    "conditional_covariance_days_squared": [
+      [
+        5.346180159637676e-06,
+        -1.862012276178295e-08
+      ],
+      [
+        -1.8620122761782952e-08,
+        7.781077363498084e-11
+      ]
+    ],
+    "chi2": 17.218437867003306,
+    "ndof": 10,
+    "conservative_covariance_days_squared": [
+      [
+        9.205287090452715e-06,
+        -3.206094268497337e-08
+      ],
+      [
+        -3.2060942684973376e-08,
+        1.3397799712173766e-10
+      ]
+    ],
+    "prediction_formula": "midtime(n)=epoch+n*period; sigma(n)=sqrt([1,n] @ conservative_covariance @ [1,n]); add independent timing-noise allowance below",
+    "timing_noise_allowance_days": 0.005,
+    "suggested_predeclared_center_tolerance_days": "max(0.020, 3*sqrt(sigma(n)**2+0.005**2)); add half duration for full transit extraction",
+    "method_sha256": "1f975c19b430f335c597946f0d99f30331273768eb0b26233a65c81efadbd263",
+    "assessment_sha256": "92da86d2b14ff583a41f11f051e8a2c2f326fff6ec15a85e7a3d0dd2bb60dfe2",
+    "event_shapes_sha256": "23511ae49f5281176de0cfde93aa4e50e2c00f6a8ebc4e2c8b6878281517a752",
+    "exclusion": "only first weak S12 cycle0 broad free-duration fit excluded",
+    "global_chronology_audit": "holdout/timeline_audit.json",
+    "global_chronology_note": "Discovery-only worker had no holdout access, but saved this snapshot after root retrieval. Predictive tests used the earlier preregistered BLS timing."
+  },
+  "primary_checks": [
+    {
+      "sector": 12,
+      "product": "QLP",
+      "flux_normalization": "TIC target-reference flux; assumes varying source is target",
+      "n_local_events": 2,
+      "n_positive": 2,
+      "local_depth_ppm": 11935.574240211597,
+      "local_error_ppm": 5142.124922160501,
+      "conditional_local_snr": 2.3211365769769707,
+      "assessment_file": "raw_local_vetting.json"
+    },
+    {
+      "sector": 39,
+      "product": "QLP",
+      "flux_normalization": "TIC target-reference flux; assumes varying source is target",
+      "n_local_events": 4,
+      "n_positive": 4,
+      "local_depth_ppm": 12699.693277349728,
+      "local_error_ppm": 1793.292219282117,
+      "conditional_local_snr": 7.081775708832113,
+      "assessment_file": "raw_local_vetting.json"
+    },
+    {
+      "sector": 66,
+      "product": "QLP",
+      "flux_normalization": "TIC target-reference flux; assumes varying source is target",
+      "n_local_events": 4,
+      "n_positive": 4,
+      "local_depth_ppm": 18889.027379112784,
+      "local_error_ppm": 2818.239152346703,
+      "conditional_local_snr": 6.702421745643619,
+      "assessment_file": "raw_local_vetting.json"
+    },
+    {
+      "sector": 93,
+      "product": "QLP",
+      "flux_normalization": "TIC target-reference flux; assumes varying source is target",
+      "n_local_events": 3,
+      "n_positive": 3,
+      "local_depth_ppm": 15365.782627468217,
+      "local_error_ppm": 1823.7280188252814,
+      "conditional_local_snr": 8.425479275887742,
+      "assessment_file": "raw_local_vetting.json"
+    },
+    {
+      "sector": 103,
+      "product": "native_FFI_holdout",
+      "flux_normalization": "Total sky-subtracted1.5pixel aperture flux; blended, unlikeQLP",
+      "n_local_events": 4,
+      "n_positive": 4,
+      "local_depth_ppm": 963.9878706194219,
+      "local_error_ppm": 352.40007916329193,
+      "conditional_local_snr": 2.7354927754506493,
+      "assessment_file": "holdout/sector103/assessment.json"
+    },
+    {
+      "sector": 104,
+      "product": "native_FFI_holdout",
+      "flux_normalization": "Total sky-subtracted1.5pixel aperture flux; blended, unlikeQLP",
+      "n_local_events": 4,
+      "n_positive": 4,
+      "local_depth_ppm": 1977.1101055310187,
+      "local_error_ppm": 483.03807442771927,
+      "conditional_local_snr": 4.093073010597364,
+      "assessment_file": "holdout/sector104/assessment.json"
+    }
+  ],
+  "observed_sectors": [
+    12,
+    39,
+    66,
+    93,
+    103,
+    104
+  ],
+  "primary_sampled_positive_event_windows": 21,
+  "unique_stars_nominated": 1,
+  "classification": "promising_recurrent_transit_or_eclipsing_signal_unresolved_host",
+  "planet_established": false,
+  "novelty_established": false,
+  "openrouter_research_cost_usd": 0,
+  "notes": [
+    "All21sampled primary windows are positive, but not all individually significant.",
+    "TARS/ELEANOR reductions share originalphotons and are not newsector observations.",
+    "Conditional scores omit fullrednoise/trials; no falsepositiveprobability measured.",
+    "ClosestfaintGaia/TIC1515709327at3.15arcsec and comovingTIC214311910 remain viablehostalternatives."
+  ]
+}
