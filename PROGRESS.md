@@ -1,5 +1,11 @@
 # Research checkpoint — multi-sector exoplanet and stellar investigations
 
+## Ground follow-up scope and access — 17 October 2026
+
+Prepared [an observer-facing brief and cost/access comparison](reports/tic214311908_ground_followup_brief.md): separate the target and approximately 3.15-arcsecond neighbor photometrically through a complete event, with roughly five hours of time series/baselines. One good red-filter event can localize the dip; multiband measurements add blend tests. This does not alone measure mass or eliminate unresolved companions. Southern-site visibility, seeing/sampling, the nearby bright Mira, precise timing and observer-verified setup matter.
+
+A willing observer/research collaboration or suitable allocated time may entail no direct personal observing charge; access is not guaranteed. Current LCO rules are programme-specific and are not a universal free standard-proposal route. Commercial rental is optional: iTelescope's checked standard-plan prices span roughly US$19–118/hour plus US$39.95/89.95 membership per28days, but no suitable instrument or actual quote has been selected. Five public access/price sources are retained in `data/ground_followup_options/20261017/`. No observer contacted, application sent, booking made or money spent.
+
 ## Publication and ExoFOP route checked — 17 October 2026
 
 Journal shortlist is appended to the publication note. OJAp is the recommended first option to investigate: broad exoplanet scope, conventional peer review, no author charges and explicit AI-use disclosure/validation rules; arXiv-overlay workflow. AJ is a conventional observational/exoplanet fit but 2026 publication charges start at US$1,425. JAAVSO is a potential focused-paper inquiry option; peer-reviewed status is confirmed from AAVSO, but its current author pages returned403, so fees and candidate-only scope remain unverified. No comparative acceptance probabilities are claimed. Six public source snapshots and hashes are retained in `data/journal_options/20261017/`; no editor was contacted or submission made.
